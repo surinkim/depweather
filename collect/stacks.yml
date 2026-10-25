@@ -261,3 +261,28 @@ ecosystems:
       - {name: ecto}
       - {name: cowboy, match: [cowlib]}
       - {name: hackney}
+
+  # Runtimes and servers are not packages in a language registry, so their
+  # advisories are not in the groups above (PHP2Shell, CVE-2026-109618/109619,
+  # is in PHP itself, not in a Packagist package). OSV's Bitnami ecosystem
+  # tracks them per container image; "-min" and "lib" variants are the same
+  # product. The group has a fixed area because it maps to no single language.
+  - id: runtimes
+    osv: Bitnami
+    label: Runtimes & servers
+    area: 20
+    popularity: fixed
+    packages:
+      - {name: php, label: PHP, match: [php-min, libphp]}
+      - {name: node, label: Node.js, survey: 46.4, match: [node-min]}
+      - {name: python, label: Python, match: [python-min, libpython]}
+      - {name: java, label: Java (OpenJDK), match: [java-min, jre]}
+      - {name: ruby, label: Ruby, match: [ruby-min]}
+      - {name: wordpress, label: WordPress, survey: 13.3}
+      - {name: nginx}
+      - {name: apache, label: Apache httpd}
+      - {name: tomcat, label: Tomcat}
+      - {name: postgresql, label: PostgreSQL}
+      - {name: mariadb, label: MariaDB}
+      - {name: redis, label: Redis}
+      - {name: mongodb, label: MongoDB}

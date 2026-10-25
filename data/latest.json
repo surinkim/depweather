@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T02:40:27Z",
+ "generated_at": "2026-10-25T03:02:53Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -34,6 +34,7 @@
     "Packagist: Packagist downloads, last 30 days",
     "PyPI: fixed weight",
     "RubyGems: RubyGems downloads, all time",
+    "Runtimes & servers: fixed weight",
     "crates.io: crates.io downloads, last 90 days",
     "npm: fixed weight"
    ]
@@ -45,8 +46,8 @@
   "month_cves": null,
   "month_cves_last_year": null,
   "kev_new_7d": 8,
-  "affected_packages_7d": 19,
-  "tracked_packages": 136
+  "affected_packages_7d": 23,
+  "tracked_packages": 149
  },
  "monthly": [],
  "monthly_is_stale": false,
@@ -115,6 +116,7 @@
    "osv": "npm",
    "languages": "JavaScript / TypeScript",
    "survey_share": 62.0,
+   "area": null,
    "packages": [
     {
      "key": "npm/react",
@@ -1790,6 +1792,7 @@
    "osv": "PyPI",
    "languages": "Python",
    "survey_share": 58.0,
+   "area": null,
    "packages": [
     {
      "key": "pypi/fastapi",
@@ -3703,6 +3706,7 @@
    "osv": "Maven",
    "languages": "Java / Kotlin",
    "survey_share": 27.6,
+   "area": null,
    "packages": [
     {
      "key": "maven/org.springframework.boot:spring-boot",
@@ -4061,6 +4065,7 @@
    "osv": "NuGet",
    "languages": "C#",
    "survey_share": 27.1,
+   "area": null,
    "packages": [
     {
      "key": "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64",
@@ -5107,6 +5112,7 @@
    "osv": "crates.io",
    "languages": "Rust",
    "survey_share": 18.0,
+   "area": null,
    "packages": [
     {
      "key": "crates/axum",
@@ -5512,6 +5518,7 @@
    "osv": "Packagist",
    "languages": "PHP",
    "survey_share": 17.7,
+   "area": null,
    "packages": [
     {
      "key": "packagist/laravel/framework",
@@ -5898,6 +5905,7 @@
    "osv": "Go",
    "languages": "Go",
    "survey_share": 16.5,
+   "area": null,
    "packages": [
     {
      "key": "go/stdlib",
@@ -6612,6 +6620,7 @@
    "osv": "RubyGems",
    "languages": "Ruby",
    "survey_share": 5.8,
+   "area": null,
    "packages": [
     {
      "key": "rubygems/rails",
@@ -6639,7 +6648,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1285093779.0,
+     "popularity": 1285107545.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6650,7 +6659,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 619757498.0,
+     "popularity": 619767673.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6661,7 +6670,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 301525607.0,
+     "popularity": 301526707.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6672,7 +6681,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 343349758.0,
+     "popularity": 343350930.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6709,6 +6718,7 @@
    "osv": "Hex",
    "languages": "Elixir",
    "survey_share": 2.6,
+   "area": null,
    "packages": [
     {
      "key": "hex/phoenix",
@@ -6800,6 +6810,2293 @@
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
+    }
+   ]
+  },
+  {
+   "id": "runtimes",
+   "label": "Runtimes & servers",
+   "osv": "Bitnami",
+   "languages": null,
+   "survey_share": null,
+   "area": 20,
+   "packages": [
+    {
+     "key": "runtimes/php",
+     "name": "php",
+     "label": "PHP",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "BIT-libphp-2026-109619",
+       "aliases": [
+        "BIT-php-2026-109619",
+        "BIT-php-min-2026-109619",
+        "CVE-2026-109619"
+       ],
+       "cves": [
+        "CVE-2026-109619"
+       ],
+       "published": "2026-10-22T08:04:27Z",
+       "summary": "RCE via stale global state",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.35",
+        "8.3.36",
+        "8.4.27",
+        "8.5.12"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-109619",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-109618",
+       "aliases": [
+        "BIT-php-2026-109618",
+        "BIT-php-min-2026-109618",
+        "CVE-2026-109618"
+       ],
+       "cves": [
+        "CVE-2026-109618"
+       ],
+       "published": "2026-10-22T08:04:26Z",
+       "summary": "RCE via OOM corruption",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.35",
+        "8.3.36",
+        "8.4.27",
+        "8.5.12"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-109618",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-93682",
+       "aliases": [
+        "BIT-php-2026-93682",
+        "BIT-php-min-2026-93682",
+        "CVE-2026-93682"
+       ],
+       "cves": [
+        "CVE-2026-93682"
+       ],
+       "published": "2026-10-01T09:29:29Z",
+       "summary": "Out-of-bounds read in the HTTP stream wrapper when following a redirect with an empty Location header",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-93682",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-92842",
+       "aliases": [
+        "BIT-php-2026-92842",
+        "BIT-php-min-2026-92842",
+        "CVE-2026-92842"
+       ],
+       "cves": [
+        "CVE-2026-92842"
+       ],
+       "published": "2026-10-01T09:29:28Z",
+       "summary": "OOB read / info leak in convert.* stream filters when line-break-chars contains NUL",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-92842",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-91769",
+       "aliases": [
+        "BIT-php-2026-91769",
+        "BIT-php-min-2026-91769",
+        "CVE-2026-91769"
+       ],
+       "cves": [
+        "CVE-2026-91769"
+       ],
+       "published": "2026-10-01T09:29:27Z",
+       "summary": "TLS Hostname Verification Falls Back to CN After SAN Mismatch",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91769",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-91768",
+       "aliases": [
+        "BIT-php-2026-91768",
+        "BIT-php-min-2026-91768",
+        "CVE-2026-91768"
+       ],
+       "cves": [
+        "CVE-2026-91768"
+       ],
+       "published": "2026-10-01T09:29:26Z",
+       "summary": "IPv6 ACL bypass in FastCGI listen.allowed_clients due to partial address comparison (memcmp 12 bytes)",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91768",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-91767",
+       "aliases": [
+        "BIT-php-2026-91767",
+        "BIT-php-min-2026-91767",
+        "CVE-2026-91767"
+       ],
+       "cves": [
+        "CVE-2026-91767"
+       ],
+       "published": "2026-10-01T09:29:25Z",
+       "summary": "Heap-buffer-overflow in php_openssl_matches_wildcard_name on crafted server cert wildcard CN",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91767",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-91766",
+       "aliases": [
+        "BIT-php-2026-91766",
+        "BIT-php-min-2026-91766",
+        "CVE-2026-91766"
+       ],
+       "cves": [
+        "CVE-2026-91766"
+       ],
+       "published": "2026-10-01T09:29:24Z",
+       "summary": "Cross-origin credential leak in HTTP stream wrapper redirects",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91766",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-91765",
+       "aliases": [
+        "BIT-php-2026-91765",
+        "BIT-php-min-2026-91765",
+        "CVE-2026-91765"
+       ],
+       "cves": [
+        "CVE-2026-91765"
+       ],
+       "published": "2026-10-01T09:29:22Z",
+       "summary": "SOAP: Unbounded Recursion in Server-Side cleanup_xml_node",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91765",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-6103",
+       "aliases": [
+        "BIT-php-2026-6103",
+        "BIT-php-min-2026-6103",
+        "CVE-2026-6103",
+        "GHSA-j3wh-g957-2m85"
+       ],
+       "cves": [
+        "CVE-2026-6103"
+       ],
+       "published": "2026-10-01T09:29:10Z",
+       "summary": "Phar TAR phar_tar_number() Integer Overflow - Archive Entry Injection",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-6103",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2026-17545",
+       "aliases": [
+        "BIT-php-2026-17545",
+        "BIT-php-min-2026-17545",
+        "CVE-2026-17545"
+       ],
+       "cves": [
+        "CVE-2026-17545"
+       ],
+       "published": "2026-10-01T09:29:09Z",
+       "summary": "PHP on Windows: Reserved Device Names Are Not Rejected Before File/Stream I/O which can cause DoS",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-17545",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2025-14181",
+       "aliases": [
+        "BIT-php-2025-14181",
+        "BIT-php-min-2025-14181",
+        "CVE-2025-14181"
+       ],
+       "cves": [
+        "CVE-2025-14181"
+       ],
+       "published": "2026-10-01T09:28:59Z",
+       "summary": "Integer overflow to buffer overflow in soap HTTP parsing",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2025-14181",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libphp-2025-1218",
+       "aliases": [
+        "BIT-php-2025-1218",
+        "BIT-php-min-2025-1218",
+        "CVE-2025-1218"
+       ],
+       "cves": [
+        "CVE-2025-1218"
+       ],
+       "published": "2026-10-01T09:28:51Z",
+       "summary": "Various packet overreads in mysqlnd_writeprotocol.c",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "8.2.34",
+        "8.3.35",
+        "8.4.26",
+        "8.5.11"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libphp-2025-1218",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "runtimes/node",
+     "name": "node",
+     "label": "Node.js",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 46.4,
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "BIT-node-2026-111497",
+       "aliases": [
+        "BIT-node-min-2026-111497",
+        "CVE-2026-111497",
+        "GHSA-9v8h-qqgm-4m35",
+        "PYSEC-2026-4322",
+        "PYSEC-2026-4323"
+       ],
+       "cves": [
+        "CVE-2026-111497"
+       ],
+       "published": "2026-10-23T08:48:26Z",
+       "summary": "A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "22.23.4",
+        "24.22.1",
+        "26.12.1"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-node-2026-111497",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "runtimes/python",
+     "name": "python",
+     "label": "Python",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "BIT-libpython-2026-19553",
+       "aliases": [
+        "BIT-python-2026-19553",
+        "BIT-python-min-2026-19553",
+        "CVE-2026-19553",
+        "PSF-2026-44"
+       ],
+       "cves": [
+        "CVE-2026-19553"
+       ],
+       "published": "2026-10-09T10:48:13Z",
+       "summary": "SSLContext.wrap_bio() missing validation of server_hostname parameter",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.10.22",
+        "3.11.17",
+        "3.12.15",
+        "3.13.16",
+        "3.14.8"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libpython-2026-19553",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libpython-2026-19445",
+       "aliases": [
+        "BIT-python-2026-19445",
+        "BIT-python-min-2026-19445",
+        "CVE-2026-19445",
+        "PSF-2026-43"
+       ],
+       "cves": [
+        "CVE-2026-19445"
+       ],
+       "published": "2026-10-09T10:48:12Z",
+       "summary": "Use-after-free of a server-side SSLContext when sni_callback switches contexts",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.10.22",
+        "3.11.17",
+        "3.12.15",
+        "3.13.16",
+        "3.14.8"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-libpython-2026-19445",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-libpython-2026-12345",
+       "aliases": [
+        "BIT-python-2026-12345",
+        "BIT-python-min-2026-12345",
+        "CVE-2026-12345",
+        "PSF-2026-42"
+       ],
+       "cves": [
+        "CVE-2026-12345"
+       ],
+       "published": "2026-10-05T11:47:53Z",
+       "summary": "Race condition in tempfile.TemporaryDirectory cleanup allows deleting files outside the temporary directory",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/BIT-libpython-2026-12345",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "runtimes/java",
+     "name": "java",
+     "label": "Java (OpenJDK)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "runtimes/ruby",
+     "name": "ruby",
+     "label": "Ruby",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "runtimes/wordpress",
+     "name": "wordpress",
+     "label": "WordPress",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 13.3,
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "BIT-wordpress-2026-87902",
+       "aliases": [
+        "BIT-wordpress-multisite-2026-87902",
+        "CVE-2026-87902"
+       ],
+       "cves": [
+        "CVE-2026-87902"
+       ],
+       "published": "2026-09-29T09:00:28Z",
+       "summary": "An unauthenticated attacker can make `get_page_template()` page-template resolution include a chosen readable local `.php` file outside the active theme directories. If relevant pre-conditions for both the server and the active theme are met, this can lead to RCE.",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "7.1.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-wordpress-2026-87902",
+       "malicious": false,
+       "kev": true,
+       "kev_date_added": "2026-09-25",
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "runtimes/nginx",
+     "name": "nginx",
+     "label": "nginx",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "BIT-nginx-2026-97629",
+       "aliases": [
+        "BIT-nginx-gateway-2026-97629",
+        "CVE-2026-97629"
+       ],
+       "cves": [
+        "CVE-2026-97629"
+       ],
+       "published": "2026-10-21T08:54:07Z",
+       "summary": "NGINX ngx_http_ssl_module vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.30.6",
+        "1.31.7"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-nginx-2026-97629",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-nginx-2026-97205",
+       "aliases": [
+        "BIT-nginx-gateway-2026-97205",
+        "CVE-2026-97205"
+       ],
+       "cves": [
+        "CVE-2026-97205"
+       ],
+       "published": "2026-10-21T08:54:05Z",
+       "summary": "NGINX ngx_http_core_module vulnerability",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.30.6",
+        "1.31.7"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-nginx-2026-97205",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-nginx-2026-95101",
+       "aliases": [
+        "BIT-nginx-gateway-2026-95101",
+        "CVE-2026-95101"
+       ],
+       "cves": [
+        "CVE-2026-95101"
+       ],
+       "published": "2026-10-21T08:54:03Z",
+       "summary": "NGINX ngx_http_v3_module vulnerability",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.29.0",
+        "1.30.6",
+        "1.31.7"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-nginx-2026-95101",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-nginx-2026-93479",
+       "aliases": [
+        "BIT-nginx-gateway-2026-93479",
+        "CVE-2026-93479"
+       ],
+       "cves": [
+        "CVE-2026-93479"
+       ],
+       "published": "2026-10-21T08:54:02Z",
+       "summary": "NGINX map directive and regex matching vulnerability",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.30.6",
+        "1.31.7"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-nginx-2026-93479",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-nginx-2026-15176",
+       "aliases": [
+        "BIT-nginx-gateway-2026-15176",
+        "CVE-2026-15176"
+       ],
+       "cves": [
+        "CVE-2026-15176"
+       ],
+       "published": "2026-10-21T08:53:28Z",
+       "summary": "NGINX ngx_http_core_module vulnerability",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.30.6",
+        "1.31.7"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-nginx-2026-15176",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-nginx-2026-90439",
+       "aliases": [
+        "BIT-nginx-gateway-2026-90439",
+        "CVE-2026-90439"
+       ],
+       "cves": [
+        "CVE-2026-90439"
+       ],
+       "published": "2026-09-25T12:27:27Z",
+       "summary": "NGINX ngx_http_v3_module vulnerability",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.30.0",
+        "1.30.5",
+        "1.31.6"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-nginx-2026-90439",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "runtimes/apache",
+     "name": "apache",
+     "label": "Apache httpd",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "BIT-apache-2026-63718",
+       "aliases": [
+        "CVE-2026-63718"
+       ],
+       "cves": [
+        "CVE-2026-63718"
+       ],
+       "published": "2026-10-07T11:40:10Z",
+       "summary": "Apache HTTP Server: mod_proxy_uwsgi Transfer-Encoding response smuggling",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-63718",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-93546",
+       "aliases": [
+        "CVE-2026-93546"
+       ],
+       "cves": [
+        "CVE-2026-93546"
+       ],
+       "published": "2026-10-06T11:41:09Z",
+       "summary": "Apache HTTP Server: mod_dav_fs namespace overflow",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-93546",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-79768",
+       "aliases": [
+        "CVE-2026-79768"
+       ],
+       "cves": [
+        "CVE-2026-79768"
+       ],
+       "published": "2026-10-06T11:41:07Z",
+       "summary": "Apache HTTP Server: mod_userdir information disclosure",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-79768",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-73637",
+       "aliases": [
+        "CVE-2026-73637"
+       ],
+       "cves": [
+        "CVE-2026-73637"
+       ],
+       "published": "2026-10-06T11:41:06Z",
+       "summary": "Apache HTTP Server: mod_auth_digest DoS attack",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-73637",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-73636",
+       "aliases": [
+        "CVE-2026-73636"
+       ],
+       "cves": [
+        "CVE-2026-73636"
+       ],
+       "published": "2026-10-06T11:41:04Z",
+       "summary": "Apache HTTP Server: mod_auth_digest one-time-nonce replay attack",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-73636",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-63686",
+       "aliases": [
+        "CVE-2026-63686"
+       ],
+       "cves": [
+        "CVE-2026-63686"
+       ],
+       "published": "2026-10-06T11:41:03Z",
+       "summary": "Apache HTTP Server: mod_xml2enc crash on charset conversion failure",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-63686",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-63292",
+       "aliases": [
+        "CVE-2026-63292"
+       ],
+       "cves": [
+        "CVE-2026-63292"
+       ],
+       "published": "2026-10-06T11:41:02Z",
+       "summary": "Apache HTTP Server: mod_vhost_alias stack overflow",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-63292",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-63045",
+       "aliases": [
+        "CVE-2026-63045"
+       ],
+       "cves": [
+        "CVE-2026-63045"
+       ],
+       "published": "2026-10-06T11:41:00Z",
+       "summary": "Apache HTTP Server: mod_proxy_ftp PASV address handling",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-63045",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-59797",
+       "aliases": [
+        "CVE-2026-59797"
+       ],
+       "cves": [
+        "CVE-2026-59797"
+       ],
+       "published": "2026-10-06T11:40:58Z",
+       "summary": "Apache HTTP Server: mod_ssl SSLRequire allows .htaccess ap_expr file-function",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-59797",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-59685",
+       "aliases": [
+        "CVE-2026-59685"
+       ],
+       "cves": [
+        "CVE-2026-59685"
+       ],
+       "published": "2026-10-06T11:40:57Z",
+       "summary": "Apache HTTP Server: Out-of-Bounds Write in ap_directory_walk() Canonical-Name Rewrite on CASE_BLIND_FILESYSTEM",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-59685",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-58415",
+       "aliases": [
+        "CVE-2026-58415"
+       ],
+       "cves": [
+        "CVE-2026-58415"
+       ],
+       "published": "2026-10-06T11:40:56Z",
+       "summary": "Apache HTTP Server: mod_dav_fs property database read access",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-58415",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-57941",
+       "aliases": [
+        "CVE-2026-57941"
+       ],
+       "cves": [
+        "CVE-2026-57941"
+       ],
+       "published": "2026-10-06T11:40:54Z",
+       "summary": "Apache HTTP Server: mod_http2 use-after-free / wild write via shared session->bbtmp re-entrancy",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-57941",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-56449",
+       "aliases": [
+        "CVE-2026-56449"
+       ],
+       "cves": [
+        "CVE-2026-56449"
+       ],
+       "published": "2026-10-06T11:40:53Z",
+       "summary": "Apache HTTP Server: mod_proxy_html: crash in dump_content",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-56449",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-56154",
+       "aliases": [
+        "CVE-2026-56154"
+       ],
+       "cves": [
+        "CVE-2026-56154"
+       ],
+       "published": "2026-10-06T11:40:51Z",
+       "summary": "Apache HTTP Server: mod_rewrite use-after-free via %{LA-U:HTTP:...}",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-56154",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-56153",
+       "aliases": [
+        "CVE-2026-56153"
+       ],
+       "cves": [
+        "CVE-2026-56153"
+       ],
+       "published": "2026-10-05T11:39:34Z",
+       "summary": "Apache HTTP Server: mod_charset_lite: Heap overflow in finish_partial_char",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-56153",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-48005",
+       "aliases": [
+        "CVE-2026-48005"
+       ],
+       "cves": [
+        "CVE-2026-48005"
+       ],
+       "published": "2026-10-05T11:39:29Z",
+       "summary": "Apache HTTP Server: mod_auth_digest reauthentication attack",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-48005",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-47360",
+       "aliases": [
+        "CVE-2026-47360"
+       ],
+       "cves": [
+        "CVE-2026-47360"
+       ],
+       "published": "2026-10-05T11:39:28Z",
+       "summary": "Apache HTTP Server: mod_session: Session cookie not removed during internal redirect",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-47360",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-46729",
+       "aliases": [
+        "CVE-2026-46729"
+       ],
+       "cves": [
+        "CVE-2026-46729"
+       ],
+       "published": "2026-10-05T11:39:26Z",
+       "summary": "Apache HTTP Server: mod_heartmonitor denial of service",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-46729",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-42528",
+       "aliases": [
+        "CVE-2026-42528"
+       ],
+       "cves": [
+        "CVE-2026-42528"
+       ],
+       "published": "2026-10-05T11:39:15Z",
+       "summary": "Apache HTTP Server: mod_dav shared lock overflow",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-42528",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-apache-2026-42356",
+       "aliases": [
+        "CVE-2026-42356"
+       ],
+       "cves": [
+        "CVE-2026-42356"
+       ],
+       "published": "2026-10-05T11:39:13Z",
+       "summary": "Apache HTTP Server: limited RCE for some internal redirects to non-CGI files in CGI directories",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "2.4.69"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-apache-2026-42356",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "runtimes/tomcat",
+     "name": "tomcat",
+     "label": "Tomcat",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "BIT-tomcat-2026-87022",
+       "aliases": [
+        "CVE-2026-87022"
+       ],
+       "cves": [
+        "CVE-2026-87022"
+       ],
+       "published": "2026-10-01T09:36:37Z",
+       "summary": "Apache Tomcat: WebSocket message smuggling with per-message-deflate",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.45",
+        "10.1.60",
+        "11.0.26",
+        "9.0.122"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-87022",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-86350",
+       "aliases": [
+        "CVE-2026-86350"
+       ],
+       "cves": [
+        "CVE-2026-86350"
+       ],
+       "published": "2026-10-01T09:36:35Z",
+       "summary": "Apache Tomcat: Regression in fix for CVE-2026-41293 can trigger request header mix-up",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.122",
+        "10.1.60",
+        "11.0.26"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-86350",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-86248",
+       "aliases": [
+        "CVE-2026-86248"
+       ],
+       "cves": [
+        "CVE-2026-86248"
+       ],
+       "published": "2026-10-01T09:36:34Z",
+       "summary": "Apache Tomcat: Fix for CVE-2026-34500 was incomplete. OCSP checks sometimes soft-fail with FFM even when soft-fail is disabled",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.122",
+        "10.1.60",
+        "11.0.26"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-86248",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-79677",
+       "aliases": [
+        "CVE-2026-79677"
+       ],
+       "cves": [
+        "CVE-2026-79677"
+       ],
+       "published": "2026-10-01T09:36:33Z",
+       "summary": "Apache Tomcat: WebSocket DoS due to lost asynchronous write timeout",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.45",
+        "10.1.60",
+        "11.0.26",
+        "9.0.122"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-79677",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-78437",
+       "aliases": [
+        "CVE-2026-78437"
+       ],
+       "cves": [
+        "CVE-2026-78437"
+       ],
+       "published": "2026-10-01T09:36:32Z",
+       "summary": "Apache Tomcat: HTTP/2 DoS via malformed request",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.122",
+        "10.1.60",
+        "11.0.26"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-78437",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-78383",
+       "aliases": [
+        "CVE-2026-78383"
+       ],
+       "cves": [
+        "CVE-2026-78383"
+       ],
+       "published": "2026-10-01T09:36:30Z",
+       "summary": "Apache Tomcat: AJP DoS via missing request body",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.45",
+        "10.1.60",
+        "11.0.26",
+        "9.0.122"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-78383",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-77791",
+       "aliases": [
+        "CVE-2026-77791"
+       ],
+       "cves": [
+        "CVE-2026-77791"
+       ],
+       "published": "2026-10-01T09:36:29Z",
+       "summary": "Apache Tomcat: DoS via busy wait during WebSocket close",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.45",
+        "9.0.122",
+        "10.1.60",
+        "11.0.26"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-77791",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-77762",
+       "aliases": [
+        "CVE-2026-77762"
+       ],
+       "cves": [
+        "CVE-2026-77762"
+       ],
+       "published": "2026-10-01T09:36:28Z",
+       "summary": "Apache Tomcat: Stale HPACK emitter injects trailers into recycled pooled Request",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.122",
+        "10.1.60",
+        "11.0.26"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-77762",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-77756",
+       "aliases": [
+        "CVE-2026-77756"
+       ],
+       "cves": [
+        "CVE-2026-77756"
+       ],
+       "published": "2026-10-01T09:36:27Z",
+       "summary": "Apache Tomcat: Transfer-Encoding honored for HTTP/1.0 requests",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "9.0.45",
+        "9.0.122",
+        "10.1.60",
+        "11.0.26"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-77756",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-76183",
+       "aliases": [
+        "CVE-2026-76183"
+       ],
+       "cves": [
+        "CVE-2026-76183"
+       ],
+       "published": "2026-10-01T09:36:26Z",
+       "summary": "Apache Tomcat: Bypass of security constraints for WebSocket endpoints",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.45",
+        "10.1.60",
+        "11.0.26",
+        "9.0.122"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-76183",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-75973",
+       "aliases": [
+        "CVE-2026-75973"
+       ],
+       "cves": [
+        "CVE-2026-75973"
+       ],
+       "published": "2026-10-01T09:36:24Z",
+       "summary": "Apache Tomcat: Cross-context authentication mix-up with Jakarta Authentication configured",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.45",
+        "10.1.60",
+        "11.0.26",
+        "9.0.122"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-75973",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-tomcat-2026-73581",
+       "aliases": [
+        "CVE-2026-73581"
+       ],
+       "cves": [
+        "CVE-2026-73581"
+       ],
+       "published": "2026-10-01T09:36:23Z",
+       "summary": "Apache Tomcat: OpenSSL and OpenSSL-FFM TLS implementations ignore CRLs when certificate uses a keystore",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "9.0.45",
+        "10.1.60",
+        "11.0.26",
+        "9.0.122"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-73581",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "runtimes/postgresql",
+     "name": "postgresql",
+     "label": "PostgreSQL",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "runtimes/mariadb",
+     "name": "mariadb",
+     "label": "MariaDB",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "BIT-mariadb-2026-97380",
+       "aliases": [
+        "BIT-mariadb-min-2026-97380",
+        "BIT-mysql-client-2026-97380",
+        "CVE-2026-97380",
+        "GHSA-625w-4hgq-qwmr"
+       ],
+       "cves": [
+        "CVE-2026-97380"
+       ],
+       "published": "2026-10-21T08:53:01Z",
+       "summary": "MariaDB: GRANT PROXY with empty password incorrectly checks grantor's privileges",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-97380",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-92262",
+       "aliases": [
+        "BIT-mariadb-min-2026-92262",
+        "BIT-mysql-client-2026-92262",
+        "CVE-2026-92262",
+        "GHSA-65jj-h265-3m7h"
+       ],
+       "cves": [
+        "CVE-2026-92262"
+       ],
+       "published": "2026-10-21T08:53:00Z",
+       "summary": "MariaDB: Numerous issues caused by historical #mysql50# tablename encoding bypass.",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-92262",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-86047",
+       "aliases": [
+        "BIT-mariadb-min-2026-86047",
+        "BIT-mysql-client-2026-86047",
+        "CVE-2026-86047",
+        "GHSA-wxr3-wm3p-7w6p"
+       ],
+       "cves": [
+        "CVE-2026-86047"
+       ],
+       "published": "2026-10-21T08:52:59Z",
+       "summary": "MariaDB: Insufficient quoting in mariadb-dump and SHOW commands",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-86047",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-85985",
+       "aliases": [
+        "BIT-mariadb-min-2026-85985",
+        "BIT-mysql-client-2026-85985",
+        "CVE-2026-85985",
+        "GHSA-2245-9hm3-wxf6"
+       ],
+       "cves": [
+        "CVE-2026-85985"
+       ],
+       "published": "2026-10-21T08:52:58Z",
+       "summary": "MariaDB: Unauthorized file access via CONNECT engine UDFs",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-85985",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-85748",
+       "aliases": [
+        "BIT-mariadb-min-2026-85748",
+        "BIT-mysql-client-2026-85748",
+        "CVE-2026-85748",
+        "GHSA-mv8g-9f7q-hprm"
+       ],
+       "cves": [
+        "CVE-2026-85748"
+       ],
+       "published": "2026-10-21T08:52:56Z",
+       "summary": "MariaDB: Use-after-free with a large number of SYS_REFCURSOR's",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-85748",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-85746",
+       "aliases": [
+        "BIT-mariadb-min-2026-85746",
+        "BIT-mysql-client-2026-85746",
+        "CVE-2026-85746",
+        "GHSA-8fvj-c57c-pggx"
+       ],
+       "cves": [
+        "CVE-2026-85746"
+       ],
+       "published": "2026-10-21T08:52:55Z",
+       "summary": "MariaDB: Out-of-bound buffer write on in `ST_AsText` of nested GeometryCollections",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-85746",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-85745",
+       "aliases": [
+        "BIT-mariadb-min-2026-85745",
+        "BIT-mysql-client-2026-85745",
+        "CVE-2026-85745",
+        "GHSA-p7v9-24h4-mch8"
+       ],
+       "cves": [
+        "CVE-2026-85745"
+       ],
+       "published": "2026-10-21T08:52:54Z",
+       "summary": "MariaDB: Out-of-bound buffer read on in `ST_Area` of a multipolygon.",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-85745",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107823",
+       "aliases": [
+        "BIT-mariadb-min-2026-107823",
+        "BIT-mysql-client-2026-107823",
+        "CVE-2026-107823",
+        "GHSA-g2q2-3936-cp37"
+       ],
+       "cves": [
+        "CVE-2026-107823"
+       ],
+       "published": "2026-10-16T08:42:01Z",
+       "summary": "MariaDB: privilege escalation via incorrect view frm parsing",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107823",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107822",
+       "aliases": [
+        "BIT-mariadb-min-2026-107822",
+        "BIT-mysql-client-2026-107822",
+        "CVE-2026-107822",
+        "GHSA-2m85-2x26-36rf"
+       ],
+       "cves": [
+        "CVE-2026-107822"
+       ],
+       "published": "2026-10-16T08:42:00Z",
+       "summary": "MariaDB: database privilege escalation via user / role name collision in the acl cache",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107822",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107821",
+       "aliases": [
+        "BIT-mariadb-min-2026-107821",
+        "BIT-mysql-client-2026-107821",
+        "CVE-2026-107821",
+        "GHSA-c4gx-34mg-95q5"
+       ],
+       "cves": [
+        "CVE-2026-107821"
+       ],
+       "published": "2026-10-16T08:41:59Z",
+       "summary": "MariaDB: insufficient validation of binary frm data when opening a table",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107821",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107818",
+       "aliases": [
+        "BIT-mariadb-min-2026-107818",
+        "BIT-mysql-client-2026-107818",
+        "CVE-2026-107818",
+        "GHSA-mhvc-vqcq-7vq5"
+       ],
+       "cves": [
+        "CVE-2026-107818"
+       ],
+       "published": "2026-10-16T08:41:58Z",
+       "summary": "MariaDB: environment injection via wsrep bootstrap in the mariadb.service file",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107818",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107817",
+       "aliases": [
+        "BIT-mariadb-min-2026-107817",
+        "BIT-mysql-client-2026-107817",
+        "CVE-2026-107817",
+        "GHSA-89ph-64cf-gqcc"
+       ],
+       "cves": [
+        "CVE-2026-107817"
+       ],
+       "published": "2026-10-16T08:41:56Z",
+       "summary": "MariaDB: mysql_json plugin OOB reads",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107817",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107816",
+       "aliases": [
+        "BIT-mariadb-min-2026-107816",
+        "BIT-mysql-client-2026-107816",
+        "CVE-2026-107816",
+        "GHSA-wfqg-88r5-55f6"
+       ],
+       "cves": [
+        "CVE-2026-107816"
+       ],
+       "published": "2026-10-16T08:41:55Z",
+       "summary": "MariaDB: `qc_info` plugin can do OOB reads if query contains \\0",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107816",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107815",
+       "aliases": [
+        "BIT-mariadb-min-2026-107815",
+        "BIT-mysql-client-2026-107815",
+        "CVE-2026-107815",
+        "GHSA-4wgx-ffg9-jrwq"
+       ],
+       "cves": [
+        "CVE-2026-107815"
+       ],
+       "published": "2026-10-16T08:41:54Z",
+       "summary": "MariaDB: one byte OOB write in DOS tables of the CONNECT engine",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107815",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107814",
+       "aliases": [
+        "BIT-mariadb-min-2026-107814",
+        "BIT-mysql-client-2026-107814",
+        "CVE-2026-107814",
+        "GHSA-m5gf-432r-g5jw"
+       ],
+       "cves": [
+        "CVE-2026-107814"
+       ],
+       "published": "2026-10-16T08:41:53Z",
+       "summary": "MariaDB: Insecure $HOME in MariaDB rpm packages",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "10.6.28",
+        "10.11.19",
+        "11.4.13",
+        "11.8.9",
+        "12.3.3",
+        "13.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107814",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107385",
+       "aliases": [
+        "BIT-mariadb-min-2026-107385",
+        "BIT-mysql-client-2026-107385",
+        "CVE-2026-107385",
+        "GHSA-r3rv-jm3r-62q2"
+       ],
+       "cves": [
+        "CVE-2026-107385"
+       ],
+       "published": "2026-10-16T08:41:52Z",
+       "summary": "MariaDB Connector/Node.js: SQL injection in the text protocol when the session uses NO_BACKSLASH_ESCAPES",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.2.5",
+        "3.3.4",
+        "3.4.7",
+        "3.5.4"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107385",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107384",
+       "aliases": [
+        "BIT-mariadb-min-2026-107384",
+        "BIT-mysql-client-2026-107384",
+        "CVE-2026-107384",
+        "GHSA-v6pj-gxxw-phfw"
+       ],
+       "cves": [
+        "CVE-2026-107384"
+       ],
+       "published": "2026-10-16T08:41:51Z",
+       "summary": "MariaDB Connector/Node.js: SQL injection through object keys in SET expansion (permitSetMultiParamEntries)",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.2.5",
+        "3.3.4",
+        "3.4.7",
+        "3.5.4"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107384",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107383",
+       "aliases": [
+        "BIT-mariadb-min-2026-107383",
+        "BIT-mysql-client-2026-107383",
+        "CVE-2026-107383",
+        "GHSA-48qf-xh34-q73r"
+       ],
+       "cves": [
+        "CVE-2026-107383"
+       ],
+       "published": "2026-10-16T08:41:49Z",
+       "summary": "MariaDB Connector/Node.js exposes uninitialized process memory through malformed GeoJSON parameters",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.2.5",
+        "3.3.4",
+        "3.4.7",
+        "3.5.4"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107383",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mariadb-2026-107382",
+       "aliases": [
+        "BIT-mariadb-min-2026-107382",
+        "BIT-mysql-client-2026-107382",
+        "CVE-2026-107382",
+        "GHSA-cx2f-j9fh-8g68"
+       ],
+       "cves": [
+        "CVE-2026-107382"
+       ],
+       "published": "2026-10-16T08:41:48Z",
+       "summary": "MariaDB Connector/Node.js: Uncaught exception crashes the client during ed25519 authentication with zero-configuration TLS",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.5.4"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107382",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "runtimes/redis",
+     "name": "redis",
+     "label": "Redis",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "runtimes/mongodb",
+     "name": "mongodb",
+     "label": "MongoDB",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "BIT-mongodb-2026-9737",
+       "aliases": [
+        "CVE-2026-9737"
+       ],
+       "cves": [
+        "CVE-2026-9737"
+       ],
+       "published": "2026-10-01T09:32:15Z",
+       "summary": "Find command with $meta sort can lead to crash",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "7.0.39",
+        "8.0.28",
+        "8.3.7",
+        "9.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mongodb-2026-9737",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mongodb-2026-89099",
+       "aliases": [
+        "CVE-2026-89099"
+       ],
+       "cves": [
+        "CVE-2026-89099"
+       ],
+       "published": "2026-10-01T09:32:12Z",
+       "summary": "Race Condition in MongoDB Server Document Value Layer Leads to Memory Corruption",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "7.0.43",
+        "8.0.32",
+        "8.3.11",
+        "9.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mongodb-2026-89099",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mongodb-2026-18712",
+       "aliases": [
+        "CVE-2026-18712"
+       ],
+       "cves": [
+        "CVE-2026-18712"
+       ],
+       "published": "2026-09-28T08:44:17Z",
+       "summary": "Improper Authorization in MongoDB Queryable Encryption Maintenance Operations Allows Unauthorized Modification of Other Collections",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "7.0.40",
+        "8.0.29",
+        "8.3.8",
+        "9.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mongodb-2026-18712",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mongodb-2026-18711",
+       "aliases": [
+        "CVE-2026-18711"
+       ],
+       "cves": [
+        "CVE-2026-18711"
+       ],
+       "published": "2026-09-28T08:44:16Z",
+       "summary": "Use-After-Free in MongoDB Query Execution Engine Leads to Denial of Service and Potential Memory Disclosure",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "7.0.41",
+        "8.0.29",
+        "8.3.8",
+        "9.0.2"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mongodb-2026-18711",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "BIT-mongodb-2026-8843",
+       "aliases": [
+        "CVE-2026-8843"
+       ],
+       "cves": [
+        "CVE-2026-8843"
+       ],
+       "published": "2026-09-25T12:29:19Z",
+       "summary": "Calling createIndex with certain index types can crash mongod",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "7.0.32",
+        "8.0.21",
+        "8.2.6"
+       ],
+       "url": "https://osv.dev/vulnerability/BIT-mongodb-2026-8843",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
     }
    ]
   }

@@ -545,7 +545,7 @@ def main() -> int:
             })
         ecosystems.append({
             "id": eco["id"], "label": eco["label"], "osv": eco["osv"],
-            "languages": eco.get("languages"), "survey_share": eco.get("survey_share"),
+            "languages": eco.get("languages"), "survey_share": eco.get("survey_share"), "area": eco.get("area"),
             "packages": pkgs,
         })
     sources["popularity"] = {"ok": True, "detail": sorted(pop_sources)}

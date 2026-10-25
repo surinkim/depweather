@@ -26,6 +26,8 @@
   --sev-3: #d03b3b;
   --sev-3-ink: #ffffff;
   --bar: #2a78d6;
+  --group-line: #52514e;
+  --group-head: #ecebe5;
 }
 @media (prefers-color-scheme: dark) {
   :root:where(:not([data-theme="light"])) {
@@ -42,6 +44,8 @@
     --sev-0: #2c2c2a;
     --sev-0-ink: #c3c2b7;
     --bar: #3987e5;
+    --group-line: #9a988f;
+    --group-head: #262624;
   }
 }
 :root[data-theme="dark"] {
@@ -58,6 +62,8 @@
   --sev-0: #2c2c2a;
   --sev-0-ink: #c3c2b7;
   --bar: #3987e5;
+  --group-line: #9a988f;
+  --group-head: #262624;
 }
 
 * { box-sizing: border-box; }
@@ -251,7 +257,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-25.3";
+const BUILD = "2026-10-25.4";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -326,7 +332,7 @@ const I18N = {
     b_th: { eco: "Ecosystem", n: "New advisories", crit: "Critical", pk: "Packages affected" },
     b_kev_head: "Added to CISA KEV in the last 7 days (all vendors)",
     b_kev_th: { added: "Added", vendor: "Vendor / product", name: "Name" },
-    footer_data: `Data: <a href="https://osv.dev">OSV.dev</a> (including the <a href="https://github.com/github/advisory-database">GitHub Advisory Database</a>, CC-BY 4.0),
+    footer_data: `Data: <a href="https://osv.dev">OSV.dev</a> (including the <a href="https://github.com/github/advisory-database">GitHub Advisory Database</a>, CC-BY 4.0, and the <a href="https://github.com/bitnami/vulndb">Bitnami Vulnerability Database</a>, Apache-2.0),
       <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA Known Exploited Vulnerabilities</a>,
       <a href="https://www.first.org/epss/">FIRST EPSS</a>, <a href="https://nvd.nist.gov">NVD</a>;
       download counts from npm, pypistats, crates.io, Packagist, RubyGems and hex.pm;
@@ -390,7 +396,7 @@ const I18N = {
     b_th: { eco: "생태계", n: "신규 권고", crit: "치명", pk: "영향받은 패키지" },
     b_kev_head: "최근 7일 CISA KEV 추가 (전체 벤더)",
     b_kev_th: { added: "추가일", vendor: "벤더 / 제품", name: "이름" },
-    footer_data: `데이터: <a href="https://osv.dev">OSV.dev</a> (<a href="https://github.com/github/advisory-database">GitHub Advisory Database</a> 포함, CC-BY 4.0),
+    footer_data: `데이터: <a href="https://osv.dev">OSV.dev</a> (<a href="https://github.com/github/advisory-database">GitHub Advisory Database</a> CC-BY 4.0, <a href="https://github.com/bitnami/vulndb">Bitnami Vulnerability Database</a> Apache-2.0 포함),
       <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA Known Exploited Vulnerabilities</a>,
       <a href="https://www.first.org/epss/">FIRST EPSS</a>, <a href="https://nvd.nist.gov">NVD</a>.
       다운로드 수: npm, pypistats, crates.io, Packagist, RubyGems, hex.pm.
@@ -572,6 +578,8 @@ function squarify(items, x, y, w, h) {
 const zoom = { k: 1, tx: 0, ty: 0 };
 const ZOOM_MAX = 8;
 const HEAD = 22;            // group header height, world px
+const GROUP_GAP = 4;        // space between ecosystem groups, world px (half on each side)
+const GROUP_PAD = 4;        // space between a group's border and its tiles, world px
 let layout = null;          // { W, H, groups: [{ eco, x, y, w, h, tiles: [{ p, x, y, w, h }] }] }
 let tmDragged = false;
 let tmClickTimer = 0;       // a single click opens the timeline unless a double-click (zoom) follows
@@ -588,13 +596,16 @@ function computeLayout() {
   else H = Math.max(600, Math.min(1500, Math.round(Math.max(W * 0.6, innerHeight * 0.9))));
   // Group area follows the share of Stack Overflow 2026 respondents who use the
   // ecosystem's language. The floor keeps small ecosystems (Hex) findable.
-  const total = DATA.ecosystems.reduce((s, e) => s + (e.survey_share || 10), 0);
-  const groups = squarify(DATA.ecosystems.map((e) => ({ value: Math.max((e.survey_share || 10) / total, 0.035), eco: e })), 0, 0, W, H);
+  // A group with no language of its own (runtimes & servers) has a fixed `area` instead.
+  const share = (e) => e.survey_share || e.area || 10;
+  const total = DATA.ecosystems.reduce((s, e) => s + share(e), 0);
+  const groups = squarify(DATA.ecosystems.map((e) => ({ value: Math.max(share(e) / total, 0.035), eco: e })), 0, 0, W, H);
   for (const g of groups) {
     const ptotal = g.eco.packages.reduce((s, p) => s + p.popularity, 0) || 1;
     // Floor each tile at 2% of its group so small packages stay clickable.
     g.tiles = g.eco.packages.map((p) => ({ value: Math.max(p.popularity / ptotal, 0.02), p }));
-    squarify(g.tiles, g.x + 3, g.y + HEAD, g.w - 6, g.h - HEAD - 3);
+    const inset = GROUP_GAP + GROUP_PAD;
+    squarify(g.tiles, g.x + inset, g.y + GROUP_GAP + HEAD, g.w - inset * 2, g.h - GROUP_GAP - HEAD - inset);
   }
   layout = { W, H, groups };
 }
@@ -694,19 +705,25 @@ function drawTreemap() {
     const gx = X(g.x), gy = Y(g.y), gw = g.w * k, gh = g.h * k;
     if (!visible(gx, gy, gw, gh)) continue;
     const grp = svgEl("g");
-    grp.append(svgEl("rect", { x: gx + 1, y: gy + 1, width: Math.max(0, gw - 2), height: Math.max(0, gh - 2), rx: 6, fill: "none", stroke: "var(--axis)" }));
-    const affected = g.eco.packages.filter((p) => pkgVulns(p).length).length;
+    // Each ecosystem gets a header band and a strong outline, so groups read as
+    // separate areas rather than as more tiles.
+    const gap = GROUP_GAP * k, bx = gx + gap, by = gy + gap, bw = Math.max(0, gw - gap * 2), bh = Math.max(0, gh - gap * 2);
     const headH = HEAD * k;
+    grp.append(svgEl("rect", { x: bx, y: by, width: bw, height: bh, rx: 8, fill: "var(--surface)" }));
+    grp.append(svgEl("path", { d: `M${bx} ${by + headH}V${by + 8}a8 8 0 0 1 8 -8H${bx + bw - 8}a8 8 0 0 1 8 8V${by + headH}Z`, fill: "var(--group-head)" }));
+    const affected = g.eco.packages.filter((p) => pkgVulns(p).length).length;
     const hfs = Math.min(15, Math.max(11, headH * 0.6));
     if (headH >= 14 && gw > 40) {
-      const head = svgEl("text", { x: Math.max(gx, 0) + 7, y: gy + Math.min(headH, 30) / 2 + hfs * 0.36 + 1, "font-size": hfs, "font-weight": 700, fill: "var(--ink)" });
+      const head = svgEl("text", { x: Math.max(bx, 0) + 8, y: by + Math.min(headH, 30) / 2 + hfs * 0.36 + 1, "font-size": hfs, "font-weight": 700, fill: "var(--ink)" });
       const base = t("group_head", g.eco.label, affected, g.eco.packages.length);
       const extra = g.eco.survey_share ? ` · ${g.eco.languages} ${g.eco.survey_share}%` : "";
       const full = base + extra;
-      head.textContent = full.length * hfs * CHAR_W_BOLD < gw - 14 ? full : fitText(base, gw - 14, hfs, CHAR_W_BOLD);
+      head.textContent = full.length * hfs * CHAR_W_BOLD < bw - 16 ? full : fitText(base, bw - 16, hfs, CHAR_W_BOLD);
       grp.append(head);
     }
     for (const tile of g.tiles) drawTile(grp, g, tile, X(tile.x), Y(tile.y), tile.w * k, tile.h * k, visible);
+    // The outline goes on top so tiles never cover it.
+    grp.append(svgEl("rect", { x: bx, y: by, width: bw, height: bh, rx: 8, fill: "none", stroke: "var(--group-line)", "stroke-width": 2, "pointer-events": "none" }));
     svg.append(grp);
   }
 }

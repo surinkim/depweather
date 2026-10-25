@@ -21,12 +21,14 @@ Status: proof of concept, private while it is being tried out.
 | New in CISA KEV, 7 days | Entries added to the KEV catalog in the last 7 days, any vendor |
 | Popular packages affected | Tracked packages with at least one advisory published in the last 7 days |
 
-**A. Treemap (default view).** One group per ecosystem: npm, PyPI, Maven,
-NuGet, crates.io, Packagist, Go, RubyGems, Hex (136 packages). A group's area
+**A. Treemap (default view).** One outlined group per ecosystem: npm, PyPI,
+Maven, NuGet, crates.io, Packagist, Go, RubyGems, Hex, plus "Runtimes &
+servers" (149 packages). A group's area
 is the share of [Stack Overflow Developer Survey 2026](https://survey.stackoverflow.co/2026/technology/data)
 respondents who use its language (JavaScript 62.0%, Python 58.0%, Java 27.6%,
 C# 27.1%, Rust 18.0%, PHP 17.7%, Go 16.5%, Ruby 5.8%, Elixir 2.6%), with a
-3.5% floor so small groups stay findable. Inside a group, tile size is the
+3.5% floor so small groups stay findable. "Runtimes & servers" maps to no
+single language and has a fixed area (`area: 20` in `stacks.yml`). Inside a group, tile size is the
 package's downloads (see "Data sources"; Maven, NuGet and Go use equal
 weights). Tile color is the worst advisory *published* in the last 7 days
 (toggle: 30 days). "KEV only" keeps only advisories whose CVE is in the CISA
@@ -105,6 +107,13 @@ RubyGems 8, Hex 6). They are picked in this order:
    npm, PyPI, crates.io, Packagist, RubyGems and Hex, so these picks can be
    checked against data and replaced.
 
+**Runtimes and servers** (PHP, Node.js, Python, Java, Ruby, WordPress, nginx,
+Apache httpd, Tomcat, PostgreSQL, MariaDB, Redis, MongoDB) come from OSV's
+Bitnami ecosystem, which tracks them per container image. Their advisories are
+not in the language registries: PHP2Shell (CVE-2026-109618 and
+CVE-2026-109619, October 2026) is a flaw in PHP itself, so it shows on the
+PHP tile, not in the Packagist group.
+
 Some products are filed in OSV under many package names. A tile can match
 several names or name prefixes (`match:` in `stacks.yml`): ASP.NET Core covers
 `Microsoft.AspNetCore.*` (including the per-platform runtime packs), .NET
@@ -122,11 +131,10 @@ DEPWEATHER_STACKS=~/my-stacks.yml python collect/collect.py
 
 Not in the POC:
 
-- **Infrastructure group** (OpenSSL, nginx, Kubernetes components, …). OpenSSL
-  and nginx are not packages in an OSV ecosystem; covering them needs NVD CPE
-  matching. Kubernetes is tracked as the Go module `k8s.io/kubernetes`.
-- **Node.js, WordPress, classic ASP.NET.** High in the survey, but not
-  packages in an OSV ecosystem.
+- **OpenSSL and other system libraries.** Not in OSV's Bitnami data; covering
+  them needs NVD CPE matching or a Linux distribution feed. Kubernetes is
+  tracked as the Go module `k8s.io/kubernetes`.
+- **Classic ASP.NET (.NET Framework).** Not a package in an OSV ecosystem.
 - **Swift (SwiftURL) and Dart (Pub).** OSV has few advisories for them so far.
 - **Search beyond the list.** Search only finds tracked packages for now.
 - **Security fixes without a CVE** (release notes), from the planning notes.
@@ -136,6 +144,7 @@ Not in the POC:
 | Source | Used for | How | Terms |
 |---|---|---|---|
 | [OSV.dev](https://osv.dev) | Advisories, affected and fixed versions, aliases | Per-ecosystem export on `osv-vulnerabilities.storage.googleapis.com` (`modified_id.csv`, then one JSON per entry changed in the window) | Records keep the license of their upstream database. **To confirm**: the OSV data license page, not reachable from the environment this was written in |
+| [Bitnami Vulnerability Database](https://github.com/bitnami/vulndb) | Runtimes & servers group, via OSV | — | Apache License 2.0 (README of `bitnami/vulndb`, checked 2026-10-25) |
 | [GitHub Advisory Database](https://github.com/github/advisory-database) | Most npm / PyPI / Maven / Go advisories, via OSV | — | CC-BY 4.0 (`LICENSE.md` in the repository, checked 2026-10-25). Attribution in the page footer |
 | [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | Known exploited flag, 7-day additions | `known_exploited_vulnerabilities.json`, falling back to CISA's GitHub mirror `cisagov/kev-data` | CC0 1.0. From the `cisagov/kev-data` LICENSE (checked 2026-10-25): "The KEV database is distributed under the Creative Commons 0 1.0 License. You may use this data in any legal manner but note that information provided at any 3rd party links included in the KEV database are bound by the policies and licenses of those 3rd party websites. Use of the information does not authorize you to use the CISA Logo or DHS Seal, nor should such use be interpreted as an endorsement by CISA or DHS." |
 | [FIRST EPSS](https://www.first.org/epss/) | Exploit probability per CVE | `epss_scores-current.csv.gz` | **To confirm.** Secondary copies of FIRST's EPSS usage agreement say the scores are granted freely to the public and ask for attribution to EPSS where practical; the original page at first.org could not be read from the build environment |
