@@ -1,0 +1,3422 @@
+{
+ "generated_at": "2026-10-25T02:13:35Z",
+ "window_days": 30,
+ "sources": {
+  "osv": {
+   "ok": true,
+   "url": "https://osv-vulnerabilities.storage.googleapis.com"
+  },
+  "kev": {
+   "ok": true,
+   "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json"
+  },
+  "epss": {
+   "ok": false,
+   "url": null,
+   "score_date": null
+  },
+  "nvd": {
+   "ok": false,
+   "url": "https://services.nvd.nist.gov/rest/json/cves/2.0"
+  },
+  "popularity": {
+   "ok": true,
+   "detail": [
+    "Go: fixed weight",
+    "Maven: fixed weight",
+    "PyPI: fixed weight",
+    "npm: fixed weight"
+   ]
+  }
+ },
+ "summary": {
+  "today_cves": null,
+  "month": "2026-10",
+  "month_cves": null,
+  "month_cves_last_year": null,
+  "kev_new_7d": 8,
+  "affected_packages_7d": 7,
+  "tracked_packages": 48
+ },
+ "monthly": [],
+ "monthly_is_stale": false,
+ "kev_recent": [
+  {
+   "cve": "CVE-2026-114625",
+   "vendor": "Arista",
+   "product": "VeloCloud Orchestrator",
+   "name": "Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+   "date_added": "2026-10-23"
+  },
+  {
+   "cve": "CVE-2026-110447",
+   "vendor": "Collabora",
+   "product": "Collabora Online – Built-in CODE Server",
+   "name": "Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
+   "date_added": "2026-10-23"
+  },
+  {
+   "cve": "CVE-2026-106931",
+   "vendor": "EG Secure Solutions",
+   "product": "SiteGuard Server Edition",
+   "name": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+   "date_added": "2026-10-20"
+  },
+  {
+   "cve": "CVE-2026-96656",
+   "vendor": "Plex",
+   "product": "Media Server",
+   "name": "Plex Media Server External Control of File Name or Path Vulnerability",
+   "date_added": "2026-10-20"
+  },
+  {
+   "cve": "CVE-2026-96655",
+   "vendor": "Plex",
+   "product": "Media Server",
+   "name": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+   "date_added": "2026-10-20"
+  },
+  {
+   "cve": "CVE-2026-96654",
+   "vendor": "Plex",
+   "product": "Media Server",
+   "name": "Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+   "date_added": "2026-10-20"
+  },
+  {
+   "cve": "CVE-2026-96652",
+   "vendor": "Plex",
+   "product": "Media Server",
+   "name": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+   "date_added": "2026-10-20"
+  },
+  {
+   "cve": "CVE-2026-110936",
+   "vendor": "Siemens",
+   "product": "Software Center",
+   "name": "Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+   "date_added": "2026-10-20"
+  }
+ ],
+ "ecosystems": [
+  {
+   "id": "npm",
+   "label": "npm",
+   "osv": "npm",
+   "packages": [
+    {
+     "key": "npm/next",
+     "name": "next",
+     "label": "next",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "GHSA-673q-mjm6-r5xr",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-22T16:42:31Z",
+       "summary": "Next.js: Unauthenticated Remote Code Execution in `use cache` functions returning typed arrays",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "16.4.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-673q-mjm6-r5xr",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-h694-7cp9-m8p3",
+       "aliases": [
+        "CVE-2026-103004"
+       ],
+       "cves": [
+        "CVE-2026-103004"
+       ],
+       "published": "2026-10-22T16:08:40Z",
+       "summary": "next.js cache leak across root param values in nested 'use cache' functions",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "16.3.8"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-h694-7cp9-m8p3",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-2464-fhr4-w9xw",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-22T15:52:53Z",
+       "summary": "Next.js: Unauthenticated Remote Code Execution in Image Optimization API when SVG files are used",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "15.5.28",
+        "16.4.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-2464-fhr4-w9xw",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-p3m5-59mp-jv5r",
+       "aliases": [
+        "CVE-2026-94482"
+       ],
+       "cves": [
+        "CVE-2026-94482"
+       ],
+       "published": "2026-10-22T15:50:34Z",
+       "summary": "Next.js: Denial of Service in App Router using Server Actions",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "15.5.28",
+        "16.4.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-p3m5-59mp-jv5r",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-3w37-wq28-93x7",
+       "aliases": [
+        "CVE-2026-94544"
+       ],
+       "cves": [
+        "CVE-2026-94544"
+       ],
+       "published": "2026-10-07T20:32:13Z",
+       "summary": "Next.js: Pending `use cache` fill can leak Draft Mode content into regular responses and persisted pages",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 4.2,
+       "fixed": [
+        "16.3.8"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-3w37-wq28-93x7",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-4jqv-mc3x-m676",
+       "aliases": [
+        "CVE-2026-94543"
+       ],
+       "cves": [
+        "CVE-2026-94543"
+       ],
+       "published": "2026-10-07T20:32:06Z",
+       "summary": "Next.js has cache poisoning of SSG and ISR pages in self-hosted applications",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "15.5.27",
+        "16.3.8"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4jqv-mc3x-m676",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-39w2-rjm5-chcv",
+       "aliases": [
+        "CVE-2026-94486"
+       ],
+       "cves": [
+        "CVE-2026-94486"
+       ],
+       "published": "2026-10-07T20:31:51Z",
+       "summary": "Next.js has information disclosure in development server's Model Context Protocol endpoint",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 5.4,
+       "fixed": [
+        "16.3.8"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-39w2-rjm5-chcv",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-f87g-xv8r-7p7x",
+       "aliases": [
+        "CVE-2026-94485"
+       ],
+       "cves": [
+        "CVE-2026-94485"
+       ],
+       "published": "2026-10-07T20:31:33Z",
+       "summary": "Next.js has information disclosure in App Router metadata image routes via dynamicParams bypass",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "16.3.8"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-f87g-xv8r-7p7x",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-mcj8-r9mp-w47p",
+       "aliases": [
+        "CVE-2026-94484"
+       ],
+       "cves": [
+        "CVE-2026-94484"
+       ],
+       "published": "2026-10-07T20:31:13Z",
+       "summary": "Next.js has cache poisoning in SSG/ISR rendering that leads to cross-user content substitution and persistent denial of service",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 4.8,
+       "fixed": [
+        "16.3.8",
+        "15.5.27"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-mcj8-r9mp-w47p",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-cjq9-62q9-8jv4",
+       "aliases": [
+        "CVE-2026-94483"
+       ],
+       "cves": [
+        "CVE-2026-94483"
+       ],
+       "published": "2026-10-07T20:30:55Z",
+       "summary": "Next.js has Server-Side Request Forgery in Image Optimization",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "16.3.8"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-cjq9-62q9-8jv4",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-vcvr-r3jv-pc5j",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-09-30T14:48:30Z",
+       "summary": "Next.js: Remote Code Execution in next/og ImageResponse",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "16.3.6"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vcvr-r3jv-pc5j",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "npm/react",
+     "name": "react",
+     "label": "react",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/express",
+     "name": "express",
+     "label": "express",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/axios",
+     "name": "axios",
+     "label": "axios",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-j8rh-479h-cp32",
+       "aliases": [
+        "CVE-2026-101904"
+       ],
+       "cves": [
+        "CVE-2026-101904"
+       ],
+       "published": "2026-09-30T15:35:14Z",
+       "summary": "Axios: Header Injection via Inherited headers After Minimal Interceptor",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-j8rh-479h-cp32",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-4hqw-qxg8-jxx2",
+       "aliases": [
+        "CVE-2026-101900"
+       ],
+       "cves": [
+        "CVE-2026-101900"
+       ],
+       "published": "2026-09-30T15:34:46Z",
+       "summary": "Axios: Fetch Adapter Header Injection via Inherited FormData getHeaders",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4hqw-qxg8-jxx2",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-m8m8-qj5v-23w3",
+       "aliases": [
+        "CVE-2026-101905"
+       ],
+       "cves": [
+        "CVE-2026-101905"
+       ],
+       "published": "2026-09-30T15:32:51Z",
+       "summary": "Axios: Node HTTP adapter prototype-pollution gadget allows request socket hijack via inherited createConnection",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-m8m8-qj5v-23w3",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-44g4-m2mj-wpvx",
+       "aliases": [
+        "CVE-2026-101899"
+       ],
+       "cves": [
+        "CVE-2026-101899"
+       ],
+       "published": "2026-09-30T15:32:30Z",
+       "summary": "Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-44g4-m2mj-wpvx",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-r4gj-5m52-g5wh",
+       "aliases": [
+        "CVE-2026-101907"
+       ],
+       "cves": [
+        "CVE-2026-101907"
+       ],
+       "published": "2026-09-30T15:31:58Z",
+       "summary": "Axios: maxRedirects: 0 is not enforced by the fetch adapter, allowing redirect-based SSRF",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-r4gj-5m52-g5wh",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-vh66-26gq-q6x8",
+       "aliases": [
+        "CVE-2026-101908"
+       ],
+       "cves": [
+        "CVE-2026-101908"
+       ],
+       "published": "2026-09-30T15:13:16Z",
+       "summary": "Axios: Prototype pollution gadget in fetch adapter can alter outbound requests",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vh66-26gq-q6x8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-9fr6-4gfg-395g",
+       "aliases": [
+        "CVE-2026-101902"
+       ],
+       "cves": [
+        "CVE-2026-101902"
+       ],
+       "published": "2026-09-30T15:12:49Z",
+       "summary": "Axios: Prototype-Pollution Gadget in the Default Instance Allows Inherited Object.prototype.method to Override HTTP Method",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "0.34.0",
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9fr6-4gfg-395g",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-c29m-xwm3-cm6r",
+       "aliases": [
+        "CVE-2026-101903"
+       ],
+       "cves": [
+        "CVE-2026-101903"
+       ],
+       "published": "2026-09-30T15:03:21Z",
+       "summary": "Axios: ReDoS in fromDataURI data: URL parser freezes the Node event loop (DoS)",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-c29m-xwm3-cm6r",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-mghh-pgcx-3jjj",
+       "aliases": [
+        "CVE-2026-101906"
+       ],
+       "cves": [
+        "CVE-2026-101906"
+       ],
+       "published": "2026-09-30T15:03:02Z",
+       "summary": "Axios: ReDoS (O(N²)) in shouldBypassProxy host normalization, reachable via untrusted redirect Location",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-mghh-pgcx-3jjj",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-x97p-jq2g-jp4f",
+       "aliases": [
+        "CVE-2026-101909"
+       ],
+       "cves": [
+        "CVE-2026-101909"
+       ],
+       "published": "2026-09-30T15:02:45Z",
+       "summary": "Axios: Prototype Pollution Gadget in axios toFormData Options",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "0.34.0",
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-x97p-jq2g-jp4f",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-3pq3-5fj3-cg6v",
+       "aliases": [
+        "CVE-2026-101898"
+       ],
+       "cves": [
+        "CVE-2026-101898"
+       ],
+       "published": "2026-09-30T15:02:14Z",
+       "summary": "Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-3pq3-5fj3-cg6v",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-542g-h47m-68v8",
+       "aliases": [
+        "CVE-2026-101901"
+       ],
+       "cves": [
+        "CVE-2026-101901"
+       ],
+       "published": "2026-09-30T15:01:07Z",
+       "summary": "Axios: Denial of Service via Unhandled 'error' Event in HTTP/2 ClientHttp2Session Initialization",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.20.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-542g-h47m-68v8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "npm/lodash",
+     "name": "lodash",
+     "label": "lodash",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/vite",
+     "name": "vite",
+     "label": "vite",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "HIGH",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-9jrq-w75r-8gcw",
+       "aliases": [
+        "CVE-2026-112945"
+       ],
+       "cves": [
+        "CVE-2026-112945"
+       ],
+       "published": "2026-10-21T16:48:14Z",
+       "summary": "Vite: Cross origin script execution through Vite custom middleware",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "8.3.3",
+        "8.2.4",
+        "8.1.6",
+        "7.3.7",
+        "6.4.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9jrq-w75r-8gcw",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-rq7h-c2jc-7f22",
+       "aliases": [
+        "CVE-2026-112946"
+       ],
+       "cves": [
+        "CVE-2026-112946"
+       ],
+       "published": "2026-10-21T16:47:42Z",
+       "summary": "Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.3.3",
+        "8.2.4",
+        "8.1.6",
+        "7.3.7",
+        "6.4.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-rq7h-c2jc-7f22",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-vfpm-58rq-9qcg",
+       "aliases": [
+        "CVE-2026-112947"
+       ],
+       "cves": [
+        "CVE-2026-112947"
+       ],
+       "published": "2026-10-21T16:47:15Z",
+       "summary": "Vite: First 4 bytes of files outside of `server.fs` setting is exposed by `?vite-wasm-instance`",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.3.3",
+        "8.2.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vfpm-58rq-9qcg",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-r825-w8mm-5pxw",
+       "aliases": [
+        "CVE-2026-112944"
+       ],
+       "cves": [
+        "CVE-2026-112944"
+       ],
+       "published": "2026-10-20T19:51:52Z",
+       "summary": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.3.3",
+        "8.2.4",
+        "8.1.6",
+        "7.3.7",
+        "6.4.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-r825-w8mm-5pxw",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-587h-7wmj-h5pm",
+       "aliases": [
+        "CVE-2026-112942"
+       ],
+       "cves": [
+        "CVE-2026-112942"
+       ],
+       "published": "2026-10-20T19:48:25Z",
+       "summary": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.3.3",
+        "8.2.4",
+        "8.1.6",
+        "7.3.7",
+        "6.4.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-587h-7wmj-h5pm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-698v-4r3x-3vcv",
+       "aliases": [
+        "CVE-2026-112943"
+       ],
+       "cves": [
+        "CVE-2026-112943"
+       ],
+       "published": "2026-10-20T18:30:24Z",
+       "summary": "launch-editor: escapeCmdArgs() omits % escaping on Windows",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "8.3.3",
+        "8.2.4",
+        "8.1.6",
+        "7.3.7",
+        "6.4.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-698v-4r3x-3vcv",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "npm/undici",
+     "name": "undici",
+     "label": "undici",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "HIGH",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-xjj6-f33q-929c",
+       "aliases": [
+        "CVE-2026-109869"
+       ],
+       "cves": [
+        "CVE-2026-109869"
+       ],
+       "published": "2026-10-23T22:14:31Z",
+       "summary": "undici vulnerable to Denial of Service via unhandled error on excessive content-encodings",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "6.29.1",
+        "7.30.1",
+        "8.12.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-xjj6-f33q-929c",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-4qv8-2p9j-2685",
+       "aliases": [
+        "CVE-2026-109924"
+       ],
+       "cves": [
+        "CVE-2026-109924"
+       ],
+       "published": "2026-10-23T22:13:29Z",
+       "summary": "undici vulnerable to Denial of Service via unbounded memory in the EventSource parser",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "6.29.1",
+        "7.30.1",
+        "8.12.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4qv8-2p9j-2685",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-f72v-6w45-q472",
+       "aliases": [
+        "CVE-2026-109841"
+       ],
+       "cves": [
+        "CVE-2026-109841"
+       ],
+       "published": "2026-10-23T22:12:57Z",
+       "summary": "undici vulnerable to Subresource Integrity bypass via non-lowercase algorithm tokens",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "7.30.1",
+        "8.12.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-f72v-6w45-q472",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-pmjh-fq2x-6v4x",
+       "aliases": [
+        "CVE-2026-18149"
+       ],
+       "cves": [
+        "CVE-2026-18149"
+       ],
+       "published": "2026-09-29T18:22:34Z",
+       "summary": "undici vulnerable to Denial of Service via orphaned RetryHandler response body",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-pmjh-fq2x-6v4x",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-r53p-7pc4-xj5r",
+       "aliases": [
+        "CVE-2026-18540"
+       ],
+       "cves": [
+        "CVE-2026-18540"
+       ],
+       "published": "2026-09-29T18:22:07Z",
+       "summary": "undici vulnerable to downstream response splitting via retry interceptor",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 3.7,
+       "fixed": [
+        "6.28.1",
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-r53p-7pc4-xj5r",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-rfgv-xxqx-mfg5",
+       "aliases": [
+        "CVE-2026-19534"
+       ],
+       "cves": [
+        "CVE-2026-19534"
+       ],
+       "published": "2026-09-29T18:21:33Z",
+       "summary": "undici vulnerable to Denial of Service via unrequested WebSocket subprotocol",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "6.28.1",
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-rfgv-xxqx-mfg5",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-3xpg-4rpp-hhhm",
+       "aliases": [
+        "CVE-2026-84890"
+       ],
+       "cves": [
+        "CVE-2026-84890"
+       ],
+       "published": "2026-09-29T18:20:37Z",
+       "summary": "undici vulnerable to Denial of Service via unbounded decompression of compressed responses",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-3xpg-4rpp-hhhm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-2jfj-6hjv-fm6j",
+       "aliases": [
+        "CVE-2026-84933"
+       ],
+       "cves": [
+        "CVE-2026-84933"
+       ],
+       "published": "2026-09-29T18:19:58Z",
+       "summary": "undici vulnerable to cross-user cookie disclosure via Set-Cookie caching in shared caches",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-2jfj-6hjv-fm6j",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-2gqq-gqf2-x968",
+       "aliases": [
+        "CVE-2026-84947"
+       ],
+       "cves": [
+        "CVE-2026-84947"
+       ],
+       "published": "2026-09-29T18:18:51Z",
+       "summary": "undici vulnerable to response truncation via oversized chunked responses in the dump interceptor",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 3.7,
+       "fixed": [
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-2gqq-gqf2-x968",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-w293-vg96-wgc3",
+       "aliases": [
+        "CVE-2026-84961"
+       ],
+       "cves": [
+        "CVE-2026-84961"
+       ],
+       "published": "2026-09-29T18:17:15Z",
+       "summary": "undici vulnerable to TLS certificate validation bypass via dropped connect options in BalancedPool",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.4,
+       "fixed": [
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-w293-vg96-wgc3",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-8436-99hf-9mmv",
+       "aliases": [
+        "CVE-2026-85008"
+       ],
+       "cves": [
+        "CVE-2026-85008"
+       ],
+       "published": "2026-09-29T18:16:28Z",
+       "summary": "undici vulnerable to caching and replay of unsafe HTTP method responses",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 3.7,
+       "fixed": [
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-8436-99hf-9mmv",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-vp8m-p9jh-q5pm",
+       "aliases": [
+        "CVE-2026-85152"
+       ],
+       "cves": [
+        "CVE-2026-85152"
+       ],
+       "published": "2026-09-29T18:15:13Z",
+       "summary": "undici vulnerable to cross-origin cache poisoning via missing origin isolation in interceptors",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.4,
+       "fixed": [
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vp8m-p9jh-q5pm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-rx4f-c7p8-82vq",
+       "aliases": [
+        "CVE-2026-85014"
+       ],
+       "cves": [
+        "CVE-2026-85014"
+       ],
+       "published": "2026-09-29T18:10:32Z",
+       "summary": "undici vulnerable to Denial of Service via WebSocketStream unclean close",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-rx4f-c7p8-82vq",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-3wwx-pv8p-q78v",
+       "aliases": [
+        "CVE-2026-85024"
+       ],
+       "cves": [
+        "CVE-2026-85024"
+       ],
+       "published": "2026-09-28T21:42:37Z",
+       "summary": "undici vulnerable to Denial of Service via unhandled error in WebSocket permessage-deflate decompression",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "6.28.1",
+        "7.29.1",
+        "8.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-3wwx-pv8p-q78v",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "npm/vue",
+     "name": "vue",
+     "label": "vue",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/@angular/core",
+     "name": "@angular/core",
+     "label": "@angular/core",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/webpack",
+     "name": "webpack",
+     "label": "webpack",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/ws",
+     "name": "ws",
+     "label": "ws",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/jsonwebtoken",
+     "name": "jsonwebtoken",
+     "label": "jsonwebtoken",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    }
+   ]
+  },
+  {
+   "id": "pypi",
+   "label": "PyPI",
+   "osv": "PyPI",
+   "packages": [
+    {
+     "key": "pypi/requests",
+     "name": "requests",
+     "label": "requests",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/django",
+     "name": "django",
+     "label": "django",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "PYSEC-2026-4035",
+       "aliases": [
+        "BIT-django-2026-15307",
+        "CVE-2026-15307",
+        "GHSA-wvqv-fj8w-qmhm"
+       ],
+       "cves": [
+        "CVE-2026-15307"
+       ],
+       "published": "2026-10-01T16:38:29Z",
+       "summary": "Django GeoDjango spatial lookups allow file writes and outbound requests through GDAL raster parsing",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "fixed": [
+        "5.2.17",
+        "6.0.8"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4035",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "pypi/numpy",
+     "name": "numpy",
+     "label": "numpy",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/jinja2",
+     "name": "jinja2",
+     "label": "jinja2",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/fastapi",
+     "name": "fastapi",
+     "label": "fastapi",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/flask",
+     "name": "flask",
+     "label": "flask",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/urllib3",
+     "name": "urllib3",
+     "label": "urllib3",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-gh4c-6fx4-qh6g",
+       "aliases": [
+        "CVE-2026-97688",
+        "PYSEC-2026-4176"
+       ],
+       "cves": [
+        "CVE-2026-97688"
+       ],
+       "published": "2026-09-30T15:00:38Z",
+       "summary": "urllib3: Chunked Deflate streaming can enter an infinite loop",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.8.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-gh4c-6fx4-qh6g",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-vxq7-64xx-v4gw",
+       "aliases": [
+        "CVE-2026-97689",
+        "PYSEC-2026-4177"
+       ],
+       "cves": [
+        "CVE-2026-97689"
+       ],
+       "published": "2026-09-30T14:46:18Z",
+       "summary": "urllib3: HTTPResponse.stream()/read_chunked() buffers an unbounded chunk-size line into memory",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.8.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-8988-9cw3-xx77",
+       "aliases": [
+        "CVE-2026-97687",
+        "PYSEC-2026-4175"
+       ],
+       "cves": [
+        "CVE-2026-97687"
+       ],
+       "published": "2026-09-30T14:46:04Z",
+       "summary": "urllib3: HTTPS proxy TLS configuration may be ignored or overridden",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2.8.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-8988-9cw3-xx77",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "pypi/pillow",
+     "name": "pillow",
+     "label": "pillow",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "GHSA-5x8w-8jj5-q52h",
+       "aliases": [
+        "CVE-2026-112398"
+       ],
+       "cves": [
+        "CVE-2026-112398"
+       ],
+       "published": "2026-10-23T21:55:21Z",
+       "summary": "Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-5x8w-8jj5-q52h",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-654x-cwwv-5j9c",
+       "aliases": [
+        "CVE-2026-114501"
+       ],
+       "cves": [
+        "CVE-2026-114501"
+       ],
+       "published": "2026-10-23T21:53:21Z",
+       "summary": "Pillow: Arrow export leaks stale heap memory when PILLOW_ALIGNMENT > 1",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-654x-cwwv-5j9c",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-78g4-xqwv-q3g8",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-22T17:01:08Z",
+       "summary": "Pillow: Bundled libopenjp2 2.5.4 in all wheels since 11.1.0 carries OSV-2025-219 heap-buffer-overflow write reachable from Image.open().load()",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 8.1,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-78g4-xqwv-q3g8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-g7cr-3p24-7wf7",
+       "aliases": [
+        "CVE-2026-96778"
+       ],
+       "cves": [
+        "CVE-2026-96778"
+       ],
+       "published": "2026-10-22T16:05:39Z",
+       "summary": "Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-g7cr-3p24-7wf7",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-9v9v-9qvf-h2hj",
+       "aliases": [
+        "CVE-2026-96644"
+       ],
+       "cves": [
+        "CVE-2026-96644"
+       ],
+       "published": "2026-10-22T16:03:14Z",
+       "summary": "Pillow: Heap over-read in WMF/EMF rendering via 16-bit dimension truncation (Windows builds)",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9v9v-9qvf-h2hj",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-g4qv-2jxx-769h",
+       "aliases": [
+        "CVE-2026-96643"
+       ],
+       "cves": [
+        "CVE-2026-96643"
+       ],
+       "published": "2026-10-22T16:02:39Z",
+       "summary": "Pillow: PNG eXIf chunk makes EXIF parsing run in quadratic time",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-g4qv-2jxx-769h",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-3j72-p6qg-6xp7",
+       "aliases": [
+        "CVE-2026-96642"
+       ],
+       "cves": [
+        "CVE-2026-96642"
+       ],
+       "published": "2026-10-22T16:01:46Z",
+       "summary": "Pillow: TarIO negative size field causes infinite CPU-spin loop",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-3j72-p6qg-6xp7",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-4rm8-3hmm-39fg",
+       "aliases": [
+        "CVE-2026-96641"
+       ],
+       "cves": [
+        "CVE-2026-96641"
+       ],
+       "published": "2026-10-22T16:01:14Z",
+       "summary": "Pillow: Reachable undefined behavior in native integer operations, potentially leading to denial of service or logic integrity compromise",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4rm8-3hmm-39fg",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-mrfp-p49p-3hf2",
+       "aliases": [
+        "CVE-2026-96640"
+       ],
+       "cves": [
+        "CVE-2026-96640"
+       ],
+       "published": "2026-10-22T16:00:47Z",
+       "summary": "Pillow PDF append accepts malformed shared page-tree DAG causing resource exhaustion",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-mrfp-p49p-3hf2",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-v9pv-5gc8-w2m6",
+       "aliases": [
+        "CVE-2026-96639"
+       ],
+       "cves": [
+        "CVE-2026-96639"
+       ],
+       "published": "2026-10-22T16:00:15Z",
+       "summary": "Pillow multi-frame loaders can reuse stale native image storage after mode transitions",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": 9.8,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-v9pv-5gc8-w2m6",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-24rc-8hj2-v98c",
+       "aliases": [
+        "CVE-2026-96638"
+       ],
+       "cves": [
+        "CVE-2026-96638"
+       ],
+       "published": "2026-10-22T15:59:35Z",
+       "summary": "Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-24rc-8hj2-v98c",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-g842-9rc4-69pw",
+       "aliases": [
+        "CVE-2026-96637"
+       ],
+       "cves": [
+        "CVE-2026-96637"
+       ],
+       "published": "2026-10-22T15:57:17Z",
+       "summary": "Pillow: Decompression bomb check bypass in SpiderImagePlugin.seek() leads to unbounded allocation DoS",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-g842-9rc4-69pw",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-p8hx-v2p6-rp84",
+       "aliases": [
+        "CVE-2026-96636"
+       ],
+       "cves": [
+        "CVE-2026-96636"
+       ],
+       "published": "2026-10-22T15:56:37Z",
+       "summary": "Pillow: Decompression-bomb protection bypass via multi-frame seek() in MPO and DCX (MpoImageFile.seek / DcxImageFile.seek)",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-p8hx-v2p6-rp84",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-xvh5-g6gv-559v",
+       "aliases": [
+        "CVE-2026-112902"
+       ],
+       "cves": [
+        "CVE-2026-112902"
+       ],
+       "published": "2026-10-21T21:29:16Z",
+       "summary": "Pillow: Memory disclosure and segfault in libtiff encoder via crafted TIFF tags",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-xvh5-g6gv-559v",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-332p-7hrc-92wf",
+       "aliases": [
+        "CVE-2026-112393"
+       ],
+       "cves": [
+        "CVE-2026-112393"
+       ],
+       "published": "2026-10-21T21:28:09Z",
+       "summary": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-332p-7hrc-92wf",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-4rr5-89j8-mwwm",
+       "aliases": [
+        "CVE-2026-112396"
+       ],
+       "cves": [
+        "CVE-2026-112396"
+       ],
+       "published": "2026-10-21T21:24:19Z",
+       "summary": "Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4rr5-89j8-mwwm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-f2g6-542v-9j58",
+       "aliases": [
+        "CVE-2026-112406"
+       ],
+       "cves": [
+        "CVE-2026-112406"
+       ],
+       "published": "2026-10-21T21:21:07Z",
+       "summary": "Pillow: Infinite loop in PdfParser.rewrite_pages on page tree Parent cycle",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-f2g6-542v-9j58",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-5xm2-6676-qcp9",
+       "aliases": [
+        "CVE-2026-112399"
+       ],
+       "cves": [
+        "CVE-2026-112399"
+       ],
+       "published": "2026-10-21T21:17:56Z",
+       "summary": "Pillow: APNG background disposal allocates full canvas before decompression bomb check",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-5xm2-6676-qcp9",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-gg2r-wvfm-q9rx",
+       "aliases": [
+        "CVE-2026-112892"
+       ],
+       "cves": [
+        "CVE-2026-112892"
+       ],
+       "published": "2026-10-21T21:12:56Z",
+       "summary": "Pillow: MSP RLE decoder expands a tiny file into unbounded memory",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-gg2r-wvfm-q9rx",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-jg86-v3jv-hrpm",
+       "aliases": [
+        "CVE-2026-112894"
+       ],
+       "cves": [
+        "CVE-2026-112894"
+       ],
+       "published": "2026-10-21T21:11:44Z",
+       "summary": "Pillow: Quadratic-time DoS in PDF save_all (PdfParser.next_object_id)",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-jg86-v3jv-hrpm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-254f-3936-288h",
+       "aliases": [
+        "CVE-2026-112391"
+       ],
+       "cves": [
+        "CVE-2026-112391"
+       ],
+       "published": "2026-10-21T21:11:07Z",
+       "summary": "Pillow: PdfParser can recurse without limit in get_value() and linearize_page_tree()",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-254f-3936-288h",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-xgh8-jp6q-p5x8",
+       "aliases": [
+        "CVE-2026-112901"
+       ],
+       "cves": [
+        "CVE-2026-112901"
+       ],
+       "published": "2026-10-21T20:45:06Z",
+       "summary": "Pillow: ReDoS in XbmImagePlugin: 512-byte file stalls Image.open() for minutes",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-xgh8-jp6q-p5x8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-rfgq-q3w2-pmv2",
+       "aliases": [
+        "CVE-2026-112898"
+       ],
+       "cves": [
+        "CVE-2026-112898"
+       ],
+       "published": "2026-10-21T20:44:07Z",
+       "summary": "Pillow: Image.quantize() with empty palette leaks uninitialized stack memory",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-rfgq-q3w2-pmv2",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-74r2-7ff9-mjj2",
+       "aliases": [
+        "CVE-2026-112401"
+       ],
+       "cves": [
+        "CVE-2026-112401"
+       ],
+       "published": "2026-10-21T20:42:11Z",
+       "summary": "Pillow: Quadratic GIF comment concatenation allows DoS in Image.open()",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-74r2-7ff9-mjj2",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-22hg-r758-rrw9",
+       "aliases": [
+        "CVE-2026-112390"
+       ],
+       "cves": [
+        "CVE-2026-112390"
+       ],
+       "published": "2026-10-21T20:39:49Z",
+       "summary": "Pillow: Infinite loop in MIC n_frames when the embedded TIFF",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-22hg-r758-rrw9",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-fc9g-5qg7-mf45",
+       "aliases": [
+        "CVE-2026-112891"
+       ],
+       "cves": [
+        "CVE-2026-112891"
+       ],
+       "published": "2026-10-21T20:38:43Z",
+       "summary": "Pillow: Quadratic GIF comment copying during save",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-fc9g-5qg7-mf45",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-27h8-gf7j-v5hc",
+       "aliases": [
+        "CVE-2026-112392"
+       ],
+       "cves": [
+        "CVE-2026-112392"
+       ],
+       "published": "2026-10-21T20:32:37Z",
+       "summary": "Pillow: NULL dereference in ImagingExpand via rank filters on zero-size images",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-27h8-gf7j-v5hc",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-cp9v-662q-vvx9",
+       "aliases": [
+        "CVE-2026-112405"
+       ],
+       "cves": [
+        "CVE-2026-112405"
+       ],
+       "published": "2026-10-21T20:30:25Z",
+       "summary": "Pillow: NULL pointer dereference in Image.merge via an unvalidated band 0",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-cp9v-662q-vvx9",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-j4m9-6w36-pw47",
+       "aliases": [
+        "CVE-2026-112893"
+       ],
+       "cves": [
+        "CVE-2026-112893"
+       ],
+       "published": "2026-10-21T20:06:34Z",
+       "summary": "Pillow: Invalid free in FreeType glyph rendering when a stroker is active",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-j4m9-6w36-pw47",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-7mwm-ghpf-9vrm",
+       "aliases": [
+        "CVE-2026-112402"
+       ],
+       "cves": [
+        "CVE-2026-112402"
+       ],
+       "published": "2026-10-21T20:03:56Z",
+       "summary": "Pillow: Double free in ImagingScaleAffine on calloc failure via Image.transform",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-7mwm-ghpf-9vrm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-4558-3h8r-v8xp",
+       "aliases": [
+        "CVE-2026-112394"
+       ],
+       "cves": [
+        "CVE-2026-112394"
+       ],
+       "published": "2026-10-21T20:00:32Z",
+       "summary": "Pillow: P;2L and P;4L decoders may read 1 to 3 bytes past the passed buffer size",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4558-3h8r-v8xp",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-w889-685w-c8fh",
+       "aliases": [
+        "CVE-2026-112900"
+       ],
+       "cves": [
+        "CVE-2026-112900"
+       ],
+       "published": "2026-10-21T19:58:44Z",
+       "summary": "Pillow: Argument Injection in Ghostscript call, potentially leading into RCE",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-w889-685w-c8fh",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-58r4-6rv3-gfh8",
+       "aliases": [
+        "CVE-2026-112397"
+       ],
+       "cves": [
+        "CVE-2026-112397"
+       ],
+       "published": "2026-10-20T20:56:22Z",
+       "summary": "Pillow: Out-of-bounds access in _imagingmorph on a zero-width image",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-58r4-6rv3-gfh8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-65qm-jvmh-6pqg",
+       "aliases": [
+        "CVE-2026-112400"
+       ],
+       "cves": [
+        "CVE-2026-112400"
+       ],
+       "published": "2026-10-20T20:53:36Z",
+       "summary": "Pillow: GIF seek keeps rejected size after DecompressionBombError, allowing DoS",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-65qm-jvmh-6pqg",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-vx6w-vv9f-6gvg",
+       "aliases": [
+        "CVE-2026-112899"
+       ],
+       "cves": [
+        "CVE-2026-112899"
+       ],
+       "published": "2026-10-20T20:53:21Z",
+       "summary": "Pillow: EPS load(scale) lets Ghostscript render past the decompression bomb limit",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vx6w-vv9f-6gvg",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-q45j-58j2-45rg",
+       "aliases": [
+        "CVE-2026-112897"
+       ],
+       "cves": [
+        "CVE-2026-112897"
+       ],
+       "published": "2026-10-20T20:52:43Z",
+       "summary": "Pillow: TiffDecode returns uninitialized memory as pixels for short JPEG strips",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-q45j-58j2-45rg",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-pchr-8j38-3x4p",
+       "aliases": [
+        "CVE-2026-112896"
+       ],
+       "cves": [
+        "CVE-2026-112896"
+       ],
+       "published": "2026-10-20T20:51:40Z",
+       "summary": "Pillow: TIFF encoder ColorMap plane-size mismatch causes a heap out-of-bounds read",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-pchr-8j38-3x4p",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-p4wg-p73j-c528",
+       "aliases": [
+        "CVE-2026-112895"
+       ],
+       "cves": [
+        "CVE-2026-112895"
+       ],
+       "published": "2026-10-20T20:50:49Z",
+       "summary": "Pillow: Unbounded recursion parsing a PDF page tree or trailer chain (incomplete fix for CVE-2026-42310)",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-p4wg-p73j-c528",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-462x-pgg6-55fp",
+       "aliases": [
+        "CVE-2026-112395"
+       ],
+       "cves": [
+        "CVE-2026-112395"
+       ],
+       "published": "2026-10-20T20:49:26Z",
+       "summary": "Pillow tiled-TIFF decoder reads past tile buffer in copy4 (Unpack.c:1290)",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-462x-pgg6-55fp",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-c6hw-5grf-ff96",
+       "aliases": [
+        "CVE-2026-112404"
+       ],
+       "cves": [
+        "CVE-2026-112404"
+       ],
+       "published": "2026-10-20T20:42:00Z",
+       "summary": "Pillow: OOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-c6hw-5grf-ff96",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-8g5g-8vmr-9782",
+       "aliases": [
+        "CVE-2026-112403"
+       ],
+       "cves": [
+        "CVE-2026-112403"
+       ],
+       "published": "2026-10-20T20:40:07Z",
+       "summary": "Pillow: Heap buffer overflow in ImagingJpegDecode",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-8g5g-8vmr-9782",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "pypi/cryptography",
+     "name": "cryptography",
+     "label": "cryptography",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/setuptools",
+     "name": "setuptools",
+     "label": "setuptools",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "UNKNOWN",
+     "worst_30d": "UNKNOWN",
+     "vulns": [
+      {
+       "id": "GHSA-xmj3-9gf7-h52w",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-23T21:44:11Z",
+       "summary": "setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "84.1.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-xmj3-9gf7-h52w",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "pypi/pyyaml",
+     "name": "pyyaml",
+     "label": "pyyaml",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/transformers",
+     "name": "transformers",
+     "label": "transformers",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "PYSEC-2026-4174",
+       "aliases": [
+        "CVE-2026-80047",
+        "GHSA-x9r9-c232-4q39"
+       ],
+       "cves": [
+        "CVE-2026-80047"
+       ],
+       "published": "2026-10-01T16:38:29Z",
+       "summary": "Hugging Face Transformers downloads custom generation code before trust consent",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.8,
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4174",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "maven",
+   "label": "Maven",
+   "osv": "Maven",
+   "packages": [
+    {
+     "key": "maven/org.springframework:spring-web",
+     "name": "org.springframework:spring-web",
+     "label": "spring-web",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/org.springframework.boot:spring-boot",
+     "name": "org.springframework.boot:spring-boot",
+     "label": "spring-boot",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/com.fasterxml.jackson.core:jackson-databind",
+     "name": "com.fasterxml.jackson.core:jackson-databind",
+     "label": "jackson-databind",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-cxp5-3px4-pw24",
+       "aliases": [
+        "CVE-2026-91777"
+       ],
+       "cves": [
+        "CVE-2026-91777"
+       ],
+       "published": "2026-09-30T15:37:24Z",
+       "summary": "jackson-databind quadratic forward-reference completion",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "2.21.7",
+        "2.18.11",
+        "2.22.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-cxp5-3px4-pw24",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-wv8q-qhhj-9h54",
+       "aliases": [
+        "CVE-2026-91776"
+       ],
+       "cves": [
+        "CVE-2026-91776"
+       ],
+       "published": "2026-09-30T15:36:55Z",
+       "summary": "jackson-databind retains every unknown raw type ID",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "2.18.11",
+        "2.21.7",
+        "2.22.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-wv8q-qhhj-9h54",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-gx83-3vf8-gh7j",
+       "aliases": [
+        "CVE-2026-83557"
+       ],
+       "cves": [
+        "CVE-2026-83557"
+       ],
+       "published": "2026-09-28T20:44:25Z",
+       "summary": "jackson-databind: Comparable missing from DefaultBaseTypeLimitingValidator's unsafe base types (incomplete PolymorphicTypeValidator denylist)",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.6,
+       "fixed": [
+        "2.18.10",
+        "2.21.6",
+        "2.22.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-gx83-3vf8-gh7j",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-q4xh-88c3-wmh7",
+       "aliases": [
+        "CVE-2026-68497"
+       ],
+       "cves": [
+        "CVE-2026-68497"
+       ],
+       "published": "2026-09-28T20:19:46Z",
+       "summary": "jackson-databind: Duration XMLGregorianCalendar Unbounded Number Parse DoS",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "2.18.10",
+        "2.21.6",
+        "2.22.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-q4xh-88c3-wmh7",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-wjgm-6hv5-3cvf",
+       "aliases": [
+        "CVE-2026-19032"
+       ],
+       "cves": [
+        "CVE-2026-19032"
+       ],
+       "published": "2026-09-28T20:19:19Z",
+       "summary": "jackson-databind: Path Deserialization Missing Scheme Allowlist for FileSystemProvider Resolution",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "2.18.10",
+        "2.21.6",
+        "2.22.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-wjgm-6hv5-3cvf",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-vvgp-rfg2-7rr6",
+       "aliases": [
+        "CVE-2026-77310"
+       ],
+       "cves": [
+        "CVE-2026-77310"
+       ],
+       "published": "2026-09-28T20:17:41Z",
+       "summary": "jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "2.18.9",
+        "2.21.5",
+        "2.22.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vvgp-rfg2-7rr6",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "maven/org.apache.logging.log4j:log4j-core",
+     "name": "org.apache.logging.log4j:log4j-core",
+     "label": "log4j-core",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/io.netty:netty-codec-http",
+     "name": "io.netty:netty-codec-http",
+     "label": "netty-codec-http",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/org.apache.tomcat.embed:tomcat-embed-core",
+     "name": "org.apache.tomcat.embed:tomcat-embed-core",
+     "label": "tomcat-embed-core",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/com.google.guava:guava",
+     "name": "com.google.guava:guava",
+     "label": "guava",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/org.apache.commons:commons-lang3",
+     "name": "org.apache.commons:commons-lang3",
+     "label": "commons-lang3",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/org.yaml:snakeyaml",
+     "name": "org.yaml:snakeyaml",
+     "label": "snakeyaml",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/com.google.protobuf:protobuf-java",
+     "name": "com.google.protobuf:protobuf-java",
+     "label": "protobuf-java",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/org.apache.kafka:kafka-clients",
+     "name": "org.apache.kafka:kafka-clients",
+     "label": "kafka-clients",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/ch.qos.logback:logback-classic",
+     "name": "ch.qos.logback:logback-classic",
+     "label": "logback-classic",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    }
+   ]
+  },
+  {
+   "id": "go",
+   "label": "Go",
+   "osv": "Go",
+   "packages": [
+    {
+     "key": "go/stdlib",
+     "name": "stdlib",
+     "label": "Go stdlib",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "UNKNOWN",
+     "worst_30d": "UNKNOWN",
+     "vulns": [
+      {
+       "id": "GO-2026-6809",
+       "aliases": [
+        "CVE-2026-111943",
+        "RUSTSEC-2026-0381",
+        "RUSTSEC-2026-0382",
+        "RUSTSEC-2026-0383"
+       ],
+       "cves": [
+        "CVE-2026-111943"
+       ],
+       "published": "2026-10-21T00:27:29Z",
+       "summary": "Distrust compromised intermediate certificates in crypto/x509",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.10",
+        "1.27.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6809",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6599",
+       "aliases": [
+        "BIT-golang-2026-94448",
+        "CVE-2026-94448"
+       ],
+       "cves": [
+        "CVE-2026-94448"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Reset context tracking on consecutive template expressions in html/template",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6599",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6610",
+       "aliases": [
+        "BIT-golang-2026-78660",
+        "CVE-2026-78660"
+       ],
+       "cves": [
+        "CVE-2026-78660"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "HTTP/2 transport accepts malformed framing-related headers in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6610",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6605",
+       "aliases": [
+        "BIT-golang-2026-56866",
+        "CVE-2026-56866"
+       ],
+       "cves": [
+        "CVE-2026-56866"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "HTTP/1 client connection desynchronization after CONNECT rejection in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6605",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6617",
+       "aliases": [
+        "BIT-golang-2026-97032",
+        "CVE-2026-97032"
+       ],
+       "cves": [
+        "CVE-2026-97032"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "HTTP/2 server crash due to HPACK encoder race in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6617",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6608",
+       "aliases": [
+        "BIT-golang-2026-94440",
+        "CVE-2026-94440"
+       ],
+       "cves": [
+        "CVE-2026-94440"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Memory limit bypass when parsing MIME headers in net/textproto, mime/multipart",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6608",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6612",
+       "aliases": [
+        "BIT-golang-2026-78663",
+        "CVE-2026-78663"
+       ],
+       "cves": [
+        "CVE-2026-78663"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Double flow control refund on HTTP/2 server streams in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6612",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6609",
+       "aliases": [
+        "BIT-golang-2026-78667",
+        "CVE-2026-78667"
+       ],
+       "cves": [
+        "CVE-2026-78667"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Lack of limit on size of parsed Range headers in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6609",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6603",
+       "aliases": [
+        "BIT-golang-2026-78659",
+        "CVE-2026-78659"
+       ],
+       "cves": [
+        "CVE-2026-78659"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "HTTP/2 server memory exhaustion due to Trailer headers in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6603",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6613",
+       "aliases": [
+        "BIT-golang-2026-94439",
+        "CVE-2026-94439"
+       ],
+       "cves": [
+        "CVE-2026-94439"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "HTTP/1 server connection desynchronization after 2xx CONNECT response in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6613",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6604",
+       "aliases": [
+        "BIT-golang-2026-56857",
+        "CVE-2026-56857"
+       ],
+       "cves": [
+        "CVE-2026-56857"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Root.Mkdir(All) can follow junctions out of the root on Windows in os",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6604",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6611",
+       "aliases": [
+        "BIT-golang-2026-78669",
+        "CVE-2026-78669"
+       ],
+       "cves": [
+        "CVE-2026-78669"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Excessive CPU consumption from repeated initial window changes in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6611",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6607",
+       "aliases": [
+        "BIT-golang-2026-97031",
+        "CVE-2026-97031"
+       ],
+       "cves": [
+        "CVE-2026-97031"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Reject malformed ECH outer extension references in crypto/tls",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6607",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6600",
+       "aliases": [
+        "BIT-golang-2026-97030",
+        "CVE-2026-97030"
+       ],
+       "cves": [
+        "CVE-2026-97030"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Recognize yield as regexp preceder keyword in html/template",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.26.9",
+        "1.27.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6600",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "go/golang.org/x/net",
+     "name": "golang.org/x/net",
+     "label": "x/net",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "UNKNOWN",
+     "vulns": [
+      {
+       "id": "GO-2026-6610",
+       "aliases": [
+        "BIT-golang-2026-78660",
+        "CVE-2026-78660"
+       ],
+       "cves": [
+        "CVE-2026-78660"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "HTTP/2 transport accepts malformed framing-related headers in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "0.60.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6610",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6617",
+       "aliases": [
+        "BIT-golang-2026-97032",
+        "CVE-2026-97032"
+       ],
+       "cves": [
+        "CVE-2026-97032"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "HTTP/2 server crash due to HPACK encoder race in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "0.60.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6617",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6612",
+       "aliases": [
+        "BIT-golang-2026-78663",
+        "CVE-2026-78663"
+       ],
+       "cves": [
+        "CVE-2026-78663"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Double flow control refund on HTTP/2 server streams in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "0.60.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6612",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6603",
+       "aliases": [
+        "BIT-golang-2026-78659",
+        "CVE-2026-78659"
+       ],
+       "cves": [
+        "CVE-2026-78659"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "HTTP/2 server memory exhaustion due to Trailer headers in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "0.60.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6603",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GO-2026-6611",
+       "aliases": [
+        "BIT-golang-2026-78669",
+        "CVE-2026-78669"
+       ],
+       "cves": [
+        "CVE-2026-78669"
+       ],
+       "published": "2026-10-08T22:31:09Z",
+       "summary": "Excessive CPU consumption from repeated initial window changes in net/http",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "0.60.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6611",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "go/golang.org/x/crypto",
+     "name": "golang.org/x/crypto",
+     "label": "x/crypto",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "go/google.golang.org/grpc",
+     "name": "google.golang.org/grpc",
+     "label": "grpc-go",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "go/google.golang.org/protobuf",
+     "name": "google.golang.org/protobuf",
+     "label": "protobuf-go",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "go/github.com/gin-gonic/gin",
+     "name": "github.com/gin-gonic/gin",
+     "label": "gin",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "go/github.com/labstack/echo/v4",
+     "name": "github.com/labstack/echo/v4",
+     "label": "echo",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "GHSA-9969-6676-49h5",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-23T20:50:17Z",
+       "summary": "Echo: WebSocket proxy can retain connections and handlers after client disconnect",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "4.16.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9969-6676-49h5",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-h7wr-284f-5qvc",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-23T20:49:49Z",
+       "summary": "Echo: Decompress permits unbounded gzip expansion in v4",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "4.16.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-h7wr-284f-5qvc",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-cxf3-9h37-7rr8",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-23T20:49:37Z",
+       "summary": "Echo: Rejected WebSocket upgrades can bypass Echo route-level access controls",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "4.16.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-cxf3-9h37-7rr8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-f48p-c9v4-h7xv",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-23T20:48:44Z",
+       "summary": "Echo: BodyDump captures request and response bodies without size limits in v4",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "4.16.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-f48p-c9v4-h7xv",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "go/github.com/golang-jwt/jwt/v5",
+     "name": "github.com/golang-jwt/jwt/v5",
+     "label": "golang-jwt",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "go/github.com/docker/docker",
+     "name": "github.com/docker/docker",
+     "label": "docker",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "go/k8s.io/kubernetes",
+     "name": "k8s.io/kubernetes",
+     "label": "kubernetes",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "go/github.com/prometheus/client_golang",
+     "name": "github.com/prometheus/client_golang",
+     "label": "prometheus client",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "go/github.com/gorilla/websocket",
+     "name": "github.com/gorilla/websocket",
+     "label": "gorilla/websocket",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    }
+   ]
+  }
+ ]
+}

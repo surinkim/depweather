@@ -1,0 +1,113 @@
+# Default package list: popular open-source packages only.
+#
+# Keep this list generic. Do not add packages that hint at a specific
+# company's stack; a personal watch list belongs in a local file outside
+# the repository (see README).
+#
+# Package names use the OSV ecosystem naming:
+#   npm    -> package name (scoped names keep the @scope/ prefix)
+#   PyPI   -> project name
+#   Maven  -> groupId:artifactId
+#   Go     -> module path ("stdlib" is the Go standard library)
+#
+# Optional per-package keys:
+#   label:  short name shown on the tile
+#   weight: fixed popularity weight, used when no download API exists
+#           for the ecosystem (Maven, Go) or the API call fails
+
+ecosystems:
+  - id: npm
+    osv: npm
+    label: npm
+    popularity: npm-downloads
+    packages:
+      - name: next
+      - name: react
+      - name: express
+      - name: axios
+      - name: lodash
+      - name: vite
+      - name: undici
+      - name: vue
+      - name: "@angular/core"
+      - name: webpack
+      - name: ws
+      - name: jsonwebtoken
+
+  - id: pypi
+    osv: PyPI
+    label: PyPI
+    popularity: pypistats
+    packages:
+      - name: requests
+      - name: django
+      - name: numpy
+      - name: jinja2
+      - name: fastapi
+      - name: flask
+      - name: urllib3
+      - name: pillow
+      - name: cryptography
+      - name: setuptools
+      - name: pyyaml
+      - name: transformers
+
+  - id: maven
+    osv: Maven
+    label: Maven
+    popularity: fixed
+    packages:
+      - name: org.springframework:spring-web
+        label: spring-web
+      - name: org.springframework.boot:spring-boot
+        label: spring-boot
+      - name: com.fasterxml.jackson.core:jackson-databind
+        label: jackson-databind
+      - name: org.apache.logging.log4j:log4j-core
+        label: log4j-core
+      - name: io.netty:netty-codec-http
+        label: netty-codec-http
+      - name: org.apache.tomcat.embed:tomcat-embed-core
+        label: tomcat-embed-core
+      - name: com.google.guava:guava
+        label: guava
+      - name: org.apache.commons:commons-lang3
+        label: commons-lang3
+      - name: org.yaml:snakeyaml
+        label: snakeyaml
+      - name: com.google.protobuf:protobuf-java
+        label: protobuf-java
+      - name: org.apache.kafka:kafka-clients
+        label: kafka-clients
+      - name: ch.qos.logback:logback-classic
+        label: logback-classic
+
+  - id: go
+    osv: Go
+    label: Go
+    popularity: fixed
+    packages:
+      - name: stdlib
+        label: Go stdlib
+      - name: golang.org/x/net
+        label: x/net
+      - name: golang.org/x/crypto
+        label: x/crypto
+      - name: google.golang.org/grpc
+        label: grpc-go
+      - name: google.golang.org/protobuf
+        label: protobuf-go
+      - name: github.com/gin-gonic/gin
+        label: gin
+      - name: github.com/labstack/echo/v4
+        label: echo
+      - name: github.com/golang-jwt/jwt/v5
+        label: golang-jwt
+      - name: github.com/docker/docker
+        label: docker
+      - name: k8s.io/kubernetes
+        label: kubernetes
+      - name: github.com/prometheus/client_golang
+        label: prometheus client
+      - name: github.com/gorilla/websocket
+        label: gorilla/websocket

@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>depweather</title>
+<meta name="description" content="Today's vulnerability forecast for popular packages">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #6f6d68;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.10);
+  --accent: #2a78d6;
+  --sev-0: #e6e5df;
+  --sev-0-ink: #52514e;
+  --sev-1: #fab219;
+  --sev-1-ink: #0b0b0b;
+  --sev-2: #ec835a;
+  --sev-2-ink: #0b0b0b;
+  --sev-3: #d03b3b;
+  --sev-3-ink: #ffffff;
+  --bar: #2a78d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --muted: #9a988f;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --accent: #3987e5;
+    --sev-0: #2c2c2a;
+    --sev-0-ink: #c3c2b7;
+    --bar: #3987e5;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --ink: #f0efec;
+  --ink-2: #c3c2b7;
+  --muted: #9a988f;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgba(255, 255, 255, 0.10);
+  --accent: #3987e5;
+  --sev-0: #2c2c2a;
+  --sev-0-ink: #c3c2b7;
+  --bar: #3987e5;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--page);
+  color: var(--ink);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  font-feature-settings: "calt" 0; /* keep "93x7" in advisory IDs from becoming "93×7" */
+}
+a { color: var(--accent); }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+header.top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 18px 0 10px; }
+header.top h1 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+header.top .tag { color: var(--ink-2); font-size: 14px; }
+header.top .spacer { flex: 1; }
+.meta { color: var(--muted); font-size: 13px; }
+
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button {
+  font: inherit; font-size: 13px; padding: 6px 12px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer;
+}
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.iconbtn { font: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--ink-2); cursor: pointer; }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 6px 0 14px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+.stat .label { color: var(--ink-2); font-size: 12.5px; }
+.stat .value { font-size: 28px; font-weight: 650; line-height: 1.2; margin-top: 2px; }
+.stat .sub { color: var(--muted); font-size: 12.5px; }
+.stat .na { color: var(--muted); font-size: 18px; font-weight: 500; }
+@media (max-width: 767px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat .value { font-size: 22px; }
+}
+
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 10px; }
+.toolbar label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); cursor: pointer; }
+.toolbar input[type="search"] {
+  font: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--surface); color: var(--ink); width: 220px; max-width: 100%;
+}
+.legend { display: inline-flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 5px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid var(--border); }
+
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.panel h2 { font-size: 15px; margin: 0 0 8px; }
+.panel + .panel { margin-top: 12px; }
+.hint { color: var(--muted); font-size: 12.5px; margin: 8px 0 0; }
+
+svg text { font-family: inherit; }
+#treemap { width: 100%; display: block; }
+.tile { cursor: pointer; }
+.tile:focus { outline: none; }
+.tile:focus-visible rect.cell, .tile:hover rect.cell { stroke: var(--ink); stroke-width: 2; }
+
+.tl-row { display: grid; grid-template-columns: 150px minmax(0, 1fr) 150px; gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--grid); }
+.tl-row:first-child { border-top: 0; }
+.tl-row .name { font-weight: 600; font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tl-row .name small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+.tl-row .fix { font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
+.tl-row .fix b { color: var(--ink); font-weight: 600; }
+.tl-row button.name { font: inherit; font-weight: 600; font-size: 13.5px; text-align: left; background: none; border: 0; padding: 0; color: var(--ink); cursor: pointer; }
+.tl-row button.name:hover { text-decoration: underline; }
+@media (max-width: 767px) {
+  .tl-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+.dot { cursor: pointer; }
+.dot:hover { stroke: var(--ink); stroke-width: 2; }
+
+table.data { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.data th, table.data td { text-align: left; padding: 6px 8px; border-top: 1px solid var(--grid); vertical-align: top; }
+table.data th { color: var(--ink-2); font-weight: 600; border-top: 0; }
+table.data td.nowrap { white-space: nowrap; }
+table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll-x { overflow-x: auto; }
+.pill { display: inline-block; padding: 0 6px; border-radius: 4px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.pill.l0 { background: var(--sev-0); color: var(--sev-0-ink); }
+.pill.l1 { background: var(--sev-1); color: var(--sev-1-ink); }
+.pill.l2 { background: var(--sev-2); color: var(--sev-2-ink); }
+.pill.l3 { background: var(--sev-3); color: var(--sev-3-ink); }
+.pill.kev { background: var(--ink); color: var(--page); }
+
+@media (max-width: 767px) {
+  table.vulns thead { display: none; }
+  table.vulns tr { display: block; border-top: 1px solid var(--grid); padding: 6px 0; }
+  table.vulns td { display: inline-block; border: 0; padding: 2px 6px 2px 0; }
+  table.vulns td.summary { display: block; }
+}
+
+#tooltip {
+  position: fixed; z-index: 10; pointer-events: none; max-width: 320px;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--border); border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); padding: 8px 10px; font-size: 12.5px; display: none;
+}
+#tooltip .t { font-weight: 650; font-size: 13px; }
+#tooltip .m { color: var(--ink-2); }
+
+footer { color: var(--muted); font-size: 12.5px; padding: 24px 0 32px; }
+footer p { margin: 4px 0; }
+.warn { color: var(--ink-2); background: var(--surface); border: 1px dashed var(--axis); border-radius: 8px; padding: 8px 10px; font-size: 13px; margin-bottom: 10px; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>depweather</h1>
+    <span class="tag">Today's vulnerability forecast for popular packages</span>
+    <span class="spacer"></span>
+    <div class="seg" role="group" aria-label="View">
+      <button data-view="a">Treemap</button>
+      <button data-view="c">Timeline</button>
+      <button data-view="b">Counter</button>
+    </div>
+    <button class="iconbtn" id="theme" title="Toggle light / dark">Theme</button>
+  </header>
+  <p class="meta" id="meta">Loading data…</p>
+  <div id="warn" class="warn" hidden></div>
+
+  <section class="stats" id="stats" aria-label="Today in numbers"></section>
+
+  <div class="toolbar">
+    <div class="seg" role="group" aria-label="Period">
+      <button data-range="7">7 days</button>
+      <button data-range="30">30 days</button>
+    </div>
+    <label><input type="checkbox" id="kevonly"> KEV only</label>
+    <input type="search" id="search" list="pkglist" placeholder="Search a package…" aria-label="Search a package">
+    <datalist id="pkglist"></datalist>
+    <span class="spacer"></span>
+    <span class="legend" aria-label="Color legend">
+      <span><i style="background:var(--sev-0)"></i>None</span>
+      <span><i style="background:var(--sev-1)"></i>Low / Medium</span>
+      <span><i style="background:var(--sev-2)"></i>High</span>
+      <span><i style="background:var(--sev-3)"></i>Critical or KEV</span>
+    </span>
+  </div>
+
+  <main>
+    <section id="view-a" hidden>
+      <div class="panel">
+        <svg id="treemap" role="img" aria-label="Treemap of packages by ecosystem"></svg>
+        <p class="hint" id="treemap-hint"></p>
+      </div>
+    </section>
+    <section id="view-c" hidden></section>
+    <section id="view-b" hidden></section>
+  </main>
+
+  <footer>
+    <p>Data: <a href="https://osv.dev">OSV.dev</a> (including the <a href="https://github.com/github/advisory-database">GitHub Advisory Database</a>, CC-BY 4.0),
+      <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA Known Exploited Vulnerabilities</a>,
+      <a href="https://www.first.org/epss/">FIRST EPSS</a>,
+      <a href="https://nvd.nist.gov">NVD</a>, download counts from npm and pypistats.</p>
+    <p>This product uses the NVD API but is not endorsed or certified by the NVD.</p>
+    <p>Severity labels come from the upstream advisory and can be wrong. Always check the advisory before acting.
+      Source code: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).</p>
+  </footer>
+</div>
+<div id="tooltip" role="tooltip"></div>
+
+<script>
+"use strict";
+
+// Raise a vulnerability one color level when its EPSS score is at least this
+// value (e.g. 0.1). null keeps the color on severity and KEV only.
+const EPSS_BUMP_THRESHOLD = null;
+
+const LEVEL_NAME = ["None", "Low / Medium", "High", "Critical"];
+const SEV_LEVEL = { NONE: 0, UNKNOWN: 1, LOW: 1, MEDIUM: 1, MODERATE: 1, HIGH: 2, CRITICAL: 3 };
+const PREFS_KEY = "depweather:prefs";
+const DAY = 86400000;
+
+const state = { view: "a", range: 7, kevOnly: false, pkg: null };
+let DATA = null;
+let PKGS = new Map();   // key -> {eco, pkg}
+let NOW = Date.now();
+
+// ------------------------------------------------------------ helpers
+
+const $ = (sel) => document.querySelector(sel);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmt = (n) => n == null ? null : n.toLocaleString("en-US");
+const svgEl = (tag, attrs = {}) => {
+  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  return el;
+};
+
+function readPrefs() {
+  try { return JSON.parse(localStorage.getItem(PREFS_KEY)) || {}; } catch { return {}; }
+}
+function writePrefs() {
+  try { localStorage.setItem(PREFS_KEY, JSON.stringify({ view: state.view, range: state.range, theme: document.documentElement.dataset.theme || null })); } catch { /* storage unavailable */ }
+}
+
+function vulnLevel(v) {
+  if (v.kev) return 3;
+  let lvl = SEV_LEVEL[v.severity] ?? 1;
+  if (EPSS_BUMP_THRESHOLD != null && v.epss != null && v.epss >= EPSS_BUMP_THRESHOLD) lvl = Math.min(3, lvl + 1);
+  return lvl;
+}
+function inRange(v, days) { return NOW - Date.parse(v.published) <= days * DAY; }
+function pkgVulns(p, days = state.range) {
+  return p.vulns.filter((v) => inRange(v, days) && (!state.kevOnly || v.kev));
+}
+function pkgLevel(vulns) { return vulns.reduce((m, v) => Math.max(m, vulnLevel(v)), 0); }
+
+function cmpVersion(a, b) {
+  const pa = a.split(/[.\-+]/), pb = b.split(/[.\-+]/);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const x = pa[i] ?? "", y = pb[i] ?? "";
+    const nx = Number(x), ny = Number(y);
+    const d = (!isNaN(nx) && !isNaN(ny)) ? nx - ny : x.localeCompare(y);
+    if (d) return d;
+  }
+  return 0;
+}
+function fixedList(vulns) {
+  const set = new Set();
+  vulns.forEach((v) => v.fixed.forEach((f) => set.add(f)));
+  return [...set].sort(cmpVersion).reverse();
+}
+
+// ------------------------------------------------------------ tooltip
+
+const tip = $("#tooltip");
+function showTip(html, ev) {
+  tip.innerHTML = html;
+  tip.style.display = "block";
+  moveTip(ev);
+}
+function moveTip(ev) {
+  const pad = 14, r = tip.getBoundingClientRect();
+  let x = ev.clientX + pad, y = ev.clientY + pad;
+  if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - pad;
+  if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - pad;
+  tip.style.left = Math.max(8, x) + "px";
+  tip.style.top = Math.max(8, y) + "px";
+}
+function hideTip() { tip.style.display = "none"; }
+
+function vulnTip(v, p) {
+  const lvl = vulnLevel(v);
+  return `<div class="t">${esc(v.id)}${p ? " · " + esc(p.label) : ""}</div>
+    <div>${esc(v.summary)}</div>
+    <div class="m">${esc(v.published.slice(0, 10))} · <span class="pill l${lvl}">${esc(v.severity)}</span>
+    ${v.cvss != null ? " CVSS " + v.cvss : ""}${v.epss != null ? " · EPSS " + (v.epss * 100).toFixed(1) + "%" : ""}
+    ${v.kev ? ' · <span class="pill kev">KEV</span>' : ""}</div>
+    ${v.fixed.length ? `<div class="m">Fixed in ${esc(v.fixed.join(", "))}</div>` : ""}`;
+}
+
+// ------------------------------------------------------------ stats
+
+function renderStats() {
+  const s = DATA.summary;
+  const tile = (label, value, sub) => `<div class="stat"><div class="label">${label}</div>
+    <div class="value">${value == null ? '<span class="na">n/a</span>' : esc(value)}</div><div class="sub">${sub}</div></div>`;
+  let yoy = "NVD count unavailable";
+  if (s.month_cves != null && s.month_cves_last_year) {
+    const pct = Math.round((s.month_cves / s.month_cves_last_year - 1) * 100);
+    yoy = `${pct >= 0 ? "+" : ""}${pct}% vs ${s.month.slice(0, 4) - 1}-${s.month.slice(5)} (${fmt(s.month_cves_last_year)}; this month is partial)`;
+  }
+  $("#stats").innerHTML =
+    tile("New CVEs today (UTC)", fmt(s.today_cves), s.today_cves == null ? "NVD count unavailable" : "published in NVD") +
+    tile(`CVEs in ${s.month}`, fmt(s.month_cves), yoy) +
+    tile("New in CISA KEV, 7 days", fmt(s.kev_new_7d), s.kev_new_7d == null ? "KEV feed unavailable" : "all vendors, not only these packages") +
+    tile("Popular packages affected, 7 days", s.affected_packages_7d, `of ${s.tracked_packages} tracked`);
+}
+
+// ------------------------------------------------------------ A: treemap
+
+// Squarified treemap (Bruls, Huizing, van Wijk). items: [{value, ...}] -> adds x, y, w, h.
+function squarify(items, x, y, w, h) {
+  const total = items.reduce((s, d) => s + d.value, 0);
+  if (!total || w <= 0 || h <= 0) return items;
+  const scale = (w * h) / total;
+  const nodes = items.map((d) => ({ d, area: d.value * scale })).sort((a, b) => b.area - a.area);
+  let row = [], rect = { x, y, w, h };
+  const worst = (r, side) => {
+    const s = r.reduce((a, n) => a + n.area, 0), max = Math.max(...r.map((n) => n.area)), min = Math.min(...r.map((n) => n.area));
+    return Math.max((side * side * max) / (s * s), (s * s) / (side * side * min));
+  };
+  const layoutRow = (r) => {
+    const s = r.reduce((a, n) => a + n.area, 0);
+    if (rect.w >= rect.h) {
+      const rw = s / rect.h; let yy = rect.y;
+      r.forEach((n) => { const hh = n.area / rw; Object.assign(n.d, { x: rect.x, y: yy, w: rw, h: hh }); yy += hh; });
+      rect = { x: rect.x + rw, y: rect.y, w: rect.w - rw, h: rect.h };
+    } else {
+      const rh = s / rect.w; let xx = rect.x;
+      r.forEach((n) => { const ww = n.area / rh; Object.assign(n.d, { x: xx, y: rect.y, w: ww, h: rh }); xx += ww; });
+      rect = { x: rect.x, y: rect.y + rh, w: rect.w, h: rect.h - rh };
+    }
+  };
+  for (const n of nodes) {
+    const side = Math.min(rect.w, rect.h);
+    if (!row.length || worst([...row, n], side) <= worst(row, side)) row.push(n);
+    else { layoutRow(row); row = [n]; }
+  }
+  if (row.length) layoutRow(row);
+  return items;
+}
+
+function renderTreemap() {
+  const svg = $("#treemap");
+  const W = svg.parentElement.clientWidth - 24;
+  const H = Math.max(420, Math.min(720, Math.round(W * (W < 600 ? 1.3 : 0.58))));
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("height", H);
+  svg.replaceChildren();
+
+  // Every ecosystem gets the same area: download counts are not comparable
+  // across registries, and Maven / Go use fixed weights.
+  const groups = squarify(DATA.ecosystems.map((e) => ({ value: 1, eco: e })), 0, 0, W, H);
+  const HEAD = 22, GAP = 2;
+  for (const g of groups) {
+    const gx = g.x + GAP, gy = g.y + GAP, gw = g.w - GAP * 2, gh = g.h - GAP * 2;
+    const grp = svgEl("g");
+    const head = svgEl("text", { x: gx + 4, y: gy + 15, "font-size": 13, "font-weight": 650, fill: "var(--ink)" });
+    const affected = g.eco.packages.filter((p) => pkgVulns(p).length).length;
+    head.textContent = `${g.eco.label}  ·  ${affected}/${g.eco.packages.length} affected`;
+    grp.append(head);
+
+    const total = g.eco.packages.reduce((s, p) => s + p.popularity, 0) || 1;
+    // Floor each tile at 3% of the group so small packages stay clickable.
+    const tiles = g.eco.packages.map((p) => ({ value: Math.max(p.popularity / total, 0.03), p }));
+    squarify(tiles, gx, gy + HEAD, gw, gh - HEAD);
+    for (const t of tiles) {
+      const vulns = pkgVulns(t.p), lvl = pkgLevel(vulns);
+      const kevs = vulns.filter((v) => v.kev).length;
+      const node = svgEl("g", { class: "tile", tabindex: 0, role: "button", "aria-label": `${t.p.label}: ${vulns.length} vulnerabilities, ${LEVEL_NAME[lvl]}` });
+      node.append(svgEl("rect", { class: "cell", x: t.x + 1, y: t.y + 1, width: Math.max(0, t.w - 2), height: Math.max(0, t.h - 2), rx: 4, fill: `var(--sev-${lvl})` }));
+      const ink = `var(--sev-${lvl}-ink)`;
+      const fs = Math.max(11, Math.min(18, Math.sqrt(t.w * t.h) / 7));
+      if (t.w > 44 && t.h > 26) {
+        const name = svgEl("text", { x: t.x + 7, y: t.y + 6 + fs, "font-size": fs, "font-weight": 650, fill: ink });
+        const maxChars = Math.floor((t.w - 12) / (fs * 0.58));
+        name.textContent = t.p.label.length > maxChars ? t.p.label.slice(0, Math.max(1, maxChars - 1)) + "…" : t.p.label;
+        node.append(name);
+        if (t.h > fs + 30) {
+          const sub = svgEl("text", { x: t.x + 7, y: t.y + 10 + fs + 15, "font-size": 12, fill: ink });
+          sub.textContent = vulns.length ? `${vulns.length} vuln${vulns.length > 1 ? "s" : ""}${kevs ? " · KEV" : ""}` : "clear";
+          node.append(sub);
+        }
+      }
+      node.addEventListener("mousemove", (ev) => {
+        const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a))[0];
+        showTip(`<div class="t">${esc(t.p.label)} <span class="m">${esc(g.eco.label)}</span></div>
+          <div>${vulns.length} in the last ${state.range} days · <span class="pill l${lvl}">${LEVEL_NAME[lvl]}</span>${kevs ? ' <span class="pill kev">KEV</span>' : ""}</div>
+          ${top ? `<div class="m">Worst: ${esc(top.id)} — ${esc(top.summary)}</div>` : ""}
+          <div class="m">Size: ${esc(t.p.popularity_source)}${t.p.popularity_source === "fixed weight" ? "" : " " + fmt(t.p.popularity)}</div>
+          <div class="m">Click for timeline</div>`, ev);
+      });
+      node.addEventListener("mouseleave", hideTip);
+      const open = () => { hideTip(); setState({ view: "c", pkg: t.p.key }); };
+      node.addEventListener("click", open);
+      node.addEventListener("keydown", (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); open(); } });
+      grp.append(node);
+    }
+    svg.append(grp);
+  }
+  const fixedEcos = DATA.ecosystems.filter((e) => e.packages.every((p) => p.popularity_source === "fixed weight")).map((e) => e.label);
+  $("#treemap-hint").textContent =
+    `Color = worst issue published in the last ${state.range} days${state.kevOnly ? " (KEV only)" : ""}. Tile size = weekly downloads within each ecosystem` +
+    (fixedEcos.length ? `; ${fixedEcos.join(", ")} use equal weights (no download data).` : ".");
+}
+
+// ------------------------------------------------------------ C: timeline
+
+function timelineSvg(vulns, width, opts = {}) {
+  const days = 30, padL = 2, padR = 8, r = (opts.r || 5) - (width < 400 ? 1 : 0), step = r * 2 + 2;
+  const maxStack = opts.maxStack || 99;
+  const byDay = new Map();
+  for (const v of vulns) {
+    const d = Math.min(days, Math.max(0, Math.floor((NOW - Date.parse(v.published)) / DAY)));
+    if (!byDay.has(d)) byDay.set(d, []);
+    byDay.get(d).push(v);
+  }
+  const tallest = Math.min(maxStack, Math.max(1, ...[...byDay.values()].map((a) => a.length)));
+  const axisH = opts.axis ? 18 : 0;
+  const H = tallest * step + 6 + axisH;
+  const svg = svgEl("svg", { width: "100%", height: H, viewBox: `0 0 ${width} ${H}`, preserveAspectRatio: "none" });
+  const xOf = (d) => padL + r + (width - padL - padR - r * 2) * (1 - d / days);
+  const base = H - axisH - 3 - r;
+  svg.append(svgEl("line", { x1: padL, x2: width - padR, y1: base + r + 2, y2: base + r + 2, stroke: "var(--axis)" }));
+  const week = svgEl("line", { x1: xOf(7), x2: xOf(7), y1: 0, y2: base + r + 2, stroke: "var(--grid)", "stroke-dasharray": "3 3" });
+  svg.append(week);
+  if (opts.axis) {
+    for (const d of [30, 21, 14, 7, 0]) {
+      const t = svgEl("text", { x: xOf(d), y: H - 4, "font-size": 11, fill: "var(--muted)", "text-anchor": d === 30 ? "start" : d === 0 ? "end" : "middle" });
+      t.textContent = d === 0 ? "today" : `${d}d ago`;
+      svg.append(t);
+    }
+  }
+  for (const [d, list] of byDay) {
+    list.sort((a, b) => vulnLevel(b) - vulnLevel(a));
+    list.slice(0, maxStack).forEach((v, i) => {
+      const lvl = vulnLevel(v);
+      const c = svgEl("circle", { class: "dot", cx: xOf(d), cy: base - i * step, r, fill: `var(--sev-${lvl})`, stroke: "var(--surface)", "stroke-width": 1.5 });
+      c.addEventListener("mousemove", (ev) => showTip(vulnTip(v, opts.pkg), ev));
+      c.addEventListener("mouseleave", hideTip);
+      c.addEventListener("click", () => window.open(v.url, "_blank", "noopener"));
+      svg.append(c);
+    });
+    if (list.length > maxStack) {
+      const t = svgEl("text", { x: xOf(d) + r + 2, y: base - (maxStack - 1) * step + 4, "font-size": 10, fill: "var(--muted)" });
+      t.textContent = `+${list.length - maxStack}`;
+      svg.append(t);
+    }
+  }
+  return svg;
+}
+
+function renderTimeline() {
+  const root = $("#view-c");
+  root.replaceChildren();
+  const entry = state.pkg && PKGS.get(state.pkg);
+  if (state.pkg && !entry) {
+    root.innerHTML = `<div class="panel"><p>No package <b>${esc(state.pkg)}</b> in the tracked list. <a href="#" id="clearpkg">Show all</a></p></div>`;
+    $("#clearpkg").onclick = (e) => { e.preventDefault(); setState({ pkg: null }); };
+    return;
+  }
+  if (entry) return renderPackage(root, entry);
+
+  const panel = document.createElement("div");
+  panel.className = "panel";
+  panel.innerHTML = `<h2>Last 30 days, packages with issues</h2>`;
+  const rows = [];
+  for (const e of DATA.ecosystems) for (const p of e.packages) {
+    const vulns = pkgVulns(p, 30);
+    if (vulns.length) rows.push({ e, p, vulns, lvl: pkgLevel(pkgVulns(p, state.range)), lvl30: pkgLevel(vulns) });
+  }
+  rows.sort((a, b) => b.lvl - a.lvl || b.lvl30 - a.lvl30 || b.vulns.length - a.vulns.length);
+  if (!rows.length) panel.insertAdjacentHTML("beforeend", `<p>No vulnerabilities in the last 30 days${state.kevOnly ? " in KEV" : ""}.</p>`);
+  const list = document.createElement("div");
+  for (const r of rows) {
+    const row = document.createElement("div");
+    row.className = "tl-row";
+    const name = document.createElement("button");
+    name.className = "name";
+    name.innerHTML = `${esc(r.p.label)}<small>${esc(r.e.label)} · ${r.vulns.length} issue${r.vulns.length > 1 ? "s" : ""}</small>`;
+    name.onclick = () => setState({ pkg: r.p.key });
+    const plot = document.createElement("div");
+    const fix = document.createElement("div");
+    fix.className = "fix";
+    const f = fixedList(r.vulns);
+    fix.innerHTML = f.length ? `Fixed in <b>${esc(f.slice(0, 3).join(", "))}</b>${f.length > 3 ? ` +${f.length - 3}` : ""}` : "No fixed version listed";
+    row.append(name, plot, fix);
+    list.append(row);
+    r.plot = plot;
+  }
+  panel.append(list);
+  panel.insertAdjacentHTML("beforeend", `<p class="hint">Each dot is one advisory on the day it was published; the dashed line marks 7 days ago. Hover for details, click to open on OSV.</p>`);
+  root.append(panel);
+  for (const r of rows) r.plot.append(timelineSvg(r.vulns, Math.max(200, r.plot.clientWidth), { maxStack: 4, pkg: r.p }));
+}
+
+function renderPackage(root, { eco, pkg }) {
+  const vulns = pkgVulns(pkg, 30);
+  const panel = document.createElement("div");
+  panel.className = "panel";
+  const f = fixedList(vulns);
+  panel.innerHTML = `<p style="margin:0 0 6px"><a href="#" id="allpkgs">← All packages</a></p>
+    <h2>${esc(pkg.label)} <span class="meta">${esc(eco.label)} · ${esc(pkg.name)}</span></h2>
+    <div class="tl-row" style="border:0"><div class="name">${vulns.length} issue${vulns.length === 1 ? "" : "s"} in 30 days<small>${pkgLevel(vulns) ? LEVEL_NAME[pkgLevel(vulns)] + " at worst" : "clear"}</small></div>
+    <div id="pkgplot"></div><div class="fix">${f.length ? `Fixed in <b>${esc(f.join(", "))}</b>` : "No fixed version listed"}</div></div>`;
+  root.append(panel);
+  $("#allpkgs").onclick = (e) => { e.preventDefault(); setState({ pkg: null }); };
+  const plot = $("#pkgplot");
+  plot.append(timelineSvg(vulns, Math.max(220, plot.clientWidth), { axis: true, r: 6, pkg }));
+
+  const t = document.createElement("div");
+  t.className = "panel scroll-x";
+  if (!vulns.length) {
+    t.innerHTML = `<p>No advisories published for ${esc(pkg.label)} in the last 30 days${state.kevOnly ? " in KEV" : ""}.</p>`;
+  } else {
+    t.innerHTML = `<table class="data vulns"><thead><tr><th>Published</th><th>Advisory</th><th>Severity</th><th class="num">CVSS</th><th class="num">EPSS</th><th>Fixed in</th><th>Summary</th></tr></thead><tbody>
+      ${vulns.map((v) => `<tr><td class="nowrap">${esc(v.published.slice(0, 10))}</td>
+        <td class="nowrap"><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.id)}</a>${v.cves.length ? `<br><span class="meta">${esc(v.cves.join(", "))}</span>` : ""}</td>
+        <td><span class="pill l${vulnLevel(v)}">${esc(v.severity)}</span>${v.kev ? ' <span class="pill kev">KEV</span>' : ""}</td>
+        <td class="num">${v.cvss ?? "–"}</td><td class="num">${v.epss != null ? (v.epss * 100).toFixed(1) + "%" : "–"}</td>
+        <td>${esc(v.fixed.join(", ") || "–")}</td><td class="summary">${esc(v.summary)}</td></tr>`).join("")}
+      </tbody></table>`;
+  }
+  root.append(t);
+}
+
+// ------------------------------------------------------------ B: counter
+
+function renderCounter() {
+  const root = $("#view-b");
+  root.replaceChildren();
+  const bars = document.createElement("div");
+  bars.className = "panel";
+  bars.innerHTML = `<h2>CVEs published per month (NVD)</h2>`;
+  const months = (DATA.monthly || []).filter((m) => m.count != null);
+  if (!months.length) {
+    bars.insertAdjacentHTML("beforeend", `<p class="meta">Monthly counts are not available in this snapshot (the NVD API could not be reached when the data was collected).</p>`);
+  } else {
+    const W = Math.max(300, root.clientWidth - 24), H = 220, padL = 44, padB = 22, padT = 18;
+    const max = Math.max(...months.map((m) => m.count));
+    const nice = Math.pow(10, Math.floor(Math.log10(max))) * (max / Math.pow(10, Math.floor(Math.log10(max))) > 5 ? 2 : 1);
+    const top = Math.ceil(max / nice) * nice;
+    const svg = svgEl("svg", { width: "100%", height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Monthly CVE counts" });
+    for (let v = 0; v <= top; v += nice) {
+      const y = padT + (H - padT - padB) * (1 - v / top);
+      svg.append(svgEl("line", { x1: padL, x2: W, y1: y, y2: y, stroke: v ? "var(--grid)" : "var(--axis)" }));
+      const t = svgEl("text", { x: padL - 6, y: y + 4, "font-size": 11, fill: "var(--muted)", "text-anchor": "end" });
+      t.textContent = v >= 1000 ? (v / 1000) + "k" : v;
+      svg.append(t);
+    }
+    const bw = (W - padL) / months.length;
+    months.forEach((m, i) => {
+      const h = (H - padT - padB) * (m.count / top), x = padL + i * bw + 2, y = H - padB - h;
+      const partial = i === months.length - 1;
+      const r = svgEl("rect", { x, y, width: Math.max(2, bw - 4), height: h, rx: 3, fill: "var(--bar)", opacity: partial ? 0.55 : 1 });
+      r.addEventListener("mousemove", (ev) => showTip(`<div class="t">${m.month}</div><div>${fmt(m.count)} CVEs${partial ? " (month to date)" : ""}</div>`, ev));
+      r.addEventListener("mouseleave", hideTip);
+      svg.append(r);
+      if (bw > 34 || i % 2 === 0) {
+        const t = svgEl("text", { x: x + (bw - 4) / 2, y: H - 6, "font-size": 11, fill: "var(--muted)", "text-anchor": "middle" });
+        t.textContent = m.month.slice(5) === "01" || i === 0 ? m.month.slice(2).replace("-", "/") : m.month.slice(5);
+        svg.append(t);
+      }
+    });
+    bars.append(svg);
+    bars.insertAdjacentHTML("beforeend", `<p class="hint">The last bar is the current month so far.${DATA.monthly_is_stale ? " Counts are from an earlier run; NVD was unreachable this time." : ""}</p>`);
+  }
+  root.append(bars);
+
+  const tbl = document.createElement("div");
+  tbl.className = "panel scroll-x";
+  const rows = DATA.ecosystems.map((e) => {
+    const all = e.packages.flatMap((p) => p.vulns.filter((v) => inRange(v, 7)));
+    return { e, n: all.length, crit: all.filter((v) => v.severity === "CRITICAL").length, kev: all.filter((v) => v.kev).length,
+      pk: e.packages.filter((p) => p.vulns.some((v) => inRange(v, 7))).length };
+  });
+  tbl.innerHTML = `<h2>Last 7 days by ecosystem (tracked packages only)</h2>
+    <table class="data"><thead><tr><th>Ecosystem</th><th class="num">New advisories</th><th class="num">Critical</th><th class="num">KEV</th><th class="num">Packages affected</th></tr></thead>
+    <tbody>${rows.map((r) => `<tr><td>${esc(r.e.label)}</td><td class="num">${r.n}</td><td class="num">${r.crit}</td><td class="num">${r.kev}</td><td class="num">${r.pk} / ${r.e.packages.length}</td></tr>`).join("")}</tbody></table>`;
+  root.append(tbl);
+
+  if (DATA.kev_recent && DATA.kev_recent.length) {
+    const k = document.createElement("div");
+    k.className = "panel scroll-x";
+    k.innerHTML = `<h2>Added to CISA KEV in the last 7 days (all vendors)</h2>
+      <table class="data"><thead><tr><th>Added</th><th>CVE</th><th>Vendor / product</th><th>Name</th></tr></thead><tbody>
+      ${DATA.kev_recent.map((x) => `<tr><td class="nowrap">${esc(x.date_added)}</td><td class="nowrap"><a href="https://nvd.nist.gov/vuln/detail/${esc(x.cve)}" target="_blank" rel="noopener">${esc(x.cve)}</a></td><td>${esc(x.vendor)} ${esc(x.product)}</td><td>${esc(x.name)}</td></tr>`).join("")}
+      </tbody></table>`;
+    root.append(k);
+  }
+}
+
+// ------------------------------------------------------------ state
+
+function readUrl() {
+  const q = new URLSearchParams(location.search);
+  const out = {};
+  if (["a", "b", "c"].includes(q.get("view"))) out.view = q.get("view");
+  if (q.get("pkg")) { out.pkg = q.get("pkg"); out.view = out.view || "c"; }
+  if (["7", "30"].includes(q.get("range"))) out.range = Number(q.get("range"));
+  if (q.get("kev") === "1") out.kevOnly = true;
+  return out;
+}
+function writeUrl(push) {
+  const q = new URLSearchParams();
+  q.set("view", state.view);
+  if (state.pkg) q.set("pkg", state.pkg);
+  if (state.range !== 7) q.set("range", state.range);
+  if (state.kevOnly) q.set("kev", "1");
+  const url = `${location.pathname}?${q}`;
+  if (url !== location.pathname + location.search) history[push ? "pushState" : "replaceState"](null, "", url);
+}
+
+function setState(patch, push = true) {
+  Object.assign(state, patch);
+  writeUrl(push);
+  writePrefs();
+  render();
+}
+
+function render() {
+  document.querySelectorAll("[data-view]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.view === state.view));
+  document.querySelectorAll("[data-range]").forEach((b) => b.setAttribute("aria-pressed", Number(b.dataset.range) === state.range));
+  $("#kevonly").checked = state.kevOnly;
+  for (const v of ["a", "b", "c"]) $("#view-" + v).hidden = state.view !== v;
+  if (!DATA) return;
+  renderStats();
+  if (state.view === "a") renderTreemap();
+  if (state.view === "b") renderCounter();
+  if (state.view === "c") renderTimeline();
+}
+
+function initControls() {
+  document.querySelectorAll("[data-view]").forEach((b) => b.onclick = () => setState({ view: b.dataset.view, pkg: b.dataset.view === "c" ? state.pkg : null }));
+  document.querySelectorAll("[data-range]").forEach((b) => b.onclick = () => setState({ range: Number(b.dataset.range) }, false));
+  $("#kevonly").onchange = (e) => setState({ kevOnly: e.target.checked }, false);
+  $("#search").addEventListener("change", (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    if (!q) return;
+    const hit = [...PKGS.keys()].find((k) => k.toLowerCase() === q)
+      || [...PKGS.entries()].find(([, v]) => v.pkg.label.toLowerCase() === q || v.pkg.name.toLowerCase() === q)?.[0]
+      || [...PKGS.keys()].find((k) => k.toLowerCase().includes(q));
+    setState({ view: "c", pkg: hit || q });
+    e.target.value = "";
+  });
+  $("#theme").onclick = () => {
+    const root = document.documentElement;
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    writePrefs();
+  };
+  addEventListener("popstate", () => { Object.assign(state, { view: "a", pkg: null, range: 7, kevOnly: false }, readUrl()); render(); });
+  let t;
+  addEventListener("resize", () => { clearTimeout(t); t = setTimeout(render, 150); });
+}
+
+async function main() {
+  const prefs = readPrefs();
+  if (prefs.theme === "dark" || prefs.theme === "light") document.documentElement.dataset.theme = prefs.theme;
+  const fromUrl = readUrl();
+  state.view = fromUrl.view || prefs.view || (innerWidth < 768 ? "c" : "a");
+  state.range = fromUrl.range || prefs.range || 7;
+  state.kevOnly = !!fromUrl.kevOnly;
+  state.pkg = fromUrl.pkg || null;
+  initControls();
+  render();
+  try {
+    const r = await fetch("data/latest.json", { cache: "no-cache" });
+    if (!r.ok) throw new Error(r.status);
+    DATA = await r.json();
+  } catch (e) {
+    $("#meta").textContent = "Could not load data/latest.json. Run collect/collect.py first.";
+    return;
+  }
+  NOW = Date.parse(DATA.generated_at);
+  for (const e of DATA.ecosystems) for (const p of e.packages) PKGS.set(p.key, { eco: e, pkg: p });
+  $("#pkglist").innerHTML = [...PKGS.values()].map(({ eco, pkg }) => `<option value="${esc(pkg.key)}">${esc(pkg.label)} (${esc(eco.label)})</option>`).join("");
+  const gen = new Date(DATA.generated_at);
+  $("#meta").textContent = `Updated ${gen.toISOString().slice(0, 16).replace("T", " ")} UTC · ${DATA.summary.tracked_packages} popular packages in ${DATA.ecosystems.length} ecosystems`;
+  const missing = Object.entries(DATA.sources).filter(([, s]) => !s.ok).map(([k]) => ({ osv: "OSV", kev: "CISA KEV", epss: "FIRST EPSS", nvd: "NVD" }[k] || k));
+  if (missing.length) {
+    const w = $("#warn");
+    w.hidden = false;
+    w.textContent = `Not in this snapshot: ${missing.join(", ")} (the source could not be reached when the data was collected). Fields from it show as n/a.`;
+  }
+  render();
+}
+main();
+</script>
+</body>
+</html>
