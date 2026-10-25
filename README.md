@@ -32,8 +32,9 @@ weights). Tile color is the worst advisory *published* in the last 7 days
 (toggle: 30 days). "KEV only" keeps only advisories whose CVE is in the CISA
 KEV catalog.
 
-The treemap zooms: pinch, Ctrl/⌘ + scroll, double-click (Shift + double-click
-zooms out), the +/− buttons, or the +/−/0 keys; drag to pan. Text stays the
+The treemap fills most of the window height on large screens and has a
+"Full screen" button. It zooms: pinch, Ctrl/⌘ + scroll, double-click (Shift +
+double-click zooms out), the +/− buttons, or the +/−/0 keys; drag to pan. Text stays the
 same size on screen, so a tile shows more as it grows: name → advisory count →
 counts by severity and fixed versions → the worst advisory with its summary,
 plus downloads and the survey share.
@@ -48,9 +49,15 @@ right and a table of advisories below. Default view on screens narrower than
 additions. Overall CVE counts are what [cve.icu](https://cve.icu) already does
 well; this view is a side panel, not the point.
 
+The interface is in English or Korean (EN / KO at the top right; the first
+visit follows the browser language). Advisory text from the data stays in
+English.
+
 The view is kept in the URL (`?view=a|b|c`, `?pkg=npm/next`, `&range=30`,
-`&kev=1`) so links can be shared. The last view, period and theme are
-remembered in `localStorage`.
+`&kev=1`, `&lang=ko`) so links can be shared. The last view, period, language
+and theme are remembered in `localStorage`. The footer shows the page version,
+which helps spot a stale copy in the browser cache (reload with Cmd/Ctrl +
+Shift + R).
 
 ## Colors
 
