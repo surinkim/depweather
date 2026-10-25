@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>depweather</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="fonts/fonts.css">
 <meta name="description" content="Today's vulnerability forecast for popular packages">
 <style>
@@ -89,7 +90,9 @@ h1, h2, .fc-say, .fc-strip b, .stat .value, svg text {
 @media (max-width: 767px) { .wrap { padding: 0 16px; } }
 
 header.top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 18px 0 10px; }
-header.top h1 { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.01em; }
+header.top h1 { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; }
+/* The mark: a rain cloud whose drops are packages, colored by severity. */
+header.top h1 img { display: block; width: 32px; height: 32px; }
 header.top .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 header.top .tag { color: var(--ink-2); font-size: 14px; }
 header.top .spacer { flex: 1; }
@@ -213,7 +216,7 @@ footer p { margin: 4px 0; }
 <body>
 <div class="wrap">
   <header class="top">
-    <h1>depweather</h1>
+    <h1><img src="favicon.svg" alt="" width="32" height="32">depweather</h1>
     <span class="tag" data-i18n="tagline">Today's vulnerability forecast for popular packages</span>
     <span class="spacer"></span>
     <div class="controls">
@@ -290,7 +293,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-25.5";
+const BUILD = "2026-10-25.6";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
