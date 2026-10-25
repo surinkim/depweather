@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js): visit counts, see the footer note -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HF5GM88Y3V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HF5GM88Y3V');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>depweather</title>
@@ -361,6 +370,7 @@ footer p { margin: 4px 0; }
   <footer>
     <p data-i18n-html="footer_data"></p>
     <p>This product uses the NVD API but is not endorsed or certified by the NVD.</p>
+    <p data-i18n="footer_analytics">This site uses Google Analytics to count visits.</p>
     <p data-i18n-html="footer_disclaimer"></p>
     <p id="build"></p>
   </footer>
@@ -371,7 +381,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-25.8";
+const BUILD = "2026-10-25.9";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -456,6 +466,7 @@ const I18N = {
       Source code: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
     build: (b) => `Page version ${b}`,
     gh_title: "Source code on GitHub",
+    footer_analytics: "This site uses Google Analytics to count visits.",
     rd_kev: "added to CISA KEV this week", rd_aff: (n) => `of ${n} packages affected this week`,
     rd_today: "new CVEs today", rd_month: (m) => `CVEs published in ${m}`,
     wx: ["Clear", "Cloudy", "Rain", "Storm"], wx_kev: "Exploited",
@@ -534,6 +545,7 @@ const I18N = {
       소스 코드: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
     build: (b) => `페이지 버전 ${b}`,
     gh_title: "GitHub에서 소스 코드 보기",
+    footer_analytics: "방문 통계를 위해 Google Analytics를 사용합니다.",
     about_html: `<h2>depweather 소개</h2>
     <p>depweather는 인기 오픈소스 패키지 약 150개의 새 취약점을 매일 보여주는 무료 지도입니다. npm, PyPI, Maven,
       NuGet, crates.io, Packagist, Go, RubyGems, Hex와 PHP, Node.js, nginx 같은 런타임·서버를 다룹니다.

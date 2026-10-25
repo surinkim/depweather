@@ -154,7 +154,7 @@ Not covered yet:
 | [NVD API 2.0](https://nvd.nist.gov/developers) | Monthly and daily CVE counts; CVSS for unrated advisories | `/rest/json/cves/2.0` | Required notice: "This product uses the NVD API but is not endorsed or certified by the NVD." (in the page footer). Works without a key at ~1 request / 6.5 s; set `NVD_API_KEY` to go faster |
 | npm downloads API, [pypistats](https://pypistats.org) | Tile size: downloads last week | `api.npmjs.org/downloads/point/last-week/…`, `pypistats.org/api/packages/…/recent` | **To confirm** |
 | crates.io, Packagist, RubyGems, hex.pm APIs | Tile size: crates.io downloads in 90 days, Packagist in 30 days, RubyGems all time, Hex last week | `crates.io/api/v1/crates/…` (1 request/s, identifying User-Agent), `packagist.org/packages/….json`, `rubygems.org/api/v1/gems/….json`, `hex.pm/api/packages/…` | **To confirm** |
-| Bricolage Grotesque, IBM Plex Sans | Type, self-hosted in `fonts/` (no third-party requests) | Downloaded once from Google Fonts | SIL Open Font License 1.1 (`fonts/OFL-*.txt`) |
+| Bricolage Grotesque, IBM Plex Sans | Type, self-hosted in `fonts/` (no request to Google Fonts) | Downloaded once from Google Fonts | SIL Open Font License 1.1 (`fonts/OFL-*.txt`) |
 | [Stack Overflow Developer Survey 2026](https://survey.stackoverflow.co/2026/technology/data) | Group area, framework picks and shares | Numbers copied by hand into `stacks.yml` | **To confirm** (the survey's public data is usually published under the Open Database License) |
 | [deps.dev](https://deps.dev) | Not used yet (candidate for Maven / Go popularity) | — | Data it generates is CC-BY 4.0; API use is subject to the Google API Terms of Service; caching is expressly permitted (README of `google/deps.dev`, checked 2026-10-25) |
 

@@ -140,7 +140,7 @@ DEPWEATHER_STACKS=~/my-stacks.yml python collect/collect.py
 | [NVD API 2.0](https://nvd.nist.gov/developers) | 월별·일별 CVE 건수, 등급 없는 권고의 CVSS | `/rest/json/cves/2.0` | 필수 문구: "This product uses the NVD API but is not endorsed or certified by the NVD."(페이지 하단). 키 없이 약 6.5초당 1회로 동작하고, `NVD_API_KEY`를 설정하면 빨라집니다 |
 | npm 다운로드 API, [pypistats](https://pypistats.org) | 타일 크기: 지난주 다운로드 | `api.npmjs.org/downloads/point/last-week/…`, `pypistats.org/api/packages/…/recent` | **확인 필요** |
 | crates.io, Packagist, RubyGems, hex.pm API | 타일 크기: crates.io 90일, Packagist 30일, RubyGems 누적, Hex 지난주 다운로드 | `crates.io/api/v1/crates/…`(초당 1회, 식별 가능한 User-Agent), `packagist.org/packages/….json`, `rubygems.org/api/v1/gems/….json`, `hex.pm/api/packages/…` | **확인 필요** |
-| Bricolage Grotesque, IBM Plex Sans | 서체. `fonts/`에 직접 두어 외부 요청이 없습니다 | Google Fonts에서 한 번 받음 | SIL Open Font License 1.1(`fonts/OFL-*.txt`) |
+| Bricolage Grotesque, IBM Plex Sans | 서체. `fonts/`에 직접 두어 Google Fonts에 요청하지 않습니다 | Google Fonts에서 한 번 받음 | SIL Open Font License 1.1(`fonts/OFL-*.txt`) |
 | [Stack Overflow Developer Survey 2026](https://survey.stackoverflow.co/2026/technology/data) | 그룹 면적, 프레임워크 선정과 비율 | 숫자를 `stacks.yml`에 직접 옮김 | **확인 필요**(설문 공개 데이터는 보통 Open Database License로 배포됩니다) |
 | [deps.dev](https://deps.dev) | 아직 쓰지 않음(Maven / Go 인기도 후보) | — | 자체 생성 데이터는 CC-BY 4.0, API는 Google API 서비스 약관 적용, 캐시는 명시적으로 허용(`google/deps.dev` README, 2026-10-25 확인) |
 

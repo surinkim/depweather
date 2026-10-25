@@ -50,7 +50,7 @@ A GitHub Actions job runs once a day. It pulls advisories from
 [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog),
 exploit probabilities from [FIRST EPSS](https://www.first.org/epss/) and CVE
 counts from [NVD](https://nvd.nist.gov), and writes them into one JSON file.
-A single HTML page draws it. No server, no login, no tracking.
+A single HTML page draws it. No server and no login; Google Analytics counts visits.
 
 Details (colors, severity rules, how packages are picked, data licenses):
 **[docs/how-it-works.md](docs/how-it-works.md)**

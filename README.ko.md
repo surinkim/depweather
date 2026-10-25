@@ -48,7 +48,7 @@ GitHub Actions 작업이 하루에 한 번 돕니다. [OSV](https://osv.dev)에�
 [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)에서 실제 악용
 여부를, [FIRST EPSS](https://www.first.org/epss/)에서 악용 확률을,
 [NVD](https://nvd.nist.gov)에서 CVE 건수를 모아 JSON 파일 하나로 만듭니다. HTML 한
-장이 이를 그립니다. 서버, 로그인, 추적이 없습니다.
+장이 이를 그립니다. 서버와 로그인이 없고, 방문 통계는 Google Analytics로 봅니다.
 
 색, 심각도 규칙, 패키지 선정 기준, 데이터 라이선스 같은 자세한 내용:
 **[docs/how-it-works.ko.md](docs/how-it-works.ko.md)**
