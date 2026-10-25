@@ -1,0 +1,48 @@
+name: pages
+
+# Publishes the site to GitHub Pages: on every push to main (code changes)
+# and after each successful data collection (data commits made with
+# GITHUB_TOKEN do not trigger push workflows, so collect is chained here).
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: [collect]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      # Only what the page loads; mockups, history and sources stay in the repository.
+      - name: Assemble site
+        run: |
+          mkdir -p _site/data
+          cp index.html favicon.svg og.png _site/
+          cp -r fonts _site/
+          cp data/latest.json _site/data/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4

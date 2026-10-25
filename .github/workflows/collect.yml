@@ -43,5 +43,4 @@ jobs:
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
-      # After the repository goes public, add a GitHub Pages deploy here
-      # (actions/upload-pages-artifact + actions/deploy-pages). See README.
+      # Publishing is in pages.yml, which runs after this workflow succeeds.

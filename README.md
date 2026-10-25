@@ -8,7 +8,7 @@ collects public data into `data/latest.json`, and a single `index.html` draws it
 There is no server, no login, no ads, and it does not scan your repositories
 (that is what Dependabot, `npm audit`, `pip-audit` and `govulncheck` are for).
 
-Status: proof of concept, private while it is being tried out.
+Live at **[depweather.com](https://depweather.com)**, updated daily.
 
 ## What it shows
 
@@ -208,20 +208,19 @@ at 06:17 UTC and on demand (Actions → collect → Run workflow), then commits
 [`og/og-template.html`](og/og-template.html) with `node og/render.js`
 (Playwright). It shows ecosystem names only, never real packages, because
 link previews are cached for a long time and the data changes daily. The
-`og:url` and `og:image` tags in `index.html` point to the GitHub Pages
-address and need updating when the site moves to depweather.com.
+`og:url` and `og:image` tags in `index.html` point to depweather.com.
 
-### After the repository goes public
+### Publishing
 
-GitHub Pages is not set up yet because the repository is private. When it goes
-public:
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes the site
+to GitHub Pages on every push to `main` and after each successful collection.
+It uploads only what the page loads (`index.html`, `favicon.svg`, `og.png`,
+`fonts/`, `data/latest.json`).
 
-1. Settings → Pages → Source: GitHub Actions.
-2. Add a deploy job to `collect.yml` after the commit step
-   (`actions/configure-pages`, `actions/upload-pages-artifact` with `path: .`,
-   `actions/deploy-pages`, with `pages: write` and `id-token: write`
-   permissions).
-3. Later: custom domain `depweather.com` (a `CNAME` file plus DNS).
+One-time setup: Settings → Pages → Source: GitHub Actions; then Custom
+domain: `depweather.com` with "Enforce HTTPS". DNS at the registrar: `A`
+records for `@` to 185.199.108.153, 185.199.109.153, 185.199.110.153 and
+185.199.111.153, and a `CNAME` record for `www` to `surinkim.github.io`.
 
 ## License
 
