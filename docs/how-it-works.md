@@ -173,6 +173,10 @@ of a number. Monthly NVD counts from an earlier run are reused when NVD is down.
 - `data/latest.json`: everything the page draws: generation time, top numbers,
   ecosystem → package → advisories of the last 30 days (with KEV, EPSS, fixed
   versions), monthly NVD counts, and this week's KEV additions.
+- `data/today.md` (published as `/today.md`): the day's forecast in plain
+  Markdown, for search engines, AI assistants and anyone without JavaScript.
+- `llms.txt` (published as `/llms.txt`): a short guide to the site and its data
+  files for AI assistants ([llmstxt.org](https://llmstxt.org)).
 - `data/history/YYYY-MM-DD.json`: a copy of each day's file, for day-over-day
   changes later.
 
@@ -209,7 +213,8 @@ link previews are cached for a long time and the data changes daily. The
 [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) publishes the site
 to GitHub Pages on every push to `main` and after each successful collection.
 It uploads only what the page loads (`index.html`, `favicon.svg`, `og.png`,
-`robots.txt`, `sitemap.xml`, `fonts/`, `data/latest.json`).
+`robots.txt`, `sitemap.xml`, `fonts/`, `data/latest.json`) and the plain-text
+views (`llms.txt`, `today.md`).
 
 One-time setup: Settings → Pages → Source: GitHub Actions; then Custom
 domain: `depweather.com` with "Enforce HTTPS". DNS at the registrar: `A`

@@ -1,0 +1,16 @@
+# depweather
+
+> A free daily map of new vulnerabilities in about 150 popular open-source packages (npm, PyPI, Maven, NuGet, crates.io, Packagist, Go, RubyGems, Hex, plus runtimes and servers such as PHP, Node.js and nginx). Each package is colored by its worst advisory published in the last 7 days; actively exploited vulnerabilities (CISA KEV) are marked separately.
+
+Data is collected once a day from OSV (including the GitHub Advisory Database and the Bitnami Vulnerability Database), CISA KEV, FIRST EPSS and NVD. Severity comes from the upstream advisory and can be wrong; check the linked advisory before acting. depweather does not scan anyone's code.
+
+## Today
+
+- [Today's forecast in plain Markdown](https://depweather.com/today.md): affected packages per ecosystem with severity, fixed versions and an example advisory, plus this week's CISA KEV additions.
+- [Full data as JSON](https://depweather.com/data/latest.json): every tracked package with its advisories from the last 30 days, KEV and EPSS fields, and monthly NVD CVE counts.
+
+## Docs
+
+- [How it works](https://github.com/surinkim/depweather/blob/main/docs/how-it-works.md): views, color and severity rules, how packages are picked, data sources and licenses.
+- [Package list](https://github.com/surinkim/depweather/blob/main/collect/stacks.yml)
+- [Source code (MIT)](https://github.com/surinkim/depweather)

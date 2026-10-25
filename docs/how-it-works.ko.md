@@ -158,6 +158,10 @@ Go는 공개된 다운로드 수가 없고, NuGet 검색 API(다운로드 수 �
 
 - `data/latest.json`: 페이지가 그리는 모든 것. 생성 시각, 상단 숫자, 생태계 → 패키지 →
   최근 30일 권고(KEV, EPSS, 수정 버전 포함), 월별 NVD 건수, 이번 주 KEV 추가 목록.
+- `data/today.md`(`/today.md`로 배포): 그날의 예보를 일반 Markdown으로 쓴 글. 검색엔진,
+  AI 도우미, JavaScript가 없는 환경을 위한 것입니다.
+- `llms.txt`(`/llms.txt`로 배포): AI 도우미를 위한 사이트와 데이터 파일 안내
+  ([llmstxt.org](https://llmstxt.org)).
 - `data/history/YYYY-MM-DD.json`: 날마다 남기는 사본. 나중에 전날 대비 변화를 계산하는
   데 씁니다.
 
@@ -191,7 +195,7 @@ NVD 호출을 빠르게 하려면 저장소 시크릿 `NVD_API_KEY`를 추가하
 
 [`.github/workflows/pages.yml`](../.github/workflows/pages.yml)이 `main`에 푸시할 때와
 수집이 성공할 때마다 GitHub Pages에 배포합니다. 페이지가 불러오는 파일만 올립니다
-(`index.html`, `favicon.svg`, `og.png`, `robots.txt`, `sitemap.xml`, `fonts/`, `data/latest.json`).
+(`index.html`, `favicon.svg`, `og.png`, `robots.txt`, `sitemap.xml`, `fonts/`, `data/latest.json`)과 글 형식 파일(`llms.txt`, `today.md`).
 
 처음 한 번 설정: Settings → Pages → Source를 GitHub Actions로 하고, Custom domain에
 `depweather.com`을 넣은 뒤 "Enforce HTTPS"를 켭니다. 도메인 등록 업체의 DNS에는 `@`의

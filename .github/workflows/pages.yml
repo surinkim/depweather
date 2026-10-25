@@ -32,11 +32,13 @@ jobs:
         with:
           ref: main
 
-      # Only what the page loads; mockups, history and sources stay in the repository.
+      # What the page loads plus the plain-text views (llms.txt, today.md);
+      # mockups, history and sources stay in the repository.
       - name: Assemble site
         run: |
           mkdir -p _site/data
-          cp index.html favicon.svg og.png robots.txt sitemap.xml _site/
+          cp index.html favicon.svg og.png robots.txt sitemap.xml llms.txt _site/
+          cp data/today.md _site/today.md
           cp -r fonts _site/
           cp data/latest.json _site/data/
 

@@ -20,6 +20,39 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="depweather logo beside a treemap of package ecosystems colored by vulnerability severity">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="text/markdown" href="https://depweather.com/today.md" title="Today's forecast (Markdown)">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "depweather",
+      "url": "https://depweather.com/",
+      "description": "A free daily map of new vulnerabilities in about 150 popular open-source packages, colored by severity, with actively exploited ones (CISA KEV) marked separately.",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Any (web browser)",
+      "inLanguage": ["en", "ko"],
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "codeRepository": "https://github.com/surinkim/depweather"
+    },
+    {
+      "@type": "Dataset",
+      "name": "depweather daily vulnerability snapshot",
+      "description": "Advisories from the last 30 days for about 150 popular open-source packages, with severity, fixed versions, CISA KEV and EPSS fields, and monthly NVD CVE counts. Updated daily.",
+      "url": "https://depweather.com/",
+      "isAccessibleForFree": true,
+      "creator": { "@type": "Person", "name": "Hyunuk Kim" },
+      "isBasedOn": ["https://osv.dev", "https://www.cisa.gov/known-exploited-vulnerabilities-catalog", "https://www.first.org/epss/", "https://nvd.nist.gov"],
+      "distribution": [
+        { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://depweather.com/data/latest.json" },
+        { "@type": "DataDownload", "encodingFormat": "text/markdown", "contentUrl": "https://depweather.com/today.md" }
+      ]
+    }
+  ]
+}
+</script>
 <style>
 :root {
   color-scheme: light;
@@ -220,6 +253,10 @@ table.data td.num, table.data th.num { text-align: right; font-variant-numeric: 
 #tooltip .t { font-weight: 650; font-size: 13px; }
 #tooltip .m { color: var(--ink-2); }
 
+.about { max-width: 72ch; margin: 36px 0 0; color: var(--ink-2); font-size: 14.5px; }
+.about h2 { font-size: 20px; color: var(--ink); margin: 0 0 6px; }
+.about h3 { font-size: 15px; color: var(--ink); margin: 16px 0 2px; font-family: inherit; font-weight: 600; }
+.about p { margin: 0; }
 footer { color: var(--muted); font-size: 12.5px; padding: 24px 0 32px; }
 footer p { margin: 4px 0; }
 .warn { color: var(--ink-2); background: var(--surface); border: 1px dashed var(--axis); border-radius: 8px; padding: 8px 10px; font-size: 13px; margin-bottom: 10px; }
@@ -293,6 +330,25 @@ footer p { margin: 4px 0; }
     <section id="view-b" hidden></section>
   </main>
 
+  <section class="about" data-i18n-html="about_html">
+    <h2>About depweather</h2>
+    <p>depweather is a free, daily map of new vulnerabilities in about 150 popular open-source packages:
+      npm, PyPI, Maven, NuGet, crates.io, Packagist, Go, RubyGems and Hex, plus runtimes and servers such as PHP,
+      Node.js and nginx. It answers one question: did a popular package get a serious vulnerability this week?</p>
+    <h3>What do the colors mean?</h3>
+    <p>Each tile is a package, colored by its worst advisory published in the last 7 days: gray for none, yellow for
+      low or medium, orange for high, red for critical, and magenta when the vulnerability is on the CISA Known
+      Exploited Vulnerabilities list.</p>
+    <h3>Where does the data come from?</h3>
+    <p>OSV (including the GitHub Advisory Database and the Bitnami Vulnerability Database), CISA KEV, FIRST EPSS and
+      NVD, collected once a day. Severity comes from the upstream advisory; check it before acting.</p>
+    <h3>Does it scan my code?</h3>
+    <p>No. For your own dependencies, use Dependabot, npm audit, pip-audit, govulncheck or osv-scanner.</p>
+    <h3>Can I read the data without this page?</h3>
+    <p>Yes: <a href="today.md">today's forecast in Markdown</a> and <a href="data/latest.json">the full data as JSON</a>.
+      How it works: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.md">docs</a>.</p>
+  </section>
+
   <footer>
     <p data-i18n-html="footer_data"></p>
     <p>This product uses the NVD API but is not endorsed or certified by the NVD.</p>
@@ -306,7 +362,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-25.6";
+const BUILD = "2026-10-25.7";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -467,6 +523,21 @@ const I18N = {
     footer_disclaimer: `심각도는 원 권고의 값이며 틀릴 수 있습니다. 조치 전에 반드시 원 권고를 확인하세요.
       소스 코드: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
     build: (b) => `페이지 버전 ${b}`,
+    about_html: `<h2>depweather 소개</h2>
+    <p>depweather는 인기 오픈소스 패키지 약 150개의 새 취약점을 매일 보여주는 무료 지도입니다. npm, PyPI, Maven,
+      NuGet, crates.io, Packagist, Go, RubyGems, Hex와 PHP, Node.js, nginx 같은 런타임·서버를 다룹니다.
+      "이번 주 인기 패키지에 심각한 취약점이 나왔나?"에 답합니다.</p>
+    <h3>색은 무엇을 뜻하나요?</h3>
+    <p>타일 하나가 패키지 하나이고, 최근 7일 동안 공개된 가장 심각한 권고로 색을 칠합니다. 회색은 없음, 노랑은 낮음·중간,
+      주황은 높음, 빨강은 치명, 마젠타는 CISA 실제 악용 목록(KEV)에 오른 취약점입니다.</p>
+    <h3>데이터는 어디서 오나요?</h3>
+    <p>OSV(GitHub Advisory Database, Bitnami Vulnerability Database 포함), CISA KEV, FIRST EPSS, NVD에서 하루 한 번
+      모읍니다. 심각도는 원 권고의 값이니 조치 전에 확인하세요.</p>
+    <h3>내 코드를 스캔하나요?</h3>
+    <p>아니요. 내 의존성은 Dependabot, npm audit, pip-audit, govulncheck, osv-scanner로 확인하세요.</p>
+    <h3>이 페이지 없이 데이터를 볼 수 있나요?</h3>
+    <p>네. <a href="today.md">오늘의 예보(Markdown, 영어)</a>와 <a href="data/latest.json">전체 데이터(JSON)</a>가 있습니다.
+      작동 방식: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.ko.md">문서</a>.</p>`,
     rd_kev: "이번 주 CISA KEV 추가", rd_aff: (n) => `이번 주 영향받은 패키지 (${n}개 중)`,
     rd_today: "오늘 신규 CVE", rd_month: (m) => `${m} 공개 CVE`,
     wx: ["맑음", "흐림", "비", "폭풍"], wx_kev: "실제 악용",
@@ -481,6 +552,8 @@ const I18N = {
   },
 };
 
+const ORIGINAL_HTML = new WeakMap();
+
 function t(key, ...args) {
   const v = I18N[LANG][key] ?? I18N.en[key];
   return typeof v === "function" ? v(...args) : v;
@@ -489,7 +562,11 @@ function t(key, ...args) {
 function applyStaticText() {
   document.documentElement.lang = LANG;
   document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
-  document.querySelectorAll("[data-i18n-html]").forEach((el) => { el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    // Sections written in the HTML (for readers without JavaScript) keep that text as their English version.
+    if (!ORIGINAL_HTML.has(el)) ORIGINAL_HTML.set(el, el.innerHTML);
+    el.innerHTML = I18N[LANG][el.dataset.i18nHtml] ?? I18N.en[el.dataset.i18nHtml] ?? ORIGINAL_HTML.get(el);
+  });
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); });
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
   document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === LANG));

@@ -477,6 +477,76 @@ def popularity(eco: dict, pkg: dict) -> tuple[float, str]:
     return float(pkg.get("weight", 1)), "fixed weight"
 
 
+# ---------------------------------------------------------------- today.md
+
+LEVEL_WORD = {4: "critical", 3: "high", 2: "medium", 1: "low or unrated", 0: "none"}
+
+
+def today_markdown(out: dict, days: int = 7) -> str:
+    """The day's forecast as plain Markdown, for readers that do not run JavaScript
+    (search engines, AI assistants, feed readers)."""
+    gen = parse_time(out["generated_at"])
+    since = gen - timedelta(days=days)
+    s = out["summary"]
+    rows = []
+    for e in out["ecosystems"]:
+        hits = []
+        for p in e["packages"]:
+            recent = [v for v in p["vulns"] if parse_time(v["published"]) >= since]
+            if not recent:
+                continue
+            kev = [v for v in recent if v.get("kev")]
+            rank = max(SEVERITY_RANK[v["severity"]] for v in recent)
+            fixed = []
+            for v in recent:
+                fixed += [f for f in v["fixed"] if f not in fixed]
+            top = sorted(recent, key=lambda v: (bool(v.get("kev")), SEVERITY_RANK[v["severity"]]), reverse=True)[0]
+            hits.append((bool(kev), rank, len(recent), p, fixed, top))
+        hits.sort(key=lambda h: (h[0], h[1], h[2]), reverse=True)
+        rows.append((e, hits))
+    rows.sort(key=lambda r: max(((h[0], h[1]) for h in r[1]), default=(False, -1)), reverse=True)
+
+    lines = [
+        f"# depweather forecast, {gen:%Y-%m-%d}",
+        "",
+        f"Vulnerabilities published in the last {days} days for {s['tracked_packages']} popular "
+        f"open-source packages, generated {out['generated_at']} by https://depweather.com "
+        "from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.",
+        "",
+        "## Numbers",
+        "",
+        f"- Popular packages with a new advisory this week: {s['affected_packages_7d']} of {s['tracked_packages']}",
+    ]
+    if s.get("kev_new_7d") is not None:
+        lines.append(f"- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): {s['kev_new_7d']}")
+    if s.get("today_cves") is not None:
+        lines.append(f"- New CVEs in NVD today (UTC): {s['today_cves']}")
+    if s.get("month_cves") is not None:
+        lines.append(f"- CVEs published in {s['month']} so far: {s['month_cves']:,}"
+                     + (f" (same month last year: {s['month_cves_last_year']:,})" if s.get("month_cves_last_year") else ""))
+    lines += ["", "## By ecosystem", ""]
+    for e, hits in rows:
+        if not hits:
+            lines.append(f"### {e['label']}\n\nNo new advisories for the tracked packages.\n")
+            continue
+        lines.append(f"### {e['label']}\n")
+        for kev, rank, n, p, fixed, top in hits:
+            name = p["label"] if p["label"].lower() == p["name"].lower() else f"{p['label']} ({p['name']})"
+            worst = "actively exploited (CISA KEV)" if kev else LEVEL_WORD[rank]
+            line = f"- **{name}**: {n} advisor{'y' if n == 1 else 'ies'}, worst {worst}"
+            if fixed:
+                line += f"; fixed in {', '.join(fixed[:4])}{' and more' if len(fixed) > 4 else ''}"
+            line += f". Example: [{top['id']}]({top['url']})" + (f" {top['summary']}" if top["summary"] else "")
+            lines.append(line)
+        lines.append("")
+    if out.get("kev_recent"):
+        lines += ["## Added to CISA KEV this week (all vendors)", ""]
+        lines += [f"- {k['date_added']}: {k['cve']}, {k['vendor']} {k['product']}: {k['name']}" for k in out["kev_recent"]]
+        lines.append("")
+    lines.append("Full data: https://depweather.com/data/latest.json")
+    return "\n".join(lines) + "\n"
+
+
 # ---------------------------------------------------------------- main
 
 def worst(vulns: list[dict]) -> str:
@@ -592,6 +662,7 @@ def main() -> int:
     text = json.dumps(out, ensure_ascii=False, indent=1)
     latest_path.write_text(text + "\n")
     (DATA / "history" / f"{now.date().isoformat()}.json").write_text(text + "\n")
+    (DATA / "today.md").write_text(today_markdown(out))
     log(f"wrote {latest_path} ({len(text) // 1024} KiB), affected packages (7d): {len(affected)}")
     return 0
 
