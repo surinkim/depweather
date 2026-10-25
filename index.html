@@ -4,66 +4,71 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>depweather</title>
+<link rel="stylesheet" href="fonts/fonts.css">
 <meta name="description" content="Today's vulnerability forecast for popular packages">
 <style>
 :root {
   color-scheme: light;
-  --page: #f9f9f7;
-  --surface: #fcfcfb;
-  --ink: #0b0b0b;
-  --ink-2: #52514e;
-  --muted: #6f6d68;
-  --grid: #e1e0d9;
-  --axis: #c3c2b7;
-  --border: rgba(11, 11, 11, 0.10);
-  --accent: #2a78d6;
-  --sev-0: #e6e5df;
-  --sev-0-ink: #52514e;
-  --sev-1: #fab219;
-  --sev-1-ink: #0b0b0b;
-  --sev-2: #ec835a;
-  --sev-2-ink: #0b0b0b;
-  --sev-3: #d03b3b;
+  --page: #eef5fa;
+  --surface: #ffffff;
+  --ink: #12324d;
+  --ink-2: #3f5b73;
+  --muted: #62798d;
+  --grid: #dce7ef;
+  --axis: #b7c9d6;
+  --border: rgba(18, 50, 77, 0.12);
+  --accent: #1d6fb8;
+  --sev-0: #e3ecf3;
+  --sev-0-ink: #3f5b73;
+  --sev-1: #f4c542;
+  --sev-1-ink: #12324d;
+  --sev-2: #f28c38;
+  --sev-2-ink: #12324d;
+  --sev-3: #d9433b;
   --sev-3-ink: #ffffff;
-  --bar: #2a78d6;
-  --group-line: #52514e;
-  --group-head: #ecebe5;
+  --sev-kev: #a32ca0;
+  --sev-kev-ink: #ffffff;
+  --bar: #1d6fb8;
+  --group-line: #8fb0c8;
+  --group-head: #e6f0f7;
 }
 @media (prefers-color-scheme: dark) {
   :root:where(:not([data-theme="light"])) {
     color-scheme: dark;
-    --page: #0d0d0d;
-    --surface: #1a1a19;
-    --ink: #f0efec;
-    --ink-2: #c3c2b7;
-    --muted: #9a988f;
-    --grid: #2c2c2a;
-    --axis: #383835;
-    --border: rgba(255, 255, 255, 0.10);
-    --accent: #3987e5;
-    --sev-0: #2c2c2a;
-    --sev-0-ink: #c3c2b7;
-    --bar: #3987e5;
-    --group-line: #9a988f;
-    --group-head: #262624;
+    --page: #0d1b27;
+    --surface: #12242f;
+    --ink: #e4eef6;
+    --ink-2: #b2c5d4;
+    --muted: #8299ab;
+    --grid: #1f3444;
+    --axis: #30495b;
+    --border: rgba(228, 238, 246, 0.12);
+    --accent: #6cb0ec;
+    --sev-0: #1a2e3c;
+    --sev-0-ink: #b2c5d4;
+    --sev-kev: #c44bc0;
+    --bar: #6cb0ec;
+    --group-line: #4d6c83;
+    --group-head: #172c3a;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --page: #0d0d0d;
-  --surface: #1a1a19;
-  --ink: #f0efec;
-  --ink-2: #c3c2b7;
-  --muted: #9a988f;
-  --grid: #2c2c2a;
-  --axis: #383835;
-  --border: rgba(255, 255, 255, 0.10);
-  --accent: #3987e5;
-  --sev-0: #2c2c2a;
-  --sev-0-ink: #c3c2b7;
-  --bar: #3987e5;
-  --group-line: #9a988f;
-  --group-head: #262624;
+  --page: #0d1b27;
+  --surface: #12242f;
+  --ink: #e4eef6;
+  --ink-2: #b2c5d4;
+  --muted: #8299ab;
+  --grid: #1f3444;
+  --axis: #30495b;
+  --border: rgba(228, 238, 246, 0.12);
+  --accent: #6cb0ec;
+  --sev-0: #1a2e3c;
+  --sev-0-ink: #b2c5d4;
+  --sev-kev: #c44bc0;
+  --bar: #6cb0ec;
+  --group-line: #4d6c83;
+  --group-head: #172c3a;
 }
 
 * { box-sizing: border-box; }
@@ -71,39 +76,60 @@ html, body { margin: 0; }
 body {
   background: var(--page);
   color: var(--ink);
-  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  font: 15px/1.5 "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
   overflow-x: hidden;
   font-feature-settings: "calt" 0; /* keep "93x7" in advisory IDs from becoming "93×7" */
 }
 a { color: var(--accent); }
+h1, h2, .fc-say, .fc-strip b, .stat .value, svg text {
+  font-family: "Bricolage Grotesque", "IBM Plex Sans", system-ui, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; }
+:lang(ko) body { word-break: keep-all; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .wrap { max-width: 1920px; margin: 0 auto; padding: 0 24px; }
 @media (max-width: 767px) { .wrap { padding: 0 16px; } }
 
 header.top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 18px 0 10px; }
-header.top h1 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+header.top h1 { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.01em; }
+header.top .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 header.top .tag { color: var(--ink-2); font-size: 14px; }
 header.top .spacer { flex: 1; }
 .lang button { padding: 6px 9px; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; }
 .meta { color: var(--muted); font-size: 13px; }
 
-.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; background: var(--surface); }
 .seg button {
   font: inherit; font-size: 13px; padding: 6px 12px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer;
 }
 .seg button + button { border-left: 1px solid var(--border); }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
-.iconbtn { font: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--ink-2); cursor: pointer; }
-
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 6px 0 14px; }
-.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; min-width: 0; }
-.stat .label { color: var(--ink-2); font-size: 12.5px; }
-.stat .value { font-size: 28px; font-weight: 650; line-height: 1.2; margin-top: 2px; }
-.stat .sub { color: var(--muted); font-size: 12.5px; }
-.stat .na { color: var(--muted); font-size: 18px; font-weight: 500; }
+.iconbtn { font: inherit; font-size: 13px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--ink-2); cursor: pointer; }
 @media (max-width: 767px) {
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .stat .value { font-size: 22px; }
+  header.top .tag { flex-basis: 100%; order: 3; }
+  header.top .spacer { display: none; }
+  header.top .controls { flex-wrap: nowrap; gap: 6px; }
+  .seg button, .iconbtn { padding: 6px 9px; font-size: 12.5px; }
 }
+
+/* The numbers read as one line under the forecast; missing ones are left out. */
+.stats { display: flex; flex-wrap: wrap; gap: 4px 28px; margin: 0 0 14px; }
+.stat { display: flex; align-items: baseline; gap: 7px; min-width: 0; }
+.stat .value { font-size: 22px; font-weight: 750; line-height: 1.2; }
+.stat .label { color: var(--ink-2); font-size: 14px; }
+.stat .sub { color: var(--muted); font-size: 12.5px; }
+
+/* Forecast: one sentence written from the data, then a glyph per group. */
+.fc { margin: 4px 0 14px; }
+.fc-say { font-size: clamp(22px, 2.3vw, 34px); line-height: 1.15; font-weight: 750; letter-spacing: -0.012em;
+  max-width: 46ch; margin: 4px 0 14px; font-variation-settings: "opsz" 72; text-wrap: balance; }
+.fc-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(122px, 1fr)); margin: 0 0 12px; padding: 0; list-style: none;
+  border-top: 1px solid var(--axis); border-bottom: 1px solid var(--axis); }
+.fc-strip button { display: flex; align-items: center; gap: 10px; width: 100%; height: 100%; padding: 9px 10px 9px 2px;
+  font: inherit; color: inherit; text-align: left; background: none; border: 0; cursor: pointer; }
+.fc-strip button:hover b { text-decoration: underline; }
+.fc-strip svg { flex: none; }
+.fc-strip b { display: block; font-size: 16px; font-weight: 700; line-height: 1.2; }
+.fc-strip span { display: block; font-size: 12.5px; color: var(--ink-2); line-height: 1.3; }
+@media (max-width: 767px) { .fc-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 10px; }
 .toolbar label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); cursor: pointer; }
@@ -113,9 +139,9 @@ header.top .spacer { flex: 1; }
 }
 .legend { display: inline-flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; color: var(--ink-2); }
 .legend span { display: inline-flex; align-items: center; gap: 5px; }
-.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid var(--border); }
+.legend .wx { display: inline-flex; }
 
-.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 12px; }
 .panel h2 { font-size: 15px; margin: 0 0 8px; }
 .panel + .panel { margin-top: 12px; }
 .hint { color: var(--muted); font-size: 12.5px; margin: 8px 0 0; }
@@ -136,7 +162,7 @@ svg text { font-family: inherit; }
 .tile:focus { outline: none; }
 .tile:focus-visible rect.cell, .tile:hover rect.cell { stroke: var(--ink); stroke-width: 2; }
 
-.tl-row { display: grid; grid-template-columns: 150px minmax(0, 1fr) 150px; gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--grid); }
+.tl-row { display: grid; grid-template-columns: 190px minmax(0, 1fr) 170px; gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--grid); }
 .tl-row:first-child { border-top: 0; }
 .tl-row .name { font-weight: 600; font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tl-row .name small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
@@ -190,6 +216,7 @@ footer p { margin: 4px 0; }
     <h1>depweather</h1>
     <span class="tag" data-i18n="tagline">Today's vulnerability forecast for popular packages</span>
     <span class="spacer"></span>
+    <div class="controls">
     <div class="seg" role="group" aria-label="View">
       <button data-view="a" data-i18n="view_a">Treemap</button>
       <button data-view="c" data-i18n="view_c">Timeline</button>
@@ -200,10 +227,15 @@ footer p { margin: 4px 0; }
       <button data-lang="en" lang="en">EN</button>
       <button data-lang="ko" lang="ko">KO</button>
     </div>
+    </div>
   </header>
   <p class="meta" id="meta" data-i18n="loading">Loading data…</p>
   <div id="warn" class="warn" hidden></div>
 
+  <section class="fc" aria-label="Forecast">
+    <p class="fc-say" id="fc-say"></p>
+    <ul class="fc-strip" id="fc-strip"></ul>
+  </section>
   <section class="stats" id="stats" aria-label="Today in numbers"></section>
 
   <div class="toolbar">
@@ -216,10 +248,11 @@ footer p { margin: 4px 0; }
     <datalist id="pkglist"></datalist>
     <span class="spacer"></span>
     <span class="legend" aria-label="Color legend">
-      <span><i style="background:var(--sev-0)"></i><span data-i18n="lg0">None</span></span>
-      <span><i style="background:var(--sev-1)"></i><span data-i18n="lg1">Low / Medium</span></span>
-      <span><i style="background:var(--sev-2)"></i><span data-i18n="lg2">High</span></span>
-      <span><i style="background:var(--sev-3)"></i><span data-i18n="lg3">Critical or KEV</span></span>
+      <span><i class="wx" data-lvl="0"></i><span data-i18n="lg0">Clear</span></span>
+      <span><i class="wx" data-lvl="1"></i><span data-i18n="lg1">Cloudy: low or medium</span></span>
+      <span><i class="wx" data-lvl="2"></i><span data-i18n="lg2">Rain: high</span></span>
+      <span><i class="wx" data-lvl="3"></i><span data-i18n="lg3">Storm: critical</span></span>
+      <span><i class="wx" data-lvl="3" data-kev="1"></i><span data-i18n="lg_kev">Exploited (KEV)</span></span>
     </span>
   </div>
 
@@ -257,7 +290,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-25.4";
+const BUILD = "2026-10-25.5";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -267,10 +300,6 @@ const SEV_LEVEL = { NONE: 0, UNKNOWN: 1, LOW: 1, MEDIUM: 1, MODERATE: 1, HIGH: 2
 const PREFS_KEY = "depweather:prefs";
 const DAY = 86400000;
 
-// Design mockups (mockups/*.html) reuse this page: they point DATA_URL elsewhere
-// with <body data-data="…"> and plug in through window.DW hooks.
-const DATA_URL = document.body.dataset.data || "data/latest.json";
-const HOOKS = window.DW || {};
 
 const state = { view: "a", range: 7, kevOnly: false, pkg: null };
 let DATA = null;
@@ -283,15 +312,15 @@ let LANG = "en";
 // Advisory text (IDs, summaries, severities) comes from the data and stays in English.
 const I18N = {
   en: {
-    tagline: "Today's vulnerability forecast for popular packages",
+    tagline: "Vulnerability weather for popular packages",
     view_a: "Treemap", view_c: "Timeline", view_b: "Counter",
     theme: "Theme", theme_title: "Toggle light / dark",
     loading: "Loading data…",
     load_error: "Could not load data/latest.json. Run collect/collect.py first.",
-    meta: (d, n, e) => `Updated ${d} UTC · ${n} popular packages in ${e} ecosystems`,
+    meta: (d, n, e) => `Forecast for ${n} popular packages in ${e} groups, made ${d} UTC.`,
     warn: (list) => `Not in this snapshot: ${list} (the source could not be reached when the data was collected). Fields from it show as n/a.`,
     days7: "7 days", days30: "30 days", kev_only: "KEV only", search: "Search a package…",
-    lg0: "None", lg1: "Low / Medium", lg2: "High", lg3: "Critical or KEV",
+    lg0: "Clear", lg1: "Cloudy: low or medium", lg2: "Rain: high", lg3: "Storm: critical", lg_kev: "Exploited (CISA KEV)",
     level: ["None", "Low / Medium", "High", "Critical"],
     st_today: "New CVEs today (UTC)", st_today_sub: "published in NVD", nvd_na: "NVD count unavailable",
     st_month: (m) => `CVEs in ${m}`,
@@ -306,7 +335,7 @@ const I18N = {
       `Group area = share of ${survey} respondents using the language. ` +
       `Tile size = downloads within each group${fixed ? ` (${fixed}: equal weights, no download data)` : ""}. ` +
       `Tiles show more detail as they grow.`,
-    group_head: (label, a, n) => `${label} · ${a}/${n} affected`,
+    group_head: (label, a, n) => `${label}, ${a} of ${n} affected`,
     vulns: (n) => `${n} vuln${n > 1 ? "s" : ""}`, clear: "clear",
     sev_short: ["", "low/med", "high", "crit"],
     fixed_short: "Fixed", fixed_in: "Fixed in", no_fixed: "No fixed version listed",
@@ -345,17 +374,30 @@ const I18N = {
     footer_disclaimer: `Severity labels come from the upstream advisory and can be wrong. Always check the advisory before acting.
       Source code: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
     build: (b) => `Page version ${b}`,
+    rd_kev: "added to CISA KEV this week", rd_aff: (n) => `of ${n} packages affected this week`,
+    rd_today: "new CVEs today", rd_month: (m) => `CVEs published in ${m}`,
+    wx: ["Clear", "Cloudy", "Rain", "Storm"], wx_kev: "Exploited",
+    // A list of names, cut to `max` with "and N more"; unit is "group" or "pkg" (used in Korean).
+    names: (a, max) => a.length <= max ? (a.length < 3 ? a.join(" and ") : `${a.slice(0, -1).join(", ")} and ${a.at(-1)}`)
+      : `${a.slice(0, max).join(", ")} and ${a.length - max} more`,
+    more: (shown, n) => n ? `${shown} +${n}` : shown,
+    fc_kev: (pk) => `Exploited now: ${pk}.`,
+    fc_storm: (groups, pk) => `Storms over ${groups}${pk ? `, with critical issues in ${pk}` : ""}.`,
+    fc_rain: (groups) => `Rain over ${groups}.`,
+    fc_cloud: (groups) => `Light clouds over ${groups}; nothing above medium.`,
+    fc_clear: (n) => `Clear skies across all ${n} groups.`,
+    strip_title: (label) => `Show ${label} on the map`,
   },
   ko: {
-    tagline: "인기 패키지의 오늘 취약점 예보",
+    tagline: "인기 패키지의 취약점 날씨",
     view_a: "트리맵", view_c: "타임라인", view_b: "카운터",
     theme: "테마", theme_title: "라이트 / 다크 전환",
     loading: "데이터를 불러오는 중…",
     load_error: "data/latest.json을 불러오지 못했습니다. 먼저 collect/collect.py를 실행하세요.",
-    meta: (d, n, e) => `${d} UTC 업데이트 · 생태계 ${e}개, 인기 패키지 ${n}개`,
+    meta: (d, n, e) => `${d} UTC 예보. ${e}개 그룹, 인기 패키지 ${n}개.`,
     warn: (list) => `이번 데이터에 빠진 소스: ${list} (수집 당시 접속하지 못했습니다). 해당 값은 n/a로 표시됩니다.`,
     days7: "7일", days30: "30일", kev_only: "KEV만", search: "패키지 검색…",
-    lg0: "없음", lg1: "낮음·중간", lg2: "높음", lg3: "치명 또는 KEV",
+    lg0: "맑음", lg1: "흐림: 낮음·중간", lg2: "비: 높음", lg3: "폭풍: 치명", lg_kev: "실제 악용 (CISA KEV)",
     level: ["없음", "낮음·중간", "높음", "치명"],
     st_today: "오늘 신규 CVE (UTC)", st_today_sub: "NVD 공개 기준", nvd_na: "NVD 집계 없음",
     st_month: (m) => `${m} CVE`,
@@ -370,7 +412,7 @@ const I18N = {
       `그룹 면적 = ${survey} 응답자 중 해당 언어 사용 비율. ` +
       `타일 크기 = 그룹 안에서의 다운로드 수${fixed ? ` (${fixed}: 다운로드 데이터가 없어 같은 크기)` : ""}. ` +
       `확대할수록 타일에 정보가 더 표시됩니다.`,
-    group_head: (label, a, n) => `${label} · 영향 ${a}/${n}`,
+    group_head: (label, a, n) => `${label}, ${n}개 중 ${a}개 영향`,
     vulns: (n) => `취약점 ${n}건`, clear: "없음",
     sev_short: ["", "낮음·중간", "높음", "치명"],
     fixed_short: "수정", fixed_in: "수정 버전", no_fixed: "수정 버전 정보 없음",
@@ -409,6 +451,17 @@ const I18N = {
     footer_disclaimer: `심각도는 원 권고의 값이며 틀릴 수 있습니다. 조치 전에 반드시 원 권고를 확인하세요.
       소스 코드: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
     build: (b) => `페이지 버전 ${b}`,
+    rd_kev: "이번 주 CISA KEV 추가", rd_aff: (n) => `이번 주 영향받은 패키지 (${n}개 중)`,
+    rd_today: "오늘 신규 CVE", rd_month: (m) => `${m} 공개 CVE`,
+    wx: ["맑음", "흐림", "비", "폭풍"], wx_kev: "실제 악용",
+    names: (a, max, unit) => a.length <= max ? a.join(", ") : `${a.slice(0, max).join(", ")} 외 ${a.length - max}${unit === "group" ? "곳" : "개"}`,
+    more: (shown, n) => n ? `${shown} 외 ${n}` : shown,
+    fc_kev: (pk) => `실제 악용 중: ${pk}.`,
+    fc_storm: (groups, pk) => `${groups}에 폭풍.${pk ? ` 치명: ${pk}.` : ""}`,
+    fc_rain: (groups) => `${groups}에 비.`,
+    fc_cloud: (groups) => `${groups}은 흐림. 중간 이상은 없습니다.`,
+    fc_clear: (n) => `${n}개 그룹 모두 맑음.`,
+    strip_title: (label) => `지도에서 ${label} 보기`,
   },
 };
 
@@ -425,6 +478,7 @@ function applyStaticText() {
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
   document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === LANG));
   $("#build").textContent = t("build", BUILD);
+  document.querySelectorAll(".legend .wx").forEach((el) => el.replaceChildren(wxIcon(Number(el.dataset.lvl), 18, !!el.dataset.kev)));
   if (DATA) renderMeta();
   updateFullscreenLabel();
 }
@@ -529,18 +583,100 @@ function renderMeta() {
 
 function renderStats() {
   const s = DATA.summary;
-  const tile = (label, value, sub) => `<div class="stat"><div class="label">${esc(label)}</div>
-    <div class="value">${value == null ? '<span class="na">n/a</span>' : esc(value)}</div><div class="sub">${esc(sub)}</div></div>`;
-  let yoy = t("nvd_na");
+  // Numbers the snapshot does not have are left out; the notice above says why.
+  const item = (value, label, sub) => value == null ? "" :
+    `<div class="stat"><span class="value">${esc(value)}</span><span class="label">${esc(label)}</span>${sub ? `<span class="sub">${esc(sub)}</span>` : ""}</div>`;
+  let yoy = "";
   if (s.month_cves != null && s.month_cves_last_year) {
     const pct = Math.round((s.month_cves / s.month_cves_last_year - 1) * 100);
     yoy = t("st_yoy", `${pct >= 0 ? "+" : ""}${pct}%`, `${s.month.slice(0, 4) - 1}-${s.month.slice(5)}`, fmt(s.month_cves_last_year));
   }
   $("#stats").innerHTML =
-    tile(t("st_today"), fmt(s.today_cves), s.today_cves == null ? t("nvd_na") : t("st_today_sub")) +
-    tile(t("st_month", s.month), fmt(s.month_cves), yoy) +
-    tile(t("st_kev"), fmt(s.kev_new_7d), s.kev_new_7d == null ? t("kev_na") : t("st_kev_sub")) +
-    tile(t("st_aff"), s.affected_packages_7d, t("st_aff_sub", s.tracked_packages));
+    item(fmt(s.kev_new_7d), t("rd_kev")) +
+    item(s.affected_packages_7d, t("rd_aff", s.tracked_packages)) +
+    item(fmt(s.today_cves), t("rd_today")) +
+    item(fmt(s.month_cves), t("rd_month", s.month), yoy);
+}
+
+// ------------------------------------------------------------ forecast
+
+// Weather glyphs: clear, cloud (low/medium), rain (high), storm (critical).
+// Exploited (KEV) is a storm cloud in the KEV color. Shapes differ, so the
+// glyph reads without color.
+function wxIcon(lvl, size, kev = false) {
+  const svg = svgEl("svg", { width: size, height: size, viewBox: "0 0 32 32", "aria-hidden": "true" });
+  const add = (tag, attrs) => { const e = svgEl(tag, attrs); svg.append(e); return e; };
+  const edge = { stroke: "var(--ink)", "stroke-width": 1.8, "stroke-linejoin": "round", "stroke-linecap": "round" };
+  if (lvl === 0) {
+    add("circle", { cx: 16, cy: 16, r: 6, fill: "var(--sev-1)", ...edge });
+    for (let i = 0; i < 8; i++) {
+      const a = i * Math.PI / 4;
+      add("path", { d: `M${16 + Math.cos(a) * 9.5} ${16 + Math.sin(a) * 9.5}L${16 + Math.cos(a) * 13} ${16 + Math.sin(a) * 13}`, ...edge, fill: "none" });
+    }
+    return svg;
+  }
+  const lift = lvl === 1 ? 0 : 3;
+  add("path", { d: `M9 ${22 - lift}h14a5 5 0 0 0 0-10a7 7 0 0 0-13.4 1.6A4.3 4.3 0 0 0 9 ${22 - lift}Z`,
+    fill: kev ? "var(--sev-kev)" : `var(--sev-${lvl})`, ...edge });
+  if (lvl === 2) for (const x of [11, 16, 21]) add("path", { d: `M${x} 23l-1.5 4.5`, ...edge, stroke: "var(--accent)", "stroke-width": 2.2, fill: "none" });
+  if (lvl === 3) add("path", { d: "M17 19.5l-4 6h4l-2 5 6-8h-4l2-3", fill: "var(--sev-1)", ...edge, "stroke-width": 1.4 });
+  return svg;
+}
+
+function groupRows() {
+  return DATA.ecosystems.map((e) => {
+    const hit = e.packages.map((p) => {
+      const vulns = pkgVulns(p);
+      return { p, lvl: pkgLevel(vulns), kev: vulns.some((v) => v.kev), n: vulns.length };
+    }).filter((x) => x.lvl).sort((a, b) => b.kev - a.kev || b.lvl - a.lvl || b.n - a.n);
+    return { e, hit, lvl: hit.length ? Math.max(...hit.map((x) => x.lvl)) : 0, kev: hit.some((x) => x.kev) };
+  });
+}
+
+function renderForecast() {
+  const rows = groupRows();
+  // Name a few groups and packages; the strip below lists every group.
+  const names = (list, max, unit = "pkg") => t("names", list, max, unit);
+  const by = (l) => rows.filter((r) => r.lvl === l).map((r) => r.e.label);
+  const pkgs = (pred) => rows.flatMap((r) => r.hit.filter(pred)).sort((a, b) => b.n - a.n).map((x) => x.p.label);
+  const parts = [];
+  const kevPk = pkgs((x) => x.kev);
+  if (kevPk.length) parts.push(t("fc_kev", names(kevPk, 3)));
+  if (by(3).length) {
+    const crit = pkgs((x) => x.lvl === 3 && !x.kev);
+    parts.push(t("fc_storm", names(by(3), 2, "group"), crit.length ? names(crit, 3) : ""));
+  } else if (by(2).length) parts.push(t("fc_rain", names(by(2), 3, "group")));
+  else if (by(1).length) parts.push(t("fc_cloud", names(by(1), 3, "group")));
+  else parts.push(t("fc_clear", rows.length));
+  $("#fc-say").textContent = parts.join(" ");
+
+  const strip = $("#fc-strip");
+  strip.replaceChildren();
+  for (const r of rows) {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    btn.title = t("strip_title", r.e.label);
+    btn.append(wxIcon(r.lvl, 32, r.kev));
+    const text = document.createElement("div");
+    const word = r.kev ? t("wx_kev") : t("wx")[r.lvl];
+    text.innerHTML = `<b>${esc(r.e.label)}</b><span>${esc(r.lvl ? `${word}, ${t("more", r.hit[0].p.label, r.hit.length - 1)}` : word)}</span>`;
+    btn.append(text);
+    btn.onclick = () => focusGroup(r.e.id);
+    li.append(btn);
+    strip.append(li);
+  }
+}
+
+// Zoom the treemap so one ecosystem group fills it.
+function focusGroup(id) {
+  if (state.view !== "a") setState({ view: "a", pkg: null });
+  const g = layout && layout.groups.find((x) => x.eco.id === id);
+  if (!g) return;
+  const k = Math.min(ZOOM_MAX, layout.W / g.w, layout.H / g.h);
+  Object.assign(zoom, { k, tx: -g.x * k + (layout.W - g.w * k) / 2, ty: -g.y * k + (layout.H - g.h * k) / 2 });
+  clampZoom();
+  scheduleTreemap();
+  $("#tm-panel").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
 }
 
 // ------------------------------------------------------------ A: treemap
@@ -739,7 +875,7 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
   const vulns = pkgVulns(p), lvl = pkgLevel(vulns);
   const kevs = vulns.filter((v) => v.kev).length;
   const node = svgEl("g", { class: "tile", tabindex: 0, role: "button", "aria-label": `${p.label}: ${t("vulns", vulns.length)}, ${t("level")[lvl]}` });
-  // --sev-kev lets a theme give KEV its own color; by default KEV shares the critical red.
+  // Exploited (KEV) gets its own color, apart from critical red.
   const fill = kevs ? "var(--sev-kev, var(--sev-3))" : `var(--sev-${lvl})`;
   node.append(svgEl("rect", { class: "cell", x: x + 1, y: y + 1, width: Math.max(0, w - 2), height: Math.max(0, h - 2), rx: Math.min(4, w / 6), fill }));
   // Gray tiles take the page ink for the name so it reads as strongly as on colored ones.
@@ -787,7 +923,13 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
       }
     }
   }
-  if (HOOKS.tileDecor) HOOKS.tileDecor(node, { lvl, kevs, x, y, w, h, ink });
+  // Affected tiles carry their weather glyph in the corner the text leaves free.
+  if (lvl && w >= 76 && h >= 62) {
+    node.append(svgEl("circle", { cx: x + w - 19, cy: y + h - 19, r: 15, fill: "var(--surface)", opacity: 0.9 }));
+    const icon = wxIcon(lvl, 24, kevs > 0);
+    icon.setAttribute("x", x + w - 31); icon.setAttribute("y", y + h - 31);
+    node.append(icon);
+  }
   node.addEventListener("mousemove", (ev) => {
     const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a))[0];
     const unit = popUnit(p.popularity_source);
@@ -902,6 +1044,13 @@ function initTreemapZoom() {
 
 // ------------------------------------------------------------ C: timeline
 
+// Circle for low/medium, triangle for high, diamond for critical, so dots read without color.
+function dotShape(cx, cy, r, lvl) {
+  if (lvl === 3) return `M${cx} ${cy - r * 1.25}L${cx + r * 1.25} ${cy}L${cx} ${cy + r * 1.25}L${cx - r * 1.25} ${cy}Z`;
+  if (lvl === 2) return `M${cx} ${cy - r * 1.2}L${cx + r * 1.15} ${cy + r * 0.85}L${cx - r * 1.15} ${cy + r * 0.85}Z`;
+  return `M${cx - r} ${cy}a${r} ${r} 0 1 0 ${r * 2} 0a${r} ${r} 0 1 0 ${-r * 2} 0Z`;
+}
+
 function timelineSvg(vulns, width, opts = {}) {
   const days = 30, padL = 2, padR = 8, r = (opts.r || 5) - (width < 400 ? 1 : 0), step = r * 2 + 2;
   const maxStack = opts.maxStack || 99;
@@ -930,7 +1079,7 @@ function timelineSvg(vulns, width, opts = {}) {
     list.sort((a, b) => vulnLevel(b) - vulnLevel(a));
     list.slice(0, maxStack).forEach((v, i) => {
       const lvl = vulnLevel(v);
-      const c = svgEl("circle", { class: "dot", cx: xOf(d), cy: base - i * step, r, fill: `var(--sev-${lvl})`, stroke: "var(--surface)", "stroke-width": 1.5 });
+      const c = svgEl("path", { class: "dot", d: dotShape(xOf(d), base - i * step, r, lvl), fill: v.kev ? "var(--sev-kev)" : `var(--sev-${lvl})`, stroke: "var(--surface)", "stroke-width": 1.5 });
       c.addEventListener("mousemove", (ev) => showTip(vulnTip(v, opts.pkg), ev));
       c.addEventListener("mouseleave", hideTip);
       c.addEventListener("click", () => window.open(v.url, "_blank", "noopener"));
@@ -1138,10 +1287,10 @@ function render() {
   for (const v of ["a", "b", "c"]) $("#view-" + v).hidden = state.view !== v;
   if (!DATA) return;
   renderStats();
+  renderForecast();
   if (state.view === "a") renderTreemap();
   if (state.view === "b") renderCounter();
   if (state.view === "c") renderTimeline();
-  if (HOOKS.afterRender) HOOKS.afterRender();
 }
 
 function initControls() {
@@ -1190,7 +1339,7 @@ async function main() {
   initControls();
   render();
   try {
-    const r = await fetch(DATA_URL, { cache: "no-cache" });
+    const r = await fetch("data/latest.json", { cache: "no-cache" });
     if (!r.ok) throw new Error(r.status);
     DATA = await r.json();
   } catch (e) {

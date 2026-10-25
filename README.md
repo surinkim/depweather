@@ -61,14 +61,23 @@ and theme are remembered in `localStorage`. The footer shows the page version,
 which helps spot a stale copy in the browser cache (reload with Cmd/Ctrl +
 Shift + R).
 
-## Colors
+## Colors and weather
 
-| Color | Meaning |
-|---|---|
-| Gray | No advisory in the period |
-| Yellow | Low or medium, or no severity given by any source |
-| Orange | High |
-| Red | Critical, **or** the CVE is in CISA KEV, or a malicious-package report (OSV `MAL-`) |
+The page reads like a weather report. A sentence at the top is written from
+the data ("Storms over npm, PyPI and 3 more, with critical issues in pillow,
+MariaDB, nginx and 6 more."), and a strip below it gives each group the
+weather of its worst package; clicking a group zooms the map to it.
+
+| Weather | Color | Meaning |
+|---|---|---|
+| Clear (sun) | Gray tile | No advisory in the period |
+| Cloudy (cloud) | Yellow | Low or medium, or no severity given by any source |
+| Rain (cloud with rain) | Orange | High |
+| Storm (cloud with lightning) | Red | Critical, or a malicious-package report (OSV `MAL-`) |
+| Exploited (magenta storm cloud) | Magenta | The CVE is in CISA KEV |
+
+Affected tiles carry the glyph, and timeline dots change shape with severity
+(circle, triangle, diamond), so severity never depends on color alone.
 
 Severity is taken in this order: the GitHub Advisory severity label → a CVSS
 v3 score computed from the OSV vector → the NVD CVSS base severity (looked up
@@ -151,6 +160,7 @@ Not in the POC:
 | [NVD API 2.0](https://nvd.nist.gov/developers) | Monthly and daily CVE counts; CVSS for unrated advisories | `/rest/json/cves/2.0` | Required notice: "This product uses the NVD API but is not endorsed or certified by the NVD." (in the page footer). Works without a key at ~1 request / 6.5 s; set `NVD_API_KEY` to go faster |
 | npm downloads API, [pypistats](https://pypistats.org) | Tile size: downloads last week | `api.npmjs.org/downloads/point/last-week/…`, `pypistats.org/api/packages/…/recent` | **To confirm** |
 | crates.io, Packagist, RubyGems, hex.pm APIs | Tile size: crates.io downloads in 90 days, Packagist in 30 days, RubyGems all time, Hex last week | `crates.io/api/v1/crates/…` (1 request/s, identifying User-Agent), `packagist.org/packages/….json`, `rubygems.org/api/v1/gems/….json`, `hex.pm/api/packages/…` | **To confirm** |
+| Bricolage Grotesque, IBM Plex Sans | Type, self-hosted in `fonts/` (no third-party requests) | Downloaded once from Google Fonts | SIL Open Font License 1.1 (`fonts/OFL-*.txt`) |
 | [Stack Overflow Developer Survey 2026](https://survey.stackoverflow.co/2026/technology/data) | Group area, framework picks and shares | Numbers copied by hand into `stacks.yml` | **To confirm** (the survey's public data is usually published under the Open Database License) |
 | [deps.dev](https://deps.dev) | Not used yet (candidate for Maven / Go popularity) | — | Data it generates is CC-BY 4.0; API use is subject to the Google API Terms of Service; caching is expressly permitted (README of `google/deps.dev`, checked 2026-10-25) |
 
