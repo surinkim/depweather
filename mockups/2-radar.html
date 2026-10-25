@@ -1,0 +1,1316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>depweather mockup 2</title>
+<meta name="description" content="Today's vulnerability forecast for popular packages">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #6f6d68;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.10);
+  --accent: #2a78d6;
+  --sev-0: #e6e5df;
+  --sev-0-ink: #52514e;
+  --sev-1: #fab219;
+  --sev-1-ink: #0b0b0b;
+  --sev-2: #ec835a;
+  --sev-2-ink: #0b0b0b;
+  --sev-3: #d03b3b;
+  --sev-3-ink: #ffffff;
+  --bar: #2a78d6;
+  --group-line: #52514e;
+  --group-head: #ecebe5;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --muted: #9a988f;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --accent: #3987e5;
+    --sev-0: #2c2c2a;
+    --sev-0-ink: #c3c2b7;
+    --bar: #3987e5;
+    --group-line: #9a988f;
+    --group-head: #262624;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --ink: #f0efec;
+  --ink-2: #c3c2b7;
+  --muted: #9a988f;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgba(255, 255, 255, 0.10);
+  --accent: #3987e5;
+  --sev-0: #2c2c2a;
+  --sev-0-ink: #c3c2b7;
+  --bar: #3987e5;
+  --group-line: #9a988f;
+  --group-head: #262624;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--page);
+  color: var(--ink);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  font-feature-settings: "calt" 0; /* keep "93x7" in advisory IDs from becoming "93×7" */
+}
+a { color: var(--accent); }
+.wrap { max-width: 1920px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 767px) { .wrap { padding: 0 16px; } }
+
+header.top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 18px 0 10px; }
+header.top h1 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+header.top .tag { color: var(--ink-2); font-size: 14px; }
+header.top .spacer { flex: 1; }
+.lang button { padding: 6px 9px; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; }
+.meta { color: var(--muted); font-size: 13px; }
+
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button {
+  font: inherit; font-size: 13px; padding: 6px 12px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer;
+}
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.iconbtn { font: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--ink-2); cursor: pointer; }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 6px 0 14px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+.stat .label { color: var(--ink-2); font-size: 12.5px; }
+.stat .value { font-size: 28px; font-weight: 650; line-height: 1.2; margin-top: 2px; }
+.stat .sub { color: var(--muted); font-size: 12.5px; }
+.stat .na { color: var(--muted); font-size: 18px; font-weight: 500; }
+@media (max-width: 767px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat .value { font-size: 22px; }
+}
+
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 10px; }
+.toolbar label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); cursor: pointer; }
+.toolbar input[type="search"] {
+  font: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--surface); color: var(--ink); width: 220px; max-width: 100%;
+}
+.legend { display: inline-flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 5px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid var(--border); }
+
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.panel h2 { font-size: 15px; margin: 0 0 8px; }
+.panel + .panel { margin-top: 12px; }
+.hint { color: var(--muted); font-size: 12.5px; margin: 8px 0 0; }
+
+svg text { font-family: inherit; }
+#treemap-box { position: relative; }
+#treemap { width: 100%; display: block; user-select: none; -webkit-user-select: none; }
+#treemap:focus { outline: none; }
+.zoombar { display: flex; gap: 4px; align-items: center; justify-content: flex-end; margin-bottom: 6px; }
+.zoombar .zhint { margin-right: auto; color: var(--muted); font-size: 12px; background: none; padding: 0; flex: 1 1 auto; min-width: 0; }
+.zoombar button { white-space: nowrap; flex: none; }
+.zoombar button { font: inherit; font-size: 14px; width: 30px; height: 28px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer; opacity: 0.92; }
+.zoombar button.wide { width: auto; padding: 0 8px; font-size: 12px; }
+#tm-panel:fullscreen { background: var(--page); padding: 12px; overflow: auto; border-radius: 0; }
+#tm-panel:-webkit-full-screen { background: var(--page); padding: 12px; overflow: auto; }
+.zoombar span { font-size: 12px; color: var(--ink-2); background: var(--surface); padding: 2px 6px; border-radius: 6px; }
+.tile { cursor: pointer; }
+.tile:focus { outline: none; }
+.tile:focus-visible rect.cell, .tile:hover rect.cell { stroke: var(--ink); stroke-width: 2; }
+
+.tl-row { display: grid; grid-template-columns: 150px minmax(0, 1fr) 150px; gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--grid); }
+.tl-row:first-child { border-top: 0; }
+.tl-row .name { font-weight: 600; font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tl-row .name small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+.tl-row .fix { font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
+.tl-row .fix b { color: var(--ink); font-weight: 600; }
+.tl-row button.name { font: inherit; font-weight: 600; font-size: 13.5px; text-align: left; background: none; border: 0; padding: 0; color: var(--ink); cursor: pointer; }
+.tl-row button.name:hover { text-decoration: underline; }
+@media (max-width: 767px) {
+  .tl-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+.dot { cursor: pointer; }
+.dot:hover { stroke: var(--ink); stroke-width: 2; }
+
+table.data { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.data th, table.data td { text-align: left; padding: 6px 8px; border-top: 1px solid var(--grid); vertical-align: top; }
+table.data th { color: var(--ink-2); font-weight: 600; border-top: 0; }
+table.data td.nowrap { white-space: nowrap; }
+table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll-x { overflow-x: auto; }
+.pill { display: inline-block; padding: 0 6px; border-radius: 4px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.pill.l0 { background: var(--sev-0); color: var(--sev-0-ink); }
+.pill.l1 { background: var(--sev-1); color: var(--sev-1-ink); }
+.pill.l2 { background: var(--sev-2); color: var(--sev-2-ink); }
+.pill.l3 { background: var(--sev-3); color: var(--sev-3-ink); }
+.pill.kev { background: var(--ink); color: var(--page); }
+
+@media (max-width: 767px) {
+  table.vulns thead { display: none; }
+  table.vulns tr { display: block; border-top: 1px solid var(--grid); padding: 6px 0; }
+  table.vulns td { display: inline-block; border: 0; padding: 2px 6px 2px 0; }
+  table.vulns td.summary { display: block; }
+}
+
+#tooltip {
+  position: fixed; z-index: 10; pointer-events: none; max-width: 320px;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--border); border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); padding: 8px 10px; font-size: 12.5px; display: none;
+}
+#tooltip .t { font-weight: 650; font-size: 13px; }
+#tooltip .m { color: var(--ink-2); }
+
+footer { color: var(--muted); font-size: 12.5px; padding: 24px 0 32px; }
+footer p { margin: 4px 0; }
+.warn { color: var(--ink-2); background: var(--surface); border: 1px dashed var(--axis); border-radius: 8px; padding: 8px 10px; font-size: 13px; margin-bottom: 10px; }
+[hidden] { display: none !important; }
+
+.mocknav { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; font: 12.5px/1.4 system-ui, sans-serif;
+  padding: 6px 24px; background: #2b2b2b; color: #ddd; }
+.mocknav a { color: #fff; text-decoration: none; padding: 2px 0; border-bottom: 2px solid transparent; }
+.mocknav a[aria-current] { border-bottom-color: #fff; }
+.mocknav span { color: #aaa; }
+
+:root {
+  color-scheme: dark;
+  --page: #0b1620; --surface: #0f1e2a; --ink: #e3ecf2; --ink-2: #a9bbc8; --muted: #7c93a3;
+  --grid: #1c3040; --axis: #2a4356; --border: rgba(227, 236, 242, 0.12); --accent: #5fb4f0;
+  --sev-0: #152a39; --sev-0-ink: #a9bbc8; --sev-1: #e6c84a; --sev-1-ink: #0b1620;
+  --sev-2: #f08a2e; --sev-2-ink: #0b1620; --sev-3: #e5383b; --sev-3-ink: #ffffff;
+  --sev-kev: #c93fc4; --sev-kev-ink: #ffffff;
+  --bar: #5fb4f0; --group-line: #3b6380; --group-head: #12273a;
+}
+@media (prefers-color-scheme: dark) { :root:where(:not([data-theme="light"])) {
+  color-scheme: dark;
+  --page: #0b1620; --surface: #0f1e2a; --ink: #e3ecf2; --ink-2: #a9bbc8; --muted: #7c93a3;
+  --grid: #1c3040; --axis: #2a4356; --border: rgba(227, 236, 242, 0.12); --accent: #5fb4f0;
+  --sev-0: #152a39; --sev-0-ink: #a9bbc8; --sev-1: #e6c84a; --sev-1-ink: #0b1620;
+  --sev-2: #f08a2e; --sev-2-ink: #0b1620; --sev-3: #e5383b; --sev-3-ink: #ffffff;
+  --sev-kev: #c93fc4; --sev-kev-ink: #ffffff;
+  --bar: #5fb4f0; --group-line: #3b6380; --group-head: #12273a;
+} }
+:root[data-theme="dark"], :root[data-theme="light"] {
+  color-scheme: dark;
+  --page: #0b1620; --surface: #0f1e2a; --ink: #e3ecf2; --ink-2: #a9bbc8; --muted: #7c93a3;
+  --grid: #1c3040; --axis: #2a4356; --border: rgba(227, 236, 242, 0.12); --accent: #5fb4f0;
+  --sev-0: #152a39; --sev-0-ink: #a9bbc8; --sev-1: #e6c84a; --sev-1-ink: #0b1620;
+  --sev-2: #f08a2e; --sev-2-ink: #0b1620; --sev-3: #e5383b; --sev-3-ink: #ffffff;
+  --sev-kev: #c93fc4; --sev-kev-ink: #ffffff;
+  --bar: #5fb4f0; --group-line: #3b6380; --group-head: #12273a;
+}
+body { font-family: Archivo, system-ui, sans-serif; font-variation-settings: "wdth" 100; }
+#theme { display: none; }
+.wrap { max-width: none; }
+header.top h1 { font-size: 26px; font-weight: 800; font-variation-settings: "wdth" 125; letter-spacing: 0.01em; }
+header.top .tag { color: var(--muted); }
+svg text { font-family: Archivo, system-ui, sans-serif; font-variation-settings: "wdth" 88; }
+.seg, .iconbtn, .panel { border-radius: 2px; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--page); }
+#view-a .panel { background: transparent; border: 0; padding: 0; }
+.meta { margin: 0 0 6px; }
+/* Readout: the four numbers as one quiet instrument line, not cards. */
+#stats { display: flex; flex-wrap: wrap; gap: 4px 28px; margin: 0 0 12px; }
+#stats .stat { background: none; border: 0; padding: 0; display: flex; align-items: baseline; gap: 8px; }
+#stats .stat .value { font-size: 22px; font-weight: 700; font-variation-settings: "wdth" 80; order: -1; margin: 0; }
+#stats .stat .label { color: var(--ink-2); font-size: 13.5px; }
+#stats .stat .sub { display: none; }
+#stats .stat .na { font-size: 16px; }
+.warn { background: transparent; border: 1px solid var(--axis); border-radius: 2px; font-size: 12.5px; }
+.legend { gap: 0; }
+.legend > span { gap: 6px; padding-right: 14px; }
+.legend i { width: 28px; height: 10px; border-radius: 0; border: 0; }
+/* One orchestrated moment: a single radar sweep over the map when it first draws. */
+#treemap-box { overflow: hidden; }
+.sweep { position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: conic-gradient(from 0deg at 50% 50%, rgba(95, 180, 240, 0.0) 0deg, rgba(95, 180, 240, 0.0) 300deg, rgba(95, 180, 240, 0.28) 358deg, rgba(95, 180, 240, 0) 360deg);
+  animation: sweep 1.8s ease-out 0.2s 1 both; }
+@keyframes sweep { 0% { opacity: 1; transform: rotate(0deg) scale(1.6); } 85% { opacity: 1; } 100% { opacity: 0; transform: rotate(360deg) scale(1.6); } }
+@media (prefers-reduced-motion: reduce) { .sweep { display: none; } }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+</style>
+</head>
+<body data-data="../data/latest.json" class="mock-radar">
+<nav class="mocknav" aria-label="Design mockups">
+  <span>Design mockup</span>
+  <a href="1-bulletin.html">1 Warning bulletin</a>
+  <a href="2-radar.html" aria-current="page">2 Radar</a>
+  <a href="3-forecast.html">3 Forecast</a>
+  <a href="../index.html">Current design</a>
+</nav>
+<div class="wrap">
+  <header class="top">
+    <h1>depweather</h1>
+    <span class="tag" data-i18n="tagline">Today's vulnerability forecast for popular packages</span>
+    <span class="spacer"></span>
+    <div class="seg" role="group" aria-label="View">
+      <button data-view="a" data-i18n="view_a">Treemap</button>
+      <button data-view="c" data-i18n="view_c">Timeline</button>
+      <button data-view="b" data-i18n="view_b">Counter</button>
+    </div>
+    <button class="iconbtn" id="theme" data-i18n="theme" data-i18n-title="theme_title" title="Toggle light / dark">Theme</button>
+    <div class="seg lang" role="group" aria-label="Language">
+      <button data-lang="en" lang="en">EN</button>
+      <button data-lang="ko" lang="ko">KO</button>
+    </div>
+  </header>
+  <p class="meta" id="meta" data-i18n="loading">Loading data…</p>
+  <div id="warn" class="warn" hidden></div>
+
+  <section class="stats" id="stats" aria-label="Today in numbers"></section>
+
+  <div class="toolbar">
+    <div class="seg" role="group" aria-label="Period">
+      <button data-range="7" data-i18n="days7">7 days</button>
+      <button data-range="30" data-i18n="days30">30 days</button>
+    </div>
+    <label><input type="checkbox" id="kevonly"> <span data-i18n="kev_only">KEV only</span></label>
+    <input type="search" id="search" list="pkglist" data-i18n-placeholder="search" placeholder="Search a package…" aria-label="Search a package">
+    <datalist id="pkglist"></datalist>
+    <span class="spacer"></span>
+    <span class="legend" aria-label="Color legend">
+      <span><i style="background:var(--sev-0)"></i><span data-i18n="lg0">None</span></span>
+      <span><i style="background:var(--sev-1)"></i><span data-i18n="lg1">Low / Medium</span></span>
+      <span><i style="background:var(--sev-2)"></i><span data-i18n="lg2">High</span></span>
+      <span><i style="background:var(--sev-3)"></i><span data-i18n="lg3">Critical or KEV</span></span>
+    </span>
+  </div>
+
+  <main>
+    <section id="view-a" hidden>
+      <div class="panel" id="tm-panel">
+        <div class="zoombar">
+            <span class="zhint" data-i18n="zoom_hint">Pinch, Ctrl/⌘ + scroll or double-click to zoom · drag to pan</span>
+            <span id="zoom-level"></span>
+            <button id="zoom-in" data-i18n-title="zoom_in" title="Zoom in" aria-label="Zoom in">+</button>
+            <button id="zoom-out" data-i18n-title="zoom_out" title="Zoom out" aria-label="Zoom out">−</button>
+            <button id="zoom-reset" class="wide" data-i18n="fit" data-i18n-title="fit_title" title="Reset zoom">Fit</button>
+            <button id="fullscreen" class="wide" data-i18n="fullscreen" hidden>Full screen</button>
+        </div>
+        <div id="treemap-box">
+          <svg id="treemap" tabindex="0" aria-label="Treemap of packages by ecosystem. Plus and minus keys zoom, 0 resets."></svg>
+        </div>
+        <p class="hint" id="treemap-hint"></p>
+      </div>
+    </section>
+    <section id="view-c" hidden></section>
+    <section id="view-b" hidden></section>
+  </main>
+
+  <footer>
+    <p data-i18n-html="footer_data"></p>
+    <p>This product uses the NVD API but is not endorsed or certified by the NVD.</p>
+    <p data-i18n-html="footer_disclaimer"></p>
+    <p id="build"></p>
+  </footer>
+</div>
+<div id="tooltip" role="tooltip"></div>
+
+<script>
+
+window.DW = {
+  afterRender() {
+    const box = document.querySelector("#treemap-box");
+    if (box && DATA && !box.querySelector(".sweep")) { const d = document.createElement("div"); d.className = "sweep"; box.append(d); }
+  },
+};
+
+</script>
+<script>
+"use strict";
+
+// Shown in the footer, so a stale cached copy of the page is easy to spot.
+const BUILD = "2026-10-25.4";
+
+// Raise a vulnerability one color level when its EPSS score is at least this
+// value (e.g. 0.1). null keeps the color on severity and KEV only.
+const EPSS_BUMP_THRESHOLD = null;
+
+const SEV_LEVEL = { NONE: 0, UNKNOWN: 1, LOW: 1, MEDIUM: 1, MODERATE: 1, HIGH: 2, CRITICAL: 3 };
+const PREFS_KEY = "depweather:prefs";
+const DAY = 86400000;
+
+// Design mockups (mockups/*.html) reuse this page: they point DATA_URL elsewhere
+// with <body data-data="…"> and plug in through window.DW hooks.
+const DATA_URL = document.body.dataset.data || "data/latest.json";
+const HOOKS = window.DW || {};
+
+const state = { view: "a", range: 7, kevOnly: false, pkg: null };
+let DATA = null;
+let PKGS = new Map();   // key -> {eco, pkg}
+let NOW = Date.now();
+let LANG = "en";
+
+// ------------------------------------------------------------ i18n
+
+// Advisory text (IDs, summaries, severities) comes from the data and stays in English.
+const I18N = {
+  en: {
+    tagline: "Today's vulnerability forecast for popular packages",
+    view_a: "Treemap", view_c: "Timeline", view_b: "Counter",
+    theme: "Theme", theme_title: "Toggle light / dark",
+    loading: "Loading data…",
+    load_error: "Could not load data/latest.json. Run collect/collect.py first.",
+    meta: (d, n, e) => `Updated ${d} UTC · ${n} popular packages in ${e} ecosystems`,
+    warn: (list) => `Not in this snapshot: ${list} (the source could not be reached when the data was collected). Fields from it show as n/a.`,
+    days7: "7 days", days30: "30 days", kev_only: "KEV only", search: "Search a package…",
+    lg0: "None", lg1: "Low / Medium", lg2: "High", lg3: "Critical or KEV",
+    level: ["None", "Low / Medium", "High", "Critical"],
+    st_today: "New CVEs today (UTC)", st_today_sub: "published in NVD", nvd_na: "NVD count unavailable",
+    st_month: (m) => `CVEs in ${m}`,
+    st_yoy: (pct, ym, n) => `${pct} vs ${ym} (${n}; this month is partial)`,
+    st_kev: "New in CISA KEV, 7 days", st_kev_sub: "all vendors, not only these packages", kev_na: "KEV feed unavailable",
+    st_aff: "Popular packages affected, 7 days", st_aff_sub: (n) => `of ${n} tracked`,
+    zoom_hint: "Pinch, Ctrl/⌘ + scroll or double-click to zoom · drag to pan",
+    zoom_in: "Zoom in", zoom_out: "Zoom out", fit: "Fit", fit_title: "Reset zoom",
+    fullscreen: "Full screen", exit_fullscreen: "Exit full screen",
+    tm_hint: (r, kev, survey, fixed) =>
+      `Color = worst issue published in the last ${r} days${kev ? " (KEV only)" : ""}. ` +
+      `Group area = share of ${survey} respondents using the language. ` +
+      `Tile size = downloads within each group${fixed ? ` (${fixed}: equal weights, no download data)` : ""}. ` +
+      `Tiles show more detail as they grow.`,
+    group_head: (label, a, n) => `${label} · ${a}/${n} affected`,
+    vulns: (n) => `${n} vuln${n > 1 ? "s" : ""}`, clear: "clear",
+    sev_short: ["", "low/med", "high", "crit"],
+    fixed_short: "Fixed", fixed_in: "Fixed in", no_fixed: "No fixed version listed",
+    pop: { wk: "dl/wk", "30d": "dl/30d", "90d": "dl/90d", total: "dl total" },
+    pop_fmt: (num, unit) => `${num} ${unit}`,
+    pop_long: { wk: "downloads last week", "30d": "downloads in 30 days", "90d": "downloads in 90 days", total: "downloads all time" },
+    so_short: (s) => `SO ${s}%`,
+    tip_count: (n, r) => `${n} in the last ${r} days`,
+    tip_worst: "Worst", tip_size: "Size", fixed_weight: "fixed weight",
+    tip_survey: (s, name) => `Used by ${s}% of ${name} respondents (web frameworks)`,
+    tip_click: "Click for timeline",
+    today: "today", days_ago: (d) => `${d}d ago`,
+    no_pkg: (p) => `No package <b>${p}</b> in the tracked list.`, show_all: "Show all",
+    tl_head: "Last 30 days, packages with issues",
+    tl_none: (kev) => `No vulnerabilities in the last 30 days${kev ? " in KEV" : ""}.`,
+    issues: (n) => `${n} issue${n === 1 ? "" : "s"}`,
+    tl_hint: "Each dot is one advisory on the day it was published; the dashed line marks 7 days ago. Hover for details, click to open on OSV.",
+    all_pkgs: "← All packages",
+    issues_30: (n) => `${n} issue${n === 1 ? "" : "s"} in 30 days`,
+    at_worst: (l) => `${l} at worst`,
+    pkg_none: (p, kev) => `No advisories published for ${p} in the last 30 days${kev ? " in KEV" : ""}.`,
+    th: { published: "Published", advisory: "Advisory", severity: "Severity", fixed: "Fixed in", summary: "Summary" },
+    b_month_head: "CVEs published per month (NVD)",
+    b_month_na: "Monthly counts are not available in this snapshot (the NVD API could not be reached when the data was collected).",
+    b_month_tip: (n, partial) => `${n} CVEs${partial ? " (month to date)" : ""}`,
+    b_month_hint: (stale) => `The last bar is the current month so far.${stale ? " Counts are from an earlier run; NVD was unreachable this time." : ""}`,
+    b_eco_head: "Last 7 days by ecosystem (tracked packages only)",
+    b_th: { eco: "Ecosystem", n: "New advisories", crit: "Critical", pk: "Packages affected" },
+    b_kev_head: "Added to CISA KEV in the last 7 days (all vendors)",
+    b_kev_th: { added: "Added", vendor: "Vendor / product", name: "Name" },
+    footer_data: `Data: <a href="https://osv.dev">OSV.dev</a> (including the <a href="https://github.com/github/advisory-database">GitHub Advisory Database</a>, CC-BY 4.0, and the <a href="https://github.com/bitnami/vulndb">Bitnami Vulnerability Database</a>, Apache-2.0),
+      <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA Known Exploited Vulnerabilities</a>,
+      <a href="https://www.first.org/epss/">FIRST EPSS</a>, <a href="https://nvd.nist.gov">NVD</a>;
+      download counts from npm, pypistats, crates.io, Packagist, RubyGems and hex.pm;
+      group sizes and framework shares from the <a href="https://survey.stackoverflow.co/2026/technology/data">Stack Overflow Developer Survey 2026</a>.`,
+    footer_disclaimer: `Severity labels come from the upstream advisory and can be wrong. Always check the advisory before acting.
+      Source code: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
+    build: (b) => `Page version ${b}`,
+  },
+  ko: {
+    tagline: "인기 패키지의 오늘 취약점 예보",
+    view_a: "트리맵", view_c: "타임라인", view_b: "카운터",
+    theme: "테마", theme_title: "라이트 / 다크 전환",
+    loading: "데이터를 불러오는 중…",
+    load_error: "data/latest.json을 불러오지 못했습니다. 먼저 collect/collect.py를 실행하세요.",
+    meta: (d, n, e) => `${d} UTC 업데이트 · 생태계 ${e}개, 인기 패키지 ${n}개`,
+    warn: (list) => `이번 데이터에 빠진 소스: ${list} (수집 당시 접속하지 못했습니다). 해당 값은 n/a로 표시됩니다.`,
+    days7: "7일", days30: "30일", kev_only: "KEV만", search: "패키지 검색…",
+    lg0: "없음", lg1: "낮음·중간", lg2: "높음", lg3: "치명 또는 KEV",
+    level: ["없음", "낮음·중간", "높음", "치명"],
+    st_today: "오늘 신규 CVE (UTC)", st_today_sub: "NVD 공개 기준", nvd_na: "NVD 집계 없음",
+    st_month: (m) => `${m} CVE`,
+    st_yoy: (pct, ym, n) => `${ym} 대비 ${pct} (${n}건, 이번 달은 진행 중)`,
+    st_kev: "CISA KEV 신규 (7일)", st_kev_sub: "전체 벤더 기준 (추적 패키지 외 포함)", kev_na: "KEV 피드 없음",
+    st_aff: "영향받은 인기 패키지 (7일)", st_aff_sub: (n) => `추적 중인 ${n}개 중`,
+    zoom_hint: "핀치, Ctrl/⌘+스크롤, 더블클릭으로 확대 · 드래그로 이동",
+    zoom_in: "확대", zoom_out: "축소", fit: "전체", fit_title: "확대 초기화",
+    fullscreen: "전체 화면", exit_fullscreen: "전체 화면 종료",
+    tm_hint: (r, kev, survey, fixed) =>
+      `색 = 최근 ${r}일 동안 공개된 취약점 중 가장 심각한 것${kev ? " (KEV만)" : ""}. ` +
+      `그룹 면적 = ${survey} 응답자 중 해당 언어 사용 비율. ` +
+      `타일 크기 = 그룹 안에서의 다운로드 수${fixed ? ` (${fixed}: 다운로드 데이터가 없어 같은 크기)` : ""}. ` +
+      `확대할수록 타일에 정보가 더 표시됩니다.`,
+    group_head: (label, a, n) => `${label} · 영향 ${a}/${n}`,
+    vulns: (n) => `취약점 ${n}건`, clear: "없음",
+    sev_short: ["", "낮음·중간", "높음", "치명"],
+    fixed_short: "수정", fixed_in: "수정 버전", no_fixed: "수정 버전 정보 없음",
+    pop: { wk: "주간 다운로드", "30d": "30일 다운로드", "90d": "90일 다운로드", total: "누적 다운로드" },
+    pop_fmt: (num, unit) => `${unit} ${num}`,
+    pop_long: { wk: "지난주 다운로드", "30d": "30일 다운로드", "90d": "90일 다운로드", total: "누적 다운로드" },
+    so_short: (s) => `SO 설문 ${s}%`,
+    tip_count: (n, r) => `최근 ${r}일 ${n}건`,
+    tip_worst: "가장 심각", tip_size: "크기", fixed_weight: "고정 가중치",
+    tip_survey: (s, name) => `${name} 응답자 ${s}%가 사용 (웹 프레임워크)`,
+    tip_click: "클릭하면 타임라인으로 이동",
+    today: "오늘", days_ago: (d) => `${d}일 전`,
+    no_pkg: (p) => `추적 목록에 <b>${p}</b> 패키지가 없습니다.`, show_all: "전체 보기",
+    tl_head: "최근 30일, 취약점이 있는 패키지",
+    tl_none: (kev) => `최근 30일 동안 ${kev ? "KEV에 오른 " : ""}취약점이 없습니다.`,
+    issues: (n) => `${n}건`,
+    tl_hint: "점 하나가 공개일에 나온 권고 하나입니다. 점선은 7일 전입니다. 마우스를 올리면 상세 정보, 클릭하면 OSV에서 열립니다.",
+    all_pkgs: "← 전체 패키지",
+    issues_30: (n) => `30일 동안 ${n}건`,
+    at_worst: (l) => `최고 단계: ${l}`,
+    pkg_none: (p, kev) => `최근 30일 동안 ${p}에 공개된 ${kev ? "KEV " : ""}권고가 없습니다.`,
+    th: { published: "공개일", advisory: "권고", severity: "심각도", fixed: "수정 버전", summary: "요약" },
+    b_month_head: "월별 CVE 공개 건수 (NVD)",
+    b_month_na: "이번 데이터에는 월별 건수가 없습니다 (수집 당시 NVD API에 접속하지 못했습니다).",
+    b_month_tip: (n, partial) => `CVE ${n}건${partial ? " (이번 달 현재까지)" : ""}`,
+    b_month_hint: (stale) => `마지막 막대는 이번 달 현재까지입니다.${stale ? " 이번에는 NVD에 접속하지 못해 이전 수집 값을 보여줍니다." : ""}`,
+    b_eco_head: "생태계별 최근 7일 (추적 패키지만)",
+    b_th: { eco: "생태계", n: "신규 권고", crit: "치명", pk: "영향받은 패키지" },
+    b_kev_head: "최근 7일 CISA KEV 추가 (전체 벤더)",
+    b_kev_th: { added: "추가일", vendor: "벤더 / 제품", name: "이름" },
+    footer_data: `데이터: <a href="https://osv.dev">OSV.dev</a> (<a href="https://github.com/github/advisory-database">GitHub Advisory Database</a> CC-BY 4.0, <a href="https://github.com/bitnami/vulndb">Bitnami Vulnerability Database</a> Apache-2.0 포함),
+      <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA Known Exploited Vulnerabilities</a>,
+      <a href="https://www.first.org/epss/">FIRST EPSS</a>, <a href="https://nvd.nist.gov">NVD</a>.
+      다운로드 수: npm, pypistats, crates.io, Packagist, RubyGems, hex.pm.
+      그룹 크기와 프레임워크 사용 비율: <a href="https://survey.stackoverflow.co/2026/technology/data">Stack Overflow Developer Survey 2026</a>.`,
+    footer_disclaimer: `심각도는 원 권고의 값이며 틀릴 수 있습니다. 조치 전에 반드시 원 권고를 확인하세요.
+      소스 코드: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
+    build: (b) => `페이지 버전 ${b}`,
+  },
+};
+
+function t(key, ...args) {
+  const v = I18N[LANG][key] ?? I18N.en[key];
+  return typeof v === "function" ? v(...args) : v;
+}
+
+function applyStaticText() {
+  document.documentElement.lang = LANG;
+  document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => { el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
+  document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === LANG));
+  $("#build").textContent = t("build", BUILD);
+  if (DATA) renderMeta();
+  updateFullscreenLabel();
+}
+
+// ------------------------------------------------------------ helpers
+
+const $ = (sel) => document.querySelector(sel);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmt = (n) => n == null ? null : n.toLocaleString("en-US");
+const compact = new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 });
+const svgEl = (tag, attrs = {}) => {
+  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  return el;
+};
+
+function readPrefs() {
+  try { return JSON.parse(localStorage.getItem(PREFS_KEY)) || {}; } catch { return {}; }
+}
+function writePrefs() {
+  try {
+    localStorage.setItem(PREFS_KEY, JSON.stringify({ view: state.view, range: state.range, lang: LANG, theme: document.documentElement.dataset.theme || null }));
+  } catch { /* storage unavailable */ }
+}
+
+function vulnLevel(v) {
+  if (v.kev) return 3;
+  let lvl = SEV_LEVEL[v.severity] ?? 1;
+  if (EPSS_BUMP_THRESHOLD != null && v.epss != null && v.epss >= EPSS_BUMP_THRESHOLD) lvl = Math.min(3, lvl + 1);
+  return lvl;
+}
+function inRange(v, days) { return NOW - Date.parse(v.published) <= days * DAY; }
+function pkgVulns(p, days = state.range) {
+  return p.vulns.filter((v) => inRange(v, days) && (!state.kevOnly || v.kev));
+}
+function pkgLevel(vulns) { return vulns.reduce((m, v) => Math.max(m, vulnLevel(v)), 0); }
+
+function cmpVersion(a, b) {
+  const pa = a.split(/[.\-+]/), pb = b.split(/[.\-+]/);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const x = pa[i] ?? "", y = pb[i] ?? "";
+    const nx = Number(x), ny = Number(y);
+    const d = (!isNaN(nx) && !isNaN(ny)) ? nx - ny : x.localeCompare(y);
+    if (d) return d;
+  }
+  return 0;
+}
+function fixedList(vulns) {
+  const set = new Set();
+  vulns.forEach((v) => v.fixed.forEach((f) => set.add(f)));
+  return [...set].sort(cmpVersion).reverse();
+}
+
+// The collector describes each download metric in English; map it to a unit key.
+function popUnit(src) {
+  if (!src || src === "fixed weight") return null;
+  if (src.includes("last week")) return "wk";
+  if (src.includes("30 days")) return "30d";
+  if (src.includes("90 days")) return "90d";
+  if (src.includes("all time")) return "total";
+  return "wk";
+}
+
+// ------------------------------------------------------------ tooltip
+
+const tip = $("#tooltip");
+function showTip(html, ev) {
+  tip.innerHTML = html;
+  tip.style.display = "block";
+  moveTip(ev);
+}
+function moveTip(ev) {
+  const pad = 14, r = tip.getBoundingClientRect();
+  let x = ev.clientX + pad, y = ev.clientY + pad;
+  if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - pad;
+  if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - pad;
+  tip.style.left = Math.max(8, x) + "px";
+  tip.style.top = Math.max(8, y) + "px";
+}
+function hideTip() { tip.style.display = "none"; }
+
+function vulnTip(v, p) {
+  const lvl = vulnLevel(v);
+  return `<div class="t">${esc(v.id)}${p ? " · " + esc(p.label) : ""}</div>
+    <div>${esc(v.summary)}</div>
+    <div class="m">${esc(v.published.slice(0, 10))} · <span class="pill l${lvl}">${esc(v.severity)}</span>
+    ${v.cvss != null ? " CVSS " + v.cvss : ""}${v.epss != null ? " · EPSS " + (v.epss * 100).toFixed(1) + "%" : ""}
+    ${v.kev ? ' · <span class="pill kev">KEV</span>' : ""}</div>
+    ${v.fixed.length ? `<div class="m">${t("fixed_in")} ${esc(v.fixed.join(", "))}</div>` : ""}`;
+}
+
+// ------------------------------------------------------------ stats
+
+function renderMeta() {
+  const gen = new Date(DATA.generated_at).toISOString().slice(0, 16).replace("T", " ");
+  $("#meta").textContent = t("meta", gen, DATA.summary.tracked_packages, DATA.ecosystems.length);
+  const missing = Object.entries(DATA.sources).filter(([, s]) => !s.ok).map(([k]) => ({ osv: "OSV", kev: "CISA KEV", epss: "FIRST EPSS", nvd: "NVD" }[k] || k));
+  const w = $("#warn");
+  w.hidden = !missing.length;
+  if (missing.length) w.textContent = t("warn", missing.join(", "));
+}
+
+function renderStats() {
+  const s = DATA.summary;
+  const tile = (label, value, sub) => `<div class="stat"><div class="label">${esc(label)}</div>
+    <div class="value">${value == null ? '<span class="na">n/a</span>' : esc(value)}</div><div class="sub">${esc(sub)}</div></div>`;
+  let yoy = t("nvd_na");
+  if (s.month_cves != null && s.month_cves_last_year) {
+    const pct = Math.round((s.month_cves / s.month_cves_last_year - 1) * 100);
+    yoy = t("st_yoy", `${pct >= 0 ? "+" : ""}${pct}%`, `${s.month.slice(0, 4) - 1}-${s.month.slice(5)}`, fmt(s.month_cves_last_year));
+  }
+  $("#stats").innerHTML =
+    tile(t("st_today"), fmt(s.today_cves), s.today_cves == null ? t("nvd_na") : t("st_today_sub")) +
+    tile(t("st_month", s.month), fmt(s.month_cves), yoy) +
+    tile(t("st_kev"), fmt(s.kev_new_7d), s.kev_new_7d == null ? t("kev_na") : t("st_kev_sub")) +
+    tile(t("st_aff"), s.affected_packages_7d, t("st_aff_sub", s.tracked_packages));
+}
+
+// ------------------------------------------------------------ A: treemap
+
+// Squarified treemap (Bruls, Huizing, van Wijk). items: [{value, ...}] -> adds x, y, w, h.
+function squarify(items, x, y, w, h) {
+  const total = items.reduce((s, d) => s + d.value, 0);
+  if (!total || w <= 0 || h <= 0) return items;
+  const scale = (w * h) / total;
+  const nodes = items.map((d) => ({ d, area: d.value * scale })).sort((a, b) => b.area - a.area);
+  let row = [], rect = { x, y, w, h };
+  const worst = (r, side) => {
+    const s = r.reduce((a, n) => a + n.area, 0), max = Math.max(...r.map((n) => n.area)), min = Math.min(...r.map((n) => n.area));
+    return Math.max((side * side * max) / (s * s), (s * s) / (side * side * min));
+  };
+  const layoutRow = (r) => {
+    const s = r.reduce((a, n) => a + n.area, 0);
+    if (rect.w >= rect.h) {
+      const rw = s / rect.h; let yy = rect.y;
+      r.forEach((n) => { const hh = n.area / rw; Object.assign(n.d, { x: rect.x, y: yy, w: rw, h: hh }); yy += hh; });
+      rect = { x: rect.x + rw, y: rect.y, w: rect.w - rw, h: rect.h };
+    } else {
+      const rh = s / rect.w; let xx = rect.x;
+      r.forEach((n) => { const ww = n.area / rh; Object.assign(n.d, { x: xx, y: rect.y, w: ww, h: rh }); xx += ww; });
+      rect = { x: rect.x, y: rect.y + rh, w: rect.w, h: rect.h - rh };
+    }
+  };
+  for (const n of nodes) {
+    const side = Math.min(rect.w, rect.h);
+    if (!row.length || worst([...row, n], side) <= worst(row, side)) row.push(n);
+    else { layoutRow(row); row = [n]; }
+  }
+  if (row.length) layoutRow(row);
+  return items;
+}
+
+// The treemap is laid out once in "world" coordinates (the box size at zoom 1)
+// and drawn in screen coordinates for the current zoom. Text is always drawn at
+// a fixed screen size, so zooming in makes room for more of it on each tile.
+const zoom = { k: 1, tx: 0, ty: 0 };
+const ZOOM_MAX = 8;
+const HEAD = 22;            // group header height, world px
+const GROUP_GAP = 4;        // space between ecosystem groups, world px (half on each side)
+const GROUP_PAD = 4;        // space between a group's border and its tiles, world px
+let layout = null;          // { W, H, groups: [{ eco, x, y, w, h, tiles: [{ p, x, y, w, h }] }] }
+let tmDragged = false;
+let tmClickTimer = 0;       // a single click opens the timeline unless a double-click (zoom) follows
+
+const isFullscreen = () => (document.fullscreenElement || document.webkitFullscreenElement) === $("#tm-panel");
+
+function computeLayout() {
+  const box = $("#treemap-box");
+  const W = Math.max(280, box.clientWidth);
+  let H;
+  if (isFullscreen()) H = Math.max(400, innerHeight - box.getBoundingClientRect().top - 16);
+  else if (W < 600) H = Math.round(W * 1.6);
+  // Fill most of the window height on large screens, but never go flatter than 0.6.
+  else H = Math.max(600, Math.min(1500, Math.round(Math.max(W * 0.6, innerHeight * 0.9))));
+  // Group area follows the share of Stack Overflow 2026 respondents who use the
+  // ecosystem's language. The floor keeps small ecosystems (Hex) findable.
+  // A group with no language of its own (runtimes & servers) has a fixed `area` instead.
+  const share = (e) => e.survey_share || e.area || 10;
+  const total = DATA.ecosystems.reduce((s, e) => s + share(e), 0);
+  const groups = squarify(DATA.ecosystems.map((e) => ({ value: Math.max(share(e) / total, 0.035), eco: e })), 0, 0, W, H);
+  for (const g of groups) {
+    const ptotal = g.eco.packages.reduce((s, p) => s + p.popularity, 0) || 1;
+    // Floor each tile at 2% of its group so small packages stay clickable.
+    g.tiles = g.eco.packages.map((p) => ({ value: Math.max(p.popularity / ptotal, 0.02), p }));
+    const inset = GROUP_GAP + GROUP_PAD;
+    squarify(g.tiles, g.x + inset, g.y + GROUP_GAP + HEAD, g.w - inset * 2, g.h - GROUP_GAP - HEAD - inset);
+  }
+  layout = { W, H, groups };
+}
+
+function clampZoom() {
+  const { W, H } = layout;
+  zoom.k = Math.min(ZOOM_MAX, Math.max(1, zoom.k));
+  zoom.tx = Math.min(0, Math.max(W - W * zoom.k, zoom.tx));
+  zoom.ty = Math.min(0, Math.max(H - H * zoom.k, zoom.ty));
+}
+
+function zoomAt(factor, sx, sy) {
+  const k0 = zoom.k;
+  zoom.k = Math.min(ZOOM_MAX, Math.max(1, k0 * factor));
+  const f = zoom.k / k0;
+  zoom.tx = sx - (sx - zoom.tx) * f;
+  zoom.ty = sy - (sy - zoom.ty) * f;
+  clampZoom();
+  scheduleTreemap();
+}
+
+let tmFrame = 0;
+function scheduleTreemap() {
+  if (!tmFrame) tmFrame = requestAnimationFrame(() => { tmFrame = 0; drawTreemap(); });
+}
+
+function renderTreemap() {
+  computeLayout();
+  clampZoom();
+  drawTreemap();
+  const fixedEcos = DATA.ecosystems.filter((e) => e.packages.every((p) => p.popularity_source === "fixed weight")).map((e) => e.label);
+  $("#treemap-hint").textContent = t("tm_hint", state.range, state.kevOnly, DATA.survey ? DATA.survey.name : "survey", fixedEcos.join(", "));
+}
+
+// Text width estimate for the system sans; bold text runs a little wider.
+const CHAR_W = 0.56, CHAR_W_BOLD = 0.6;
+
+function fitText(s, width, fs, cw = CHAR_W) {
+  const max = Math.floor(width / (fs * cw) + 1e-6);   // the epsilon keeps an exact fit from losing a character
+  if (max < 2) return "";
+  return s.length > max ? s.slice(0, max - 1) + "…" : s;
+}
+
+function wrapText(s, width, fs, lines) {
+  const max = Math.floor(width / (fs * CHAR_W));
+  const out = [];
+  let cur = "";
+  for (const word of s.split(/\s+/)) {
+    if ((cur + " " + word).trim().length > max) {
+      if (cur) out.push(cur);
+      cur = word;
+      if (out.length === lines) break;
+    } else cur = (cur + " " + word).trim();
+  }
+  if (out.length < lines && cur) out.push(cur);
+  if (out.length === lines && out.join(" ").length < s.length) out[lines - 1] = fitText(out[lines - 1] + "…", width, fs);
+  return out.slice(0, lines).map((l) => fitText(l, width, fs));
+}
+
+// Split a package name in two at a natural break (space, -, ., /, …) near the
+// middle. Returns null when there is none; cutting inside a word reads badly.
+function splitName(s) {
+  const mid = s.length / 2;
+  let best = -1;
+  for (let i = 1; i < s.length - 1; i++) {
+    if (" /-._@:".includes(s[i]) && (best < 0 || Math.abs(i - mid) < Math.abs(best - mid))) best = i;
+  }
+  if (best < 0 || Math.abs(best - mid) > s.length * 0.3) return null;
+  const cut = s[best] === " " ? best : best + 1;
+  return [s.slice(0, cut).trim(), s.slice(cut).trim()];
+}
+
+// Largest font (up to maxFs) that shows the whole name in one or two lines.
+function nameLayout(label, iw, ih, maxFs) {
+  const one = Math.min(maxFs, iw / (label.length * CHAR_W_BOLD));
+  if (one >= 11 || label.length < 6) return { fs: Math.max(10, one), lines: [fitText(label, iw, Math.max(10, one), CHAR_W_BOLD)] };
+  const parts = splitName(label);
+  const two = parts ? Math.min(maxFs, iw / (Math.max(...parts.map((p) => p.length)) * CHAR_W_BOLD)) : 0;
+  if (two >= 11 && ih >= two * 2.3) return { fs: two, lines: parts };
+  return { fs: 10.5, lines: [fitText(label, iw, 10.5, CHAR_W_BOLD)] };
+}
+
+function drawTreemap() {
+  if (!layout) return;
+  const svg = $("#treemap");
+  const { W, H, groups } = layout;
+  const { k, tx, ty } = zoom;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("height", H);
+  svg.style.touchAction = k > 1 ? "none" : "pan-x pan-y";
+  $("#zoom-level").textContent = k > 1.01 ? `${k.toFixed(1)}×` : "";
+  svg.replaceChildren();
+  const X = (x) => x * k + tx, Y = (y) => y * k + ty;
+  const visible = (x, y, w, h) => x + w > 0 && y + h > 0 && x < W && y < H;
+
+  for (const g of groups) {
+    const gx = X(g.x), gy = Y(g.y), gw = g.w * k, gh = g.h * k;
+    if (!visible(gx, gy, gw, gh)) continue;
+    const grp = svgEl("g");
+    // Each ecosystem gets a header band and a strong outline, so groups read as
+    // separate areas rather than as more tiles.
+    const gap = GROUP_GAP * k, bx = gx + gap, by = gy + gap, bw = Math.max(0, gw - gap * 2), bh = Math.max(0, gh - gap * 2);
+    const headH = HEAD * k;
+    grp.append(svgEl("rect", { x: bx, y: by, width: bw, height: bh, rx: 8, fill: "var(--surface)" }));
+    grp.append(svgEl("path", { d: `M${bx} ${by + headH}V${by + 8}a8 8 0 0 1 8 -8H${bx + bw - 8}a8 8 0 0 1 8 8V${by + headH}Z`, fill: "var(--group-head)" }));
+    const affected = g.eco.packages.filter((p) => pkgVulns(p).length).length;
+    const hfs = Math.min(15, Math.max(11, headH * 0.6));
+    if (headH >= 14 && gw > 40) {
+      const head = svgEl("text", { x: Math.max(bx, 0) + 8, y: by + Math.min(headH, 30) / 2 + hfs * 0.36 + 1, "font-size": hfs, "font-weight": 700, fill: "var(--ink)" });
+      const base = t("group_head", g.eco.label, affected, g.eco.packages.length);
+      const extra = g.eco.survey_share ? ` · ${g.eco.languages} ${g.eco.survey_share}%` : "";
+      const full = base + extra;
+      head.textContent = full.length * hfs * CHAR_W_BOLD < bw - 16 ? full : fitText(base, bw - 16, hfs, CHAR_W_BOLD);
+      grp.append(head);
+    }
+    for (const tile of g.tiles) drawTile(grp, g, tile, X(tile.x), Y(tile.y), tile.w * k, tile.h * k, visible);
+    // The outline goes on top so tiles never cover it.
+    grp.append(svgEl("rect", { x: bx, y: by, width: bw, height: bh, rx: 8, fill: "none", stroke: "var(--group-line)", "stroke-width": 2, "pointer-events": "none" }));
+    svg.append(grp);
+  }
+}
+
+function drawTile(grp, g, tile, x, y, w, h, visible) {
+  if (!visible(x, y, w, h)) return;
+  const p = tile.p;
+  const vulns = pkgVulns(p), lvl = pkgLevel(vulns);
+  const kevs = vulns.filter((v) => v.kev).length;
+  const node = svgEl("g", { class: "tile", tabindex: 0, role: "button", "aria-label": `${p.label}: ${t("vulns", vulns.length)}, ${t("level")[lvl]}` });
+  // --sev-kev lets a theme give KEV its own color; by default KEV shares the critical red.
+  const fill = kevs ? "var(--sev-kev, var(--sev-3))" : `var(--sev-${lvl})`;
+  node.append(svgEl("rect", { class: "cell", x: x + 1, y: y + 1, width: Math.max(0, w - 2), height: Math.max(0, h - 2), rx: Math.min(4, w / 6), fill }));
+  // Gray tiles take the page ink for the name so it reads as strongly as on colored ones.
+  const ink = kevs ? "var(--sev-kev-ink, var(--sev-3-ink))" : lvl ? `var(--sev-${lvl}-ink)` : "var(--ink)";
+  const subInk = lvl ? ink : "var(--muted)";
+  const pad = 6, iw = w - pad * 2;
+  let cy = y + pad - 1;
+  const line = (text, fs, weight = 400, fill = ink, opacity = 1) => {
+    if (!text || cy + fs > y + h - 3) return false;
+    cy += fs;
+    const el = svgEl("text", { x: x + pad, y: cy - fs * 0.16, "font-size": fs, "font-weight": weight, fill, opacity });
+    el.textContent = text;
+    node.append(el);
+    cy += 3;
+    return true;
+  };
+  if (w >= 28 && h >= 15) {
+    const name = nameLayout(p.label, iw, h - pad * 2, Math.max(11, Math.min(22, Math.sqrt(w * h) / 5.5)));
+    for (const l of name.lines) line(l, name.fs, 700);
+    if (w >= 52 && h >= cy - y + 14) {
+      line(fitText(vulns.length ? `${t("vulns", vulns.length)}${kevs ? " · KEV" : ""}` : t("clear"), iw, 11), 11, vulns.length ? 600 : 400, subInk);
+    }
+    if (w >= 120 && h >= 70 && vulns.length) {
+      const by = [3, 2, 1].map((l) => [l, vulns.filter((v) => vulnLevel(v) === l).length]).filter(([, n]) => n);
+      line(fitText(by.map(([l, n]) => `${n} ${t("sev_short")[l]}`).join(" · "), iw, 11), 11, 400, ink, 0.85);
+      const f = fixedList(vulns);
+      if (f.length) line(fitText(`${t("fixed_short")}: ${f.slice(0, 4).join(", ")}`, iw, 11), 11, 400, ink, 0.85);
+    }
+    if (w >= 170 && h >= 120 && vulns.length) {
+      const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a) || b.published.localeCompare(a.published))[0];
+      cy += 3;
+      line(fitText(`${top.id} · ${top.severity}`, iw, 11), 11, 650);
+      const room = Math.floor((y + h - cy - 20) / 14);
+      for (const l of wrapText(top.summary, iw, 11, Math.max(0, Math.min(5, room)))) line(l, 11, 400, ink, 0.9);
+    }
+    if (w >= 130 && h >= 90) {
+      const bits = [];
+      const unit = popUnit(p.popularity_source);
+      if (unit) bits.push(t("pop_fmt", compact.format(p.popularity), t("pop")[unit]));
+      if (p.survey) bits.push(t("so_short", p.survey));
+      if (bits.length) {
+        const el = svgEl("text", { x: x + pad, y: y + h - 7, "font-size": 10.5, fill: subInk, opacity: 0.85 });
+        el.textContent = fitText(bits.join(" · "), iw, 10.5);
+        node.append(el);
+      }
+    }
+  }
+  if (HOOKS.tileDecor) HOOKS.tileDecor(node, { lvl, kevs, x, y, w, h, ink });
+  node.addEventListener("mousemove", (ev) => {
+    const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a))[0];
+    const unit = popUnit(p.popularity_source);
+    showTip(`<div class="t">${esc(p.label)} <span class="m">${esc(g.eco.label)}${p.label !== p.name ? " · " + esc(p.name) : ""}</span></div>
+      <div>${t("tip_count", vulns.length, state.range)} · <span class="pill l${lvl}">${t("level")[lvl]}</span>${kevs ? ' <span class="pill kev">KEV</span>' : ""}</div>
+      ${top ? `<div class="m">${t("tip_worst")}: ${esc(top.id)} — ${esc(top.summary)}</div>` : ""}
+      <div class="m">${t("tip_size")}: ${unit ? esc(compact.format(p.popularity)) + " " + esc(t("pop_long")[unit]) : t("fixed_weight")}</div>
+      ${p.survey ? `<div class="m">${esc(t("tip_survey", p.survey, DATA.survey ? DATA.survey.name : "survey"))}</div>` : ""}
+      <div class="m">${t("tip_click")}</div>`, ev);
+  });
+  node.addEventListener("mouseleave", hideTip);
+  const open = () => { hideTip(); setState({ view: "c", pkg: p.key }); };
+  node.addEventListener("click", (ev) => {
+    if (tmDragged || ev.detail > 1) return;
+    clearTimeout(tmClickTimer);
+    tmClickTimer = setTimeout(open, 250);
+  });
+  node.addEventListener("keydown", (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); open(); } });
+  grp.append(node);
+}
+
+function updateFullscreenLabel() {
+  const b = $("#fullscreen");
+  if (b) b.textContent = isFullscreen() ? t("exit_fullscreen") : t("fullscreen");
+}
+
+function initTreemapZoom() {
+  const svg = $("#treemap");
+  const toLocal = (ev) => {
+    const r = svg.getBoundingClientRect();
+    return [(ev.clientX - r.left) * (layout.W / r.width), (ev.clientY - r.top) * (layout.H / r.height)];
+  };
+  svg.addEventListener("wheel", (ev) => {
+    if (!layout || !(ev.ctrlKey || ev.metaKey)) return;   // plain wheel keeps scrolling the page
+    ev.preventDefault();
+    const [sx, sy] = toLocal(ev);
+    // About 1.4x per mouse-wheel notch (deltaY ~100); trackpad pinches send small deltas.
+    const dy = ev.deltaMode === 1 ? ev.deltaY * 33 : ev.deltaY;
+    zoomAt(Math.min(1.4, Math.max(1 / 1.4, Math.pow(2, -dy / 200))), sx, sy);
+  }, { passive: false });
+  svg.addEventListener("dblclick", (ev) => {
+    clearTimeout(tmClickTimer);
+    if (!layout) return;
+    ev.preventDefault();
+    const [sx, sy] = toLocal(ev);
+    zoomAt(ev.shiftKey ? 0.5 : 2, sx, sy);
+  });
+
+  const pointers = new Map();
+  let start = null;
+  svg.addEventListener("pointerdown", (ev) => {
+    if (!layout) return;
+    pointers.set(ev.pointerId, toLocal(ev));
+    tmDragged = false;
+    start = { zoom: { ...zoom }, pts: new Map(pointers) };
+  });
+  svg.addEventListener("pointermove", (ev) => {
+    if (!pointers.has(ev.pointerId) || !start) return;
+    pointers.set(ev.pointerId, toLocal(ev));
+    const pts = [...pointers.values()], first = [...start.pts.values()];
+    if (pts.length >= 2 && first.length >= 2) {
+      const d0 = Math.hypot(first[0][0] - first[1][0], first[0][1] - first[1][1]) || 1;
+      const d1 = Math.hypot(pts[0][0] - pts[1][0], pts[0][1] - pts[1][1]);
+      const c0 = [(first[0][0] + first[1][0]) / 2, (first[0][1] + first[1][1]) / 2];
+      const c1 = [(pts[0][0] + pts[1][0]) / 2, (pts[0][1] + pts[1][1]) / 2];
+      const k = Math.min(ZOOM_MAX, Math.max(1, start.zoom.k * d1 / d0)), f = k / start.zoom.k;
+      Object.assign(zoom, { k, tx: c1[0] - (c0[0] - start.zoom.tx) * f, ty: c1[1] - (c0[1] - start.zoom.ty) * f });
+      tmDragged = true;
+    } else if (pts.length === 1 && start.zoom.k > 1) {
+      const p0 = start.pts.get(ev.pointerId);
+      if (!p0) return;
+      const dx = pts[0][0] - p0[0], dy = pts[0][1] - p0[1];
+      if (Math.hypot(dx, dy) < 4 && !tmDragged) return;
+      tmDragged = true;
+      hideTip();
+      Object.assign(zoom, { tx: start.zoom.tx + dx, ty: start.zoom.ty + dy });
+    } else return;
+    clampZoom();
+    scheduleTreemap();
+  });
+  const end = (ev) => {
+    pointers.delete(ev.pointerId);
+    start = pointers.size ? { zoom: { ...zoom }, pts: new Map(pointers) } : null;
+    setTimeout(() => { if (!pointers.size) tmDragged = false; }, 0);
+  };
+  svg.addEventListener("pointerup", end);
+  svg.addEventListener("pointercancel", end);
+  svg.addEventListener("keydown", (ev) => {
+    if (ev.key === "+" || ev.key === "=") zoomAt(1.5, layout.W / 2, layout.H / 2);
+    else if (ev.key === "-" || ev.key === "_") zoomAt(1 / 1.5, layout.W / 2, layout.H / 2);
+    else if (ev.key === "0") { Object.assign(zoom, { k: 1, tx: 0, ty: 0 }); scheduleTreemap(); }
+  });
+  $("#zoom-in").onclick = () => layout && zoomAt(1.6, layout.W / 2, layout.H / 2);
+  $("#zoom-out").onclick = () => layout && zoomAt(1 / 1.6, layout.W / 2, layout.H / 2);
+  $("#zoom-reset").onclick = () => { Object.assign(zoom, { k: 1, tx: 0, ty: 0 }); scheduleTreemap(); };
+
+  // Element full screen is missing on iPhone Safari; the button stays hidden there.
+  const panel = $("#tm-panel");
+  const request = panel.requestFullscreen || panel.webkitRequestFullscreen;
+  if (request) {
+    const fsBtn = $("#fullscreen");
+    fsBtn.hidden = false;
+    fsBtn.onclick = () => {
+      if (isFullscreen()) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      else request.call(panel);
+    };
+    const onChange = () => { Object.assign(zoom, { k: 1, tx: 0, ty: 0 }); updateFullscreenLabel(); if (state.view === "a" && DATA) renderTreemap(); };
+    document.addEventListener("fullscreenchange", onChange);
+    document.addEventListener("webkitfullscreenchange", onChange);
+  }
+}
+
+// ------------------------------------------------------------ C: timeline
+
+function timelineSvg(vulns, width, opts = {}) {
+  const days = 30, padL = 2, padR = 8, r = (opts.r || 5) - (width < 400 ? 1 : 0), step = r * 2 + 2;
+  const maxStack = opts.maxStack || 99;
+  const byDay = new Map();
+  for (const v of vulns) {
+    const d = Math.min(days, Math.max(0, Math.floor((NOW - Date.parse(v.published)) / DAY)));
+    if (!byDay.has(d)) byDay.set(d, []);
+    byDay.get(d).push(v);
+  }
+  const tallest = Math.min(maxStack, Math.max(1, ...[...byDay.values()].map((a) => a.length)));
+  const axisH = opts.axis ? 18 : 0;
+  const H = tallest * step + 6 + axisH;
+  const svg = svgEl("svg", { width: "100%", height: H, viewBox: `0 0 ${width} ${H}`, preserveAspectRatio: "none" });
+  const xOf = (d) => padL + r + (width - padL - padR - r * 2) * (1 - d / days);
+  const base = H - axisH - 3 - r;
+  svg.append(svgEl("line", { x1: padL, x2: width - padR, y1: base + r + 2, y2: base + r + 2, stroke: "var(--axis)" }));
+  svg.append(svgEl("line", { x1: xOf(7), x2: xOf(7), y1: 0, y2: base + r + 2, stroke: "var(--grid)", "stroke-dasharray": "3 3" }));
+  if (opts.axis) {
+    for (const d of [30, 21, 14, 7, 0]) {
+      const el = svgEl("text", { x: xOf(d), y: H - 4, "font-size": 11, fill: "var(--muted)", "text-anchor": d === 30 ? "start" : d === 0 ? "end" : "middle" });
+      el.textContent = d === 0 ? t("today") : t("days_ago", d);
+      svg.append(el);
+    }
+  }
+  for (const [d, list] of byDay) {
+    list.sort((a, b) => vulnLevel(b) - vulnLevel(a));
+    list.slice(0, maxStack).forEach((v, i) => {
+      const lvl = vulnLevel(v);
+      const c = svgEl("circle", { class: "dot", cx: xOf(d), cy: base - i * step, r, fill: `var(--sev-${lvl})`, stroke: "var(--surface)", "stroke-width": 1.5 });
+      c.addEventListener("mousemove", (ev) => showTip(vulnTip(v, opts.pkg), ev));
+      c.addEventListener("mouseleave", hideTip);
+      c.addEventListener("click", () => window.open(v.url, "_blank", "noopener"));
+      svg.append(c);
+    });
+    if (list.length > maxStack) {
+      const el = svgEl("text", { x: xOf(d) + r + 2, y: base - (maxStack - 1) * step + 4, "font-size": 10, fill: "var(--muted)" });
+      el.textContent = `+${list.length - maxStack}`;
+      svg.append(el);
+    }
+  }
+  return svg;
+}
+
+function fixedHtml(f, max) {
+  if (!f.length) return t("no_fixed");
+  const shown = max ? f.slice(0, max) : f;
+  return `${t("fixed_in")} <b>${esc(shown.join(", "))}</b>${f.length > shown.length ? ` +${f.length - shown.length}` : ""}`;
+}
+
+function renderTimeline() {
+  const root = $("#view-c");
+  root.replaceChildren();
+  const entry = state.pkg && PKGS.get(state.pkg);
+  if (state.pkg && !entry) {
+    root.innerHTML = `<div class="panel"><p>${t("no_pkg", esc(state.pkg))} <a href="#" id="clearpkg">${t("show_all")}</a></p></div>`;
+    $("#clearpkg").onclick = (e) => { e.preventDefault(); setState({ pkg: null }); };
+    return;
+  }
+  if (entry) return renderPackage(root, entry);
+
+  const panel = document.createElement("div");
+  panel.className = "panel";
+  panel.innerHTML = `<h2>${t("tl_head")}</h2>`;
+  const rows = [];
+  for (const e of DATA.ecosystems) for (const p of e.packages) {
+    const vulns = pkgVulns(p, 30);
+    if (vulns.length) rows.push({ e, p, vulns, lvl: pkgLevel(pkgVulns(p, state.range)), lvl30: pkgLevel(vulns) });
+  }
+  rows.sort((a, b) => b.lvl - a.lvl || b.lvl30 - a.lvl30 || b.vulns.length - a.vulns.length);
+  if (!rows.length) panel.insertAdjacentHTML("beforeend", `<p>${t("tl_none", state.kevOnly)}</p>`);
+  const list = document.createElement("div");
+  for (const r of rows) {
+    const row = document.createElement("div");
+    row.className = "tl-row";
+    const name = document.createElement("button");
+    name.className = "name";
+    name.innerHTML = `${esc(r.p.label)}<small>${esc(r.e.label)} · ${t("issues", r.vulns.length)}</small>`;
+    name.onclick = () => setState({ pkg: r.p.key });
+    const plot = document.createElement("div");
+    const fix = document.createElement("div");
+    fix.className = "fix";
+    fix.innerHTML = fixedHtml(fixedList(r.vulns), 3);
+    row.append(name, plot, fix);
+    list.append(row);
+    r.plot = plot;
+  }
+  panel.append(list);
+  panel.insertAdjacentHTML("beforeend", `<p class="hint">${t("tl_hint")}</p>`);
+  root.append(panel);
+  for (const r of rows) r.plot.append(timelineSvg(r.vulns, Math.max(200, r.plot.clientWidth), { maxStack: 4, pkg: r.p }));
+}
+
+function renderPackage(root, { eco, pkg }) {
+  const vulns = pkgVulns(pkg, 30);
+  const panel = document.createElement("div");
+  panel.className = "panel";
+  const lvl = pkgLevel(vulns);
+  panel.innerHTML = `<p style="margin:0 0 6px"><a href="#" id="allpkgs">${t("all_pkgs")}</a></p>
+    <h2>${esc(pkg.label)} <span class="meta">${esc(eco.label)} · ${esc(pkg.name)}</span></h2>
+    <div class="tl-row" style="border:0"><div class="name">${t("issues_30", vulns.length)}<small>${lvl ? t("at_worst", t("level")[lvl]) : t("clear")}</small></div>
+    <div id="pkgplot"></div><div class="fix">${fixedHtml(fixedList(vulns))}</div></div>`;
+  root.append(panel);
+  $("#allpkgs").onclick = (e) => { e.preventDefault(); setState({ pkg: null }); };
+  const plot = $("#pkgplot");
+  plot.append(timelineSvg(vulns, Math.max(220, plot.clientWidth), { axis: true, r: 6, pkg }));
+
+  const box = document.createElement("div");
+  box.className = "panel scroll-x";
+  const th = t("th");
+  if (!vulns.length) {
+    box.innerHTML = `<p>${t("pkg_none", esc(pkg.label), state.kevOnly)}</p>`;
+  } else {
+    box.innerHTML = `<table class="data vulns"><thead><tr><th>${th.published}</th><th>${th.advisory}</th><th>${th.severity}</th><th class="num">CVSS</th><th class="num">EPSS</th><th>${th.fixed}</th><th>${th.summary}</th></tr></thead><tbody>
+      ${vulns.map((v) => `<tr><td class="nowrap">${esc(v.published.slice(0, 10))}</td>
+        <td class="nowrap"><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.id)}</a>${v.cves.length ? `<br><span class="meta">${esc(v.cves.join(", "))}</span>` : ""}</td>
+        <td><span class="pill l${vulnLevel(v)}">${esc(v.severity)}</span>${v.kev ? ' <span class="pill kev">KEV</span>' : ""}</td>
+        <td class="num">${v.cvss ?? "–"}</td><td class="num">${v.epss != null ? (v.epss * 100).toFixed(1) + "%" : "–"}</td>
+        <td>${esc(v.fixed.join(", ") || "–")}</td><td class="summary">${esc(v.summary)}</td></tr>`).join("")}
+      </tbody></table>`;
+  }
+  root.append(box);
+}
+
+// ------------------------------------------------------------ B: counter
+
+function renderCounter() {
+  const root = $("#view-b");
+  root.replaceChildren();
+  const bars = document.createElement("div");
+  bars.className = "panel";
+  bars.innerHTML = `<h2>${t("b_month_head")}</h2>`;
+  const months = (DATA.monthly || []).filter((m) => m.count != null);
+  if (!months.length) {
+    bars.insertAdjacentHTML("beforeend", `<p class="meta">${t("b_month_na")}</p>`);
+  } else {
+    const W = Math.max(300, root.clientWidth - 24), H = 220, padL = 44, padB = 22, padT = 18;
+    const max = Math.max(...months.map((m) => m.count));
+    const nice = Math.pow(10, Math.floor(Math.log10(max))) * (max / Math.pow(10, Math.floor(Math.log10(max))) > 5 ? 2 : 1);
+    const top = Math.ceil(max / nice) * nice;
+    const svg = svgEl("svg", { width: "100%", height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": t("b_month_head") });
+    for (let v = 0; v <= top; v += nice) {
+      const y = padT + (H - padT - padB) * (1 - v / top);
+      svg.append(svgEl("line", { x1: padL, x2: W, y1: y, y2: y, stroke: v ? "var(--grid)" : "var(--axis)" }));
+      const el = svgEl("text", { x: padL - 6, y: y + 4, "font-size": 11, fill: "var(--muted)", "text-anchor": "end" });
+      el.textContent = v >= 1000 ? (v / 1000) + "k" : v;
+      svg.append(el);
+    }
+    const bw = (W - padL) / months.length;
+    months.forEach((m, i) => {
+      const h = (H - padT - padB) * (m.count / top), x = padL + i * bw + 2, y = H - padB - h;
+      const partial = i === months.length - 1;
+      const r = svgEl("rect", { x, y, width: Math.max(2, bw - 4), height: h, rx: 3, fill: "var(--bar)", opacity: partial ? 0.55 : 1 });
+      r.addEventListener("mousemove", (ev) => showTip(`<div class="t">${m.month}</div><div>${t("b_month_tip", fmt(m.count), partial)}</div>`, ev));
+      r.addEventListener("mouseleave", hideTip);
+      svg.append(r);
+      if (bw > 34 || i % 2 === 0) {
+        const el = svgEl("text", { x: x + (bw - 4) / 2, y: H - 6, "font-size": 11, fill: "var(--muted)", "text-anchor": "middle" });
+        el.textContent = m.month.slice(5) === "01" || i === 0 ? m.month.slice(2).replace("-", "/") : m.month.slice(5);
+        svg.append(el);
+      }
+    });
+    bars.append(svg);
+    bars.insertAdjacentHTML("beforeend", `<p class="hint">${t("b_month_hint", DATA.monthly_is_stale)}</p>`);
+  }
+  root.append(bars);
+
+  const tbl = document.createElement("div");
+  tbl.className = "panel scroll-x";
+  const rows = DATA.ecosystems.map((e) => {
+    const all = e.packages.flatMap((p) => p.vulns.filter((v) => inRange(v, 7)));
+    return { e, n: all.length, crit: all.filter((v) => v.severity === "CRITICAL").length, kev: all.filter((v) => v.kev).length,
+      pk: e.packages.filter((p) => p.vulns.some((v) => inRange(v, 7))).length };
+  });
+  const bth = t("b_th");
+  tbl.innerHTML = `<h2>${t("b_eco_head")}</h2>
+    <table class="data"><thead><tr><th>${bth.eco}</th><th class="num">${bth.n}</th><th class="num">${bth.crit}</th><th class="num">KEV</th><th class="num">${bth.pk}</th></tr></thead>
+    <tbody>${rows.map((r) => `<tr><td>${esc(r.e.label)}</td><td class="num">${r.n}</td><td class="num">${r.crit}</td><td class="num">${r.kev}</td><td class="num">${r.pk} / ${r.e.packages.length}</td></tr>`).join("")}</tbody></table>`;
+  root.append(tbl);
+
+  if (DATA.kev_recent && DATA.kev_recent.length) {
+    const k = document.createElement("div");
+    k.className = "panel scroll-x";
+    const kth = t("b_kev_th");
+    k.innerHTML = `<h2>${t("b_kev_head")}</h2>
+      <table class="data"><thead><tr><th>${kth.added}</th><th>CVE</th><th>${kth.vendor}</th><th>${kth.name}</th></tr></thead><tbody>
+      ${DATA.kev_recent.map((x) => `<tr><td class="nowrap">${esc(x.date_added)}</td><td class="nowrap"><a href="https://nvd.nist.gov/vuln/detail/${esc(x.cve)}" target="_blank" rel="noopener">${esc(x.cve)}</a></td><td>${esc(x.vendor)} ${esc(x.product)}</td><td>${esc(x.name)}</td></tr>`).join("")}
+      </tbody></table>`;
+    root.append(k);
+  }
+}
+
+// ------------------------------------------------------------ state
+
+function readUrl() {
+  const q = new URLSearchParams(location.search);
+  const out = {};
+  if (["a", "b", "c"].includes(q.get("view"))) out.view = q.get("view");
+  if (q.get("pkg")) { out.pkg = q.get("pkg"); out.view = out.view || "c"; }
+  if (["7", "30"].includes(q.get("range"))) out.range = Number(q.get("range"));
+  if (q.get("kev") === "1") out.kevOnly = true;
+  if (q.get("lang") in I18N) out.lang = q.get("lang");
+  return out;
+}
+function writeUrl(push) {
+  const q = new URLSearchParams();
+  q.set("view", state.view);
+  if (state.pkg) q.set("pkg", state.pkg);
+  if (state.range !== 7) q.set("range", state.range);
+  if (state.kevOnly) q.set("kev", "1");
+  if (new URLSearchParams(location.search).has("lang")) q.set("lang", LANG);
+  const url = `${location.pathname}?${q}`;
+  if (url !== location.pathname + location.search) history[push ? "pushState" : "replaceState"](null, "", url);
+}
+
+function setState(patch, push = true) {
+  Object.assign(state, patch);
+  writeUrl(push);
+  writePrefs();
+  render();
+}
+
+function setLang(lang) {
+  LANG = lang;
+  writePrefs();
+  writeUrl(false);
+  applyStaticText();
+  render();
+}
+
+function render() {
+  document.querySelectorAll("[data-view]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.view === state.view));
+  document.querySelectorAll("[data-range]").forEach((b) => b.setAttribute("aria-pressed", Number(b.dataset.range) === state.range));
+  $("#kevonly").checked = state.kevOnly;
+  for (const v of ["a", "b", "c"]) $("#view-" + v).hidden = state.view !== v;
+  if (!DATA) return;
+  renderStats();
+  if (state.view === "a") renderTreemap();
+  if (state.view === "b") renderCounter();
+  if (state.view === "c") renderTimeline();
+  if (HOOKS.afterRender) HOOKS.afterRender();
+}
+
+function initControls() {
+  initTreemapZoom();
+  document.querySelectorAll("[data-view]").forEach((b) => b.onclick = () => setState({ view: b.dataset.view, pkg: b.dataset.view === "c" ? state.pkg : null }));
+  document.querySelectorAll("[data-range]").forEach((b) => b.onclick = () => setState({ range: Number(b.dataset.range) }, false));
+  document.querySelectorAll("[data-lang]").forEach((b) => b.onclick = () => setLang(b.dataset.lang));
+  $("#kevonly").onchange = (e) => setState({ kevOnly: e.target.checked }, false);
+  $("#search").addEventListener("change", (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    if (!q) return;
+    const hit = [...PKGS.keys()].find((k) => k.toLowerCase() === q)
+      || [...PKGS.entries()].find(([, v]) => v.pkg.label.toLowerCase() === q || v.pkg.name.toLowerCase() === q)?.[0]
+      || [...PKGS.keys()].find((k) => k.toLowerCase().includes(q));
+    setState({ view: "c", pkg: hit || q });
+    e.target.value = "";
+  });
+  $("#theme").onclick = () => {
+    const root = document.documentElement;
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    writePrefs();
+  };
+  addEventListener("popstate", () => { Object.assign(state, { view: "a", pkg: null, range: 7, kevOnly: false }, readUrl()); render(); });
+  let timer;
+  addEventListener("resize", () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      // A new width means a new layout; a height-only change (mobile URL bar) keeps the zoom.
+      if (layout && $("#treemap-box").clientWidth !== layout.W) Object.assign(zoom, { k: 1, tx: 0, ty: 0 });
+      render();
+    }, 150);
+  });
+}
+
+async function main() {
+  const prefs = readPrefs();
+  if (prefs.theme === "dark" || prefs.theme === "light") document.documentElement.dataset.theme = prefs.theme;
+  const fromUrl = readUrl();
+  LANG = fromUrl.lang || (prefs.lang in I18N ? prefs.lang : null) || ((navigator.language || "").toLowerCase().startsWith("ko") ? "ko" : "en");
+  state.view = fromUrl.view || prefs.view || (innerWidth < 768 ? "c" : "a");
+  state.range = fromUrl.range || prefs.range || 7;
+  state.kevOnly = !!fromUrl.kevOnly;
+  state.pkg = fromUrl.pkg || null;
+  applyStaticText();
+  initControls();
+  render();
+  try {
+    const r = await fetch(DATA_URL, { cache: "no-cache" });
+    if (!r.ok) throw new Error(r.status);
+    DATA = await r.json();
+  } catch (e) {
+    $("#meta").textContent = t("load_error");
+    return;
+  }
+  NOW = Date.parse(DATA.generated_at);
+  for (const e of DATA.ecosystems) for (const p of e.packages) PKGS.set(p.key, { eco: e, pkg: p });
+  $("#pkglist").innerHTML = [...PKGS.values()].map(({ eco, pkg }) => `<option value="${esc(pkg.key)}">${esc(pkg.label)} (${esc(eco.label)})</option>`).join("");
+  renderMeta();
+  render();
+}
+main();
+</script>
+<script>
+
+Object.assign(I18N.en, {
+  meta: (d, n, e) => `Scan of ${n} packages in ${e} groups at ${d} UTC.`,
+  lg0: "Clear", lg1: "Light: low or medium", lg2: "Heavy: high", lg3: "Severe: critical",
+  st_today: "new CVEs today", st_month: (m) => `CVEs in ${m}`, st_kev: "added to KEV this week", st_aff: "packages hit this week",
+  group_head: (label, a, n) => `${label}  ${a}/${n}`,
+});
+Object.assign(I18N.ko, {
+  meta: (d, n, e) => `${d} UTC 관측. ${e}개 그룹, ${n}개 패키지.`,
+  lg0: "맑음", lg1: "약함: 낮음·중간", lg2: "강함: 높음", lg3: "매우 강함: 치명",
+  st_today: "오늘 신규 CVE", st_month: (m) => `${m} CVE`, st_kev: "이번 주 KEV 추가", st_aff: "이번 주 영향받은 패키지",
+  group_head: (label, a, n) => `${label}  ${a}/${n}`,
+});
+// KEV gets its own color on the radar; add it to the legend.
+const lg = document.querySelector(".legend");
+const kevItem = document.createElement("span");
+kevItem.innerHTML = '<i style="background:var(--sev-kev)"></i><span id="lg-kev"></span>';
+lg.append(kevItem);
+const _apply = applyStaticText;
+applyStaticText = function () { _apply(); document.querySelector("#lg-kev").textContent = LANG === "ko" ? "실제 악용 (KEV)" : "Exploited (KEV)"; };
+applyStaticText();
+
+</script>
+</body>
+</html>
