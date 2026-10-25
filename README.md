@@ -1,6 +1,8 @@
 # depweather
 
-Today's vulnerability forecast for popular packages.
+**English** | [한국어](README.ko.md)
+
+Vulnerability weather for popular packages.
 
 depweather shows recent vulnerabilities in popular open-source packages as one
 treemap, grouped by ecosystem. It is a static site: a daily GitHub Actions job
@@ -29,8 +31,8 @@ respondents who use its language (JavaScript 62.0%, Python 58.0%, Java 27.6%,
 C# 27.1%, Rust 18.0%, PHP 17.7%, Go 16.5%, Ruby 5.8%, Elixir 2.6%), with a
 3.5% floor so small groups stay findable. "Runtimes & servers" maps to no
 single language and has a fixed area (`area: 20` in `stacks.yml`). Inside a group, tile size is the
-package's downloads (see "Data sources"; Maven, NuGet and Go use equal
-weights). Tile color is the worst advisory *published* in the last 7 days
+package's downloads (see "Data sources"; Maven, NuGet, Go and "Runtimes &
+servers" use equal weights). Tile color is the worst advisory *published* in the last 7 days
 (toggle: 30 days). "KEV only" keeps only advisories whose CVE is in the CISA
 KEV catalog.
 
@@ -92,10 +94,10 @@ by the constant `EPSS_BUMP_THRESHOLD` at the top of the script in `index.html`
 
 ## Packages
 
-The default list in [`collect/stacks.yml`](collect/stacks.yml) has 136
-packages. Each ecosystem gets roughly as many as its language's survey share
-suggests (npm and PyPI 24, Maven 18, NuGet/crates.io/Packagist/Go 14,
-RubyGems 8, Hex 6). They are picked in this order:
+The default list in [`collect/stacks.yml`](collect/stacks.yml) has 149
+packages: 136 from language registries and 13 runtimes and servers. Each
+ecosystem gets roughly as many as its language's survey share suggests (npm
+and PyPI 24, Maven 18, NuGet/crates.io/Packagist/Go 14, RubyGems 8, Hex 6). They are picked in this order:
 
 1. **Frameworks people say they use.** Every entry of the Stack Overflow 2026
    "Web frameworks and technologies" list with at least 2% of respondents,
@@ -138,7 +140,7 @@ without committing it, point the collector at another file:
 DEPWEATHER_STACKS=~/my-stacks.yml python collect/collect.py
 ```
 
-Not in the POC:
+Not covered yet:
 
 - **OpenSSL and other system libraries.** Not in OSV's Bitnami data; covering
   them needs NVD CPE matching or a Linux distribution feed. Kubernetes is
