@@ -209,7 +209,7 @@ link previews are cached for a long time and the data changes daily. The
 [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) publishes the site
 to GitHub Pages on every push to `main` and after each successful collection.
 It uploads only what the page loads (`index.html`, `favicon.svg`, `og.png`,
-`fonts/`, `data/latest.json`).
+`robots.txt`, `sitemap.xml`, `fonts/`, `data/latest.json`).
 
 One-time setup: Settings → Pages → Source: GitHub Actions; then Custom
 domain: `depweather.com` with "Enforce HTTPS". DNS at the registrar: `A`

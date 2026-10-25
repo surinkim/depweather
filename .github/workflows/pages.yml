@@ -36,7 +36,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site/data
-          cp index.html favicon.svg og.png _site/
+          cp index.html favicon.svg og.png robots.txt sitemap.xml _site/
           cp -r fonts _site/
           cp data/latest.json _site/data/
 

@@ -191,7 +191,7 @@ NVD 호출을 빠르게 하려면 저장소 시크릿 `NVD_API_KEY`를 추가하
 
 [`.github/workflows/pages.yml`](../.github/workflows/pages.yml)이 `main`에 푸시할 때와
 수집이 성공할 때마다 GitHub Pages에 배포합니다. 페이지가 불러오는 파일만 올립니다
-(`index.html`, `favicon.svg`, `og.png`, `fonts/`, `data/latest.json`).
+(`index.html`, `favicon.svg`, `og.png`, `robots.txt`, `sitemap.xml`, `fonts/`, `data/latest.json`).
 
 처음 한 번 설정: Settings → Pages → Source를 GitHub Actions로 하고, Custom domain에
 `depweather.com`을 넣은 뒤 "Enforce HTTPS"를 켭니다. 도메인 등록 업체의 DNS에는 `@`의
