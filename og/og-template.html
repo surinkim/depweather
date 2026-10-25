@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- Source of og.png (1200x630 social preview). Regenerate with: node og/render.js -->
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #eef5fa; color: #12324d;
+    font-family: "IBM Plex Sans", system-ui, sans-serif; display: grid; grid-template-columns: 560px 1fr; }
+  .left { padding: 64px 0 56px 72px; display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 18px; }
+  .brand img { width: 76px; height: 76px; }
+  h1 { font-family: "Bricolage Grotesque", sans-serif; font-size: 62px; font-weight: 800; letter-spacing: -0.02em; margin: 0; line-height: 1; }
+  .say { font-family: "Bricolage Grotesque", sans-serif; font-size: 46px; line-height: 1.1; font-weight: 750;
+    letter-spacing: -0.012em; margin: 52px 0 0; max-width: 13ch; text-wrap: balance; }
+  .foot { margin-top: auto; font-size: 21px; color: #3f5b73; line-height: 1.45; }
+  .map { padding: 56px 64px 56px 8px; }
+  svg text { font-family: "Bricolage Grotesque", sans-serif; }
+</style></head>
+<body>
+  <div class="left">
+    <div class="brand"><img src="../favicon.svg" alt=""><h1>depweather</h1></div>
+    <p class="say">Vulnerability weather for popular packages.</p>
+    <p class="foot">npm, PyPI, Maven, Go and 6 more ecosystems.<br>Updated daily from OSV, CISA KEV, EPSS and NVD.</p>
+  </div>
+  <div class="map"><svg id="m" width="576" height="518" viewBox="0 0 576 518"></svg></div>
+<script>
+// An illustrative treemap: ecosystem names only, so it never claims a real package is affected.
+const NS = "http://www.w3.org/2000/svg";
+const C = { 0: "#e3ecf3", 1: "#f4c542", 2: "#f28c38", 3: "#d9433b", k: "#a32ca0" };
+// Tile weights and levels per group: 0 clear, 1 low/medium, 2 high, 3 critical, k exploited.
+const groups = [
+  { name: "npm", x: 0, y: 0, w: 300, h: 300, tiles: [[9, 0], [7, 3], [6, 1], [5, 0], [5, 2], [4, 0], [3, 1], [3, 0], [2, 0], [2, 1], [2, 0]] },
+  { name: "PyPI", x: 0, y: 312, w: 300, h: 206, tiles: [[8, 0], [6, 3], [4, 0], [4, 2], [3, 0], [2, 1], [2, 0], [2, 0]] },
+  { name: "Maven", x: 312, y: 0, w: 264, h: 160, tiles: [[6, 0], [5, 0], [4, 1], [3, 0], [2, 0], [2, 0]] },
+  { name: "Runtimes", x: 312, y: 172, w: 264, h: 170, tiles: [[6, 3], [5, 0], [4, "k"], [3, 0], [2, 0]] },
+  { name: "Go", x: 312, y: 354, w: 128, h: 164, tiles: [[4, 1], [3, 0], [2, 3], [2, 0]] },
+  { name: "crates.io", x: 452, y: 354, w: 124, h: 164, tiles: [[4, 0], [3, 1], [2, 0], [2, 0]] },
+];
+const svg = document.getElementById("m");
+const el = (tag, a, parent = svg) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); parent.append(e); return e; };
+
+// Same squarified layout as the site.
+function squarify(items, x, y, w, h) {
+  const total = items.reduce((s, d) => s + d.value, 0), scale = (w * h) / total;
+  const nodes = items.map((d) => ({ d, area: d.value * scale })).sort((a, b) => b.area - a.area);
+  let row = [], rect = { x, y, w, h };
+  const worst = (r, side) => { const s = r.reduce((a, n) => a + n.area, 0), mx = Math.max(...r.map((n) => n.area)), mn = Math.min(...r.map((n) => n.area));
+    return Math.max((side * side * mx) / (s * s), (s * s) / (side * side * mn)); };
+  const lay = (r) => { const s = r.reduce((a, n) => a + n.area, 0);
+    if (rect.w >= rect.h) { const rw = s / rect.h; let yy = rect.y; r.forEach((n) => { const hh = n.area / rw; Object.assign(n.d, { x: rect.x, y: yy, w: rw, h: hh }); yy += hh; }); rect = { x: rect.x + rw, y: rect.y, w: rect.w - rw, h: rect.h }; }
+    else { const rh = s / rect.w; let xx = rect.x; r.forEach((n) => { const ww = n.area / rh; Object.assign(n.d, { x: xx, y: rect.y, w: ww, h: rh }); xx += ww; }); rect = { x: rect.x, y: rect.y + rh, w: rect.w, h: rect.h - rh }; } };
+  for (const n of nodes) { const side = Math.min(rect.w, rect.h); if (!row.length || worst([...row, n], side) <= worst(row, side)) row.push(n); else { lay(row); row = [n]; } }
+  if (row.length) lay(row);
+  return items;
+}
+
+// Storm glyph, as on the site's tiles.
+function storm(cx, cy, fill) {
+  const g = el("g", { transform: `translate(${cx - 16} ${cy - 16})` });
+  el("circle", { cx: 16, cy: 16, r: 17, fill: "#ffffff", opacity: 0.92 }, g);
+  el("path", { d: "M9 19h14a5 5 0 0 0 0-10a7 7 0 0 0-13.4 1.6A4.3 4.3 0 0 0 9 19Z", fill, stroke: "#12324d", "stroke-width": 1.8, "stroke-linejoin": "round" }, g);
+  el("path", { d: "M17 19.5l-4 6h4l-2 5 6-8h-4l2-3", fill: "#f4c542", stroke: "#12324d", "stroke-width": 1.4, "stroke-linejoin": "round" }, g);
+}
+
+for (const g of groups) {
+  el("rect", { x: g.x + 1, y: g.y + 1, width: g.w - 2, height: g.h - 2, rx: 10, fill: "#ffffff", stroke: "#8fb0c8", "stroke-width": 2 });
+  el("path", { d: `M${g.x + 1} ${g.y + 30}V${g.y + 11}a10 10 0 0 1 10-10H${g.x + g.w - 11}a10 10 0 0 1 10 10V${g.y + 30}Z`, fill: "#e6f0f7" });
+  el("text", { x: g.x + 12, y: g.y + 22, "font-size": 17, "font-weight": 700, fill: "#12324d" }).textContent = g.name;
+  const tiles = squarify(g.tiles.map(([v, lvl]) => ({ value: v, lvl })), g.x + 7, g.y + 33, g.w - 14, g.h - 40);
+  for (const t of tiles) {
+    el("rect", { x: t.x + 2, y: t.y + 2, width: t.w - 4, height: t.h - 4, rx: 5, fill: C[t.lvl] });
+    if ((t.lvl === 3 || t.lvl === "k") && t.w > 50 && t.h > 50) storm(t.x + t.w - 24, t.y + t.h - 24, C[t.lvl]);
+  }
+}
+</script>
+</body></html>

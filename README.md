@@ -202,6 +202,15 @@ at 06:17 UTC and on demand (Actions → collect → Run workflow), then commits
 `data/`. Add an `NVD_API_KEY` repository secret to speed up the NVD calls
 (optional).
 
+### Social preview
+
+`og.png` (1200x630) is the link preview image. It is rendered from
+[`og/og-template.html`](og/og-template.html) with `node og/render.js`
+(Playwright). It shows ecosystem names only, never real packages, because
+link previews are cached for a long time and the data changes daily. The
+`og:url` and `og:image` tags in `index.html` point to the GitHub Pages
+address and need updating when the site moves to depweather.com.
+
 ### After the repository goes public
 
 GitHub Pages is not set up yet because the repository is private. When it goes
