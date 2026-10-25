@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T03:02:53Z",
+ "generated_at": "2026-10-25T04:24:35Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -13,15 +13,15 @@
   },
   "kev": {
    "ok": true,
-   "url": "https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json"
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
   },
   "epss": {
-   "ok": false,
-   "url": null,
-   "score_date": null
+   "ok": true,
+   "url": "https://epss.empiricalsecurity.com/epss_scores-current.csv.gz",
+   "score_date": "2026-10-24"
   },
   "nvd": {
-   "ok": false,
+   "ok": true,
    "url": "https://services.nvd.nist.gov/rest/json/cves/2.0"
   },
   "popularity": {
@@ -32,24 +32,81 @@
     "Maven: fixed weight",
     "NuGet: fixed weight",
     "Packagist: Packagist downloads, last 30 days",
-    "PyPI: fixed weight",
+    "PyPI: PyPI downloads, last week (pypistats)",
     "RubyGems: RubyGems downloads, all time",
     "Runtimes & servers: fixed weight",
     "crates.io: crates.io downloads, last 90 days",
-    "npm: fixed weight"
+    "npm: npm downloads, last week"
    ]
   }
  },
  "summary": {
-  "today_cves": null,
+  "today_cves": 6,
   "month": "2026-10",
-  "month_cves": null,
-  "month_cves_last_year": null,
+  "month_cves": 13607,
+  "month_cves_last_year": 4273,
   "kev_new_7d": 8,
   "affected_packages_7d": 23,
   "tracked_packages": 149
  },
- "monthly": [],
+ "monthly": [
+  {
+   "month": "2025-09",
+   "count": 4321
+  },
+  {
+   "month": "2025-10",
+   "count": 4273
+  },
+  {
+   "month": "2025-11",
+   "count": 3021
+  },
+  {
+   "month": "2025-12",
+   "count": 5491
+  },
+  {
+   "month": "2026-01",
+   "count": 4302
+  },
+  {
+   "month": "2026-02",
+   "count": 4616
+  },
+  {
+   "month": "2026-03",
+   "count": 6234
+  },
+  {
+   "month": "2026-04",
+   "count": 5810
+  },
+  {
+   "month": "2026-05",
+   "count": 6936
+  },
+  {
+   "month": "2026-06",
+   "count": 7942
+  },
+  {
+   "month": "2026-07",
+   "count": 9770
+  },
+  {
+   "month": "2026-08",
+   "count": 12258
+  },
+  {
+   "month": "2026-09",
+   "count": 14933
+  },
+  {
+   "month": "2026-10",
+   "count": 13607
+  }
+ ],
  "monthly_is_stale": false,
  "kev_recent": [
   {
@@ -122,8 +179,8 @@
      "key": "npm/react",
      "name": "react",
      "label": "React",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 123680288.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 41.5,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -133,8 +190,8 @@
      "key": "npm/next",
      "name": "next",
      "label": "Next.js",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 44586009.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 20.6,
      "worst_7d": "CRITICAL",
      "worst_30d": "CRITICAL",
@@ -178,8 +235,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0025,
+       "epss_percentile": 0.15425
       },
       {
        "id": "GHSA-2464-fhr4-w9xw",
@@ -222,8 +279,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00365,
+       "epss_percentile": 0.29251
       },
       {
        "id": "GHSA-3w37-wq28-93x7",
@@ -245,8 +302,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00179,
+       "epss_percentile": 0.07086
       },
       {
        "id": "GHSA-4jqv-mc3x-m676",
@@ -269,8 +326,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00288,
+       "epss_percentile": 0.20248
       },
       {
        "id": "GHSA-39w2-rjm5-chcv",
@@ -282,8 +339,8 @@
        ],
        "published": "2026-10-07T20:31:51Z",
        "summary": "Next.js has information disclosure in development server's Model Context Protocol endpoint",
-       "severity": "UNKNOWN",
-       "severity_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
        "cvss": 5.4,
        "fixed": [
         "16.3.8"
@@ -292,8 +349,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00114,
+       "epss_percentile": 0.01384
       },
       {
        "id": "GHSA-f87g-xv8r-7p7x",
@@ -315,8 +372,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00173,
+       "epss_percentile": 0.06376
       },
       {
        "id": "GHSA-mcj8-r9mp-w47p",
@@ -339,8 +396,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00244,
+       "epss_percentile": 0.14826
       },
       {
        "id": "GHSA-cjq9-62q9-8jv4",
@@ -362,8 +419,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00244,
+       "epss_percentile": 0.14788
       },
       {
        "id": "GHSA-vcvr-r3jv-pc5j",
@@ -390,8 +447,8 @@
      "key": "npm/jquery",
      "name": "jquery",
      "label": "jQuery",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 8843640.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 19.7,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -401,8 +458,8 @@
      "key": "npm/vue",
      "name": "vue",
      "label": "Vue.js",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 11038721.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 17.2,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -412,8 +469,8 @@
      "key": "npm/@angular/core",
      "name": "@angular/core",
      "label": "Angular",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 3633419.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 16.0,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -423,8 +480,8 @@
      "key": "npm/express",
      "name": "express",
      "label": "Express",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 93967835.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 15.6,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -434,8 +491,8 @@
      "key": "npm/svelte",
      "name": "svelte",
      "label": "Svelte",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 4471557.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 7.8,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -445,8 +502,8 @@
      "key": "npm/astro",
      "name": "astro",
      "label": "Astro",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 5139637.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 6.2,
      "worst_7d": "MEDIUM",
      "worst_30d": "MEDIUM",
@@ -471,8 +528,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00263,
+       "epss_percentile": 0.17199
       },
       {
        "id": "GHSA-mpr7-6m5w-76rw",
@@ -484,9 +541,9 @@
        ],
        "published": "2026-10-22T16:29:28Z",
        "summary": "Astro: Arbitrary CSS injection in Astro View Transitions",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
+       "cvss": 2.3,
        "fixed": [
         "7.3.3"
        ],
@@ -494,8 +551,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00329,
+       "epss_percentile": 0.24824
       }
      ]
     },
@@ -503,8 +560,8 @@
      "key": "npm/angular",
      "name": "angular",
      "label": "AngularJS",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 287104.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 6.0,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -514,8 +571,8 @@
      "key": "npm/@nestjs/core",
      "name": "@nestjs/core",
      "label": "NestJS",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 10409679.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 5.8,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -525,11 +582,11 @@
      "key": "npm/@sveltejs/kit",
      "name": "@sveltejs/kit",
      "label": "SvelteKit",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 2198560.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 5.6,
-     "worst_7d": "UNKNOWN",
-     "worst_30d": "UNKNOWN",
+     "worst_7d": "MEDIUM",
+     "worst_30d": "MEDIUM",
      "vulns": [
       {
        "id": "GHSA-pfhg-q3qv-9q6r",
@@ -541,8 +598,8 @@
        ],
        "published": "2026-10-23T20:58:24Z",
        "summary": "SvelteKit: URL redirection to untrusted site via enhanced form submission",
-       "severity": "UNKNOWN",
-       "severity_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
        "cvss": 4.7,
        "fixed": [
         "3.0.0"
@@ -551,8 +608,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00165,
+       "epss_percentile": 0.05394
       },
       {
        "id": "GHSA-27mw-82g8-phjj",
@@ -564,9 +621,9 @@
        ],
        "published": "2026-10-23T20:43:30Z",
        "summary": "SvelteKit : XSS via untrusted cache-control header in prerendered page",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": 0.0,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 4.7,
        "fixed": [
         "3.0.0"
        ],
@@ -574,8 +631,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00174,
+       "epss_percentile": 0.06525
       }
      ]
     },
@@ -583,8 +640,8 @@
      "key": "npm/htmx.org",
      "name": "htmx.org",
      "label": "htmx",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 169820.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 5.4,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -594,8 +651,8 @@
      "key": "npm/nuxt",
      "name": "nuxt",
      "label": "Nuxt",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 1513244.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 4.4,
      "worst_7d": "MEDIUM",
      "worst_30d": "MEDIUM",
@@ -620,8 +677,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00314,
+       "epss_percentile": 0.23116
       },
       {
        "id": "GHSA-xfq5-w38q-pc2x",
@@ -643,8 +700,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00176,
+       "epss_percentile": 0.06718
       },
       {
        "id": "GHSA-jjm6-p2m9-9w4x",
@@ -656,9 +713,9 @@
        ],
        "published": "2026-10-22T16:51:37Z",
        "summary": "Nuxt: Incomplete fix for GHSA-934w-87qh-qr26: a `javascript:` URL prefixed with an ASCII control character executes from `<NuxtLink>` when `pages` is disabled",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
+       "cvss": 2.3,
        "fixed": [
         "4.6.0"
        ],
@@ -666,8 +723,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00329,
+       "epss_percentile": 0.24824
       },
       {
        "id": "GHSA-6gq8-jgmh-3ffp",
@@ -690,8 +747,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00289,
+       "epss_percentile": 0.20448
       }
      ]
     },
@@ -699,10 +756,10 @@
      "key": "npm/fastify",
      "name": "fastify",
      "label": "Fastify",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 10082280.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 3.5,
-     "worst_7d": "UNKNOWN",
+     "worst_7d": "LOW",
      "worst_30d": "HIGH",
      "vulns": [
       {
@@ -715,8 +772,8 @@
        ],
        "published": "2026-10-22T16:40:35Z",
        "summary": "fastify is vulnerable to header validation bypass via case-sensitive propertyNames",
-       "severity": "UNKNOWN",
-       "severity_source": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
        "cvss": 3.7,
        "fixed": [
         "5.12.6"
@@ -725,8 +782,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00257,
+       "epss_percentile": 0.16482
       },
       {
        "id": "GHSA-4mh8-r7rc-xpvc",
@@ -748,8 +805,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00412,
+       "epss_percentile": 0.34423
       },
       {
        "id": "GHSA-667r-xxjv-c9mm",
@@ -771,8 +828,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00428,
+       "epss_percentile": 0.36076
       },
       {
        "id": "GHSA-p68q-wchp-6fh7",
@@ -794,8 +851,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0053,
+       "epss_percentile": 0.44054
       },
       {
        "id": "GHSA-hwr6-493r-vm6h",
@@ -817,8 +874,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00492,
+       "epss_percentile": 0.41415
       },
       {
        "id": "GHSA-9q9j-q6p8-xq58",
@@ -840,8 +897,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00524,
+       "epss_percentile": 0.43687
       }
      ]
     },
@@ -849,8 +906,8 @@
      "key": "npm/hono",
      "name": "hono",
      "label": "Hono",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 48012759.0,
+     "popularity_source": "npm downloads, last week",
      "survey": 2.8,
      "worst_7d": "MEDIUM",
      "worst_30d": "MEDIUM",
@@ -877,8 +934,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00314,
+       "epss_percentile": 0.23178
       },
       {
        "id": "GHSA-hxh3-vqpv-xpqv",
@@ -900,8 +957,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00227,
+       "epss_percentile": 0.12811
       }
      ]
     },
@@ -909,8 +966,8 @@
      "key": "npm/axios",
      "name": "axios",
      "label": "axios",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 70158928.0,
+     "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "HIGH",
@@ -935,8 +992,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00428,
+       "epss_percentile": 0.36077
       },
       {
        "id": "GHSA-4hqw-qxg8-jxx2",
@@ -958,8 +1015,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00546,
+       "epss_percentile": 0.45032
       },
       {
        "id": "GHSA-m8m8-qj5v-23w3",
@@ -981,8 +1038,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00289,
+       "epss_percentile": 0.20395
       },
       {
        "id": "GHSA-44g4-m2mj-wpvx",
@@ -1004,8 +1061,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00526,
+       "epss_percentile": 0.43808
       },
       {
        "id": "GHSA-r4gj-5m52-g5wh",
@@ -1027,8 +1084,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00414,
+       "epss_percentile": 0.34648
       },
       {
        "id": "GHSA-vh66-26gq-q6x8",
@@ -1050,8 +1107,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00413,
+       "epss_percentile": 0.34538
       },
       {
        "id": "GHSA-9fr6-4gfg-395g",
@@ -1074,8 +1131,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00413,
+       "epss_percentile": 0.34537
       },
       {
        "id": "GHSA-c29m-xwm3-cm6r",
@@ -1097,8 +1154,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00382,
+       "epss_percentile": 0.31135
       },
       {
        "id": "GHSA-mghh-pgcx-3jjj",
@@ -1120,8 +1177,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00402,
+       "epss_percentile": 0.33293
       },
       {
        "id": "GHSA-x97p-jq2g-jp4f",
@@ -1144,8 +1201,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00354,
+       "epss_percentile": 0.27949
       },
       {
        "id": "GHSA-3pq3-5fj3-cg6v",
@@ -1167,8 +1224,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00527,
+       "epss_percentile": 0.43863
       },
       {
        "id": "GHSA-542g-h47m-68v8",
@@ -1190,8 +1247,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00384,
+       "epss_percentile": 0.31277
       }
      ]
     },
@@ -1199,8 +1256,8 @@
      "key": "npm/lodash",
      "name": "lodash",
      "label": "lodash",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 100984456.0,
+     "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1210,8 +1267,8 @@
      "key": "npm/vite",
      "name": "vite",
      "label": "vite",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 127196570.0,
+     "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "HIGH",
      "worst_30d": "HIGH",
@@ -1226,9 +1283,9 @@
        ],
        "published": "2026-10-21T16:48:14Z",
        "summary": "Vite: Cross origin script execution through Vite custom middleware",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
+       "cvss": 2.1,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1240,8 +1297,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00467,
+       "epss_percentile": 0.39499
       },
       {
        "id": "GHSA-rq7h-c2jc-7f22",
@@ -1267,8 +1324,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00851,
+       "epss_percentile": 0.57871
       },
       {
        "id": "GHSA-vfpm-58rq-9qcg",
@@ -1291,8 +1348,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00422,
+       "epss_percentile": 0.35517
       },
       {
        "id": "GHSA-r825-w8mm-5pxw",
@@ -1318,8 +1375,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00705,
+       "epss_percentile": 0.52879
       },
       {
        "id": "GHSA-587h-7wmj-h5pm",
@@ -1345,8 +1402,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.01329,
+       "epss_percentile": 0.70851
       },
       {
        "id": "GHSA-698v-4r3x-3vcv",
@@ -1372,8 +1429,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00414,
+       "epss_percentile": 0.34688
       }
      ]
     },
@@ -1381,8 +1438,8 @@
      "key": "npm/webpack",
      "name": "webpack",
      "label": "webpack",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 34220251.0,
+     "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1392,8 +1449,8 @@
      "key": "npm/undici",
      "name": "undici",
      "label": "undici",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 143836308.0,
+     "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "HIGH",
      "worst_30d": "HIGH",
@@ -1420,8 +1477,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00343,
+       "epss_percentile": 0.26698
       },
       {
        "id": "GHSA-4qv8-2p9j-2685",
@@ -1445,8 +1502,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00321,
+       "epss_percentile": 0.23875
       },
       {
        "id": "GHSA-f72v-6w45-q472",
@@ -1469,8 +1526,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00251,
+       "epss_percentile": 0.15731
       },
       {
        "id": "GHSA-pmjh-fq2x-6v4x",
@@ -1493,8 +1550,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0036,
+       "epss_percentile": 0.28619
       },
       {
        "id": "GHSA-r53p-7pc4-xj5r",
@@ -1506,8 +1563,8 @@
        ],
        "published": "2026-09-29T18:22:07Z",
        "summary": "undici vulnerable to downstream response splitting via retry interceptor",
-       "severity": "UNKNOWN",
-       "severity_source": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
        "cvss": 3.7,
        "fixed": [
         "6.28.1",
@@ -1518,8 +1575,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00239,
+       "epss_percentile": 0.14226
       },
       {
        "id": "GHSA-rfgv-xxqx-mfg5",
@@ -1543,8 +1600,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00394,
+       "epss_percentile": 0.32449
       },
       {
        "id": "GHSA-3xpg-4rpp-hhhm",
@@ -1567,8 +1624,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00412,
+       "epss_percentile": 0.34424
       },
       {
        "id": "GHSA-2jfj-6hjv-fm6j",
@@ -1591,8 +1648,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00303,
+       "epss_percentile": 0.219
       },
       {
        "id": "GHSA-2gqq-gqf2-x968",
@@ -1604,8 +1661,8 @@
        ],
        "published": "2026-09-29T18:18:51Z",
        "summary": "undici vulnerable to response truncation via oversized chunked responses in the dump interceptor",
-       "severity": "UNKNOWN",
-       "severity_source": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
        "cvss": 3.7,
        "fixed": [
         "7.29.1",
@@ -1615,8 +1672,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00196,
+       "epss_percentile": 0.08853
       },
       {
        "id": "GHSA-w293-vg96-wgc3",
@@ -1639,8 +1696,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00146,
+       "epss_percentile": 0.03539
       },
       {
        "id": "GHSA-8436-99hf-9mmv",
@@ -1652,8 +1709,8 @@
        ],
        "published": "2026-09-29T18:16:28Z",
        "summary": "undici vulnerable to caching and replay of unsafe HTTP method responses",
-       "severity": "UNKNOWN",
-       "severity_source": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
        "cvss": 3.7,
        "fixed": [
         "7.29.1",
@@ -1663,8 +1720,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00118,
+       "epss_percentile": 0.01615
       },
       {
        "id": "GHSA-vp8m-p9jh-q5pm",
@@ -1686,8 +1743,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00164,
+       "epss_percentile": 0.0534
       },
       {
        "id": "GHSA-rx4f-c7p8-82vq",
@@ -1710,8 +1767,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00368,
+       "epss_percentile": 0.29495
       },
       {
        "id": "GHSA-3wwx-pv8p-q78v",
@@ -1735,8 +1792,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00412,
+       "epss_percentile": 0.34424
       }
      ]
     },
@@ -1744,8 +1801,8 @@
      "key": "npm/ws",
      "name": "ws",
      "label": "ws",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 184280943.0,
+     "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1755,8 +1812,8 @@
      "key": "npm/jsonwebtoken",
      "name": "jsonwebtoken",
      "label": "jsonwebtoken",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 38002916.0,
+     "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1766,8 +1823,8 @@
      "key": "npm/form-data",
      "name": "form-data",
      "label": "form-data",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 108837933.0,
+     "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1777,8 +1834,8 @@
      "key": "npm/tar",
      "name": "tar",
      "label": "tar",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 55213168.0,
+     "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1798,8 +1855,8 @@
      "key": "pypi/fastapi",
      "name": "fastapi",
      "label": "FastAPI",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 117256253.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 18.5,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1809,8 +1866,8 @@
      "key": "pypi/flask",
      "name": "flask",
      "label": "Flask",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 40455947.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 12.5,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1820,8 +1877,8 @@
      "key": "pypi/django",
      "name": "django",
      "label": "Django",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 11459579.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 11.3,
      "worst_7d": "NONE",
      "worst_30d": "HIGH",
@@ -1849,8 +1906,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.01134,
+       "epss_percentile": 0.66265
       }
      ]
     },
@@ -1858,8 +1915,8 @@
      "key": "pypi/requests",
      "name": "requests",
      "label": "requests",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 325484048.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1869,8 +1926,8 @@
      "key": "pypi/urllib3",
      "name": "urllib3",
      "label": "urllib3",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 351785529.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "HIGH",
@@ -1896,8 +1953,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20642
       },
       {
        "id": "GHSA-vxq7-64xx-v4gw",
@@ -1920,8 +1977,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00335,
+       "epss_percentile": 0.25676
       },
       {
        "id": "GHSA-8988-9cw3-xx77",
@@ -1944,8 +2001,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00206,
+       "epss_percentile": 0.10101
       }
      ]
     },
@@ -1953,8 +2010,8 @@
      "key": "pypi/certifi",
      "name": "certifi",
      "label": "certifi",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 393308713.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "CRITICAL",
      "worst_30d": "CRITICAL",
@@ -1986,8 +2043,8 @@
      "key": "pypi/cryptography",
      "name": "cryptography",
      "label": "cryptography",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 300724559.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1997,8 +2054,8 @@
      "key": "pypi/setuptools",
      "name": "setuptools",
      "label": "setuptools",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 261563106.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "UNKNOWN",
      "worst_30d": "UNKNOWN",
@@ -2028,8 +2085,8 @@
      "key": "pypi/pyyaml",
      "name": "pyyaml",
      "label": "pyyaml",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 268607697.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2039,8 +2096,8 @@
      "key": "pypi/pydantic",
      "name": "pydantic",
      "label": "pydantic",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 248976451.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2050,8 +2107,8 @@
      "key": "pypi/numpy",
      "name": "numpy",
      "label": "numpy",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 234512476.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2061,8 +2118,8 @@
      "key": "pypi/pandas",
      "name": "pandas",
      "label": "pandas",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 148697835.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2072,8 +2129,8 @@
      "key": "pypi/jinja2",
      "name": "jinja2",
      "label": "jinja2",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 149512323.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2083,8 +2140,8 @@
      "key": "pypi/starlette",
      "name": "starlette",
      "label": "starlette",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 155496097.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2094,8 +2151,8 @@
      "key": "pypi/uvicorn",
      "name": "uvicorn",
      "label": "uvicorn",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 144213858.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2105,8 +2162,8 @@
      "key": "pypi/httpx",
      "name": "httpx",
      "label": "httpx",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 177735841.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2116,8 +2173,8 @@
      "key": "pypi/aiohttp",
      "name": "aiohttp",
      "label": "aiohttp",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 124206433.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "HIGH",
      "worst_30d": "HIGH",
@@ -2142,8 +2199,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00365,
+       "epss_percentile": 0.29207
       },
       {
        "id": "GHSA-gx76-c99x-2c96",
@@ -2155,9 +2212,9 @@
        ],
        "published": "2026-10-20T19:58:14Z",
        "summary": "AIOHTTP: Cookie from subdomain can remove Host-Only Scope from existing cookies",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
+       "cvss": 2.3,
        "fixed": [
         "3.14.4"
        ],
@@ -2165,8 +2222,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00294,
+       "epss_percentile": 0.20904
       },
       {
        "id": "GHSA-6cjc-53gc-5rqm",
@@ -2188,8 +2245,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00365,
+       "epss_percentile": 0.29207
       },
       {
        "id": "GHSA-pqxq-w44r-73xw",
@@ -2211,8 +2268,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00304,
+       "epss_percentile": 0.22086
       },
       {
        "id": "GHSA-9xw5-w5jj-pvcg",
@@ -2234,8 +2291,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00381,
+       "epss_percentile": 0.30967
       },
       {
        "id": "GHSA-5wr8-gcqf-gqf3",
@@ -2257,8 +2314,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00399,
+       "epss_percentile": 0.33036
       },
       {
        "id": "GHSA-494j-54xm-rwp3",
@@ -2270,9 +2327,9 @@
        ],
        "published": "2026-10-19T17:07:47Z",
        "summary": "AIOHTTP: Secure attribute not enforced for shared cookie",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.3,
        "fixed": [
         "3.14.4"
        ],
@@ -2280,8 +2337,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0022,
+       "epss_percentile": 0.11924
       },
       {
        "id": "GHSA-2g87-pp6c-29x5",
@@ -2308,8 +2365,8 @@
      "key": "pypi/pillow",
      "name": "pillow",
      "label": "pillow",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 142167333.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "CRITICAL",
      "worst_30d": "CRITICAL",
@@ -2334,8 +2391,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00321,
+       "epss_percentile": 0.23939
       },
       {
        "id": "GHSA-654x-cwwv-5j9c",
@@ -2357,8 +2414,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00384,
+       "epss_percentile": 0.31277
       },
       {
        "id": "GHSA-78g4-xqwv-q3g8",
@@ -2399,8 +2456,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00401,
+       "epss_percentile": 0.33215
       },
       {
        "id": "GHSA-9v9v-9qvf-h2hj",
@@ -2422,8 +2479,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00333,
+       "epss_percentile": 0.25399
       },
       {
        "id": "GHSA-g4qv-2jxx-769h",
@@ -2445,8 +2502,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00333,
+       "epss_percentile": 0.25399
       },
       {
        "id": "GHSA-3j72-p6qg-6xp7",
@@ -2468,8 +2525,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00333,
+       "epss_percentile": 0.25399
       },
       {
        "id": "GHSA-4rm8-3hmm-39fg",
@@ -2491,8 +2548,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0028,
+       "epss_percentile": 0.19499
       },
       {
        "id": "GHSA-mrfp-p49p-3hf2",
@@ -2514,8 +2571,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00421,
+       "epss_percentile": 0.35408
       },
       {
        "id": "GHSA-v9pv-5gc8-w2m6",
@@ -2537,8 +2594,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00565,
+       "epss_percentile": 0.46261
       },
       {
        "id": "GHSA-24rc-8hj2-v98c",
@@ -2560,8 +2617,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0028,
+       "epss_percentile": 0.19499
       },
       {
        "id": "GHSA-g842-9rc4-69pw",
@@ -2583,8 +2640,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00333,
+       "epss_percentile": 0.25399
       },
       {
        "id": "GHSA-p8hx-v2p6-rp84",
@@ -2606,8 +2663,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0028,
+       "epss_percentile": 0.19499
       },
       {
        "id": "GHSA-xvh5-g6gv-559v",
@@ -2652,8 +2709,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00528,
+       "epss_percentile": 0.4392
       },
       {
        "id": "GHSA-4rr5-89j8-mwwm",
@@ -2675,8 +2732,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00462,
+       "epss_percentile": 0.39154
       },
       {
        "id": "GHSA-f2g6-542v-9j58",
@@ -2698,8 +2755,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.2064
       },
       {
        "id": "GHSA-5xm2-6676-qcp9",
@@ -2721,8 +2778,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20642
       },
       {
        "id": "GHSA-gg2r-wvfm-q9rx",
@@ -2744,8 +2801,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20638
       },
       {
        "id": "GHSA-jg86-v3jv-hrpm",
@@ -2767,8 +2824,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20639
       },
       {
        "id": "GHSA-254f-3936-288h",
@@ -2790,8 +2847,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00358,
+       "epss_percentile": 0.28411
       },
       {
        "id": "GHSA-xgh8-jp6q-p5x8",
@@ -2813,8 +2870,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.2064
       },
       {
        "id": "GHSA-rfgq-q3w2-pmv2",
@@ -2836,8 +2893,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20638
       },
       {
        "id": "GHSA-74r2-7ff9-mjj2",
@@ -2859,8 +2916,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00371,
+       "epss_percentile": 0.29917
       },
       {
        "id": "GHSA-22hg-r758-rrw9",
@@ -2882,8 +2939,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00358,
+       "epss_percentile": 0.2841
       },
       {
        "id": "GHSA-fc9g-5qg7-mf45",
@@ -2905,8 +2962,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00371,
+       "epss_percentile": 0.29915
       },
       {
        "id": "GHSA-27h8-gf7j-v5hc",
@@ -2928,8 +2985,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20642
       },
       {
        "id": "GHSA-cp9v-662q-vvx9",
@@ -2951,8 +3008,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20641
       },
       {
        "id": "GHSA-j4m9-6w36-pw47",
@@ -2974,8 +3031,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20639
       },
       {
        "id": "GHSA-7mwm-ghpf-9vrm",
@@ -2997,8 +3054,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00436,
+       "epss_percentile": 0.36925
       },
       {
        "id": "GHSA-4558-3h8r-v8xp",
@@ -3020,8 +3077,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20643
       },
       {
        "id": "GHSA-w889-685w-c8fh",
@@ -3043,8 +3100,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00431,
+       "epss_percentile": 0.36387
       },
       {
        "id": "GHSA-58r4-6rv3-gfh8",
@@ -3066,8 +3123,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00436,
+       "epss_percentile": 0.36924
       },
       {
        "id": "GHSA-65qm-jvmh-6pqg",
@@ -3089,8 +3146,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20643
       },
       {
        "id": "GHSA-vx6w-vv9f-6gvg",
@@ -3135,8 +3192,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.2064
       },
       {
        "id": "GHSA-pchr-8j38-3x4p",
@@ -3158,8 +3215,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20639
       },
       {
        "id": "GHSA-p4wg-p73j-c528",
@@ -3181,8 +3238,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20639
       },
       {
        "id": "GHSA-462x-pgg6-55fp",
@@ -3204,8 +3261,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00264,
+       "epss_percentile": 0.17296
       },
       {
        "id": "GHSA-c6hw-5grf-ff96",
@@ -3227,8 +3284,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00291,
+       "epss_percentile": 0.20641
       },
       {
        "id": "GHSA-8g5g-8vmr-9782",
@@ -3250,8 +3307,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00321,
+       "epss_percentile": 0.23939
       }
      ]
     },
@@ -3259,8 +3316,8 @@
      "key": "pypi/pyjwt",
      "name": "pyjwt",
      "label": "pyjwt",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 160855149.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "HIGH",
      "worst_30d": "CRITICAL",
@@ -3303,8 +3360,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00241,
+       "epss_percentile": 0.14508
       },
       {
        "id": "GHSA-42vr-xj54-vc7v",
@@ -3327,8 +3384,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00358,
+       "epss_percentile": 0.28411
       },
       {
        "id": "GHSA-jwrc-g2q2-pq5p",
@@ -3351,8 +3408,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00212,
+       "epss_percentile": 0.10957
       },
       {
        "id": "GHSA-9j54-fg26-wv3r",
@@ -3375,8 +3432,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00182,
+       "epss_percentile": 0.07403
       },
       {
        "id": "GHSA-8wjv-2p76-3863",
@@ -3399,8 +3456,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00301,
+       "epss_percentile": 0.21714
       },
       {
        "id": "GHSA-hxm8-2xgr-2p9m",
@@ -3423,8 +3480,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00191,
+       "epss_percentile": 0.0826
       },
       {
        "id": "GHSA-ffc3-869f-jxw9",
@@ -3447,8 +3504,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00202,
+       "epss_percentile": 0.09627
       },
       {
        "id": "GHSA-w2cx-738m-mc7w",
@@ -3471,8 +3528,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00175,
+       "epss_percentile": 0.06579
       },
       {
        "id": "GHSA-9v7f-9g4p-ffgj",
@@ -3495,8 +3552,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00159,
+       "epss_percentile": 0.04638
       },
       {
        "id": "GHSA-p4g4-x82p-q773",
@@ -3519,8 +3576,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0018,
+       "epss_percentile": 0.07217
       },
       {
        "id": "GHSA-r6x4-923q-g947",
@@ -3543,8 +3600,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00182,
+       "epss_percentile": 0.07362
       },
       {
        "id": "GHSA-2gx3-rcp4-g85q",
@@ -3567,8 +3624,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00418,
+       "epss_percentile": 0.35126
       },
       {
        "id": "GHSA-w6j9-cwv2-h6wq",
@@ -3591,8 +3648,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00389,
+       "epss_percentile": 0.31891
       },
       {
        "id": "GHSA-x33g-cr3x-6449",
@@ -3615,8 +3672,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00143,
+       "epss_percentile": 0.03281
       }
      ]
     },
@@ -3624,8 +3681,8 @@
      "key": "pypi/sqlalchemy",
      "name": "sqlalchemy",
      "label": "sqlalchemy",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 90494269.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -3635,8 +3692,8 @@
      "key": "pypi/lxml",
      "name": "lxml",
      "label": "lxml",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 90555242.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -3646,8 +3703,8 @@
      "key": "pypi/protobuf",
      "name": "protobuf",
      "label": "protobuf",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 167349163.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -3657,8 +3714,8 @@
      "key": "pypi/transformers",
      "name": "transformers",
      "label": "transformers",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 25475240.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "HIGH",
@@ -3682,8 +3739,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00099,
+       "epss_percentile": 0.00771
       }
      ]
     },
@@ -3691,8 +3748,8 @@
      "key": "pypi/torch",
      "name": "torch",
      "label": "torch",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 14397076.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -3795,8 +3852,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0045,
+       "epss_percentile": 0.38192
       },
       {
        "id": "GHSA-wv8q-qhhj-9h54",
@@ -3820,8 +3877,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0045,
+       "epss_percentile": 0.38193
       },
       {
        "id": "GHSA-gx83-3vf8-gh7j",
@@ -3845,8 +3902,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00717,
+       "epss_percentile": 0.53338
       },
       {
        "id": "GHSA-q4xh-88c3-wmh7",
@@ -3870,8 +3927,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00581,
+       "epss_percentile": 0.47078
       },
       {
        "id": "GHSA-wjgm-6hv5-3cvf",
@@ -3895,8 +3952,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00529,
+       "epss_percentile": 0.43967
       },
       {
        "id": "GHSA-vvgp-rfg2-7rr6",
@@ -3920,8 +3977,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00313,
+       "epss_percentile": 0.23001
       }
      ]
     },
@@ -4099,8 +4156,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00846,
+       "epss_percentile": 0.57689
       },
       {
        "id": "GHSA-qjpx-jqm5-h2c4",
@@ -4125,8 +4182,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00778,
+       "epss_percentile": 0.55428
       },
       {
        "id": "GHSA-vrrp-6v32-2p8g",
@@ -4150,8 +4207,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00555,
+       "epss_percentile": 0.45603
       },
       {
        "id": "GHSA-rv87-ccxw-8ggf",
@@ -4177,8 +4234,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00786,
+       "epss_percentile": 0.55698
       },
       {
        "id": "GHSA-fpq8-4vhr-rcxx",
@@ -4203,8 +4260,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00827,
+       "epss_percentile": 0.57116
       },
       {
        "id": "GHSA-f4g7-52wc-p8x7",
@@ -4229,8 +4286,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.01056,
+       "epss_percentile": 0.64196
       },
       {
        "id": "GHSA-g27p-qf6j-c96c",
@@ -4253,8 +4310,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00778,
+       "epss_percentile": 0.55427
       },
       {
        "id": "GHSA-86xp-94pg-8r6r",
@@ -4301,8 +4358,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00456,
+       "epss_percentile": 0.38625
       },
       {
        "id": "GHSA-57xr-hfxx-jw5x",
@@ -4326,8 +4383,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00802,
+       "epss_percentile": 0.56287
       },
       {
        "id": "GHSA-w5qq-qrpp-rf4c",
@@ -4351,8 +4408,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.01056,
+       "epss_percentile": 0.64196
       },
       {
        "id": "GHSA-x3vp-85cm-q97r",
@@ -4376,8 +4433,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00643,
+       "epss_percentile": 0.50238
       },
       {
        "id": "GHSA-334f-vvp4-7g6p",
@@ -4402,8 +4459,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.01056,
+       "epss_percentile": 0.64195
       }
      ]
     },
@@ -4440,8 +4497,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00341,
+       "epss_percentile": 0.26421
       },
       {
        "id": "GHSA-2j93-m82w-73j2",
@@ -4466,8 +4523,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00341,
+       "epss_percentile": 0.26421
       },
       {
        "id": "GHSA-wxxw-5cvc-53j7",
@@ -4492,8 +4549,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00674,
+       "epss_percentile": 0.5161
       },
       {
        "id": "GHSA-4mpw-cpwj-hxxj",
@@ -4518,8 +4575,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00695,
+       "epss_percentile": 0.52494
       },
       {
        "id": "GHSA-3rxq-g8rj-r2cf",
@@ -4544,8 +4601,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.01103,
+       "epss_percentile": 0.65503
       },
       {
        "id": "GHSA-87vj-4hqv-22p9",
@@ -4570,8 +4627,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00766,
+       "epss_percentile": 0.55073
       },
       {
        "id": "GHSA-mc4q-93x5-f6hj",
@@ -4596,8 +4653,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.01103,
+       "epss_percentile": 0.65503
       },
       {
        "id": "GHSA-fqpq-cx42-9jmm",
@@ -4619,8 +4676,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00429,
+       "epss_percentile": 0.36109
       }
      ]
     },
@@ -4657,8 +4714,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00778,
+       "epss_percentile": 0.55428
       },
       {
        "id": "GHSA-g27p-qf6j-c96c",
@@ -4681,8 +4738,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00778,
+       "epss_percentile": 0.55427
       }
      ]
     },
@@ -4743,8 +4800,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0075,
+       "epss_percentile": 0.54497
       },
       {
        "id": "GHSA-vrv5-2jg9-4mmr",
@@ -4768,8 +4825,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0057,
+       "epss_percentile": 0.46521
       },
       {
        "id": "GHSA-7hqp-7c5m-4vq6",
@@ -4796,8 +4853,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.01033,
+       "epss_percentile": 0.6357
       },
       {
        "id": "GHSA-r955-8q5j-3h83",
@@ -4824,8 +4881,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.01033,
+       "epss_percentile": 0.6357
       }
      ]
     },
@@ -4915,8 +4972,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00648,
+       "epss_percentile": 0.50477
       }
      ]
     },
@@ -4950,8 +5007,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00364,
+       "epss_percentile": 0.29145
       },
       {
        "id": "GHSA-4q3p-rj5x-xv7p",
@@ -4973,8 +5030,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0028,
+       "epss_percentile": 0.19464
       },
       {
        "id": "GHSA-ffp7-56pq-64mr",
@@ -4996,8 +5053,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00364,
+       "epss_percentile": 0.29146
       },
       {
        "id": "GHSA-wmxv-xphr-5c9g",
@@ -5019,8 +5076,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00328,
+       "epss_percentile": 0.24734
       },
       {
        "id": "GHSA-j9gm-c75j-xc9q",
@@ -5042,8 +5099,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00364,
+       "epss_percentile": 0.29145
       },
       {
        "id": "GHSA-j3p4-wp97-rph4",
@@ -5065,8 +5122,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00364,
+       "epss_percentile": 0.29145
       },
       {
        "id": "GHSA-gwg2-r3hj-4w44",
@@ -5088,8 +5145,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00328,
+       "epss_percentile": 0.24733
       }
      ]
     },
@@ -5167,8 +5224,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0011,
+       "epss_percentile": 0.01215
       },
       {
        "id": "RUSTSEC-2026-0386",
@@ -5259,8 +5316,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00145,
+       "epss_percentile": 0.03398
       },
       {
        "id": "RUSTSEC-2026-0348",
@@ -5551,8 +5608,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00403,
+       "epss_percentile": 0.33472
       },
       {
        "id": "GHSA-5wcm-3v2w-8362",
@@ -5575,8 +5632,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00306,
+       "epss_percentile": 0.22301
       },
       {
        "id": "GHSA-jh5r-qr3c-85q8",
@@ -5588,8 +5645,8 @@
        ],
        "published": "2026-09-29T18:24:25Z",
        "summary": "Laravel: XSS in Debug Page Information",
-       "severity": "UNKNOWN",
-       "severity_source": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
        "cvss": 3.1,
        "fixed": [
         "12.69.0",
@@ -5599,8 +5656,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00202,
+       "epss_percentile": 0.09599
       }
      ]
     },
@@ -5768,7 +5825,7 @@
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "UNKNOWN",
+     "worst_30d": "LOW",
      "vulns": [
       {
        "id": "GHSA-cxf4-7mrp-vvpr",
@@ -5780,8 +5837,8 @@
        ],
        "published": "2026-09-29T18:10:14Z",
        "summary": "Flysystem: WhitespacePathNormalizer's control-character (CorruptedPathDetected) check is bypassed by malformed UTF-8 in the path, affecting every adapter",
-       "severity": "UNKNOWN",
-       "severity_source": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
        "cvss": 3.5,
        "fixed": [
         "3.35.3"
@@ -5790,8 +5847,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00337,
+       "epss_percentile": 0.25942
       }
      ]
     },
@@ -5825,8 +5882,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00204,
+       "epss_percentile": 0.09876
       },
       {
        "id": "GHSA-3q6v-r5mr-hxv8",
@@ -5848,8 +5905,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00367,
+       "epss_percentile": 0.29456
       }
      ]
     },
@@ -5915,7 +5972,7 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "UNKNOWN",
-     "worst_30d": "UNKNOWN",
+     "worst_30d": "CRITICAL",
      "vulns": [
       {
        "id": "GO-2026-6809",
@@ -5941,8 +5998,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00145,
+       "epss_percentile": 0.03398
       },
       {
        "id": "GO-2026-6599",
@@ -5955,9 +6012,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Reset context tracking on consecutive template expressions in html/template",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.1,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -5966,8 +6023,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00202,
+       "epss_percentile": 0.09572
       },
       {
        "id": "GO-2026-6610",
@@ -5980,9 +6037,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "HTTP/2 transport accepts malformed framing-related headers in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -5991,8 +6048,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00303,
+       "epss_percentile": 0.21906
       },
       {
        "id": "GO-2026-6605",
@@ -6005,9 +6062,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "HTTP/1 client connection desynchronization after CONNECT rejection in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6016,8 +6073,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00309,
+       "epss_percentile": 0.22517
       },
       {
        "id": "GO-2026-6617",
@@ -6030,9 +6087,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "HTTP/2 server crash due to HPACK encoder race in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6041,8 +6098,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0042,
+       "epss_percentile": 0.35278
       },
       {
        "id": "GO-2026-6608",
@@ -6055,9 +6112,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Memory limit bypass when parsing MIME headers in net/textproto, mime/multipart",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6066,8 +6123,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00404,
+       "epss_percentile": 0.33511
       },
       {
        "id": "GO-2026-6612",
@@ -6080,9 +6137,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Double flow control refund on HTTP/2 server streams in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "CRITICAL",
+       "severity_source": "NVD",
+       "cvss": 9.1,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6091,8 +6148,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00574,
+       "epss_percentile": 0.46712
       },
       {
        "id": "GO-2026-6609",
@@ -6105,9 +6162,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Lack of limit on size of parsed Range headers in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6116,8 +6173,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00379,
+       "epss_percentile": 0.30785
       },
       {
        "id": "GO-2026-6603",
@@ -6130,9 +6187,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "HTTP/2 server memory exhaustion due to Trailer headers in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6141,8 +6198,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0057,
+       "epss_percentile": 0.46532
       },
       {
        "id": "GO-2026-6613",
@@ -6155,9 +6212,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "HTTP/1 server connection desynchronization after 2xx CONNECT response in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6166,8 +6223,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00315,
+       "epss_percentile": 0.23246
       },
       {
        "id": "GO-2026-6604",
@@ -6180,9 +6237,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Root.Mkdir(All) can follow junctions out of the root on Windows in os",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "CRITICAL",
+       "severity_source": "NVD",
+       "cvss": 9.8,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6191,8 +6248,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00493,
+       "epss_percentile": 0.41501
       },
       {
        "id": "GO-2026-6611",
@@ -6205,9 +6262,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Excessive CPU consumption from repeated initial window changes in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6216,8 +6273,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00568,
+       "epss_percentile": 0.46382
       },
       {
        "id": "GO-2026-6607",
@@ -6230,9 +6287,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Reject malformed ECH outer extension references in crypto/tls",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6241,8 +6298,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00394,
+       "epss_percentile": 0.32469
       },
       {
        "id": "GO-2026-6600",
@@ -6255,9 +6312,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Recognize yield as regexp preceder keyword in html/template",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.1,
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6266,8 +6323,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00202,
+       "epss_percentile": 0.09573
       }
      ]
     },
@@ -6279,7 +6336,7 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "UNKNOWN",
+     "worst_30d": "CRITICAL",
      "vulns": [
       {
        "id": "GO-2026-6610",
@@ -6292,9 +6349,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "HTTP/2 transport accepts malformed framing-related headers in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "0.60.0"
        ],
@@ -6302,8 +6359,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00303,
+       "epss_percentile": 0.21906
       },
       {
        "id": "GO-2026-6617",
@@ -6316,9 +6373,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "HTTP/2 server crash due to HPACK encoder race in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "0.60.0"
        ],
@@ -6326,8 +6383,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0042,
+       "epss_percentile": 0.35278
       },
       {
        "id": "GO-2026-6612",
@@ -6340,9 +6397,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Double flow control refund on HTTP/2 server streams in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "CRITICAL",
+       "severity_source": "NVD",
+       "cvss": 9.1,
        "fixed": [
         "0.60.0"
        ],
@@ -6350,8 +6407,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00574,
+       "epss_percentile": 0.46712
       },
       {
        "id": "GO-2026-6603",
@@ -6364,9 +6421,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "HTTP/2 server memory exhaustion due to Trailer headers in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "0.60.0"
        ],
@@ -6374,8 +6431,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0057,
+       "epss_percentile": 0.46532
       },
       {
        "id": "GO-2026-6611",
@@ -6388,9 +6445,9 @@
        ],
        "published": "2026-10-08T22:31:09Z",
        "summary": "Excessive CPU consumption from repeated initial window changes in net/http",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
        "fixed": [
         "0.60.0"
        ],
@@ -6398,8 +6455,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00568,
+       "epss_percentile": 0.46382
       }
      ]
     },
@@ -6626,7 +6683,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 806072952.0,
+     "popularity": 806082338.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "NONE",
@@ -6637,7 +6694,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1373623999.0,
+     "popularity": 1373660918.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6648,7 +6705,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1285107545.0,
+     "popularity": 1285122690.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6659,7 +6716,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 619767673.0,
+     "popularity": 619779563.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6670,7 +6727,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 301526707.0,
+     "popularity": 301530919.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6681,7 +6738,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 343350930.0,
+     "popularity": 343355007.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6692,7 +6749,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1285047101.0,
+     "popularity": 1285077446.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6703,7 +6760,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 394995285.0,
+     "popularity": 395006192.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6749,8 +6806,8 @@
      "popularity": 697615.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
-     "worst_7d": "UNKNOWN",
-     "worst_30d": "UNKNOWN",
+     "worst_7d": "MEDIUM",
+     "worst_30d": "MEDIUM",
      "vulns": [
       {
        "id": "EEF-CVE-2026-105963",
@@ -6763,9 +6820,9 @@
        ],
        "published": "2026-10-23T09:56:58Z",
        "summary": "Secret key base exposed in stack trace arguments on wrong-typed Plug.Crypto arguments",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 5.1,
        "fixed": [
         "1.7.0"
        ],
@@ -6773,8 +6830,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00715,
+       "epss_percentile": 0.53255
       }
      ]
     },
@@ -6856,8 +6913,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.06217,
+       "epss_percentile": 0.93524
       },
       {
        "id": "BIT-libphp-2026-109618",
@@ -6884,8 +6941,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.11841,
+       "epss_percentile": 0.96097
       },
       {
        "id": "BIT-libphp-2026-93682",
@@ -6912,8 +6969,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00366,
+       "epss_percentile": 0.29326
       },
       {
        "id": "BIT-libphp-2026-92842",
@@ -6940,8 +6997,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00357,
+       "epss_percentile": 0.28244
       },
       {
        "id": "BIT-libphp-2026-91769",
@@ -6968,8 +7025,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0014,
+       "epss_percentile": 0.03018
       },
       {
        "id": "BIT-libphp-2026-91768",
@@ -6996,8 +7053,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00561,
+       "epss_percentile": 0.45963
       },
       {
        "id": "BIT-libphp-2026-91767",
@@ -7024,8 +7081,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00154,
+       "epss_percentile": 0.04205
       },
       {
        "id": "BIT-libphp-2026-91766",
@@ -7052,8 +7109,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00349,
+       "epss_percentile": 0.27375
       },
       {
        "id": "BIT-libphp-2026-91765",
@@ -7080,8 +7137,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00545,
+       "epss_percentile": 0.45026
       },
       {
        "id": "BIT-libphp-2026-6103",
@@ -7109,8 +7166,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00155,
+       "epss_percentile": 0.04279
       },
       {
        "id": "BIT-libphp-2026-17545",
@@ -7137,8 +7194,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00368,
+       "epss_percentile": 0.29492
       },
       {
        "id": "BIT-libphp-2025-14181",
@@ -7165,8 +7222,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00341,
+       "epss_percentile": 0.26483
       },
       {
        "id": "BIT-libphp-2025-1218",
@@ -7180,9 +7237,9 @@
        ],
        "published": "2026-10-01T09:28:51Z",
        "summary": "Various packet overreads in mysqlnd_writeprotocol.c",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
+       "cvss": 3.4,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7193,8 +7250,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00363,
+       "epss_percentile": 0.29032
       }
      ]
     },
@@ -7234,8 +7291,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0071,
+       "epss_percentile": 0.53063
       }
      ]
     },
@@ -7276,8 +7333,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00401,
+       "epss_percentile": 0.33253
       },
       {
        "id": "BIT-libpython-2026-19445",
@@ -7306,8 +7363,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00429,
+       "epss_percentile": 0.36177
       },
       {
        "id": "BIT-libpython-2026-12345",
@@ -7330,8 +7387,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0018,
+       "epss_percentile": 0.07154
       }
      ]
     },
@@ -7388,8 +7445,8 @@
        "malicious": false,
        "kev": true,
        "kev_date_added": "2026-09-25",
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.39979,
+       "epss_percentile": 0.9863
       }
      ]
     },
@@ -7425,8 +7482,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00175,
+       "epss_percentile": 0.0661
       },
       {
        "id": "BIT-nginx-2026-97205",
@@ -7450,8 +7507,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00484,
+       "epss_percentile": 0.40816
       },
       {
        "id": "BIT-nginx-2026-95101",
@@ -7476,8 +7533,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00247,
+       "epss_percentile": 0.15144
       },
       {
        "id": "BIT-nginx-2026-93479",
@@ -7501,8 +7558,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00554,
+       "epss_percentile": 0.45541
       },
       {
        "id": "BIT-nginx-2026-15176",
@@ -7526,8 +7583,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00516,
+       "epss_percentile": 0.43138
       },
       {
        "id": "BIT-nginx-2026-90439",
@@ -7552,8 +7609,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00256,
+       "epss_percentile": 0.16392
       }
      ]
     },
@@ -7587,8 +7644,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00499,
+       "epss_percentile": 0.41877
       },
       {
        "id": "BIT-apache-2026-93546",
@@ -7610,8 +7667,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00436,
+       "epss_percentile": 0.36928
       },
       {
        "id": "BIT-apache-2026-79768",
@@ -7633,8 +7690,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0059,
+       "epss_percentile": 0.47561
       },
       {
        "id": "BIT-apache-2026-73637",
@@ -7656,8 +7713,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00484,
+       "epss_percentile": 0.40807
       },
       {
        "id": "BIT-apache-2026-73636",
@@ -7679,8 +7736,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00412,
+       "epss_percentile": 0.34455
       },
       {
        "id": "BIT-apache-2026-63686",
@@ -7702,8 +7759,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00478,
+       "epss_percentile": 0.40338
       },
       {
        "id": "BIT-apache-2026-63292",
@@ -7725,8 +7782,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00876,
+       "epss_percentile": 0.58644
       },
       {
        "id": "BIT-apache-2026-63045",
@@ -7748,8 +7805,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00472,
+       "epss_percentile": 0.39936
       },
       {
        "id": "BIT-apache-2026-59797",
@@ -7771,8 +7828,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0052,
+       "epss_percentile": 0.4339
       },
       {
        "id": "BIT-apache-2026-59685",
@@ -7794,8 +7851,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00498,
+       "epss_percentile": 0.41836
       },
       {
        "id": "BIT-apache-2026-58415",
@@ -7817,8 +7874,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00533,
+       "epss_percentile": 0.44232
       },
       {
        "id": "BIT-apache-2026-57941",
@@ -7840,8 +7897,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.006,
+       "epss_percentile": 0.48108
       },
       {
        "id": "BIT-apache-2026-56449",
@@ -7863,8 +7920,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00612,
+       "epss_percentile": 0.48704
       },
       {
        "id": "BIT-apache-2026-56154",
@@ -7886,8 +7943,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00562,
+       "epss_percentile": 0.46073
       },
       {
        "id": "BIT-apache-2026-56153",
@@ -7909,8 +7966,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00498,
+       "epss_percentile": 0.41836
       },
       {
        "id": "BIT-apache-2026-48005",
@@ -7932,8 +7989,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00606,
+       "epss_percentile": 0.48378
       },
       {
        "id": "BIT-apache-2026-47360",
@@ -7955,8 +8012,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00386,
+       "epss_percentile": 0.31513
       },
       {
        "id": "BIT-apache-2026-46729",
@@ -7978,8 +8035,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00468,
+       "epss_percentile": 0.39612
       },
       {
        "id": "BIT-apache-2026-42528",
@@ -8001,8 +8058,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00416,
+       "epss_percentile": 0.34904
       },
       {
        "id": "BIT-apache-2026-42356",
@@ -8014,9 +8071,9 @@
        ],
        "published": "2026-10-05T11:39:13Z",
        "summary": "Apache HTTP Server: limited RCE for some internal redirects to non-CGI files in CGI directories",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
+       "cvss": 3.7,
        "fixed": [
         "2.4.69"
        ],
@@ -8024,8 +8081,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0047,
+       "epss_percentile": 0.3973
       }
      ]
     },
@@ -8062,8 +8119,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00422,
+       "epss_percentile": 0.35491
       },
       {
        "id": "BIT-tomcat-2026-86350",
@@ -8087,8 +8144,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00313,
+       "epss_percentile": 0.23014
       },
       {
        "id": "BIT-tomcat-2026-86248",
@@ -8112,8 +8169,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00386,
+       "epss_percentile": 0.31537
       },
       {
        "id": "BIT-tomcat-2026-79677",
@@ -8138,8 +8195,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00322,
+       "epss_percentile": 0.24091
       },
       {
        "id": "BIT-tomcat-2026-78437",
@@ -8163,8 +8220,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0026,
+       "epss_percentile": 0.16741
       },
       {
        "id": "BIT-tomcat-2026-78383",
@@ -8189,8 +8246,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00376,
+       "epss_percentile": 0.30435
       },
       {
        "id": "BIT-tomcat-2026-77791",
@@ -8215,8 +8272,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00531,
+       "epss_percentile": 0.44124
       },
       {
        "id": "BIT-tomcat-2026-77762",
@@ -8240,8 +8297,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00361,
+       "epss_percentile": 0.28711
       },
       {
        "id": "BIT-tomcat-2026-77756",
@@ -8253,9 +8310,9 @@
        ],
        "published": "2026-10-01T09:36:27Z",
        "summary": "Apache Tomcat: Transfer-Encoding honored for HTTP/1.0 requests",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
+       "cvss": 3.7,
        "fixed": [
         "9.0.45",
         "9.0.122",
@@ -8266,8 +8323,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00256,
+       "epss_percentile": 0.1639
       },
       {
        "id": "BIT-tomcat-2026-76183",
@@ -8292,8 +8349,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0039,
+       "epss_percentile": 0.31927
       },
       {
        "id": "BIT-tomcat-2026-75973",
@@ -8318,8 +8375,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00238,
+       "epss_percentile": 0.14119
       },
       {
        "id": "BIT-tomcat-2026-73581",
@@ -8344,8 +8401,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00117,
+       "epss_percentile": 0.01583
       }
      ]
     },
@@ -8398,8 +8455,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00557,
+       "epss_percentile": 0.45734
       },
       {
        "id": "BIT-mariadb-2026-92262",
@@ -8429,8 +8486,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00725,
+       "epss_percentile": 0.53627
       },
       {
        "id": "BIT-mariadb-2026-86047",
@@ -8460,8 +8517,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00324,
+       "epss_percentile": 0.24243
       },
       {
        "id": "BIT-mariadb-2026-85985",
@@ -8491,8 +8548,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00212,
+       "epss_percentile": 0.10988
       },
       {
        "id": "BIT-mariadb-2026-85748",
@@ -8518,8 +8575,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00547,
+       "epss_percentile": 0.4514
       },
       {
        "id": "BIT-mariadb-2026-85746",
@@ -8549,8 +8606,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00629,
+       "epss_percentile": 0.49532
       },
       {
        "id": "BIT-mariadb-2026-85745",
@@ -8580,8 +8637,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00337,
+       "epss_percentile": 0.25911
       },
       {
        "id": "BIT-mariadb-2026-107823",
@@ -8611,8 +8668,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00711,
+       "epss_percentile": 0.53104
       },
       {
        "id": "BIT-mariadb-2026-107822",
@@ -8642,8 +8699,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00478,
+       "epss_percentile": 0.4038
       },
       {
        "id": "BIT-mariadb-2026-107821",
@@ -8673,8 +8730,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00758,
+       "epss_percentile": 0.54776
       },
       {
        "id": "BIT-mariadb-2026-107818",
@@ -8704,8 +8761,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00336,
+       "epss_percentile": 0.2588
       },
       {
        "id": "BIT-mariadb-2026-107817",
@@ -8735,8 +8792,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00137,
+       "epss_percentile": 0.02816
       },
       {
        "id": "BIT-mariadb-2026-107816",
@@ -8766,8 +8823,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00312,
+       "epss_percentile": 0.22867
       },
       {
        "id": "BIT-mariadb-2026-107815",
@@ -8797,8 +8854,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00896,
+       "epss_percentile": 0.59225
       },
       {
        "id": "BIT-mariadb-2026-107814",
@@ -8828,8 +8885,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00281,
+       "epss_percentile": 0.19535
       },
       {
        "id": "BIT-mariadb-2026-107385",
@@ -8857,8 +8914,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00438,
+       "epss_percentile": 0.37102
       },
       {
        "id": "BIT-mariadb-2026-107384",
@@ -8886,8 +8943,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00447,
+       "epss_percentile": 0.37956
       },
       {
        "id": "BIT-mariadb-2026-107383",
@@ -8915,8 +8972,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00388,
+       "epss_percentile": 0.31776
       },
       {
        "id": "BIT-mariadb-2026-107382",
@@ -8941,8 +8998,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00235,
+       "epss_percentile": 0.1373
       }
      ]
     },
@@ -8990,8 +9047,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0042,
+       "epss_percentile": 0.35289
       },
       {
        "id": "BIT-mongodb-2026-89099",
@@ -9016,8 +9073,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00321,
+       "epss_percentile": 0.23917
       },
       {
        "id": "BIT-mongodb-2026-18712",
@@ -9042,8 +9099,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00172,
+       "epss_percentile": 0.06318
       },
       {
        "id": "BIT-mongodb-2026-18711",
@@ -9068,8 +9125,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00494,
+       "epss_percentile": 0.4153
       },
       {
        "id": "BIT-mongodb-2026-8843",
@@ -9093,8 +9150,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0042,
+       "epss_percentile": 0.35293
       }
      ]
     }
