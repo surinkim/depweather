@@ -193,11 +193,11 @@ def record_severity(rec: dict) -> tuple[str, float | None, str | None]:
     return "UNKNOWN", None, None
 
 
-def fixed_versions(rec: dict, ecosystem: str, name: str) -> list[str]:
+def fixed_versions(rec: dict, ecosystem: str, patterns: list[str]) -> list[str]:
     out: list[str] = []
     for aff in rec.get("affected") or []:
         pkg = aff.get("package") or {}
-        if pkg.get("ecosystem") != ecosystem or not same_name(ecosystem, pkg.get("name", ""), name):
+        if pkg.get("ecosystem") != ecosystem or not name_matches(ecosystem, pkg.get("name", ""), patterns):
             continue
         for rng in aff.get("ranges") or []:
             for ev in rng.get("events") or []:
@@ -207,11 +207,32 @@ def fixed_versions(rec: dict, ecosystem: str, name: str) -> list[str]:
     return out
 
 
-def same_name(ecosystem: str, a: str, b: str) -> bool:
+def norm_name(ecosystem: str, s: str) -> str:
     if ecosystem == "PyPI":
-        norm = lambda s: s.lower().replace("_", "-").replace(".", "-")  # noqa: E731 (PEP 503)
-        return norm(a) == norm(b)
-    return a == b
+        return s.lower().replace("_", "-").replace(".", "-")  # PEP 503
+    if ecosystem == "NuGet":
+        return s.lower()  # NuGet IDs are case-insensitive
+    return s
+
+
+def patterns_of(pkg: dict) -> list[str]:
+    """OSV names that count as this tile: its own name plus `match` entries.
+
+    An entry ending in "*" is a prefix, e.g. "Microsoft.AspNetCore.*" for the
+    per-platform runtime packages ASP.NET Core advisories are filed under.
+    """
+    return [pkg["name"], *pkg.get("match", [])]
+
+
+def name_matches(ecosystem: str, name: str, patterns: list[str]) -> bool:
+    n = norm_name(ecosystem, name)
+    for p in patterns:
+        if p.endswith("*"):
+            if n.startswith(norm_name(ecosystem, p[:-1])):
+                return True
+        elif n == norm_name(ecosystem, p):
+            return True
+    return False
 
 
 def collect_osv(stacks: list[dict], now: datetime) -> dict[tuple[str, str], list[dict]]:
@@ -222,7 +243,7 @@ def collect_osv(stacks: list[dict], now: datetime) -> dict[tuple[str, str], list
 
     for eco in stacks:
         osv_eco = eco["osv"]
-        names = [p["name"] for p in eco["packages"]]
+        patterns = {p["name"]: patterns_of(p) for p in eco["packages"]}
         ids = osv_recent_ids(osv_eco, since)
         log(f"osv {osv_eco}: {len(ids)} records modified in the last {WINDOW_DAYS} days")
         with ThreadPoolExecutor(max_workers=16) as pool:
@@ -237,16 +258,17 @@ def collect_osv(stacks: list[dict], now: datetime) -> dict[tuple[str, str], list
                 pkg = aff.get("package") or {}
                 if pkg.get("ecosystem") != osv_eco:
                     continue
-                for n in names:
-                    if same_name(osv_eco, pkg.get("name", ""), n):
+                for n, pats in patterns.items():
+                    if name_matches(osv_eco, pkg.get("name", ""), pats):
                         hit.add(n)
             for n in hit:
                 found[(osv_eco, n)].append(rec)
 
-    return {k: merge_aliases(k[0], k[1], recs) for k, recs in found.items()}
+    pats = {(e["osv"], p["name"]): patterns_of(p) for e in stacks for p in e["packages"]}
+    return {k: merge_aliases(k[0], pats[k], recs) for k, recs in found.items()}
 
 
-def merge_aliases(ecosystem: str, name: str, recs: list[dict]) -> list[dict]:
+def merge_aliases(ecosystem: str, patterns: list[str], recs: list[dict]) -> list[dict]:
     """One entry per vulnerability: GO-/PYSEC-/GHSA- records of the same issue are merged."""
     groups: list[dict] = []
     for rec in recs:
@@ -270,7 +292,7 @@ def merge_aliases(ecosystem: str, name: str, recs: list[dict]) -> list[dict]:
                 score = sc
         fixed: list[str] = []
         for r in recs_g:
-            for v in fixed_versions(r, ecosystem, name):
+            for v in fixed_versions(r, ecosystem, patterns):
                 if v not in fixed:
                     fixed.append(v)
         published = min(parse_time(r["published"]) for r in recs_g)
@@ -425,17 +447,33 @@ def nvd_fill_severity(osv: dict, limit: int = 80) -> int:
 # ---------------------------------------------------------------- popularity
 
 def popularity(eco: dict, pkg: dict) -> tuple[float, str]:
+    """Tile size. Each ecosystem uses one metric, so tiles compare only within a group."""
     kind = eco.get("popularity", "fixed")
+    name = pkg.get("downloads_name", pkg["name"])
+    q = urllib.parse.quote
     try:
-        if kind == "npm-downloads":
-            d = get_json(f"https://api.npmjs.org/downloads/point/last-week/{pkg['name']}", timeout=30, retries=2)
-            return float(d["downloads"]), "npm weekly downloads"
+        if kind == "npm":
+            d = get_json(f"https://api.npmjs.org/downloads/point/last-week/{name}", timeout=30, retries=2)
+            return float(d["downloads"]), "npm downloads, last week"
         if kind == "pypistats":
-            d = get_json(f"https://pypistats.org/api/packages/{pkg['name'].lower()}/recent", timeout=30, retries=2)
+            d = get_json(f"https://pypistats.org/api/packages/{name.lower()}/recent", timeout=30, retries=2)
             time.sleep(1)  # pypistats asks clients to keep request rates low
-            return float(d["data"]["last_week"]), "PyPI weekly downloads (pypistats)"
+            return float(d["data"]["last_week"]), "PyPI downloads, last week (pypistats)"
+        if kind == "crates":
+            d = get_json(f"https://crates.io/api/v1/crates/{q(name)}", timeout=30, retries=2)
+            time.sleep(1)  # crates.io crawler policy: at most 1 request per second
+            return float(d["crate"]["recent_downloads"]), "crates.io downloads, last 90 days"
+        if kind == "packagist":
+            d = get_json(f"https://packagist.org/packages/{name}.json", timeout=30, retries=2)
+            return float(d["package"]["downloads"]["monthly"]), "Packagist downloads, last 30 days"
+        if kind == "rubygems":
+            d = get_json(f"https://rubygems.org/api/v1/gems/{q(name)}.json", timeout=30, retries=2)
+            return float(d["downloads"]), "RubyGems downloads, all time"
+        if kind == "hex":
+            d = get_json(f"https://hex.pm/api/packages/{q(name)}", timeout=30, retries=2)
+            return float(d["downloads"]["week"]), "Hex downloads, last week"
     except Exception as e:  # noqa: BLE001
-        log(f"popularity {eco['id']}/{pkg['name']}: {e}")
+        log(f"popularity {eco['id']}/{name}: {e}")
     return float(pkg.get("weight", 1)), "fixed weight"
 
 
@@ -451,7 +489,8 @@ def worst(vulns: list[dict]) -> str:
 
 def main() -> int:
     now = datetime.now(timezone.utc).replace(microsecond=0)
-    stacks = yaml.safe_load(STACKS.read_text())["ecosystems"]
+    config = yaml.safe_load(STACKS.read_text())
+    stacks = config["ecosystems"]
     latest_path = DATA / "latest.json"
     previous = json.loads(latest_path.read_text()) if latest_path.exists() else None
     sources: dict[str, dict] = {}
@@ -499,11 +538,16 @@ def main() -> int:
                 "label": p.get("label", p["name"]),
                 "popularity": pop,
                 "popularity_source": pop_src,
+                "survey": p.get("survey"),
                 "worst_7d": worst(recent),
                 "worst_30d": worst(vulns),
                 "vulns": vulns,
             })
-        ecosystems.append({"id": eco["id"], "label": eco["label"], "osv": eco["osv"], "packages": pkgs})
+        ecosystems.append({
+            "id": eco["id"], "label": eco["label"], "osv": eco["osv"],
+            "languages": eco.get("languages"), "survey_share": eco.get("survey_share"),
+            "packages": pkgs,
+        })
     sources["popularity"] = {"ok": True, "detail": sorted(pop_sources)}
 
     kev_new = None
@@ -526,6 +570,7 @@ def main() -> int:
     out = {
         "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "window_days": WINDOW_DAYS,
+        "survey": config.get("survey"),
         "sources": sources,
         "summary": {
             "today_cves": nvd["today"] if nvd else None,

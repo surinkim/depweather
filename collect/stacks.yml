@@ -1,113 +1,263 @@
 # Default package list: popular open-source packages only.
 #
+# How packages are chosen (see README, "Packages"):
+#   1. Frameworks from the Stack Overflow Developer Survey 2026, "Web frameworks
+#      and technologies" (all respondents), when the framework ships as a
+#      package in an OSV ecosystem. `survey:` is that share, in percent.
+#   2. The most-downloaded packages of each registry, where the registry
+#      publishes a ranking: top-pypi-packages (PyPI), crates.io recent
+#      downloads, Packagist "popular", hex.pm recent downloads. Type stubs,
+#      polyfills, platform shims and test-only tools are skipped.
+#   3. Where no ranking is public (npm, Maven, Go, NuGet, RubyGems): widely
+#      used libraries with a history of advisories (HTTP, parsing, crypto,
+#      auth, serialization). The daily run records real download counts for
+#      npm, PyPI, crates.io, Packagist, RubyGems and Hex, so the picks can be
+#      checked against data.
+#
 # Keep this list generic. Do not add packages that hint at a specific
-# company's stack; a personal watch list belongs in a local file outside
-# the repository (see README).
+# company's stack; use DEPWEATHER_STACKS for a personal list (see README).
 #
-# Package names use the OSV ecosystem naming:
-#   npm    -> package name (scoped names keep the @scope/ prefix)
-#   PyPI   -> project name
-#   Maven  -> groupId:artifactId
-#   Go     -> module path ("stdlib" is the Go standard library)
-#
-# Optional per-package keys:
-#   label:  short name shown on the tile
-#   weight: fixed popularity weight, used when no download API exists
-#           for the ecosystem (Maven, Go) or the API call fails
+# Per-package keys:
+#   name:     OSV package name (npm name, PyPI project, Maven groupId:artifactId,
+#             Go module, NuGet id, crate, Packagist vendor/name, gem, Hex package)
+#   label:    short name on the tile (default: name)
+#   match:    more OSV names that count as this tile; "prefix*" matches a prefix.
+#             Used where one product is filed under many packages
+#             (ASP.NET Core runtime packs, Symfony components, Rails gems).
+#   survey:   Stack Overflow 2026 web framework share (%), when it is one
+#   weight:   fixed popularity weight when the ecosystem has no download API
+
+survey:
+  name: Stack Overflow Developer Survey 2026
+  url: https://survey.stackoverflow.co/2026/technology/data
+  note: >-
+    Group area is the share of respondents using the ecosystem's main language
+    (all respondents, "Programming, scripting, and markup languages").
 
 ecosystems:
   - id: npm
     osv: npm
     label: npm
-    popularity: npm-downloads
+    languages: JavaScript / TypeScript
+    survey_share: 62.0          # JavaScript 62.0, TypeScript 43.8
+    popularity: npm
     packages:
-      - name: next
-      - name: react
-      - name: express
-      - name: axios
-      - name: lodash
-      - name: vite
-      - name: undici
-      - name: vue
-      - name: "@angular/core"
-      - name: webpack
-      - name: ws
-      - name: jsonwebtoken
+      - {name: react, label: React, survey: 41.5}
+      - {name: next, label: Next.js, survey: 20.6}
+      - {name: jquery, label: jQuery, survey: 19.7}
+      - {name: vue, label: Vue.js, survey: 17.2}
+      - {name: "@angular/core", label: Angular, survey: 16.0}
+      - {name: express, label: Express, survey: 15.6}
+      - {name: svelte, label: Svelte, survey: 7.8}
+      - {name: astro, label: Astro, survey: 6.2}
+      - {name: angular, label: AngularJS, survey: 6.0}
+      - {name: "@nestjs/core", label: NestJS, survey: 5.8}
+      - {name: "@sveltejs/kit", label: SvelteKit, survey: 5.6}
+      - {name: htmx.org, label: htmx, survey: 5.4}
+      - {name: nuxt, label: Nuxt, survey: 4.4}
+      - {name: fastify, label: Fastify, survey: 3.5}
+      - {name: hono, label: Hono, survey: 2.8}
+      - {name: axios}
+      - {name: lodash}
+      - {name: vite}
+      - {name: webpack}
+      - {name: undici}
+      - {name: ws}
+      - {name: jsonwebtoken}
+      - {name: form-data}
+      - {name: tar}
 
   - id: pypi
     osv: PyPI
     label: PyPI
+    languages: Python
+    survey_share: 58.0
     popularity: pypistats
     packages:
-      - name: requests
-      - name: django
-      - name: numpy
-      - name: jinja2
-      - name: fastapi
-      - name: flask
-      - name: urllib3
-      - name: pillow
-      - name: cryptography
-      - name: setuptools
-      - name: pyyaml
-      - name: transformers
+      - {name: fastapi, label: FastAPI, survey: 18.5}
+      - {name: flask, label: Flask, survey: 12.5}
+      - {name: django, label: Django, survey: 11.3}
+      - {name: requests}
+      - {name: urllib3}
+      - {name: certifi}
+      - {name: cryptography}
+      - {name: setuptools}
+      - {name: pyyaml}
+      - {name: pydantic}
+      - {name: numpy}
+      - {name: pandas}
+      - {name: jinja2}
+      - {name: starlette}
+      - {name: uvicorn}
+      - {name: httpx}
+      - {name: aiohttp}
+      - {name: pillow}
+      - {name: pyjwt}
+      - {name: sqlalchemy}
+      - {name: lxml}
+      - {name: protobuf}
+      - {name: transformers}
+      - {name: torch}
 
   - id: maven
     osv: Maven
     label: Maven
+    languages: Java / Kotlin
+    survey_share: 27.6          # Java 27.6, Kotlin 10.8
     popularity: fixed
     packages:
-      - name: org.springframework:spring-web
-        label: spring-web
-      - name: org.springframework.boot:spring-boot
-        label: spring-boot
-      - name: com.fasterxml.jackson.core:jackson-databind
-        label: jackson-databind
-      - name: org.apache.logging.log4j:log4j-core
-        label: log4j-core
-      - name: io.netty:netty-codec-http
-        label: netty-codec-http
-      - name: org.apache.tomcat.embed:tomcat-embed-core
-        label: tomcat-embed-core
-      - name: com.google.guava:guava
-        label: guava
-      - name: org.apache.commons:commons-lang3
-        label: commons-lang3
-      - name: org.yaml:snakeyaml
-        label: snakeyaml
-      - name: com.google.protobuf:protobuf-java
-        label: protobuf-java
-      - name: org.apache.kafka:kafka-clients
-        label: kafka-clients
-      - name: ch.qos.logback:logback-classic
-        label: logback-classic
+      - {name: "org.springframework.boot:spring-boot", label: Spring Boot, survey: 12.8, match: ["org.springframework.boot:*"]}
+      - {name: "org.springframework:spring-web", label: spring-web}
+      - {name: "org.springframework:spring-webmvc", label: spring-webmvc}
+      - {name: "org.springframework.security:spring-security-core", label: Spring Security}
+      - {name: "org.jetbrains.kotlin:kotlin-stdlib", label: kotlin-stdlib}
+      - {name: "com.fasterxml.jackson.core:jackson-databind", label: jackson-databind}
+      - {name: "org.apache.logging.log4j:log4j-core", label: log4j-core}
+      - {name: "ch.qos.logback:logback-core", label: logback}
+      - {name: "io.netty:netty-codec-http", label: netty-codec-http}
+      - {name: "org.apache.tomcat.embed:tomcat-embed-core", label: Tomcat (embed)}
+      - {name: "com.google.guava:guava", label: guava}
+      - {name: "commons-io:commons-io", label: commons-io}
+      - {name: "org.yaml:snakeyaml", label: snakeyaml}
+      - {name: "com.google.protobuf:protobuf-java", label: protobuf-java}
+      - {name: "org.apache.kafka:kafka-clients", label: kafka-clients}
+      - {name: "com.squareup.okhttp3:okhttp", label: OkHttp}
+      - {name: "org.postgresql:postgresql", label: pgjdbc}
+      - {name: "org.bouncycastle:bcprov-jdk18on", label: Bouncy Castle}
+
+  - id: nuget
+    osv: NuGet
+    label: NuGet
+    languages: C#
+    survey_share: 27.1
+    popularity: fixed           # no NuGet download API reachable yet; see README
+    packages:
+      - name: Microsoft.AspNetCore.App.Runtime.linux-x64
+        label: ASP.NET Core
+        survey: 19.9
+        match: ["Microsoft.AspNetCore.*"]
+      - name: Microsoft.NETCore.App.Runtime.linux-x64
+        label: .NET runtime
+        match: ["Microsoft.NETCore.App.Runtime.*"]
+      - name: Microsoft.AspNetCore.Components
+        label: Blazor
+        survey: 6.7
+        match: ["Microsoft.AspNetCore.Components*"]
+      - {name: Newtonsoft.Json}
+      - {name: System.Text.Json}
+      - {name: System.Security.Cryptography.Xml, label: Cryptography.Xml}
+      - {name: Microsoft.Data.SqlClient, label: SqlClient}
+      - name: System.IdentityModel.Tokens.Jwt
+        label: IdentityModel JWT
+        match: ["Microsoft.IdentityModel.*"]
+      - {name: Microsoft.Identity.Client, label: MSAL.NET}
+      - {name: Microsoft.EntityFrameworkCore, label: EF Core}
+      - {name: Npgsql}
+      - {name: MessagePack}
+      - {name: SixLabors.ImageSharp, label: ImageSharp}
+      - {name: Swashbuckle.AspNetCore, label: Swashbuckle}
+
+  - id: crates
+    osv: crates.io
+    label: crates.io
+    languages: Rust
+    survey_share: 18.0
+    popularity: crates
+    packages:
+      - {name: axum, survey: 3.6}
+      - {name: deno, label: Deno, survey: 4.0}
+      - {name: tokio}
+      - {name: hyper}
+      - {name: reqwest}
+      - {name: h2}
+      - {name: rustls, match: [rustls-webpki]}
+      - {name: openssl}
+      - {name: ring}
+      - {name: serde_json}
+      - {name: regex}
+      - {name: url}
+      - {name: sqlx}
+      - {name: zip}
+
+  - id: packagist
+    osv: Packagist
+    label: Packagist
+    languages: PHP
+    survey_share: 17.7
+    popularity: packagist
+    packages:
+      - {name: laravel/framework, label: Laravel, survey: 7.6}
+      - name: symfony/http-kernel
+        label: Symfony
+        survey: 4.0
+        match: ["symfony/*"]
+      - name: drupal/core
+        label: Drupal core
+        survey: 2.0
+        match: ["drupal/core*", drupal/drupal]
+      - {name: guzzlehttp/guzzle, label: Guzzle}
+      - {name: guzzlehttp/psr7, label: guzzle/psr7}
+      - {name: monolog/monolog, label: Monolog}
+      - {name: twig/twig, label: Twig}
+      - {name: phpunit/phpunit, label: PHPUnit}
+      - {name: league/flysystem, label: Flysystem}
+      - {name: league/commonmark, label: CommonMark}
+      - {name: nesbot/carbon, label: Carbon}
+      - {name: phpmailer/phpmailer, label: PHPMailer}
+      - {name: firebase/php-jwt, label: php-jwt}
+      - {name: phpseclib/phpseclib, label: phpseclib}
 
   - id: go
     osv: Go
     label: Go
+    languages: Go
+    survey_share: 16.5
     popularity: fixed
     packages:
-      - name: stdlib
-        label: Go stdlib
-      - name: golang.org/x/net
-        label: x/net
-      - name: golang.org/x/crypto
-        label: x/crypto
-      - name: google.golang.org/grpc
-        label: grpc-go
-      - name: google.golang.org/protobuf
-        label: protobuf-go
-      - name: github.com/gin-gonic/gin
-        label: gin
-      - name: github.com/labstack/echo/v4
-        label: echo
-      - name: github.com/golang-jwt/jwt/v5
-        label: golang-jwt
-      - name: github.com/docker/docker
-        label: docker
-      - name: k8s.io/kubernetes
-        label: kubernetes
-      - name: github.com/prometheus/client_golang
-        label: prometheus client
-      - name: github.com/gorilla/websocket
-        label: gorilla/websocket
+      - {name: stdlib, label: Go stdlib}
+      - {name: golang.org/x/net, label: x/net}
+      - {name: golang.org/x/crypto, label: x/crypto}
+      - {name: google.golang.org/grpc, label: grpc-go}
+      - {name: google.golang.org/protobuf, label: protobuf-go}
+      - {name: github.com/gin-gonic/gin, label: Gin}
+      - {name: github.com/labstack/echo/v4, label: Echo}
+      - {name: github.com/gofiber/fiber/v2, label: Fiber}
+      - {name: github.com/golang-jwt/jwt/v5, label: golang-jwt}
+      - {name: gorm.io/gorm, label: GORM}
+      - {name: github.com/docker/docker, label: Docker (moby), match: [github.com/moby/moby]}
+      - {name: k8s.io/kubernetes, label: Kubernetes}
+      - {name: github.com/prometheus/client_golang, label: Prometheus client}
+      - {name: github.com/gorilla/websocket, label: gorilla/websocket}
+
+  - id: rubygems
+    osv: RubyGems
+    label: RubyGems
+    languages: Ruby
+    survey_share: 5.8
+    popularity: rubygems
+    packages:
+      - name: rails
+        label: Ruby on Rails
+        survey: 5.7
+        match: [actionpack, actionview, actiontext, actionmailer, actioncable, activerecord, activestorage, activesupport, activemodel, activejob, railties]
+      - {name: rack}
+      - {name: nokogiri}
+      - {name: puma}
+      - {name: devise}
+      - {name: sidekiq}
+      - {name: faraday}
+      - {name: net-imap}
+
+  - id: hex
+    osv: Hex
+    label: Hex
+    languages: Elixir
+    survey_share: 2.6
+    popularity: hex
+    packages:
+      - {name: phoenix, label: Phoenix, survey: 2.5}
+      - {name: phoenix_live_view, label: LiveView}
+      - {name: plug}
+      - {name: ecto}
+      - {name: cowboy, match: [cowlib]}
+      - {name: hackney}

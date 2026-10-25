@@ -1,6 +1,11 @@
 {
- "generated_at": "2026-10-25T02:13:35Z",
+ "generated_at": "2026-10-25T02:40:27Z",
  "window_days": 30,
+ "survey": {
+  "name": "Stack Overflow Developer Survey 2026",
+  "url": "https://survey.stackoverflow.co/2026/technology/data",
+  "note": "Group area is the share of respondents using the ecosystem's main language (all respondents, \"Programming, scripting, and markup languages\")."
+ },
  "sources": {
   "osv": {
    "ok": true,
@@ -23,8 +28,13 @@
    "ok": true,
    "detail": [
     "Go: fixed weight",
+    "Hex: Hex downloads, last week",
     "Maven: fixed weight",
+    "NuGet: fixed weight",
+    "Packagist: Packagist downloads, last 30 days",
     "PyPI: fixed weight",
+    "RubyGems: RubyGems downloads, all time",
+    "crates.io: crates.io downloads, last 90 days",
     "npm: fixed weight"
    ]
   }
@@ -35,8 +45,8 @@
   "month_cves": null,
   "month_cves_last_year": null,
   "kev_new_7d": 8,
-  "affected_packages_7d": 7,
-  "tracked_packages": 48
+  "affected_packages_7d": 19,
+  "tracked_packages": 136
  },
  "monthly": [],
  "monthly_is_stale": false,
@@ -103,13 +113,27 @@
    "id": "npm",
    "label": "npm",
    "osv": "npm",
+   "languages": "JavaScript / TypeScript",
+   "survey_share": 62.0,
    "packages": [
+    {
+     "key": "npm/react",
+     "name": "react",
+     "label": "React",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 41.5,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
     {
      "key": "npm/next",
      "name": "next",
-     "label": "next",
+     "label": "Next.js",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": 20.6,
      "worst_7d": "CRITICAL",
      "worst_30d": "CRITICAL",
      "vulns": [
@@ -361,11 +385,34 @@
      ]
     },
     {
-     "key": "npm/react",
-     "name": "react",
-     "label": "react",
+     "key": "npm/jquery",
+     "name": "jquery",
+     "label": "jQuery",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": 19.7,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/vue",
+     "name": "vue",
+     "label": "Vue.js",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 17.2,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/@angular/core",
+     "name": "@angular/core",
+     "label": "Angular",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 16.0,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -373,12 +420,488 @@
     {
      "key": "npm/express",
      "name": "express",
-     "label": "express",
+     "label": "Express",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": 15.6,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
+    },
+    {
+     "key": "npm/svelte",
+     "name": "svelte",
+     "label": "Svelte",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 7.8,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/astro",
+     "name": "astro",
+     "label": "Astro",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 6.2,
+     "worst_7d": "MEDIUM",
+     "worst_30d": "MEDIUM",
+     "vulns": [
+      {
+       "id": "GHSA-98hj-9722-w3j8",
+       "aliases": [
+        "CVE-2026-114128"
+       ],
+       "cves": [
+        "CVE-2026-114128"
+       ],
+       "published": "2026-10-22T16:30:26Z",
+       "summary": "Astro: Reflected/Stored XSS via unescaped <script>/<style> tag content in JSX/MDX rendering",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "7.3.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-98hj-9722-w3j8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-mpr7-6m5w-76rw",
+       "aliases": [
+        "CVE-2026-114127"
+       ],
+       "cves": [
+        "CVE-2026-114127"
+       ],
+       "published": "2026-10-22T16:29:28Z",
+       "summary": "Astro: Arbitrary CSS injection in Astro View Transitions",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "7.3.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-mpr7-6m5w-76rw",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "npm/angular",
+     "name": "angular",
+     "label": "AngularJS",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 6.0,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/@nestjs/core",
+     "name": "@nestjs/core",
+     "label": "NestJS",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 5.8,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/@sveltejs/kit",
+     "name": "@sveltejs/kit",
+     "label": "SvelteKit",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 5.6,
+     "worst_7d": "UNKNOWN",
+     "worst_30d": "UNKNOWN",
+     "vulns": [
+      {
+       "id": "GHSA-pfhg-q3qv-9q6r",
+       "aliases": [
+        "CVE-2026-114060"
+       ],
+       "cves": [
+        "CVE-2026-114060"
+       ],
+       "published": "2026-10-23T20:58:24Z",
+       "summary": "SvelteKit: URL redirection to untrusted site via enhanced form submission",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 4.7,
+       "fixed": [
+        "3.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-pfhg-q3qv-9q6r",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-27mw-82g8-phjj",
+       "aliases": [
+        "CVE-2026-114061"
+       ],
+       "cves": [
+        "CVE-2026-114061"
+       ],
+       "published": "2026-10-23T20:43:30Z",
+       "summary": "SvelteKit : XSS via untrusted cache-control header in prerendered page",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 0.0,
+       "fixed": [
+        "3.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-27mw-82g8-phjj",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "npm/htmx.org",
+     "name": "htmx.org",
+     "label": "htmx",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 5.4,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/nuxt",
+     "name": "nuxt",
+     "label": "Nuxt",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 4.4,
+     "worst_7d": "MEDIUM",
+     "worst_30d": "MEDIUM",
+     "vulns": [
+      {
+       "id": "GHSA-vjh5-4x84-xrqp",
+       "aliases": [
+        "CVE-2026-114132"
+       ],
+       "cves": [
+        "CVE-2026-114132"
+       ],
+       "published": "2026-10-22T16:59:55Z",
+       "summary": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "4.6.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vjh5-4x84-xrqp",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-xfq5-w38q-pc2x",
+       "aliases": [
+        "CVE-2026-114133"
+       ],
+       "cves": [
+        "CVE-2026-114133"
+       ],
+       "published": "2026-10-22T16:58:00Z",
+       "summary": "Nuxt server islands render `useHeadSafe` input without sanitisation",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.4,
+       "fixed": [
+        "4.6.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-xfq5-w38q-pc2x",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-jjm6-p2m9-9w4x",
+       "aliases": [
+        "CVE-2026-114130"
+       ],
+       "cves": [
+        "CVE-2026-114130"
+       ],
+       "published": "2026-10-22T16:51:37Z",
+       "summary": "Nuxt: Incomplete fix for GHSA-934w-87qh-qr26: a `javascript:` URL prefixed with an ASCII control character executes from `<NuxtLink>` when `pages` is disabled",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "4.6.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-jjm6-p2m9-9w4x",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-6gq8-jgmh-3ffp",
+       "aliases": [
+        "CVE-2026-114131"
+       ],
+       "cves": [
+        "CVE-2026-114131"
+       ],
+       "published": "2026-10-22T16:50:53Z",
+       "summary": "Nuxt: Route rules are matched against the raw request path, so a percent-encoded segment can bypass `appMiddleware` on dynamic and catch-all routes",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "4.4.4",
+        "3.21.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-6gq8-jgmh-3ffp",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "npm/fastify",
+     "name": "fastify",
+     "label": "Fastify",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 3.5,
+     "worst_7d": "UNKNOWN",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-389g-gv7q-r4x8",
+       "aliases": [
+        "CVE-2026-107832"
+       ],
+       "cves": [
+        "CVE-2026-107832"
+       ],
+       "published": "2026-10-22T16:40:35Z",
+       "summary": "fastify is vulnerable to header validation bypass via case-sensitive propertyNames",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 3.7,
+       "fixed": [
+        "5.12.6"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-389g-gv7q-r4x8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-4mh8-r7rc-xpvc",
+       "aliases": [
+        "CVE-2026-92081"
+       ],
+       "cves": [
+        "CVE-2026-92081"
+       ],
+       "published": "2026-09-30T23:53:44Z",
+       "summary": "fastify vulnerable to Denial of Service via unhandled exception on HTTP/2 trailer responses",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "5.12.5"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4mh8-r7rc-xpvc",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-667r-xxjv-c9mm",
+       "aliases": [
+        "CVE-2026-84504"
+       ],
+       "cves": [
+        "CVE-2026-84504"
+       ],
+       "published": "2026-09-30T23:45:45Z",
+       "summary": "fastify vulnerable to request body replacement via an async validation result collision",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 8.1,
+       "fixed": [
+        "5.12.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-667r-xxjv-c9mm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-p68q-wchp-6fh7",
+       "aliases": [
+        "CVE-2026-76169"
+       ],
+       "cves": [
+        "CVE-2026-76169"
+       ],
+       "published": "2026-09-30T23:45:34Z",
+       "summary": "fastify vulnerable to authentication bypass via malformed URLs reaching encapsulated not-found handlers",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "5.12.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-p68q-wchp-6fh7",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-hwr6-493r-vm6h",
+       "aliases": [
+        "CVE-2026-84469"
+       ],
+       "cves": [
+        "CVE-2026-84469"
+       ],
+       "published": "2026-09-30T23:44:58Z",
+       "summary": "fastify vulnerable to request validation bypass via skipped boolean false schemas",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "5.12.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-hwr6-493r-vm6h",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-9q9j-q6p8-xq58",
+       "aliases": [
+        "CVE-2026-84428"
+       ],
+       "cves": [
+        "CVE-2026-84428"
+       ],
+       "published": "2026-09-30T23:44:27Z",
+       "summary": "fastify vulnerable to header validation bypass via incomplete schema case normalization",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "5.12.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9q9j-q6p8-xq58",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "npm/hono",
+     "name": "hono",
+     "label": "Hono",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 2.8,
+     "worst_7d": "MEDIUM",
+     "worst_30d": "MEDIUM",
+     "vulns": [
+      {
+       "id": "GHSA-5r4p-p66f-jhc7",
+       "aliases": [
+        "CVE-2026-109955",
+        "CVE-2026-111757"
+       ],
+       "cves": [
+        "CVE-2026-109955",
+        "CVE-2026-111757"
+       ],
+       "published": "2026-10-20T14:36:11Z",
+       "summary": "Hono: `serveStatic` decodes the request path a second time, leading to bypass of middleware on static paths",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "4.13.11"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-5r4p-p66f-jhc7",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-hxh3-vqpv-xpqv",
+       "aliases": [
+        "CVE-2026-93981"
+       ],
+       "cves": [
+        "CVE-2026-93981"
+       ],
+       "published": "2026-09-30T23:46:16Z",
+       "summary": "hono/jsx renders plain strings unescaped in boundary components, leading to XSS",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 4.7,
+       "fixed": [
+        "4.13.7"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-hxh3-vqpv-xpqv",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
     },
     {
      "key": "npm/axios",
@@ -386,6 +909,7 @@
      "label": "axios",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "HIGH",
      "vulns": [
@@ -675,6 +1199,7 @@
      "label": "lodash",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -685,6 +1210,7 @@
      "label": "vite",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "HIGH",
      "worst_30d": "HIGH",
      "vulns": [
@@ -850,11 +1376,23 @@
      ]
     },
     {
+     "key": "npm/webpack",
+     "name": "webpack",
+     "label": "webpack",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
      "key": "npm/undici",
      "name": "undici",
      "label": "undici",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "HIGH",
      "worst_30d": "HIGH",
      "vulns": [
@@ -1201,41 +1739,12 @@
      ]
     },
     {
-     "key": "npm/vue",
-     "name": "vue",
-     "label": "vue",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
-    },
-    {
-     "key": "npm/@angular/core",
-     "name": "@angular/core",
-     "label": "@angular/core",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
-    },
-    {
-     "key": "npm/webpack",
-     "name": "webpack",
-     "label": "webpack",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
-    },
-    {
      "key": "npm/ws",
      "name": "ws",
      "label": "ws",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -1246,6 +1755,29 @@
      "label": "jsonwebtoken",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/form-data",
+     "name": "form-data",
+     "label": "form-data",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "npm/tar",
+     "name": "tar",
+     "label": "tar",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -1256,13 +1788,27 @@
    "id": "pypi",
    "label": "PyPI",
    "osv": "PyPI",
+   "languages": "Python",
+   "survey_share": 58.0,
    "packages": [
     {
-     "key": "pypi/requests",
-     "name": "requests",
-     "label": "requests",
+     "key": "pypi/fastapi",
+     "name": "fastapi",
+     "label": "FastAPI",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": 18.5,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/flask",
+     "name": "flask",
+     "label": "Flask",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 12.5,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -1270,9 +1816,10 @@
     {
      "key": "pypi/django",
      "name": "django",
-     "label": "django",
+     "label": "Django",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": 11.3,
      "worst_7d": "NONE",
      "worst_30d": "HIGH",
      "vulns": [
@@ -1305,41 +1852,12 @@
      ]
     },
     {
-     "key": "pypi/numpy",
-     "name": "numpy",
-     "label": "numpy",
+     "key": "pypi/requests",
+     "name": "requests",
+     "label": "requests",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
-    },
-    {
-     "key": "pypi/jinja2",
-     "name": "jinja2",
-     "label": "jinja2",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
-    },
-    {
-     "key": "pypi/fastapi",
-     "name": "fastapi",
-     "label": "fastapi",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
-    },
-    {
-     "key": "pypi/flask",
-     "name": "flask",
-     "label": "flask",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -1350,6 +1868,7 @@
      "label": "urllib3",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "HIGH",
      "vulns": [
@@ -1428,11 +1947,367 @@
      ]
     },
     {
+     "key": "pypi/certifi",
+     "name": "certifi",
+     "label": "certifi",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "GHSA-6q48-6c7w-9gw2",
+       "aliases": [
+        "PYSEC-2026-4320"
+       ],
+       "cves": [],
+       "published": "2026-10-20T19:35:05Z",
+       "summary": "certifi bundles emSign root CAs with compromised intermediate CA keys",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "2026.10.19"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "pypi/cryptography",
+     "name": "cryptography",
+     "label": "cryptography",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/setuptools",
+     "name": "setuptools",
+     "label": "setuptools",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "UNKNOWN",
+     "worst_30d": "UNKNOWN",
+     "vulns": [
+      {
+       "id": "GHSA-xmj3-9gf7-h52w",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-23T21:44:11Z",
+       "summary": "setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "84.1.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-xmj3-9gf7-h52w",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "pypi/pyyaml",
+     "name": "pyyaml",
+     "label": "pyyaml",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/pydantic",
+     "name": "pydantic",
+     "label": "pydantic",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/numpy",
+     "name": "numpy",
+     "label": "numpy",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/pandas",
+     "name": "pandas",
+     "label": "pandas",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/jinja2",
+     "name": "jinja2",
+     "label": "jinja2",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/starlette",
+     "name": "starlette",
+     "label": "starlette",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/uvicorn",
+     "name": "uvicorn",
+     "label": "uvicorn",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/httpx",
+     "name": "httpx",
+     "label": "httpx",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/aiohttp",
+     "name": "aiohttp",
+     "label": "aiohttp",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "HIGH",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-f9xw-jh8m-3mwq",
+       "aliases": [
+        "CVE-2026-111748"
+       ],
+       "cves": [
+        "CVE-2026-111748"
+       ],
+       "published": "2026-10-20T20:01:40Z",
+       "summary": "AIOHTTP: Absolute-form request targets can spoof Request.scheme",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-f9xw-jh8m-3mwq",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-gx76-c99x-2c96",
+       "aliases": [
+        "CVE-2026-111749"
+       ],
+       "cves": [
+        "CVE-2026-111749"
+       ],
+       "published": "2026-10-20T19:58:14Z",
+       "summary": "AIOHTTP: Cookie from subdomain can remove Host-Only Scope from existing cookies",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-gx76-c99x-2c96",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-6cjc-53gc-5rqm",
+       "aliases": [
+        "CVE-2026-111065"
+       ],
+       "cves": [
+        "CVE-2026-111065"
+       ],
+       "published": "2026-10-20T19:57:24Z",
+       "summary": "AIOHTTP: Connector pool exhaustion via Max-Age overflow",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-6cjc-53gc-5rqm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-pqxq-w44r-73xw",
+       "aliases": [
+        "CVE-2026-111750"
+       ],
+       "cves": [
+        "CVE-2026-111750"
+       ],
+       "published": "2026-10-20T19:52:21Z",
+       "summary": "AIOHTTP: Pure-Python parser request smuggling",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-pqxq-w44r-73xw",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-9xw5-w5jj-pvcg",
+       "aliases": [
+        "CVE-2026-111066"
+       ],
+       "cves": [
+        "CVE-2026-111066"
+       ],
+       "published": "2026-10-20T19:52:09Z",
+       "summary": "AIOHTTP: File descriptor exhaustion in multipart requests",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9xw5-w5jj-pvcg",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-5wr8-gcqf-gqf3",
+       "aliases": [
+        "CVE-2026-111064"
+       ],
+       "cves": [
+        "CVE-2026-111064"
+       ],
+       "published": "2026-10-19T17:08:04Z",
+       "summary": "aiohttp server lacks an initial request/header timeout",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-5wr8-gcqf-gqf3",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-494j-54xm-rwp3",
+       "aliases": [
+        "CVE-2026-111063"
+       ],
+       "cves": [
+        "CVE-2026-111063"
+       ],
+       "published": "2026-10-19T17:07:47Z",
+       "summary": "AIOHTTP: Secure attribute not enforced for shared cookie",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-494j-54xm-rwp3",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-2g87-pp6c-29x5",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-19T17:07:23Z",
+       "summary": "aiohttp: Multiple instances of excessive or unbounded memory/CPU use",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-2g87-pp6c-29x5",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
      "key": "pypi/pillow",
      "name": "pillow",
      "label": "pillow",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "CRITICAL",
      "worst_30d": "CRITICAL",
      "vulns": [
@@ -2378,37 +3253,362 @@
      ]
     },
     {
-     "key": "pypi/cryptography",
-     "name": "cryptography",
-     "label": "cryptography",
+     "key": "pypi/pyjwt",
+     "name": "pyjwt",
+     "label": "pyjwt",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
-    },
-    {
-     "key": "pypi/setuptools",
-     "name": "setuptools",
-     "label": "setuptools",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
-     "worst_7d": "UNKNOWN",
-     "worst_30d": "UNKNOWN",
+     "survey": null,
+     "worst_7d": "HIGH",
+     "worst_30d": "CRITICAL",
      "vulns": [
       {
-       "id": "GHSA-xmj3-9gf7-h52w",
+       "id": "GHSA-pxh4-856f-4h89",
        "aliases": [],
        "cves": [],
-       "published": "2026-10-23T21:44:11Z",
-       "summary": "setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
+       "published": "2026-10-22T15:48:04Z",
+       "summary": "PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.4,
        "fixed": [
-        "84.1.0"
+        "2.14.0"
        ],
-       "url": "https://osv.dev/vulnerability/GHSA-xmj3-9gf7-h52w",
+       "url": "https://osv.dev/vulnerability/GHSA-pxh4-856f-4h89",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-gvp8-978c-rx2q",
+       "aliases": [
+        "CVE-2026-103001",
+        "PYSEC-2026-4146"
+       ],
+       "cves": [
+        "CVE-2026-103001"
+       ],
+       "published": "2026-09-30T23:53:17Z",
+       "summary": "PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/GHSA-gvp8-978c-rx2q",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-42vr-xj54-vc7v",
+       "aliases": [
+        "CVE-2026-101918",
+        "PYSEC-2026-4141"
+       ],
+       "cves": [
+        "CVE-2026-101918"
+       ],
+       "published": "2026-09-30T15:41:05Z",
+       "summary": "PyJWT: Unauthenticated RecursionError DoS in pre-verification payload parse (PyJWKClient.get_signing_key_from_jwt / verify_signature=False)",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "2.15.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-42vr-xj54-vc7v",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-jwrc-g2q2-pq5p",
+       "aliases": [
+        "CVE-2026-102270",
+        "PYSEC-2026-4148"
+       ],
+       "cves": [
+        "CVE-2026-102270"
+       ],
+       "published": "2026-09-30T14:40:25Z",
+       "summary": "PyJWT: ReDoS vulnerability when calling the `is_pem_format` function.",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 4.4,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-jwrc-g2q2-pq5p",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-9j54-fg26-wv3r",
+       "aliases": [
+        "CVE-2026-102266",
+        "PYSEC-2026-4143"
+       ],
+       "cves": [
+        "CVE-2026-102266"
+       ],
+       "published": "2026-09-29T23:43:19Z",
+       "summary": "PyJWT: PyJWK accepts empty HMAC keys, bypassing PyJWT's empty-key validation",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.4,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9j54-fg26-wv3r",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-8wjv-2p76-3863",
+       "aliases": [
+        "CVE-2026-102265",
+        "PYSEC-2026-4142"
+       ],
+       "cves": [
+        "CVE-2026-102265"
+       ],
+       "published": "2026-09-29T23:43:06Z",
+       "summary": "PyJWT: Uncaught RecursionError in jwt.decode() on deeply nested token header",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-8wjv-2p76-3863",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-hxm8-2xgr-2p9m",
+       "aliases": [
+        "CVE-2026-102269",
+        "PYSEC-2026-4147"
+       ],
+       "cves": [
+        "CVE-2026-102269"
+       ],
+       "published": "2026-09-29T23:17:55Z",
+       "summary": "PyJWT: Non-canonical signature segments enable raw-token revocation bypass",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 4.8,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-hxm8-2xgr-2p9m",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-ffc3-869f-jxw9",
+       "aliases": [
+        "CVE-2026-102268",
+        "PYSEC-2026-4145"
+       ],
+       "cves": [
+        "CVE-2026-102268"
+       ],
+       "published": "2026-09-29T23:17:33Z",
+       "summary": "PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": 9.1,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-ffc3-869f-jxw9",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-w2cx-738m-mc7w",
+       "aliases": [
+        "CVE-2026-102273",
+        "PYSEC-2026-4151"
+       ],
+       "cves": [
+        "CVE-2026-102273"
+       ],
+       "published": "2026-09-29T23:16:55Z",
+       "summary": "PyJWT accepts public JWK containers as HMAC secrets",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.4,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-w2cx-738m-mc7w",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-9v7f-9g4p-ffgj",
+       "aliases": [
+        "CVE-2026-102267",
+        "PYSEC-2026-4144"
+       ],
+       "cves": [
+        "CVE-2026-102267"
+       ],
+       "published": "2026-09-29T23:15:00Z",
+       "summary": "PyJWT: PyJWKClient follows redirects when fetching JWKS",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.4,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9v7f-9g4p-ffgj",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-p4g4-x82p-q773",
+       "aliases": [
+        "CVE-2026-102271",
+        "PYSEC-2026-4149"
+       ],
+       "cves": [
+        "CVE-2026-102271"
+       ],
+       "published": "2026-09-29T23:14:33Z",
+       "summary": "PyJWT: Public keys in DER form are accepted as HMAC secrets, bypassing the CVE-2022-29217 guard",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.4,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-p4g4-x82p-q773",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-r6x4-923q-g947",
+       "aliases": [
+        "CVE-2026-102272",
+        "PYSEC-2026-4150"
+       ],
+       "cves": [
+        "CVE-2026-102272"
+       ],
+       "published": "2026-09-29T23:14:00Z",
+       "summary": "PyJWT BOM Bypass",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.4,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-r6x4-923q-g947",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-2gx3-rcp4-g85q",
+       "aliases": [
+        "CVE-2026-101917",
+        "PYSEC-2026-4140"
+       ],
+       "cves": [
+        "CVE-2026-101917"
+       ],
+       "published": "2026-09-29T23:11:51Z",
+       "summary": "PyJWT: PyJWKClient still amplifies unauthenticated JWKS fetches on unknown kid values (incomplete fix of CVE-2026-48524)",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-2gx3-rcp4-g85q",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-w6j9-cwv2-h6wq",
+       "aliases": [
+        "CVE-2026-102274",
+        "PYSEC-2026-4152"
+       ],
+       "cves": [
+        "CVE-2026-102274"
+       ],
+       "published": "2026-09-29T18:23:01Z",
+       "summary": "PyJWT: Malformed RSA JWK aborts parsing of an entire JWK Set",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-w6j9-cwv2-h6wq",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-x33g-cr3x-6449",
+       "aliases": [
+        "CVE-2026-102275",
+        "PYSEC-2026-4183"
+       ],
+       "cves": [
+        "CVE-2026-102275"
+       ],
+       "published": "2026-09-28T21:17:15Z",
+       "summary": "PyJWT accepts inconsistent OKP x/d JWKs, causing public/private key identity confusion",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.2,
+       "fixed": [
+        "2.15.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-x33g-cr3x-6449",
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
@@ -2418,11 +3618,34 @@
      ]
     },
     {
-     "key": "pypi/pyyaml",
-     "name": "pyyaml",
-     "label": "pyyaml",
+     "key": "pypi/sqlalchemy",
+     "name": "sqlalchemy",
+     "label": "sqlalchemy",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/lxml",
+     "name": "lxml",
+     "label": "lxml",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "pypi/protobuf",
+     "name": "protobuf",
+     "label": "protobuf",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -2433,6 +3656,7 @@
      "label": "transformers",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "HIGH",
      "vulns": [
@@ -2459,6 +3683,17 @@
        "epss_percentile": null
       }
      ]
+    },
+    {
+     "key": "pypi/torch",
+     "name": "torch",
+     "label": "torch",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
     }
    ]
   },
@@ -2466,23 +3701,60 @@
    "id": "maven",
    "label": "Maven",
    "osv": "Maven",
+   "languages": "Java / Kotlin",
+   "survey_share": 27.6,
    "packages": [
+    {
+     "key": "maven/org.springframework.boot:spring-boot",
+     "name": "org.springframework.boot:spring-boot",
+     "label": "Spring Boot",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 12.8,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
     {
      "key": "maven/org.springframework:spring-web",
      "name": "org.springframework:spring-web",
      "label": "spring-web",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
     },
     {
-     "key": "maven/org.springframework.boot:spring-boot",
-     "name": "org.springframework.boot:spring-boot",
-     "label": "spring-boot",
+     "key": "maven/org.springframework:spring-webmvc",
+     "name": "org.springframework:spring-webmvc",
+     "label": "spring-webmvc",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/org.springframework.security:spring-security-core",
+     "name": "org.springframework.security:spring-security-core",
+     "label": "Spring Security",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/org.jetbrains.kotlin:kotlin-stdlib",
+     "name": "org.jetbrains.kotlin:kotlin-stdlib",
+     "label": "kotlin-stdlib",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -2493,6 +3765,7 @@
      "label": "jackson-databind",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "HIGH",
      "vulns": [
@@ -2654,6 +3927,18 @@
      "label": "log4j-core",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/ch.qos.logback:logback-core",
+     "name": "ch.qos.logback:logback-core",
+     "label": "logback",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -2664,6 +3949,7 @@
      "label": "netty-codec-http",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -2671,9 +3957,10 @@
     {
      "key": "maven/org.apache.tomcat.embed:tomcat-embed-core",
      "name": "org.apache.tomcat.embed:tomcat-embed-core",
-     "label": "tomcat-embed-core",
+     "label": "Tomcat (embed)",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -2684,16 +3971,18 @@
      "label": "guava",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
     },
     {
-     "key": "maven/org.apache.commons:commons-lang3",
-     "name": "org.apache.commons:commons-lang3",
-     "label": "commons-lang3",
+     "key": "maven/commons-io:commons-io",
+     "name": "commons-io:commons-io",
+     "label": "commons-io",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -2704,6 +3993,7 @@
      "label": "snakeyaml",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -2714,6 +4004,7 @@
      "label": "protobuf-java",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -2724,16 +4015,1877 @@
      "label": "kafka-clients",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
     },
     {
-     "key": "maven/ch.qos.logback:logback-classic",
-     "name": "ch.qos.logback:logback-classic",
-     "label": "logback-classic",
+     "key": "maven/com.squareup.okhttp3:okhttp",
+     "name": "com.squareup.okhttp3:okhttp",
+     "label": "OkHttp",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/org.postgresql:postgresql",
+     "name": "org.postgresql:postgresql",
+     "label": "pgjdbc",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "maven/org.bouncycastle:bcprov-jdk18on",
+     "name": "org.bouncycastle:bcprov-jdk18on",
+     "label": "Bouncy Castle",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    }
+   ]
+  },
+  {
+   "id": "nuget",
+   "label": "NuGet",
+   "osv": "NuGet",
+   "languages": "C#",
+   "survey_share": 27.1,
+   "packages": [
+    {
+     "key": "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64",
+     "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+     "label": "ASP.NET Core",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 19.9,
+     "worst_7d": "NONE",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "GHSA-mf4x-w4gh-4656",
+       "aliases": [
+        "CVE-2026-70186"
+       ],
+       "cves": [
+        "CVE-2026-70186"
+       ],
+       "published": "2026-10-13T20:53:19Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70186 - ASP.NET Core Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "8.0.32",
+        "10.0.13",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-mf4x-w4gh-4656",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-qjpx-jqm5-h2c4",
+       "aliases": [
+        "CVE-2026-96230"
+       ],
+       "cves": [
+        "CVE-2026-96230"
+       ],
+       "published": "2026-10-13T20:51:12Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96230 - ASP.NET Core Remote Code Execution Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 8.8,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2",
+        "8.0.32",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-qjpx-jqm5-h2c4",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-vrrp-6v32-2p8g",
+       "aliases": [
+        "CVE-2026-70179"
+       ],
+       "cves": [
+        "CVE-2026-70179"
+       ],
+       "published": "2026-10-13T20:50:45Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70179 - ASP.NET Core Elevation of Privilege Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "10.0.13",
+        "8.0.32",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vrrp-6v32-2p8g",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-rv87-ccxw-8ggf",
+       "aliases": [
+        "BIT-aspnet-core-2026-88092",
+        "CVE-2026-88092"
+       ],
+       "cves": [
+        "CVE-2026-88092"
+       ],
+       "published": "2026-10-13T20:40:50Z",
+       "summary": "Microsoft Security Advisory CVE-2026-88092 - ASP.NET Core Security Feature Bypass Vulnerability",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": 9.4,
+       "fixed": [
+        "8.0.32",
+        "10.0.13",
+        "11.0.0-rc.2",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-rv87-ccxw-8ggf",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-fpq8-4vhr-rcxx",
+       "aliases": [
+        "CVE-2026-70188"
+       ],
+       "cves": [
+        "CVE-2026-70188"
+       ],
+       "published": "2026-10-13T20:37:27Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70188 - ASP.NET Core Security Feature Bypass Vulnerability",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": 9.1,
+       "fixed": [
+        "11.0.0-rc.2",
+        "8.0.32",
+        "10.0.13",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-fpq8-4vhr-rcxx",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-f4g7-52wc-p8x7",
+       "aliases": [
+        "CVE-2026-96236"
+       ],
+       "cves": [
+        "CVE-2026-96236"
+       ],
+       "published": "2026-10-13T20:36:22Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96236 - ASP.NET Core Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "8.0.32",
+        "11.0.0-rc.2",
+        "10.0.13",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-f4g7-52wc-p8x7",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-g27p-qf6j-c96c",
+       "aliases": [
+        "CVE-2026-102870"
+       ],
+       "cves": [
+        "CVE-2026-102870"
+       ],
+       "published": "2026-10-13T20:27:36Z",
+       "summary": "Microsoft Security Advisory CVE-2026-102870 - ASP.NET Core Remote Code Execution Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 8.8,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2.26478.115"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-g27p-qf6j-c96c",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-86xp-94pg-8r6r",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-13T20:11:58Z",
+       "summary": "Microsoft Security Advisory CVE-2026-92707 - ASP.NET Core Denial of Service Vulnerability",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2",
+        "8.0.32",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-86xp-94pg-8r6r",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-494h-xx7x-5frh",
+       "aliases": [
+        "CVE-2026-70183"
+       ],
+       "cves": [
+        "CVE-2026-70183"
+       ],
+       "published": "2026-10-13T19:59:23Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70183 - ASP.NET Core Security Feature Bypass Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "8.0.32",
+        "10.0.13",
+        "9.0.21",
+        "11.0.0-rc.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-494h-xx7x-5frh",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-57xr-hfxx-jw5x",
+       "aliases": [
+        "CVE-2026-70196"
+       ],
+       "cves": [
+        "CVE-2026-70196"
+       ],
+       "published": "2026-10-13T19:58:12Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70196 - ASP.NET Core Denial of Service Vulnerability",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "8.0.32",
+        "10.0.13",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-57xr-hfxx-jw5x",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-w5qq-qrpp-rf4c",
+       "aliases": [
+        "CVE-2026-70181"
+       ],
+       "cves": [
+        "CVE-2026-70181"
+       ],
+       "published": "2026-10-13T19:47:44Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70181 - ASP.NET Core Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "9.0.21",
+        "10.0.13",
+        "8.0.32"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-w5qq-qrpp-rf4c",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-x3vp-85cm-q97r",
+       "aliases": [
+        "CVE-2026-70175"
+       ],
+       "cves": [
+        "CVE-2026-70175"
+       ],
+       "published": "2026-10-13T19:44:54Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70175 - ASP.NET Core Elevation of Privilege Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 8.1,
+       "fixed": [
+        "9.0.21",
+        "10.0.13",
+        "8.0.32"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-x3vp-85cm-q97r",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-334f-vvp4-7g6p",
+       "aliases": [
+        "CVE-2026-70159"
+       ],
+       "cves": [
+        "CVE-2026-70159"
+       ],
+       "published": "2026-10-13T19:41:19Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70159 - ASP.NET Core Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2",
+        "8.0.32",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-334f-vvp4-7g6p",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "nuget/Microsoft.NETCore.App.Runtime.linux-x64",
+     "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+     "label": ".NET runtime",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-w6wh-p4g7-mpj2",
+       "aliases": [
+        "CVE-2026-96225"
+       ],
+       "cves": [
+        "CVE-2026-96225"
+       ],
+       "published": "2026-10-13T20:51:51Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96225 - .NET and Visual Studio Elevation of Privilege Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.8,
+       "fixed": [
+        "8.0.32",
+        "10.0.13",
+        "11.0.0-rc.2",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-w6wh-p4g7-mpj2",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-2j93-m82w-73j2",
+       "aliases": [
+        "CVE-2026-96231"
+       ],
+       "cves": [
+        "CVE-2026-96231"
+       ],
+       "published": "2026-10-13T20:44:11Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96231 - .NET and Visual Studio Elevation of Privilege Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.8,
+       "fixed": [
+        "8.0.32",
+        "10.0.13",
+        "9.0.21",
+        "11.0.0-rc.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-2j93-m82w-73j2",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-wxxw-5cvc-53j7",
+       "aliases": [
+        "CVE-2026-66822"
+       ],
+       "cves": [
+        "CVE-2026-66822"
+       ],
+       "published": "2026-10-13T20:41:40Z",
+       "summary": "Microsoft Security Advisory CVE-2026-66822 - .NET and Visual Studio Information Disclosure Vulnerability",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "9.0.21",
+        "11.0.0-rc.2",
+        "10.0.13",
+        "8.0.32"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-wxxw-5cvc-53j7",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-4mpw-cpwj-hxxj",
+       "aliases": [
+        "CVE-2026-70197"
+       ],
+       "cves": [
+        "CVE-2026-70197"
+       ],
+       "published": "2026-10-13T20:34:32Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70197 - .NET and Visual Studio Remote Code Execution Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 8.1,
+       "fixed": [
+        "8.0.32",
+        "11.0.0-rc.2",
+        "9.0.21",
+        "10.0.13"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4mpw-cpwj-hxxj",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-3rxq-g8rj-r2cf",
+       "aliases": [
+        "CVE-2026-69651"
+       ],
+       "cves": [
+        "CVE-2026-69651"
+       ],
+       "published": "2026-10-13T20:32:47Z",
+       "summary": "Microsoft Security Advisory CVE-2026-69651 - .NET and Visual Studio Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "9.0.21",
+        "11.0.0-rc.2",
+        "10.0.13",
+        "8.0.32"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-3rxq-g8rj-r2cf",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-87vj-4hqv-22p9",
+       "aliases": [
+        "CVE-2026-96233"
+       ],
+       "cves": [
+        "CVE-2026-96233"
+       ],
+       "published": "2026-10-13T20:25:37Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96233 - .NET and Visual Studio Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2",
+        "9.0.21",
+        "8.0.32"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-87vj-4hqv-22p9",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-mc4q-93x5-f6hj",
+       "aliases": [
+        "CVE-2026-58280"
+       ],
+       "cves": [
+        "CVE-2026-58280"
+       ],
+       "published": "2026-10-13T20:01:59Z",
+       "summary": "Microsoft Security Advisory CVE-2026-58280 - .NET and Visual Studio Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "9.0.21",
+        "8.0.32",
+        "10.0.13",
+        "11.0.0-rc.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-mc4q-93x5-f6hj",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-fqpq-cx42-9jmm",
+       "aliases": [
+        "CVE-2026-70194"
+       ],
+       "cves": [
+        "CVE-2026-70194"
+       ],
+       "published": "2026-10-13T20:00:42Z",
+       "summary": "Microsoft Security Advisory CVE-2026-70194 - .NET and Visual Studio Security Feature Bypass Vulnerability",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "11.0.0-rc.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-fqpq-cx42-9jmm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "nuget/Microsoft.AspNetCore.Components",
+     "name": "Microsoft.AspNetCore.Components",
+     "label": "Blazor",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": 6.7,
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-qjpx-jqm5-h2c4",
+       "aliases": [
+        "CVE-2026-96230"
+       ],
+       "cves": [
+        "CVE-2026-96230"
+       ],
+       "published": "2026-10-13T20:51:12Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96230 - ASP.NET Core Remote Code Execution Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 8.8,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2",
+        "8.0.32",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-qjpx-jqm5-h2c4",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-g27p-qf6j-c96c",
+       "aliases": [
+        "CVE-2026-102870"
+       ],
+       "cves": [
+        "CVE-2026-102870"
+       ],
+       "published": "2026-10-13T20:27:36Z",
+       "summary": "Microsoft Security Advisory CVE-2026-102870 - ASP.NET Core Remote Code Execution Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 8.8,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2.26478.115"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-g27p-qf6j-c96c",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "nuget/Newtonsoft.Json",
+     "name": "Newtonsoft.Json",
+     "label": "Newtonsoft.Json",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "nuget/System.Text.Json",
+     "name": "System.Text.Json",
+     "label": "System.Text.Json",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "nuget/System.Security.Cryptography.Xml",
+     "name": "System.Security.Cryptography.Xml",
+     "label": "Cryptography.Xml",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-c399-9853-6jmj",
+       "aliases": [
+        "BIT-dotnet-2026-96959",
+        "BIT-dotnet-sdk-2026-96959",
+        "CVE-2026-96959"
+       ],
+       "cves": [
+        "CVE-2026-96959"
+       ],
+       "published": "2026-10-13T20:49:06Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96959 - .NET and Visual Studio Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2",
+        "8.0.5",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-c399-9853-6jmj",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-vrv5-2jg9-4mmr",
+       "aliases": [
+        "BIT-dotnet-2026-96222",
+        "BIT-dotnet-sdk-2026-96222",
+        "CVE-2026-96222"
+       ],
+       "cves": [
+        "CVE-2026-96222"
+       ],
+       "published": "2026-10-13T20:45:13Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96222 - .NET Spoofing Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.4,
+       "fixed": [
+        "8.0.5"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vrv5-2jg9-4mmr",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-7hqp-7c5m-4vq6",
+       "aliases": [
+        "BIT-dotnet-2026-96960",
+        "BIT-dotnet-sdk-2026-96960",
+        "CVE-2026-96960"
+       ],
+       "cves": [
+        "CVE-2026-96960"
+       ],
+       "published": "2026-10-13T20:26:27Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96960 - .NET and Visual Studio Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2",
+        "8.0.5",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-7hqp-7c5m-4vq6",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-r955-8q5j-3h83",
+       "aliases": [
+        "BIT-dotnet-2026-96958",
+        "BIT-dotnet-sdk-2026-96958",
+        "CVE-2026-96958"
+       ],
+       "cves": [
+        "CVE-2026-96958"
+       ],
+       "published": "2026-10-13T20:05:52Z",
+       "summary": "Microsoft Security Advisory CVE-2026-96958 - .NET and Visual Studio Denial of Service Vulnerability",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "10.0.13",
+        "11.0.0-rc.2",
+        "8.0.5",
+        "9.0.21"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-r955-8q5j-3h83",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "nuget/Microsoft.Data.SqlClient",
+     "name": "Microsoft.Data.SqlClient",
+     "label": "SqlClient",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "nuget/System.IdentityModel.Tokens.Jwt",
+     "name": "System.IdentityModel.Tokens.Jwt",
+     "label": "IdentityModel JWT",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "nuget/Microsoft.Identity.Client",
+     "name": "Microsoft.Identity.Client",
+     "label": "MSAL.NET",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "nuget/Microsoft.EntityFrameworkCore",
+     "name": "Microsoft.EntityFrameworkCore",
+     "label": "EF Core",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "nuget/Npgsql",
+     "name": "Npgsql",
+     "label": "Npgsql",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "nuget/MessagePack",
+     "name": "MessagePack",
+     "label": "MessagePack",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "MEDIUM",
+     "vulns": [
+      {
+       "id": "GHSA-qhrr-8q5h-9q3h",
+       "aliases": [
+        "CVE-2026-92707"
+       ],
+       "cves": [
+        "CVE-2026-92707"
+       ],
+       "published": "2026-10-15T18:35:46Z",
+       "summary": "MessagePack: Nested arrays can blow past buffer length limits",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "2.5.303",
+        "3.1.9"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-qhrr-8q5h-9q3h",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "nuget/SixLabors.ImageSharp",
+     "name": "SixLabors.ImageSharp",
+     "label": "ImageSharp",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-jjfr-hcj7-qf5w",
+       "aliases": [
+        "CVE-2026-106115"
+       ],
+       "cves": [
+        "CVE-2026-106115"
+       ],
+       "published": "2026-10-07T20:24:46Z",
+       "summary": "ImageSharp: TIFF CCITT T6 encoder writes beyond an undersized output buffer",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "4.1.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-jjfr-hcj7-qf5w",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-4q3p-rj5x-xv7p",
+       "aliases": [
+        "CVE-2026-106111"
+       ],
+       "cves": [
+        "CVE-2026-106111"
+       ],
+       "published": "2026-10-07T20:24:42Z",
+       "summary": "ImageSharp: EXR ZIP decoder can expose stale allocator data after a short inflate",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "fixed": [
+        "4.1.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4q3p-rj5x-xv7p",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-ffp7-56pq-64mr",
+       "aliases": [
+        "CVE-2026-106112"
+       ],
+       "cves": [
+        "CVE-2026-106112"
+       ],
+       "published": "2026-10-07T20:24:37Z",
+       "summary": "ImageSharp: ICC LUT16 output channel count can write beyond Vector4",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "4.1.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-ffp7-56pq-64mr",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-wmxv-xphr-5c9g",
+       "aliases": [
+        "CVE-2026-106116"
+       ],
+       "cves": [
+        "CVE-2026-106116"
+       ],
+       "published": "2026-10-07T20:24:32Z",
+       "summary": "ImageSharp: BigTIFF IFD count can keep a decoder thread in a non-progressing loop",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "4.1.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-wmxv-xphr-5c9g",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-j9gm-c75j-xc9q",
+       "aliases": [
+        "CVE-2026-106110"
+       ],
+       "cves": [
+        "CVE-2026-106110"
+       ],
+       "published": "2026-10-07T20:24:28Z",
+       "summary": "ImageSharp: TIFF CCITT T4 encoder can write past its compressed output buffer",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "4.1.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-j9gm-c75j-xc9q",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-j3p4-wp97-rph4",
+       "aliases": [
+        "CVE-2026-106113"
+       ],
+       "cves": [
+        "CVE-2026-106113"
+       ],
+       "published": "2026-10-07T20:24:23Z",
+       "summary": "ImageSharp: HistogramEqualization uses an unvalidated luminance as an unchecked histogram index",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "4.1.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-j3p4-wp97-rph4",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-gwg2-r3hj-4w44",
+       "aliases": [
+        "CVE-2026-106114"
+       ],
+       "cves": [
+        "CVE-2026-106114"
+       ],
+       "published": "2026-10-07T20:24:19Z",
+       "summary": "ImageSharp: ICC CLUT parsing allocates from unvalidated channel and grid dimensions",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "4.1.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-gwg2-r3hj-4w44",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "nuget/Swashbuckle.AspNetCore",
+     "name": "Swashbuckle.AspNetCore",
+     "label": "Swashbuckle",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    }
+   ]
+  },
+  {
+   "id": "crates",
+   "label": "crates.io",
+   "osv": "crates.io",
+   "languages": "Rust",
+   "survey_share": 18.0,
+   "packages": [
+    {
+     "key": "crates/axum",
+     "name": "axum",
+     "label": "axum",
+     "popularity": 141409082.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": 3.6,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/deno",
+     "name": "deno",
+     "label": "Deno",
+     "popularity": 2685.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": 4.0,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/tokio",
+     "name": "tokio",
+     "label": "tokio",
+     "popularity": 273045717.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "MEDIUM",
+     "worst_30d": "MEDIUM",
+     "vulns": [
+      {
+       "id": "GHSA-5wjr-9356-4wc8",
+       "aliases": [
+        "CVE-2026-115567",
+        "RUSTSEC-2026-0384"
+       ],
+       "cves": [
+        "CVE-2026-115567"
+       ],
+       "published": "2026-10-21T12:00:00Z",
+       "summary": "Tokio: Race condition in `tokio::time::Interval`",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "1.54.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-5wjr-9356-4wc8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "RUSTSEC-2026-0386",
+       "aliases": [],
+       "cves": [],
+       "published": "2026-10-13T12:00:00Z",
+       "summary": "`AsyncFd::new` and related constructors violate I/O safety",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.51.6",
+        "1.53.3"
+       ],
+       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0386",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "crates/hyper",
+     "name": "hyper",
+     "label": "hyper",
+     "popularity": 249205839.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/reqwest",
+     "name": "reqwest",
+     "label": "reqwest",
+     "popularity": 231063108.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/h2",
+     "name": "h2",
+     "label": "h2",
+     "popularity": 202372345.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/rustls",
+     "name": "rustls",
+     "label": "rustls",
+     "popularity": 249001137.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "UNKNOWN",
+     "worst_30d": "MEDIUM",
+     "vulns": [
+      {
+       "id": "RUSTSEC-2026-0382",
+       "aliases": [
+        "CVE-2026-111943",
+        "GO-2026-6809",
+        "RUSTSEC-2026-0381",
+        "RUSTSEC-2026-0383"
+       ],
+       "cves": [
+        "CVE-2026-111943"
+       ],
+       "published": "2026-10-20T12:00:00Z",
+       "summary": "Certificate verification may accept distrusted intermediates",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "0.103.16",
+        "0.104.0-alpha.8"
+       ],
+       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0382",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "RUSTSEC-2026-0348",
+       "aliases": [
+        "GHSA-h2v8-394m-p7vv"
+       ],
+       "cves": [],
+       "published": "2026-10-14T12:00:00Z",
+       "summary": "Brotli certificate decompression can allocate up to 1 GiB before authentication",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 3.7,
+       "fixed": [
+        "0.23.46"
+       ],
+       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0348",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "RUSTSEC-2026-0346",
+       "aliases": [
+        "GHSA-c8m5-c952-6cm4"
+       ],
+       "cves": [],
+       "published": "2026-10-14T12:00:00Z",
+       "summary": "`Debug` impls for client session values expose TLS secrets",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.0,
+       "fixed": [
+        "0.23.46"
+       ],
+       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0346",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "RUSTSEC-2026-0349",
+       "aliases": [
+        "GHSA-w44r-93j7-qv28"
+       ],
+       "cves": [],
+       "published": "2026-10-14T12:00:00Z",
+       "summary": "Unauthenticated ServerHello can downgrade later connections to classical key exchange",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 3.7,
+       "fixed": [
+        "0.23.46"
+       ],
+       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0349",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "RUSTSEC-2026-0347",
+       "aliases": [
+        "GHSA-vp88-798v-h67f"
+       ],
+       "cves": [],
+       "published": "2026-10-14T12:00:00Z",
+       "summary": "Buffered application data sent to outer server after ECH rejection",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 2.3,
+       "fixed": [
+        "0.23.46"
+       ],
+       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0347",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-2mjx-qc3c-rqvc",
+       "aliases": [
+        "RUSTSEC-2026-0285"
+       ],
+       "cves": [],
+       "published": "2026-10-05T23:30:17Z",
+       "summary": "Rustls: TLS 1.3 handshake messages incorrectly accepted across encryption level boundaries",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "fixed": [
+        "0.23.45"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-2mjx-qc3c-rqvc",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "crates/openssl",
+     "name": "openssl",
+     "label": "openssl",
+     "popularity": 79692895.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/ring",
+     "name": "ring",
+     "label": "ring",
+     "popularity": 195147859.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/serde_json",
+     "name": "serde_json",
+     "label": "serde_json",
+     "popularity": 381507572.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/regex",
+     "name": "regex",
+     "label": "regex",
+     "popularity": 294293934.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/url",
+     "name": "url",
+     "label": "url",
+     "popularity": 227599873.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/sqlx",
+     "name": "sqlx",
+     "label": "sqlx",
+     "popularity": 49962596.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "crates/zip",
+     "name": "zip",
+     "label": "zip",
+     "popularity": 90891912.0,
+     "popularity_source": "crates.io downloads, last 90 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "RUSTSEC-2026-0369",
+       "aliases": [
+        "GHSA-4684-h2q9-2vcp"
+       ],
+       "cves": [],
+       "published": "2026-10-10T12:00:00Z",
+       "summary": "ZipStreamReader::extract() and ZipArchive::extract() apply Unix permissions through symlinks without confining the target",
+       "severity": "CRITICAL",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 9.1,
+       "fixed": [
+        "9.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0369",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "RUSTSEC-2026-0367",
+       "aliases": [
+        "GHSA-vv5m-jxxh-4627"
+       ],
+       "cves": [],
+       "published": "2026-10-09T12:00:00Z",
+       "summary": "Insecure Preservation of SUID/SGID Bits during ZIP Extraction Leading to Potential Privilege Escalation",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.3,
+       "fixed": [
+        "9.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0367",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "RUSTSEC-2026-0368",
+       "aliases": [
+        "GHSA-4v9h-p7m9-rh26"
+       ],
+       "cves": [],
+       "published": "2026-10-09T12:00:00Z",
+       "summary": "zip: `ZipArchive::extract` creates symbolic links whose attacker-controlled targets are outside the destination directory",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "9.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0368",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "packagist",
+   "label": "Packagist",
+   "osv": "Packagist",
+   "languages": "PHP",
+   "survey_share": 17.7,
+   "packages": [
+    {
+     "key": "packagist/laravel/framework",
+     "name": "laravel/framework",
+     "label": "Laravel",
+     "popularity": 19970777.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": 7.6,
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "GHSA-f9x3-7vq9-cph6",
+       "aliases": [
+        "CVE-2026-114509"
+       ],
+       "cves": [
+        "CVE-2026-114509"
+       ],
+       "published": "2026-10-23T21:50:27Z",
+       "summary": "Laravel TokenGuard authentication bypass through non-string API credentials",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": null,
+       "fixed": [
+        "13.29.0",
+        "12.68.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-f9x3-7vq9-cph6",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-5wcm-3v2w-8362",
+       "aliases": [
+        "CVE-2026-114508"
+       ],
+       "cves": [
+        "CVE-2026-114508"
+       ],
+       "published": "2026-10-23T21:47:48Z",
+       "summary": "Laravel relationship inclusion can trigger unauthorized data destruction",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "fixed": [
+        "12.68.0",
+        "13.27.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-5wcm-3v2w-8362",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-jh5r-qr3c-85q8",
+       "aliases": [
+        "CVE-2026-102279"
+       ],
+       "cves": [
+        "CVE-2026-102279"
+       ],
+       "published": "2026-09-29T18:24:25Z",
+       "summary": "Laravel: XSS in Debug Page Information",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 3.1,
+       "fixed": [
+        "12.69.0",
+        "13.30.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-jh5r-qr3c-85q8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "packagist/symfony/http-kernel",
+     "name": "symfony/http-kernel",
+     "label": "Symfony",
+     "popularity": 25780789.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": 4.0,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "packagist/drupal/core",
+     "name": "drupal/core",
+     "label": "Drupal core",
+     "popularity": 1593214.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": 2.0,
+     "worst_7d": "NONE",
+     "worst_30d": "UNKNOWN",
+     "vulns": [
+      {
+       "id": "DRUPAL-CORE-2026-016",
+       "aliases": [
+        "CVE-2026-108514"
+       ],
+       "cves": [
+        "CVE-2026-108514"
+       ],
+       "published": "2026-10-14T17:25:38Z",
+       "summary": "The Navigation module doesn't sufficiently sanitize certain attributes, which can lead to a cross-site scripting (XSS) vulnerability.",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "10.6.19",
+        "11.3.19",
+        "11.4.10",
+        "12.0.0-beta2"
+       ],
+       "url": "https://osv.dev/vulnerability/DRUPAL-CORE-2026-016",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DRUPAL-CORE-2026-015",
+       "aliases": [
+        "CVE-2026-108515"
+       ],
+       "cves": [
+        "CVE-2026-108515"
+       ],
+       "published": "2026-10-14T17:25:19Z",
+       "summary": "The Drupal core Link module provides a field type that can be used for internal and external URLs.",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "10.6.19",
+        "11.3.19",
+        "11.4.10",
+        "12.0.0-beta2"
+       ],
+       "url": "https://osv.dev/vulnerability/DRUPAL-CORE-2026-015",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DRUPAL-CORE-2026-014",
+       "aliases": [
+        "CVE-2026-108097"
+       ],
+       "cves": [
+        "CVE-2026-108097"
+       ],
+       "published": "2026-10-14T16:10:00Z",
+       "summary": "A remote code execution vulnerability exists within the Field UI module in Drupal core.",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "10.6.19",
+        "11.3.19",
+        "11.4.10",
+        "12.0.0-beta2"
+       ],
+       "url": "https://osv.dev/vulnerability/DRUPAL-CORE-2026-014",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "packagist/guzzlehttp/guzzle",
+     "name": "guzzlehttp/guzzle",
+     "label": "Guzzle",
+     "popularity": 28504545.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "packagist/guzzlehttp/psr7",
+     "name": "guzzlehttp/psr7",
+     "label": "guzzle/psr7",
+     "popularity": 29482148.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "packagist/monolog/monolog",
+     "name": "monolog/monolog",
+     "label": "Monolog",
+     "popularity": 26773873.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "packagist/twig/twig",
+     "name": "twig/twig",
+     "label": "Twig",
+     "popularity": 11844410.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "packagist/phpunit/phpunit",
+     "name": "phpunit/phpunit",
+     "label": "PHPUnit",
+     "popularity": 23848868.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "packagist/league/flysystem",
+     "name": "league/flysystem",
+     "label": "Flysystem",
+     "popularity": 22684223.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "UNKNOWN",
+     "vulns": [
+      {
+       "id": "GHSA-cxf4-7mrp-vvpr",
+       "aliases": [
+        "CVE-2026-102601"
+       ],
+       "cves": [
+        "CVE-2026-102601"
+       ],
+       "published": "2026-09-29T18:10:14Z",
+       "summary": "Flysystem: WhitespacePathNormalizer's control-character (CorruptedPathDetected) check is bypassed by malformed UTF-8 in the path, affecting every adapter",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 3.5,
+       "fixed": [
+        "3.35.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-cxf4-7mrp-vvpr",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "packagist/league/commonmark",
+     "name": "league/commonmark",
+     "label": "CommonMark",
+     "popularity": 20111599.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "GHSA-97jj-33gv-5xf9",
+       "aliases": [
+        "CVE-2026-105829"
+       ],
+       "cves": [
+        "CVE-2026-105829"
+       ],
+       "published": "2026-09-30T15:36:33Z",
+       "summary": "league/commonmark: DisallowedRawHtml bypassed when a disallowed tag name ends the raw-HTML literal",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.1,
+       "fixed": [
+        "2.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-97jj-33gv-5xf9",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-3q6v-r5mr-hxv8",
+       "aliases": [
+        "CVE-2026-105830"
+       ],
+       "cves": [
+        "CVE-2026-105830"
+       ],
+       "published": "2026-09-30T15:36:13Z",
+       "summary": "league/commonmark: Quadratic-time denial of service in the GitHub Flavored Markdown Table extension block-start scan",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "fixed": [
+        "2.10.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-3q6v-r5mr-hxv8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "packagist/nesbot/carbon",
+     "name": "nesbot/carbon",
+     "label": "Carbon",
+     "popularity": 22607824.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "packagist/phpmailer/phpmailer",
+     "name": "phpmailer/phpmailer",
+     "label": "PHPMailer",
+     "popularity": 3831304.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "packagist/firebase/php-jwt",
+     "name": "firebase/php-jwt",
+     "label": "php-jwt",
+     "popularity": 18082739.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "packagist/phpseclib/phpseclib",
+     "name": "phpseclib/phpseclib",
+     "label": "phpseclib",
+     "popularity": 16213051.0,
+     "popularity_source": "Packagist downloads, last 30 days",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -2744,6 +5896,8 @@
    "id": "go",
    "label": "Go",
    "osv": "Go",
+   "languages": "Go",
+   "survey_share": 16.5,
    "packages": [
     {
      "key": "go/stdlib",
@@ -2751,6 +5905,7 @@
      "label": "Go stdlib",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "UNKNOWN",
      "worst_30d": "UNKNOWN",
      "vulns": [
@@ -3114,6 +6269,7 @@
      "label": "x/net",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "UNKNOWN",
      "vulns": [
@@ -3245,6 +6401,7 @@
      "label": "x/crypto",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -3255,6 +6412,7 @@
      "label": "grpc-go",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -3265,6 +6423,7 @@
      "label": "protobuf-go",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -3272,9 +6431,10 @@
     {
      "key": "go/github.com/gin-gonic/gin",
      "name": "github.com/gin-gonic/gin",
-     "label": "gin",
+     "label": "Gin",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -3282,9 +6442,10 @@
     {
      "key": "go/github.com/labstack/echo/v4",
      "name": "github.com/labstack/echo/v4",
-     "label": "echo",
+     "label": "Echo",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "CRITICAL",
      "worst_30d": "CRITICAL",
      "vulns": [
@@ -3367,11 +6528,34 @@
      ]
     },
     {
+     "key": "go/github.com/gofiber/fiber/v2",
+     "name": "github.com/gofiber/fiber/v2",
+     "label": "Fiber",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
      "key": "go/github.com/golang-jwt/jwt/v5",
      "name": "github.com/golang-jwt/jwt/v5",
      "label": "golang-jwt",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "go/gorm.io/gorm",
+     "name": "gorm.io/gorm",
+     "label": "GORM",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -3379,9 +6563,10 @@
     {
      "key": "go/github.com/docker/docker",
      "name": "github.com/docker/docker",
-     "label": "docker",
+     "label": "Docker (moby)",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -3389,9 +6574,10 @@
     {
      "key": "go/k8s.io/kubernetes",
      "name": "k8s.io/kubernetes",
-     "label": "kubernetes",
+     "label": "Kubernetes",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -3399,9 +6585,10 @@
     {
      "key": "go/github.com/prometheus/client_golang",
      "name": "github.com/prometheus/client_golang",
-     "label": "prometheus client",
+     "label": "Prometheus client",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []
@@ -3412,6 +6599,204 @@
      "label": "gorilla/websocket",
      "popularity": 1.0,
      "popularity_source": "fixed weight",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    }
+   ]
+  },
+  {
+   "id": "rubygems",
+   "label": "RubyGems",
+   "osv": "RubyGems",
+   "languages": "Ruby",
+   "survey_share": 5.8,
+   "packages": [
+    {
+     "key": "rubygems/rails",
+     "name": "rails",
+     "label": "Ruby on Rails",
+     "popularity": 806072952.0,
+     "popularity_source": "RubyGems downloads, all time",
+     "survey": 5.7,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "rubygems/rack",
+     "name": "rack",
+     "label": "rack",
+     "popularity": 1373623999.0,
+     "popularity_source": "RubyGems downloads, all time",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "rubygems/nokogiri",
+     "name": "nokogiri",
+     "label": "nokogiri",
+     "popularity": 1285093779.0,
+     "popularity_source": "RubyGems downloads, all time",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "rubygems/puma",
+     "name": "puma",
+     "label": "puma",
+     "popularity": 619757498.0,
+     "popularity_source": "RubyGems downloads, all time",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "rubygems/devise",
+     "name": "devise",
+     "label": "devise",
+     "popularity": 301525607.0,
+     "popularity_source": "RubyGems downloads, all time",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "rubygems/sidekiq",
+     "name": "sidekiq",
+     "label": "sidekiq",
+     "popularity": 343349758.0,
+     "popularity_source": "RubyGems downloads, all time",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "rubygems/faraday",
+     "name": "faraday",
+     "label": "faraday",
+     "popularity": 1285047101.0,
+     "popularity_source": "RubyGems downloads, all time",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "rubygems/net-imap",
+     "name": "net-imap",
+     "label": "net-imap",
+     "popularity": 394995285.0,
+     "popularity_source": "RubyGems downloads, all time",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    }
+   ]
+  },
+  {
+   "id": "hex",
+   "label": "Hex",
+   "osv": "Hex",
+   "languages": "Elixir",
+   "survey_share": 2.6,
+   "packages": [
+    {
+     "key": "hex/phoenix",
+     "name": "phoenix",
+     "label": "Phoenix",
+     "popularity": 622881.0,
+     "popularity_source": "Hex downloads, last week",
+     "survey": 2.5,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "hex/phoenix_live_view",
+     "name": "phoenix_live_view",
+     "label": "LiveView",
+     "popularity": 482642.0,
+     "popularity_source": "Hex downloads, last week",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "hex/plug",
+     "name": "plug",
+     "label": "plug",
+     "popularity": 697615.0,
+     "popularity_source": "Hex downloads, last week",
+     "survey": null,
+     "worst_7d": "UNKNOWN",
+     "worst_30d": "UNKNOWN",
+     "vulns": [
+      {
+       "id": "EEF-CVE-2026-105963",
+       "aliases": [
+        "CVE-2026-105963",
+        "GHSA-ffw9-w85g-f2vh"
+       ],
+       "cves": [
+        "CVE-2026-105963"
+       ],
+       "published": "2026-10-23T09:56:58Z",
+       "summary": "Secret key base exposed in stack trace arguments on wrong-typed Plug.Crypto arguments",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "fixed": [
+        "1.7.0"
+       ],
+       "url": "https://osv.dev/vulnerability/EEF-CVE-2026-105963",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
+    },
+    {
+     "key": "hex/ecto",
+     "name": "ecto",
+     "label": "ecto",
+     "popularity": 593427.0,
+     "popularity_source": "Hex downloads, last week",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "hex/cowboy",
+     "name": "cowboy",
+     "label": "cowboy",
+     "popularity": 454281.0,
+     "popularity_source": "Hex downloads, last week",
+     "survey": null,
+     "worst_7d": "NONE",
+     "worst_30d": "NONE",
+     "vulns": []
+    },
+    {
+     "key": "hex/hackney",
+     "name": "hackney",
+     "label": "hackney",
+     "popularity": 319453.0,
+     "popularity_source": "Hex downloads, last week",
+     "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
      "vulns": []

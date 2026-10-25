@@ -70,7 +70,7 @@ body {
   font-feature-settings: "calt" 0; /* keep "93x7" in advisory IDs from becoming "93×7" */
 }
 a { color: var(--accent); }
-.wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.wrap { max-width: 1440px; margin: 0 auto; padding: 0 16px; }
 
 header.top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 18px 0 10px; }
 header.top h1 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
@@ -113,7 +113,14 @@ header.top .spacer { flex: 1; }
 .hint { color: var(--muted); font-size: 12.5px; margin: 8px 0 0; }
 
 svg text { font-family: inherit; }
-#treemap { width: 100%; display: block; }
+#treemap-box { position: relative; }
+#treemap { width: 100%; display: block; user-select: none; -webkit-user-select: none; }
+#treemap:focus { outline: none; }
+.zoombar { display: flex; gap: 4px; align-items: center; justify-content: flex-end; margin-bottom: 6px; }
+.zoombar .zhint { margin-right: auto; color: var(--muted); font-size: 12px; background: none; padding: 0; }
+.zoombar button { font: inherit; font-size: 14px; width: 30px; height: 28px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer; opacity: 0.92; }
+.zoombar button.wide { width: auto; padding: 0 8px; font-size: 12px; }
+.zoombar span { font-size: 12px; color: var(--ink-2); background: var(--surface); padding: 2px 6px; border-radius: 6px; }
 .tile { cursor: pointer; }
 .tile:focus { outline: none; }
 .tile:focus-visible rect.cell, .tile:hover rect.cell { stroke: var(--ink); stroke-width: 2; }
@@ -204,7 +211,16 @@ footer p { margin: 4px 0; }
   <main>
     <section id="view-a" hidden>
       <div class="panel">
-        <svg id="treemap" role="img" aria-label="Treemap of packages by ecosystem"></svg>
+        <div class="zoombar">
+            <span class="zhint">Pinch, Ctrl/⌘ + scroll or double-click to zoom · drag to pan</span>
+            <span id="zoom-level"></span>
+            <button id="zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
+            <button id="zoom-out" title="Zoom out" aria-label="Zoom out">−</button>
+            <button id="zoom-reset" class="wide" title="Reset zoom">Fit</button>
+        </div>
+        <div id="treemap-box">
+          <svg id="treemap" tabindex="0" aria-label="Treemap of packages by ecosystem. Plus and minus keys zoom, 0 resets."></svg>
+        </div>
         <p class="hint" id="treemap-hint"></p>
       </div>
     </section>
@@ -216,7 +232,8 @@ footer p { margin: 4px 0; }
     <p>Data: <a href="https://osv.dev">OSV.dev</a> (including the <a href="https://github.com/github/advisory-database">GitHub Advisory Database</a>, CC-BY 4.0),
       <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA Known Exploited Vulnerabilities</a>,
       <a href="https://www.first.org/epss/">FIRST EPSS</a>,
-      <a href="https://nvd.nist.gov">NVD</a>, download counts from npm and pypistats.</p>
+      <a href="https://nvd.nist.gov">NVD</a>; download counts from npm, pypistats, crates.io, Packagist, RubyGems and hex.pm;
+      group sizes and framework shares from the <a href="https://survey.stackoverflow.co/2026/technology/data">Stack Overflow Developer Survey 2026</a>.</p>
     <p>This product uses the NVD API but is not endorsed or certified by the NVD.</p>
     <p>Severity labels come from the upstream advisory and can be wrong. Always check the advisory before acting.
       Source code: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).</p>
@@ -367,68 +384,259 @@ function squarify(items, x, y, w, h) {
   return items;
 }
 
-function renderTreemap() {
-  const svg = $("#treemap");
-  const W = svg.parentElement.clientWidth - 24;
-  const H = Math.max(420, Math.min(720, Math.round(W * (W < 600 ? 1.3 : 0.58))));
-  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  svg.setAttribute("height", H);
-  svg.replaceChildren();
+// The treemap is laid out once in "world" coordinates (the box size at zoom 1)
+// and drawn in screen coordinates for the current zoom. Text is always drawn at
+// a fixed screen size, so zooming in makes room for more of it on each tile.
+const zoom = { k: 1, tx: 0, ty: 0 };
+const ZOOM_MAX = 8;
+const HEAD = 18;            // group header height, world px
+let layout = null;          // { W, H, groups: [{ eco, x, y, w, h, tiles: [{ p, x, y, w, h }] }] }
+let tmDragged = false;
+let tmClickTimer = 0;       // a single click opens the timeline unless a double-click (zoom) follows
+const compact = new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 });
 
-  // Every ecosystem gets the same area: download counts are not comparable
-  // across registries, and Maven / Go use fixed weights.
-  const groups = squarify(DATA.ecosystems.map((e) => ({ value: 1, eco: e })), 0, 0, W, H);
-  const HEAD = 22, GAP = 2;
+function computeLayout() {
+  const box = $("#treemap-box");
+  const W = Math.max(280, box.clientWidth);
+  const H = Math.max(520, Math.min(980, Math.round(W * (W < 600 ? 1.6 : 0.66))));
+  // Group area follows the share of Stack Overflow 2026 respondents who use the
+  // ecosystem's language. The floor keeps small ecosystems (Hex) findable.
+  const total = DATA.ecosystems.reduce((s, e) => s + (e.survey_share || 10), 0);
+  const groups = squarify(DATA.ecosystems.map((e) => ({ value: Math.max((e.survey_share || 10) / total, 0.035), eco: e })), 0, 0, W, H);
   for (const g of groups) {
-    const gx = g.x + GAP, gy = g.y + GAP, gw = g.w - GAP * 2, gh = g.h - GAP * 2;
-    const grp = svgEl("g");
-    const head = svgEl("text", { x: gx + 4, y: gy + 15, "font-size": 13, "font-weight": 650, fill: "var(--ink)" });
-    const affected = g.eco.packages.filter((p) => pkgVulns(p).length).length;
-    head.textContent = `${g.eco.label}  ·  ${affected}/${g.eco.packages.length} affected`;
-    grp.append(head);
-
-    const total = g.eco.packages.reduce((s, p) => s + p.popularity, 0) || 1;
-    // Floor each tile at 3% of the group so small packages stay clickable.
-    const tiles = g.eco.packages.map((p) => ({ value: Math.max(p.popularity / total, 0.03), p }));
-    squarify(tiles, gx, gy + HEAD, gw, gh - HEAD);
-    for (const t of tiles) {
-      const vulns = pkgVulns(t.p), lvl = pkgLevel(vulns);
-      const kevs = vulns.filter((v) => v.kev).length;
-      const node = svgEl("g", { class: "tile", tabindex: 0, role: "button", "aria-label": `${t.p.label}: ${vulns.length} vulnerabilities, ${LEVEL_NAME[lvl]}` });
-      node.append(svgEl("rect", { class: "cell", x: t.x + 1, y: t.y + 1, width: Math.max(0, t.w - 2), height: Math.max(0, t.h - 2), rx: 4, fill: `var(--sev-${lvl})` }));
-      const ink = `var(--sev-${lvl}-ink)`;
-      const fs = Math.max(11, Math.min(18, Math.sqrt(t.w * t.h) / 7));
-      if (t.w > 44 && t.h > 26) {
-        const name = svgEl("text", { x: t.x + 7, y: t.y + 6 + fs, "font-size": fs, "font-weight": 650, fill: ink });
-        const maxChars = Math.floor((t.w - 12) / (fs * 0.58));
-        name.textContent = t.p.label.length > maxChars ? t.p.label.slice(0, Math.max(1, maxChars - 1)) + "…" : t.p.label;
-        node.append(name);
-        if (t.h > fs + 30) {
-          const sub = svgEl("text", { x: t.x + 7, y: t.y + 10 + fs + 15, "font-size": 12, fill: ink });
-          sub.textContent = vulns.length ? `${vulns.length} vuln${vulns.length > 1 ? "s" : ""}${kevs ? " · KEV" : ""}` : "clear";
-          node.append(sub);
-        }
-      }
-      node.addEventListener("mousemove", (ev) => {
-        const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a))[0];
-        showTip(`<div class="t">${esc(t.p.label)} <span class="m">${esc(g.eco.label)}</span></div>
-          <div>${vulns.length} in the last ${state.range} days · <span class="pill l${lvl}">${LEVEL_NAME[lvl]}</span>${kevs ? ' <span class="pill kev">KEV</span>' : ""}</div>
-          ${top ? `<div class="m">Worst: ${esc(top.id)} — ${esc(top.summary)}</div>` : ""}
-          <div class="m">Size: ${esc(t.p.popularity_source)}${t.p.popularity_source === "fixed weight" ? "" : " " + fmt(t.p.popularity)}</div>
-          <div class="m">Click for timeline</div>`, ev);
-      });
-      node.addEventListener("mouseleave", hideTip);
-      const open = () => { hideTip(); setState({ view: "c", pkg: t.p.key }); };
-      node.addEventListener("click", open);
-      node.addEventListener("keydown", (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); open(); } });
-      grp.append(node);
-    }
-    svg.append(grp);
+    const ptotal = g.eco.packages.reduce((s, p) => s + p.popularity, 0) || 1;
+    // Floor each tile at 2% of its group so small packages stay clickable.
+    g.tiles = g.eco.packages.map((p) => ({ value: Math.max(p.popularity / ptotal, 0.02), p }));
+    squarify(g.tiles, g.x + 2, g.y + HEAD, g.w - 4, g.h - HEAD - 2);
   }
+  layout = { W, H, groups };
+}
+
+function clampZoom() {
+  const { W, H } = layout;
+  zoom.k = Math.min(ZOOM_MAX, Math.max(1, zoom.k));
+  zoom.tx = Math.min(0, Math.max(W - W * zoom.k, zoom.tx));
+  zoom.ty = Math.min(0, Math.max(H - H * zoom.k, zoom.ty));
+}
+
+function zoomAt(factor, sx, sy) {
+  const k0 = zoom.k;
+  zoom.k = Math.min(ZOOM_MAX, Math.max(1, k0 * factor));
+  const f = zoom.k / k0;
+  zoom.tx = sx - (sx - zoom.tx) * f;
+  zoom.ty = sy - (sy - zoom.ty) * f;
+  clampZoom();
+  scheduleTreemap();
+}
+
+let tmFrame = 0;
+function scheduleTreemap() {
+  if (!tmFrame) tmFrame = requestAnimationFrame(() => { tmFrame = 0; drawTreemap(); });
+}
+
+function renderTreemap() {
+  computeLayout();
+  clampZoom();
+  drawTreemap();
   const fixedEcos = DATA.ecosystems.filter((e) => e.packages.every((p) => p.popularity_source === "fixed weight")).map((e) => e.label);
   $("#treemap-hint").textContent =
-    `Color = worst issue published in the last ${state.range} days${state.kevOnly ? " (KEV only)" : ""}. Tile size = weekly downloads within each ecosystem` +
-    (fixedEcos.length ? `; ${fixedEcos.join(", ")} use equal weights (no download data).` : ".");
+    `Color = worst issue published in the last ${state.range} days${state.kevOnly ? " (KEV only)" : ""}. ` +
+    `Group area = share of ${DATA.survey ? DATA.survey.name : "survey"} respondents using the language. ` +
+    `Tile size = downloads within each group` + (fixedEcos.length ? ` (${fixedEcos.join(", ")}: equal weights, no download data).` : ".") +
+    ` Tiles show more detail as they grow.`;
+}
+
+function fitText(s, width, fs) {
+  const max = Math.floor(width / (fs * 0.56));
+  if (max < 2) return "";
+  return s.length > max ? s.slice(0, max - 1) + "…" : s;
+}
+
+function wrapText(s, width, fs, lines) {
+  const max = Math.floor(width / (fs * 0.56));
+  const out = [];
+  let cur = "";
+  for (const word of s.split(/\s+/)) {
+    if ((cur + " " + word).trim().length > max) {
+      if (cur) out.push(cur);
+      cur = word;
+      if (out.length === lines) break;
+    } else cur = (cur + " " + word).trim();
+  }
+  if (out.length < lines && cur) out.push(cur);
+  if (out.length === lines && out.join(" ").length < s.length) out[lines - 1] = fitText(out[lines - 1] + "…", width, fs);
+  return out.slice(0, lines).map((l) => fitText(l, width, fs));
+}
+
+function drawTreemap() {
+  if (!layout) return;
+  const svg = $("#treemap");
+  const { W, H, groups } = layout;
+  const { k, tx, ty } = zoom;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("height", H);
+  svg.style.touchAction = k > 1 ? "none" : "pan-x pan-y";
+  $("#zoom-level").textContent = k > 1.01 ? `${k.toFixed(1)}×` : "";
+  svg.replaceChildren();
+  const X = (x) => x * k + tx, Y = (y) => y * k + ty;
+  const visible = (x, y, w, h) => x + w > 0 && y + h > 0 && x < W && y < H;
+
+  for (const g of groups) {
+    const gx = X(g.x), gy = Y(g.y), gw = g.w * k, gh = g.h * k;
+    if (!visible(gx, gy, gw, gh)) continue;
+    const grp = svgEl("g");
+    grp.append(svgEl("rect", { x: gx + 1, y: gy + 1, width: Math.max(0, gw - 2), height: Math.max(0, gh - 2), rx: 6, fill: "none", stroke: "var(--grid)" }));
+    const affected = g.eco.packages.filter((p) => pkgVulns(p).length).length;
+    const headH = HEAD * k;
+    const hfs = Math.min(13, Math.max(10, headH * 0.62));
+    if (headH >= 12 && gw > 40) {
+      const head = svgEl("text", { x: Math.max(gx, 0) + 6, y: gy + Math.min(headH, 26) / 2 + hfs * 0.36 + 1, "font-size": hfs, "font-weight": 650, fill: "var(--ink)" });
+      const extra = g.eco.survey_share ? ` · ${g.eco.languages} ${g.eco.survey_share}%` : "";
+      head.textContent = fitText(`${g.eco.label}  ${affected}/${g.eco.packages.length}${gw * 1 > 260 ? extra : ""}`, gw - 12, hfs);
+      grp.append(head);
+    }
+    for (const t of g.tiles) drawTile(grp, g, t, X(t.x), Y(t.y), t.w * k, t.h * k, visible);
+    svg.append(grp);
+  }
+}
+
+function drawTile(grp, g, t, x, y, w, h, visible) {
+  if (!visible(x, y, w, h)) return;
+  const vulns = pkgVulns(t.p), lvl = pkgLevel(vulns);
+  const kevs = vulns.filter((v) => v.kev).length;
+  const node = svgEl("g", { class: "tile", tabindex: 0, role: "button", "aria-label": `${t.p.label}: ${vulns.length} vulnerabilities, ${LEVEL_NAME[lvl]}` });
+  node.append(svgEl("rect", { class: "cell", x: x + 1, y: y + 1, width: Math.max(0, w - 2), height: Math.max(0, h - 2), rx: Math.min(4, w / 6), fill: `var(--sev-${lvl})` }));
+  const ink = `var(--sev-${lvl}-ink)`;
+  const pad = 5, iw = w - pad * 2;
+  let cy = y + pad;
+  const line = (text, fs, weight = 400, opacity = 1) => {
+    if (!text || cy + fs > y + h - 3) return false;
+    cy += fs;
+    const el = svgEl("text", { x: x + pad, y: cy - fs * 0.18, "font-size": fs, "font-weight": weight, fill: ink, opacity });
+    el.textContent = text;
+    node.append(el);
+    cy += 3;
+    return true;
+  };
+  if (w >= 30 && h >= 14) {
+    const fs = Math.max(9.5, Math.min(14, Math.sqrt(w * h) / 8));
+    line(fitText(t.p.label, iw, fs), fs, 650);
+    if (w >= 56 && h >= fs + 16) {
+      line(fitText(vulns.length ? `${vulns.length} vuln${vulns.length > 1 ? "s" : ""}${kevs ? " · KEV" : ""}` : "clear", iw, 10.5), 10.5);
+    }
+    if (w >= 120 && h >= 64 && vulns.length) {
+      const by = [3, 2, 1].map((l) => [l, vulns.filter((v) => vulnLevel(v) === l).length]).filter(([, n]) => n);
+      line(fitText(by.map(([l, n]) => `${n} ${["", "low/med", "high", "crit"][l]}`).join(" · "), iw, 10.5), 10.5, 400, 0.85);
+      const f = fixedList(vulns);
+      if (f.length) line(fitText(`Fixed: ${f.slice(0, 4).join(", ")}`, iw, 10.5), 10.5, 400, 0.85);
+    }
+    if (w >= 170 && h >= 110 && vulns.length) {
+      const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a) || b.published.localeCompare(a.published))[0];
+      cy += 3;
+      line(fitText(`${top.id} · ${top.severity}`, iw, 10.5), 10.5, 650);
+      const room = Math.floor((y + h - cy - 18) / 14);
+      for (const l of wrapText(top.summary, iw, 10.5, Math.max(0, Math.min(5, room)))) line(l, 10.5, 400, 0.9);
+    }
+    if (w >= 130 && h >= 84) {
+      const bits = [];
+      if (t.p.popularity_source !== "fixed weight") bits.push(`${compact.format(t.p.popularity)} ${t.p.popularity_source.replace(/^.*downloads, /, "dl/").replace("last week", "wk").replace("last 30 days", "30d").replace("last 90 days", "90d").replace("all time", "total").replace(/ \(.*\)/, "")}`);
+      if (t.p.survey) bits.push(`SO ${t.p.survey}%`);
+      if (bits.length) {
+        const el = svgEl("text", { x: x + pad, y: y + h - 6, "font-size": 10, fill: ink, opacity: 0.75 });
+        el.textContent = fitText(bits.join(" · "), iw, 10);
+        node.append(el);
+      }
+    }
+  }
+  node.addEventListener("mousemove", (ev) => {
+    const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a))[0];
+    showTip(`<div class="t">${esc(t.p.label)} <span class="m">${esc(g.eco.label)}${t.p.label !== t.p.name ? " · " + esc(t.p.name) : ""}</span></div>
+      <div>${vulns.length} in the last ${state.range} days · <span class="pill l${lvl}">${LEVEL_NAME[lvl]}</span>${kevs ? ' <span class="pill kev">KEV</span>' : ""}</div>
+      ${top ? `<div class="m">Worst: ${esc(top.id)} — ${esc(top.summary)}</div>` : ""}
+      <div class="m">Size: ${t.p.popularity_source === "fixed weight" ? "fixed weight" : esc(compact.format(t.p.popularity)) + " " + esc(t.p.popularity_source)}</div>
+      ${t.p.survey ? `<div class="m">Used by ${t.p.survey}% of ${esc(DATA.survey ? DATA.survey.name : "survey")} respondents (web frameworks)</div>` : ""}
+      <div class="m">Click for timeline</div>`, ev);
+  });
+  node.addEventListener("mouseleave", hideTip);
+  const open = () => { hideTip(); setState({ view: "c", pkg: t.p.key }); };
+  node.addEventListener("click", (ev) => {
+    if (tmDragged || ev.detail > 1) return;
+    clearTimeout(tmClickTimer);
+    tmClickTimer = setTimeout(open, 250);
+  });
+  node.addEventListener("keydown", (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); open(); } });
+  grp.append(node);
+}
+
+function initTreemapZoom() {
+  const svg = $("#treemap");
+  const toLocal = (ev) => {
+    const r = svg.getBoundingClientRect();
+    return [(ev.clientX - r.left) * (layout.W / r.width), (ev.clientY - r.top) * (layout.H / r.height)];
+  };
+  svg.addEventListener("wheel", (ev) => {
+    if (!layout || !(ev.ctrlKey || ev.metaKey)) return;   // plain wheel keeps scrolling the page
+    ev.preventDefault();
+    const [sx, sy] = toLocal(ev);
+    // About 1.4x per mouse-wheel notch (deltaY ~100); trackpad pinches send small deltas.
+    const dy = ev.deltaMode === 1 ? ev.deltaY * 33 : ev.deltaY;
+    zoomAt(Math.min(1.4, Math.max(1 / 1.4, Math.pow(2, -dy / 200))), sx, sy);
+  }, { passive: false });
+  svg.addEventListener("dblclick", (ev) => {
+    clearTimeout(tmClickTimer);
+    if (!layout) return;
+    ev.preventDefault();
+    const [sx, sy] = toLocal(ev);
+    zoomAt(ev.shiftKey ? 0.5 : 2, sx, sy);
+  });
+
+  const pointers = new Map();
+  let start = null;
+  svg.addEventListener("pointerdown", (ev) => {
+    if (!layout) return;
+    pointers.set(ev.pointerId, toLocal(ev));
+    tmDragged = false;
+    start = { zoom: { ...zoom }, pts: new Map(pointers) };
+  });
+  svg.addEventListener("pointermove", (ev) => {
+    if (!pointers.has(ev.pointerId) || !start) return;
+    pointers.set(ev.pointerId, toLocal(ev));
+    const pts = [...pointers.values()], first = [...start.pts.values()];
+    if (pts.length >= 2 && first.length >= 2) {
+      const d0 = Math.hypot(first[0][0] - first[1][0], first[0][1] - first[1][1]) || 1;
+      const d1 = Math.hypot(pts[0][0] - pts[1][0], pts[0][1] - pts[1][1]);
+      const c0 = [(first[0][0] + first[1][0]) / 2, (first[0][1] + first[1][1]) / 2];
+      const c1 = [(pts[0][0] + pts[1][0]) / 2, (pts[0][1] + pts[1][1]) / 2];
+      const k = Math.min(ZOOM_MAX, Math.max(1, start.zoom.k * d1 / d0)), f = k / start.zoom.k;
+      Object.assign(zoom, { k, tx: c1[0] - (c0[0] - start.zoom.tx) * f, ty: c1[1] - (c0[1] - start.zoom.ty) * f });
+      tmDragged = true;
+    } else if (pts.length === 1 && start.zoom.k > 1) {
+      const p0 = start.pts.get(ev.pointerId);
+      if (!p0) return;
+      const dx = pts[0][0] - p0[0], dy = pts[0][1] - p0[1];
+      if (Math.hypot(dx, dy) < 4 && !tmDragged) return;
+      tmDragged = true;
+      hideTip();
+      Object.assign(zoom, { tx: start.zoom.tx + dx, ty: start.zoom.ty + dy });
+    } else return;
+    clampZoom();
+    scheduleTreemap();
+  });
+  const end = (ev) => {
+    pointers.delete(ev.pointerId);
+    start = pointers.size ? { zoom: { ...zoom }, pts: new Map(pointers) } : null;
+    setTimeout(() => { if (!pointers.size) tmDragged = false; }, 0);
+  };
+  svg.addEventListener("pointerup", end);
+  svg.addEventListener("pointercancel", end);
+  svg.addEventListener("keydown", (ev) => {
+    if (ev.key === "+" || ev.key === "=") zoomAt(1.5, layout.W / 2, layout.H / 2);
+    else if (ev.key === "-" || ev.key === "_") zoomAt(1 / 1.5, layout.W / 2, layout.H / 2);
+    else if (ev.key === "0") { Object.assign(zoom, { k: 1, tx: 0, ty: 0 }); scheduleTreemap(); }
+  });
+  $("#zoom-in").onclick = () => layout && zoomAt(1.6, layout.W / 2, layout.H / 2);
+  $("#zoom-out").onclick = () => layout && zoomAt(1 / 1.6, layout.W / 2, layout.H / 2);
+  $("#zoom-reset").onclick = () => { Object.assign(zoom, { k: 1, tx: 0, ty: 0 }); scheduleTreemap(); };
 }
 
 // ------------------------------------------------------------ C: timeline
@@ -658,6 +866,7 @@ function render() {
 }
 
 function initControls() {
+  initTreemapZoom();
   document.querySelectorAll("[data-view]").forEach((b) => b.onclick = () => setState({ view: b.dataset.view, pkg: b.dataset.view === "c" ? state.pkg : null }));
   document.querySelectorAll("[data-range]").forEach((b) => b.onclick = () => setState({ range: Number(b.dataset.range) }, false));
   $("#kevonly").onchange = (e) => setState({ kevOnly: e.target.checked }, false);
@@ -678,7 +887,14 @@ function initControls() {
   };
   addEventListener("popstate", () => { Object.assign(state, { view: "a", pkg: null, range: 7, kevOnly: false }, readUrl()); render(); });
   let t;
-  addEventListener("resize", () => { clearTimeout(t); t = setTimeout(render, 150); });
+  addEventListener("resize", () => {
+    clearTimeout(t);
+    t = setTimeout(() => {
+      // A new width means a new layout; a height-only change (mobile URL bar) keeps the zoom.
+      if (layout && $("#treemap-box").clientWidth !== layout.W) Object.assign(zoom, { k: 1, tx: 0, ty: 0 });
+      render();
+    }, 150);
+  });
 }
 
 async function main() {
