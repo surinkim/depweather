@@ -1,6 +1,6 @@
 # depweather forecast, 2026-10-26
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-26T12:32:35Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-26T12:58:04Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
