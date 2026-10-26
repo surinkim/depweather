@@ -195,8 +195,8 @@ python -m http.server                     # then open http://localhost:8000/
 
 ## Daily collection
 
-[`.github/workflows/collect.yml`](../.github/workflows/collect.yml) runs every day
-at 06:17 UTC and on demand (Actions → collect → Run workflow), then commits
+[`.github/workflows/collect.yml`](../.github/workflows/collect.yml) runs twice a
+day, at 06:17 and 18:17 UTC (GitHub can delay or skip a scheduled run), and on demand (Actions → collect → Run workflow), then commits
 `data/`. Add an `NVD_API_KEY` repository secret to speed up the NVD calls
 (optional).
 

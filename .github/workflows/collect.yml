@@ -1,8 +1,11 @@
 name: collect
 
 on:
+  # Twice a day: GitHub may delay scheduled runs by hours or skip one,
+  # so the second run keeps the site from going a whole day stale.
   schedule:
-    - cron: "17 6 * * *"   # daily, 06:17 UTC
+    - cron: "17 6 * * *"    # 06:17 UTC (15:17 KST)
+    - cron: "17 18 * * *"   # 18:17 UTC (03:17 KST)
   workflow_dispatch:
 
 permissions:

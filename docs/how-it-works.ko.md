@@ -179,8 +179,8 @@ python -m http.server                     # 브라우저에서 http://localhost:
 
 ## 매일 수집
 
-[`.github/workflows/collect.yml`](../.github/workflows/collect.yml)이 매일 06:17 UTC(한국
-시간 15:17)와 수동 실행 시(Actions → collect → Run workflow) 돌고 `data/`를 커밋합니다.
+[`.github/workflows/collect.yml`](../.github/workflows/collect.yml)이 하루 두 번, 06:17 UTC와
+18:17 UTC(한국 시간 15:17, 03:17)에 돌고(GitHub가 예약 실행을 늦추거나 건너뛸 수 있어서), 수동 실행(Actions → collect → Run workflow)도 됩니다. 실행할 때마다 `data/`를 커밋합니다.
 NVD 호출을 빠르게 하려면 저장소 시크릿 `NVD_API_KEY`를 추가하세요(선택).
 
 ### 공유 미리보기
