@@ -1,15 +1,22 @@
-# depweather forecast, 2026-10-26
+# depweather forecast, 2026-10-27
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-26T22:41:04Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-27T12:08:21Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 24 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 8
-- New CVEs in NVD today (UTC): 732
-- CVEs published in 2026-10 so far: 14,463 (same month last year: 4,273)
+- Popular packages with a new advisory this week: 23 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 10
+- New CVEs in NVD today (UTC): 156
+- CVEs published in 2026-10 so far: 14,625 (same month last year: 4,273)
 
 ## By ecosystem
+
+### Runtimes & servers
+
+- **PHP**: 2 advisories, worst actively exploited (CISA KEV); fixed in 8.2.35, 8.3.36, 8.4.27, 8.5.12. Example: [BIT-libphp-2026-109619](https://osv.dev/vulnerability/BIT-libphp-2026-109619) RCE via stale global state
+- **MariaDB**: 7 advisories, worst critical; fixed in 10.6.28, 10.11.19, 11.4.13, 11.8.9 and more. Example: [BIT-mariadb-2026-92262](https://osv.dev/vulnerability/BIT-mariadb-2026-92262) MariaDB: Numerous issues caused by historical #mysql50# tablename encoding bypass.
+- **nginx**: 5 advisories, worst critical; fixed in 1.30.6, 1.31.7, 1.29.0. Example: [BIT-nginx-2026-97205](https://osv.dev/vulnerability/BIT-nginx-2026-97205) NGINX ngx_http_core_module vulnerability
+- **Node.js (node)**: 1 advisory, worst critical; fixed in 22.23.4, 24.22.1, 26.12.1. Example: [BIT-node-2026-111497](https://osv.dev/vulnerability/BIT-node-2026-111497) A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.
 
 ### npm
 
@@ -24,7 +31,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### PyPI
 
-- **pillow**: 41 advisories, worst critical; fixed in 13.0.0. Example: [GHSA-5x8w-8jj5-q52h](https://osv.dev/vulnerability/GHSA-5x8w-8jj5-q52h) Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution
+- **pillow**: 38 advisories, worst critical; fixed in 13.0.0. Example: [GHSA-5x8w-8jj5-q52h](https://osv.dev/vulnerability/GHSA-5x8w-8jj5-q52h) Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution
 - **certifi**: 1 advisory, worst critical; fixed in 2026.10.18, 2026.10.19. Example: [GHSA-6q48-6c7w-9gw2](https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2) certifi bundles emSign root CAs with compromised intermediate CA keys
 - **aiohttp**: 5 advisories, worst high; fixed in 3.14.4. Example: [GHSA-9xw5-w5jj-pvcg](https://osv.dev/vulnerability/GHSA-9xw5-w5jj-pvcg) AIOHTTP: File descriptor exhaustion in multipart requests
 - **pyjwt**: 1 advisory, worst high; fixed in 2.14.0. Example: [GHSA-pxh4-856f-4h89](https://osv.dev/vulnerability/GHSA-pxh4-856f-4h89) PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
@@ -44,17 +51,9 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **hackney**: 5 advisories, worst critical; fixed in 4.9.0. Example: [EEF-CVE-2026-115693](https://osv.dev/vulnerability/EEF-CVE-2026-115693) Custom cacerts or cacertfile do not restrict trust to the pinned CA in hackney
 - **plug**: 1 advisory, worst medium; fixed in 1.7.0. Example: [EEF-CVE-2026-105963](https://osv.dev/vulnerability/EEF-CVE-2026-105963) Secret key base exposed in stack trace arguments on wrong-typed Plug.Crypto arguments
 
-### Runtimes & servers
-
-- **MariaDB**: 7 advisories, worst critical; fixed in 10.6.28, 10.11.19, 11.4.13, 11.8.9 and more. Example: [BIT-mariadb-2026-92262](https://osv.dev/vulnerability/BIT-mariadb-2026-92262) MariaDB: Numerous issues caused by historical #mysql50# tablename encoding bypass.
-- **nginx**: 5 advisories, worst critical; fixed in 1.30.6, 1.31.7, 1.29.0. Example: [BIT-nginx-2026-97205](https://osv.dev/vulnerability/BIT-nginx-2026-97205) NGINX ngx_http_core_module vulnerability
-- **PHP**: 2 advisories, worst critical; fixed in 8.2.35, 8.3.36, 8.4.27, 8.5.12. Example: [BIT-libphp-2026-109619](https://osv.dev/vulnerability/BIT-libphp-2026-109619) RCE via stale global state
-- **Node.js (node)**: 1 advisory, worst critical; fixed in 22.23.4, 24.22.1, 26.12.1. Example: [BIT-node-2026-111497](https://osv.dev/vulnerability/BIT-node-2026-111497) A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.
-
 ### crates.io
 
 - **tokio**: 1 advisory, worst medium; fixed in 1.54.1. Example: [GHSA-5wjr-9356-4wc8](https://osv.dev/vulnerability/GHSA-5wjr-9356-4wc8) Tokio: Race condition in `tokio::time::Interval`
-- **rustls**: 1 advisory, worst low or unrated; fixed in 0.103.16, 0.104.0-alpha.8. Example: [RUSTSEC-2026-0382](https://osv.dev/vulnerability/RUSTSEC-2026-0382) Certificate verification may accept distrusted intermediates
 
 ### Maven
 
@@ -70,6 +69,8 @@ No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-10-26: CVE-2026-109618, PHP Group PHP: PHP Memory Corruption Vulnerability
+- 2026-10-26: CVE-2026-109619, PHP Group PHP: PHP Stale Internal Request-State Vulnerability
 - 2026-10-23: CVE-2026-114625, Arista VeloCloud Orchestrator: Arista VeloCloud Orchestrator SQL Injection Vulnerability
 - 2026-10-23: CVE-2026-110447, Collabora Collabora Online – Built-in CODE Server: Collabora Online – Built-in CODE Server OS Command Injection Vulnerability
 - 2026-10-20: CVE-2026-106931, EG Secure Solutions SiteGuard Server Edition: EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability
