@@ -48,6 +48,7 @@ NVD_MONTHS = 14
 USER_AGENT = "depweather-collector (+https://github.com/surinkim/depweather)"
 
 OSV_BUCKET = "https://osv-vulnerabilities.storage.googleapis.com"
+OSV_QUERY = "https://api.osv.dev/v1/query"
 KEV_URLS = [
     "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
     # CISA's own mirror of the same feed on GitHub
@@ -92,6 +93,23 @@ def http_get(url: str, headers: dict | None = None, timeout: int = 60, retries: 
 
 def get_json(url: str, **kw):
     return json.loads(http_get(url, **kw))
+
+
+def post_json(url: str, body: dict, timeout: int = 60) -> dict:
+    req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST",
+                                 headers={"User-Agent": USER_AGENT, "Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.loads(r.read())
+
+
+def effective_date(v: dict) -> datetime:
+    """When a vulnerability became news: its publication, or its addition to
+    CISA KEV if that came later (an old bug that is exploited now)."""
+    published = parse_time(v["published"])
+    if v.get("kev_date_added"):
+        added = datetime.fromisoformat(v["kev_date_added"]).replace(tzinfo=timezone.utc)
+        return max(published, added)
+    return published
 
 
 def parse_time(s: str) -> datetime:
@@ -235,8 +253,11 @@ def name_matches(ecosystem: str, name: str, patterns: list[str]) -> bool:
     return False
 
 
-def collect_osv(stacks: list[dict], now: datetime) -> dict[tuple[str, str], list[dict]]:
-    """Return {(ecosystem, package): [merged vulnerability, ...]} for the window."""
+def collect_osv(stacks: list[dict], now: datetime,
+                extra: dict[tuple[str, str], list[dict]] | None = None) -> dict[tuple[str, str], list[dict]]:
+    """Return {(ecosystem, package): [merged vulnerability, ...]} for the window.
+
+    `extra` adds older records that must be shown anyway (see kev_backfill)."""
     since = now - timedelta(days=WINDOW_DAYS)
     wanted = {(e["osv"], p["name"]) for e in stacks for p in e["packages"]}
     found: dict[tuple[str, str], list[dict]] = {k: [] for k in wanted}
@@ -264,8 +285,66 @@ def collect_osv(stacks: list[dict], now: datetime) -> dict[tuple[str, str], list
             for n in hit:
                 found[(osv_eco, n)].append(rec)
 
+    for k, recs in (extra or {}).items():
+        have = {r["id"] for r in found[k]}
+        found[k] += [r for r in recs if r["id"] not in have]
+
     pats = {(e["osv"], p["name"]): patterns_of(p) for e in stacks for p in e["packages"]}
     return {k: merge_aliases(k[0], pats[k], recs) for k, recs in found.items()}
+
+
+def osv_package_records(ecosystem: str, name: str) -> list[dict]:
+    """Every OSV record for one package, through the OSV query API (paginated)."""
+    out, token = [], None
+    while True:
+        body = {"package": {"name": name, "ecosystem": ecosystem}}
+        if token:
+            body["page_token"] = token
+        data = post_json(OSV_QUERY, body)
+        out += data.get("vulns") or []
+        token = data.get("next_page_token")
+        if not token:
+            return out
+
+
+def kev_backfill(stacks: list[dict], kev: dict[str, dict], now: datetime) -> tuple[dict, int, list[str]]:
+    """Older advisories of tracked packages whose CVE was added to CISA KEV
+    within the window. The modified-records export only covers advisories
+    published in the window, so these are looked up per package instead.
+
+    Returns ({(ecosystem, package): [record, ...]}, records added, errors).
+    Prefix patterns (e.g. "symfony/*") are not queried; exact names are."""
+    since = now - timedelta(days=WINDOW_DAYS)
+    recent = {c for c, v in kev.items() if v.get("dateAdded", "") >= since.date().isoformat()}
+    if not recent:
+        return {}, 0, []
+    jobs = [((e["osv"], p["name"]), e["osv"], n)
+            for e in stacks for p in e["packages"]
+            for n in patterns_of(p) if not n.endswith("*")]
+    errors: list[str] = []
+
+    def run(job):
+        key, eco, name = job
+        try:
+            return key, osv_package_records(eco, name)
+        except Exception as e:  # noqa: BLE001 - one package must not stop the run
+            errors.append(f"{eco}/{name}: {e}")
+            return key, []
+
+    extra: dict[tuple[str, str], list[dict]] = {}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for key, recs in pool.map(run, jobs):
+            for rec in recs:
+                if rec.get("withdrawn") or not rec.get("published"):
+                    continue
+                if parse_time(rec["published"]) >= since:
+                    continue  # already in the window export
+                if {rec["id"], *rec.get("aliases", [])} & recent:
+                    extra.setdefault(key, []).append(rec)
+    added = sum(len(v) for v in extra.values())
+    log(f"kev backfill: {len(recent)} CVEs added to KEV in {WINDOW_DAYS} days, "
+        f"{added} older advisories of tracked packages, {len(errors)} lookup errors")
+    return extra, added, errors
 
 
 def merge_aliases(ecosystem: str, patterns: list[str], recs: list[dict]) -> list[dict]:
@@ -492,7 +571,7 @@ def today_markdown(out: dict, days: int = 7) -> str:
     for e in out["ecosystems"]:
         hits = []
         for p in e["packages"]:
-            recent = [v for v in p["vulns"] if parse_time(v["published"]) >= since]
+            recent = [v for v in p["vulns"] if effective_date(v) >= since]
             if not recent:
                 continue
             kev = [v for v in recent if v.get("kev")]
@@ -565,16 +644,20 @@ def main() -> int:
     previous = json.loads(latest_path.read_text()) if latest_path.exists() else None
     sources: dict[str, dict] = {}
 
+    kev, kev_url = collect_kev()
+    sources["kev"] = {"ok": kev is not None, "url": kev_url}
+
+    extra, backfilled, errors = kev_backfill(stacks, kev, now) if kev else ({}, 0, [])
+    sources["kev_backfill"] = {"ok": not errors, "url": OSV_QUERY, "added": backfilled,
+                               "errors": errors[:5]}
+
     try:
-        osv = collect_osv(stacks, now)
+        osv = collect_osv(stacks, now, extra)
         sources["osv"] = {"ok": True, "url": OSV_BUCKET}
     except Exception as e:  # noqa: BLE001
         # Without OSV there is nothing to draw; keep the last good file.
         log(f"osv failed: {e}")
         return 1
-
-    kev, kev_url = collect_kev()
-    sources["kev"] = {"ok": kev is not None, "url": kev_url}
 
     all_cves = {c for vulns in osv.values() for v in vulns for c in v["cves"]}
     epss, epss_url, epss_date = collect_epss(all_cves)
@@ -601,7 +684,7 @@ def main() -> int:
                 v["epss_percentile"] = max(s[1] for s in scores) if scores else None
             pop, pop_src = popularity(eco, p)
             pop_sources.add(f"{eco['label']}: {pop_src}")
-            recent = [v for v in vulns if parse_time(v["published"]) >= week_ago]
+            recent = [v for v in vulns if effective_date(v) >= week_ago]
             pkgs.append({
                 "key": f"{eco['id']}/{p['name']}",
                 "name": p["name"],

@@ -354,7 +354,7 @@ footer p { margin: 4px 0; }
       npm, PyPI, Maven, NuGet, crates.io, Packagist, Go, RubyGems and Hex, plus runtimes and servers such as PHP,
       Node.js and nginx. It answers one question: did a popular package get a serious vulnerability this week?</p>
     <h3>What do the colors mean?</h3>
-    <p>Each tile is a package, colored by its worst advisory published in the last 7 days: gray for none, yellow for
+    <p>Each tile is a package, colored by its worst advisory published (or added to CISA KEV) in the last 7 days: gray for none, yellow for
       low or medium, orange for high, red for critical, and magenta when the vulnerability is on the CISA Known
       Exploited Vulnerabilities list.</p>
     <h3>Where does the data come from?</h3>
@@ -381,7 +381,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-27.2";
+const BUILD = "2026-10-27.3";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -422,7 +422,7 @@ const I18N = {
     zoom_in: "Zoom in", zoom_out: "Zoom out", fit: "Fit", fit_title: "Reset zoom",
     fullscreen: "Full screen", exit_fullscreen: "Exit full screen",
     tm_hint: (r, kev, survey, fixed) =>
-      `Color = worst issue published in the last ${r} days${kev ? " (KEV only)" : ""}. ` +
+      `Color = worst issue published, or added to CISA KEV, in the last ${r} days${kev ? " (KEV only)" : ""}. ` +
       `Group area = share of ${survey} respondents using the language. ` +
       `Tile size = downloads within each group${fixed ? ` (${fixed}: equal weights, no download data)` : ""}. ` +
       `Tiles show more detail as they grow.`,
@@ -503,7 +503,7 @@ const I18N = {
     zoom_in: "확대", zoom_out: "축소", fit: "전체", fit_title: "확대 초기화",
     fullscreen: "전체 화면", exit_fullscreen: "전체 화면 종료",
     tm_hint: (r, kev, survey, fixed) =>
-      `색 = 최근 ${r}일 동안 공개된 취약점 중 가장 심각한 것${kev ? " (KEV만)" : ""}. ` +
+      `색 = 최근 ${r}일 동안 공개됐거나 CISA KEV에 추가된 취약점 중 가장 심각한 것${kev ? " (KEV만)" : ""}. ` +
       `그룹 면적 = ${survey} 응답자 중 해당 언어 사용 비율. ` +
       `타일 크기 = 그룹 안에서의 다운로드 수${fixed ? ` (${fixed}: 다운로드 데이터가 없어 같은 크기)` : ""}. ` +
       `확대할수록 타일에 정보가 더 표시됩니다.`,
@@ -555,7 +555,7 @@ const I18N = {
       NuGet, crates.io, Packagist, Go, RubyGems, Hex와 PHP, Node.js, nginx 같은 런타임·서버를 다룹니다.
       "이번 주 인기 패키지에 심각한 취약점이 나왔나?"에 답합니다.</p>
     <h3>색은 무엇을 뜻하나요?</h3>
-    <p>타일 하나가 패키지 하나이고, 최근 7일 동안 공개된 가장 심각한 권고로 색을 칠합니다. 회색은 없음, 노랑은 낮음·중간,
+    <p>타일 하나가 패키지 하나이고, 최근 7일 동안 공개됐거나 CISA KEV에 추가된 가장 심각한 권고로 색을 칠합니다. 회색은 없음, 노랑은 낮음·중간,
       주황은 높음, 빨강은 치명, 마젠타는 CISA 실제 악용 목록(KEV)에 오른 취약점입니다.</p>
     <h3>데이터는 어디서 오나요?</h3>
     <p>OSV(GitHub Advisory Database, Bitnami Vulnerability Database 포함), CISA KEV, FIRST EPSS, NVD에서 하루 한 번
@@ -635,7 +635,13 @@ function fmtEpss(x) {
   if (x < 0.001) return "<0.1%";
   return (Math.floor(x * 1000) / 10).toFixed(1) + "%";
 }
-function inRange(v, days) { return NOW - Date.parse(v.published) <= days * DAY; }
+// When a vulnerability became news: its publication, or its addition to CISA KEV
+// if that came later (an old bug that is exploited now). Matches the collector.
+function vulnDate(v) {
+  const published = Date.parse(v.published);
+  return v.kev_date_added ? Math.max(published, Date.parse(v.kev_date_added + "T00:00:00Z")) : published;
+}
+function inRange(v, days) { return NOW - vulnDate(v) <= days * DAY; }
 function pkgVulns(p, days = state.range) {
   return p.vulns.filter((v) => inRange(v, days) && (!state.kevOnly || v.kev));
 }
@@ -691,7 +697,7 @@ function vulnTip(v, p) {
     <div>${esc(v.summary)}</div>
     <div class="m">${esc(v.published.slice(0, 10))} · <span class="pill l${lvl}">${esc(v.severity)}</span>
     ${v.cvss != null ? " CVSS " + v.cvss : ""}${v.epss != null ? " · EPSS " + fmtEpss(v.epss) : ""}
-    ${v.kev ? ' · <span class="pill kev">KEV</span>' : ""}</div>
+    ${v.kev ? ` · <span class="pill kev">KEV</span> ${esc(t("tip_kev", v.kev_date_added))}` : ""}</div>
     ${v.fixed.length ? `<div class="m">${t("fixed_in")} ${esc(v.fixed.join(", "))}</div>` : ""}`;
 }
 
@@ -701,7 +707,7 @@ function renderMeta() {
   $("#build").textContent = t("build", BUILD, DATA.generated_at.slice(0, 16).replace("T", " "));
   const gen = new Date(DATA.generated_at).toISOString().slice(0, 16).replace("T", " ");
   $("#meta").textContent = t("meta", gen, DATA.summary.tracked_packages, DATA.ecosystems.length);
-  const missing = Object.entries(DATA.sources).filter(([, s]) => !s.ok).map(([k]) => ({ osv: "OSV", kev: "CISA KEV", epss: "FIRST EPSS", nvd: "NVD" }[k] || k));
+  const missing = Object.entries(DATA.sources).filter(([, s]) => !s.ok).map(([k]) => ({ osv: "OSV", kev: "CISA KEV", epss: "FIRST EPSS", nvd: "NVD", kev_backfill: "OSV API (older KEV entries)" }[k] || k));
   const w = $("#warn");
   w.hidden = !missing.length;
   if (missing.length) w.textContent = t("warn", missing.join(", "));
@@ -1187,7 +1193,7 @@ function timelineSvg(vulns, width, opts = {}) {
   const maxStack = opts.maxStack || 99;
   const byDay = new Map();
   for (const v of vulns) {
-    const d = Math.min(days, Math.max(0, Math.floor((NOW - Date.parse(v.published)) / DAY)));
+    const d = Math.min(days, Math.max(0, Math.floor((NOW - vulnDate(v)) / DAY)));
     if (!byDay.has(d)) byDay.set(d, []);
     byDay.get(d).push(v);
   }
@@ -1297,7 +1303,7 @@ function renderPackage(root, { eco, pkg }) {
     box.innerHTML = `<table class="data vulns"><thead><tr><th>${th.published}</th><th>${th.advisory}</th><th>${th.severity}</th><th class="num">CVSS</th><th class="num">EPSS</th><th>${th.fixed}</th><th>${th.summary}</th></tr></thead><tbody>
       ${vulns.map((v) => `<tr><td class="nowrap">${esc(v.published.slice(0, 10))}</td>
         <td class="nowrap"><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.id)}</a>${v.cves.length ? `<br><span class="meta">${esc(v.cves.join(", "))}</span>` : ""}</td>
-        <td><span class="pill l${vulnLevel(v)}">${esc(v.severity)}</span>${v.kev ? ' <span class="pill kev">KEV</span>' : ""}</td>
+        <td><span class="pill l${vulnLevel(v)}">${esc(v.severity)}</span>${v.kev ? ` <span class="pill kev" title="${esc(t("tip_kev", v.kev_date_added))}">KEV</span><br><span class="meta">${esc(v.kev_date_added)}</span>` : ""}</td>
         <td class="num">${v.cvss ?? "–"}</td><td class="num">${v.epss != null ? fmtEpss(v.epss) : "–"}</td>
         <td>${esc(v.fixed.join(", ") || "–")}</td><td class="summary">${esc(v.summary)}</td></tr>`).join("")}
       </tbody></table>`;

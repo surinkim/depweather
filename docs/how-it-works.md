@@ -70,6 +70,11 @@ weather of its worst package; clicking a group zooms the map to it.
 | Storm (cloud with lightning) | Red | Critical, or a malicious-package report (OSV `MAL-`) |
 | Exploited (magenta storm cloud) | Magenta | The CVE is in CISA KEV |
 
+An older advisory counts as new on the day its CVE is added to CISA KEV:
+"recent" means published, or added to KEV, within the period. The daily run
+looks these up per package through the OSV query API, since an old bug that
+starts being exploited is exactly what this page should not miss.
+
 Affected tiles carry the glyph, and timeline dots change shape with severity
 (circle, triangle, diamond), so severity never depends on color alone.
 
