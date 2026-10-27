@@ -381,7 +381,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-27.1";
+const BUILD = "2026-10-27.2";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -438,6 +438,8 @@ const I18N = {
     tip_worst: "Worst", tip_size: "Size", fixed_weight: "fixed weight",
     tip_survey: (s, name) => `Used by ${s}% of ${name} respondents (web frameworks)`,
     tip_click: "Click for timeline",
+    tip_epss: (p) => `Highest EPSS: ${p} (chance of exploitation in the next 30 days)`,
+    tip_kev: (d) => `On the CISA KEV list since ${d}`,
     today: "today", days_ago: (d) => `${d}d ago`,
     no_pkg: (p) => `No package <b>${p}</b> in the tracked list.`, show_all: "Show all",
     tl_head: "Last 30 days, packages with issues",
@@ -517,6 +519,8 @@ const I18N = {
     tip_worst: "가장 심각", tip_size: "크기", fixed_weight: "고정 가중치",
     tip_survey: (s, name) => `${name} 응답자 ${s}%가 사용 (웹 프레임워크)`,
     tip_click: "클릭하면 타임라인으로 이동",
+    tip_epss: (p) => `최고 EPSS: ${p} (앞으로 30일 안에 악용될 확률)`,
+    tip_kev: (d) => `CISA KEV 등재: ${d}`,
     today: "오늘", days_ago: (d) => `${d}일 전`,
     no_pkg: (p) => `추적 목록에 <b>${p}</b> 패키지가 없습니다.`, show_all: "전체 보기",
     tl_head: "최근 30일, 취약점이 있는 패키지",
@@ -626,6 +630,11 @@ function vulnLevel(v) {
   if (EPSS_BUMP_THRESHOLD != null && v.epss != null && v.epss >= EPSS_BUMP_THRESHOLD) lvl = Math.min(3, lvl + 1);
   return lvl;
 }
+// EPSS as a percentage, rounded down to 0.1 so a 99.997% score never reads as a certain 100%.
+function fmtEpss(x) {
+  if (x < 0.001) return "<0.1%";
+  return (Math.floor(x * 1000) / 10).toFixed(1) + "%";
+}
 function inRange(v, days) { return NOW - Date.parse(v.published) <= days * DAY; }
 function pkgVulns(p, days = state.range) {
   return p.vulns.filter((v) => inRange(v, days) && (!state.kevOnly || v.kev));
@@ -681,7 +690,7 @@ function vulnTip(v, p) {
   return `<div class="t">${esc(v.id)}${p ? " · " + esc(p.label) : ""}</div>
     <div>${esc(v.summary)}</div>
     <div class="m">${esc(v.published.slice(0, 10))} · <span class="pill l${lvl}">${esc(v.severity)}</span>
-    ${v.cvss != null ? " CVSS " + v.cvss : ""}${v.epss != null ? " · EPSS " + (v.epss * 100).toFixed(1) + "%" : ""}
+    ${v.cvss != null ? " CVSS " + v.cvss : ""}${v.epss != null ? " · EPSS " + fmtEpss(v.epss) : ""}
     ${v.kev ? ' · <span class="pill kev">KEV</span>' : ""}</div>
     ${v.fixed.length ? `<div class="m">${t("fixed_in")} ${esc(v.fixed.join(", "))}</div>` : ""}`;
 }
@@ -1050,9 +1059,14 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
   node.addEventListener("mousemove", (ev) => {
     const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a))[0];
     const unit = popUnit(p.popularity_source);
+    const scores = vulns.map((v) => v.epss).filter((x) => x != null);
+    const epssMax = scores.length ? Math.max(...scores) : null;
+    const kevDate = vulns.map((v) => v.kev_date_added).filter(Boolean).sort()[0];
     showTip(`<div class="t">${esc(p.label)} <span class="m">${esc(g.eco.label)}${p.label !== p.name ? " · " + esc(p.name) : ""}</span></div>
       <div>${t("tip_count", vulns.length, state.range)} · <span class="pill l${lvl}">${t("level")[lvl]}</span>${kevs ? ' <span class="pill kev">KEV</span>' : ""}</div>
       ${top ? `<div class="m">${t("tip_worst")}: ${esc(top.id)} — ${esc(top.summary)}</div>` : ""}
+      ${kevDate ? `<div class="m">${t("tip_kev", esc(kevDate))}</div>` : ""}
+      ${epssMax != null ? `<div class="m">${t("tip_epss", fmtEpss(epssMax))}</div>` : ""}
       <div class="m">${t("tip_size")}: ${unit ? esc(compact.format(p.popularity)) + " " + esc(t("pop_long")[unit]) : t("fixed_weight")}</div>
       ${p.survey ? `<div class="m">${esc(t("tip_survey", p.survey, DATA.survey ? DATA.survey.name : "survey"))}</div>` : ""}
       <div class="m">${t("tip_click")}</div>`, ev);
@@ -1284,7 +1298,7 @@ function renderPackage(root, { eco, pkg }) {
       ${vulns.map((v) => `<tr><td class="nowrap">${esc(v.published.slice(0, 10))}</td>
         <td class="nowrap"><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.id)}</a>${v.cves.length ? `<br><span class="meta">${esc(v.cves.join(", "))}</span>` : ""}</td>
         <td><span class="pill l${vulnLevel(v)}">${esc(v.severity)}</span>${v.kev ? ' <span class="pill kev">KEV</span>' : ""}</td>
-        <td class="num">${v.cvss ?? "–"}</td><td class="num">${v.epss != null ? (v.epss * 100).toFixed(1) + "%" : "–"}</td>
+        <td class="num">${v.cvss ?? "–"}</td><td class="num">${v.epss != null ? fmtEpss(v.epss) : "–"}</td>
         <td>${esc(v.fixed.join(", ") || "–")}</td><td class="summary">${esc(v.summary)}</td></tr>`).join("")}
       </tbody></table>`;
   }
