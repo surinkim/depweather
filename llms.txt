@@ -2,7 +2,7 @@
 
 > A free daily map of new vulnerabilities in about 150 popular open-source packages (npm, PyPI, Maven, NuGet, crates.io, Packagist, Go, RubyGems, Hex, plus runtimes and servers such as PHP, Node.js and nginx). Each package is colored by its worst advisory published in the last 7 days; actively exploited vulnerabilities (CISA KEV) are marked separately.
 
-Data is collected once a day from OSV (including the GitHub Advisory Database and the Bitnami Vulnerability Database), CISA KEV, FIRST EPSS and NVD. Severity comes from the upstream advisory and can be wrong; check the linked advisory before acting. depweather does not scan anyone's code.
+Data is collected twice a day from OSV (including the GitHub Advisory Database and the Bitnami Vulnerability Database), CISA KEV, FIRST EPSS and NVD. Severity comes from the upstream advisory and can be wrong; check the linked advisory before acting. depweather does not scan anyone's code.
 
 ## Today
 

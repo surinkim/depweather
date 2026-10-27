@@ -359,7 +359,7 @@ footer p { margin: 4px 0; }
       Exploited Vulnerabilities list.</p>
     <h3>Where does the data come from?</h3>
     <p>OSV (including the GitHub Advisory Database and the Bitnami Vulnerability Database), CISA KEV, FIRST EPSS and
-      NVD, collected once a day. Severity comes from the upstream advisory; check it before acting.</p>
+      NVD, collected twice a day. Severity comes from the upstream advisory; check it before acting.</p>
     <h3>Does it scan my code?</h3>
     <p>No. For your own dependencies, use Dependabot, npm audit, pip-audit, govulncheck or osv-scanner.</p>
     <h3>Can I read the data without this page?</h3>
@@ -381,7 +381,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-27.3";
+const BUILD = "2026-10-27.4";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -558,7 +558,7 @@ const I18N = {
     <p>타일 하나가 패키지 하나이고, 최근 7일 동안 공개됐거나 CISA KEV에 추가된 가장 심각한 권고로 색을 칠합니다. 회색은 없음, 노랑은 낮음·중간,
       주황은 높음, 빨강은 치명, 마젠타는 CISA 실제 악용 목록(KEV)에 오른 취약점입니다.</p>
     <h3>데이터는 어디서 오나요?</h3>
-    <p>OSV(GitHub Advisory Database, Bitnami Vulnerability Database 포함), CISA KEV, FIRST EPSS, NVD에서 하루 한 번
+    <p>OSV(GitHub Advisory Database, Bitnami Vulnerability Database 포함), CISA KEV, FIRST EPSS, NVD에서 하루 두 번
       모읍니다. 심각도는 원 권고의 값이니 조치 전에 확인하세요.</p>
     <h3>내 코드를 스캔하나요?</h3>
     <p>아니요. 내 의존성은 Dependabot, npm audit, pip-audit, govulncheck, osv-scanner로 확인하세요.</p>

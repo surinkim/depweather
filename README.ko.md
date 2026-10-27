@@ -4,7 +4,7 @@
 
 <p align="center">
   인기 패키지의 취약점 날씨.<br>
-  <a href="https://depweather.com/?lang=ko"><b>depweather.com</b></a> · 매일 갱신<br><br>
+  <a href="https://depweather.com/?lang=ko"><b>depweather.com</b></a> · 하루 두 번 갱신<br><br>
   <a href="README.md">English</a> | <b>한국어</b>
 </p>
 
@@ -44,7 +44,7 @@ depweather는 매일 아침 한 가지 질문에 답합니다. **내가 쓰고 �
 
 ## 작동 방식
 
-GitHub Actions 작업이 하루에 한 번 돕니다. [OSV](https://osv.dev)에서 권고를,
+GitHub Actions 작업이 하루에 두 번 돕니다. [OSV](https://osv.dev)에서 권고를,
 [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)에서 실제 악용
 여부를, [FIRST EPSS](https://www.first.org/epss/)에서 악용 확률을,
 [NVD](https://nvd.nist.gov)에서 CVE 건수를 모아 JSON 파일 하나로 만듭니다. HTML 한

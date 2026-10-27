@@ -4,7 +4,7 @@
 
 <p align="center">
   Vulnerability weather for popular packages.<br>
-  <a href="https://depweather.com"><b>depweather.com</b></a> · updated daily<br><br>
+  <a href="https://depweather.com"><b>depweather.com</b></a> · updated twice a day<br><br>
   <b>English</b> | <a href="README.ko.md">한국어</a>
 </p>
 
@@ -45,7 +45,7 @@ It does not scan your code. For that, use Dependabot, `npm audit`,
 
 ## How it works
 
-A GitHub Actions job runs once a day. It pulls advisories from
+A GitHub Actions job runs twice a day. It pulls advisories from
 [OSV](https://osv.dev), exploited flags from
 [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog),
 exploit probabilities from [FIRST EPSS](https://www.first.org/epss/) and CVE
