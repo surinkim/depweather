@@ -381,7 +381,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-25.9";
+const BUILD = "2026-10-27.1";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -464,7 +464,7 @@ const I18N = {
       group sizes and framework shares from the <a href="https://survey.stackoverflow.co/2026/technology/data">Stack Overflow Developer Survey 2026</a>.`,
     footer_disclaimer: `Severity labels come from the upstream advisory and can be wrong. Always check the advisory before acting.
       Source code: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
-    build: (b) => `Page version ${b}`,
+    build: (b, d) => (d ? `Data updated ${d} UTC. ` : "") + `Page code version ${b}.`,
     gh_title: "Source code on GitHub",
     footer_analytics: "This site uses Google Analytics to count visits.",
     rd_kev: "added to CISA KEV this week", rd_aff: (n) => `of ${n} packages affected this week`,
@@ -543,7 +543,7 @@ const I18N = {
       그룹 크기와 프레임워크 사용 비율: <a href="https://survey.stackoverflow.co/2026/technology/data">Stack Overflow Developer Survey 2026</a>.`,
     footer_disclaimer: `심각도는 원 권고의 값이며 틀릴 수 있습니다. 조치 전에 반드시 원 권고를 확인하세요.
       소스 코드: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
-    build: (b) => `페이지 버전 ${b}`,
+    build: (b, d) => (d ? `데이터 갱신 ${d} UTC. ` : "") + `페이지 코드 버전 ${b}.`,
     gh_title: "GitHub에서 소스 코드 보기",
     footer_analytics: "방문 통계를 위해 Google Analytics를 사용합니다.",
     about_html: `<h2>depweather 소개</h2>
@@ -593,7 +593,7 @@ function applyStaticText() {
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); });
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
   document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === LANG));
-  $("#build").textContent = t("build", BUILD);
+  $("#build").textContent = t("build", BUILD, DATA ? DATA.generated_at.slice(0, 16).replace("T", " ") : null);
   document.querySelectorAll(".legend .wx").forEach((el) => el.replaceChildren(wxIcon(Number(el.dataset.lvl), 18, !!el.dataset.kev)));
   if (DATA) renderMeta();
   updateFullscreenLabel();
@@ -689,6 +689,7 @@ function vulnTip(v, p) {
 // ------------------------------------------------------------ stats
 
 function renderMeta() {
+  $("#build").textContent = t("build", BUILD, DATA.generated_at.slice(0, 16).replace("T", " "));
   const gen = new Date(DATA.generated_at).toISOString().slice(0, 16).replace("T", " ");
   $("#meta").textContent = t("meta", gen, DATA.summary.tracked_packages, DATA.ecosystems.length);
   const missing = Object.entries(DATA.sources).filter(([, s]) => !s.ok).map(([k]) => ({ osv: "OSV", kev: "CISA KEV", epss: "FIRST EPSS", nvd: "NVD" }[k] || k));
