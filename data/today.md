@@ -1,13 +1,13 @@
-# depweather forecast, 2026-10-27
+# depweather forecast, 2026-10-28
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-27T22:14:54Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-28T12:50:58Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 23 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 12
-- New CVEs in NVD today (UTC): 578
-- CVEs published in 2026-10 so far: 15,047 (same month last year: 4,273)
+- Popular packages with a new advisory this week: 19 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 6
+- New CVEs in NVD today (UTC): 324
+- CVEs published in 2026-10 so far: 15,441 (same month last year: 4,273)
 
 ## By ecosystem
 
@@ -15,8 +15,6 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 - **PHP**: 2 advisories, worst actively exploited (CISA KEV); fixed in 8.2.35, 8.3.36, 8.4.27, 8.5.12. Example: [BIT-libphp-2026-109619](https://osv.dev/vulnerability/BIT-libphp-2026-109619) RCE via stale global state
 - **Node.js (node)**: 1 advisory, worst actively exploited (CISA KEV); fixed in 22.23.4, 24.22.1, 26.12.1. Example: [BIT-node-2026-111497](https://osv.dev/vulnerability/BIT-node-2026-111497) A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.
-- **MariaDB**: 7 advisories, worst critical; fixed in 10.6.28, 10.11.19, 11.4.13, 11.8.9 and more. Example: [BIT-mariadb-2026-92262](https://osv.dev/vulnerability/BIT-mariadb-2026-92262) MariaDB: Numerous issues caused by historical #mysql50# tablename encoding bypass.
-- **nginx**: 5 advisories, worst critical; fixed in 1.30.6, 1.31.7, 1.29.0. Example: [BIT-nginx-2026-97205](https://osv.dev/vulnerability/BIT-nginx-2026-97205) NGINX ngx_http_core_module vulnerability
 
 ### npm
 
@@ -30,7 +28,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### PyPI
 
-- **pillow**: 29 advisories, worst critical; fixed in 13.0.0. Example: [GHSA-5x8w-8jj5-q52h](https://osv.dev/vulnerability/GHSA-5x8w-8jj5-q52h) Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution
+- **pillow**: 25 advisories, worst critical; fixed in 13.0.0. Example: [GHSA-332p-7hrc-92wf](https://osv.dev/vulnerability/GHSA-332p-7hrc-92wf) Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO
 - **pyjwt**: 1 advisory, worst high; fixed in 2.14.0. Example: [GHSA-pxh4-856f-4h89](https://osv.dev/vulnerability/GHSA-pxh4-856f-4h89) PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
 - **setuptools**: 1 advisory, worst low or unrated; fixed in 84.1.0. Example: [GHSA-xmj3-9gf7-h52w](https://osv.dev/vulnerability/GHSA-xmj3-9gf7-h52w) setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description
 
@@ -43,7 +41,6 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 - **Echo (github.com/labstack/echo/v4)**: 4 advisories, worst critical; fixed in 4.16.1. Example: [GHSA-cxf3-9h37-7rr8](https://osv.dev/vulnerability/GHSA-cxf3-9h37-7rr8) Echo: Rejected WebSocket upgrades can bypass Echo route-level access controls
 - **x/net (golang.org/x/net)**: 2 advisories, worst low or unrated; fixed in 0.62.0. Example: [GO-2026-6866](https://osv.dev/vulnerability/GO-2026-6866) Check all ancestor namespace transitions when rendering raw text in html in golang.org/x/net
-- **Go stdlib (stdlib)**: 1 advisory, worst low or unrated; fixed in 1.26.10, 1.27.3. Example: [GO-2026-6809](https://osv.dev/vulnerability/GO-2026-6809) Distrust compromised intermediate certificates in crypto/x509
 
 ### Hex
 
@@ -54,11 +51,11 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 - **guava (com.google.guava:guava)**: 1 advisory, worst high; fixed in 33.7.2. Example: [GHSA-xxph-c9ww-hj94](https://osv.dev/vulnerability/GHSA-xxph-c9ww-hj94) Google Guava: CompactHashMap/CompactHashSet/MapMakerInternalMap deserialization triggers uncontrolled memory allocation
 
-### crates.io
-
-- **tokio**: 1 advisory, worst medium; fixed in 1.54.1. Example: [GHSA-5wjr-9356-4wc8](https://osv.dev/vulnerability/GHSA-5wjr-9356-4wc8) Tokio: Race condition in `tokio::time::Interval`
-
 ### NuGet
+
+No new advisories for the tracked packages.
+
+### crates.io
 
 No new advisories for the tracked packages.
 
@@ -74,11 +71,5 @@ No new advisories for the tracked packages.
 - 2026-10-26: CVE-2026-109619, PHP Group PHP: PHP Stale Internal Request-State Vulnerability
 - 2026-10-23: CVE-2026-114625, Arista VeloCloud Orchestrator: Arista VeloCloud Orchestrator SQL Injection Vulnerability
 - 2026-10-23: CVE-2026-110447, Collabora Collabora Online – Built-in CODE Server: Collabora Online – Built-in CODE Server OS Command Injection Vulnerability
-- 2026-10-20: CVE-2026-106931, EG Secure Solutions SiteGuard Server Edition: EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability
-- 2026-10-20: CVE-2026-96656, Plex Media Server: Plex Media Server External Control of File Name or Path Vulnerability
-- 2026-10-20: CVE-2026-96655, Plex Media Server: Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability
-- 2026-10-20: CVE-2026-96654, Plex Media Server: Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability
-- 2026-10-20: CVE-2026-96652, Plex Media Server: Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability
-- 2026-10-20: CVE-2026-110936, Siemens Software Center: Siemens Software Center Uncontrolled Search Path Element Vulnerability
 
 Full data: https://depweather.com/data/latest.json
