@@ -381,7 +381,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-27.4";
+const BUILD = "2026-10-29.1";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -1063,14 +1063,14 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
     node.append(icon);
   }
   node.addEventListener("mousemove", (ev) => {
-    const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a))[0];
+    const top = [...vulns].sort((a, b) => vulnLevel(b) - vulnLevel(a) || (b.cvss ?? -1) - (a.cvss ?? -1))[0];
     const unit = popUnit(p.popularity_source);
     const scores = vulns.map((v) => v.epss).filter((x) => x != null);
     const epssMax = scores.length ? Math.max(...scores) : null;
     const kevDate = vulns.map((v) => v.kev_date_added).filter(Boolean).sort()[0];
     showTip(`<div class="t">${esc(p.label)} <span class="m">${esc(g.eco.label)}${p.label !== p.name ? " · " + esc(p.name) : ""}</span></div>
       <div>${t("tip_count", vulns.length, state.range)} · <span class="pill l${lvl}">${t("level")[lvl]}</span>${kevs ? ' <span class="pill kev">KEV</span>' : ""}</div>
-      ${top ? `<div class="m">${t("tip_worst")}: ${esc(top.id)} — ${esc(top.summary)}</div>` : ""}
+      ${top ? `<div class="m">${t("tip_worst")}: ${esc(top.id)} · ${esc(top.severity)}${top.cvss != null ? " · CVSS " + top.cvss : ""} — ${esc(top.summary)}</div>` : ""}
       ${kevDate ? `<div class="m">${t("tip_kev", esc(kevDate))}</div>` : ""}
       ${epssMax != null ? `<div class="m">${t("tip_epss", fmtEpss(epssMax))}</div>` : ""}
       <div class="m">${t("tip_size")}: ${unit ? esc(compact.format(p.popularity)) + " " + esc(t("pop_long")[unit]) : t("fixed_weight")}</div>
