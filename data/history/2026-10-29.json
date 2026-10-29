@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T22:45:31Z",
+ "generated_at": "2026-10-29T23:24:28Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -47,9 +47,9 @@
   }
  },
  "summary": {
-  "today_cves": 533,
+  "today_cves": 537,
   "month": "2026-10",
-  "month_cves": 16275,
+  "month_cves": 16279,
   "month_cves_last_year": 4273,
   "kev_new_7d": 10,
   "affected_packages_7d": 16,
@@ -110,7 +110,7 @@
   },
   {
    "month": "2026-10",
-   "count": 16275
+   "count": 16279
   }
  ],
  "monthly_is_stale": false,
@@ -225,6 +225,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "16.4.1"
        ],
@@ -247,7 +248,8 @@
        "summary": "next.js cache leak across root param values in nested 'use cache' functions",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "16.3.8"
        ],
@@ -267,6 +269,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "15.5.28",
         "16.4.1"
@@ -291,6 +294,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "15.5.28",
         "16.4.1"
@@ -315,6 +319,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 4.2,
+       "cvss_source": "advisory",
        "fixed": [
         "16.3.8"
        ],
@@ -338,6 +343,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "15.5.27",
         "16.3.8"
@@ -359,9 +365,10 @@
        ],
        "published": "2026-10-07T20:31:51Z",
        "summary": "Next.js has information disclosure in development server's Model Context Protocol endpoint",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
        "cvss": 5.4,
+       "cvss_source": "advisory",
        "fixed": [
         "16.3.8"
        ],
@@ -385,6 +392,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "16.3.8"
        ],
@@ -408,6 +416,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 4.8,
+       "cvss_source": "advisory",
        "fixed": [
         "16.3.8",
         "15.5.27"
@@ -432,6 +441,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "16.3.8"
        ],
@@ -451,6 +461,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "16.3.6"
        ],
@@ -541,6 +552,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "7.3.2"
        ],
@@ -564,6 +576,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 2.3,
+       "cvss_source": "NVD",
        "fixed": [
         "7.3.3"
        ],
@@ -605,8 +618,8 @@
      "popularity": 4474327.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.6,
-     "worst_7d": "MEDIUM",
-     "worst_30d": "MEDIUM",
+     "worst_7d": "UNKNOWN",
+     "worst_30d": "UNKNOWN",
      "vulns": [
       {
        "id": "GHSA-pfhg-q3qv-9q6r",
@@ -618,9 +631,10 @@
        ],
        "published": "2026-10-23T20:58:24Z",
        "summary": "SvelteKit: URL redirection to untrusted site via enhanced form submission",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
        "cvss": 4.7,
+       "cvss_source": "advisory",
        "fixed": [
         "3.0.0"
        ],
@@ -641,9 +655,10 @@
        ],
        "published": "2026-10-23T20:43:30Z",
        "summary": "SvelteKit : XSS via untrusted cache-control header in prerendered page",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 4.7,
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": 0.0,
+       "cvss_source": "advisory",
        "fixed": [
         "3.0.0"
        ],
@@ -690,6 +705,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.6.2"
        ],
@@ -713,6 +729,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.4,
+       "cvss_source": "advisory",
        "fixed": [
         "4.6.2"
        ],
@@ -736,6 +753,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 2.3,
+       "cvss_source": "NVD",
        "fixed": [
         "4.6.0"
        ],
@@ -759,6 +777,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "4.4.4",
         "3.21.4"
@@ -792,9 +811,10 @@
        ],
        "published": "2026-10-22T16:40:35Z",
        "summary": "fastify is vulnerable to header validation bypass via case-sensitive propertyNames",
-       "severity": "LOW",
-       "severity_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
        "cvss": 3.7,
+       "cvss_source": "advisory",
        "fixed": [
         "5.12.6"
        ],
@@ -818,6 +838,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "5.12.5"
        ],
@@ -841,6 +862,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 8.1,
+       "cvss_source": "advisory",
        "fixed": [
         "5.12.2"
        ],
@@ -864,6 +886,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "5.12.2"
        ],
@@ -887,6 +910,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "5.12.2"
        ],
@@ -910,6 +934,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "5.12.2"
        ],
@@ -947,6 +972,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "4.13.11"
        ],
@@ -970,6 +996,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 4.7,
+       "cvss_source": "advisory",
        "fixed": [
         "4.13.7"
        ],
@@ -1004,7 +1031,8 @@
        "summary": "Axios: Header Injection via Inherited headers After Minimal Interceptor",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1027,7 +1055,8 @@
        "summary": "Axios: Fetch Adapter Header Injection via Inherited FormData getHeaders",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1050,7 +1079,8 @@
        "summary": "Axios: Node HTTP adapter prototype-pollution gadget allows request socket hijack via inherited createConnection",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 7.6,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1073,7 +1103,8 @@
        "summary": "Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1096,7 +1127,8 @@
        "summary": "Axios: maxRedirects: 0 is not enforced by the fetch adapter, allowing redirect-based SSRF",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 7.0,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1119,7 +1151,8 @@
        "summary": "Axios: Prototype pollution gadget in fetch adapter can alter outbound requests",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1142,7 +1175,8 @@
        "summary": "Axios: Prototype-Pollution Gadget in the Default Instance Allows Inherited Object.prototype.method to Override HTTP Method",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "0.34.0",
         "1.20.0"
@@ -1166,7 +1200,8 @@
        "summary": "Axios: ReDoS in fromDataURI data: URL parser freezes the Node event loop (DoS)",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1189,7 +1224,8 @@
        "summary": "Axios: ReDoS (O(N²)) in shouldBypassProxy host normalization, reachable via untrusted redirect Location",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1212,7 +1248,8 @@
        "summary": "Axios: Prototype Pollution Gadget in axios toFormData Options",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 8.3,
+       "cvss_source": "NVD",
        "fixed": [
         "0.34.0",
         "1.20.0"
@@ -1236,7 +1273,8 @@
        "summary": "Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 7.0,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1259,7 +1297,8 @@
        "summary": "Axios: Denial of Service via Unhandled 'error' Event in HTTP/2 ClientHttp2Session Initialization",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "1.20.0"
        ],
@@ -1306,6 +1345,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "6.4.5"
        ],
@@ -1329,6 +1369,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 2.1,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1356,6 +1397,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1383,6 +1425,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4"
@@ -1407,6 +1450,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1434,6 +1478,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1461,6 +1506,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1511,6 +1557,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.4,
+       "cvss_source": "advisory",
        "fixed": [
         "7.30.1",
         "8.12.2"
@@ -1535,6 +1582,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.4,
+       "cvss_source": "advisory",
        "fixed": [
         "6.29.1",
         "7.30.1",
@@ -1560,6 +1608,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "6.29.1",
         "7.30.1",
@@ -1585,6 +1634,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "6.29.1",
         "7.30.1",
@@ -1610,6 +1660,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "7.30.1",
         "8.12.2"
@@ -1634,6 +1685,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "8.11.2"
        ],
@@ -1657,6 +1709,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "6.29.1",
         "7.30.1",
@@ -1682,6 +1735,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "6.29.1",
         "7.30.1",
@@ -1707,6 +1761,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "7.30.1",
         "8.12.2"
@@ -1821,6 +1876,7 @@
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 8.8,
+       "cvss_source": "advisory",
        "fixed": [
         "5.2.17",
         "6.0.8"
@@ -1869,6 +1925,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.8.0"
        ],
@@ -1893,6 +1950,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.8.0"
        ],
@@ -1917,6 +1975,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.8.0"
        ],
@@ -1950,6 +2009,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2026.10.18",
         "2026.10.19"
@@ -1993,6 +2053,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "84.1.0"
        ],
@@ -2116,6 +2177,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -2139,6 +2201,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 2.3,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2162,6 +2225,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -2185,6 +2249,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -2208,6 +2273,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -2231,6 +2297,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -2253,7 +2320,8 @@
        "summary": "AIOHTTP: Secure attribute not enforced for shared cookie",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2273,6 +2341,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -2304,6 +2373,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 8.1,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2328,6 +2398,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2352,6 +2423,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2376,6 +2448,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2401,6 +2474,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2424,6 +2498,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2448,6 +2523,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2472,6 +2548,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2497,6 +2574,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2522,6 +2600,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2547,6 +2626,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2572,6 +2652,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": 9.8,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2597,6 +2678,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 8.1,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2622,6 +2704,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2647,6 +2730,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -2671,6 +2755,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2695,6 +2780,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2719,6 +2805,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2743,6 +2830,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2767,6 +2855,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2791,6 +2880,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2815,6 +2905,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2839,6 +2930,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2863,6 +2955,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2887,6 +2980,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2911,6 +3005,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2934,6 +3029,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2958,6 +3054,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2982,6 +3079,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -3006,6 +3104,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3030,6 +3129,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -3055,6 +3155,7 @@
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3080,6 +3181,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.1,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3105,6 +3207,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3130,6 +3233,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": 9.8,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3155,6 +3259,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": 9.8,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3180,6 +3285,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3205,6 +3311,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3230,6 +3337,7 @@
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3255,6 +3363,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3280,6 +3389,7 @@
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 8.2,
+       "cvss_source": "advisory",
        "fixed": [
         "13.0.0"
        ],
@@ -3311,6 +3421,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.4,
+       "cvss_source": "advisory",
        "fixed": [
         "2.14.0"
        ],
@@ -3335,6 +3446,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "2.15.0"
        ],
@@ -3344,6 +3456,106 @@
        "kev_date_added": null,
        "epss": 0.00167,
        "epss_percentile": 0.05922
+      },
+      {
+       "id": "PYSEC-2026-4147",
+       "aliases": [
+        "CVE-2026-102269",
+        "GHSA-hxm8-2xgr-2p9m"
+       ],
+       "cves": [
+        "CVE-2026-102269"
+       ],
+       "published": "2026-10-01T16:38:40Z",
+       "summary": "PyJWT: Non-canonical signature segments enable raw-token revocation bypass",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.8,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4147",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00224,
+       "epss_percentile": 0.12993
+      },
+      {
+       "id": "PYSEC-2026-4145",
+       "aliases": [
+        "CVE-2026-102268",
+        "GHSA-ffc3-869f-jxw9"
+       ],
+       "cves": [
+        "CVE-2026-102268"
+       ],
+       "published": "2026-10-01T16:38:40Z",
+       "summary": "PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard",
+       "severity": "CRITICAL",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 9.1,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4145",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00236,
+       "epss_percentile": 0.14602
+      },
+      {
+       "id": "PYSEC-2026-4150",
+       "aliases": [
+        "CVE-2026-102272",
+        "GHSA-r6x4-923q-g947"
+       ],
+       "cves": [
+        "CVE-2026-102272"
+       ],
+       "published": "2026-10-01T16:38:40Z",
+       "summary": "PyJWT BOM Bypass",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.4,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4150",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00216,
+       "epss_percentile": 0.12131
+      },
+      {
+       "id": "PYSEC-2026-4151",
+       "aliases": [
+        "CVE-2026-102273",
+        "GHSA-w2cx-738m-mc7w"
+       ],
+       "cves": [
+        "CVE-2026-102273"
+       ],
+       "published": "2026-10-01T16:38:40Z",
+       "summary": "PyJWT accepts public JWK containers as HMAC secrets",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.4,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4151",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00175,
+       "epss_percentile": 0.06941
       },
       {
        "id": "PYSEC-2026-4152",
@@ -3359,6 +3571,7 @@
        "severity": "MEDIUM",
        "severity_source": "CVSS v3 vector",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "2.14.0"
        ],
@@ -3368,6 +3581,81 @@
        "kev_date_added": null,
        "epss": 0.00549,
        "epss_percentile": 0.45896
+      },
+      {
+       "id": "PYSEC-2026-4140",
+       "aliases": [
+        "CVE-2026-101917",
+        "GHSA-2gx3-rcp4-g85q"
+       ],
+       "cves": [
+        "CVE-2026-101917"
+       ],
+       "published": "2026-10-01T16:38:40Z",
+       "summary": "PyJWT: PyJWKClient still amplifies unauthenticated JWKS fetches on unknown kid values (incomplete fix of CVE-2026-48524)",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4140",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00428,
+       "epss_percentile": 0.36966
+      },
+      {
+       "id": "PYSEC-2026-4144",
+       "aliases": [
+        "CVE-2026-102267",
+        "GHSA-9v7f-9g4p-ffgj"
+       ],
+       "cves": [
+        "CVE-2026-102267"
+       ],
+       "published": "2026-10-01T16:38:40Z",
+       "summary": "PyJWT: PyJWKClient follows redirects when fetching JWKS",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.4,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4144",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00159,
+       "epss_percentile": 0.04997
+      },
+      {
+       "id": "PYSEC-2026-4149",
+       "aliases": [
+        "CVE-2026-102271",
+        "GHSA-p4g4-x82p-q773"
+       ],
+       "cves": [
+        "CVE-2026-102271"
+       ],
+       "published": "2026-10-01T16:38:40Z",
+       "summary": "PyJWT: Public keys in DER form are accepted as HMAC secrets, bypassing the CVE-2022-29217 guard",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.4,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4149",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00215,
+       "epss_percentile": 0.11885
       },
       {
        "id": "GHSA-gvp8-978c-rx2q",
@@ -3383,6 +3671,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [],
        "url": "https://osv.dev/vulnerability/GHSA-gvp8-978c-rx2q",
        "malicious": false,
@@ -3405,6 +3694,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "2.15.0"
        ],
@@ -3429,6 +3719,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 4.4,
+       "cvss_source": "advisory",
        "fixed": [
         "2.14.0"
        ],
@@ -3453,6 +3744,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.4,
+       "cvss_source": "advisory",
        "fixed": [
         "2.14.0"
        ],
@@ -3477,6 +3769,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "2.14.0"
        ],
@@ -3486,174 +3779,6 @@
        "kev_date_added": null,
        "epss": 0.00343,
        "epss_percentile": 0.27795
-      },
-      {
-       "id": "GHSA-hxm8-2xgr-2p9m",
-       "aliases": [
-        "CVE-2026-102269",
-        "PYSEC-2026-4147"
-       ],
-       "cves": [
-        "CVE-2026-102269"
-       ],
-       "published": "2026-09-29T23:17:55Z",
-       "summary": "PyJWT: Non-canonical signature segments enable raw-token revocation bypass",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 4.8,
-       "fixed": [
-        "2.14.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-hxm8-2xgr-2p9m",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00224,
-       "epss_percentile": 0.12993
-      },
-      {
-       "id": "GHSA-ffc3-869f-jxw9",
-       "aliases": [
-        "CVE-2026-102268",
-        "PYSEC-2026-4145"
-       ],
-       "cves": [
-        "CVE-2026-102268"
-       ],
-       "published": "2026-09-29T23:17:33Z",
-       "summary": "PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": 9.1,
-       "fixed": [
-        "2.14.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-ffc3-869f-jxw9",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00236,
-       "epss_percentile": 0.14602
-      },
-      {
-       "id": "GHSA-w2cx-738m-mc7w",
-       "aliases": [
-        "CVE-2026-102273",
-        "PYSEC-2026-4151"
-       ],
-       "cves": [
-        "CVE-2026-102273"
-       ],
-       "published": "2026-09-29T23:16:55Z",
-       "summary": "PyJWT accepts public JWK containers as HMAC secrets",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.4,
-       "fixed": [
-        "2.14.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-w2cx-738m-mc7w",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00175,
-       "epss_percentile": 0.06941
-      },
-      {
-       "id": "GHSA-9v7f-9g4p-ffgj",
-       "aliases": [
-        "CVE-2026-102267",
-        "PYSEC-2026-4144"
-       ],
-       "cves": [
-        "CVE-2026-102267"
-       ],
-       "published": "2026-09-29T23:15:00Z",
-       "summary": "PyJWT: PyJWKClient follows redirects when fetching JWKS",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.4,
-       "fixed": [
-        "2.14.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-9v7f-9g4p-ffgj",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00159,
-       "epss_percentile": 0.04997
-      },
-      {
-       "id": "GHSA-p4g4-x82p-q773",
-       "aliases": [
-        "CVE-2026-102271",
-        "PYSEC-2026-4149"
-       ],
-       "cves": [
-        "CVE-2026-102271"
-       ],
-       "published": "2026-09-29T23:14:33Z",
-       "summary": "PyJWT: Public keys in DER form are accepted as HMAC secrets, bypassing the CVE-2022-29217 guard",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.4,
-       "fixed": [
-        "2.14.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-p4g4-x82p-q773",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00215,
-       "epss_percentile": 0.11885
-      },
-      {
-       "id": "GHSA-r6x4-923q-g947",
-       "aliases": [
-        "CVE-2026-102272",
-        "PYSEC-2026-4150"
-       ],
-       "cves": [
-        "CVE-2026-102272"
-       ],
-       "published": "2026-09-29T23:14:00Z",
-       "summary": "PyJWT BOM Bypass",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.4,
-       "fixed": [
-        "2.14.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-r6x4-923q-g947",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00216,
-       "epss_percentile": 0.12131
-      },
-      {
-       "id": "GHSA-2gx3-rcp4-g85q",
-       "aliases": [
-        "CVE-2026-101917",
-        "PYSEC-2026-4140"
-       ],
-       "cves": [
-        "CVE-2026-101917"
-       ],
-       "published": "2026-09-29T23:11:51Z",
-       "summary": "PyJWT: PyJWKClient still amplifies unauthenticated JWKS fetches on unknown kid values (incomplete fix of CVE-2026-48524)",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "fixed": [
-        "2.14.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-2gx3-rcp4-g85q",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00428,
-       "epss_percentile": 0.36966
       }
      ]
     },
@@ -3714,6 +3839,7 @@
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 7.8,
+       "cvss_source": "advisory",
        "fixed": [],
        "url": "https://osv.dev/vulnerability/PYSEC-2026-4174",
        "malicious": false,
@@ -3823,6 +3949,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "2.21.7",
         "2.18.11",
@@ -3848,6 +3975,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "2.18.11",
         "2.21.7",
@@ -3929,6 +4057,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "33.7.2"
        ],
@@ -4051,6 +4180,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "8.0.32",
         "10.0.13",
@@ -4076,6 +4206,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 8.8,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2",
@@ -4102,6 +4233,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "8.0.32",
@@ -4128,6 +4260,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": 9.4,
+       "cvss_source": "advisory",
        "fixed": [
         "8.0.32",
         "10.0.13",
@@ -4154,6 +4287,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": 9.1,
+       "cvss_source": "advisory",
        "fixed": [
         "11.0.0-rc.2",
         "8.0.32",
@@ -4180,6 +4314,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "8.0.32",
         "11.0.0-rc.2",
@@ -4206,6 +4341,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 8.8,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2.26478.115"
@@ -4226,6 +4362,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2",
@@ -4252,6 +4389,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "8.0.32",
         "10.0.13",
@@ -4278,6 +4416,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "8.0.32",
         "10.0.13",
@@ -4303,6 +4442,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.21",
         "10.0.13",
@@ -4328,6 +4468,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 8.1,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.21",
         "10.0.13",
@@ -4353,6 +4494,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2",
@@ -4391,6 +4533,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.8,
+       "cvss_source": "advisory",
        "fixed": [
         "8.0.32",
         "10.0.13",
@@ -4417,6 +4560,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.8,
+       "cvss_source": "advisory",
        "fixed": [
         "8.0.32",
         "10.0.13",
@@ -4443,6 +4587,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.21",
         "11.0.0-rc.2",
@@ -4469,6 +4614,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 8.1,
+       "cvss_source": "advisory",
        "fixed": [
         "8.0.32",
         "11.0.0-rc.2",
@@ -4495,6 +4641,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.21",
         "11.0.0-rc.2",
@@ -4521,6 +4668,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2",
@@ -4547,6 +4695,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.21",
         "8.0.32",
@@ -4573,6 +4722,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "11.0.0-rc.2"
        ],
@@ -4608,6 +4758,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 8.8,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2",
@@ -4634,6 +4785,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 8.8,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2.26478.115"
@@ -4694,6 +4846,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2",
@@ -4722,6 +4875,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.4,
+       "cvss_source": "advisory",
        "fixed": [
         "8.0.5"
        ],
@@ -4747,6 +4901,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2",
@@ -4775,6 +4930,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "10.0.13",
         "11.0.0-rc.2",
@@ -4868,6 +5024,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "2.5.303",
         "3.1.9"
@@ -4904,6 +5061,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "3.2.0",
         "4.1.2"
@@ -4928,6 +5086,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "4.1.2"
        ],
@@ -4951,6 +5110,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "4.1.2"
        ],
@@ -4974,6 +5134,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "3.2.0",
         "4.1.2"
@@ -4998,6 +5159,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "3.2.0",
         "4.1.2"
@@ -5022,6 +5184,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "3.2.0",
         "4.1.2"
@@ -5046,6 +5209,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "4.1.2",
         "3.2.0"
@@ -5070,6 +5234,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "3.2.0",
         "4.1.1"
@@ -5150,6 +5315,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.54.1"
        ],
@@ -5169,6 +5335,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.51.6",
         "1.53.3"
@@ -5242,6 +5409,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "0.103.16",
         "0.104.0-alpha.8"
@@ -5264,6 +5432,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": 3.7,
+       "cvss_source": "advisory",
        "fixed": [
         "0.23.46",
         "0.24.0-dev.2"
@@ -5286,6 +5455,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 4.0,
+       "cvss_source": "advisory",
        "fixed": [
         "0.23.46",
         "0.24.0-dev.2"
@@ -5308,6 +5478,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": 3.7,
+       "cvss_source": "advisory",
        "fixed": [
         "0.23.46",
         "0.24.0-dev.2"
@@ -5330,6 +5501,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": 2.3,
+       "cvss_source": "advisory",
        "fixed": [
         "0.23.46",
         "0.24.0-dev.2"
@@ -5352,6 +5524,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "0.23.45"
        ],
@@ -5453,6 +5626,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.0"
        ],
@@ -5476,6 +5650,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.4,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.0"
        ],
@@ -5499,6 +5674,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.0"
        ],
@@ -5522,6 +5698,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.0"
        ],
@@ -5545,6 +5722,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.5"
        ],
@@ -5566,6 +5744,7 @@
        "severity": "CRITICAL",
        "severity_source": "CVSS v3 vector",
        "cvss": 9.1,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.0"
        ],
@@ -5587,6 +5766,7 @@
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 7.3,
+       "cvss_source": "advisory",
        "fixed": [
         "9.0.0"
        ],
@@ -5608,6 +5788,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.0"
        ],
@@ -5634,7 +5815,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 20710539.0,
+     "popularity": 20705312.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "CRITICAL",
@@ -5653,6 +5834,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.29.0",
         "12.68.0"
@@ -5677,6 +5859,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
+       "cvss_source": "advisory",
        "fixed": [
         "12.68.0",
         "13.27.0"
@@ -5694,7 +5877,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 26603589.0,
+     "popularity": 27083570.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "HIGH",
@@ -5712,7 +5895,8 @@
        "summary": "Symfony: Unbounded Recursion in the YAML Inline Lexer Lets a Single Document Crash the Process",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 8.7,
+       "cvss_source": "NVD",
        "fixed": [
         "5.4.54",
         "6.4.45",
@@ -5738,7 +5922,8 @@
        "summary": "Symfony: ReDoS in HeaderUtils::split() Reachable Through the Cache-Control Request Header",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "cvss": 8.7,
+       "cvss_source": "NVD",
        "fixed": [
         "6.4.46",
         "7.4.19",
@@ -5758,7 +5943,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1732361.0,
+     "popularity": 1717756.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -5777,6 +5962,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.19",
         "11.3.19",
@@ -5803,6 +5989,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.19",
         "11.3.19",
@@ -5829,6 +6016,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.19",
         "11.3.19",
@@ -5848,7 +6036,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 30266135.0,
+     "popularity": 29618837.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5859,7 +6047,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 31688821.0,
+     "popularity": 30642859.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5870,7 +6058,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 28834769.0,
+     "popularity": 28858380.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5881,7 +6069,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 12560202.0,
+     "popularity": 12280059.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5892,7 +6080,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 26040503.0,
+     "popularity": 25238788.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5903,7 +6091,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 23426711.0,
+     "popularity": 24084139.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5914,7 +6102,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 22053970.0,
+     "popularity": 21926444.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5933,6 +6121,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.1,
+       "cvss_source": "advisory",
        "fixed": [
         "2.10.2"
        ],
@@ -5956,6 +6145,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "2.10.2"
        ],
@@ -5972,7 +6162,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 23486185.0,
+     "popularity": 24195356.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5994,7 +6184,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 19468202.0,
+     "popularity": 18849163.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6005,7 +6195,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 17312455.0,
+     "popularity": 17149042.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6049,6 +6239,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.26.10",
         "1.27.3"
@@ -6074,6 +6265,7 @@
        "severity": "MEDIUM",
        "severity_source": "NVD",
        "cvss": 6.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6099,6 +6291,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6124,6 +6317,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6149,6 +6343,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6174,6 +6369,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6199,6 +6395,7 @@
        "severity": "CRITICAL",
        "severity_source": "NVD",
        "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6224,6 +6421,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6249,6 +6447,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6274,6 +6473,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6299,6 +6499,7 @@
        "severity": "CRITICAL",
        "severity_source": "NVD",
        "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6324,6 +6525,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6349,6 +6551,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6374,6 +6577,7 @@
        "severity": "MEDIUM",
        "severity_source": "NVD",
        "cvss": 6.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.9",
         "1.27.2"
@@ -6410,6 +6614,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "0.62.0"
        ],
@@ -6433,6 +6638,7 @@
        "severity": "UNKNOWN",
        "severity_source": null,
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "0.62.0"
        ],
@@ -6457,6 +6663,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "0.60.0"
        ],
@@ -6481,6 +6688,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "0.60.0"
        ],
@@ -6505,6 +6713,7 @@
        "severity": "CRITICAL",
        "severity_source": "NVD",
        "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "0.60.0"
        ],
@@ -6529,6 +6738,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "0.60.0"
        ],
@@ -6553,6 +6763,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "0.60.0"
        ],
@@ -6632,6 +6843,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "4.16.0"
        ],
@@ -6655,6 +6867,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "4.16.0"
        ],
@@ -6678,6 +6891,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.9,
+       "cvss_source": "advisory",
        "fixed": [
         "4.15.3"
        ],
@@ -6701,6 +6915,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.1,
+       "cvss_source": "advisory",
        "fixed": [
         "4.16.0"
        ],
@@ -6724,6 +6939,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 4.7,
+       "cvss_source": "advisory",
        "fixed": [
         "4.15.2"
        ],
@@ -6747,6 +6963,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
+       "cvss_source": "advisory",
        "fixed": [
         "4.16.0"
        ],
@@ -6770,6 +6987,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.1,
+       "cvss_source": "advisory",
        "fixed": [
         "4.16.0"
        ],
@@ -6793,6 +7011,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [],
        "url": "https://osv.dev/vulnerability/GHSA-246p-cpwv-v3jq",
        "malicious": false,
@@ -6814,6 +7033,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [
         "4.16.0"
        ],
@@ -6837,6 +7057,7 @@
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
+       "cvss_source": "advisory",
        "fixed": [],
        "url": "https://osv.dev/vulnerability/GHSA-99jh-6h7p-pp36",
        "malicious": false,
@@ -6858,6 +7079,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.16.1"
        ],
@@ -6881,6 +7103,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.16.1"
        ],
@@ -6904,6 +7127,7 @@
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.16.1"
        ],
@@ -6927,6 +7151,7 @@
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.16.1"
        ],
@@ -7030,7 +7255,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 808988400.0,
+     "popularity": 809017842.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "NONE",
@@ -7041,7 +7266,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1378043866.0,
+     "popularity": 1378070929.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7052,7 +7277,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1288959309.0,
+     "popularity": 1288966697.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7063,7 +7288,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 622356216.0,
+     "popularity": 622371386.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7074,7 +7299,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 302534416.0,
+     "popularity": 302539214.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7085,7 +7310,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 344538532.0,
+     "popularity": 344544956.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7096,7 +7321,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1289407046.0,
+     "popularity": 1289415191.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7107,7 +7332,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 397807942.0,
+     "popularity": 397837066.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7170,6 +7395,7 @@
        "severity": "MEDIUM",
        "severity_source": "NVD",
        "cvss": 5.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.7.0"
        ],
@@ -7227,6 +7453,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -7250,6 +7477,7 @@
        "severity": "CRITICAL",
        "severity_source": "NVD",
        "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -7273,6 +7501,7 @@
        "severity": "MEDIUM",
        "severity_source": "NVD",
        "cvss": 6.0,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -7296,6 +7525,7 @@
        "severity": "MEDIUM",
        "severity_source": "NVD",
        "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -7319,6 +7549,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 2.1,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -7364,8 +7595,9 @@
        "published": "2026-10-22T08:04:27Z",
        "summary": "RCE via stale global state",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "8.2.35",
         "8.3.36",
@@ -7392,8 +7624,9 @@
        "published": "2026-10-22T08:04:26Z",
        "summary": "RCE via OOM corruption",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "8.2.35",
         "8.3.36",
@@ -7420,8 +7653,9 @@
        "published": "2026-10-01T09:29:29Z",
        "summary": "Out-of-bounds read in the HTTP stream wrapper when following a redirect with an empty Location header",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7448,8 +7682,9 @@
        "published": "2026-10-01T09:29:28Z",
        "summary": "OOB read / info leak in convert.* stream filters when line-break-chars contains NUL",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7476,8 +7711,9 @@
        "published": "2026-10-01T09:29:27Z",
        "summary": "TLS Hostname Verification Falls Back to CN After SAN Mismatch",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7504,8 +7740,9 @@
        "published": "2026-10-01T09:29:26Z",
        "summary": "IPv6 ACL bypass in FastCGI listen.allowed_clients due to partial address comparison (memcmp 12 bytes)",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7532,8 +7769,9 @@
        "published": "2026-10-01T09:29:25Z",
        "summary": "Heap-buffer-overflow in php_openssl_matches_wildcard_name on crafted server cert wildcard CN",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7560,8 +7798,9 @@
        "published": "2026-10-01T09:29:24Z",
        "summary": "Cross-origin credential leak in HTTP stream wrapper redirects",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7588,8 +7827,9 @@
        "published": "2026-10-01T09:29:22Z",
        "summary": "SOAP: Unbounded Recursion in Server-Side cleanup_xml_node",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7617,8 +7857,9 @@
        "published": "2026-10-01T09:29:10Z",
        "summary": "Phar TAR phar_tar_number() Integer Overflow - Archive Entry Injection",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7645,8 +7886,9 @@
        "published": "2026-10-01T09:29:09Z",
        "summary": "PHP on Windows: Reserved Device Names Are Not Rejected Before File/Stream I/O which can cause DoS",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7673,8 +7915,9 @@
        "published": "2026-10-01T09:28:59Z",
        "summary": "Integer overflow to buffer overflow in soap HTTP parsing",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7701,8 +7944,9 @@
        "published": "2026-10-01T09:28:51Z",
        "summary": "Various packet overreads in mysqlnd_writeprotocol.c",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 3.4,
+       "cvss_source": "NVD",
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7740,8 +7984,9 @@
        "published": "2026-10-29T08:56:03Z",
        "summary": "A flaw in Node.js `crypto` causes the internal entropy caches used by `crypto.randomUUID()`, `crypto.randomUUIDv7()`, and `crypto.randomInt()` to be saved into user-land startup snapshots (`--build-snapshot`) and single executable applications built with `useSnapshot`.",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 4.8,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -7768,6 +8013,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 3.3,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -7792,8 +8038,9 @@
        "published": "2026-10-29T08:56:00Z",
        "summary": "A flaw in Node.js TLS hostname verification allows a certificate with only a DNS SAN to authenticate an IP endpoint when the client connects using a non-canonical IPv4 spelling, such as `0177.0.0.1`, `0x7f.0.0.1`, `2130706433` or `127.1`.",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 6.7,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -7820,6 +8067,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 3.6,
+       "cvss_source": "NVD",
        "fixed": [
         "26.12.1"
        ],
@@ -7844,6 +8092,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 3.7,
+       "cvss_source": "NVD",
        "fixed": [
         "26.12.1"
        ],
@@ -7866,8 +8115,9 @@
        "published": "2026-10-29T08:55:56Z",
        "summary": "A flaw in Node.js TLS hostname verification can cause a server certificate to be validated against a different IP address than the one the client connected to, when the host is a non-canonical IPv4 literal with a leading zero, such as `0127.0.0.1`.",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 7.4,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -7892,8 +8142,9 @@
        "published": "2026-10-29T08:55:55Z",
        "summary": "A flaw in Node.js TLS hostname verification allows a certificate without a matching IP address SAN to authenticate a connection to an IPv4 address when the host is written with non-ASCII characters, such as fullwidth digits (`１２７.0.0.1`).",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 7.4,
+       "cvss_source": "NVD",
        "fixed": [
         "24.22.1",
         "26.12.1"
@@ -7917,8 +8168,9 @@
        "published": "2026-10-29T08:55:53Z",
        "summary": "A flaw in Node.js DNS resolution allows hostnames containing a NUL byte to be silently truncated by the dns.resolve*() functions and dns.reverse(). This is an incomplete fix of CVE-2026-48930, which only covered dns.lookup() and the net/tls host options.\r",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 7.4,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -7943,8 +8195,9 @@
        "published": "2026-10-29T08:55:52Z",
        "summary": "A flaw in Node.js HTTP Agent connection reuse can cause a client to accept as valid a response that was sent before the client has sent the request. This is an incomplete fix of CVE-2026-48931.",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -7976,8 +8229,9 @@
        "published": "2026-10-23T08:48:26Z",
        "summary": "A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -8016,8 +8270,9 @@
        "published": "2026-10-29T12:12:45Z",
        "summary": "tar filter allows writing outside destination via empty-named symlink",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.11.18",
         "3.12.16",
@@ -8046,8 +8301,9 @@
        "published": "2026-10-09T10:48:13Z",
        "summary": "SSLContext.wrap_bio() missing validation of server_hostname parameter",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.10.22",
         "3.11.17",
@@ -8076,8 +8332,9 @@
        "published": "2026-10-09T10:48:12Z",
        "summary": "Use-after-free of a server-side SSLContext when sni_callback switches contexts",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.10.22",
         "3.11.17",
@@ -8106,8 +8363,9 @@
        "published": "2026-10-05T11:47:53Z",
        "summary": "Race condition in tempfile.TemporaryDirectory cleanup allows deleting files outside the temporary directory",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.12.16",
         "3.13.18",
@@ -8177,8 +8435,9 @@
        "published": "2026-10-21T08:54:07Z",
        "summary": "NGINX ngx_http_ssl_module vulnerability",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -8202,8 +8461,9 @@
        "published": "2026-10-21T08:54:05Z",
        "summary": "NGINX ngx_http_core_module vulnerability",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -8227,8 +8487,9 @@
        "published": "2026-10-21T08:54:03Z",
        "summary": "NGINX ngx_http_v3_module vulnerability",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.29.0",
         "1.30.6",
@@ -8253,8 +8514,9 @@
        "published": "2026-10-21T08:54:02Z",
        "summary": "NGINX map directive and regex matching vulnerability",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -8278,8 +8540,9 @@
        "published": "2026-10-21T08:53:28Z",
        "summary": "NGINX ngx_http_core_module vulnerability",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -8314,8 +8577,9 @@
        "published": "2026-10-07T11:40:10Z",
        "summary": "Apache HTTP Server: mod_proxy_uwsgi Transfer-Encoding response smuggling",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8337,8 +8601,9 @@
        "published": "2026-10-06T11:41:09Z",
        "summary": "Apache HTTP Server: mod_dav_fs namespace overflow",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8360,8 +8625,9 @@
        "published": "2026-10-06T11:41:07Z",
        "summary": "Apache HTTP Server: mod_userdir information disclosure",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8383,8 +8649,9 @@
        "published": "2026-10-06T11:41:06Z",
        "summary": "Apache HTTP Server: mod_auth_digest DoS attack",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8406,8 +8673,9 @@
        "published": "2026-10-06T11:41:04Z",
        "summary": "Apache HTTP Server: mod_auth_digest one-time-nonce replay attack",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8429,8 +8697,9 @@
        "published": "2026-10-06T11:41:03Z",
        "summary": "Apache HTTP Server: mod_xml2enc crash on charset conversion failure",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8452,8 +8721,9 @@
        "published": "2026-10-06T11:41:02Z",
        "summary": "Apache HTTP Server: mod_vhost_alias stack overflow",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8475,8 +8745,9 @@
        "published": "2026-10-06T11:41:00Z",
        "summary": "Apache HTTP Server: mod_proxy_ftp PASV address handling",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8498,8 +8769,9 @@
        "published": "2026-10-06T11:40:58Z",
        "summary": "Apache HTTP Server: mod_ssl SSLRequire allows .htaccess ap_expr file-function",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8521,8 +8793,9 @@
        "published": "2026-10-06T11:40:57Z",
        "summary": "Apache HTTP Server: Out-of-Bounds Write in ap_directory_walk() Canonical-Name Rewrite on CASE_BLIND_FILESYSTEM",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8544,8 +8817,9 @@
        "published": "2026-10-06T11:40:56Z",
        "summary": "Apache HTTP Server: mod_dav_fs property database read access",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8567,8 +8841,9 @@
        "published": "2026-10-06T11:40:54Z",
        "summary": "Apache HTTP Server: mod_http2 use-after-free / wild write via shared session->bbtmp re-entrancy",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8590,8 +8865,9 @@
        "published": "2026-10-06T11:40:53Z",
        "summary": "Apache HTTP Server: mod_proxy_html: crash in dump_content",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8613,8 +8889,9 @@
        "published": "2026-10-06T11:40:51Z",
        "summary": "Apache HTTP Server: mod_rewrite use-after-free via %{LA-U:HTTP:...}",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8636,8 +8913,9 @@
        "published": "2026-10-05T11:39:34Z",
        "summary": "Apache HTTP Server: mod_charset_lite: Heap overflow in finish_partial_char",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8659,8 +8937,9 @@
        "published": "2026-10-05T11:39:29Z",
        "summary": "Apache HTTP Server: mod_auth_digest reauthentication attack",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8682,8 +8961,9 @@
        "published": "2026-10-05T11:39:28Z",
        "summary": "Apache HTTP Server: mod_session: Session cookie not removed during internal redirect",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8705,8 +8985,9 @@
        "published": "2026-10-05T11:39:26Z",
        "summary": "Apache HTTP Server: mod_heartmonitor denial of service",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8728,8 +9009,9 @@
        "published": "2026-10-05T11:39:15Z",
        "summary": "Apache HTTP Server: mod_dav shared lock overflow",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.4.69"
        ],
@@ -8753,6 +9035,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 3.7,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8788,6 +9071,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -8813,6 +9097,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -8838,6 +9123,7 @@
        "severity": "HIGH",
        "severity_source": "NVD",
        "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123"
        ],
@@ -8861,6 +9147,7 @@
        "severity": "MEDIUM",
        "severity_source": "NVD",
        "cvss": 6.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -8886,6 +9173,7 @@
        "severity": "MEDIUM",
        "severity_source": "NVD",
        "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -8909,8 +9197,9 @@
        "published": "2026-10-29T09:01:27Z",
        "summary": "Apache Tomcat: AJP response mix-up",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "11.0.27"
        ],
@@ -8932,8 +9221,9 @@
        "published": "2026-10-29T09:01:26Z",
        "summary": "Apache Tomcat: HTTP/2 request/response mix-up after error during async processing",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -8957,8 +9247,9 @@
        "published": "2026-10-29T09:01:25Z",
        "summary": "Apache Tomcat: JNDIRealm bind credential validation fails open for non-GSSAPI SASL mechanisms",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -8982,8 +9273,9 @@
        "published": "2026-10-01T09:36:37Z",
        "summary": "Apache Tomcat: WebSocket message smuggling with per-message-deflate",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9008,8 +9300,9 @@
        "published": "2026-10-01T09:36:35Z",
        "summary": "Apache Tomcat: Regression in fix for CVE-2026-41293 can trigger request header mix-up",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.122",
         "10.1.60",
@@ -9033,8 +9326,9 @@
        "published": "2026-10-01T09:36:34Z",
        "summary": "Apache Tomcat: Fix for CVE-2026-34500 was incomplete. OCSP checks sometimes soft-fail with FFM even when soft-fail is disabled",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.122",
         "10.1.60",
@@ -9058,8 +9352,9 @@
        "published": "2026-10-01T09:36:33Z",
        "summary": "Apache Tomcat: WebSocket DoS due to lost asynchronous write timeout",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9084,8 +9379,9 @@
        "published": "2026-10-01T09:36:32Z",
        "summary": "Apache Tomcat: HTTP/2 DoS via malformed request",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.122",
         "10.1.60",
@@ -9109,8 +9405,9 @@
        "published": "2026-10-01T09:36:30Z",
        "summary": "Apache Tomcat: AJP DoS via missing request body",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9135,8 +9432,9 @@
        "published": "2026-10-01T09:36:29Z",
        "summary": "Apache Tomcat: DoS via busy wait during WebSocket close",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.45",
         "9.0.122",
@@ -9161,8 +9459,9 @@
        "published": "2026-10-01T09:36:28Z",
        "summary": "Apache Tomcat: Stale HPACK emitter injects trailers into recycled pooled Request",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.122",
         "10.1.60",
@@ -9188,6 +9487,7 @@
        "severity": "LOW",
        "severity_source": "NVD",
        "cvss": 3.7,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.45",
         "9.0.122",
@@ -9212,8 +9512,9 @@
        "published": "2026-10-01T09:36:26Z",
        "summary": "Apache Tomcat: Bypass of security constraints for WebSocket endpoints",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9238,8 +9539,9 @@
        "published": "2026-10-01T09:36:24Z",
        "summary": "Apache Tomcat: Cross-context authentication mix-up with Jakarta Authentication configured",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9264,8 +9566,9 @@
        "published": "2026-10-01T09:36:23Z",
        "summary": "Apache Tomcat: OpenSSL and OpenSSL-FFM TLS implementations ignore CRLs when certificate uses a keystore",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9316,8 +9619,9 @@
        "published": "2026-10-21T08:53:01Z",
        "summary": "MariaDB: GRANT PROXY with empty password incorrectly checks grantor's privileges",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9347,8 +9651,9 @@
        "published": "2026-10-21T08:53:00Z",
        "summary": "MariaDB: Numerous issues caused by historical #mysql50# tablename encoding bypass.",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9378,8 +9683,9 @@
        "published": "2026-10-21T08:52:59Z",
        "summary": "MariaDB: Insufficient quoting in mariadb-dump and SHOW commands",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9409,8 +9715,9 @@
        "published": "2026-10-21T08:52:58Z",
        "summary": "MariaDB: Unauthorized file access via CONNECT engine UDFs",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9440,8 +9747,9 @@
        "published": "2026-10-21T08:52:56Z",
        "summary": "MariaDB: Use-after-free with a large number of SYS_REFCURSOR's",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "12.3.3",
         "13.0.2"
@@ -9467,8 +9775,9 @@
        "published": "2026-10-21T08:52:55Z",
        "summary": "MariaDB: Out-of-bound buffer write on in `ST_AsText` of nested GeometryCollections",
        "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9498,8 +9807,9 @@
        "published": "2026-10-21T08:52:54Z",
        "summary": "MariaDB: Out-of-bound buffer read on in `ST_Area` of a multipolygon.",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9529,8 +9839,9 @@
        "published": "2026-10-16T08:42:01Z",
        "summary": "MariaDB: privilege escalation via incorrect view frm parsing",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 7.2,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9560,8 +9871,9 @@
        "published": "2026-10-16T08:42:00Z",
        "summary": "MariaDB: database privilege escalation via user / role name collision in the acl cache",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 6.4,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9591,8 +9903,9 @@
        "published": "2026-10-16T08:41:59Z",
        "summary": "MariaDB: insufficient validation of binary frm data when opening a table",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 8.0,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9622,8 +9935,9 @@
        "published": "2026-10-16T08:41:58Z",
        "summary": "MariaDB: environment injection via wsrep bootstrap in the mariadb.service file",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 8.4,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9653,8 +9967,9 @@
        "published": "2026-10-16T08:41:56Z",
        "summary": "MariaDB: mysql_json plugin OOB reads",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 4.4,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9684,8 +9999,9 @@
        "published": "2026-10-16T08:41:55Z",
        "summary": "MariaDB: `qc_info` plugin can do OOB reads if query contains \\0",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 6.4,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9715,8 +10031,9 @@
        "published": "2026-10-16T08:41:54Z",
        "summary": "MariaDB: one byte OOB write in DOS tables of the CONNECT engine",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 8.5,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9746,8 +10063,9 @@
        "published": "2026-10-16T08:41:53Z",
        "summary": "MariaDB: Insecure $HOME in MariaDB rpm packages",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 8.4,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9777,8 +10095,9 @@
        "published": "2026-10-16T08:41:52Z",
        "summary": "MariaDB Connector/Node.js: SQL injection in the text protocol when the session uses NO_BACKSLASH_ESCAPES",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 7.4,
+       "cvss_source": "NVD",
        "fixed": [
         "3.2.5",
         "3.3.4",
@@ -9806,8 +10125,9 @@
        "published": "2026-10-16T08:41:51Z",
        "summary": "MariaDB Connector/Node.js: SQL injection through object keys in SET expansion (permitSetMultiParamEntries)",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "3.2.5",
         "3.3.4",
@@ -9835,8 +10155,9 @@
        "published": "2026-10-16T08:41:49Z",
        "summary": "MariaDB Connector/Node.js exposes uninitialized process memory through malformed GeoJSON parameters",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "3.2.5",
         "3.3.4",
@@ -9864,8 +10185,9 @@
        "published": "2026-10-16T08:41:48Z",
        "summary": "MariaDB Connector/Node.js: Uncaught exception crashes the client during ed25519 authentication with zero-configuration TLS",
        "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
+       "severity_source": "Bitnami",
+       "cvss": 5.9,
+       "cvss_source": "NVD",
        "fixed": [
         "3.5.4"
        ],
@@ -9910,8 +10232,9 @@
        "published": "2026-10-01T09:32:15Z",
        "summary": "Find command with $meta sort can lead to crash",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "7.0.39",
         "8.0.28",
@@ -9936,8 +10259,9 @@
        "published": "2026-10-01T09:32:12Z",
        "summary": "Race Condition in MongoDB Server Document Value Layer Leads to Memory Corruption",
        "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
+       "severity_source": "Bitnami",
        "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "7.0.43",
         "8.0.32",

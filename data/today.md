@@ -1,13 +1,13 @@
 # depweather forecast, 2026-10-29
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-29T22:45:31Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-29T23:24:28Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 16 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 10
-- New CVEs in NVD today (UTC): 533
-- CVEs published in 2026-10 so far: 16,275 (same month last year: 4,273)
+- New CVEs in NVD today (UTC): 537
+- CVEs published in 2026-10 so far: 16,279 (same month last year: 4,273)
 
 ## By ecosystem
 
@@ -40,8 +40,8 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 ### npm
 
 - **undici**: 9 advisories, worst high; fixed in 7.30.1, 8.12.2, 6.29.1, 8.11.2. Example: [GHSA-4w7w-5xrc-9h26](https://osv.dev/vulnerability/GHSA-4w7w-5xrc-9h26) undici vulnerable to cache poisoning and cross-user disclosure via cross-origin redirects
-- **SvelteKit (@sveltejs/kit)**: 2 advisories, worst medium; fixed in 3.0.0. Example: [GHSA-pfhg-q3qv-9q6r](https://osv.dev/vulnerability/GHSA-pfhg-q3qv-9q6r) SvelteKit: URL redirection to untrusted site via enhanced form submission
 - **vite**: 1 advisory, worst medium; fixed in 6.4.5. Example: [GHSA-8g5g-mxqh-grgj](https://osv.dev/vulnerability/GHSA-8g5g-mxqh-grgj) Vite: `server.fs.deny` bypassed with queries
+- **SvelteKit (@sveltejs/kit)**: 2 advisories, worst low or unrated; fixed in 3.0.0. Example: [GHSA-pfhg-q3qv-9q6r](https://osv.dev/vulnerability/GHSA-pfhg-q3qv-9q6r) SvelteKit: URL redirection to untrusted site via enhanced form submission
 
 ### Maven
 
