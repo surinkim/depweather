@@ -78,11 +78,18 @@ starts being exploited is exactly what this page should not miss.
 Affected tiles carry the glyph, and timeline dots change shape with severity
 (circle, triangle, diamond), so severity never depends on color alone.
 
-Severity is taken in this order: the GitHub Advisory severity label → a CVSS
-v3 score computed from the OSV vector → the NVD CVSS base severity (looked up
-only for advisories still unrated, e.g. Go standard library entries) →
-"unknown" (shown yellow). When OSV lists the same issue under several IDs
-(`GO-`, `PYSEC-`, `GHSA-`), they are merged and the highest severity wins.
+Severity is taken in this order: the label the advisory database put on the
+record (GitHub Advisory, Bitnami and others) → a CVSS v3 score computed from the
+OSV vector → the NVD CVSS base severity (for advisories still unrated, e.g. Go
+standard library entries) → "unknown" (shown yellow). When OSV lists the same
+issue under several IDs (`GO-`, `PYSEC-`, `GHSA-`), they are merged and the
+highest severity wins.
+
+The CVSS number comes from the advisory's own vector when it has one, otherwise
+from NVD, which is asked even when the advisory already has a label. A rated
+advisory keeps its own label; NVD only adds the number. NVD answers are cached
+in `data/nvd_cvss.json`, and CVEs NVD has not scored yet are asked again once a
+day. The tooltip and table say where the label and the number came from.
 
 EPSS is shown in the tooltip and table. An optional rule raises a vulnerability
 one color step when its EPSS score is high; it is off by default and controlled
@@ -156,7 +163,7 @@ Not covered yet:
 | [GitHub Advisory Database](https://github.com/github/advisory-database) | Most npm / PyPI / Maven / Go advisories, via OSV | — | CC-BY 4.0 (`LICENSE.md` in the repository, checked 2026-10-25). Attribution in the page footer |
 | [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | Known exploited flag, 7-day additions | `known_exploited_vulnerabilities.json`, falling back to CISA's GitHub mirror `cisagov/kev-data` | CC0 1.0. From the `cisagov/kev-data` LICENSE (checked 2026-10-25): "The KEV database is distributed under the Creative Commons 0 1.0 License. You may use this data in any legal manner but note that information provided at any 3rd party links included in the KEV database are bound by the policies and licenses of those 3rd party websites. Use of the information does not authorize you to use the CISA Logo or DHS Seal, nor should such use be interpreted as an endorsement by CISA or DHS." |
 | [FIRST EPSS](https://www.first.org/epss/) | Exploit probability per CVE | `epss_scores-current.csv.gz` | **To confirm.** Secondary copies of FIRST's EPSS usage agreement say the scores are granted freely to the public and ask for attribution to EPSS where practical; the original page at first.org could not be read from the build environment |
-| [NVD API 2.0](https://nvd.nist.gov/developers) | Monthly and daily CVE counts; CVSS for unrated advisories | `/rest/json/cves/2.0` | Required notice: "This product uses the NVD API but is not endorsed or certified by the NVD." (in the page footer). Works without a key at ~1 request / 6.5 s; set `NVD_API_KEY` to go faster |
+| [NVD API 2.0](https://nvd.nist.gov/developers) | Monthly and daily CVE counts; CVSS for advisories without a score | `/rest/json/cves/2.0` | Required notice: "This product uses the NVD API but is not endorsed or certified by the NVD." (in the page footer). Works without a key at ~1 request / 6.5 s; set `NVD_API_KEY` to go faster |
 | npm downloads API, [pypistats](https://pypistats.org) | Tile size: downloads last week | `api.npmjs.org/downloads/point/last-week/…`, `pypistats.org/api/packages/…/recent` | **To confirm** |
 | crates.io, Packagist, RubyGems, hex.pm APIs | Tile size: crates.io downloads in 90 days, Packagist in 30 days, RubyGems all time, Hex last week | `crates.io/api/v1/crates/…` (1 request/s, identifying User-Agent), `packagist.org/packages/….json`, `rubygems.org/api/v1/gems/….json`, `hex.pm/api/packages/…` | **To confirm** |
 | Bricolage Grotesque, IBM Plex Sans | Type, self-hosted in `fonts/` (no request to Google Fonts) | Downloaded once from Google Fonts | SIL Open Font License 1.1 (`fonts/OFL-*.txt`) |

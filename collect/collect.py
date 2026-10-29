@@ -195,6 +195,10 @@ def osv_fetch(ecosystem: str, vid: str) -> dict | None:
         return None
 
 
+# Who wrote an OSV record, from its ID prefix; used to say where a severity label came from.
+LABEL_SOURCES = {"GHSA": "GitHub Advisory", "BIT": "Bitnami", "PYSEC": "PyPA", "RUSTSEC": "RustSec", "GO": "Go"}
+
+
 def record_severity(rec: dict) -> tuple[str, float | None, str | None]:
     """Severity label, CVSS score (if computable) and where the label came from."""
     score = None
@@ -203,7 +207,7 @@ def record_severity(rec: dict) -> tuple[str, float | None, str | None]:
             score = cvss3_base_score(s["score"])
     label = (rec.get("database_specific") or {}).get("severity")
     if isinstance(label, str) and label.upper() in SEVERITY_RANK:
-        return SEVERITY_NAME.get(label.upper(), label.upper()), score, "GitHub Advisory"
+        return SEVERITY_NAME.get(label.upper(), label.upper()), score, LABEL_SOURCES.get(rec["id"].split("-")[0], "OSV")
     if score is not None:
         return score_to_severity(score), score, "CVSS v3 vector"
     if rec["id"].startswith("MAL-"):
@@ -384,6 +388,7 @@ def merge_aliases(ecosystem: str, patterns: list[str], recs: list[dict]) -> list
             "severity": sev,
             "severity_source": sev_src,
             "cvss": score,
+            "cvss_source": "advisory" if score is not None else None,
             "fixed": fixed,
             "url": f"https://osv.dev/vulnerability/{primary['id']}",
             "malicious": primary["id"].startswith("MAL-"),
@@ -491,16 +496,31 @@ def collect_nvd(now: datetime, previous: dict | None) -> dict | None:
         return None
 
 
-def nvd_fill_severity(osv: dict, limit: int = 80) -> int:
-    """Look up NVD CVSS for vulnerabilities OSV left unrated (e.g. Go stdlib)."""
+def nvd_fill_cvss(osv: dict, now: datetime, limit: int = 80) -> int:
+    """Look up NVD CVSS for advisories without a score.
+
+    Unrated advisories (e.g. Go stdlib) also take NVD's severity; rated ones keep
+    their own label and only gain the number. Answers are cached in
+    data/nvd_cvss.json so each CVE is fetched once after NVD scores it, and
+    unscored CVEs are asked again at most once a day.
+    """
+    cache_path = DATA / "nvd_cvss.json"
+    try:
+        cache = json.loads(cache_path.read_text())
+    except (OSError, ValueError):
+        cache = {}
+    today = now.strftime("%Y-%m-%d")
     todo: dict[str, list[dict]] = {}
     for vulns in osv.values():
         for v in vulns:
-            if v["severity"] == "UNKNOWN" and v["cves"]:
+            if v["cvss"] is None and v["cves"]:
                 todo.setdefault(v["cves"][0], []).append(v)
+    # Unrated advisories first: for them NVD decides the color, not just the number.
+    order = sorted(todo, key=lambda c: (all(v["severity"] != "UNKNOWN" for v in todo[c]), c))
+    ask = [c for c in order if c not in cache or (cache[c]["cvss"] is None and cache[c]["checked"] < today)]
     headers = {"apiKey": os.environ["NVD_API_KEY"]} if os.environ.get("NVD_API_KEY") else {}
-    filled = 0
-    for cve in sorted(todo)[:limit]:
+    asked = 0
+    for cve in ask[:limit]:
         try:
             data = get_json(f"{NVD_URL}?cveId={cve}", headers=headers, timeout=60, retries=3)
         except Exception as e:  # noqa: BLE001
@@ -508,18 +528,29 @@ def nvd_fill_severity(osv: dict, limit: int = 80) -> int:
             break
         finally:
             time.sleep(0.7 if headers else 6.5)
+        asked += 1
         items = data.get("vulnerabilities") or []
         metrics = items[0]["cve"].get("metrics", {}) if items else {}
+        entry = {"cvss": None, "severity": None, "checked": today}
         for key in ("cvssMetricV31", "cvssMetricV40", "cvssMetricV30"):
             if metrics.get(key):
                 cvss = metrics[key][0]["cvssData"]
-                for v in todo[cve]:
-                    v["severity"] = cvss["baseSeverity"].upper()
-                    v["cvss"] = cvss["baseScore"]
-                    v["severity_source"] = "NVD"
-                filled += 1
+                entry.update(cvss=cvss["baseScore"], severity=cvss["baseSeverity"].upper())
                 break
-    log(f"nvd severity: filled {filled} of {len(todo)} unrated CVEs")
+        cache[cve] = entry
+    filled = 0
+    for cve, vulns in todo.items():
+        entry = cache.get(cve)
+        if not entry or entry["cvss"] is None:
+            continue
+        filled += 1
+        for v in vulns:
+            v["cvss"], v["cvss_source"] = entry["cvss"], "NVD"
+            if v["severity"] == "UNKNOWN" and entry["severity"] in SEVERITY_RANK:
+                v["severity"], v["severity_source"] = entry["severity"], "NVD"
+    # Keep only CVEs still on the page so the file does not grow forever.
+    cache_path.write_text(json.dumps({c: cache[c] for c in sorted(todo) if c in cache}, indent=1) + "\n")
+    log(f"nvd cvss: asked {asked}, scored {filled} of {len(todo)} advisories without CVSS")
     return filled
 
 
@@ -666,7 +697,7 @@ def main() -> int:
     nvd = collect_nvd(now, previous)
     sources["nvd"] = {"ok": nvd is not None, "url": NVD_URL}
     if nvd is not None:
-        nvd_fill_severity(osv)
+        nvd_fill_cvss(osv, now)
 
     ecosystems = []
     week_ago = now - timedelta(days=7)

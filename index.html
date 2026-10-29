@@ -393,7 +393,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-29.2";
+const BUILD = "2026-10-29.3";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -449,6 +449,8 @@ const I18N = {
     tip_count: (n, r) => `${n} in the last ${r} days`,
     tip_worst: "Worst", tip_epss_k: "Highest EPSS", tip_epss_note: "chance of exploitation in 30 days",
     tip_kev_k: "KEV", tip_kev_v: (d) => `added ${d}`,
+    sev_by: (s) => `rated by ${s}`, sev_vector: "from the advisory's CVSS vector", sev_mal: "malicious package",
+    cvss_from: (s) => `from ${s}`, cvss_advisory: "the advisory", cvss_none: "no score yet",
     tip_survey: (s, name) => `Used by ${s}% of ${name} respondents (web frameworks)`,
     tip_click: "Click for timeline",
     tip_kev: (d) => `On the CISA KEV list since ${d}`,
@@ -530,6 +532,8 @@ const I18N = {
     tip_count: (n, r) => `최근 ${r}일 ${n}건`,
     tip_worst: "가장 심각", tip_epss_k: "최고 EPSS", tip_epss_note: "30일 내 악용 확률",
     tip_kev_k: "KEV", tip_kev_v: (d) => `${d} 등재`,
+    sev_by: (s) => `${s} 판정`, sev_vector: "권고의 CVSS 벡터로 계산", sev_mal: "악성 패키지",
+    cvss_from: (s) => `${s} 기준`, cvss_advisory: "권고", cvss_none: "아직 점수 없음",
     tip_survey: (s, name) => `${name} 응답자 ${s}%가 사용 (웹 프레임워크)`,
     tip_click: "클릭하면 타임라인으로 이동",
     tip_kev: (d) => `CISA KEV 등재: ${d}`,
@@ -704,12 +708,29 @@ function moveTip(ev) {
 }
 function hideTip() { tip.style.display = "none"; }
 
+// Where a severity label and a CVSS number came from. Older data has no cvss_source.
+function sevSource(v) {
+  const s = v.severity_source;
+  if (!s) return "";
+  if (s === "CVSS v3 vector") return t("sev_vector");
+  if (s === "malicious package") return t("sev_mal");
+  return t("sev_by", s);
+}
+function cvssSourceName(v) {
+  if (v.cvss == null) return "";
+  const s = v.cvss_source || (v.severity_source === "NVD" ? "NVD" : "advisory");
+  return s === "advisory" ? t("cvss_advisory") : s;
+}
+function cvssSource(v) {
+  return v.cvss == null ? t("cvss_none") : t("cvss_from", cvssSourceName(v));
+}
+
 function vulnTip(v, p) {
   const lvl = vulnLevel(v);
   return `<div class="t">${esc(v.id)}${p ? " · " + esc(p.label) : ""}</div>
     <div>${esc(v.summary)}</div>
-    <div class="m">${esc(v.published.slice(0, 10))} · <span class="pill l${lvl}">${esc(v.severity)}</span>
-    ${v.cvss != null ? " CVSS " + v.cvss : ""}${v.epss != null ? " · EPSS " + fmtEpss(v.epss) : ""}
+    <div class="m">${esc(v.published.slice(0, 10))} · <span class="pill l${lvl}">${esc(v.severity)}</span>${v.severity_source ? " " + esc(sevSource(v)) : ""}
+    · CVSS ${v.cvss != null ? v.cvss : "–"} (${esc(cvssSource(v))})${v.epss != null ? " · EPSS " + fmtEpss(v.epss) : ""}
     ${v.kev ? ` · <span class="pill kev">KEV</span> ${esc(t("tip_kev", v.kev_date_added))}` : ""}</div>
     ${v.fixed.length ? `<div class="m">${t("fixed_in")} ${esc(v.fixed.join(", "))}</div>` : ""}`;
 }
@@ -1088,7 +1109,8 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
         <b>${t("tip_count", vulns.length, state.range)}</b>${by.length ? `<span class="m">${by.map(([l, n]) => `${t("sev_short")[l]} ${n}`).join(" · ")}</span>` : ""}</div>
       ${top ? `<dl class="tt-kv">
         <dt>${t("tip_worst")}</dt><dd><b>${esc(top.id)}</b><div class="tt-desc">${esc(top.summary)}</div></dd>
-        <dt>CVSS</dt><dd><b>${top.cvss != null ? top.cvss : "–"}</b> ${esc(top.severity)}</dd>
+        <dt>${t("th").severity}</dt><dd><b>${esc(top.severity)}</b>${top.severity_source ? ` <span class="m">${esc(sevSource(top))}</span>` : ""}</dd>
+        <dt>CVSS</dt><dd><b>${top.cvss != null ? top.cvss : "–"}</b> <span class="m">${esc(cvssSource(top))}</span></dd>
         ${epssMax != null ? `<dt>${t("tip_epss_k")}</dt><dd><b>${fmtEpss(epssMax)}</b> <span class="m">${t("tip_epss_note")}</span></dd>` : ""}
         ${kevDate ? `<dt>${t("tip_kev_k")}</dt><dd>${esc(t("tip_kev_v", kevDate))}</dd>` : ""}
       </dl>` : ""}
@@ -1320,8 +1342,8 @@ function renderPackage(root, { eco, pkg }) {
     box.innerHTML = `<table class="data vulns"><thead><tr><th>${th.published}</th><th>${th.advisory}</th><th>${th.severity}</th><th class="num">CVSS</th><th class="num">EPSS</th><th>${th.fixed}</th><th>${th.summary}</th></tr></thead><tbody>
       ${vulns.map((v) => `<tr><td class="nowrap">${esc(v.published.slice(0, 10))}</td>
         <td class="nowrap"><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.id)}</a>${v.cves.length ? `<br><span class="meta">${esc(v.cves.join(", "))}</span>` : ""}</td>
-        <td><span class="pill l${vulnLevel(v)}">${esc(v.severity)}</span>${v.kev ? ` <span class="pill kev" title="${esc(t("tip_kev", v.kev_date_added))}">KEV</span><br><span class="meta">${esc(v.kev_date_added)}</span>` : ""}</td>
-        <td class="num">${v.cvss ?? "–"}</td><td class="num">${v.epss != null ? fmtEpss(v.epss) : "–"}</td>
+        <td><span class="pill l${vulnLevel(v)}">${esc(v.severity)}</span>${v.kev ? ` <span class="pill kev" title="${esc(t("tip_kev", v.kev_date_added))}">KEV</span>` : ""}${v.severity_source ? `<br><span class="meta">${esc(sevSource(v))}</span>` : ""}${v.kev ? `<br><span class="meta">KEV ${esc(v.kev_date_added)}</span>` : ""}</td>
+        <td class="num">${v.cvss ?? "–"}${v.cvss != null ? `<br><span class="meta">${esc(cvssSourceName(v))}</span>` : ""}</td><td class="num">${v.epss != null ? fmtEpss(v.epss) : "–"}</td>
         <td>${esc(v.fixed.join(", ") || "–")}</td><td class="summary">${esc(v.summary)}</td></tr>`).join("")}
       </tbody></table>`;
   }
