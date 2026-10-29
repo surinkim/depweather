@@ -261,12 +261,23 @@ table.data td.num, table.data th.num { text-align: right; font-variant-numeric: 
 }
 
 #tooltip {
-  position: fixed; z-index: 10; pointer-events: none; max-width: 320px;
+  position: fixed; z-index: 10; pointer-events: none; max-width: 360px;
   background: var(--surface); color: var(--ink); border: 1px solid var(--border); border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); padding: 8px 10px; font-size: 12.5px; display: none;
 }
 #tooltip .t { font-weight: 650; font-size: 13px; }
 #tooltip .m { color: var(--ink-2); }
+#tooltip .tt-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+#tooltip .tt-head .t { font-size: 15px; }
+#tooltip .tt-head .m { font-size: 11.5px; text-align: right; }
+#tooltip .tt-sum { margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+#tooltip .tt-sum b { font-weight: 650; }
+#tooltip .tt-kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 8px 0 0; padding-top: 8px; border-top: 1px solid var(--border); }
+#tooltip .tt-kv dt { color: var(--ink-2); }
+#tooltip .tt-kv dd { margin: 0; }
+#tooltip .tt-kv b { font-weight: 650; font-variant-numeric: tabular-nums; }
+#tooltip .tt-desc { color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+#tooltip .tt-foot { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--border); color: var(--ink-2); font-size: 11.5px; }
 
 .about { max-width: 72ch; margin: 36px 0 0; color: var(--ink-2); font-size: 14.5px; }
 .about h2 { font-size: 20px; color: var(--ink); margin: 0 0 6px; }
@@ -356,7 +367,8 @@ footer p { margin: 4px 0; }
     <h3>What do the colors mean?</h3>
     <p>Each tile is a package, colored by its worst advisory published (or added to CISA KEV) in the last 7 days: gray for none, yellow for
       low or medium, orange for high, red for critical, and magenta when the vulnerability is on the CISA Known
-      Exploited Vulnerabilities list.</p>
+      Exploited Vulnerabilities list. Tile size follows downloads; Maven, Go, NuGet and the runtimes group publish no
+      download counts we can use, so their tiles share equal sizes within the group.</p>
     <h3>Where does the data come from?</h3>
     <p>OSV (including the GitHub Advisory Database and the Bitnami Vulnerability Database), CISA KEV, FIRST EPSS and
       NVD, collected twice a day. Severity comes from the upstream advisory; check it before acting.</p>
@@ -381,7 +393,7 @@ footer p { margin: 4px 0; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-29.1";
+const BUILD = "2026-10-29.2";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -435,10 +447,10 @@ const I18N = {
     pop_long: { wk: "downloads last week", "30d": "downloads in 30 days", "90d": "downloads in 90 days", total: "downloads all time" },
     so_short: (s) => `SO ${s}%`,
     tip_count: (n, r) => `${n} in the last ${r} days`,
-    tip_worst: "Worst", tip_size: "Size", fixed_weight: "fixed weight",
+    tip_worst: "Worst", tip_epss_k: "Highest EPSS", tip_epss_note: "chance of exploitation in 30 days",
+    tip_kev_k: "KEV", tip_kev_v: (d) => `added ${d}`,
     tip_survey: (s, name) => `Used by ${s}% of ${name} respondents (web frameworks)`,
     tip_click: "Click for timeline",
-    tip_epss: (p) => `Highest EPSS: ${p} (chance of exploitation in the next 30 days)`,
     tip_kev: (d) => `On the CISA KEV list since ${d}`,
     today: "today", days_ago: (d) => `${d}d ago`,
     no_pkg: (p) => `No package <b>${p}</b> in the tracked list.`, show_all: "Show all",
@@ -516,10 +528,10 @@ const I18N = {
     pop_long: { wk: "지난주 다운로드", "30d": "30일 다운로드", "90d": "90일 다운로드", total: "누적 다운로드" },
     so_short: (s) => `SO 설문 ${s}%`,
     tip_count: (n, r) => `최근 ${r}일 ${n}건`,
-    tip_worst: "가장 심각", tip_size: "크기", fixed_weight: "고정 가중치",
+    tip_worst: "가장 심각", tip_epss_k: "최고 EPSS", tip_epss_note: "30일 내 악용 확률",
+    tip_kev_k: "KEV", tip_kev_v: (d) => `${d} 등재`,
     tip_survey: (s, name) => `${name} 응답자 ${s}%가 사용 (웹 프레임워크)`,
     tip_click: "클릭하면 타임라인으로 이동",
-    tip_epss: (p) => `최고 EPSS: ${p} (앞으로 30일 안에 악용될 확률)`,
     tip_kev: (d) => `CISA KEV 등재: ${d}`,
     today: "오늘", days_ago: (d) => `${d}일 전`,
     no_pkg: (p) => `추적 목록에 <b>${p}</b> 패키지가 없습니다.`, show_all: "전체 보기",
@@ -556,7 +568,8 @@ const I18N = {
       "이번 주 인기 패키지에 심각한 취약점이 나왔나?"에 답합니다.</p>
     <h3>색은 무엇을 뜻하나요?</h3>
     <p>타일 하나가 패키지 하나이고, 최근 7일 동안 공개됐거나 CISA KEV에 추가된 가장 심각한 권고로 색을 칠합니다. 회색은 없음, 노랑은 낮음·중간,
-      주황은 높음, 빨강은 치명, 마젠타는 CISA 실제 악용 목록(KEV)에 오른 취약점입니다.</p>
+      주황은 높음, 빨강은 치명, 마젠타는 CISA 실제 악용 목록(KEV)에 오른 취약점입니다. 타일 크기는 다운로드 수를 따릅니다.
+      Maven, Go, NuGet과 런타임·서버 그룹은 쓸 수 있는 다운로드 수가 없어 그룹 안에서 같은 크기로 그립니다.</p>
     <h3>데이터는 어디서 오나요?</h3>
     <p>OSV(GitHub Advisory Database, Bitnami Vulnerability Database 포함), CISA KEV, FIRST EPSS, NVD에서 하루 두 번
       모읍니다. 심각도는 원 권고의 값이니 조치 전에 확인하세요.</p>
@@ -1068,14 +1081,18 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
     const scores = vulns.map((v) => v.epss).filter((x) => x != null);
     const epssMax = scores.length ? Math.max(...scores) : null;
     const kevDate = vulns.map((v) => v.kev_date_added).filter(Boolean).sort()[0];
-    showTip(`<div class="t">${esc(p.label)} <span class="m">${esc(g.eco.label)}${p.label !== p.name ? " · " + esc(p.name) : ""}</span></div>
-      <div>${t("tip_count", vulns.length, state.range)} · <span class="pill l${lvl}">${t("level")[lvl]}</span>${kevs ? ' <span class="pill kev">KEV</span>' : ""}</div>
-      ${top ? `<div class="m">${t("tip_worst")}: ${esc(top.id)} · ${esc(top.severity)}${top.cvss != null ? " · CVSS " + top.cvss : ""} — ${esc(top.summary)}</div>` : ""}
-      ${kevDate ? `<div class="m">${t("tip_kev", esc(kevDate))}</div>` : ""}
-      ${epssMax != null ? `<div class="m">${t("tip_epss", fmtEpss(epssMax))}</div>` : ""}
-      <div class="m">${t("tip_size")}: ${unit ? esc(compact.format(p.popularity)) + " " + esc(t("pop_long")[unit]) : t("fixed_weight")}</div>
-      ${p.survey ? `<div class="m">${esc(t("tip_survey", p.survey, DATA.survey ? DATA.survey.name : "survey"))}</div>` : ""}
-      <div class="m">${t("tip_click")}</div>`, ev);
+    const by = [3, 2, 1].map((l) => [l, vulns.filter((v) => vulnLevel(v) === l).length]).filter(([, n]) => n);
+    const foot = [unit ? esc(t("pop_fmt", compact.format(p.popularity), t("pop_long")[unit])) : "", t("tip_click")].filter(Boolean).join(" · ");
+    showTip(`<div class="tt-head"><span class="t">${esc(p.label)}</span><span class="m">${esc(g.eco.label)}${p.label !== p.name ? " · " + esc(p.name) : ""}</span></div>
+      <div class="tt-sum"><span class="pill l${lvl}">${t("level")[lvl]}</span>${kevs ? '<span class="pill kev">KEV</span>' : ""}
+        <b>${t("tip_count", vulns.length, state.range)}</b>${by.length ? `<span class="m">${by.map(([l, n]) => `${t("sev_short")[l]} ${n}`).join(" · ")}</span>` : ""}</div>
+      ${top ? `<dl class="tt-kv">
+        <dt>${t("tip_worst")}</dt><dd><b>${esc(top.id)}</b><div class="tt-desc">${esc(top.summary)}</div></dd>
+        <dt>CVSS</dt><dd><b>${top.cvss != null ? top.cvss : "–"}</b> ${esc(top.severity)}</dd>
+        ${epssMax != null ? `<dt>${t("tip_epss_k")}</dt><dd><b>${fmtEpss(epssMax)}</b> <span class="m">${t("tip_epss_note")}</span></dd>` : ""}
+        ${kevDate ? `<dt>${t("tip_kev_k")}</dt><dd>${esc(t("tip_kev_v", kevDate))}</dd>` : ""}
+      </dl>` : ""}
+      ${p.survey ? `<div class="tt-foot">${esc(t("tip_survey", p.survey, DATA.survey ? DATA.survey.name : "survey"))}<br>${foot}</div>` : `<div class="tt-foot">${foot}</div>`}`, ev);
   });
   node.addEventListener("mouseleave", hideTip);
   const open = () => { hideTip(); setState({ view: "c", pkg: p.key }); };
