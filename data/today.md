@@ -1,13 +1,13 @@
 # depweather forecast, 2026-10-29
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-29T12:57:31Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-29T22:45:31Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 21 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 8
-- New CVEs in NVD today (UTC): 126
-- CVEs published in 2026-10 so far: 15,868 (same month last year: 4,273)
+- Popular packages with a new advisory this week: 16 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 10
+- New CVEs in NVD today (UTC): 533
+- CVEs published in 2026-10 so far: 16,275 (same month last year: 4,273)
 
 ## By ecosystem
 
@@ -18,18 +18,9 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **Tomcat**: 8 advisories, worst critical; fixed in 9.0.123, 10.1.61, 11.0.27. Example: [BIT-tomcat-2026-103119](https://osv.dev/vulnerability/BIT-tomcat-2026-103119) Apache Tomcat: AJP response mix-up
 - **Python**: 1 advisory, worst medium; fixed in 3.11.18, 3.12.16, 3.13.18, 3.14.10 and more. Example: [BIT-libpython-2026-114583](https://osv.dev/vulnerability/BIT-libpython-2026-114583) tar filter allows writing outside destination via empty-named symlink
 
-### npm
-
-- **Next.js (next)**: 4 advisories, worst critical; fixed in 16.4.1, 16.3.8, 15.5.28. Example: [GHSA-673q-mjm6-r5xr](https://osv.dev/vulnerability/GHSA-673q-mjm6-r5xr) Next.js: Unauthenticated Remote Code Execution in `use cache` functions returning typed arrays
-- **undici**: 9 advisories, worst high; fixed in 7.30.1, 8.12.2, 6.29.1, 8.11.2. Example: [GHSA-4w7w-5xrc-9h26](https://osv.dev/vulnerability/GHSA-4w7w-5xrc-9h26) undici vulnerable to cache poisoning and cross-user disclosure via cross-origin redirects
-- **Nuxt**: 4 advisories, worst medium; fixed in 4.6.2, 4.6.0, 4.4.4, 3.21.4. Example: [GHSA-vjh5-4x84-xrqp](https://osv.dev/vulnerability/GHSA-vjh5-4x84-xrqp) Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive
-- **Astro**: 2 advisories, worst medium; fixed in 7.3.2, 7.3.3. Example: [GHSA-98hj-9722-w3j8](https://osv.dev/vulnerability/GHSA-98hj-9722-w3j8) Astro: Reflected/Stored XSS via unescaped <script>/<style> tag content in JSX/MDX rendering
-- **SvelteKit (@sveltejs/kit)**: 2 advisories, worst medium; fixed in 3.0.0. Example: [GHSA-pfhg-q3qv-9q6r](https://osv.dev/vulnerability/GHSA-pfhg-q3qv-9q6r) SvelteKit: URL redirection to untrusted site via enhanced form submission
-- **Fastify**: 1 advisory, worst low or unrated; fixed in 5.12.6. Example: [GHSA-389g-gv7q-r4x8](https://osv.dev/vulnerability/GHSA-389g-gv7q-r4x8) fastify is vulnerable to header validation bypass via case-sensitive propertyNames
-
 ### crates.io
 
-- **zip**: 1 advisory, worst critical; fixed in 9.0.5. Example: [GHSA-m665-v7pm-7grj](https://osv.dev/vulnerability/GHSA-m665-v7pm-7grj) zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE
+- **zip**: 5 advisories, worst critical; fixed in 9.0.0, 9.0.5. Example: [GHSA-m665-v7pm-7grj](https://osv.dev/vulnerability/GHSA-m665-v7pm-7grj) zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE
 
 ### Packagist
 
@@ -46,15 +37,19 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **hackney**: 5 advisories, worst critical; fixed in 4.9.0. Example: [EEF-CVE-2026-115693](https://osv.dev/vulnerability/EEF-CVE-2026-115693) Custom cacerts or cacertfile do not restrict trust to the pinned CA in hackney
 - **plug**: 1 advisory, worst medium; fixed in 1.7.0. Example: [EEF-CVE-2026-105963](https://osv.dev/vulnerability/EEF-CVE-2026-105963) Secret key base exposed in stack trace arguments on wrong-typed Plug.Crypto arguments
 
-### PyPI
+### npm
 
-- **pillow**: 4 advisories, worst high; fixed in 13.0.0. Example: [GHSA-78g4-xqwv-q3g8](https://osv.dev/vulnerability/GHSA-78g4-xqwv-q3g8) Pillow: Bundled libopenjp2 2.5.4 in all wheels since 11.1.0 carries OSV-2025-219 heap-buffer-overflow write reachable from Image.open().load()
-- **pyjwt**: 1 advisory, worst high; fixed in 2.14.0. Example: [GHSA-pxh4-856f-4h89](https://osv.dev/vulnerability/GHSA-pxh4-856f-4h89) PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
-- **setuptools**: 1 advisory, worst low or unrated; fixed in 84.1.0. Example: [GHSA-xmj3-9gf7-h52w](https://osv.dev/vulnerability/GHSA-xmj3-9gf7-h52w) setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description
+- **undici**: 9 advisories, worst high; fixed in 7.30.1, 8.12.2, 6.29.1, 8.11.2. Example: [GHSA-4w7w-5xrc-9h26](https://osv.dev/vulnerability/GHSA-4w7w-5xrc-9h26) undici vulnerable to cache poisoning and cross-user disclosure via cross-origin redirects
+- **SvelteKit (@sveltejs/kit)**: 2 advisories, worst medium; fixed in 3.0.0. Example: [GHSA-pfhg-q3qv-9q6r](https://osv.dev/vulnerability/GHSA-pfhg-q3qv-9q6r) SvelteKit: URL redirection to untrusted site via enhanced form submission
+- **vite**: 1 advisory, worst medium; fixed in 6.4.5. Example: [GHSA-8g5g-mxqh-grgj](https://osv.dev/vulnerability/GHSA-8g5g-mxqh-grgj) Vite: `server.fs.deny` bypassed with queries
 
 ### Maven
 
 - **guava (com.google.guava:guava)**: 1 advisory, worst high; fixed in 33.7.2. Example: [GHSA-xxph-c9ww-hj94](https://osv.dev/vulnerability/GHSA-xxph-c9ww-hj94) Google Guava: CompactHashMap/CompactHashSet/MapMakerInternalMap deserialization triggers uncontrolled memory allocation
+
+### PyPI
+
+- **setuptools**: 1 advisory, worst low or unrated; fixed in 84.1.0. Example: [GHSA-xmj3-9gf7-h52w](https://osv.dev/vulnerability/GHSA-xmj3-9gf7-h52w) setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description
 
 ### NuGet
 
@@ -66,6 +61,8 @@ No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-10-29: CVE-2026-97229, GitLab Community Edition and Enterprise Edition: GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability
+- 2026-10-29: CVE-2026-76418, Cisco Secure Firewall ASA Software and Cisco Secure FTD Software: Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability
 - 2026-10-28: CVE-2026-41709, Broadcom VMware ESX: Broadcom VMWare ESX Insufficient Logging Vulnerability
 - 2026-10-28: CVE-2026-46300, Linux Kernel: Linux Kernel Missing Initialization of a Variable Vulnerability
 - 2026-10-27: CVE-2026-48356, Adobe Commerce and Magento: Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability
