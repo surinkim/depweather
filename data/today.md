@@ -1,20 +1,22 @@
-# depweather forecast, 2026-10-28
+# depweather forecast, 2026-10-29
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-28T22:36:07Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-29T12:57:31Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 19 of 149
+- Popular packages with a new advisory this week: 21 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 8
-- New CVEs in NVD today (UTC): 618
-- CVEs published in 2026-10 so far: 15,734 (same month last year: 4,273)
+- New CVEs in NVD today (UTC): 126
+- CVEs published in 2026-10 so far: 15,868 (same month last year: 4,273)
 
 ## By ecosystem
 
 ### Runtimes & servers
 
+- **Node.js (node)**: 10 advisories, worst actively exploited (CISA KEV); fixed in 22.23.4, 24.22.1, 26.12.1. Example: [BIT-node-2026-111497](https://osv.dev/vulnerability/BIT-node-2026-111497) A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.
 - **PHP**: 2 advisories, worst actively exploited (CISA KEV); fixed in 8.2.35, 8.3.36, 8.4.27, 8.5.12. Example: [BIT-libphp-2026-109619](https://osv.dev/vulnerability/BIT-libphp-2026-109619) RCE via stale global state
-- **Node.js (node)**: 1 advisory, worst actively exploited (CISA KEV); fixed in 22.23.4, 24.22.1, 26.12.1. Example: [BIT-node-2026-111497](https://osv.dev/vulnerability/BIT-node-2026-111497) A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.
+- **Tomcat**: 8 advisories, worst critical; fixed in 9.0.123, 10.1.61, 11.0.27. Example: [BIT-tomcat-2026-103119](https://osv.dev/vulnerability/BIT-tomcat-2026-103119) Apache Tomcat: AJP response mix-up
+- **Python**: 1 advisory, worst medium; fixed in 3.11.18, 3.12.16, 3.13.18, 3.14.10 and more. Example: [BIT-libpython-2026-114583](https://osv.dev/vulnerability/BIT-libpython-2026-114583) tar filter allows writing outside destination via empty-named symlink
 
 ### npm
 
