@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T23:24:28Z",
+ "generated_at": "2026-10-30T12:51:23Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -47,12 +47,12 @@
   }
  },
  "summary": {
-  "today_cves": 537,
+  "today_cves": 264,
   "month": "2026-10",
-  "month_cves": 16279,
+  "month_cves": 16543,
   "month_cves_last_year": 4273,
   "kev_new_7d": 10,
-  "affected_packages_7d": 16,
+  "affected_packages_7d": 15,
   "tracked_packages": 149
  },
  "monthly": [
@@ -110,7 +110,7 @@
   },
   {
    "month": "2026-10",
-   "count": 16279
+   "count": 16543
   }
  ],
  "monthly_is_stale": false,
@@ -704,8 +704,8 @@
        "summary": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "4.6.2"
        ],
@@ -1344,8 +1344,8 @@
        "summary": "Vite: `server.fs.deny` bypassed with queries",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "6.4.5"
        ],
@@ -1396,8 +1396,8 @@
        "summary": "Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1424,8 +1424,8 @@
        "summary": "Vite: First 4 bytes of files outside of `server.fs` setting is exposed by `?vite-wasm-instance`",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4"
@@ -1449,8 +1449,8 @@
        "summary": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1477,8 +1477,8 @@
        "summary": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1505,8 +1505,8 @@
        "summary": "launch-editor: escapeCmdArgs() omits % escaping on Windows",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1833,7 +1833,7 @@
      "key": "pypi/fastapi",
      "name": "fastapi",
      "label": "FastAPI",
-     "popularity": 119253506.0,
+     "popularity": 122158883.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 18.5,
      "worst_7d": "NONE",
@@ -1844,7 +1844,7 @@
      "key": "pypi/flask",
      "name": "flask",
      "label": "Flask",
-     "popularity": 41612967.0,
+     "popularity": 49921637.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 12.5,
      "worst_7d": "NONE",
@@ -1855,7 +1855,7 @@
      "key": "pypi/django",
      "name": "django",
      "label": "Django",
-     "popularity": 11686969.0,
+     "popularity": 11962410.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 11.3,
      "worst_7d": "NONE",
@@ -1894,7 +1894,7 @@
      "key": "pypi/requests",
      "name": "requests",
      "label": "requests",
-     "popularity": 330570977.0,
+     "popularity": 346553157.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1905,7 +1905,7 @@
      "key": "pypi/urllib3",
      "name": "urllib3",
      "label": "urllib3",
-     "popularity": 357004566.0,
+     "popularity": 373501669.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1992,7 +1992,7 @@
      "key": "pypi/certifi",
      "name": "certifi",
      "label": "certifi",
-     "popularity": 400616261.0,
+     "popularity": 409864396.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2027,7 +2027,7 @@
      "key": "pypi/cryptography",
      "name": "cryptography",
      "label": "cryptography",
-     "popularity": 305057773.0,
+     "popularity": 315197148.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2038,7 +2038,7 @@
      "key": "pypi/setuptools",
      "name": "setuptools",
      "label": "setuptools",
-     "popularity": 270569357.0,
+     "popularity": 271570687.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "UNKNOWN",
@@ -2070,7 +2070,7 @@
      "key": "pypi/pyyaml",
      "name": "pyyaml",
      "label": "pyyaml",
-     "popularity": 274149519.0,
+     "popularity": 280608911.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2081,7 +2081,7 @@
      "key": "pypi/pydantic",
      "name": "pydantic",
      "label": "pydantic",
-     "popularity": 252168584.0,
+     "popularity": 256723829.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2092,7 +2092,7 @@
      "key": "pypi/numpy",
      "name": "numpy",
      "label": "numpy",
-     "popularity": 231491769.0,
+     "popularity": 242644408.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2103,7 +2103,7 @@
      "key": "pypi/pandas",
      "name": "pandas",
      "label": "pandas",
-     "popularity": 151140758.0,
+     "popularity": 160977921.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2114,7 +2114,7 @@
      "key": "pypi/jinja2",
      "name": "jinja2",
      "label": "jinja2",
-     "popularity": 152561754.0,
+     "popularity": 164161904.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2125,7 +2125,7 @@
      "key": "pypi/starlette",
      "name": "starlette",
      "label": "starlette",
-     "popularity": 157563098.0,
+     "popularity": 159417815.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2136,7 +2136,7 @@
      "key": "pypi/uvicorn",
      "name": "uvicorn",
      "label": "uvicorn",
-     "popularity": 146440207.0,
+     "popularity": 148126519.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2147,7 +2147,7 @@
      "key": "pypi/httpx",
      "name": "httpx",
      "label": "httpx",
-     "popularity": 179391379.0,
+     "popularity": 179482070.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2158,7 +2158,7 @@
      "key": "pypi/aiohttp",
      "name": "aiohttp",
      "label": "aiohttp",
-     "popularity": 125415276.0,
+     "popularity": 127651602.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2176,8 +2176,8 @@
        "summary": "AIOHTTP: Absolute-form request targets can spoof Request.scheme",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2224,8 +2224,8 @@
        "summary": "AIOHTTP: Connector pool exhaustion via Max-Age overflow",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2248,8 +2248,8 @@
        "summary": "AIOHTTP: Pure-Python parser request smuggling",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2272,8 +2272,8 @@
        "summary": "AIOHTTP: File descriptor exhaustion in multipart requests",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2296,8 +2296,8 @@
        "summary": "aiohttp server lacks an initial request/header timeout",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2358,7 +2358,7 @@
      "key": "pypi/pillow",
      "name": "pillow",
      "label": "pillow",
-     "popularity": 144328784.0,
+     "popularity": 156041131.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2522,8 +2522,8 @@
        "summary": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2547,8 +2547,8 @@
        "summary": "Pillow: Infinite loop in PdfParser.rewrite_pages on page tree Parent cycle",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2754,8 +2754,8 @@
        "summary": "Pillow: APNG background disposal allocates full canvas before decompression bomb check",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2779,8 +2779,8 @@
        "summary": "Pillow: MSP RLE decoder expands a tiny file into unbounded memory",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2804,8 +2804,8 @@
        "summary": "Pillow: Quadratic-time DoS in PDF save_all (PdfParser.next_object_id)",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2829,8 +2829,8 @@
        "summary": "Pillow: PdfParser can recurse without limit in get_value() and linearize_page_tree()",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2854,8 +2854,8 @@
        "summary": "Pillow: Image.quantize() with empty palette leaks uninitialized stack memory",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2879,8 +2879,8 @@
        "summary": "Pillow: Quadratic GIF comment concatenation allows DoS in Image.open()",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2904,8 +2904,8 @@
        "summary": "Pillow: Infinite loop in MIC n_frames when the embedded TIFF",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2929,8 +2929,8 @@
        "summary": "Pillow: Quadratic GIF comment copying during save",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2954,8 +2954,8 @@
        "summary": "Pillow: Invalid free in FreeType glyph rendering when a stroker is active",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2979,8 +2979,8 @@
        "summary": "Pillow: Argument Injection in Ghostscript call, potentially leading into RCE",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -3004,8 +3004,8 @@
        "summary": "Pillow: GIF seek keeps rejected size after DecompressionBombError, allowing DoS",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -3053,8 +3053,8 @@
        "summary": "Pillow: TiffDecode returns uninitialized memory as pixels for short JPEG strips",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.2,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -3078,8 +3078,8 @@
        "summary": "Pillow: Unbounded recursion parsing a PDF page tree or trailer chain (incomplete fix for CVE-2026-42310)",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -3128,8 +3128,8 @@
        "summary": "Pillow: OOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -3406,7 +3406,7 @@
      "key": "pypi/pyjwt",
      "name": "pyjwt",
      "label": "pyjwt",
-     "popularity": 162862966.0,
+     "popularity": 171660698.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3533,6 +3533,31 @@
        "epss_percentile": 0.12131
       },
       {
+       "id": "PYSEC-2026-4142",
+       "aliases": [
+        "CVE-2026-102265",
+        "GHSA-8wjv-2p76-3863"
+       ],
+       "cves": [
+        "CVE-2026-102265"
+       ],
+       "published": "2026-10-01T16:38:40Z",
+       "summary": "PyJWT: Uncaught RecursionError in jwt.decode() on deeply nested token header",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4142",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00343,
+       "epss_percentile": 0.27795
+      },
+      {
        "id": "PYSEC-2026-4151",
        "aliases": [
         "CVE-2026-102273",
@@ -3606,6 +3631,31 @@
        "kev_date_added": null,
        "epss": 0.00428,
        "epss_percentile": 0.36966
+      },
+      {
+       "id": "PYSEC-2026-4143",
+       "aliases": [
+        "CVE-2026-102266",
+        "GHSA-9j54-fg26-wv3r"
+       ],
+       "cves": [
+        "CVE-2026-102266"
+       ],
+       "published": "2026-10-01T16:38:40Z",
+       "summary": "PyJWT: PyJWK accepts empty HMAC keys, bypassing PyJWT's empty-key validation",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.4,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.14.0"
+       ],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4143",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00225,
+       "epss_percentile": 0.13153
       },
       {
        "id": "PYSEC-2026-4144",
@@ -3729,56 +3779,6 @@
        "kev_date_added": null,
        "epss": 0.00246,
        "epss_percentile": 0.15823
-      },
-      {
-       "id": "GHSA-9j54-fg26-wv3r",
-       "aliases": [
-        "CVE-2026-102266",
-        "PYSEC-2026-4143"
-       ],
-       "cves": [
-        "CVE-2026-102266"
-       ],
-       "published": "2026-09-29T23:43:19Z",
-       "summary": "PyJWT: PyJWK accepts empty HMAC keys, bypassing PyJWT's empty-key validation",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.4,
-       "cvss_source": "advisory",
-       "fixed": [
-        "2.14.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-9j54-fg26-wv3r",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00225,
-       "epss_percentile": 0.13153
-      },
-      {
-       "id": "GHSA-8wjv-2p76-3863",
-       "aliases": [
-        "CVE-2026-102265",
-        "PYSEC-2026-4142"
-       ],
-       "cves": [
-        "CVE-2026-102265"
-       ],
-       "published": "2026-09-29T23:43:06Z",
-       "summary": "PyJWT: Uncaught RecursionError in jwt.decode() on deeply nested token header",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "2.14.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-8wjv-2p76-3863",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00343,
-       "epss_percentile": 0.27795
       }
      ]
     },
@@ -3786,7 +3786,7 @@
      "key": "pypi/sqlalchemy",
      "name": "sqlalchemy",
      "label": "sqlalchemy",
-     "popularity": 92294127.0,
+     "popularity": 94517333.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3797,7 +3797,7 @@
      "key": "pypi/lxml",
      "name": "lxml",
      "label": "lxml",
-     "popularity": 92750997.0,
+     "popularity": 102101889.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3808,7 +3808,7 @@
      "key": "pypi/protobuf",
      "name": "protobuf",
      "label": "protobuf",
-     "popularity": 171943903.0,
+     "popularity": 177065663.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3819,7 +3819,7 @@
      "key": "pypi/transformers",
      "name": "transformers",
      "label": "transformers",
-     "popularity": 25706650.0,
+     "popularity": 26169361.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3854,7 +3854,7 @@
      "key": "pypi/torch",
      "name": "torch",
      "label": "torch",
-     "popularity": 14620190.0,
+     "popularity": 15149278.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -5273,7 +5273,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 146303841.0,
+     "popularity": 147394060.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -5284,7 +5284,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2901.0,
+     "popularity": 2907.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -5295,7 +5295,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 281427333.0,
+     "popularity": 283005601.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5314,8 +5314,8 @@
        "summary": "Tokio: Race condition in `tokio::time::Interval`",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.8,
+       "cvss_source": "NVD",
        "fixed": [
         "1.54.1"
        ],
@@ -5353,7 +5353,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 257607511.0,
+     "popularity": 259254369.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5364,7 +5364,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 239245317.0,
+     "popularity": 240861302.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5375,7 +5375,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 208411154.0,
+     "popularity": 209716453.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5386,7 +5386,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 257362472.0,
+     "popularity": 258965543.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5541,7 +5541,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 81338651.0,
+     "popularity": 81716576.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5552,7 +5552,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 202734026.0,
+     "popularity": 204088109.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5563,7 +5563,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 393509937.0,
+     "popularity": 395526537.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5574,7 +5574,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 302652265.0,
+     "popularity": 304004787.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5585,7 +5585,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 236068058.0,
+     "popularity": 237496688.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5596,7 +5596,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 51928192.0,
+     "popularity": 52309290.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5607,7 +5607,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 94409205.0,
+     "popularity": 95033867.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "CRITICAL",
@@ -5721,8 +5721,8 @@
        "summary": "zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 10.0,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.5"
        ],
@@ -5815,7 +5815,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 20705312.0,
+     "popularity": 20838794.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "CRITICAL",
@@ -5833,8 +5833,8 @@
        "summary": "Laravel TokenGuard authentication bypass through non-string API credentials",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.2,
+       "cvss_source": "NVD",
        "fixed": [
         "13.29.0",
         "12.68.0"
@@ -5877,7 +5877,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 27083570.0,
+     "popularity": 27014949.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "HIGH",
@@ -5943,7 +5943,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1717756.0,
+     "popularity": 1678053.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -6036,7 +6036,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 29618837.0,
+     "popularity": 29516772.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6047,7 +6047,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 30642859.0,
+     "popularity": 30669520.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6058,7 +6058,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 28858380.0,
+     "popularity": 28139290.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6069,7 +6069,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 12280059.0,
+     "popularity": 12560202.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6080,7 +6080,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 25238788.0,
+     "popularity": 25481289.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6091,7 +6091,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 24084139.0,
+     "popularity": 23542339.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6102,7 +6102,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 21926444.0,
+     "popularity": 21535088.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6162,7 +6162,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 24195356.0,
+     "popularity": 23611531.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6173,7 +6173,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4173364.0,
+     "popularity": 4096949.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6184,7 +6184,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 18849163.0,
+     "popularity": 18833983.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6195,7 +6195,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 17149042.0,
+     "popularity": 16815683.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -7078,8 +7078,8 @@
        "summary": "Echo: WebSocket proxy can retain connections and handlers after client disconnect",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "4.16.1"
        ],
@@ -7102,8 +7102,8 @@
        "summary": "Echo: Decompress permits unbounded gzip expansion in v4",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "4.16.1"
        ],
@@ -7126,8 +7126,8 @@
        "summary": "Echo: Rejected WebSocket upgrades can bypass Echo route-level access controls",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "4.16.1"
        ],
@@ -7150,8 +7150,8 @@
        "summary": "Echo: BodyDump captures request and response bodies without size limits in v4",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "4.16.1"
        ],
@@ -7255,7 +7255,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 809017842.0,
+     "popularity": 809291231.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "NONE",
@@ -7266,7 +7266,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1378070929.0,
+     "popularity": 1378515148.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7277,7 +7277,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1288966697.0,
+     "popularity": 1289376695.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7288,7 +7288,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 622371386.0,
+     "popularity": 622621962.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7299,7 +7299,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 302539214.0,
+     "popularity": 302632551.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7310,7 +7310,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 344544956.0,
+     "popularity": 344657153.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7321,7 +7321,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1289415191.0,
+     "popularity": 1289874207.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7332,7 +7332,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 397837066.0,
+     "popularity": 398106316.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7353,7 +7353,7 @@
      "key": "hex/phoenix",
      "name": "phoenix",
      "label": "Phoenix",
-     "popularity": 645322.0,
+     "popularity": 636524.0,
      "popularity_source": "Hex downloads, last week",
      "survey": 2.5,
      "worst_7d": "NONE",
@@ -7364,7 +7364,7 @@
      "key": "hex/phoenix_live_view",
      "name": "phoenix_live_view",
      "label": "LiveView",
-     "popularity": 531642.0,
+     "popularity": 522685.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -7375,10 +7375,10 @@
      "key": "hex/plug",
      "name": "plug",
      "label": "plug",
-     "popularity": 733448.0,
+     "popularity": 725213.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
-     "worst_7d": "MEDIUM",
+     "worst_7d": "NONE",
      "worst_30d": "MEDIUM",
      "vulns": [
       {
@@ -7412,7 +7412,7 @@
      "key": "hex/ecto",
      "name": "ecto",
      "label": "ecto",
-     "popularity": 604449.0,
+     "popularity": 597911.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -7423,7 +7423,7 @@
      "key": "hex/cowboy",
      "name": "cowboy",
      "label": "cowboy",
-     "popularity": 496248.0,
+     "popularity": 483538.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -7434,7 +7434,7 @@
      "key": "hex/hackney",
      "name": "hackney",
      "label": "hackney",
-     "popularity": 344454.0,
+     "popularity": 346132.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "CRITICAL",
@@ -7858,8 +7858,8 @@
        "summary": "Phar TAR phar_tar_number() Integer Overflow - Archive Entry Injection",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.3,
+       "cvss_source": "NVD",
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -7887,8 +7887,8 @@
        "summary": "PHP on Windows: Reserved Device Names Are Not Rejected Before File/Stream I/O which can cause DoS",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "8.2.34",
         "8.3.35",
@@ -8230,8 +8230,8 @@
        "summary": "A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -8271,8 +8271,8 @@
        "summary": "tar filter allows writing outside destination via empty-named symlink",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "3.11.18",
         "3.12.16",
@@ -8302,8 +8302,8 @@
        "summary": "SSLContext.wrap_bio() missing validation of server_hostname parameter",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.6,
+       "cvss_source": "NVD",
        "fixed": [
         "3.10.22",
         "3.11.17",
@@ -8333,8 +8333,8 @@
        "summary": "Use-after-free of a server-side SSLContext when sni_callback switches contexts",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.2,
+       "cvss_source": "NVD",
        "fixed": [
         "3.10.22",
         "3.11.17",
@@ -8364,8 +8364,8 @@
        "summary": "Race condition in tempfile.TemporaryDirectory cleanup allows deleting files outside the temporary directory",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.9,
+       "cvss_source": "NVD",
        "fixed": [
         "3.12.16",
         "3.13.18",
@@ -8541,8 +8541,8 @@
        "summary": "NGINX ngx_http_core_module vulnerability",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -8578,8 +8578,8 @@
        "summary": "Apache HTTP Server: mod_proxy_uwsgi Transfer-Encoding response smuggling",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8626,8 +8626,8 @@
        "summary": "Apache HTTP Server: mod_userdir information disclosure",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8650,8 +8650,8 @@
        "summary": "Apache HTTP Server: mod_auth_digest DoS attack",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.3,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8674,8 +8674,8 @@
        "summary": "Apache HTTP Server: mod_auth_digest one-time-nonce replay attack",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8698,8 +8698,8 @@
        "summary": "Apache HTTP Server: mod_xml2enc crash on charset conversion failure",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8722,8 +8722,8 @@
        "summary": "Apache HTTP Server: mod_vhost_alias stack overflow",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8746,8 +8746,8 @@
        "summary": "Apache HTTP Server: mod_proxy_ftp PASV address handling",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8770,8 +8770,8 @@
        "summary": "Apache HTTP Server: mod_ssl SSLRequire allows .htaccess ap_expr file-function",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8794,8 +8794,8 @@
        "summary": "Apache HTTP Server: Out-of-Bounds Write in ap_directory_walk() Canonical-Name Rewrite on CASE_BLIND_FILESYSTEM",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8818,8 +8818,8 @@
        "summary": "Apache HTTP Server: mod_dav_fs property database read access",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8842,8 +8842,8 @@
        "summary": "Apache HTTP Server: mod_http2 use-after-free / wild write via shared session->bbtmp re-entrancy",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8866,8 +8866,8 @@
        "summary": "Apache HTTP Server: mod_proxy_html: crash in dump_content",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8890,8 +8890,8 @@
        "summary": "Apache HTTP Server: mod_rewrite use-after-free via %{LA-U:HTTP:...}",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8914,8 +8914,8 @@
        "summary": "Apache HTTP Server: mod_charset_lite: Heap overflow in finish_partial_char",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8938,8 +8938,8 @@
        "summary": "Apache HTTP Server: mod_auth_digest reauthentication attack",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8962,8 +8962,8 @@
        "summary": "Apache HTTP Server: mod_session: Session cookie not removed during internal redirect",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -8986,8 +8986,8 @@
        "summary": "Apache HTTP Server: mod_heartmonitor denial of service",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -9010,8 +9010,8 @@
        "summary": "Apache HTTP Server: mod_dav shared lock overflow",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.3,
+       "cvss_source": "NVD",
        "fixed": [
         "2.4.69"
        ],
@@ -9069,7 +9069,7 @@
        "published": "2026-10-29T09:02:42Z",
        "summary": "Apache Tomcat: Possible TLS 1.3 connection failures",
        "severity": "HIGH",
-       "severity_source": "NVD",
+       "severity_source": "Bitnami",
        "cvss": 7.5,
        "cvss_source": "NVD",
        "fixed": [
@@ -9095,7 +9095,7 @@
        "published": "2026-10-29T09:02:41Z",
        "summary": "Apache Tomcat: HTTP/2 trailer header cross-contamination",
        "severity": "HIGH",
-       "severity_source": "NVD",
+       "severity_source": "Bitnami",
        "cvss": 7.5,
        "cvss_source": "NVD",
        "fixed": [
@@ -9121,7 +9121,7 @@
        "published": "2026-10-29T09:02:36Z",
        "summary": "Apache Tomcat: TOCTOU when setting specific permissions for Unix Domain Sockets - Fix for CVE-2026-65183 did not address APR connector",
        "severity": "HIGH",
-       "severity_source": "NVD",
+       "severity_source": "Bitnami",
        "cvss": 8.1,
        "cvss_source": "NVD",
        "fixed": [
@@ -9145,7 +9145,7 @@
        "published": "2026-10-29T09:02:24Z",
        "summary": "Apache Tomcat: Jasper JSTL <c:redirect> plug-in implementation omits page abort (SKIP_PAGE)",
        "severity": "MEDIUM",
-       "severity_source": "NVD",
+       "severity_source": "Bitnami",
        "cvss": 6.1,
        "cvss_source": "NVD",
        "fixed": [
@@ -9171,7 +9171,7 @@
        "published": "2026-10-29T09:02:22Z",
        "summary": "Apache Tomcat: OpenSSL-FFM FIPS failure does not prevent start-up",
        "severity": "MEDIUM",
-       "severity_source": "NVD",
+       "severity_source": "Bitnami",
        "cvss": 6.5,
        "cvss_source": "NVD",
        "fixed": [
@@ -9353,8 +9353,8 @@
        "summary": "Apache Tomcat: WebSocket DoS due to lost asynchronous write timeout",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9380,8 +9380,8 @@
        "summary": "Apache Tomcat: HTTP/2 DoS via malformed request",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.3,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.122",
         "10.1.60",
@@ -9406,8 +9406,8 @@
        "summary": "Apache Tomcat: AJP DoS via missing request body",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9433,8 +9433,8 @@
        "summary": "Apache Tomcat: DoS via busy wait during WebSocket close",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.45",
         "9.0.122",
@@ -9460,8 +9460,8 @@
        "summary": "Apache Tomcat: Stale HPACK emitter injects trailers into recycled pooled Request",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.122",
         "10.1.60",
@@ -9513,8 +9513,8 @@
        "summary": "Apache Tomcat: Bypass of security constraints for WebSocket endpoints",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9540,8 +9540,8 @@
        "summary": "Apache Tomcat: Cross-context authentication mix-up with Jakarta Authentication configured",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.3,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9567,8 +9567,8 @@
        "summary": "Apache Tomcat: OpenSSL and OpenSSL-FFM TLS implementations ignore CRLs when certificate uses a keystore",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.45",
         "10.1.60",
@@ -9748,8 +9748,8 @@
        "summary": "MariaDB: Use-after-free with a large number of SYS_REFCURSOR's",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.9,
+       "cvss_source": "NVD",
        "fixed": [
         "12.3.3",
         "13.0.2"
@@ -9776,8 +9776,8 @@
        "summary": "MariaDB: Out-of-bound buffer write on in `ST_AsText` of nested GeometryCollections",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.9,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -9808,8 +9808,8 @@
        "summary": "MariaDB: Out-of-bound buffer read on in `ST_Area` of a multipolygon.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.3,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",

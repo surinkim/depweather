@@ -1,13 +1,13 @@
-# depweather forecast, 2026-10-29
+# depweather forecast, 2026-10-30
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-29T23:24:28Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-30T12:51:23Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 16 of 149
+- Popular packages with a new advisory this week: 15 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 10
-- New CVEs in NVD today (UTC): 537
-- CVEs published in 2026-10 so far: 16,279 (same month last year: 4,273)
+- New CVEs in NVD today (UTC): 264
+- CVEs published in 2026-10 so far: 16,543 (same month last year: 4,273)
 
 ## By ecosystem
 
@@ -35,7 +35,6 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 ### Hex
 
 - **hackney**: 5 advisories, worst critical; fixed in 4.9.0. Example: [EEF-CVE-2026-115693](https://osv.dev/vulnerability/EEF-CVE-2026-115693) Custom cacerts or cacertfile do not restrict trust to the pinned CA in hackney
-- **plug**: 1 advisory, worst medium; fixed in 1.7.0. Example: [EEF-CVE-2026-105963](https://osv.dev/vulnerability/EEF-CVE-2026-105963) Secret key base exposed in stack trace arguments on wrong-typed Plug.Crypto arguments
 
 ### npm
 
