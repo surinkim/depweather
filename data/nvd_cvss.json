@@ -713,20 +713,5 @@
   "cvss": 6.5,
   "severity": "MEDIUM",
   "checked": "2026-10-30"
- },
- "CVE-2026-97687": {
-  "cvss": 8.1,
-  "severity": "HIGH",
-  "checked": "2026-10-30"
- },
- "CVE-2026-97688": {
-  "cvss": 5.3,
-  "severity": "MEDIUM",
-  "checked": "2026-10-30"
- },
- "CVE-2026-97689": {
-  "cvss": 7.5,
-  "severity": "HIGH",
-  "checked": "2026-10-30"
  }
 }
