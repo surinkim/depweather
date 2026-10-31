@@ -1,13 +1,13 @@
-# depweather forecast, 2026-10-30
+# depweather forecast, 2026-10-31
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-30T22:21:19Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-10-31T12:24:16Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 12 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 12
-- New CVEs in NVD today (UTC): 651
-- CVEs published in 2026-10 so far: 16,930 (same month last year: 4,273)
+- Popular packages with a new advisory this week: 15 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 10
+- New CVEs in NVD today (UTC): 90
+- CVEs published in 2026-10 so far: 17,038 (same month last year: 4,273)
 
 ## By ecosystem
 
@@ -29,6 +29,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 ### npm
 
 - **undici**: 6 advisories, worst high; fixed in 7.30.1, 8.12.2, 6.29.1, 8.11.2. Example: [GHSA-4w7w-5xrc-9h26](https://osv.dev/vulnerability/GHSA-4w7w-5xrc-9h26) undici vulnerable to cache poisoning and cross-user disclosure via cross-origin redirects
+- **Nuxt**: 1 advisory, worst medium; fixed in 4.6.3. Example: [GHSA-9v7c-q64q-vv33](https://osv.dev/vulnerability/GHSA-9v7c-q64q-vv33) Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
 - **vite**: 1 advisory, worst medium; fixed in 6.4.5. Example: [GHSA-8g5g-mxqh-grgj](https://osv.dev/vulnerability/GHSA-8g5g-mxqh-grgj) Vite: `server.fs.deny` bypassed with queries
 
 ### Maven
@@ -38,10 +39,12 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 ### Packagist
 
 - **Symfony (symfony/http-kernel)**: 2 advisories, worst high; fixed in 5.4.54, 6.4.45, 7.4.18, 8.1.6 and more. Example: [GHSA-2v3c-qxhr-7vpv](https://osv.dev/vulnerability/GHSA-2v3c-qxhr-7vpv) Symfony: Unbounded Recursion in the YAML Inline Lexer Lets a Single Document Crash the Process
+- **PHPUnit (phpunit/phpunit)**: 1 advisory, worst medium; fixed in 13.4.4. Example: [GHSA-9vw2-f4vp-x7gf](https://osv.dev/vulnerability/GHSA-9vw2-f4vp-x7gf) PHPUnit vulnerable to code execution by other local users via shared temporary directory in PHPT code coverage handling
 
 ### Go
 
 - **Echo (github.com/labstack/echo/v4)**: 10 advisories, worst high; fixed in 4.16.0, 4.15.3, 4.15.2. Example: [GHSA-375p-5qhx-8wq4](https://osv.dev/vulnerability/GHSA-375p-5qhx-8wq4) Echo's middleware.Static: `%2F`-encoded path bypasses route/group middleware guarding a statically-served path
+- **Fiber (github.com/gofiber/fiber/v2)**: 1 advisory, worst medium; fixed in 2.52.3. Example: [GHSA-g5jq-qmqr-qrwf](https://osv.dev/vulnerability/GHSA-g5jq-qmqr-qrwf) Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
 - **x/net (golang.org/x/net)**: 2 advisories, worst low or unrated; fixed in 0.62.0. Example: [GO-2026-6866](https://osv.dev/vulnerability/GO-2026-6866) Check all ancestor namespace transitions when rendering raw text in html in golang.org/x/net
 
 ### PyPI
@@ -68,7 +71,5 @@ No new advisories for the tracked packages.
 - 2026-10-27: CVE-2026-111497, Google Brotli: Google Brotli Unchecked Return Value Vulnerability
 - 2026-10-26: CVE-2026-109618, PHP Group PHP: PHP Memory Corruption Vulnerability
 - 2026-10-26: CVE-2026-109619, PHP Group PHP: PHP Stale Internal Request-State Vulnerability
-- 2026-10-23: CVE-2026-114625, Arista VeloCloud Orchestrator: Arista VeloCloud Orchestrator SQL Injection Vulnerability
-- 2026-10-23: CVE-2026-110447, Collabora Collabora Online – Built-in CODE Server: Collabora Online – Built-in CODE Server OS Command Injection Vulnerability
 
 Full data: https://depweather.com/data/latest.json

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T22:21:19Z",
+ "generated_at": "2026-10-31T12:24:16Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -47,12 +47,12 @@
   }
  },
  "summary": {
-  "today_cves": 651,
+  "today_cves": 90,
   "month": "2026-10",
-  "month_cves": 16930,
+  "month_cves": 17038,
   "month_cves_last_year": 4273,
-  "kev_new_7d": 12,
-  "affected_packages_7d": 12,
+  "kev_new_7d": 10,
+  "affected_packages_7d": 15,
   "tracked_packages": 149
  },
  "monthly": [
@@ -110,7 +110,7 @@
   },
   {
    "month": "2026-10",
-   "count": 16930
+   "count": 17038
   }
  ],
  "monthly_is_stale": false,
@@ -184,20 +184,6 @@
    "product": "PHP",
    "name": "PHP Stale Internal Request-State Vulnerability",
    "date_added": "2026-10-26"
-  },
-  {
-   "cve": "CVE-2026-114625",
-   "vendor": "Arista",
-   "product": "VeloCloud Orchestrator",
-   "name": "Arista VeloCloud Orchestrator SQL Injection Vulnerability",
-   "date_added": "2026-10-23"
-  },
-  {
-   "cve": "CVE-2026-110447",
-   "vendor": "Collabora",
-   "product": "Collabora Online – Built-in CODE Server",
-   "name": "Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
-   "date_added": "2026-10-23"
   }
  ],
  "ecosystems": [
@@ -683,9 +669,33 @@
      "popularity": 3328960.0,
      "popularity_source": "npm downloads, last week",
      "survey": 4.4,
-     "worst_7d": "NONE",
+     "worst_7d": "MEDIUM",
      "worst_30d": "MEDIUM",
      "vulns": [
+      {
+       "id": "GHSA-9v7c-q64q-vv33",
+       "aliases": [
+        "CVE-2026-119200"
+       ],
+       "cves": [
+        "CVE-2026-119200"
+       ],
+       "published": "2026-10-30T23:00:53Z",
+       "summary": "Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "cvss_source": "advisory",
+       "fixed": [
+        "4.6.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9v7c-q64q-vv33",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00339,
+       "epss_percentile": 0.27331
+      },
       {
        "id": "GHSA-vjh5-4x84-xrqp",
        "aliases": [
@@ -793,7 +803,7 @@
      "popularity_source": "npm downloads, last week",
      "survey": 3.5,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
+     "worst_30d": "UNKNOWN",
      "vulns": [
       {
        "id": "GHSA-389g-gv7q-r4x8",
@@ -818,126 +828,6 @@
        "kev_date_added": null,
        "epss": 0.00257,
        "epss_percentile": 0.1742
-      },
-      {
-       "id": "GHSA-4mh8-r7rc-xpvc",
-       "aliases": [
-        "CVE-2026-92081"
-       ],
-       "cves": [
-        "CVE-2026-92081"
-       ],
-       "published": "2026-09-30T23:53:44Z",
-       "summary": "fastify vulnerable to Denial of Service via unhandled exception on HTTP/2 trailer responses",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [
-        "5.12.5"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-4mh8-r7rc-xpvc",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00412,
-       "epss_percentile": 0.35473
-      },
-      {
-       "id": "GHSA-667r-xxjv-c9mm",
-       "aliases": [
-        "CVE-2026-84504"
-       ],
-       "cves": [
-        "CVE-2026-84504"
-       ],
-       "published": "2026-09-30T23:45:45Z",
-       "summary": "fastify vulnerable to request body replacement via an async validation result collision",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.1,
-       "cvss_source": "advisory",
-       "fixed": [
-        "5.12.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-667r-xxjv-c9mm",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00428,
-       "epss_percentile": 0.37103
-      },
-      {
-       "id": "GHSA-p68q-wchp-6fh7",
-       "aliases": [
-        "CVE-2026-76169"
-       ],
-       "cves": [
-        "CVE-2026-76169"
-       ],
-       "published": "2026-09-30T23:45:34Z",
-       "summary": "fastify vulnerable to authentication bypass via malformed URLs reaching encapsulated not-found handlers",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "5.12.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-p68q-wchp-6fh7",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0053,
-       "epss_percentile": 0.44821
-      },
-      {
-       "id": "GHSA-hwr6-493r-vm6h",
-       "aliases": [
-        "CVE-2026-84469"
-       ],
-       "cves": [
-        "CVE-2026-84469"
-       ],
-       "published": "2026-09-30T23:44:58Z",
-       "summary": "fastify vulnerable to request validation bypass via skipped boolean false schemas",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "5.12.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-hwr6-493r-vm6h",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00492,
-       "epss_percentile": 0.42268
-      },
-      {
-       "id": "GHSA-9q9j-q6p8-xq58",
-       "aliases": [
-        "CVE-2026-84428"
-       ],
-       "cves": [
-        "CVE-2026-84428"
-       ],
-       "published": "2026-09-30T23:44:27Z",
-       "summary": "fastify vulnerable to header validation bypass via incomplete schema case normalization",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "5.12.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-9q9j-q6p8-xq58",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00524,
-       "epss_percentile": 0.44459
       }
      ]
     },
@@ -976,30 +866,6 @@
        "kev_date_added": null,
        "epss": 0.00315,
        "epss_percentile": 0.24414
-      },
-      {
-       "id": "GHSA-hxh3-vqpv-xpqv",
-       "aliases": [
-        "CVE-2026-93981"
-       ],
-       "cves": [
-        "CVE-2026-93981"
-       ],
-       "published": "2026-09-30T23:46:16Z",
-       "summary": "hono/jsx renders plain strings unescaped in boundary components, leading to XSS",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 4.7,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.13.7"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-hxh3-vqpv-xpqv",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00227,
-       "epss_percentile": 0.13543
       }
      ]
     },
@@ -1536,7 +1402,7 @@
      "key": "pypi/fastapi",
      "name": "fastapi",
      "label": "FastAPI",
-     "popularity": 122158883.0,
+     "popularity": 122292423.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 18.5,
      "worst_7d": "NONE",
@@ -1547,7 +1413,7 @@
      "key": "pypi/flask",
      "name": "flask",
      "label": "Flask",
-     "popularity": 49921637.0,
+     "popularity": 52771461.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 12.5,
      "worst_7d": "NONE",
@@ -1558,7 +1424,7 @@
      "key": "pypi/django",
      "name": "django",
      "label": "Django",
-     "popularity": 11962410.0,
+     "popularity": 11848340.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 11.3,
      "worst_7d": "NONE",
@@ -1597,7 +1463,7 @@
      "key": "pypi/requests",
      "name": "requests",
      "label": "requests",
-     "popularity": 346553157.0,
+     "popularity": 349893505.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1608,7 +1474,7 @@
      "key": "pypi/urllib3",
      "name": "urllib3",
      "label": "urllib3",
-     "popularity": 373501669.0,
+     "popularity": 376851872.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1695,7 +1561,7 @@
      "key": "pypi/certifi",
      "name": "certifi",
      "label": "certifi",
-     "popularity": 409864396.0,
+     "popularity": 409993320.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1729,7 +1595,7 @@
      "key": "pypi/cryptography",
      "name": "cryptography",
      "label": "cryptography",
-     "popularity": 315197148.0,
+     "popularity": 317717089.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1740,7 +1606,7 @@
      "key": "pypi/setuptools",
      "name": "setuptools",
      "label": "setuptools",
-     "popularity": 271570687.0,
+     "popularity": 269460429.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1772,7 +1638,7 @@
      "key": "pypi/pyyaml",
      "name": "pyyaml",
      "label": "pyyaml",
-     "popularity": 280608911.0,
+     "popularity": 280296986.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1783,7 +1649,7 @@
      "key": "pypi/pydantic",
      "name": "pydantic",
      "label": "pydantic",
-     "popularity": 256723829.0,
+     "popularity": 258640581.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1794,7 +1660,7 @@
      "key": "pypi/numpy",
      "name": "numpy",
      "label": "numpy",
-     "popularity": 242644408.0,
+     "popularity": 245786050.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1805,7 +1671,7 @@
      "key": "pypi/pandas",
      "name": "pandas",
      "label": "pandas",
-     "popularity": 160977921.0,
+     "popularity": 163261473.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1816,7 +1682,7 @@
      "key": "pypi/jinja2",
      "name": "jinja2",
      "label": "jinja2",
-     "popularity": 164161904.0,
+     "popularity": 167320003.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1827,7 +1693,7 @@
      "key": "pypi/starlette",
      "name": "starlette",
      "label": "starlette",
-     "popularity": 159417815.0,
+     "popularity": 159341571.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1838,7 +1704,7 @@
      "key": "pypi/uvicorn",
      "name": "uvicorn",
      "label": "uvicorn",
-     "popularity": 148126519.0,
+     "popularity": 148164468.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1849,7 +1715,7 @@
      "key": "pypi/httpx",
      "name": "httpx",
      "label": "httpx",
-     "popularity": 179482070.0,
+     "popularity": 178937914.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1860,7 +1726,7 @@
      "key": "pypi/aiohttp",
      "name": "aiohttp",
      "label": "aiohttp",
-     "popularity": 127651602.0,
+     "popularity": 127613713.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2060,7 +1926,7 @@
      "key": "pypi/pillow",
      "name": "pillow",
      "label": "pillow",
-     "popularity": 156041131.0,
+     "popularity": 158597380.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3108,7 +2974,7 @@
      "key": "pypi/pyjwt",
      "name": "pyjwt",
      "label": "pyjwt",
-     "popularity": 171660698.0,
+     "popularity": 174526580.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3158,6 +3024,29 @@
        "kev_date_added": null,
        "epss": 0.00167,
        "epss_percentile": 0.05949
+      },
+      {
+       "id": "PYSEC-2026-4146",
+       "aliases": [
+        "CVE-2026-103001",
+        "GHSA-gvp8-978c-rx2q"
+       ],
+       "cves": [
+        "CVE-2026-103001"
+       ],
+       "published": "2026-10-01T16:38:41Z",
+       "summary": "PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 6.5,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/PYSEC-2026-4146",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00257,
+       "epss_percentile": 0.17389
       },
       {
        "id": "PYSEC-2026-4141",
@@ -3458,29 +3347,6 @@
        "kev_date_added": null,
        "epss": 0.00215,
        "epss_percentile": 0.11915
-      },
-      {
-       "id": "GHSA-gvp8-978c-rx2q",
-       "aliases": [
-        "CVE-2026-103001",
-        "PYSEC-2026-4146"
-       ],
-       "cves": [
-        "CVE-2026-103001"
-       ],
-       "published": "2026-09-30T23:53:17Z",
-       "summary": "PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/GHSA-gvp8-978c-rx2q",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00257,
-       "epss_percentile": 0.17389
       }
      ]
     },
@@ -3488,7 +3354,7 @@
      "key": "pypi/sqlalchemy",
      "name": "sqlalchemy",
      "label": "sqlalchemy",
-     "popularity": 94517333.0,
+     "popularity": 94243088.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3499,7 +3365,7 @@
      "key": "pypi/lxml",
      "name": "lxml",
      "label": "lxml",
-     "popularity": 102101889.0,
+     "popularity": 104581155.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3510,7 +3376,7 @@
      "key": "pypi/protobuf",
      "name": "protobuf",
      "label": "protobuf",
-     "popularity": 177065663.0,
+     "popularity": 177503518.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3521,7 +3387,7 @@
      "key": "pypi/transformers",
      "name": "transformers",
      "label": "transformers",
-     "popularity": 26169361.0,
+     "popularity": 26760268.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3556,7 +3422,7 @@
      "key": "pypi/torch",
      "name": "torch",
      "label": "torch",
-     "popularity": 15149278.0,
+     "popularity": 14534580.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -4922,7 +4788,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 148093482.0,
+     "popularity": 148484454.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4933,7 +4799,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2916.0,
+     "popularity": 2909.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4944,7 +4810,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 284229605.0,
+     "popularity": 284588304.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5002,7 +4868,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 260428215.0,
+     "popularity": 260835233.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5013,7 +4879,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 241984071.0,
+     "popularity": 242406407.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5024,7 +4890,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 210647038.0,
+     "popularity": 210957809.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5035,7 +4901,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 260116823.0,
+     "popularity": 260528194.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5055,10 +4921,10 @@
        ],
        "published": "2026-10-20T12:00:00Z",
        "summary": "Certificate verification may accept distrusted intermediates",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.8,
+       "cvss_source": "NVD",
        "fixed": [
         "0.103.16",
         "0.104.0-alpha.8"
@@ -5190,7 +5056,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 82046745.0,
+     "popularity": 82071290.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5201,7 +5067,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 205061806.0,
+     "popularity": 205406072.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5212,7 +5078,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 397242283.0,
+     "popularity": 397507321.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5223,7 +5089,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 305303542.0,
+     "popularity": 305308406.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5234,7 +5100,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 238585008.0,
+     "popularity": 238846655.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5245,7 +5111,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 52568253.0,
+     "popularity": 52707679.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5256,7 +5122,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 95494372.0,
+     "popularity": 95694486.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "CRITICAL",
@@ -5464,7 +5330,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 21196863.0,
+     "popularity": 20764396.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "NONE",
@@ -5526,7 +5392,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 27258340.0,
+     "popularity": 26726832.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "HIGH",
@@ -5592,7 +5458,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1726096.0,
+     "popularity": 1667094.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -5685,7 +5551,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 30333925.0,
+     "popularity": 29675133.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5696,7 +5562,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 31516337.0,
+     "popularity": 30746493.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5707,7 +5573,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 28318481.0,
+     "popularity": 28087307.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5718,7 +5584,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 12447608.0,
+     "popularity": 12197022.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5729,18 +5595,43 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 25481289.0,
+     "popularity": 25312627.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
+     "worst_7d": "MEDIUM",
+     "worst_30d": "MEDIUM",
+     "vulns": [
+      {
+       "id": "GHSA-9vw2-f4vp-x7gf",
+       "aliases": [
+        "CVE-2026-119193"
+       ],
+       "cves": [
+        "CVE-2026-119193"
+       ],
+       "published": "2026-10-30T23:01:21Z",
+       "summary": "PHPUnit vulnerable to code execution by other local users via shared temporary directory in PHPT code coverage handling",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.4,
+       "cvss_source": "NVD",
+       "fixed": [
+        "13.4.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-9vw2-f4vp-x7gf",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00113,
+       "epss_percentile": 0.01422
+      }
+     ]
     },
     {
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 24006768.0,
+     "popularity": 23465264.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5751,7 +5642,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 21756607.0,
+     "popularity": 21407233.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5762,7 +5653,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 23611531.0,
+     "popularity": 23463136.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5773,7 +5664,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4166335.0,
+     "popularity": 4049050.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5784,7 +5675,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 19016812.0,
+     "popularity": 18841919.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5795,7 +5686,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 17165418.0,
+     "popularity": 16790002.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5836,10 +5727,10 @@
        ],
        "published": "2026-10-21T00:27:29Z",
        "summary": "Distrust compromised intermediate certificates in crypto/x509",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.8,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.10",
         "1.27.3"
@@ -6771,9 +6662,34 @@
      "popularity": 1.0,
      "popularity_source": "fixed weight",
      "survey": null,
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
+     "worst_7d": "MEDIUM",
+     "worst_30d": "MEDIUM",
+     "vulns": [
+      {
+       "id": "GHSA-g5jq-qmqr-qrwf",
+       "aliases": [
+        "CVE-2026-119285"
+       ],
+       "cves": [
+        "CVE-2026-119285"
+       ],
+       "published": "2026-10-30T22:58:05Z",
+       "summary": "Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [
+        "2.52.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-g5jq-qmqr-qrwf",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00129,
+       "epss_percentile": 0.02492
+      }
+     ]
     },
     {
      "key": "go/github.com/golang-jwt/jwt/v5",
@@ -6855,7 +6771,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 809549802.0,
+     "popularity": 809705737.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "NONE",
@@ -6866,7 +6782,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1378907859.0,
+     "popularity": 1379197437.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6877,7 +6793,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1289714629.0,
+     "popularity": 1289913500.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6888,7 +6804,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 622852803.0,
+     "popularity": 623004132.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6899,7 +6815,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 302720598.0,
+     "popularity": 302765109.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6910,7 +6826,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 344783990.0,
+     "popularity": 344848417.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6921,7 +6837,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1290282451.0,
+     "popularity": 1290505155.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6932,7 +6848,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 398359560.0,
+     "popularity": 398515901.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6953,7 +6869,7 @@
      "key": "hex/phoenix",
      "name": "phoenix",
      "label": "Phoenix",
-     "popularity": 636524.0,
+     "popularity": 655449.0,
      "popularity_source": "Hex downloads, last week",
      "survey": 2.5,
      "worst_7d": "NONE",
@@ -6964,7 +6880,7 @@
      "key": "hex/phoenix_live_view",
      "name": "phoenix_live_view",
      "label": "LiveView",
-     "popularity": 522685.0,
+     "popularity": 542896.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -6975,7 +6891,7 @@
      "key": "hex/plug",
      "name": "plug",
      "label": "plug",
-     "popularity": 725213.0,
+     "popularity": 746980.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -7012,7 +6928,7 @@
      "key": "hex/ecto",
      "name": "ecto",
      "label": "ecto",
-     "popularity": 597911.0,
+     "popularity": 602346.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -7023,7 +6939,7 @@
      "key": "hex/cowboy",
      "name": "cowboy",
      "label": "cowboy",
-     "popularity": 483538.0,
+     "popularity": 489164.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -7034,7 +6950,7 @@
      "key": "hex/hackney",
      "name": "hackney",
      "label": "hackney",
-     "popularity": 346132.0,
+     "popularity": 341165.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "CRITICAL",
@@ -7239,326 +7155,6 @@
        "kev_date_added": "2026-10-26",
        "epss": 0.99999,
        "epss_percentile": 0.99998
-      },
-      {
-       "id": "BIT-libphp-2026-93682",
-       "aliases": [
-        "BIT-php-2026-93682",
-        "BIT-php-min-2026-93682",
-        "CVE-2026-93682"
-       ],
-       "cves": [
-        "CVE-2026-93682"
-       ],
-       "published": "2026-10-01T09:29:29Z",
-       "summary": "Out-of-bounds read in the HTTP stream wrapper when following a redirect with an empty Location header",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 5.8,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-93682",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00335,
-       "epss_percentile": 0.26931
-      },
-      {
-       "id": "BIT-libphp-2026-92842",
-       "aliases": [
-        "BIT-php-2026-92842",
-        "BIT-php-min-2026-92842",
-        "CVE-2026-92842"
-       ],
-       "cves": [
-        "CVE-2026-92842"
-       ],
-       "published": "2026-10-01T09:29:28Z",
-       "summary": "OOB read / info leak in convert.* stream filters when line-break-chars contains NUL",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 5.9,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-92842",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00277,
-       "epss_percentile": 0.20127
-      },
-      {
-       "id": "BIT-libphp-2026-91769",
-       "aliases": [
-        "BIT-php-2026-91769",
-        "BIT-php-min-2026-91769",
-        "CVE-2026-91769"
-       ],
-       "cves": [
-        "CVE-2026-91769"
-       ],
-       "published": "2026-10-01T09:29:27Z",
-       "summary": "TLS Hostname Verification Falls Back to CN After SAN Mismatch",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 4.3,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91769",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00159,
-       "epss_percentile": 0.05061
-      },
-      {
-       "id": "BIT-libphp-2026-91768",
-       "aliases": [
-        "BIT-php-2026-91768",
-        "BIT-php-min-2026-91768",
-        "CVE-2026-91768"
-       ],
-       "cves": [
-        "CVE-2026-91768"
-       ],
-       "published": "2026-10-01T09:29:26Z",
-       "summary": "IPv6 ACL bypass in FastCGI listen.allowed_clients due to partial address comparison (memcmp 12 bytes)",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91768",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00376,
-       "epss_percentile": 0.31623
-      },
-      {
-       "id": "BIT-libphp-2026-91767",
-       "aliases": [
-        "BIT-php-2026-91767",
-        "BIT-php-min-2026-91767",
-        "CVE-2026-91767"
-       ],
-       "cves": [
-        "CVE-2026-91767"
-       ],
-       "published": "2026-10-01T09:29:25Z",
-       "summary": "Heap-buffer-overflow in php_openssl_matches_wildcard_name on crafted server cert wildcard CN",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91767",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00107,
-       "epss_percentile": 0.0115
-      },
-      {
-       "id": "BIT-libphp-2026-91766",
-       "aliases": [
-        "BIT-php-2026-91766",
-        "BIT-php-min-2026-91766",
-        "CVE-2026-91766"
-       ],
-       "cves": [
-        "CVE-2026-91766"
-       ],
-       "published": "2026-10-01T09:29:24Z",
-       "summary": "Cross-origin credential leak in HTTP stream wrapper redirects",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 5.9,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91766",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00286,
-       "epss_percentile": 0.21189
-      },
-      {
-       "id": "BIT-libphp-2026-91765",
-       "aliases": [
-        "BIT-php-2026-91765",
-        "BIT-php-min-2026-91765",
-        "CVE-2026-91765"
-       ],
-       "cves": [
-        "CVE-2026-91765"
-       ],
-       "published": "2026-10-01T09:29:22Z",
-       "summary": "SOAP: Unbounded Recursion in Server-Side cleanup_xml_node",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-91765",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00378,
-       "epss_percentile": 0.3176
-      },
-      {
-       "id": "BIT-libphp-2026-6103",
-       "aliases": [
-        "BIT-php-2026-6103",
-        "BIT-php-min-2026-6103",
-        "CVE-2026-6103",
-        "GHSA-j3wh-g957-2m85"
-       ],
-       "cves": [
-        "CVE-2026-6103"
-       ],
-       "published": "2026-10-01T09:29:10Z",
-       "summary": "Phar TAR phar_tar_number() Integer Overflow - Archive Entry Injection",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 4.3,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-6103",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0016,
-       "epss_percentile": 0.05127
-      },
-      {
-       "id": "BIT-libphp-2026-17545",
-       "aliases": [
-        "BIT-php-2026-17545",
-        "BIT-php-min-2026-17545",
-        "CVE-2026-17545"
-       ],
-       "cves": [
-        "CVE-2026-17545"
-       ],
-       "published": "2026-10-01T09:29:09Z",
-       "summary": "PHP on Windows: Reserved Device Names Are Not Rejected Before File/Stream I/O which can cause DoS",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2026-17545",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00368,
-       "epss_percentile": 0.3064
-      },
-      {
-       "id": "BIT-libphp-2025-14181",
-       "aliases": [
-        "BIT-php-2025-14181",
-        "BIT-php-min-2025-14181",
-        "CVE-2025-14181"
-       ],
-       "cves": [
-        "CVE-2025-14181"
-       ],
-       "published": "2026-10-01T09:28:59Z",
-       "summary": "Integer overflow to buffer overflow in soap HTTP parsing",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2025-14181",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00312,
-       "epss_percentile": 0.24081
-      },
-      {
-       "id": "BIT-libphp-2025-1218",
-       "aliases": [
-        "BIT-php-2025-1218",
-        "BIT-php-min-2025-1218",
-        "CVE-2025-1218"
-       ],
-       "cves": [
-        "CVE-2025-1218"
-       ],
-       "published": "2026-10-01T09:28:51Z",
-       "summary": "Various packet overreads in mysqlnd_writeprotocol.c",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 3.4,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.2.34",
-        "8.3.35",
-        "8.4.26",
-        "8.5.11"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libphp-2025-1218",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00282,
-       "epss_percentile": 0.20779
       }
      ]
     },
@@ -8892,326 +8488,6 @@
        "kev_date_added": null,
        "epss": 0.00627,
        "epss_percentile": 0.50041
-      },
-      {
-       "id": "BIT-tomcat-2026-87022",
-       "aliases": [
-        "CVE-2026-87022"
-       ],
-       "cves": [
-        "CVE-2026-87022"
-       ],
-       "published": "2026-10-01T09:36:37Z",
-       "summary": "Apache Tomcat: WebSocket message smuggling with per-message-deflate",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.45",
-        "10.1.60",
-        "11.0.26",
-        "9.0.122"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-87022",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0054,
-       "epss_percentile": 0.45396
-      },
-      {
-       "id": "BIT-tomcat-2026-86350",
-       "aliases": [
-        "CVE-2026-86350"
-       ],
-       "cves": [
-        "CVE-2026-86350"
-       ],
-       "published": "2026-10-01T09:36:35Z",
-       "summary": "Apache Tomcat: Regression in fix for CVE-2026-41293 can trigger request header mix-up",
-       "severity": "CRITICAL",
-       "severity_source": "Bitnami",
-       "cvss": 9.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.122",
-        "10.1.60",
-        "11.0.26"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-86350",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00483,
-       "epss_percentile": 0.41656
-      },
-      {
-       "id": "BIT-tomcat-2026-86248",
-       "aliases": [
-        "CVE-2026-86248"
-       ],
-       "cves": [
-        "CVE-2026-86248"
-       ],
-       "published": "2026-10-01T09:36:34Z",
-       "summary": "Apache Tomcat: Fix for CVE-2026-34500 was incomplete. OCSP checks sometimes soft-fail with FFM even when soft-fail is disabled",
-       "severity": "CRITICAL",
-       "severity_source": "Bitnami",
-       "cvss": 9.8,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.122",
-        "10.1.60",
-        "11.0.26"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-86248",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00496,
-       "epss_percentile": 0.4253
-      },
-      {
-       "id": "BIT-tomcat-2026-79677",
-       "aliases": [
-        "CVE-2026-79677"
-       ],
-       "cves": [
-        "CVE-2026-79677"
-       ],
-       "published": "2026-10-01T09:36:33Z",
-       "summary": "Apache Tomcat: WebSocket DoS due to lost asynchronous write timeout",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.45",
-        "10.1.60",
-        "11.0.26",
-        "9.0.122"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-79677",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00422,
-       "epss_percentile": 0.36555
-      },
-      {
-       "id": "BIT-tomcat-2026-78437",
-       "aliases": [
-        "CVE-2026-78437"
-       ],
-       "cves": [
-        "CVE-2026-78437"
-       ],
-       "published": "2026-10-01T09:36:32Z",
-       "summary": "Apache Tomcat: HTTP/2 DoS via malformed request",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.3,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.122",
-        "10.1.60",
-        "11.0.26"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-78437",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00511,
-       "epss_percentile": 0.43601
-      },
-      {
-       "id": "BIT-tomcat-2026-78383",
-       "aliases": [
-        "CVE-2026-78383"
-       ],
-       "cves": [
-        "CVE-2026-78383"
-       ],
-       "published": "2026-10-01T09:36:30Z",
-       "summary": "Apache Tomcat: AJP DoS via missing request body",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.45",
-        "10.1.60",
-        "11.0.26",
-        "9.0.122"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-78383",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.005,
-       "epss_percentile": 0.42834
-      },
-      {
-       "id": "BIT-tomcat-2026-77791",
-       "aliases": [
-        "CVE-2026-77791"
-       ],
-       "cves": [
-        "CVE-2026-77791"
-       ],
-       "published": "2026-10-01T09:36:29Z",
-       "summary": "Apache Tomcat: DoS via busy wait during WebSocket close",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.45",
-        "9.0.122",
-        "10.1.60",
-        "11.0.26"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-77791",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00679,
-       "epss_percentile": 0.52339
-      },
-      {
-       "id": "BIT-tomcat-2026-77762",
-       "aliases": [
-        "CVE-2026-77762"
-       ],
-       "cves": [
-        "CVE-2026-77762"
-       ],
-       "published": "2026-10-01T09:36:28Z",
-       "summary": "Apache Tomcat: Stale HPACK emitter injects trailers into recycled pooled Request",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 8.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.122",
-        "10.1.60",
-        "11.0.26"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-77762",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00464,
-       "epss_percentile": 0.40217
-      },
-      {
-       "id": "BIT-tomcat-2026-77756",
-       "aliases": [
-        "CVE-2026-77756"
-       ],
-       "cves": [
-        "CVE-2026-77756"
-       ],
-       "published": "2026-10-01T09:36:27Z",
-       "summary": "Apache Tomcat: Transfer-Encoding honored for HTTP/1.0 requests",
-       "severity": "LOW",
-       "severity_source": "NVD",
-       "cvss": 3.7,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.45",
-        "9.0.122",
-        "10.1.60",
-        "11.0.26"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-77756",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00526,
-       "epss_percentile": 0.4456
-      },
-      {
-       "id": "BIT-tomcat-2026-76183",
-       "aliases": [
-        "CVE-2026-76183"
-       ],
-       "cves": [
-        "CVE-2026-76183"
-       ],
-       "published": "2026-10-01T09:36:26Z",
-       "summary": "Apache Tomcat: Bypass of security constraints for WebSocket endpoints",
-       "severity": "CRITICAL",
-       "severity_source": "Bitnami",
-       "cvss": 9.8,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.45",
-        "10.1.60",
-        "11.0.26",
-        "9.0.122"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-76183",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00566,
-       "epss_percentile": 0.46999
-      },
-      {
-       "id": "BIT-tomcat-2026-75973",
-       "aliases": [
-        "CVE-2026-75973"
-       ],
-       "cves": [
-        "CVE-2026-75973"
-       ],
-       "published": "2026-10-01T09:36:24Z",
-       "summary": "Apache Tomcat: Cross-context authentication mix-up with Jakarta Authentication configured",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.3,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.45",
-        "10.1.60",
-        "11.0.26",
-        "9.0.122"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-75973",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00518,
-       "epss_percentile": 0.4401
-      },
-      {
-       "id": "BIT-tomcat-2026-73581",
-       "aliases": [
-        "CVE-2026-73581"
-       ],
-       "cves": [
-        "CVE-2026-73581"
-       ],
-       "published": "2026-10-01T09:36:23Z",
-       "summary": "Apache Tomcat: OpenSSL and OpenSSL-FFM TLS implementations ignore CRLs when certificate uses a keystore",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.45",
-        "10.1.60",
-        "11.0.26",
-        "9.0.122"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-tomcat-2026-73581",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00159,
-       "epss_percentile": 0.05069
       }
      ]
     },
@@ -9850,63 +9126,8 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
-     "vulns": [
-      {
-       "id": "BIT-mongodb-2026-9737",
-       "aliases": [
-        "CVE-2026-9737"
-       ],
-       "cves": [
-        "CVE-2026-9737"
-       ],
-       "published": "2026-10-01T09:32:15Z",
-       "summary": "Find command with $meta sort can lead to crash",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "7.0.39",
-        "8.0.28",
-        "8.3.7",
-        "9.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mongodb-2026-9737",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0042,
-       "epss_percentile": 0.36343
-      },
-      {
-       "id": "BIT-mongodb-2026-89099",
-       "aliases": [
-        "CVE-2026-89099"
-       ],
-       "cves": [
-        "CVE-2026-89099"
-       ],
-       "published": "2026-10-01T09:32:12Z",
-       "summary": "Race Condition in MongoDB Server Document Value Layer Leads to Memory Corruption",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "7.0.43",
-        "8.0.32",
-        "8.3.11",
-        "9.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mongodb-2026-89099",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00321,
-       "epss_percentile": 0.25096
-      }
-     ]
+     "worst_30d": "NONE",
+     "vulns": []
     }
    ]
   }
