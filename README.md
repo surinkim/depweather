@@ -26,6 +26,8 @@ weather report, so you can tell in a few seconds.
 - **A 30-day timeline** for any package, with the versions that fix each issue.
 - **A page per package** at `/pkg/npm/next/` (a Maven `:` is `~`), with severity,
   fixed versions, KEV and EPSS. Korean: `?lang=ko`.
+- **A README badge** at `/badge/npm/lodash.svg` (Korean: `.ko.svg`). Gray is a
+  clear week, magenta is KEV. The package page has Markdown and HTML to copy.
 - **My stack.** Paste `package.json`, `requirements.txt`, or another manifest
   to show only those packages. It is parsed in the browser; nothing is uploaded.
 - English and Korean, light and dark, and it works on a phone.
@@ -67,6 +69,22 @@ No account. Subscribe to the [Atom feed](https://depweather.com/feed.xml)
 issue, or posts to Slack or Discord, when a package you depend on has a new
 KEV or critical advisory.
 
+## README badge
+
+Each tracked package has a badge for the last 7 days. The path matches the
+package page (a Maven `:` is `~`). Korean text is the same file with `.ko.svg`.
+
+```md
+[![depweather: lodash: clear](https://depweather.com/badge/npm/lodash.svg)](https://depweather.com/pkg/npm/lodash/)
+```
+
+The right side is `clear` (nothing new), `cloudy` (low or medium only), a count
+of high and critical advisories, or `KEV` when one was added to CISA KEV in
+that window. Colors match the map. Open the package page for a Markdown or HTML
+snippet in English or Korean; the snippet panel follows light and dark. GitHub
+caches the image through its camo proxy, so a README can lag the site. Details:
+[how it works](docs/how-it-works.md#readme-badge).
+
 ## Missing a package?
 
 The list lives in [`collect/stacks.yml`](collect/stacks.yml). It holds widely
@@ -79,6 +97,7 @@ download rankings. Suggestions are welcome as issues or pull requests.
 pip install -r collect/requirements.txt
 python collect/collect.py      # writes data/latest.json (about 5 minutes)
 python collect/pages.py        # writes pkg/ pages (optional, gitignored)
+python collect/badges.py       # writes badge/ (optional, gitignored)
 python -m http.server          # open http://localhost:8000
 node --test tests/stack.test.js   # manifest parsing tests, no install
 ```

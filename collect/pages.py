@@ -15,9 +15,11 @@ on the same host allowlist as alert/check.js.
 
 Both languages are in the HTML (English visible, Korean in attributes and
 meta). A short script applies ?lang=ko and the light/dark choice stored in
-the same localStorage key as the map. Pass --out pointing somewhere other
-than the repository root to also write sitemap.xml with a URL per package.
-The committed sitemap.xml is left as the source of the static entries.
+the same localStorage key as the map. Each page includes a README badge
+snippet (Markdown and HTML, English and Korean) that points at the SVG
+written by collect/badges.py. Pass --out pointing somewhere other than the
+repository root to also write sitemap.xml with a URL per package. The
+committed sitemap.xml is left as the source of the static entries.
 """
 
 from __future__ import annotations
@@ -372,6 +374,8 @@ def render_page(eco: dict, pkg: dict, generated: datetime, generated_raw: str) -
     if shown:
         fixed_html = f'<p class="fixed" data-en="{esc(en_fixed)}" data-ko="{esc(ko_fixed)}">{esc(en_fixed)}</p>'
     ld = _json_ld(page_url, en_title, ko_title, en_desc, generated_raw, label, shown)
+    import badges
+    panel = badges.panel_html(pkg, generated)
     return f"""<!doctype html>
 <html lang="en" data-title-en="{esc(en_title)}" data-title-ko="{esc(ko_title)}" data-desc-en="{esc(en_desc)}" data-desc-ko="{esc(ko_desc)}">
 <head>
@@ -500,6 +504,17 @@ table.data td.nowrap {{ white-space: nowrap; }}
 .pill.l3 {{ background: var(--sev-3); color: var(--sev-3-ink); }}
 .pill.kev {{ background: var(--sev-kev); color: #fff; }}
 .pill.mal {{ background: var(--ink); color: var(--page); }}
+.badge-preview {{ margin: 8px 0 4px; line-height: 1; }}
+.badge-preview img {{ height: 20px; width: auto; vertical-align: middle; }}
+.snippet {{ margin-top: 10px; }}
+.snippet-head {{ display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 0 0 4px; }}
+.snippet-head span {{ font-size: 13px; font-weight: 650; }}
+.snippet pre {{
+  margin: 0; padding: 8px 10px; background: var(--page); color: var(--ink);
+  border: 1px solid var(--border); border-radius: 8px; overflow-x: auto;
+  font: 12.5px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, "Apple SD Gothic Neo", monospace;
+  white-space: pre-wrap; word-break: break-all;
+}}
 footer {{ color: var(--muted); font-size: 12.5px; padding: 8px 0 32px; }}
 footer p {{ margin: 4px 0; }}
 @media (max-width: 767px) {{
@@ -530,6 +545,7 @@ footer p {{ margin: 4px 0; }}
     <h1 class="pkg">{esc(label)} <span class="meta">{esc(eco_label)} · {esc(name)}</span></h1>
     <p class="lede" data-en="{esc(en_desc)}" data-ko="{esc(ko_desc)}">{esc(en_desc)}</p>
     {fixed_html}
+    {panel}
     <section class="panel" id="current">
       <h2 data-en="{esc(en_current)}" data-ko="{esc(ko_current)}">{esc(en_current)}</h2>
       <p class="note" data-i18n="current_note">Published in the last 7 days, or added to CISA KEV in that time.</p>
@@ -636,6 +652,12 @@ footer p {{ margin: 4px 0; }}
       var v = el.getAttribute(lang === "ko" ? "data-ko" : "data-en");
       if (v != null) el.textContent = v;
     }});
+    document.querySelectorAll("[data-src-en]").forEach(function (el) {{
+      var src = el.getAttribute(lang === "ko" ? "data-src-ko" : "data-src-en");
+      var alt = el.getAttribute(lang === "ko" ? "data-alt-ko" : "data-alt-en");
+      if (src) el.setAttribute("src", src);
+      if (alt != null) el.alt = alt;
+    }});
     document.querySelectorAll("[data-lang]").forEach(function (b) {{
       b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
     }});
@@ -659,6 +681,40 @@ footer p {{ margin: 4px 0; }}
       var u = new URL(location.href);
       u.searchParams.set("lang", next);
       history.replaceState(null, "", u.pathname + u.search + u.hash);
+    }});
+  }});
+  document.querySelectorAll("[data-copy]").forEach(function (btn) {{
+    btn.addEventListener("click", function () {{
+      var node = document.getElementById(btn.getAttribute("data-copy"));
+      if (!node) return;
+      var text = node.textContent || "";
+      var restore = function () {{
+        var langNow = document.documentElement.lang === "ko" ? "ko" : "en";
+        var back = btn.getAttribute(langNow === "ko" ? "data-ko" : "data-en");
+        if (back != null) btn.textContent = back;
+        btn.removeAttribute("data-flash");
+      }};
+      var mark = function () {{
+        var langNow = document.documentElement.lang === "ko" ? "ko" : "en";
+        var done = btn.getAttribute(langNow === "ko" ? "data-copied-ko" : "data-copied-en");
+        btn.setAttribute("data-flash", "1");
+        if (done != null) btn.textContent = done;
+        setTimeout(restore, 1600);
+      }};
+      var fallback = function () {{
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        try {{ document.execCommand("copy"); mark(); }} catch (e) {{}}
+        ta.remove();
+      }};
+      if (navigator.clipboard && navigator.clipboard.writeText) {{
+        navigator.clipboard.writeText(text).then(mark, fallback);
+      }} else fallback();
     }});
   }});
   apply(initialLang());

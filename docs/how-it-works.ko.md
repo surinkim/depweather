@@ -40,6 +40,43 @@ Ctrl/⌘ + 스크롤, 더블클릭(Shift + 더블클릭은 축소), +/− 버튼
 않습니다. 타일, 날씨 띠의 패키지 이름, 타임라인 목록, 내 스택 칩이 이 페이지로
 연결되고 검색도 그렇습니다.
 
+<a id="readme-badge"></a>
+
+**README 배지.** 추적하는 패키지마다 `/badge/<생태계>/<이름>.svg` 정적 SVG가
+있습니다. 슬러그는 패키지 페이지와 같습니다(Maven 이름의 `:`는 `~`, 이름에
+있는 `~`는 `~~`). 한국어 문구는 같은 경로에 `.ko.svg`를 붙입니다
+(`/badge/npm/lodash.ko.svg`). 배포 단계가 `data/latest.json`으로 둘 다 만들며
+git에는 올리지 않습니다. 패키지 페이지에 복사할 Markdown과 HTML이 있고, 영어와
+한국어를 고를 수 있습니다. 그 상자는 라이트/다크를 따릅니다. 그림 파일은
+따르지 않습니다. README는 어느 배경에서나 이미지로 보여 주므로 색을 고정합니다.
+
+배지는 최근 7일입니다. 지도와 패키지 페이지의 "현재"와 같은 기간입니다. 그 안에
+공개됐거나, 그보다 늦게 CISA KEV에 추가됐으면 셉니다. 왼쪽은 `depweather`이고
+오른쪽은 패키지와 상태입니다.
+
+| 상태 | 색 | 언제 |
+|---|---|---|
+| clear / 맑음 | 회색 | 7일 안에 없음 |
+| cloudy / 흐림 | 노랑 | 낮음, 중간, 또는 알 수 없음만 |
+| `2 high` / `높음 2건` | 주황 | 높음이 그만큼 있고, 치명이나 KEV는 없음 |
+| `1 critical` / `치명 1건` | 빨강 | 치명이 그만큼 있거나 악성 패키지 보고입니다. 높음도 있으면 그 건수를 함께 적습니다(`1 critical, 2 high`) |
+| `KEV` | 마젠타 | 그 권고 중 하나 이상이 CISA KEV에 있습니다. KEV가 첫 단어이고 오른쪽 전체의 색입니다. 치명·높음 건수는 그대로 보입니다(`KEV · 1 critical`) |
+
+지도와 같은 심각도 색입니다. 배지의 치명 빨강은 타일보다 한 단계 어둡습니다.
+작은 흰 글자가 읽히게 하려는 것이고, 타일 빨강에 흰 글자는 이 크기에서 대비가
+4.5:1에 조금 못 미칩니다. 패키지 이름은 이스케이프합니다. 파일 안의 링크와
+스니펫이 모두 패키지 페이지로 갑니다. README에서 동작하는 것은 스니펫의
+링크입니다. `<img>`는 SVG 안에 그린 링크를 따라가지 않습니다.
+
+GitHub는 배지를 볼 때마다 depweather에 요청하지 않습니다. README 이미지는
+GitHub의 camo 프록시(`camo.githubusercontent.com`)를 거치고, camo가 SVG를
+받아 캐시합니다. 배지 주소는 배포마다 바뀌지 않으므로, 사이트가 새 파일을
+올린 뒤에도 camo가 이전 파일을 몇 시간 동안 보여줄 수 있습니다. depweather는
+그 캐시를 비울 수 없습니다. 패키지 페이지는 최신이고, README는 늦을 수
+있습니다. camo는 SVG를 고치고 스크립트를 빼기도 합니다. 배지는 사각형과
+글자뿐이고, 클릭하는 링크는 파일 밖에 있으므로 그 처리가 배지의 역할을
+바꾸지는 않습니다.
+
 **C. 타임라인.** 목록의 이름은 패키지 페이지로 갑니다. `?pkg=npm/next`는 여전히
 지도 안에서 그 패키지의 30일 타임라인을 엽니다. 권고를 공개일 위치에 점으로 찍고,
 오른쪽에 수정 버전, 아래에 권고 표를 보여줍니다. 화면 폭이 768px보다 좁으면 기본
@@ -200,6 +237,9 @@ Go는 공개된 다운로드 수가 없고, NuGet 검색 API(다운로드 수 �
 - `pkg/<생태계>/<이름>/index.html`(`/pkg/.../`로 배포): 추적 패키지마다 페이지
   하나입니다. 같은 배포 단계에서 `collect/pages.py`가 만들며 git에는 올리지
   않습니다. 배포되는 `sitemap.xml`에 영어·한국어 URL을 넣습니다.
+- `badge/<생태계>/<이름>.svg`와 `.ko.svg`(`/badge/...`로 배포): 추적 패키지마다
+  README 배지 하나입니다. 최근 7일입니다. 같은 배포 단계에서 `collect/badges.py`가
+  만들며 git에는 올리지 않습니다.
 
 ## 로컬 실행
 
@@ -210,6 +250,7 @@ pip install -r collect/requirements.txt   # PyYAML만 필요
 python collect/collect.py                 # data/latest.json 생성(약 5분, 대부분 NVD 요청 간격 대기)
 python collect/feeds.py                   # data/latest.json으로 feed.xml과 feed/ 생성
 python collect/pages.py                   # data/latest.json으로 pkg/ 생성(git에 없음)
+python collect/badges.py                  # data/latest.json으로 badge/ 생성(git에 없음)
 python -m http.server                     # 브라우저에서 http://localhost:8000/ 열기
 ```
 
@@ -235,9 +276,9 @@ NVD 호출을 빠르게 하려면 저장소 시크릿 `NVD_API_KEY`를 추가하
 수집이 성공할 때마다 GitHub Pages에 배포합니다. 페이지가 불러오는 파일
 (`index.html`, `favicon.svg`, `og.png`, `robots.txt`, `sitemap.xml`, `fonts/`,
 `js/stack.js`, `data/latest.json`), 글 형식 파일(`llms.txt`, `today.md`), 그리고
-`python collect/feeds.py`로 만든 Atom 피드(`feed.xml`, `feed/`), 그리고
-`python collect/pages.py`로 만든 패키지 페이지(`pkg/`, 배포용 사이트맵의 패키지 URL)를
-올립니다.
+`python collect/feeds.py`로 만든 Atom 피드(`feed.xml`, `feed/`),
+`python collect/pages.py`로 만든 패키지 페이지(`pkg/`, 배포용 사이트맵의 패키지 URL),
+`python collect/badges.py`로 만든 README 배지(`badge/`)를 올립니다.
 
 처음 한 번 설정: Settings → Pages → Source를 GitHub Actions로 하고, Custom domain에
 `depweather.com`을 넣은 뒤 "Enforce HTTPS"를 켭니다. 도메인 등록 업체의 DNS에는 `@`의

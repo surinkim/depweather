@@ -25,6 +25,8 @@ depweather는 매일 아침 한 가지 질문에 답합니다. **내가 쓰고 �
 - **패키지별 30일 타임라인.** 취약점마다 수정된 버전을 함께 보여줍니다.
 - **패키지별 페이지.** `/pkg/npm/next/` 형식입니다(Maven `:`는 `~`). 심각도, 수정
   버전, KEV, EPSS를 보여줍니다. 한국어는 `?lang=ko`입니다.
+- **README 배지.** `/badge/npm/lodash.svg` (한국어는 `.ko.svg`). 회색은 맑은 한 주,
+  마젠타는 KEV입니다. 패키지 페이지에서 Markdown과 HTML을 복사할 수 있습니다.
 - **내 스택.** `package.json`, `requirements.txt` 같은 의존성 파일을 붙여넣으면
   그 패키지만 보여줍니다. 브라우저 안에서만 읽고, 서버로 보내지 않습니다.
 - 영어와 한국어, 라이트와 다크 모드를 지원하고 휴대폰에서도 잘 보입니다.
@@ -64,6 +66,21 @@ GitHub Actions 작업이 하루에 두 번 돕니다. [OSV](https://osv.dev)에�
 [GitHub Actions 예제](docs/alerts.ko.md)를 넣으면 됩니다. 의존하는 패키지에
 KEV나 치명 권고가 새로 나오면 이슈를 열거나 Slack·Discord로 보냅니다.
 
+## README 배지
+
+추적하는 패키지마다 최근 7일 배지가 있습니다. 경로는 패키지 페이지와 같고(Maven
+`:`는 `~`), 한국어 문구는 같은 파일에 `.ko.svg`를 붙입니다.
+
+```md
+[![depweather: lodash: 맑음](https://depweather.com/badge/npm/lodash.ko.svg)](https://depweather.com/pkg/npm/lodash/?lang=ko)
+```
+
+오른쪽은 `맑음`(새 권고 없음), `흐림`(낮음·중간만), 높음·치명 건수, 또는 그 7일
+안에 CISA KEV에 추가되면 `KEV`입니다. 색은 지도와 같습니다. 패키지 페이지에서
+영어나 한국어로 Markdown·HTML을 복사할 수 있고, 그 상자는 라이트/다크를 따릅니다.
+GitHub는 이미지를 camo로 캐시하므로 README는 사이트보다 늦을 수 있습니다.
+자세한 내용: [작동 방식](docs/how-it-works.ko.md#readme-badge).
+
 ## 원하는 패키지가 없나요?
 
 목록은 [`collect/stacks.yml`](collect/stacks.yml)에 있습니다. Stack Overflow 2026
@@ -76,6 +93,7 @@ KEV나 치명 권고가 새로 나오면 이슈를 열거나 Slack·Discord로 �
 pip install -r collect/requirements.txt
 python collect/collect.py      # data/latest.json 생성(약 5분)
 python collect/pages.py        # pkg/ 페이지 생성(선택, git에 없음)
+python collect/badges.py       # badge/ 생성(선택, git에 없음)
 python -m http.server          # http://localhost:8000 열기
 node --test tests/stack.test.js   # 매니페스트 파싱 테스트, 설치 없음
 ```

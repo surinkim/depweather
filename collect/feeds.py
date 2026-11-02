@@ -118,6 +118,21 @@ def package_page_url(key: str) -> str:
     return f"{SITE}/{package_page_rel(key)}"
 
 
+def badge_relpath(key: str, lang: str = "en") -> str:
+    """Site path with no leading slash: badge/npm/next.svg or badge/npm/next.ko.svg."""
+    if lang not in ("en", "ko"):
+        raise ValueError(f"bad badge language: {lang!r}")
+    page = package_page_rel(key)
+    stem = "badge/" + page[len("pkg/"):-1]
+    if lang == "ko":
+        return stem + ".ko.svg"
+    return stem + ".svg"
+
+
+def badge_url(key: str, lang: str = "en") -> str:
+    return f"{SITE}/{badge_relpath(key, lang)}"
+
+
 def entry_id(pkg_key: str, advisory_id: str) -> str:
     return f"tag:depweather.com,{TAG_YEAR}:advisory:{pkg_key}/{advisory_id}"
 

@@ -131,6 +131,10 @@ The same set as "My stack" on the website: `package.json` (and the root dependen
 - Webhook-only mode still needs `issues: write`, because the closed issue is what stops a repeat.
 - There is no email.
 
+## README badge
+
+A badge is not an alert. It does not notify anyone. It is an image for a README, rebuilt with the site, for the last 7 days. One package: `/badge/npm/lodash.svg` (Korean: `/badge/npm/lodash.ko.svg`). The package page has Markdown and HTML to copy. Colors, the path, and GitHub's camo cache: [How it works](how-it-works.md#readme-badge).
+
 ## Files
 
 - [`examples/depweather-alert.yml`](../examples/depweather-alert.yml) — the workflow to copy

@@ -131,6 +131,10 @@ uses: surinkim/depweather/alert@<v1.0.0의 40자 SHA> # v1.0.0
 - 웹훅만 써도 `issues: write`가 필요합니다. 반복을 막는 것이 닫힌 이슈이기 때문입니다.
 - 이메일은 없습니다.
 
+## README 배지
+
+배지는 알림이 아닙니다. 누구에게도 통지하지 않습니다. README에 넣는 그림이고, 사이트와 함께 다시 만들며, 최근 7일을 보여줍니다. 패키지 하나: `/badge/npm/lodash.svg` (한국어: `/badge/npm/lodash.ko.svg`). 패키지 페이지에서 Markdown과 HTML을 복사할 수 있습니다. 색, 경로, GitHub의 camo 캐시: [작동 방식](how-it-works.ko.md#readme-badge).
+
 ## 파일
 
 - [`examples/depweather-alert.yml`](../examples/depweather-alert.yml) — 복사할 워크플로

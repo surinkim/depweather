@@ -44,6 +44,46 @@ The publish step builds these pages, and the sitemap entries for them, from
 `data/latest.json`. They are not committed. A tile, the package name on the
 weather strip, a timeline row and a stack chip link there. Search does too.
 
+<a id="readme-badge"></a>
+
+**README badge.** Each tracked package has a static SVG at
+`/badge/<ecosystem>/<name>.svg`. The slug is the package page's (`:` in a
+Maven name is `~`, a real `~` is `~~`). Korean text is the same path with
+`.ko.svg` (`/badge/npm/lodash.ko.svg`). The publish step builds both from
+`data/latest.json`. They are not committed. The package page has the
+Markdown and HTML to copy, in English or Korean. That panel follows the
+light and dark theme. The picture does not: a README shows it as an image
+on either background, so the colors stay fixed.
+
+The badge is the last 7 days, the same window as the map and the package
+page's Current section. An advisory counts when it was published in that
+window, or when it was added to CISA KEV in that window if that is later.
+The left side says `depweather`. The right side is the package and the status:
+
+| Status | Color | When |
+|---|---|---|
+| clear / 맑음 | Gray | Nothing in the 7 days |
+| cloudy / 흐림 | Yellow | Low, medium, or unknown only |
+| `2 high` / `높음 2건` | Orange | That many high advisories, and nothing critical or in KEV |
+| `1 critical` / `치명 1건` | Red | That many critical advisories, or a malicious-package report. A high count is added when both exist (`1 critical, 2 high`) |
+| `KEV` | Magenta | At least one of those advisories is in CISA KEV. KEV is the first word and the whole right-hand color. The critical or high count still shows (`KEV · 1 critical`) |
+
+Those are the map's severity colors. The critical red on the badge is a step
+darker than the tile, so the small white word stays readable (the tile red
+with white text is a little under 4.5:1 at this size). The package name is
+escaped. The file links to the package page. So does the snippet. The
+snippet's link is the one that works in a README, because an `<img>` does
+not follow a link drawn inside the SVG.
+
+GitHub does not request the image from depweather on every view. README
+images go through GitHub's camo proxy (`camo.githubusercontent.com`), which
+fetches the SVG and caches it. The badge URL does not change between
+publishes, so camo can keep serving the previous file for hours after this
+site has a new one. depweather cannot clear that cache. The package page is
+current; a README can lag. Camo also rewrites SVG and drops scripts. The
+badge is rectangles and text, and the link people click is outside the file,
+so that rewrite does not change what the badge is for.
+
 **C. Timeline.** The list names link to those pages. `?pkg=npm/next` still
 opens that package's 30-day timeline on the map: dots on the day each advisory
 was published, fixed versions on the right, and a table below. Default view
@@ -224,6 +264,9 @@ of a number. Monthly NVD counts from an earlier run are reused when NVD is down.
 - `pkg/<ecosystem>/<name>/index.html`, published as `/pkg/.../`: one page per
   tracked package. Built by `collect/pages.py` in the same publish step, not
   committed. The published `sitemap.xml` adds each page in English and Korean.
+- `badge/<ecosystem>/<name>.svg` and `.ko.svg`, published as `/badge/...`:
+  one README badge per tracked package, for the last 7 days. Built by
+  `collect/badges.py` in the same publish step, not committed.
 
 ## Run locally
 
@@ -234,6 +277,7 @@ pip install -r collect/requirements.txt   # PyYAML only
 python collect/collect.py                 # writes data/latest.json (~5 min, mostly NVD rate limits)
 python collect/feeds.py                   # writes feed.xml and feed/ from data/latest.json
 python collect/pages.py                   # writes pkg/ from data/latest.json (gitignored)
+python collect/badges.py                  # writes badge/ from data/latest.json (gitignored)
 python -m http.server                     # then open http://localhost:8000/
 ```
 
@@ -262,8 +306,9 @@ to GitHub Pages on every push to `main` and after each successful collection.
 It uploads only what the page loads (`index.html`, `favicon.svg`, `og.png`,
 `robots.txt`, `sitemap.xml`, `fonts/`, `js/stack.js`, `data/latest.json`), the
 plain-text views (`llms.txt`, `today.md`), Atom feeds built by
-`python collect/feeds.py` (`feed.xml`, `feed/`), and package pages built by
-`python collect/pages.py` (`pkg/`, plus package URLs in the published sitemap).
+`python collect/feeds.py` (`feed.xml`, `feed/`), package pages built by
+`python collect/pages.py` (`pkg/`, plus package URLs in the published sitemap),
+and README badges built by `python collect/badges.py` (`badge/`).
 
 One-time setup: Settings → Pages → Source: GitHub Actions; then Custom
 domain: `depweather.com` with "Enforce HTTPS". DNS at the registrar: `A`
