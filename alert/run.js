@@ -27,11 +27,19 @@ function gh(args) {
   return r;
 }
 
+function scrub(msg) {
+  return check.redactSecrets(msg, [
+    process.env.GITHUB_TOKEN,
+    process.env.GH_TOKEN,
+    process.env.DEPWEATHER_WEBHOOK_URL,
+  ]);
+}
+
 function ghOk(args, what) {
   const r = gh(args);
-  if (r.error) throw new Error(`${what}: ${r.error.message}`);
+  if (r.error) throw new Error(`${what} failed`);
   if (r.status !== 0) {
-    const msg = ((r.stderr || "") + (r.stdout || "")).trim();
+    const msg = scrub(((r.stderr || "") + (r.stdout || "")).trim());
     const err = new Error(msg || `${what} failed`);
     err.status = r.status;
     throw err;
@@ -44,9 +52,9 @@ function existingMarkers(repo) {
     "issue", "list", "--repo", repo, "--state", "all", "--label", "depweather",
     "--limit", "300", "--json", "number,body,title",
   ]);
-  if (r.error) throw new Error(`gh issue list: ${r.error.message}`);
+  if (r.error) throw new Error("gh issue list failed");
   if (r.status !== 0) {
-    const msg = ((r.stderr || "") + (r.stdout || "")).trim();
+    const msg = scrub(((r.stderr || "") + (r.stdout || "")).trim());
     if (/not found|could not find|no labels/i.test(msg)) return new Set();
     throw new Error(msg || "gh issue list failed");
   }
@@ -63,11 +71,11 @@ function ensureLabel(repo) {
   ];
   let r = gh(args);
   if (r.status === 0) return;
-  const msg = ((r.stderr || "") + (r.stdout || "")).trim();
+  const msg = scrub(((r.stderr || "") + (r.stdout || "")).trim());
   if (/already exists/i.test(msg)) return;
   r = gh(args.filter((a) => a !== "--force"));
   if (r.status === 0) return;
-  const msg2 = ((r.stderr || "") + (r.stdout || "")).trim();
+  const msg2 = scrub(((r.stderr || "") + (r.stdout || "")).trim());
   if (/already exists/i.test(msg2)) return;
   throw new Error(msg2 || msg || "could not create the depweather label");
 }
@@ -88,9 +96,10 @@ function createIssue(repo, title, body) {
 }
 
 function closeIssue(repo, url) {
-  const number = String(url).split("/").filter(Boolean).pop();
+  const m = String(url || "").match(/\/issues\/(\d+)\s*$/);
+  if (!m) throw new Error("issue create did not return an issue number");
   ghOk([
-    "issue", "close", number, "--repo", repo, "--reason", "not planned",
+    "issue", "close", m[1], "--repo", repo, "--reason", "not planned",
     "--comment", "Recorded so depweather does not send this advisory again.",
   ], "gh issue close");
 }
@@ -99,18 +108,29 @@ async function loadData() {
   if (process.env.DEPWEATHER_DATA_FILE) {
     return JSON.parse(fs.readFileSync(process.env.DEPWEATHER_DATA_FILE, "utf8"));
   }
-  const url = process.env.DEPWEATHER_DATA_URL || DEFAULT_DATA;
-  const res = await fetch(url, { headers: { "user-agent": "depweather-alert (+https://depweather.com)" } });
+  const url = check.assertDataUrl(process.env.DEPWEATHER_DATA_URL || DEFAULT_DATA);
+  let res;
+  try {
+    res = await fetch(url, { headers: { "user-agent": "depweather-alert (+https://depweather.com)" } });
+  } catch (e) {
+    throw new Error("could not download latest.json");
+  }
   if (!res.ok) throw new Error(`could not download latest.json (HTTP ${res.status})`);
   return res.json();
 }
 
 async function postWebhook(url, text) {
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "content-type": "application/json", "user-agent": "depweather-alert" },
-    body: JSON.stringify(check.webhookPayload(url, text)),
-  });
+  const payload = check.webhookPayload(url, text);
+  let res;
+  try {
+    res = await fetch(url, {
+      method: "POST",
+      headers: { "content-type": "application/json", "user-agent": "depweather-alert" },
+      body: JSON.stringify(payload),
+    });
+  } catch (e) {
+    throw new Error("webhook request failed");
+  }
   if (!res.ok) throw new Error(`webhook returned HTTP ${res.status}`);
 }
 
@@ -119,6 +139,9 @@ async function main() {
   const dry = envFlag("DEPWEATHER_DRY_RUN", false);
   const openIssue = envFlag("DEPWEATHER_OPEN_ISSUE", true);
   const webhook = process.env.DEPWEATHER_WEBHOOK_URL || "";
+  if (webhook && !check.webhookKind(webhook)) {
+    throw new Error("DEPWEATHER_WEBHOOK_URL must be an https Slack or Discord webhook. The value was not logged.");
+  }
   const severity = check.normalizeSeverity(process.env.DEPWEATHER_SEVERITY || "critical");
   const days = check.clampDays(process.env.DEPWEATHER_DAYS || "7");
   let max = Number(process.env.DEPWEATHER_MAX || 20);
@@ -139,7 +162,8 @@ async function main() {
   }
   console.log(`Read ${matched.used.length} manifest(s), ${matched.tracked.length} tracked package(s), ${matched.skipped.length} skipped.`);
   for (const u of matched.used) {
-    console.log(`  ${path.relative(root, u.path) || u.path}: ${u.format}, ${u.tracked} tracked, ${u.untracked} not tracked`);
+    const rel = String(path.relative(root, u.path) || u.path).replace(/[\r\n]/g, " ");
+    console.log(`  ${rel}: ${u.format}, ${u.tracked} tracked, ${u.untracked} not tracked`);
   }
   const alerts = check.selectAlerts(ecosystems, matched.tracked, { severity, days, now });
   if (!alerts.length) {
@@ -149,8 +173,7 @@ async function main() {
 
   let fresh = alerts;
   if (!dry && (openIssue || webhook)) {
-    const repo = process.env.GITHUB_REPOSITORY;
-    if (!repo) throw new Error("GITHUB_REPOSITORY is not set");
+    const repo = check.safeRepo(process.env.GITHUB_REPOSITORY);
     if (!process.env.GITHUB_TOKEN && !process.env.GH_TOKEN) {
       throw new Error("GITHUB_TOKEN is not set; the workflow must pass it to open issues");
     }
@@ -170,7 +193,7 @@ async function main() {
   for (const a of batch) {
     console.log(`alert ${a.marker}${a.kev ? " kev" : ""} ${a.severity}`);
     if (dry || (!openIssue && !webhook)) continue;
-    const repo = process.env.GITHUB_REPOSITORY;
+    const repo = check.safeRepo(process.env.GITHUB_REPOSITORY);
     const url = createIssue(repo, check.issueTitle(a), check.issueBody(a));
     console.log(`  issue ${url}`);
     if (!openIssue) {
@@ -188,7 +211,7 @@ async function main() {
 
 if (require.main === module) {
   main().catch((e) => {
-    console.error(e && e.message ? e.message : e);
+    console.error(scrub(e && e.message ? e.message : e));
     process.exit(1);
   });
 }

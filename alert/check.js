@@ -11,7 +11,111 @@ const SITE = "https://depweather.com";
 const RANK = { NONE: 0, UNKNOWN: 1, LOW: 1, MEDIUM: 2, MODERATE: 2, HIGH: 3, CRITICAL: 4 };
 const THRESHOLD = { kev: 99, low: 1, medium: 2, high: 3, critical: 4 };
 const DAY = 86400000;
-const MARKER_RE = /<!--\s*depweather-id:(\S+)\s*-->/;
+const MARKER_RE = /<!--\s*depweather-id:([A-Za-z0-9@._~:/-]+)\s*-->/;
+const SEVERITIES = new Set(["NONE", "UNKNOWN", "LOW", "MEDIUM", "MODERATE", "HIGH", "CRITICAL"]);
+const ALLOWED_LINK_HOSTS = new Set([
+  "depweather.com",
+  "www.depweather.com",
+  "osv.dev",
+  "github.com",
+  "www.github.com",
+  "nvd.nist.gov",
+  "cisa.gov",
+  "www.cisa.gov",
+]);
+
+// Untrusted advisory text is flattened, then mentions and unexpected links are
+// broken before it is placed in an issue or a chat message.
+function plain(value, max) {
+  let s = String(value == null ? "" : value);
+  s = s.replace(/[\u0000-\u001F\u007F]/g, " ");
+  s = s.replace(/\s+/g, " ").trim();
+  // Fullwidth substitutes, so a parser that strips format characters still
+  // does not see @everyone, @user, <!channel>, or <@id>.
+  s = s.replace(/<!/g, "＜!");
+  s = s.replace(/<@/g, "＜＠");
+  s = s.replace(/@(?=[A-Za-z0-9])/g, "＠");
+  s = s.replace(/\[([^\]]+)\]\([^)]*\)/g, "$1");
+  s = s.replace(/\b(?:https?|javascript|data):[^\s]+/gi, "(link removed)");
+  if (s.length > max) s = s.slice(0, Math.max(0, max - 1)).trimEnd() + "…";
+  s = s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  s = s.replace(/[\\`*_{}\[\]#|]/g, (ch) => "\\" + ch);
+  return s;
+}
+
+function safeSeverity(value) {
+  const u = String(value || "").toUpperCase();
+  if (!SEVERITIES.has(u)) return "UNKNOWN";
+  return u === "MODERATE" ? "MEDIUM" : u;
+}
+
+function safePackageKey(key) {
+  const s = String(key || "");
+  if (!/^[A-Za-z0-9][A-Za-z0-9@._~:/-]{0,200}$/.test(s)) return null;
+  if (s.includes("..") || s.includes("//")) return null;
+  return s;
+}
+
+function safeAdvisoryId(id) {
+  const s = String(id || "").replace(/[^A-Za-z0-9._:-]/g, "").slice(0, 80);
+  return s || null;
+}
+
+function isAllowedHttpsUrl(value) {
+  let u;
+  try { u = new URL(String(value || "")); }
+  catch (e) { return false; }
+  if (u.protocol !== "https:") return false;
+  if (u.username || u.password) return false;
+  return ALLOWED_LINK_HOSTS.has(u.hostname.toLowerCase());
+}
+
+function webhookKind(value) {
+  let u;
+  try { u = new URL(String(value || "")); }
+  catch (e) { return null; }
+  if (u.protocol !== "https:" || u.username || u.password) return null;
+  const host = u.hostname.toLowerCase();
+  if ((host === "hooks.slack.com" || host === "hooks.slack-gov.com") && u.pathname.startsWith("/services/")) return "slack";
+  if ((host === "discord.com" || host === "discordapp.com") && u.pathname.startsWith("/api/webhooks/")) return "discord";
+  return null;
+}
+
+function assertDataUrl(value) {
+  let u;
+  try { u = new URL(String(value || "")); }
+  catch (e) { throw new Error("data URL is not a valid URL"); }
+  if (u.protocol !== "https:" || u.username || u.password) throw new Error("data URL must be https with no credentials");
+  if (u.hostname !== "depweather.com" || u.pathname !== "/data/latest.json" || u.search || u.hash) {
+    throw new Error("data URL must be https://depweather.com/data/latest.json");
+  }
+  return u.toString();
+}
+
+function safeRepo(name) {
+  const s = String(name || "");
+  if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(s)) throw new Error("GITHUB_REPOSITORY is not owner/name");
+  return s;
+}
+
+function plainNumber(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n) || Math.abs(n) > 1000) return null;
+  return String(Math.round(n * 100000) / 100000);
+}
+
+function redactSecrets(msg, secrets) {
+  let s = String(msg == null ? "" : msg);
+  const list = secrets || [];
+  for (let i = 0; i < list.length; i++) {
+    const secret = list[i];
+    if (typeof secret === "string" && secret.length >= 8) s = s.split(secret).join("[redacted]");
+  }
+  s = s.replace(/\b(?:ghp_|gho_|ghu_|ghs_|ghr_|github_pat_)[A-Za-z0-9_]+/g, "[redacted]");
+  s = s.replace(/https:\/\/hooks\.slack(?:-gov)?\.com\/\S+/gi, "[redacted-webhook]");
+  s = s.replace(/https:\/\/discord(?:app)?\.com\/api\/webhooks\/\S+/gi, "[redacted-webhook]");
+  return s.slice(0, 500);
+}
 
 const SKIP_DIRS = new Set([
   "node_modules", "vendor", ".git", "dist", "build", "target",
@@ -58,15 +162,18 @@ function effectiveTime(v) {
 }
 
 function meetsThreshold(vuln, severity) {
-  if (severity === "kev") return !!vuln.kev;
-  if (vuln.kev) return true;
-  if (vuln.malicious) return true;
+  if (severity === "kev") return vuln.kev === true;
+  if (vuln.kev === true) return true;
+  if (vuln.malicious === true) return true;
   const rank = RANK[String(vuln.severity || "").toUpperCase()] || 0;
   return rank >= THRESHOLD[severity];
 }
 
 function markerFor(pkgKey, advisoryId) {
-  return `${pkgKey}/${advisoryId}`;
+  const key = safePackageKey(pkgKey);
+  const id = safeAdvisoryId(advisoryId);
+  if (!key || !id) return "";
+  return `${key}/${id}`;
 }
 
 function isManifestName(name) {
@@ -152,27 +259,29 @@ function indexPackages(ecosystems) {
 function toAlert(hit, vuln, when) {
   const pkg = hit.pkg;
   const eco = hit.eco;
-  const severity = String(vuln.severity || "UNKNOWN").toUpperCase();
+  const severity = safeSeverity(vuln.severity);
+  const key = safePackageKey(pkg.key);
+  const id = safeAdvisoryId(vuln.id);
   return {
-    key: pkg.key,
+    key: key || "",
     name: pkg.name,
     label: pkg.label || pkg.name,
     eco: eco.id,
     ecoLabel: eco.label || eco.id,
-    id: vuln.id,
-    url: vuln.url || "",
+    id: id || "",
+    url: isAllowedHttpsUrl(vuln.url) ? String(vuln.url) : "",
     summary: vuln.summary || "",
     severity: severity,
-    kev: !!vuln.kev,
-    kevDate: vuln.kev_date_added || null,
-    malicious: !!vuln.malicious,
-    cvss: vuln.cvss == null ? null : vuln.cvss,
-    epss: vuln.epss == null ? null : vuln.epss,
-    fixed: Array.isArray(vuln.fixed) ? vuln.fixed.filter(Boolean) : [],
+    kev: vuln.kev === true,
+    kevDate: /^\d{4}-\d{2}-\d{2}$/.test(String(vuln.kev_date_added || "")) ? vuln.kev_date_added : null,
+    malicious: vuln.malicious === true,
+    cvss: plainNumber(vuln.cvss),
+    epss: plainNumber(vuln.epss),
+    fixed: (Array.isArray(vuln.fixed) ? vuln.fixed : []).filter((f) => typeof f === "string" && f).slice(0, 8),
     published: vuln.published,
     when: when,
-    rank: vuln.malicious ? 4 : (RANK[severity] || 0),
-    marker: markerFor(pkg.key, vuln.id),
+    rank: vuln.malicious === true ? 4 : (RANK[severity] || 0),
+    marker: key && id ? `${key}/${id}` : "",
   };
 }
 
@@ -197,7 +306,7 @@ function selectAlerts(ecosystems, trackedKeys, opts) {
       if (when == null || when < since) continue;
       if (!meetsThreshold(vuln, severity)) continue;
       const marker = markerFor(key, vuln.id);
-      if (seen.has(marker)) continue;
+      if (!marker || seen.has(marker)) continue;
       seen.add(marker);
       out.push(toAlert(hit, vuln, when));
     }
@@ -233,59 +342,73 @@ function unseenAlerts(alerts, known) {
 
 function issueTitle(a) {
   const tags = [];
-  if (a.kev) tags.push("KEV");
-  if (a.malicious) tags.push("malicious");
-  else if (a.severity === "CRITICAL") tags.push("critical");
-  else tags.push(String(a.severity || "unrated").toLowerCase());
-  const prefix = `[depweather] ${tags.join(", ")} · ${a.label}: `;
-  let summary = a.summary || a.id;
-  const room = 240 - prefix.length;
-  if (summary.length > room) summary = summary.slice(0, Math.max(0, room - 1)).trimEnd() + "…";
-  return prefix + summary;
+  const severity = safeSeverity(a.severity);
+  if (a.kev === true) tags.push("KEV");
+  if (a.malicious === true) tags.push("malicious");
+  else if (severity === "CRITICAL") tags.push("critical");
+  else tags.push(severity.toLowerCase());
+  const label = plain(a.label, 80);
+  const summary = plain(a.summary || a.id, 160);
+  let title = `[depweather] ${tags.join(", ")} · ${label}: ${summary}`;
+  if (title.length > 240) title = title.slice(0, 239).trimEnd() + "…";
+  return title;
 }
 
 function issueBody(a) {
-  const lines = [`<!-- depweather-id:${a.marker} -->`, ""];
+  const marker = markerFor(a.key, a.id);
+  const severity = safeSeverity(a.severity);
+  const lines = [];
+  if (marker) lines.push(`<!-- depweather-id:${marker} -->`, "");
   const flags = [];
-  if (a.kev) flags.push(a.kevDate ? `**CISA KEV** (added ${a.kevDate})` : "**CISA KEV**");
-  if (a.malicious) flags.push("**Malicious package**");
-  lines.push(`**${a.label}** (\`${a.key}\`) · ${a.severity || "unrated"}${flags.length ? " · " + flags.join(" · ") : ""}`);
+  if (a.kev === true) flags.push(a.kevDate && /^\d{4}-\d{2}-\d{2}$/.test(a.kevDate) ? `**CISA KEV** (added ${a.kevDate})` : "**CISA KEV**");
+  if (a.malicious === true) flags.push("**Malicious package**");
+  const key = safePackageKey(a.key);
+  const keyText = key ? plain(key, 200) : "(omitted)";
+  lines.push(`**${plain(a.label, 80)}** (\`${keyText}\`) · ${severity}${flags.length ? " · " + flags.join(" · ") : ""}`);
   lines.push("");
-  if (a.summary) {
-    lines.push(a.summary);
-    lines.push("");
+  const summary = plain(a.summary, 500);
+  if (summary) lines.push(summary, "");
+  const fixed = (Array.isArray(a.fixed) ? a.fixed : []).slice(0, 8).map((f) => plain(f, 40)).filter(Boolean);
+  if (fixed.length) lines.push(`Fixed in: ${fixed.join(", ")}`);
+  const cvss = plainNumber(a.cvss);
+  const epss = plainNumber(a.epss);
+  if (cvss != null) lines.push(`CVSS: ${cvss}`);
+  if (epss != null) lines.push(`EPSS: ${epss}`);
+  lines.push("");
+  if (isAllowedHttpsUrl(a.url)) lines.push(`- Advisory: ${a.url}`);
+  if (key) {
+    lines.push(`- On depweather: ${SITE}/?pkg=${encodeURIComponent(key)}`);
+    lines.push(`- Package feed: ${packageFeedUrl(key)}`);
   }
-  if (a.fixed.length) lines.push(`Fixed in: ${a.fixed.join(", ")}`);
-  if (a.cvss != null) lines.push(`CVSS: ${a.cvss}`);
-  if (a.epss != null) lines.push(`EPSS: ${a.epss}`);
-  lines.push("");
-  if (a.url) lines.push(`- Advisory: ${a.url}`);
-  lines.push(`- On depweather: ${SITE}/?pkg=${encodeURIComponent(a.key)}`);
-  lines.push(`- Package feed: ${packageFeedUrl(a.key)}`);
   lines.push("");
   lines.push("depweather only knows that this package has a new advisory. It does not check the version you have installed. Read the advisory before changing anything.");
   lines.push("");
   lines.push(`Source: ${SITE}`);
-  return lines.join("\n");
+  return lines.join("\n").slice(0, 6000);
 }
 
 function alertText(a) {
   const tags = [];
-  if (a.kev) tags.push("KEV");
-  if (a.malicious) tags.push("malicious");
-  else if (a.severity === "CRITICAL") tags.push("critical");
-  else tags.push(String(a.severity || "unrated").toLowerCase());
-  const fixed = a.fixed.length ? `; fixed in ${a.fixed.slice(0, 4).join(", ")}` : "";
-  const summary = a.summary ? ` — ${a.summary}` : "";
-  return `depweather: [${tags.join(", ")}] ${a.label} (${a.eco}) ${a.id}${summary}${fixed} ${a.url}`.trim();
+  const severity = safeSeverity(a.severity);
+  if (a.kev === true) tags.push("KEV");
+  if (a.malicious === true) tags.push("malicious");
+  else if (severity === "CRITICAL") tags.push("critical");
+  else tags.push(severity.toLowerCase());
+  const fixed = (Array.isArray(a.fixed) ? a.fixed : []).slice(0, 4).map((f) => plain(f, 40)).filter(Boolean);
+  const fixedPart = fixed.length ? `; fixed in ${fixed.join(", ")}` : "";
+  const summary = a.summary ? ` — ${plain(a.summary, 240)}` : "";
+  const link = isAllowedHttpsUrl(a.url) ? ` ${a.url}` : "";
+  let text = `depweather: [${tags.join(", ")}] ${plain(a.label, 80)} (${plain(a.eco, 32)}) ${plain(a.id, 80)}${summary}${fixedPart}${link}`.trim();
+  if (text.length > 1800) text = text.slice(0, 1799).trimEnd() + "…";
+  return text;
 }
 
 function webhookPayload(url, text) {
-  const body = String(text || "");
-  if (/discord(?:app)?\.com\/api\/webhooks/i.test(String(url || ""))) {
-    return { content: body.slice(0, 1900) };
-  }
-  return { text: body.slice(0, 3500) };
+  const kind = webhookKind(url);
+  if (!kind) throw new Error("webhook URL must be https on hooks.slack.com or discord.com/api/webhooks");
+  const body = String(text || "").slice(0, kind === "discord" ? 1900 : 3000);
+  if (kind === "discord") return { content: body };
+  return { text: body };
 }
 
 module.exports = {
@@ -309,4 +432,11 @@ module.exports = {
   issueBody,
   alertText,
   webhookPayload,
+  plain,
+  safePackageKey,
+  isAllowedHttpsUrl,
+  webhookKind,
+  assertDataUrl,
+  safeRepo,
+  redactSecrets,
 };

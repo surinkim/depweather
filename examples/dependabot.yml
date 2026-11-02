@@ -1,0 +1,11 @@
+# Copy to .github/dependabot.yml in the repository that runs the alert.
+# Dependabot opens a pull request when a SHA-pinned action publishes a newer
+# version, as long as the workflow comment names that version
+# (for example `# v4.4.0` or `# v1.0.0`).
+
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

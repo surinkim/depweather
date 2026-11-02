@@ -53,7 +53,30 @@ It does not send your manifests anywhere. Matching happens on the GitHub runner.
 3. Optional: in the repository, Settings → Secrets and variables → Actions → New repository secret. Name it `DEPWEATHER_WEBHOOK_URL`. Paste a Slack incoming-webhook URL, or a Discord webhook URL (`https://discord.com/api/webhooks/...`).
 4. Actions → depweather → Run workflow, to try it once instead of waiting for the schedule.
 
-The workflow needs `issues: write`. The example sets that. `GITHUB_TOKEN` is passed in explicitly because a composite action does not see it otherwise.
+The workflow's token can read the repository and open issues. It cannot push, and it is not given `pull_request_target`. `actions/checkout` is pinned to a commit and `persist-credentials` is false, so the token is not left in `.git/config`. `GITHUB_TOKEN` is passed in the environment because a composite action does not see it otherwise. The action does not print the token.
+
+### Pinning the action
+
+`@main` moves on every commit. Do not use it. The example points at the tag `v1.0.0` (the same commit is also tagged `alert-v1`).
+
+That tag is cut only after the alert code is on `main`, from the merge commit, and it is not moved afterwards. A breaking change gets `v1.1.0` or `v2.0.0`, not a rewritten tag. The maintainer runs:
+
+```sh
+git fetch origin main
+git tag -a v1.0.0 <sha-of-the-merge-commit> -m "depweather alert action v1.0.0"
+git tag -a alert-v1 <sha-of-the-merge-commit> -m "depweather alert action v1"
+git push origin v1.0.0 alert-v1
+```
+
+Prefer the full commit SHA, with the version in a comment, so a retag cannot change what you run:
+
+```yaml
+uses: surinkim/depweather/alert@<40-character SHA of v1.0.0> # v1.0.0
+```
+
+`git rev-parse v1.0.0` prints that SHA. Until the tag exists, the example's `alert@v1.0.0` fails closed instead of following `main`. Copy [`examples/dependabot.yml`](../examples/dependabot.yml) to `.github/dependabot.yml` so Dependabot can open a pull request when a SHA-pinned action publishes a newer version. Checkout in the example is already pinned to the commit of `actions/checkout` v4.4.0.
+
+The action itself does not `uses:` any other action. It runs `node` on the GitHub-hosted runner. Workflow inputs are environment variables, not shell text. Fields from `latest.json` (titles, summaries, package names, URLs) are written to the issue through arguments and a body file. They are not expanded by the shell.
 
 ### What counts as new
 
@@ -74,7 +97,14 @@ With `open-issue: false` and a webhook, the closed issue is only the record. Wit
 
 ### Slack and Discord
 
-A Discord URL (`discord.com/api/webhooks` or `discordapp.com`) is sent as `{"content": "..."}`. Any other URL is sent as Slack-style `{"text": "..."}`. The URL is not printed in the log.
+Only two URLs are accepted, and only over https, with no username or password in the URL:
+
+- Slack: `https://hooks.slack.com/services/...` (or `hooks.slack-gov.com`)
+- Discord: `https://discord.com/api/webhooks/...` (or `discordapp.com`)
+
+Anything else is rejected. The URL is not printed. A rejected value is not included in the error. Discord is sent as `{"content": "..."}`. Slack is sent as `{"text": "..."}`.
+
+Text from the advisory is flattened to one line. The `@` in `@everyone`, `@here`, `@channel`, and `@user` is replaced so it does not notify. HTML is escaped. A link is kept only when it is https and the host is depweather.com, osv.dev, github.com, nvd.nist.gov, or cisa.gov. The data file must be `https://depweather.com/data/latest.json`.
 
 The issue is created first, then the webhook is sent. If the webhook fails, the issue is already the dedup record, so the next run does not retry the webhook. Delete that issue and run the workflow again.
 

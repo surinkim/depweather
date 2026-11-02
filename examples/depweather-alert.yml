@@ -2,6 +2,12 @@
 # Docs: https://github.com/surinkim/depweather/blob/main/docs/alerts.md
 # 한국어: https://github.com/surinkim/depweather/blob/main/docs/alerts.ko.md
 #
+# Pin every action to a full commit SHA. Do not use @main or a floating
+# major tag for depweather: that ref moves. The tag v1.0.0 (also alert-v1)
+# is cut from main after review; see docs/alerts.md. Replace the line below
+# with the 40-character SHA of that tag and keep the version comment so
+# Dependabot can update it (examples/dependabot.yml).
+#
 # Once a day it reads your dependency manifests, fetches
 # https://depweather.com/data/latest.json, and when a tracked package has a
 # new KEV or critical advisory it opens an issue here. Set the
@@ -16,6 +22,8 @@ on:
     - cron: "17 7 * * *"
   workflow_dispatch:
 
+# contents: read is enough to look at manifests. issues: write opens the
+# dedup issue. Do not add pull_request_target or contents: write.
 permissions:
   contents: read
   issues: write
@@ -23,10 +31,18 @@ permissions:
 jobs:
   alert:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     steps:
-      - uses: actions/checkout@v4
+      # v4.4.0. persist-credentials: false so the checkout token is not left in .git/config.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
 
-      - uses: surinkim/depweather/alert@main
+      # Replace v1.0.0 with @<40-hex SHA> # v1.0.0 after that tag exists.
+      # Do not point this at @main.
+      - uses: surinkim/depweather/alert@v1.0.0
         with:
           # kev | low | medium | high | critical
           # KEV always alerts, except when severity is kev (KEV only).
@@ -37,7 +53,9 @@ jobs:
           # issue so the same advisory is not sent again tomorrow.
           open-issue: "true"
         env:
+          # Passed in the environment, not on the command line. Actions masks github.token.
           GITHUB_TOKEN: ${{ github.token }}
-          # Optional. A Slack incoming webhook, or a Discord webhook URL.
-          # Settings → Secrets and variables → Actions → New repository secret.
+          # Optional. https://hooks.slack.com/services/... or
+          # https://discord.com/api/webhooks/... only. Any other value is rejected
+          # and is not printed.
           DEPWEATHER_WEBHOOK_URL: ${{ secrets.DEPWEATHER_WEBHOOK_URL }}

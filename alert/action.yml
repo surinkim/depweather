@@ -22,7 +22,8 @@ inputs:
     required: false
     default: "true"
   data-url:
-    description: URL of depweather's data/latest.json.
+    description: >-
+      Must be https://depweather.com/data/latest.json. Other URLs are rejected.
     required: false
     default: https://depweather.com/data/latest.json
   max:
@@ -30,6 +31,8 @@ inputs:
     required: false
     default: "20"
 
+# No third-party actions. Advisory fields stay in environment variables and
+# files; they are not interpolated into this shell script.
 runs:
   using: composite
   steps:
@@ -41,7 +44,10 @@ runs:
         DEPWEATHER_OPEN_ISSUE: ${{ inputs.open-issue }}
         DEPWEATHER_DATA_URL: ${{ inputs.data-url }}
         DEPWEATHER_MAX: ${{ inputs.max }}
-      run: node "${{ github.action_path }}/run.js"
+        DEPWEATHER_ACTION_DIR: ${{ github.action_path }}
+      run: |
+        set -euo pipefail
+        node "$DEPWEATHER_ACTION_DIR/run.js"
 
 branding:
   icon: cloud-lightning

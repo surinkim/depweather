@@ -53,7 +53,30 @@ KEV 항목 제목은 `KEV ·`로 시작합니다. 치명 항목은 `Critical ·`
 3. 선택: 저장소의 Settings → Secrets and variables → Actions → New repository secret. 이름은 `DEPWEATHER_WEBHOOK_URL`. Slack 인커밍 웹훅 주소나 Discord 웹훅 주소(`https://discord.com/api/webhooks/...`)를 넣습니다.
 4. Actions → depweather → Run workflow로 예약 시각을 기다리지 않고 한 번 실행해 봅니다.
 
-워크플로에는 `issues: write`가 필요합니다. 예제에 이미 있습니다. composite action은 `GITHUB_TOKEN`을 스스로 보지 못하므로 예제에서 직접 넘깁니다.
+워크플로 토큰은 저장소를 읽고 이슈를 열 수 있습니다. 푸시할 수는 없고, `pull_request_target`도 없습니다. `actions/checkout`은 커밋 SHA에 고정하고 `persist-credentials`는 false라서 토큰이 `.git/config`에 남지 않습니다. 이 액션은 `GITHUB_TOKEN`을 스스로 보지 못하므로 환경 변수로 넘깁니다. 토큰은 출력하지 않습니다.
+
+### 액션 고정
+
+`@main`은 커밋마다 바뀝니다. 쓰지 마세요. 예제는 태그 `v1.0.0`을 가리킵니다. 같은 커밋에 `alert-v1` 태그도 붙입니다.
+
+태그는 알림 코드가 `main`에 들어간 뒤, 그 머지 커밋에만 만들고 나중에 옮기지 않습니다. 호환이 깨지면 `v1.1.0`이나 `v2.0.0`을 새로 만듭니다. 유지 관리자가 실행합니다.
+
+```sh
+git fetch origin main
+git tag -a v1.0.0 <머지-커밋-sha> -m "depweather alert action v1.0.0"
+git tag -a alert-v1 <머지-커밋-sha> -m "depweather alert action v1"
+git push origin v1.0.0 alert-v1
+```
+
+태그를 다시 달아도 실행 내용이 바뀌지 않게, 전체 커밋 SHA를 쓰는 편이 안전합니다. 주석에 버전을 남깁니다.
+
+```yaml
+uses: surinkim/depweather/alert@<v1.0.0의 40자 SHA> # v1.0.0
+```
+
+`git rev-parse v1.0.0`이 그 SHA입니다. 태그가 생기기 전에는 예제의 `alert@v1.0.0`이 실패합니다. `main`을 따라가지 않기 위해서입니다. [`examples/dependabot.yml`](../examples/dependabot.yml)을 `.github/dependabot.yml`로 복사하면, SHA로 고정한 액션에 새 버전이 나올 때 Dependabot이 풀 리퀘스트를 엽니다. 예제의 checkout은 `actions/checkout` v4.4.0 커밋에 고정되어 있습니다.
+
+이 액션은 다른 액션을 `uses:`로 부르지 않습니다. GitHub 호스트 러너의 `node`만 실행합니다. 워크플로 입력은 셸 문장이 아니라 환경 변수입니다. `latest.json`의 제목, 요약, 패키지 이름, URL은 인자나 본문 파일로 이슈에 들어가며 셸이 확장하지 않습니다.
 
 ### 무엇을 새 권고로 보나
 
@@ -74,7 +97,14 @@ KEV 항목 제목은 `KEV ·`로 시작합니다. 치명 항목은 `Critical ·`
 
 ### Slack과 Discord
 
-Discord 주소(`discord.com/api/webhooks` 또는 `discordapp.com`)는 `{"content": "..."}`로 보냅니다. 그 외 주소는 Slack 형식 `{"text": "..."}`로 보냅니다. 주소는 로그에 찍지 않습니다.
+받는 주소는 https뿐이고, 주소 안에 사용자 이름이나 비밀번호가 있으면 거절합니다.
+
+- Slack: `https://hooks.slack.com/services/...` (`hooks.slack-gov.com`도 가능)
+- Discord: `https://discord.com/api/webhooks/...` (`discordapp.com`도 가능)
+
+그 외는 거절합니다. 주소는 출력하지 않고, 거절했을 때의 오류 문구에도 넣지 않습니다. Discord는 `{"content": "..."}`, Slack은 `{"text": "..."}`로 보냅니다.
+
+권고에서 온 문장은 한 줄로 만듭니다. `@everyone`, `@here`, `@channel`, `@user`의 `@`는 알림이 나가지 않게 다른 문자로 바꿉니다. HTML은 이스케이프합니다. 링크는 https이고 호스트가 depweather.com, osv.dev, github.com, nvd.nist.gov, cisa.gov일 때만 남깁니다. 데이터 주소는 `https://depweather.com/data/latest.json`만 받습니다.
 
 이슈를 먼저 만들고 그다음 웹훅을 보냅니다. 웹훅이 실패하면 이슈가 이미 중복 방지 기록이므로 다음 실행은 웹훅을 다시 보내지 않습니다. 그 이슈를 지우고 워크플로를 다시 실행하세요.
 
