@@ -206,6 +206,12 @@ of a number. Monthly NVD counts from an earlier run are reused when NVD is down.
   files for AI assistants ([llmstxt.org](https://llmstxt.org)).
 - `data/history/YYYY-MM-DD.json`: a copy of each day's file, for day-over-day
   changes later.
+- `feed.xml` and `feed/<package>.xml`, published as `/feed.xml` and
+  `/feed/...`: Atom feeds of advisories from the last 14 days. The publish
+  step builds them from `data/latest.json`; they are not committed. An item id
+  is the package plus the advisory id, so a rebuild does not look like a new
+  item. KEV and critical items are marked at the start of the title. See
+  [alerts](alerts.md).
 
 ## Run locally
 
@@ -214,6 +220,7 @@ Python 3.10 or newer.
 ```sh
 pip install -r collect/requirements.txt   # PyYAML only
 python collect/collect.py                 # writes data/latest.json (~5 min, mostly NVD rate limits)
+python collect/feeds.py                   # writes feed.xml and feed/ from data/latest.json
 python -m http.server                     # then open http://localhost:8000/
 ```
 
@@ -240,8 +247,9 @@ link previews are cached for a long time and the data changes daily. The
 [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) publishes the site
 to GitHub Pages on every push to `main` and after each successful collection.
 It uploads only what the page loads (`index.html`, `favicon.svg`, `og.png`,
-`robots.txt`, `sitemap.xml`, `fonts/`, `data/latest.json`) and the plain-text
-views (`llms.txt`, `today.md`).
+`robots.txt`, `sitemap.xml`, `fonts/`, `js/stack.js`, `data/latest.json`), the
+plain-text views (`llms.txt`, `today.md`), and Atom feeds built by
+`python collect/feeds.py` (`feed.xml`, `feed/`).
 
 One-time setup: Settings → Pages → Source: GitHub Actions; then Custom
 domain: `depweather.com` with "Enforce HTTPS". DNS at the registrar: `A`

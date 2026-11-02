@@ -1,0 +1,48 @@
+name: depweather alert
+description: >-
+  Open an issue or post to Slack or Discord when a dependency has a new
+  KEV or critical advisory on depweather.
+author: depweather
+
+inputs:
+  severity:
+    description: >-
+      Minimum severity: kev, low, medium, high, or critical.
+      KEV always alerts, unless this is kev, which means KEV only.
+    required: false
+    default: critical
+  days:
+    description: Advisories newer than this many days. Values above 30 are clamped to 30.
+    required: false
+    default: "7"
+  open-issue:
+    description: >-
+      Open a GitHub issue for each new match. When false, a closed issue is
+      still filed if a webhook is set, so the same advisory is not sent again.
+    required: false
+    default: "true"
+  data-url:
+    description: URL of depweather's data/latest.json.
+    required: false
+    default: https://depweather.com/data/latest.json
+  max:
+    description: Maximum new alerts per run. The rest wait until the next run.
+    required: false
+    default: "20"
+
+runs:
+  using: composite
+  steps:
+    - name: Check depweather advisories
+      shell: bash
+      env:
+        DEPWEATHER_SEVERITY: ${{ inputs.severity }}
+        DEPWEATHER_DAYS: ${{ inputs.days }}
+        DEPWEATHER_OPEN_ISSUE: ${{ inputs.open-issue }}
+        DEPWEATHER_DATA_URL: ${{ inputs.data-url }}
+        DEPWEATHER_MAX: ${{ inputs.max }}
+      run: node "${{ github.action_path }}/run.js"
+
+branding:
+  icon: cloud-lightning
+  color: red

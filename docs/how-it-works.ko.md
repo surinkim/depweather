@@ -184,6 +184,10 @@ Go는 공개된 다운로드 수가 없고, NuGet 검색 API(다운로드 수 �
   ([llmstxt.org](https://llmstxt.org)).
 - `data/history/YYYY-MM-DD.json`: 날마다 남기는 사본. 나중에 전날 대비 변화를 계산하는
   데 씁니다.
+- `feed.xml`과 `feed/<패키지>.xml`(`/feed.xml`, `/feed/...`로 배포): 최근 14일
+  권고의 Atom 피드입니다. 배포 단계에서 `data/latest.json`으로 만들며 git에는
+  올리지 않습니다. 항목 id는 패키지와 권고 id라서, 다시 만들어도 새 글로 보이지
+  않습니다. KEV와 치명 항목은 제목 앞에 표시합니다. [알림](alerts.ko.md)을 보세요.
 
 ## 로컬 실행
 
@@ -192,6 +196,7 @@ Python 3.10 이상이 필요합니다.
 ```sh
 pip install -r collect/requirements.txt   # PyYAML만 필요
 python collect/collect.py                 # data/latest.json 생성(약 5분, 대부분 NVD 요청 간격 대기)
+python collect/feeds.py                   # data/latest.json으로 feed.xml과 feed/ 생성
 python -m http.server                     # 브라우저에서 http://localhost:8000/ 열기
 ```
 
@@ -214,8 +219,10 @@ NVD 호출을 빠르게 하려면 저장소 시크릿 `NVD_API_KEY`를 추가하
 ### 배포
 
 [`.github/workflows/pages.yml`](../.github/workflows/pages.yml)이 `main`에 푸시할 때와
-수집이 성공할 때마다 GitHub Pages에 배포합니다. 페이지가 불러오는 파일만 올립니다
-(`index.html`, `favicon.svg`, `og.png`, `robots.txt`, `sitemap.xml`, `fonts/`, `data/latest.json`)과 글 형식 파일(`llms.txt`, `today.md`).
+수집이 성공할 때마다 GitHub Pages에 배포합니다. 페이지가 불러오는 파일
+(`index.html`, `favicon.svg`, `og.png`, `robots.txt`, `sitemap.xml`, `fonts/`,
+`js/stack.js`, `data/latest.json`), 글 형식 파일(`llms.txt`, `today.md`), 그리고
+`python collect/feeds.py`로 만든 Atom 피드(`feed.xml`, `feed/`)를 올립니다.
 
 처음 한 번 설정: Settings → Pages → Source를 GitHub Actions로 하고, Custom domain에
 `depweather.com`을 넣은 뒤 "Enforce HTTPS"를 켭니다. 도메인 등록 업체의 DNS에는 `@`의

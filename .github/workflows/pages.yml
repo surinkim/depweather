@@ -32,8 +32,9 @@ jobs:
         with:
           ref: main
 
-      # What the page loads plus the plain-text views (llms.txt, today.md);
-      # mockups, history and sources stay in the repository.
+      # What the page loads plus the plain-text views (llms.txt, today.md)
+      # and the Atom feeds. Mockups, history and sources stay in the repository.
+      # Feeds are rebuilt from data/latest.json; they are not stored in git.
       - name: Assemble site
         run: |
           mkdir -p _site/data _site/js
@@ -42,6 +43,7 @@ jobs:
           cp data/today.md _site/today.md
           cp -r fonts _site/
           cp data/latest.json _site/data/
+          python3 collect/feeds.py --out _site
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

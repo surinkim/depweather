@@ -1,0 +1,43 @@
+# Copy this file to .github/workflows/depweather.yml in your repository.
+# Docs: https://github.com/surinkim/depweather/blob/main/docs/alerts.md
+# 한국어: https://github.com/surinkim/depweather/blob/main/docs/alerts.ko.md
+#
+# Once a day it reads your dependency manifests, fetches
+# https://depweather.com/data/latest.json, and when a tracked package has a
+# new KEV or critical advisory it opens an issue here. Set the
+# DEPWEATHER_WEBHOOK_URL secret to also post to Slack or Discord.
+# The same advisory does not open a second issue the next day.
+
+name: depweather
+
+on:
+  schedule:
+    # 07:17 UTC. GitHub may delay a scheduled run.
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: surinkim/depweather/alert@main
+        with:
+          # kev | low | medium | high | critical
+          # KEV always alerts, except when severity is kev (KEV only).
+          severity: critical
+          # How many days back an advisory still counts as new. Maximum 30.
+          days: "7"
+          # true: leave the issue open. false: only the webhook, plus a closed
+          # issue so the same advisory is not sent again tomorrow.
+          open-issue: "true"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          # Optional. A Slack incoming webhook, or a Discord webhook URL.
+          # Settings → Secrets and variables → Actions → New repository secret.
+          DEPWEATHER_WEBHOOK_URL: ${{ secrets.DEPWEATHER_WEBHOOK_URL }}

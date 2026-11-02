@@ -1,0 +1,37 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r collect/requirements.txt
+
+      - name: JavaScript tests
+        run: node --test tests/stack.test.js tests/alert.test.js
+
+      - name: Feed tests
+        run: python tests/test_feeds.py -v
+
+      - name: Syntax
+        run: |
+          python -m py_compile collect/collect.py collect/feeds.py
+          node --check alert/check.js
+          node --check alert/run.js
+          node --check js/stack.js

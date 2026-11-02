@@ -55,6 +55,13 @@ GitHub Actions 작업이 하루에 두 번 돕니다. [OSV](https://osv.dev)에�
 색, 심각도 규칙, 패키지 선정 기준, 데이터 라이선스 같은 자세한 내용:
 **[docs/how-it-works.ko.md](docs/how-it-works.ko.md)**
 
+## 알림
+
+계정이 필요 없습니다. [Atom 피드](https://depweather.com/feed.xml)를 구독하거나
+(패키지별 예: `/feed/npm/next.xml`), 자기 저장소에
+[GitHub Actions 예제](docs/alerts.ko.md)를 넣으면 됩니다. 의존하는 패키지에
+KEV나 치명 권고가 새로 나오면 이슈를 열거나 Slack·Discord로 보냅니다.
+
 ## 원하는 패키지가 없나요?
 
 목록은 [`collect/stacks.yml`](collect/stacks.yml)에 있습니다. Stack Overflow 2026
