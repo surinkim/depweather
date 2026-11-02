@@ -30,6 +30,7 @@
 <meta property="og:image:alt" content="depweather logo beside a treemap of package ecosystems colored by vulnerability severity">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="text/markdown" href="https://depweather.com/today.md" title="Today's forecast (Markdown)">
+<link rel="alternate" type="application/atom+xml" href="https://depweather.com/feed.xml" title="depweather new advisories">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,7 +57,8 @@
       "isBasedOn": ["https://osv.dev", "https://www.cisa.gov/known-exploited-vulnerabilities-catalog", "https://www.first.org/epss/", "https://nvd.nist.gov"],
       "distribution": [
         { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://depweather.com/data/latest.json" },
-        { "@type": "DataDownload", "encodingFormat": "text/markdown", "contentUrl": "https://depweather.com/today.md" }
+        { "@type": "DataDownload", "encodingFormat": "text/markdown", "contentUrl": "https://depweather.com/today.md" },
+        { "@type": "DataDownload", "encodingFormat": "application/atom+xml", "contentUrl": "https://depweather.com/feed.xml" }
       ]
     }
   ]
@@ -280,9 +282,12 @@ table.data td.num, table.data th.num { text-align: right; font-variant-numeric: 
 #tooltip .tt-foot { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--border); color: var(--ink-2); font-size: 11.5px; }
 
 .about { max-width: 72ch; margin: 36px 0 0; color: var(--ink-2); font-size: 14.5px; }
+.about + .about { margin-top: 22px; }
 .about h2 { font-size: 20px; color: var(--ink); margin: 0 0 6px; }
 .about h3 { font-size: 15px; color: var(--ink); margin: 16px 0 2px; font-family: inherit; font-weight: 600; }
 .about p { margin: 0; }
+.about ul { margin: 8px 0 0; padding-left: 1.2em; }
+.about li { margin: 0 0 4px; }
 footer { color: var(--muted); font-size: 12.5px; padding: 24px 0 32px; }
 footer p { margin: 4px 0; }
 .warn { color: var(--ink-2); background: var(--surface); border: 1px dashed var(--axis); border-radius: 8px; padding: 8px 10px; font-size: 13px; margin-bottom: 10px; }
@@ -422,6 +427,15 @@ button.primary {
       How it works: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.md">docs</a>.</p>
   </section>
 
+  <section class="about" id="alerts" data-i18n-html="alerts_html">
+    <h2>Get alerts</h2>
+    <p>No account. depweather does not store who is listening.</p>
+    <ul>
+      <li><a href="https://depweather.com/feed.xml">Atom feed</a> of new advisories from the last 14 days. KEV and critical items are marked in the title. Each package has its own feed, for example <a href="https://depweather.com/feed/npm/next.xml">Next.js</a> or <a href="https://depweather.com/feed/pypi/django.xml">Django</a>.</li>
+      <li>In your own repository, a <a href="https://github.com/surinkim/depweather/blob/main/docs/alerts.md">GitHub Actions workflow</a> reads your dependency files and opens an issue, or posts to Slack or Discord, when one of them has a new KEV or critical advisory.</li>
+    </ul>
+  </section>
+
   <footer>
     <p data-i18n-html="footer_data"></p>
     <p>This product uses the NVD API but is not endorsed or certified by the NVD.</p>
@@ -437,7 +451,7 @@ button.primary {
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-11-02.1";
+const BUILD = "2026-11-02.2";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -650,6 +664,12 @@ const I18N = {
     <h3>이 페이지 없이 데이터를 볼 수 있나요?</h3>
     <p>네. <a href="today.md">오늘의 예보(Markdown, 영어)</a>와 <a href="data/latest.json">전체 데이터(JSON)</a>가 있습니다.
       작동 방식: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.ko.md">문서</a>.</p>`,
+    alerts_html: `<h2>알림 받기</h2>
+    <p>계정이 필요 없습니다. depweather는 누가 구독하는지 저장하지 않습니다.</p>
+    <ul>
+      <li>최근 14일 새 권고의 <a href="https://depweather.com/feed.xml">Atom 피드</a>입니다. 제목에 KEV와 치명 항목을 표시합니다. 패키지마다 피드가 있습니다. 예: <a href="https://depweather.com/feed/npm/next.xml">Next.js</a>, <a href="https://depweather.com/feed/pypi/django.xml">Django</a>.</li>
+      <li>자기 저장소에 <a href="https://github.com/surinkim/depweather/blob/main/docs/alerts.ko.md">GitHub Actions 워크플로</a>를 넣으면, 의존성 파일을 읽어 KEV나 치명 권고가 새로 나왔을 때 이슈를 열거나 Slack·Discord로 보냅니다.</li>
+    </ul>`,
     rd_kev: "이번 주 CISA KEV 추가", rd_aff: (n) => `이번 주 영향받은 패키지 (${n}개 중)`,
     rd_today: "오늘 신규 CVE", rd_month: (m) => `${m} 공개 CVE`,
     wx: ["맑음", "흐림", "비", "폭풍"], wx_kev: "실제 악용",

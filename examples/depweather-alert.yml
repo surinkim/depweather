@@ -1,0 +1,61 @@
+# Copy this file to .github/workflows/depweather.yml in your repository.
+# Docs: https://github.com/surinkim/depweather/blob/main/docs/alerts.md
+# 한국어: https://github.com/surinkim/depweather/blob/main/docs/alerts.ko.md
+#
+# Pin every action to a full commit SHA. Do not use @main or a floating
+# major tag for depweather: that ref moves. The tag v1.0.0 (also alert-v1)
+# is cut from main after review; see docs/alerts.md. Replace the line below
+# with the 40-character SHA of that tag and keep the version comment so
+# Dependabot can update it (examples/dependabot.yml).
+#
+# Once a day it reads your dependency manifests, fetches
+# https://depweather.com/data/latest.json, and when a tracked package has a
+# new KEV or critical advisory it opens an issue here. Set the
+# DEPWEATHER_WEBHOOK_URL secret to also post to Slack or Discord.
+# The same advisory does not open a second issue the next day.
+
+name: depweather
+
+on:
+  schedule:
+    # 07:17 UTC. GitHub may delay a scheduled run.
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+
+# contents: read is enough to look at manifests. issues: write opens the
+# dedup issue. Do not add pull_request_target or contents: write.
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      # v4.4.0. persist-credentials: false so the checkout token is not left in .git/config.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      # Replace v1.0.0 with @<40-hex SHA> # v1.0.0 after that tag exists.
+      # Do not point this at @main.
+      - uses: surinkim/depweather/alert@v1.0.0
+        with:
+          # kev | low | medium | high | critical
+          # KEV always alerts, except when severity is kev (KEV only).
+          severity: critical
+          # How many days back an advisory still counts as new. Maximum 30.
+          days: "7"
+          # true: leave the issue open. false: only the webhook, plus a closed
+          # issue so the same advisory is not sent again tomorrow.
+          open-issue: "true"
+        env:
+          # Passed in the environment, not on the command line. Actions masks github.token.
+          GITHUB_TOKEN: ${{ github.token }}
+          # Optional. https://hooks.slack.com/services/... or
+          # https://discord.com/api/webhooks/... only. Any other value is rejected
+          # and is not printed.
+          DEPWEATHER_WEBHOOK_URL: ${{ secrets.DEPWEATHER_WEBHOOK_URL }}

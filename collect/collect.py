@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Collect today's vulnerability data for the packages in stacks.yml.
 
-Writes data/latest.json and data/history/YYYY-MM-DD.json.
+Writes data/latest.json, data/history/YYYY-MM-DD.json, data/today.md,
+and Atom feeds (feed.xml and feed/<package>.xml). The feeds are generated
+again when the site is published; they are not committed.
 
 Sources:
   OSV.dev       per-ecosystem GCS export (modified_id.csv + one JSON per entry)
@@ -778,6 +780,14 @@ def main() -> int:
     (DATA / "history" / f"{now.date().isoformat()}.json").write_text(text + "\n")
     (DATA / "today.md").write_text(today_markdown(out))
     log(f"wrote {latest_path} ({len(text) // 1024} KiB), affected packages (7d): {len(affected)}")
+    # Feeds are a pure function of this snapshot. Pages regenerates them too,
+    # so a failure here must not throw away the data commit: log and go on.
+    try:
+        import feeds
+        n = feeds.write_feeds(out, ROOT)
+        log(f"wrote {n} atom feeds")
+    except Exception as e:  # noqa: BLE001
+        log(f"feeds failed: {e}")
     return 0
 
 

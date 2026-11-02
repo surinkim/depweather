@@ -12,4 +12,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://depweather.com/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://depweather.com/?lang=ko"/>
   </url>
+  <url>
+    <loc>https://depweather.com/feed.xml</loc>
+    <changefreq>daily</changefreq>
+  </url>
 </urlset>

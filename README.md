@@ -57,6 +57,14 @@ A single HTML page draws it. No server and no login; Google Analytics counts vis
 Details (colors, severity rules, how packages are picked, data licenses):
 **[docs/how-it-works.md](docs/how-it-works.md)**
 
+## Alerts
+
+No account. Subscribe to the [Atom feed](https://depweather.com/feed.xml)
+(one package: `/feed/npm/next.xml`), or copy the
+[GitHub Actions example](docs/alerts.md) into your own repository. It opens an
+issue, or posts to Slack or Discord, when a package you depend on has a new
+KEV or critical advisory.
+
 ## Missing a package?
 
 The list lives in [`collect/stacks.yml`](collect/stacks.yml). It holds widely
