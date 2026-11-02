@@ -35,10 +35,19 @@ same size on screen, so a tile shows more as it grows: name → advisory count �
 counts by severity and fixed versions → the worst advisory with its summary,
 plus downloads and the survey share.
 
-**C. Timeline.** Click a tile or search a package: every advisory of the last
-30 days is a dot on the day it was published, with the fixed versions on the
-right and a table of advisories below. Default view on screens narrower than
-768px.
+**Package pages.** Each tracked package has a static page at
+`/pkg/<ecosystem>/<name>/` (a Maven `:` is written as `~`, same as the feed).
+It lists the last 7 days separately from the rest of the 30-day window, with
+severity, fixed versions, CISA KEV and EPSS. English is the page itself;
+Korean is `?lang=ko`. Light and dark follow the same control as the map.
+The publish step builds these pages, and the sitemap entries for them, from
+`data/latest.json`. They are not committed. A tile, the package name on the
+weather strip, a timeline row and a stack chip link there. Search does too.
+
+**C. Timeline.** The list names link to those pages. `?pkg=npm/next` still
+opens that package's 30-day timeline on the map: dots on the day each advisory
+was published, fixed versions on the right, and a table below. Default view
+on screens narrower than 768px.
 
 **B. Counter (option).** Monthly NVD CVE counts for the last 14 months, a
 7-day table per ecosystem (new / critical / KEV), and this week's KEV
@@ -212,6 +221,9 @@ of a number. Monthly NVD counts from an earlier run are reused when NVD is down.
   is the package plus the advisory id, so a rebuild does not look like a new
   item. KEV and critical items are marked at the start of the title. See
   [alerts](alerts.md).
+- `pkg/<ecosystem>/<name>/index.html`, published as `/pkg/.../`: one page per
+  tracked package. Built by `collect/pages.py` in the same publish step, not
+  committed. The published `sitemap.xml` adds each page in English and Korean.
 
 ## Run locally
 
@@ -221,6 +233,7 @@ Python 3.10 or newer.
 pip install -r collect/requirements.txt   # PyYAML only
 python collect/collect.py                 # writes data/latest.json (~5 min, mostly NVD rate limits)
 python collect/feeds.py                   # writes feed.xml and feed/ from data/latest.json
+python collect/pages.py                   # writes pkg/ from data/latest.json (gitignored)
 python -m http.server                     # then open http://localhost:8000/
 ```
 
@@ -248,8 +261,9 @@ link previews are cached for a long time and the data changes daily. The
 to GitHub Pages on every push to `main` and after each successful collection.
 It uploads only what the page loads (`index.html`, `favicon.svg`, `og.png`,
 `robots.txt`, `sitemap.xml`, `fonts/`, `js/stack.js`, `data/latest.json`), the
-plain-text views (`llms.txt`, `today.md`), and Atom feeds built by
-`python collect/feeds.py` (`feed.xml`, `feed/`).
+plain-text views (`llms.txt`, `today.md`), Atom feeds built by
+`python collect/feeds.py` (`feed.xml`, `feed/`), and package pages built by
+`python collect/pages.py` (`pkg/`, plus package URLs in the published sitemap).
 
 One-time setup: Settings → Pages → Source: GitHub Actions; then Custom
 domain: `depweather.com` with "Enforce HTTPS". DNS at the registrar: `A`

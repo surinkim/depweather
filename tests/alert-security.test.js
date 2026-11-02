@@ -57,7 +57,7 @@ test("allowlisted https links stay, and other schemes do not", () => {
     url: "https://osv.dev/vulnerability/GHSA-crit",
   }));
   assert.match(body, /Advisory: https:\/\/osv\.dev\/vulnerability\/GHSA-crit/);
-  assert.match(body, /https:\/\/depweather\.com\/\?pkg=npm%2Fnext/);
+  assert.match(body, /https:\/\/depweather\.com\/pkg\/npm\/next\//);
   assert.match(body, /https:\/\/depweather\.com\/feed\/npm\/next\.xml/);
   assert.doesNotMatch(body, /javascript:/);
   assert.equal(check.isAllowedHttpsUrl("https://user:pass@osv.dev/x"), false);
@@ -72,6 +72,7 @@ test("package keys that escape the path are not turned into links", () => {
   const body = check.issueBody(advisory({ key: "npm/../../etc", id: "GHSA-crit" }));
   assert.match(body, /\(omitted\)/);
   assert.doesNotMatch(body, /\?pkg=/);
+  assert.doesNotMatch(body, /\/pkg\//);
   assert.doesNotMatch(body, /\/feed\//);
   assert.doesNotMatch(body, /depweather-id:/);
 });

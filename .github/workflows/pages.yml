@@ -32,18 +32,21 @@ jobs:
         with:
           ref: main
 
-      # What the page loads plus the plain-text views (llms.txt, today.md)
-      # and the Atom feeds. Mockups, history and sources stay in the repository.
-      # Feeds are rebuilt from data/latest.json; they are not stored in git.
+      # What the page loads, the plain-text views (llms.txt, today.md),
+      # the Atom feeds, and one HTML page per package. Mockups, history and
+      # sources stay in the repository. Feeds and package pages are rebuilt
+      # from data/latest.json; they are not stored in git. pages.py also
+      # rewrites _site/sitemap.xml so each package is listed there.
       - name: Assemble site
         run: |
           mkdir -p _site/data _site/js
           cp index.html favicon.svg og.png robots.txt sitemap.xml llms.txt _site/
-          cp js/stack.js _site/js/
+          cp js/stack.js js/pkg-path.js _site/js/
           cp data/today.md _site/today.md
           cp -r fonts _site/
           cp data/latest.json _site/data/
           python3 collect/feeds.py --out _site
+          python3 collect/pages.py --out _site
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

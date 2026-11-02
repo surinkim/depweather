@@ -25,7 +25,6 @@ import json
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import quote
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -107,6 +106,18 @@ def feed_url(key: str) -> str:
     return f"{SITE}/{feed_relpath(key)}"
 
 
+def package_page_rel(key: str) -> str:
+    """Site path with a trailing slash and no leading slash: pkg/npm/next/."""
+    rel = feed_relpath(key)
+    if not rel.startswith("feed/") or not rel.endswith(".xml"):
+        raise ValueError(f"bad package key: {key!r}")
+    return "pkg/" + rel[len("feed/"):-len(".xml")] + "/"
+
+
+def package_page_url(key: str) -> str:
+    return f"{SITE}/{package_page_rel(key)}"
+
+
 def entry_id(pkg_key: str, advisory_id: str) -> str:
     return f"tag:depweather.com,{TAG_YEAR}:advisory:{pkg_key}/{advisory_id}"
 
@@ -150,7 +161,7 @@ def entry_html(eco_label: str, pkg: dict, vuln: dict) -> str:
     links = []
     if vuln.get("url"):
         links.append(f'<a href="{_esc(vuln["url"])}">Advisory</a>')
-    page = f"{SITE}/?pkg={quote(pkg['key'], safe='')}"
+    page = package_page_url(pkg["key"])
     links.append(f'<a href="{_esc(page)}">Package on depweather</a>')
     links.append(f'<a href="{_esc(feed_url(pkg["key"]))}">Package feed</a>')
     parts.append("<p>" + " · ".join(links) + "</p>")
@@ -211,7 +222,7 @@ def _one_entry(eco: dict, pkg: dict, vuln: dict, when: datetime) -> dict:
     return {
         "id": entry_id(pkg["key"], vuln["id"]),
         "title": entry_title(pkg.get("label") or pkg.get("name") or pkg["key"], vuln),
-        "href": vuln.get("url") or f"{SITE}/?pkg={quote(pkg['key'], safe='')}",
+        "href": vuln.get("url") or package_page_url(pkg["key"]),
         "published": iso_z(parse_time(vuln["published"])),
         "updated": iso_z(when),
         "categories": _categories(eco.get("id") or "", vuln),
@@ -295,7 +306,7 @@ def write_feeds(data: dict, out: Path, days: int = RETENTION_DAYS) -> int:
     for key, entries in by_pkg.items():
         label = _label_for(data, key)
         eco_label = _eco_label_for(data, key)
-        page = f"{SITE}/?pkg={quote(key, safe='')}"
+        page = package_page_url(key)
         pkg_sub = (
             f"Advisories for {label} ({eco_label}) from the last {days} days. "
             "KEV and critical items are marked at the start of the title."

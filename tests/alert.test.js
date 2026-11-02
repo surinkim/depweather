@@ -85,6 +85,20 @@ test("feed URLs encode Maven colons and keep slashes and scopes", () => {
   assert.equal(check.encodeSegment("foo~bar:baz"), "foo~~bar~baz");
 });
 
+test("package page URLs use the feed slug", () => {
+  assert.equal(check.packagePageUrl("npm/next"), "https://depweather.com/pkg/npm/next/");
+  assert.equal(check.packagePageUrl("npm/@angular/core"), "https://depweather.com/pkg/npm/@angular/core/");
+  assert.equal(
+    check.packagePageUrl("maven/org.springframework.boot:spring-boot"),
+    "https://depweather.com/pkg/maven/org.springframework.boot~spring-boot/"
+  );
+  assert.equal(
+    check.packagePageUrl("go/github.com/gin-gonic/gin"),
+    "https://depweather.com/pkg/go/github.com/gin-gonic/gin/"
+  );
+  assert.equal(check.packagePageUrl("npm/../../etc"), "https://depweather.com/");
+});
+
 test("critical threshold keeps KEV and critical, drops high, medium, and old", () => {
   const matched = check.matchFiles([
     { path: "package.json", text: JSON.stringify({ dependencies: { next: "1.0.0", lodash: "1.0.0", "left-pad": "1.0.0" } }) },
