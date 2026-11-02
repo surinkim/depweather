@@ -432,6 +432,11 @@ a.chip:hover { text-decoration: underline; }
     <h3>Can I read the data without this page?</h3>
     <p>Yes: <a href="today.md">today's forecast in Markdown</a> and <a href="data/latest.json">the full data as JSON</a>.
       How it works: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.md">docs</a>.</p>
+    <h3>Can I put this on a README?</h3>
+    <p>Yes. Each package has a badge, for example <a href="https://depweather.com/badge/npm/lodash.svg">lodash</a>
+      (Korean: <a href="https://depweather.com/badge/npm/lodash.ko.svg">.ko.svg</a>). It shows the last 7 days.
+      The package page has Markdown and HTML to copy.
+      <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.md#readme-badge">Colors and GitHub's image cache</a>.</p>
   </section>
 
   <section class="about" id="alerts" data-i18n-html="alerts_html">
@@ -453,13 +458,13 @@ a.chip:hover { text-decoration: underline; }
 </div>
 <div id="tooltip" role="tooltip"></div>
 
-<script src="js/pkg-path.js?v=2026-11-02.3"></script>
+<script src="js/pkg-path.js?v=2026-11-02.4"></script>
 <script src="js/stack.js?v=2026-11-02.1"></script>
 <script>
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-11-02.3";
+const BUILD = "2026-11-02.4";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -673,7 +678,12 @@ const I18N = {
     <p>아니요. 의존성 파일을 붙여넣으면 그 패키지만 이 지도에서 볼 수 있고, 파일은 브라우저 안에만 남으며 서버로 보내지 않습니다. 내 코드를 검사하려면 Dependabot, npm audit, pip-audit, govulncheck, osv-scanner를 쓰세요.</p>
     <h3>이 페이지 없이 데이터를 볼 수 있나요?</h3>
     <p>네. <a href="today.md">오늘의 예보(Markdown, 영어)</a>와 <a href="data/latest.json">전체 데이터(JSON)</a>가 있습니다.
-      작동 방식: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.ko.md">문서</a>.</p>`,
+      작동 방식: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.ko.md">문서</a>.</p>
+    <h3>README에 붙일 수 있나요?</h3>
+    <p>네. 패키지마다 배지가 있습니다. 예: <a href="https://depweather.com/badge/npm/lodash.ko.svg">lodash</a>
+      (영어: <a href="https://depweather.com/badge/npm/lodash.svg">.svg</a>). 최근 7일을 보여줍니다.
+      패키지 페이지에서 Markdown과 HTML을 복사할 수 있습니다.
+      <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.ko.md#readme-badge">색과 GitHub 이미지 캐시</a>.</p>`,
     alerts_html: `<h2>알림 받기</h2>
     <p>계정이 필요 없습니다. depweather는 누가 구독하는지 저장하지 않습니다.</p>
     <ul>

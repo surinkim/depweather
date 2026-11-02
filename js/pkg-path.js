@@ -1,5 +1,6 @@
-/* Package page and feed paths. The Pages workflow writes the same paths
-   from collect/feeds.py (Maven ":" is "~", a real "~" is "~~"). */
+/* Package page, feed and badge paths. The Pages workflow writes the same
+   paths from collect/feeds.py (Maven ":" is "~", a real "~" is "~~").
+   /pkg/npm/next/ -> /badge/npm/next.svg, and Korean is /badge/npm/next.ko.svg. */
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
@@ -30,5 +31,13 @@
     return "/feed/" + page.slice("/pkg/".length, -1) + ".xml";
   }
 
-  return { encodeSegment, pkgPagePath, pkgFeedPath };
+  // /pkg/npm/next/ -> /badge/npm/next.svg (lang "ko": /badge/npm/next.ko.svg)
+  function pkgBadgePath(key, lang) {
+    const page = pkgPagePath(key);
+    if (!page) return null;
+    const stem = "/badge/" + page.slice("/pkg/".length, -1);
+    return lang === "ko" ? stem + ".ko.svg" : stem + ".svg";
+  }
+
+  return { encodeSegment, pkgPagePath, pkgFeedPath, pkgBadgePath };
 });

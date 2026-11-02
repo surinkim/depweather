@@ -32,9 +32,12 @@ jobs:
       - name: Package page tests
         run: python tests/test_pages.py -v
 
+      - name: Badge tests
+        run: python tests/test_badges.py -v
+
       - name: Syntax
         run: |
-          python -m py_compile collect/collect.py collect/feeds.py collect/pages.py
+          python -m py_compile collect/collect.py collect/feeds.py collect/pages.py collect/badges.py
           node --check alert/check.js
           node --check alert/run.js
           node --check js/stack.js
