@@ -29,9 +29,13 @@ jobs:
       - name: Feed tests
         run: python tests/test_feeds.py -v
 
+      - name: Package page tests
+        run: python tests/test_pages.py -v
+
       - name: Syntax
         run: |
-          python -m py_compile collect/collect.py collect/feeds.py
+          python -m py_compile collect/collect.py collect/feeds.py collect/pages.py
           node --check alert/check.js
           node --check alert/run.js
           node --check js/stack.js
+          node --check js/pkg-path.js

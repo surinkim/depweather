@@ -189,9 +189,14 @@ header.top .spacer { flex: 1; }
   max-width: 46ch; margin: 4px 0 14px; font-variation-settings: "opsz" 72; text-wrap: balance; }
 .fc-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(122px, 1fr)); margin: 0 0 12px; padding: 0; list-style: none;
   border-top: 1px solid var(--axis); border-bottom: 1px solid var(--axis); }
-.fc-strip button { display: flex; align-items: center; gap: 10px; width: 100%; height: 100%; padding: 9px 10px 9px 2px;
-  font: inherit; color: inherit; text-align: left; background: none; border: 0; cursor: pointer; }
-.fc-strip button:hover b { text-decoration: underline; }
+.fc-cell { position: relative; }
+.fc-cell button.stretch {
+  position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0;
+  border: 0; background: none; cursor: pointer; color: inherit;
+}
+.fc-face { display: flex; align-items: center; gap: 10px; width: 100%; height: 100%; padding: 9px 10px 9px 2px; pointer-events: none; }
+.fc-cell:hover b { text-decoration: underline; }
+.fc-strip a.pkglink { pointer-events: auto; position: relative; z-index: 1; color: var(--accent); font-weight: 650; text-decoration: underline; text-underline-offset: 2px; }
 .fc-strip svg { flex: none; }
 .fc-strip b { display: block; font-size: 16px; font-weight: 700; line-height: 1.2; }
 .fc-strip span { display: block; font-size: 12.5px; color: var(--ink-2); line-height: 1.3; }
@@ -224,7 +229,7 @@ svg text { font-family: inherit; }
 #tm-panel:fullscreen { background: var(--page); padding: 12px; overflow: auto; border-radius: 0; }
 #tm-panel:-webkit-full-screen { background: var(--page); padding: 12px; overflow: auto; }
 .zoombar span { font-size: 12px; color: var(--ink-2); background: var(--surface); padding: 2px 6px; border-radius: 6px; }
-.tile { cursor: pointer; }
+.tile, a.tile { cursor: pointer; text-decoration: none; }
 .tile:focus { outline: none; }
 .tile:focus-visible rect.cell, .tile:hover rect.cell { stroke: var(--ink); stroke-width: 2; }
 
@@ -234,8 +239,8 @@ svg text { font-family: inherit; }
 .tl-row .name small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
 .tl-row .fix { font-size: 12.5px; color: var(--ink-2); overflow-wrap: anywhere; }
 .tl-row .fix b { color: var(--ink); font-weight: 600; }
-.tl-row button.name { font: inherit; font-weight: 600; font-size: 13.5px; text-align: left; background: none; border: 0; padding: 0; color: var(--ink); cursor: pointer; }
-.tl-row button.name:hover { text-decoration: underline; }
+.tl-row a.name { display: block; font-weight: 600; font-size: 13.5px; text-align: left; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.tl-row a.name small { text-decoration: none; }
 @media (max-width: 767px) {
   .tl-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
 }
@@ -310,7 +315,9 @@ button.primary {
 .stack-report h3 { font-size: 13px; margin: 12px 0 6px; font-family: inherit; font-weight: 650; color: var(--ink); }
 .stack-report h3.untracked { color: var(--ink-2); font-weight: 600; }
 .chips { display: flex; flex-wrap: wrap; gap: 4px; max-height: 140px; overflow: auto; }
-.chip { font-size: 12.5px; line-height: 1.45; padding: 2px 8px; border-radius: 999px; background: var(--group-head); color: var(--ink); }
+.chip { font-size: 12.5px; line-height: 1.45; padding: 2px 8px; border-radius: 999px; background: var(--group-head); color: var(--ink); text-decoration: none; }
+a.chip { color: var(--accent); }
+a.chip:hover { text-decoration: underline; }
 .chip small { color: var(--muted); font-weight: 400; margin-left: 4px; }
 .chip.untracked { background: transparent; border: 1px dashed var(--axis); color: var(--ink-2); }
 @media (max-width: 767px) {
@@ -446,12 +453,13 @@ button.primary {
 </div>
 <div id="tooltip" role="tooltip"></div>
 
+<script src="js/pkg-path.js?v=2026-11-02.3"></script>
 <script src="js/stack.js?v=2026-11-02.1"></script>
 <script>
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-11-02.2";
+const BUILD = "2026-11-02.3";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -511,7 +519,8 @@ const I18N = {
     sev_by: (s) => `rated by ${s}`, sev_vector: "from the advisory's CVSS vector", sev_mal: "malicious package",
     cvss_from: (s) => `from ${s}`, cvss_advisory: "the advisory", cvss_none: "no score yet",
     tip_survey: (s, name) => `Used by ${s}% of ${name} respondents (web frameworks)`,
-    tip_click: "Click for timeline",
+    tip_click: "Open the package page",
+    pkg_page: "Package page", pkg_feed: "Package feed",
     tip_kev: (d) => `On the CISA KEV list since ${d}`,
     today: "today", days_ago: (d) => `${d}d ago`,
     no_pkg: (p) => `No package <b>${p}</b> in the tracked list.`, show_all: "Show all",
@@ -617,7 +626,8 @@ const I18N = {
     sev_by: (s) => `${s} 판정`, sev_vector: "권고의 CVSS 벡터로 계산", sev_mal: "악성 패키지",
     cvss_from: (s) => `${s} 기준`, cvss_advisory: "권고", cvss_none: "아직 점수 없음",
     tip_survey: (s, name) => `${name} 응답자 ${s}%가 사용 (웹 프레임워크)`,
-    tip_click: "클릭하면 타임라인으로 이동",
+    tip_click: "패키지 페이지 열기",
+    pkg_page: "패키지 페이지", pkg_feed: "패키지 피드",
     tip_kev: (d) => `CISA KEV 등재: ${d}`,
     today: "오늘", days_ago: (d) => `${d}일 전`,
     no_pkg: (p) => `추적 목록에 <b>${p}</b> 패키지가 없습니다.`, show_all: "전체 보기",
@@ -815,7 +825,9 @@ function renderStack() {
     const eco = entry ? entry.eco.label : "";
     const vias = (sources[key] || []).filter((v) => !entry || String(v).toLowerCase() !== entry.pkg.name.toLowerCase());
     const via = vias.length ? `<small>· ${esc(vias.join(", "))}</small>` : "";
-    return `<span class="chip">${esc(label)}<small>· ${esc(eco)}</small>${via}</span>`;
+    const body = `${esc(label)}<small>· ${esc(eco)}</small>${via}`;
+    const href = DepweatherPath.pkgPagePath(key);
+    return href ? `<a class="chip" href="${esc(href)}">${body}</a>` : `<span class="chip">${body}</span>`;
   }).join("");
   const untrackedHtml = (state.stack.untracked || []).map((u) => {
     const eco = DATA && DATA.ecosystems.find((e) => e.id === u.eco);
@@ -882,6 +894,13 @@ function pkgVulns(p, days = state.range) {
   return p.vulns.filter((v) => inRange(v, days) && (!state.kevOnly || v.kev));
 }
 function pkgLevel(vulns) { return vulns.reduce((m, v) => Math.max(m, vulnLevel(v)), 0); }
+
+function moreTail(n) {
+  if (!n) return "";
+  const sample = t("more", "\u0000", n);
+  const i = sample.indexOf("\u0000");
+  return i < 0 ? "" : sample.slice(i + 1);
+}
 
 function cmpVersion(a, b) {
   const pa = a.split(/[.\-+]/), pb = b.split(/[.\-+]/);
@@ -1057,15 +1076,39 @@ function renderForecast() {
   strip.replaceChildren();
   for (const r of rows) {
     const li = document.createElement("li");
+    const cell = document.createElement("div");
+    cell.className = "fc-cell";
     const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "stretch";
     btn.title = t("strip_title", r.e.label);
-    btn.append(wxIcon(r.lvl, 32, r.kev));
-    const text = document.createElement("div");
-    const word = r.kev ? t("wx_kev") : t("wx")[r.lvl];
-    text.innerHTML = `<b>${esc(r.e.label)}</b><span>${esc(r.lvl ? `${word}, ${t("more", r.hit[0].p.label, r.hit.length - 1)}` : word)}</span>`;
-    btn.append(text);
+    btn.setAttribute("aria-label", t("strip_title", r.e.label));
     btn.onclick = () => focusGroup(r.e.id);
-    li.append(btn);
+    const face = document.createElement("div");
+    face.className = "fc-face";
+    face.append(wxIcon(r.lvl, 32, r.kev));
+    const text = document.createElement("div");
+    const b = document.createElement("b");
+    b.textContent = r.e.label;
+    const span = document.createElement("span");
+    const word = r.kev ? t("wx_kev") : t("wx")[r.lvl];
+    if (r.lvl && r.hit.length) {
+      span.append(document.createTextNode(word + ", "));
+      const top = r.hit[0].p;
+      const href = DepweatherPath.pkgPagePath(top.key);
+      if (href) {
+        const a = document.createElement("a");
+        a.className = "pkglink";
+        a.href = href;
+        a.textContent = top.label;
+        span.append(a);
+      } else span.append(document.createTextNode(top.label));
+      if (r.hit.length > 1) span.append(document.createTextNode(moreTail(r.hit.length - 1)));
+    } else span.textContent = word;
+    text.append(b, span);
+    face.append(text);
+    cell.append(btn, face);
+    li.append(cell);
     strip.append(li);
   }
 }
@@ -1126,7 +1169,7 @@ const GROUP_GAP = 4;        // space between ecosystem groups, world px (half on
 const GROUP_PAD = 4;        // space between a group's border and its tiles, world px
 let layout = null;          // { W, H, groups: [{ eco, x, y, w, h, tiles: [{ p, x, y, w, h }] }] }
 let tmDragged = false;
-let tmClickTimer = 0;       // a single click opens the timeline unless a double-click (zoom) follows
+let tmClickTimer = 0;       // a single click opens the package page unless a double-click (zoom) follows
 
 const isFullscreen = () => (document.fullscreenElement || document.webkitFullscreenElement) === $("#tm-panel");
 
@@ -1284,7 +1327,10 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
   const p = tile.p;
   const vulns = pkgVulns(p), lvl = pkgLevel(vulns);
   const kevs = vulns.filter((v) => v.kev).length;
-  const node = svgEl("g", { class: "tile", tabindex: 0, role: "button", "aria-label": `${p.label}: ${t("vulns", vulns.length)}, ${t("level")[lvl]}` });
+  const href = DepweatherPath.pkgPagePath(p.key);
+  const node = href
+    ? svgEl("a", { class: "tile", href, "aria-label": `${p.label}: ${t("vulns", vulns.length)}, ${t("level")[lvl]}` })
+    : svgEl("g", { class: "tile", tabindex: 0, role: "button", "aria-label": `${p.label}: ${t("vulns", vulns.length)}, ${t("level")[lvl]}` });
   // Exploited (KEV) gets its own color, apart from critical red.
   const fill = kevs ? "var(--sev-kev, var(--sev-3))" : `var(--sev-${lvl})`;
   node.append(svgEl("rect", { class: "cell", x: x + 1, y: y + 1, width: Math.max(0, w - 2), height: Math.max(0, h - 2), rx: Math.min(4, w / 6), fill }));
@@ -1347,7 +1393,7 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
     const epssMax = scores.length ? Math.max(...scores) : null;
     const kevDate = vulns.map((v) => v.kev_date_added).filter(Boolean).sort()[0];
     const by = [3, 2, 1].map((l) => [l, vulns.filter((v) => vulnLevel(v) === l).length]).filter(([, n]) => n);
-    const foot = [unit ? esc(t("pop_fmt", compact.format(p.popularity), t("pop_long")[unit])) : "", t("tip_click")].filter(Boolean).join(" · ");
+    const foot = [unit ? esc(t("pop_fmt", compact.format(p.popularity), t("pop_long")[unit])) : "", t("tip_click"), href ? esc(href) : ""].filter(Boolean).join(" · ");
     showTip(`<div class="tt-head"><span class="t">${esc(p.label)}</span><span class="m">${esc(g.eco.label)}${p.label !== p.name ? " · " + esc(p.name) : ""}</span></div>
       <div class="tt-sum"><span class="pill l${lvl}">${t("level")[lvl]}</span>${kevs ? '<span class="pill kev">KEV</span>' : ""}
         <b>${t("tip_count", vulns.length, state.range)}</b>${by.length ? `<span class="m">${by.map(([l, n]) => `${t("sev_short")[l]} ${n}`).join(" · ")}</span>` : ""}</div>
@@ -1361,9 +1407,11 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
       ${p.survey ? `<div class="tt-foot">${esc(t("tip_survey", p.survey, DATA.survey ? DATA.survey.name : "survey"))}<br>${foot}</div>` : `<div class="tt-foot">${foot}</div>`}`, ev);
   });
   node.addEventListener("mouseleave", hideTip);
-  const open = () => { hideTip(); setState({ view: "c", pkg: p.key }); };
+  const open = () => { hideTip(); if (href) location.assign(href); else setState({ view: "c", pkg: p.key }); };
   node.addEventListener("click", (ev) => {
-    if (tmDragged || ev.detail > 1) return;
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) return;
+    if (tmDragged || ev.detail > 1) { ev.preventDefault(); return; }
+    ev.preventDefault();
     clearTimeout(tmClickTimer);
     tmClickTimer = setTimeout(open, 250);
   });
@@ -1545,10 +1593,11 @@ function renderTimeline() {
   for (const r of rows) {
     const row = document.createElement("div");
     row.className = "tl-row";
-    const name = document.createElement("button");
+    const name = document.createElement("a");
     name.className = "name";
+    const href = DepweatherPath.pkgPagePath(r.p.key);
+    if (href) name.href = href;
     name.innerHTML = `${esc(r.p.label)}<small>${esc(r.e.label)} · ${t("issues", r.vulns.length)}</small>`;
-    name.onclick = () => setState({ pkg: r.p.key });
     const plot = document.createElement("div");
     const fix = document.createElement("div");
     fix.className = "fix";
@@ -1568,7 +1617,9 @@ function renderPackage(root, { eco, pkg }) {
   const panel = document.createElement("div");
   panel.className = "panel";
   const lvl = pkgLevel(vulns);
-  panel.innerHTML = `<p style="margin:0 0 6px"><a href="#" id="allpkgs">${t("all_pkgs")}</a></p>
+  const pageHref = DepweatherPath.pkgPagePath(pkg.key);
+  const feedHref = DepweatherPath.pkgFeedPath(pkg.key);
+  panel.innerHTML = `<p style="margin:0 0 6px"><a href="#" id="allpkgs">${t("all_pkgs")}</a>${pageHref ? ` · <a href="${esc(pageHref)}">${t("pkg_page")}</a>` : ""}${feedHref ? ` · <a href="${esc(feedHref)}">${t("pkg_feed")}</a>` : ""}</p>
     <h2>${esc(pkg.label)} <span class="meta">${esc(eco.label)} · ${esc(pkg.name)}</span></h2>
     <div class="tl-row" style="border:0"><div class="name">${t("issues_30", vulns.length)}<small>${lvl ? t("at_worst", t("level")[lvl]) : t("clear")}</small></div>
     <div id="pkgplot"></div><div class="fix">${fixedHtml(fixedList(vulns))}</div></div>`;
@@ -1742,6 +1793,8 @@ function initControls() {
     const hit = [...PKGS.keys()].find((k) => k.toLowerCase() === q)
       || [...PKGS.entries()].find(([, v]) => v.pkg.label.toLowerCase() === q || v.pkg.name.toLowerCase() === q)?.[0]
       || [...PKGS.keys()].find((k) => k.toLowerCase().includes(q));
+    const href = hit && DepweatherPath.pkgPagePath(hit);
+    if (href) { location.assign(href); return; }
     setState({ view: "c", pkg: hit || q });
     e.target.value = "";
   });

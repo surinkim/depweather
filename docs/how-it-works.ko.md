@@ -32,9 +32,18 @@ Ctrl/⌘ + 스크롤, 더블클릭(Shift + 더블클릭은 축소), +/− 버튼
 보입니다. 이름 → 권고 수 → 심각도별 개수와 수정 버전 → 가장 심각한 권고와 요약, 다운로드
 수, 설문 비율 순입니다.
 
-**C. 타임라인.** 타일을 누르거나 패키지를 검색하면 열립니다. 최근 30일의 권고를
-공개일 위치에 점으로 찍고, 오른쪽에 수정 버전, 아래에 권고 표를 보여줍니다. 화면 폭이
-768px보다 좁으면 기본 보기입니다.
+**패키지 페이지.** 추적하는 패키지마다 `/pkg/<생태계>/<이름>/` 정적 페이지가
+있습니다. Maven 좌표의 `:`는 피드와 같이 `~`로 씁니다. 최근 7일과 그 이전(30일
+창)을 나눠 심각도, 수정 버전, CISA KEV, EPSS를 보여줍니다. 본문은 영어이고
+한국어는 `?lang=ko`입니다. 라이트/다크는 지도와 같은 설정을 따릅니다. 배포
+단계에서 `data/latest.json`으로 페이지와 사이트맵 항목을 만들며 git에는 올리지
+않습니다. 타일, 날씨 띠의 패키지 이름, 타임라인 목록, 내 스택 칩이 이 페이지로
+연결되고 검색도 그렇습니다.
+
+**C. 타임라인.** 목록의 이름은 패키지 페이지로 갑니다. `?pkg=npm/next`는 여전히
+지도 안에서 그 패키지의 30일 타임라인을 엽니다. 권고를 공개일 위치에 점으로 찍고,
+오른쪽에 수정 버전, 아래에 권고 표를 보여줍니다. 화면 폭이 768px보다 좁으면 기본
+보기입니다.
 
 **B. 카운터(보기 옵션).** 최근 14개월의 월별 NVD CVE 건수, 생태계별 7일 표(신규/치명/KEV),
 이번 주 KEV 추가 목록입니다. 전체 CVE 건수는 [cve.icu](https://cve.icu)가 이미 잘 하고
@@ -188,6 +197,9 @@ Go는 공개된 다운로드 수가 없고, NuGet 검색 API(다운로드 수 �
   권고의 Atom 피드입니다. 배포 단계에서 `data/latest.json`으로 만들며 git에는
   올리지 않습니다. 항목 id는 패키지와 권고 id라서, 다시 만들어도 새 글로 보이지
   않습니다. KEV와 치명 항목은 제목 앞에 표시합니다. [알림](alerts.ko.md)을 보세요.
+- `pkg/<생태계>/<이름>/index.html`(`/pkg/.../`로 배포): 추적 패키지마다 페이지
+  하나입니다. 같은 배포 단계에서 `collect/pages.py`가 만들며 git에는 올리지
+  않습니다. 배포되는 `sitemap.xml`에 영어·한국어 URL을 넣습니다.
 
 ## 로컬 실행
 
@@ -197,6 +209,7 @@ Python 3.10 이상이 필요합니다.
 pip install -r collect/requirements.txt   # PyYAML만 필요
 python collect/collect.py                 # data/latest.json 생성(약 5분, 대부분 NVD 요청 간격 대기)
 python collect/feeds.py                   # data/latest.json으로 feed.xml과 feed/ 생성
+python collect/pages.py                   # data/latest.json으로 pkg/ 생성(git에 없음)
 python -m http.server                     # 브라우저에서 http://localhost:8000/ 열기
 ```
 
@@ -222,7 +235,9 @@ NVD 호출을 빠르게 하려면 저장소 시크릿 `NVD_API_KEY`를 추가하
 수집이 성공할 때마다 GitHub Pages에 배포합니다. 페이지가 불러오는 파일
 (`index.html`, `favicon.svg`, `og.png`, `robots.txt`, `sitemap.xml`, `fonts/`,
 `js/stack.js`, `data/latest.json`), 글 형식 파일(`llms.txt`, `today.md`), 그리고
-`python collect/feeds.py`로 만든 Atom 피드(`feed.xml`, `feed/`)를 올립니다.
+`python collect/feeds.py`로 만든 Atom 피드(`feed.xml`, `feed/`), 그리고
+`python collect/pages.py`로 만든 패키지 페이지(`pkg/`, 배포용 사이트맵의 패키지 URL)를
+올립니다.
 
 처음 한 번 설정: Settings → Pages → Source를 GitHub Actions로 하고, Custom domain에
 `depweather.com`을 넣은 뒤 "Enforce HTTPS"를 켭니다. 도메인 등록 업체의 DNS에는 `@`의

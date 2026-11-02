@@ -153,6 +153,7 @@ class FeedTests(unittest.TestCase):
             pkg = parse(out / "feed" / "npm" / "next.xml")
             self.assertEqual(entry_ids(pkg), ["tag:depweather.com,2026:advisory:npm/next/GHSA-crit"])
             self.assertEqual(pkg.find("a:link[@rel='self']", NS).attrib["href"], "https://depweather.com/feed/npm/next.xml")
+            self.assertEqual(pkg.find("a:link[@rel='alternate']", NS).attrib["href"], "https://depweather.com/pkg/npm/next/")
             content = pkg.findtext("a:entry/a:content", default="", namespaces=NS)
             # type="html": after XML parsing the text is HTML, so "<" in the summary is still escaped.
             self.assertIn("RCE &lt;in&gt; next &amp; friends", content)
@@ -164,10 +165,18 @@ class FeedTests(unittest.TestCase):
             angular = parse(out / "feed" / "npm" / "@angular" / "core.xml")
             self.assertEqual(entry_ids(angular), [])
             self.assertIn("Angular", angular.findtext("a:title", default="", namespaces=NS))
+            self.assertEqual(
+                angular.find("a:link[@rel='alternate']", NS).attrib["href"],
+                "https://depweather.com/pkg/npm/@angular/core/",
+            )
 
             boot = out / "feed" / "maven" / "org.springframework.boot~spring-boot.xml"
             self.assertTrue(boot.is_file())
             boot_root = parse(boot)
+            self.assertEqual(
+                boot_root.find("a:link[@rel='alternate']", NS).attrib["href"],
+                "https://depweather.com/pkg/maven/org.springframework.boot~spring-boot/",
+            )
             self.assertTrue(titles(boot_root)[0].startswith("KEV · "))
             cats = [c.attrib["term"] for c in boot_root.findall("a:entry/a:category", NS)]
             self.assertIn("kev", cats)

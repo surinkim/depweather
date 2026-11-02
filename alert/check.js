@@ -6,6 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 const stack = require("../js/stack.js");
+const pkgPath = require("../js/pkg-path.js");
 
 const SITE = "https://depweather.com";
 const RANK = { NONE: 0, UNKNOWN: 1, LOW: 1, MEDIUM: 2, MODERATE: 2, HIGH: 3, CRITICAL: 4 };
@@ -134,6 +135,13 @@ function packageFeedUrl(key) {
   const name = key.slice(slash + 1);
   const parts = [eco].concat(name.split("/")).map(encodeSegment);
   return `${SITE}/feed/${parts.join("/")}.xml`;
+}
+
+function packagePageUrl(key) {
+  const safe = safePackageKey(key);
+  if (!safe) return `${SITE}/`;
+  const rel = pkgPath.pkgPagePath(safe);
+  return rel ? `${SITE}${rel}` : `${SITE}/`;
 }
 
 function normalizeSeverity(severity) {
@@ -377,7 +385,7 @@ function issueBody(a) {
   lines.push("");
   if (isAllowedHttpsUrl(a.url)) lines.push(`- Advisory: ${a.url}`);
   if (key) {
-    lines.push(`- On depweather: ${SITE}/?pkg=${encodeURIComponent(key)}`);
+    lines.push(`- On depweather: ${packagePageUrl(key)}`);
     lines.push(`- Package feed: ${packageFeedUrl(key)}`);
   }
   lines.push("");
@@ -416,6 +424,7 @@ module.exports = {
   MARKER_RE,
   encodeSegment,
   packageFeedUrl,
+  packagePageUrl,
   normalizeSeverity,
   clampDays,
   effectiveTime,
