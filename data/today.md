@@ -1,30 +1,25 @@
-# depweather forecast, 2026-11-01
+# depweather forecast, 2026-11-02
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-01T22:02:17Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-02T15:46:20Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 15 of 149
+- Popular packages with a new advisory this week: 13 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 10
-- New CVEs in NVD today (UTC): 78
-- CVEs published in 2026-11 so far: 78 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 210
+- CVEs published in 2026-11 so far: 308 (same month last year: 3,021)
 
 ## By ecosystem
 
 ### Runtimes & servers
 
 - **Node.js (node)**: 10 advisories, worst actively exploited (CISA KEV); fixed in 22.23.4, 24.22.1, 26.12.1. Example: [BIT-node-2026-111497](https://osv.dev/vulnerability/BIT-node-2026-111497) A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.
-- **PHP**: 2 advisories, worst actively exploited (CISA KEV); fixed in 8.2.35, 8.3.36, 8.4.27, 8.5.12. Example: [BIT-libphp-2026-109619](https://osv.dev/vulnerability/BIT-libphp-2026-109619) RCE via stale global state
 - **Tomcat**: 8 advisories, worst critical; fixed in 9.0.123, 10.1.61, 11.0.27. Example: [BIT-tomcat-2026-103119](https://osv.dev/vulnerability/BIT-tomcat-2026-103119) Apache Tomcat: AJP response mix-up
 - **Python**: 2 advisories, worst critical; fixed in 3.11.18, 3.12.16, 3.13.18, 3.14.10 and more. Example: [BIT-libpython-2026-115557](https://osv.dev/vulnerability/BIT-libpython-2026-115557) Distrust compromised intermediate certificates in ssl module
 
 ### crates.io
 
-- **zip**: 5 advisories, worst critical; fixed in 9.0.0, 9.0.5. Example: [GHSA-m665-v7pm-7grj](https://osv.dev/vulnerability/GHSA-m665-v7pm-7grj) zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE
-
-### Hex
-
-- **hackney**: 5 advisories, worst critical; fixed in 4.9.0. Example: [EEF-CVE-2026-115693](https://osv.dev/vulnerability/EEF-CVE-2026-115693) Custom cacerts or cacertfile do not restrict trust to the pinned CA in hackney
+- **zip**: 4 advisories, worst critical; fixed in 9.0.0, 9.0.5. Example: [GHSA-m665-v7pm-7grj](https://osv.dev/vulnerability/GHSA-m665-v7pm-7grj) zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE
 
 ### npm
 
@@ -56,6 +51,10 @@ No new advisories for the tracked packages.
 No new advisories for the tracked packages.
 
 ### RubyGems
+
+No new advisories for the tracked packages.
+
+### Hex
 
 No new advisories for the tracked packages.
 
