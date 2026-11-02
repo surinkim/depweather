@@ -50,10 +50,25 @@ visit follows the browser language). Advisory text from the data stays in
 English.
 
 The view is kept in the URL (`?view=a|b|c`, `?pkg=npm/next`, `&range=30`,
-`&kev=1`, `&lang=ko`) so links can be shared. The last view, period, language
+`&kev=1`, `&lang=ko`, `&stack=`) so links can be shared. The last view, period, language
 and theme are remembered in `localStorage`. The footer shows the page version,
 which helps spot a stale copy in the browser cache (reload with Cmd/Ctrl +
 Shift + R).
+
+**My stack.** "My stack" filters the forecast, the map, the timeline and the
+per-ecosystem counts to packages named in a manifest you paste. Supported
+files: npm `package.json` (and the direct dependencies of a package-lock),
+PyPI `requirements.txt`, `pyproject.toml` and `Pipfile`, `go.mod`,
+`Cargo.toml`, Maven `pom.xml`, `Gemfile`, `composer.json`, Elixir `mix.exs`,
+and NuGet `PackageReference` / `packages.config`. Names are matched inside
+that ecosystem, including PyPI normalization (case, `_`, `.`, `-`) and the
+same `match` aliases as [`collect/stacks.yml`](../collect/stacks.yml) (a
+Spring Boot starter counts as Spring Boot, a Rails component counts as
+Rails). Packages this site does not track are listed under "Not tracked by
+depweather" and are not put in the link. The choice is stored in
+`localStorage` (`depweather:stack`). The `stack` query parameter is the
+tracked package keys joined with commas (`npm/react,pypi/django`), or `-`
+when none of them are tracked. Nothing is uploaded.
 
 ## Colors and weather
 

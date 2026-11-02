@@ -44,9 +44,20 @@ Ctrl/⌘ + 스크롤, 더블클릭(Shift + 더블클릭은 축소), +/− 버튼
 따릅니다). 데이터에서 온 권고 내용은 영어 그대로입니다.
 
 보기 상태는 URL에 남아서(`?view=a|b|c`, `?pkg=npm/next`, `&range=30`, `&kev=1`,
-`&lang=ko`) 링크로 공유할 수 있습니다. 마지막으로 고른 보기, 기간, 언어, 테마는
+`&lang=ko`, `&stack=`) 링크로 공유할 수 있습니다. 마지막으로 고른 보기, 기간, 언어, 테마는
 `localStorage`에 기억합니다. 페이지 하단에 페이지 버전이 표시되어 브라우저 캐시에 남은
 예전 화면을 알아보기 쉽습니다(Cmd/Ctrl + Shift + R로 새로고침).
+
+**내 스택.** "내 스택"은 붙여넣은 매니페스트에 적힌 패키지만 예보, 지도, 타임라인,
+생태계별 건수에 남깁니다. 지원 파일: npm `package.json`(package-lock의 직접 의존성 포함),
+PyPI `requirements.txt`, `pyproject.toml`, `Pipfile`, `go.mod`, `Cargo.toml`, Maven
+`pom.xml`, `Gemfile`, `composer.json`, Elixir `mix.exs`, NuGet `PackageReference` /
+`packages.config`. 이름은 그 생태계 안에서만 맞추며, PyPI 이름 정규화(대소문자, `_`, `.`, `-`)와
+[`collect/stacks.yml`](../collect/stacks.yml)의 `match` 별칭을 같이 씁니다(Spring Boot
+스타터는 Spring Boot로, Rails 구성 요소는 Rails로). 이 사이트가 추적하지 않는 패키지는
+"depweather가 추적하지 않는 패키지"로 따로 보여주고 링크에는 넣지 않습니다. 선택은
+`localStorage`(`depweather:stack`)에 저장됩니다. `stack` 쿼리는 추적 패키지 키를 쉼표로
+이은 값(`npm/react,pypi/django`)이고, 하나도 없으면 `-`입니다. 파일은 서버로 보내지 않습니다.
 
 ## 색과 날씨
 
