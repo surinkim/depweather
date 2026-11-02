@@ -24,6 +24,8 @@ weather report, so you can tell in a few seconds.
   crates.io, Packagist, Go, RubyGems, Hex, and runtimes & servers such as PHP,
   Node.js and nginx. Bigger tile, more downloads. Zoom in for details.
 - **A 30-day timeline** for any package, with the versions that fix each issue.
+- **My stack.** Paste `package.json`, `requirements.txt`, or another manifest
+  to show only those packages. It is parsed in the browser; nothing is uploaded.
 - English and Korean, light and dark, and it works on a phone.
 
 | Weather | Means |
@@ -67,6 +69,7 @@ download rankings. Suggestions are welcome as issues or pull requests.
 pip install -r collect/requirements.txt
 python collect/collect.py      # writes data/latest.json (about 5 minutes)
 python -m http.server          # open http://localhost:8000
+node --test tests/stack.test.js   # manifest parsing tests, no install
 ```
 
 ## Credits and license

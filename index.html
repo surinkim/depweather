@@ -286,6 +286,31 @@ table.data td.num, table.data th.num { text-align: right; font-variant-numeric: 
 footer { color: var(--muted); font-size: 12.5px; padding: 24px 0 32px; }
 footer p { margin: 4px 0; }
 .warn { color: var(--ink-2); background: var(--surface); border: 1px dashed var(--axis); border-radius: 8px; padding: 8px 10px; font-size: 13px; margin-bottom: 10px; }
+.stackbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 12px; }
+.stack-status { color: var(--ink-2); font-size: 13.5px; }
+.stack-panel textarea {
+  display: block; width: 100%; margin-top: 8px; min-height: 7.5em; resize: vertical;
+  font: 12.5px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--page); color: var(--ink);
+}
+.stack-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; }
+button.primary {
+  font: inherit; font-size: 13px; font-weight: 650; padding: 6px 14px; border: 0; border-radius: 999px;
+  background: var(--ink); color: var(--page); cursor: pointer;
+}
+.iconbtn[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.filebtn { position: relative; cursor: pointer; }
+.filebtn input { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.stack-report h3 { font-size: 13px; margin: 12px 0 6px; font-family: inherit; font-weight: 650; color: var(--ink); }
+.stack-report h3.untracked { color: var(--ink-2); font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; max-height: 140px; overflow: auto; }
+.chip { font-size: 12.5px; line-height: 1.45; padding: 2px 8px; border-radius: 999px; background: var(--group-head); color: var(--ink); }
+.chip small { color: var(--muted); font-weight: 400; margin-left: 4px; }
+.chip.untracked { background: transparent; border: 1px dashed var(--axis); color: var(--ink-2); }
+@media (max-width: 767px) {
+  .stack-actions .primary, .stack-actions .iconbtn { flex: 1 1 auto; text-align: center; }
+}
 [hidden] { display: none !important; }
 </style>
 </head>
@@ -313,6 +338,24 @@ footer p { margin: 4px 0; }
   </header>
   <p class="meta" id="meta" data-i18n="loading">Loading data…</p>
   <div id="warn" class="warn" hidden></div>
+
+  <div class="stackbar" id="stackbar">
+    <button type="button" class="iconbtn" id="stack-toggle" aria-expanded="false" aria-controls="stack-panel" data-i18n="stack_btn">My stack</button>
+    <span class="stack-status" id="stack-status" hidden></span>
+    <button type="button" class="iconbtn" id="stack-clear" hidden data-i18n="stack_clear">Show all packages</button>
+  </div>
+  <section id="stack-panel" class="panel stack-panel" hidden>
+    <h2 data-i18n="stack_title">My stack only</h2>
+    <p class="hint" data-i18n="stack_help">Paste a dependency manifest. It is read in this browser and never uploaded, and it is saved only in this browser. A shared link lists tracked package names, not the rest of the file. Supports npm package.json, PyPI requirements.txt (plus Pipfile and pyproject.toml), go.mod, Cargo.toml, pom.xml, Gemfile, composer.json, mix.exs, and NuGet PackageReference.</p>
+    <textarea id="stack-input" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off" data-i18n-placeholder="stack_ph" placeholder="Paste package.json, requirements.txt, go.mod, Cargo.toml, pom.xml, Gemfile, composer.json…"></textarea>
+    <div class="stack-actions">
+      <button type="button" class="primary" id="stack-apply">Show only these</button>
+      <button type="button" class="iconbtn" id="stack-add" hidden data-i18n="stack_add">Add to stack</button>
+      <label class="iconbtn filebtn"><span data-i18n="stack_file">Choose file</span><input type="file" id="stack-file" aria-label="Choose a manifest file"></label>
+    </div>
+    <p class="warn" id="stack-error" hidden></p>
+    <div id="stack-report" class="stack-report" hidden></div>
+  </section>
 
   <section class="fc" aria-label="Forecast">
     <p class="fc-say" id="fc-say"></p>
@@ -373,7 +416,7 @@ footer p { margin: 4px 0; }
     <p>OSV (including the GitHub Advisory Database and the Bitnami Vulnerability Database), CISA KEV, FIRST EPSS and
       NVD, collected twice a day. Severity comes from the upstream advisory; check it before acting.</p>
     <h3>Does it scan my code?</h3>
-    <p>No. For your own dependencies, use Dependabot, npm audit, pip-audit, govulncheck or osv-scanner.</p>
+    <p>No. Paste a dependency manifest to filter this map to packages you use; the file stays in your browser and is never uploaded. To scan your own code, use Dependabot, npm audit, pip-audit, govulncheck or osv-scanner.</p>
     <h3>Can I read the data without this page?</h3>
     <p>Yes: <a href="today.md">today's forecast in Markdown</a> and <a href="data/latest.json">the full data as JSON</a>.
       How it works: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.md">docs</a>.</p>
@@ -389,11 +432,12 @@ footer p { margin: 4px 0; }
 </div>
 <div id="tooltip" role="tooltip"></div>
 
+<script src="js/stack.js?v=2026-11-02.1"></script>
 <script>
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-10-29.3";
+const BUILD = "2026-11-02.1";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -404,7 +448,8 @@ const PREFS_KEY = "depweather:prefs";
 const DAY = 86400000;
 
 
-const state = { view: "a", range: 7, kevOnly: false, pkg: null };
+const state = { view: "a", range: 7, kevOnly: false, pkg: null, stack: null };
+const STACK_KEY = "depweather:stack";
 let DATA = null;
 let PKGS = new Map();   // key -> {eco, pkg}
 let NOW = Date.now();
@@ -496,6 +541,29 @@ const I18N = {
     fc_cloud: (groups) => `Light clouds over ${groups}; nothing above medium.`,
     fc_clear: (n) => `Clear skies across all ${n} groups.`,
     strip_title: (label) => `Show ${label} on the map`,
+    stack_btn: "My stack", stack_title: "My stack only", stack_clear: "Show all packages",
+    stack_add: "Add to stack", stack_apply: "Show only these", stack_replace: "Replace stack",
+    stack_file: "Choose file", stack_label: "Dependency manifest",
+    stack_ph: "Paste package.json, requirements.txt, go.mod, Cargo.toml, pom.xml, Gemfile, composer.json…",
+    stack_help: "Paste a dependency manifest. It is read in this browser and never uploaded, and it is saved only in this browser. A shared link lists tracked package names, not the rest of the file. Supports npm package.json, PyPI requirements.txt (plus Pipfile and pyproject.toml), go.mod, Cargo.toml, pom.xml, Gemfile, composer.json, mix.exs, and NuGet PackageReference.",
+    stack_tracked: (n) => `Tracked by depweather (${n})`,
+    stack_untracked: (n) => `Not tracked by depweather (${n})`,
+    stack_none: "None of these packages are in the depweather list. The map stays empty until you show all packages again.",
+    stack_no_names: "No dependency names found in that file.",
+    stack_err_format: "Could not tell what kind of file this is. Paste package.json, requirements.txt, go.mod, Cargo.toml, pom.xml, Gemfile, composer.json, mix.exs, or a NuGet project file.",
+    stack_err_json: "That looks like JSON, but it did not parse.",
+    stack_err_large: "That file is too large to read here (limit 1 MB).",
+    stack_err_empty: "Paste a manifest first.",
+    stack_status: (n) => `Showing your stack only · ${n} tracked`,
+    stack_status_empty: "Your stack has no tracked packages",
+    stack_share: "The address bar is a shareable view of this stack.",
+    meta_stack: (d, n, total) => `Your stack: ${n} of ${total} tracked packages. Forecast made ${d} UTC.`,
+    fc_stack_empty: "None of the packages in your stack are on this map.",
+    tl_head_stack: "Last 30 days, your packages with issues",
+    b_eco_head_stack: "Last 7 days by ecosystem (your stack only)",
+    rd_aff_stack: (n) => `of ${n} in your stack affected this week`,
+    tm_aria: "Treemap of packages by ecosystem. Plus and minus keys zoom, 0 resets.",
+    tm_aria_stack: "Treemap of packages in your stack. Plus and minus keys zoom, 0 resets.",
   },
   ko: {
     tagline: "인기 패키지의 취약점 날씨",
@@ -578,7 +646,7 @@ const I18N = {
     <p>OSV(GitHub Advisory Database, Bitnami Vulnerability Database 포함), CISA KEV, FIRST EPSS, NVD에서 하루 두 번
       모읍니다. 심각도는 원 권고의 값이니 조치 전에 확인하세요.</p>
     <h3>내 코드를 스캔하나요?</h3>
-    <p>아니요. 내 의존성은 Dependabot, npm audit, pip-audit, govulncheck, osv-scanner로 확인하세요.</p>
+    <p>아니요. 의존성 파일을 붙여넣으면 그 패키지만 이 지도에서 볼 수 있고, 파일은 브라우저 안에만 남으며 서버로 보내지 않습니다. 내 코드를 검사하려면 Dependabot, npm audit, pip-audit, govulncheck, osv-scanner를 쓰세요.</p>
     <h3>이 페이지 없이 데이터를 볼 수 있나요?</h3>
     <p>네. <a href="today.md">오늘의 예보(Markdown, 영어)</a>와 <a href="data/latest.json">전체 데이터(JSON)</a>가 있습니다.
       작동 방식: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.ko.md">문서</a>.</p>`,
@@ -593,6 +661,29 @@ const I18N = {
     fc_cloud: (groups) => `${groups}은 흐림. 중간 이상은 없습니다.`,
     fc_clear: (n) => `${n}개 그룹 모두 맑음.`,
     strip_title: (label) => `지도에서 ${label} 보기`,
+    stack_btn: "내 스택", stack_title: "내 스택만 보기", stack_clear: "전체 패키지 보기",
+    stack_add: "스택에 추가", stack_apply: "이 패키지만 보기", stack_replace: "스택 바꾸기",
+    stack_file: "파일 선택", stack_label: "의존성 파일",
+    stack_ph: "package.json, requirements.txt, go.mod, Cargo.toml, pom.xml, Gemfile, composer.json 등을 붙여넣으세요",
+    stack_help: "의존성 파일 내용을 붙여넣으세요. 이 브라우저 안에서만 읽고 서버로 보내지 않으며, 이 브라우저에만 저장합니다. 공유 링크에는 depweather가 추적하는 패키지 이름만 들어갑니다. 지원: npm package.json, PyPI requirements.txt(Pipfile, pyproject.toml 포함), go.mod, Cargo.toml, pom.xml, Gemfile, composer.json, mix.exs, NuGet PackageReference.",
+    stack_tracked: (n) => `depweather가 추적하는 패키지 (${n})`,
+    stack_untracked: (n) => `depweather가 추적하지 않는 패키지 (${n})`,
+    stack_none: "붙여넣은 패키지 중 추적 대상이 없습니다. 전체 패키지를 다시 보기 전까지 지도는 비어 있습니다.",
+    stack_no_names: "이 파일에서 의존성 이름을 찾지 못했습니다.",
+    stack_err_format: "파일 종류를 알아보지 못했습니다. package.json, requirements.txt, go.mod, Cargo.toml, pom.xml, Gemfile, composer.json, mix.exs, NuGet 프로젝트 파일을 붙여넣으세요.",
+    stack_err_json: "JSON처럼 보이지만 파싱하지 못했습니다.",
+    stack_err_large: "파일이 너무 큽니다 (상한 1MB).",
+    stack_err_empty: "먼저 매니페스트를 붙여넣으세요.",
+    stack_status: (n) => `내 스택만 보는 중 · 추적 ${n}개`,
+    stack_status_empty: "내 스택에 추적 대상 패키지가 없습니다",
+    stack_share: "주소창 링크로 이 스택 화면을 공유할 수 있습니다.",
+    meta_stack: (d, n, total) => `${d} UTC 예보. 내 스택 ${n}개 (추적 중인 전체 ${total}개 중).`,
+    fc_stack_empty: "내 스택에서 이 지도가 추적하는 패키지가 없습니다.",
+    tl_head_stack: "최근 30일, 내 스택 중 취약점이 있는 패키지",
+    b_eco_head_stack: "생태계별 최근 7일 (내 스택만)",
+    rd_aff_stack: (n) => `이번 주 영향받은 내 패키지 (${n}개 중)`,
+    tm_aria: "생태계별 패키지 트리맵. +/− 키로 확대하고 0으로 초기화합니다.",
+    tm_aria_stack: "내 스택의 패키지 트리맵. +/− 키로 확대하고 0으로 초기화합니다.",
   },
 };
 
@@ -639,6 +730,114 @@ function writePrefs() {
   try {
     localStorage.setItem(PREFS_KEY, JSON.stringify({ view: state.view, range: state.range, lang: LANG, theme: document.documentElement.dataset.theme || null }));
   } catch { /* storage unavailable */ }
+}
+
+function readStack() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(STACK_KEY));
+    if (!raw || !Array.isArray(raw.tracked)) return null;
+    const tracked = raw.tracked.filter((k) => typeof k === "string" && k && k !== "-");
+    const untracked = Array.isArray(raw.untracked)
+      ? raw.untracked.filter((u) => u && typeof u.name === "string" && typeof u.eco === "string").map((u) => ({ eco: u.eco, name: u.name }))
+      : [];
+    const sources = raw.sources && typeof raw.sources === "object" ? raw.sources : {};
+    return { tracked, untracked, sources };
+  } catch { return null; }
+}
+function writeStack(stack) {
+  try {
+    if (!stack) localStorage.removeItem(STACK_KEY);
+    else localStorage.setItem(STACK_KEY, JSON.stringify({ tracked: stack.tracked, untracked: stack.untracked || [], sources: stack.sources || {} }));
+  } catch { /* storage unavailable */ }
+}
+function sameTracked(a, b) {
+  return a.length === b.length && a.every((k, i) => k === b[i]);
+}
+// null stack = the full map. An object, even with an empty tracked list, is a filter.
+function viewEcosystems() {
+  if (!DATA) return [];
+  if (!state.stack) return DATA.ecosystems;
+  const keys = new Set(state.stack.tracked);
+  return DATA.ecosystems
+    .map((e) => ({ ...e, packages: e.packages.filter((p) => keys.has(p.key)) }))
+    .filter((e) => e.packages.length);
+}
+function stackErrorText(code) {
+  return t(code === "json" ? "stack_err_json" : code === "large" ? "stack_err_large" : code === "empty" ? "stack_err_empty" : "stack_err_format");
+}
+function renderStack() {
+  const btn = $("#stack-toggle");
+  const status = $("#stack-status");
+  const clear = $("#stack-clear");
+  const active = !!state.stack;
+  if (btn) btn.setAttribute("aria-pressed", active ? "true" : "false");
+  if (clear) clear.hidden = !active;
+  if (status) {
+    status.hidden = !active;
+    if (active) status.textContent = state.stack.tracked.length ? t("stack_status", state.stack.tracked.length) : t("stack_status_empty");
+  }
+  const add = $("#stack-add");
+  const apply = $("#stack-apply");
+  if (add) add.hidden = !active;
+  if (apply) apply.textContent = active ? t("stack_replace") : t("stack_apply");
+  const input = $("#stack-input");
+  if (input) input.setAttribute("aria-label", t("stack_label"));
+  const file = $("#stack-file");
+  if (file) file.setAttribute("aria-label", t("stack_file"));
+  const report = $("#stack-report");
+  if (!report) return;
+  if (!active) { report.hidden = true; report.replaceChildren(); return; }
+  report.hidden = false;
+  const sources = state.stack.sources || {};
+  const trackedHtml = state.stack.tracked.map((key) => {
+    const entry = PKGS.get(key);
+    const label = entry ? entry.pkg.label : key;
+    const eco = entry ? entry.eco.label : "";
+    const vias = (sources[key] || []).filter((v) => !entry || String(v).toLowerCase() !== entry.pkg.name.toLowerCase());
+    const via = vias.length ? `<small>· ${esc(vias.join(", "))}</small>` : "";
+    return `<span class="chip">${esc(label)}<small>· ${esc(eco)}</small>${via}</span>`;
+  }).join("");
+  const untrackedHtml = (state.stack.untracked || []).map((u) => {
+    const eco = DATA && DATA.ecosystems.find((e) => e.id === u.eco);
+    return `<span class="chip untracked">${esc(u.name)}<small>· ${esc(eco ? eco.label : u.eco)}</small></span>`;
+  }).join("");
+  const trackedBlock = state.stack.tracked.length
+    ? `<h3>${esc(t("stack_tracked", state.stack.tracked.length))}</h3><div class="chips">${trackedHtml}</div>`
+    : `<p>${esc(t("stack_none"))}</p>`;
+  const untrackedBlock = (state.stack.untracked || []).length
+    ? `<h3 class="untracked">${esc(t("stack_untracked", state.stack.untracked.length))}</h3><div class="chips">${untrackedHtml}</div>`
+    : "";
+  report.innerHTML = trackedBlock + untrackedBlock + `<p class="hint">${esc(t("stack_share"))}</p>`;
+}
+function applyManifest(mode) {
+  const err = $("#stack-error");
+  if (!globalThis.DepweatherStack || !DATA) {
+    err.hidden = false;
+    err.textContent = t("loading");
+    return;
+  }
+  const parsed = DepweatherStack.parseManifest($("#stack-input").value);
+  if (parsed.error) {
+    err.hidden = false;
+    err.textContent = stackErrorText(parsed.error);
+    return;
+  }
+  if (!parsed.packages.length) {
+    err.hidden = false;
+    err.textContent = t("stack_no_names");
+  } else err.hidden = true;
+  const matched = DepweatherStack.matchStack(parsed, DATA.ecosystems);
+  const next = DepweatherStack.stackFromMatch(matched, state.stack, mode);
+  writeStack(next);
+  setState({ stack: next });
+}
+function clearStackFilter() {
+  writeStack(null);
+  const err = $("#stack-error");
+  if (err) err.hidden = true;
+  const input = $("#stack-input");
+  if (input) input.value = "";
+  setState({ stack: null });
 }
 
 function vulnLevel(v) {
@@ -740,7 +939,12 @@ function vulnTip(v, p) {
 function renderMeta() {
   $("#build").textContent = t("build", BUILD, DATA.generated_at.slice(0, 16).replace("T", " "));
   const gen = new Date(DATA.generated_at).toISOString().slice(0, 16).replace("T", " ");
-  $("#meta").textContent = t("meta", gen, DATA.summary.tracked_packages, DATA.ecosystems.length);
+  if (state.stack) {
+    const n = state.stack.tracked.filter((k) => PKGS.has(k)).length;
+    $("#meta").textContent = t("meta_stack", gen, n, DATA.summary.tracked_packages);
+  } else {
+    $("#meta").textContent = t("meta", gen, DATA.summary.tracked_packages, DATA.ecosystems.length);
+  }
   const missing = Object.entries(DATA.sources).filter(([, s]) => !s.ok).map(([k]) => ({ osv: "OSV", kev: "CISA KEV", epss: "FIRST EPSS", nvd: "NVD", kev_backfill: "OSV API (older KEV entries)" }[k] || k));
   const w = $("#warn");
   w.hidden = !missing.length;
@@ -757,9 +961,17 @@ function renderStats() {
     const pct = Math.round((s.month_cves / s.month_cves_last_year - 1) * 100);
     yoy = t("st_yoy", `${pct >= 0 ? "+" : ""}${pct}%`, `${s.month.slice(0, 4) - 1}-${s.month.slice(5)}`, fmt(s.month_cves_last_year));
   }
+  let affected = s.affected_packages_7d;
+  let affectedLabel = t("rd_aff", s.tracked_packages);
+  if (state.stack) {
+    const ecos = viewEcosystems();
+    const n = ecos.reduce((sum, e) => sum + e.packages.length, 0);
+    affected = ecos.reduce((sum, e) => sum + e.packages.filter((p) => p.worst_7d && p.worst_7d !== "NONE").length, 0);
+    affectedLabel = t("rd_aff_stack", n);
+  }
   $("#stats").innerHTML =
     item(fmt(s.kev_new_7d), t("rd_kev")) +
-    item(s.affected_packages_7d, t("rd_aff", s.tracked_packages)) +
+    item(affected, affectedLabel) +
     item(fmt(s.today_cves), t("rd_today")) +
     item(fmt(s.month_cves), t("rd_month", s.month), yoy);
 }
@@ -790,7 +1002,7 @@ function wxIcon(lvl, size, kev = false) {
 }
 
 function groupRows() {
-  return DATA.ecosystems.map((e) => {
+  return viewEcosystems().map((e) => {
     const hit = e.packages.map((p) => {
       const vulns = pkgVulns(p);
       return { p, lvl: pkgLevel(vulns), kev: vulns.some((v) => v.kev), n: vulns.length };
@@ -801,6 +1013,11 @@ function groupRows() {
 
 function renderForecast() {
   const rows = groupRows();
+  if (!rows.length && state.stack) {
+    $("#fc-say").textContent = t("fc_stack_empty");
+    $("#fc-strip").replaceChildren();
+    return;
+  }
   // Name a few groups and packages; the strip below lists every group.
   const names = (list, max, unit = "pkg") => t("names", list, max, unit);
   const by = (l) => rows.filter((r) => r.lvl === l).map((r) => r.e.label);
@@ -905,8 +1122,9 @@ function computeLayout() {
   // ecosystem's language. The floor keeps small ecosystems (Hex) findable.
   // A group with no language of its own (runtimes & servers) has a fixed `area` instead.
   const share = (e) => e.survey_share || e.area || 10;
-  const total = DATA.ecosystems.reduce((s, e) => s + share(e), 0);
-  const groups = squarify(DATA.ecosystems.map((e) => ({ value: Math.max(share(e) / total, 0.035), eco: e })), 0, 0, W, H);
+  const ecos = viewEcosystems();
+  const total = ecos.reduce((s, e) => s + share(e), 0) || 1;
+  const groups = squarify(ecos.map((e) => ({ value: Math.max(share(e) / total, 0.035), eco: e })), 0, 0, W, H);
   for (const g of groups) {
     const ptotal = g.eco.packages.reduce((s, p) => s + p.popularity, 0) || 1;
     // Floor each tile at 2% of its group so small packages stay clickable.
@@ -943,7 +1161,13 @@ function renderTreemap() {
   computeLayout();
   clampZoom();
   drawTreemap();
-  const fixedEcos = DATA.ecosystems.filter((e) => e.packages.every((p) => p.popularity_source === "fixed weight")).map((e) => e.label);
+  $("#treemap").setAttribute("aria-label", state.stack ? t("tm_aria_stack") : t("tm_aria"));
+  const ecos = viewEcosystems();
+  if (state.stack && !ecos.length) {
+    $("#treemap-hint").textContent = t("fc_stack_empty");
+    return;
+  }
+  const fixedEcos = ecos.filter((e) => e.packages.every((p) => p.popularity_source === "fixed weight")).map((e) => e.label);
   $("#treemap-hint").textContent = t("tm_hint", state.range, state.kevOnly, DATA.survey ? DATA.survey.name : "survey", fixedEcos.join(", "));
 }
 
@@ -1289,9 +1513,9 @@ function renderTimeline() {
 
   const panel = document.createElement("div");
   panel.className = "panel";
-  panel.innerHTML = `<h2>${t("tl_head")}</h2>`;
+  panel.innerHTML = `<h2>${t(state.stack ? "tl_head_stack" : "tl_head")}</h2>`;
   const rows = [];
-  for (const e of DATA.ecosystems) for (const p of e.packages) {
+  for (const e of viewEcosystems()) for (const p of e.packages) {
     const vulns = pkgVulns(p, 30);
     if (vulns.length) rows.push({ e, p, vulns, lvl: pkgLevel(pkgVulns(p, state.range)), lvl30: pkgLevel(vulns) });
   }
@@ -1395,13 +1619,13 @@ function renderCounter() {
 
   const tbl = document.createElement("div");
   tbl.className = "panel scroll-x";
-  const rows = DATA.ecosystems.map((e) => {
+  const rows = viewEcosystems().map((e) => {
     const all = e.packages.flatMap((p) => p.vulns.filter((v) => inRange(v, 7)));
     return { e, n: all.length, crit: all.filter((v) => v.severity === "CRITICAL").length, kev: all.filter((v) => v.kev).length,
       pk: e.packages.filter((p) => p.vulns.some((v) => inRange(v, 7))).length };
   });
   const bth = t("b_th");
-  tbl.innerHTML = `<h2>${t("b_eco_head")}</h2>
+  tbl.innerHTML = `<h2>${t(state.stack ? "b_eco_head_stack" : "b_eco_head")}</h2>
     <table class="data"><thead><tr><th>${bth.eco}</th><th class="num">${bth.n}</th><th class="num">${bth.crit}</th><th class="num">KEV</th><th class="num">${bth.pk}</th></tr></thead>
     <tbody>${rows.map((r) => `<tr><td>${esc(r.e.label)}</td><td class="num">${r.n}</td><td class="num">${r.crit}</td><td class="num">${r.kev}</td><td class="num">${r.pk} / ${r.e.packages.length}</td></tr>`).join("")}</tbody></table>`;
   root.append(tbl);
@@ -1428,6 +1652,15 @@ function readUrl() {
   if (["7", "30"].includes(q.get("range"))) out.range = Number(q.get("range"));
   if (q.get("kev") === "1") out.kevOnly = true;
   if (q.get("lang") in I18N) out.lang = q.get("lang");
+  if (q.has("stack")) {
+    const raw = q.get("stack") || "";
+    out.stack = {
+      tracked: raw === "-" ? [] : raw.split(",").map((s) => s.trim()).filter((s) => s && s !== "-"),
+      untracked: [],
+      sources: {},
+      origin: "url",
+    };
+  }
   return out;
 }
 function writeUrl(push) {
@@ -1436,6 +1669,7 @@ function writeUrl(push) {
   if (state.pkg) q.set("pkg", state.pkg);
   if (state.range !== 7) q.set("range", state.range);
   if (state.kevOnly) q.set("kev", "1");
+  if (state.stack) q.set("stack", state.stack.tracked.length ? state.stack.tracked.join(",") : "-");
   if (new URLSearchParams(location.search).has("lang")) q.set("lang", LANG);
   const url = `${location.pathname}?${q}`;
   if (url !== location.pathname + location.search) history[push ? "pushState" : "replaceState"](null, "", url);
@@ -1457,11 +1691,18 @@ function setLang(lang) {
 }
 
 function render() {
+  const sig = state.stack ? state.stack.tracked.join("\n") : "";
+  if (sig !== render.stackSig) {
+    Object.assign(zoom, { k: 1, tx: 0, ty: 0 });
+    render.stackSig = sig;
+  }
+  renderStack();
   document.querySelectorAll("[data-view]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.view === state.view));
   document.querySelectorAll("[data-range]").forEach((b) => b.setAttribute("aria-pressed", Number(b.dataset.range) === state.range));
   $("#kevonly").checked = state.kevOnly;
   for (const v of ["a", "b", "c"]) $("#view-" + v).hidden = state.view !== v;
   if (!DATA) return;
+  renderMeta();
   renderStats();
   renderForecast();
   if (state.view === "a") renderTreemap();
@@ -1490,7 +1731,43 @@ function initControls() {
     root.dataset.theme = dark ? "light" : "dark";
     writePrefs();
   };
-  addEventListener("popstate", () => { Object.assign(state, { view: "a", pkg: null, range: 7, kevOnly: false }, readUrl()); render(); });
+  $("#stack-toggle").onclick = () => {
+    const panel = $("#stack-panel");
+    panel.hidden = !panel.hidden;
+    $("#stack-toggle").setAttribute("aria-expanded", panel.hidden ? "false" : "true");
+    if (!panel.hidden) $("#stack-input").focus();
+  };
+  $("#stack-apply").onclick = () => applyManifest("replace");
+  $("#stack-add").onclick = () => applyManifest("add");
+  $("#stack-clear").onclick = () => clearStackFilter();
+  $("#stack-input").addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); applyManifest("replace"); }
+  });
+  $("#stack-file").addEventListener("change", (e) => {
+    const f = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if (!f) return;
+    if (globalThis.DepweatherStack && f.size > DepweatherStack.MAX_CHARS) {
+      $("#stack-error").hidden = false;
+      $("#stack-error").textContent = t("stack_err_large");
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => { $("#stack-input").value = String(reader.result || ""); $("#stack-input").focus(); };
+    reader.readAsText(f);
+  });
+  addEventListener("popstate", () => {
+    const fromUrl = readUrl();
+    Object.assign(state, { view: "a", pkg: null, range: 7, kevOnly: false, stack: null }, fromUrl);
+    if (fromUrl.stack) {
+      const stored = readStack();
+      if (stored && sameTracked(stored.tracked, fromUrl.stack.tracked)) {
+        state.stack.untracked = stored.untracked;
+        state.stack.sources = stored.sources;
+      }
+    }
+    render();
+  });
   let timer;
   addEventListener("resize", () => {
     clearTimeout(timer);
@@ -1511,6 +1788,14 @@ async function main() {
   state.range = fromUrl.range || prefs.range || 7;
   state.kevOnly = !!fromUrl.kevOnly;
   state.pkg = fromUrl.pkg || null;
+  const storedStack = readStack();
+  if (fromUrl.stack) {
+    state.stack = fromUrl.stack;
+    if (storedStack && sameTracked(storedStack.tracked, fromUrl.stack.tracked)) {
+      state.stack.untracked = storedStack.untracked;
+      state.stack.sources = storedStack.sources;
+    }
+  } else if (storedStack) state.stack = storedStack;
   applyStaticText();
   initControls();
   render();
@@ -1524,9 +1809,18 @@ async function main() {
   }
   NOW = Date.parse(DATA.generated_at);
   for (const e of DATA.ecosystems) for (const p of e.packages) PKGS.set(p.key, { eco: e, pkg: p });
+  if (state.stack) {
+    const known = new Set(PKGS.keys());
+    const tracked = state.stack.tracked.filter((k) => known.has(k));
+    const sources = {};
+    for (const k of tracked) if (state.stack.sources && state.stack.sources[k]) sources[k] = state.stack.sources[k];
+    state.stack = { ...state.stack, tracked, sources };
+    if (state.stack.origin !== "url") writeStack(state.stack);
+  }
   $("#pkglist").innerHTML = [...PKGS.values()].map(({ eco, pkg }) => `<option value="${esc(pkg.key)}">${esc(pkg.label)} (${esc(eco.label)})</option>`).join("");
   renderMeta();
   render();
+  if (state.stack && !fromUrl.stack) writeUrl(false);
 }
 main();
 </script>

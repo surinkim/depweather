@@ -23,6 +23,8 @@ depweather는 매일 아침 한 가지 질문에 답합니다. **내가 쓰고 �
   RubyGems, Hex와 PHP·Node.js·nginx 같은 런타임·서버까지 10개 그룹입니다. 다운로드가
   많을수록 타일이 크고, 확대하면 자세한 정보가 나옵니다.
 - **패키지별 30일 타임라인.** 취약점마다 수정된 버전을 함께 보여줍니다.
+- **내 스택.** `package.json`, `requirements.txt` 같은 의존성 파일을 붙여넣으면
+  그 패키지만 보여줍니다. 브라우저 안에서만 읽고, 서버로 보내지 않습니다.
 - 영어와 한국어, 라이트와 다크 모드를 지원하고 휴대폰에서도 잘 보입니다.
 
 | 날씨 | 뜻 |
@@ -65,6 +67,7 @@ GitHub Actions 작업이 하루에 두 번 돕니다. [OSV](https://osv.dev)에�
 pip install -r collect/requirements.txt
 python collect/collect.py      # data/latest.json 생성(약 5분)
 python -m http.server          # http://localhost:8000 열기
+node --test tests/stack.test.js   # 매니페스트 파싱 테스트, 설치 없음
 ```
 
 ## 출처와 라이선스
