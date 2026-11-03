@@ -1,25 +1,25 @@
-# depweather forecast, 2026-11-02
+# depweather forecast, 2026-11-03
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-02T15:46:20Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-03T00:59:12Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 13 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 10
-- New CVEs in NVD today (UTC): 210
-- CVEs published in 2026-11 so far: 308 (same month last year: 3,021)
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 8
+- New CVEs in NVD today (UTC): 1
+- CVEs published in 2026-11 so far: 576 (same month last year: 3,021)
 
 ## By ecosystem
-
-### Runtimes & servers
-
-- **Node.js (node)**: 10 advisories, worst actively exploited (CISA KEV); fixed in 22.23.4, 24.22.1, 26.12.1. Example: [BIT-node-2026-111497](https://osv.dev/vulnerability/BIT-node-2026-111497) A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.
-- **Tomcat**: 8 advisories, worst critical; fixed in 9.0.123, 10.1.61, 11.0.27. Example: [BIT-tomcat-2026-103119](https://osv.dev/vulnerability/BIT-tomcat-2026-103119) Apache Tomcat: AJP response mix-up
-- **Python**: 2 advisories, worst critical; fixed in 3.11.18, 3.12.16, 3.13.18, 3.14.10 and more. Example: [BIT-libpython-2026-115557](https://osv.dev/vulnerability/BIT-libpython-2026-115557) Distrust compromised intermediate certificates in ssl module
 
 ### crates.io
 
 - **zip**: 4 advisories, worst critical; fixed in 9.0.0, 9.0.5. Example: [GHSA-m665-v7pm-7grj](https://osv.dev/vulnerability/GHSA-m665-v7pm-7grj) zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE
+
+### Runtimes & servers
+
+- **Tomcat**: 8 advisories, worst critical; fixed in 9.0.123, 10.1.61, 11.0.27. Example: [BIT-tomcat-2026-103119](https://osv.dev/vulnerability/BIT-tomcat-2026-103119) Apache Tomcat: AJP response mix-up
+- **Python**: 2 advisories, worst critical; fixed in 3.11.18, 3.12.16, 3.13.18, 3.14.10 and more. Example: [BIT-libpython-2026-115557](https://osv.dev/vulnerability/BIT-libpython-2026-115557) Distrust compromised intermediate certificates in ssl module
+- **Node.js (node)**: 9 advisories, worst high; fixed in 22.23.4, 24.22.1, 26.12.1. Example: [BIT-node-2026-106069](https://osv.dev/vulnerability/BIT-node-2026-106069) A flaw in Node.js TLS hostname verification can cause a server certificate to be validated against a different IP address than the one the client connected to, when the host is a non-canonical IPv4 literal with a leading zero, such as `0127.0.0.1`.
 
 ### npm
 
@@ -68,7 +68,5 @@ No new advisories for the tracked packages.
 - 2026-10-28: CVE-2026-46300, Linux Kernel: Linux Kernel Missing Initialization of a Variable Vulnerability
 - 2026-10-27: CVE-2026-48356, Adobe Commerce and Magento: Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability
 - 2026-10-27: CVE-2026-111497, Google Brotli: Google Brotli Unchecked Return Value Vulnerability
-- 2026-10-26: CVE-2026-109618, PHP Group PHP: PHP Memory Corruption Vulnerability
-- 2026-10-26: CVE-2026-109619, PHP Group PHP: PHP Stale Internal Request-State Vulnerability
 
 Full data: https://depweather.com/data/latest.json
