@@ -24,7 +24,7 @@ jobs:
       - run: pip install -r collect/requirements.txt
 
       - name: JavaScript tests
-        run: node --test tests/stack.test.js tests/alert.test.js tests/alert-security.test.js
+        run: node --test tests/stack.test.js tests/alert.test.js tests/alert-security.test.js tests/trends.test.js
 
       - name: Feed tests
         run: python tests/test_feeds.py -v
@@ -35,10 +35,14 @@ jobs:
       - name: Badge tests
         run: python tests/test_badges.py -v
 
+      - name: History tests
+        run: python tests/test_history.py -v
+
       - name: Syntax
         run: |
-          python -m py_compile collect/collect.py collect/feeds.py collect/pages.py collect/badges.py
+          python -m py_compile collect/collect.py collect/feeds.py collect/pages.py collect/badges.py collect/history.py collect/backfill_history.py
           node --check alert/check.js
           node --check alert/run.js
           node --check js/stack.js
           node --check js/pkg-path.js
+          node --check js/trends.js

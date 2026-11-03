@@ -1,0 +1,611 @@
+{
+ "schema": 1,
+ "month": "2026-05",
+ "days": {
+  "2026-05-04": {
+   "packages": {
+    "pypi/pillow": {
+     "h": 1,
+     "m": 3
+    },
+    "rubygems/net-imap": {
+     "h": 1,
+     "m": 3,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1,
+     "m": 3
+    },
+    "rubygems": {
+     "h": 1,
+     "m": 3,
+     "l": 1
+    }
+   }
+  },
+  "2026-05-05": {
+   "packages": {
+    "crates/openssl": {
+     "h": 1
+    },
+    "go/github.com/gofiber/fiber/v2": {
+     "m": 1
+    },
+    "hex/phoenix": {
+     "h": 1
+    },
+    "maven/io.netty:netty-codec-http": {
+     "m": 1
+    },
+    "maven/org.postgresql:postgresql": {
+     "h": 1
+    },
+    "npm/axios": {
+     "h": 4,
+     "m": 8,
+     "l": 1
+    },
+    "packagist/phpseclib/phpseclib": {
+     "h": 1
+    },
+    "pypi/django": {
+     "m": 3
+    },
+    "runtimes/apache": {
+     "h": 3,
+     "m": 5
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "h": 1
+    },
+    "go": {
+     "m": 1
+    },
+    "hex": {
+     "h": 1
+    },
+    "maven": {
+     "h": 1,
+     "m": 1
+    },
+    "npm": {
+     "h": 4,
+     "m": 8,
+     "l": 1
+    },
+    "packagist": {
+     "h": 1
+    },
+    "pypi": {
+     "m": 3
+    },
+    "runtimes": {
+     "h": 3,
+     "m": 5
+    }
+   }
+  },
+  "2026-05-06": {
+   "packages": {
+    "npm/hono": {
+     "m": 2
+    },
+    "packagist/phpseclib/phpseclib": {
+     "h": 1
+    },
+    "rubygems/nokogiri": {
+     "h": 1,
+     "m": 1
+    },
+    "runtimes/apache": {
+     "h": 1
+    },
+    "runtimes/java": {
+     "c": 8,
+     "h": 56,
+     "m": 79,
+     "l": 65,
+     "k": 2
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 2
+    },
+    "packagist": {
+     "h": 1
+    },
+    "rubygems": {
+     "h": 1,
+     "m": 1
+    },
+    "runtimes": {
+     "c": 8,
+     "h": 57,
+     "m": 79,
+     "l": 65,
+     "k": 2
+    }
+   }
+  },
+  "2026-05-07": {
+   "packages": {
+    "crates/openssl": {
+     "m": 1
+    },
+    "go/golang.org/x/net": {
+     "u": 1
+    },
+    "go/stdlib": {
+     "u": 8
+    },
+    "maven/io.netty:netty-codec-http": {
+     "h": 2,
+     "m": 3
+    },
+    "runtimes/apache": {
+     "c": 1,
+     "h": 1
+    },
+    "runtimes/redis": {
+     "h": 5
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "m": 1
+    },
+    "go": {
+     "u": 8
+    },
+    "maven": {
+     "h": 2,
+     "m": 3
+    },
+    "runtimes": {
+     "c": 1,
+     "h": 6
+    }
+   }
+  },
+  "2026-05-08": {
+   "packages": {
+    "packagist/phpseclib/phpseclib": {
+     "h": 2
+    },
+    "rubygems/devise": {
+     "m": 1
+    },
+    "runtimes/mongodb": {
+     "h": 1,
+     "m": 1
+    },
+    "runtimes/python": {
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "h": 2
+    },
+    "rubygems": {
+     "m": 1
+    },
+    "runtimes": {
+     "h": 2,
+     "m": 2
+    }
+   }
+  },
+  "2026-05-09": {
+   "packages": {
+    "npm/hono": {
+     "m": 2,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 2,
+     "l": 1
+    }
+   }
+  },
+  "2026-05-11": {
+   "packages": {
+    "hex/cowboy": {
+     "h": 1,
+     "m": 1,
+     "l": 1
+    },
+    "npm/next": {
+     "h": 7,
+     "m": 4,
+     "l": 2
+    },
+    "pypi/urllib3": {
+     "h": 2
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "h": 1,
+     "m": 1,
+     "l": 1
+    },
+    "npm": {
+     "h": 7,
+     "m": 4,
+     "l": 2
+    },
+    "pypi": {
+     "h": 2
+    }
+   }
+  },
+  "2026-05-12": {
+   "packages": {
+    "maven/org.apache.tomcat.embed:tomcat-embed-core": {
+     "c": 3,
+     "h": 3,
+     "l": 1
+    },
+    "runtimes/mongodb": {
+     "h": 1
+    },
+    "runtimes/php": {
+     "c": 4,
+     "h": 5,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "c": 3,
+     "h": 3,
+     "l": 1
+    },
+    "runtimes": {
+     "c": 4,
+     "h": 6,
+     "m": 1
+    }
+   }
+  },
+  "2026-05-13": {
+   "packages": {
+    "hex/cowboy": {
+     "h": 2
+    },
+    "npm/astro": {
+     "l": 1
+    },
+    "runtimes/mongodb": {
+     "h": 2,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "h": 2
+    },
+    "npm": {
+     "l": 1
+    },
+    "runtimes": {
+     "h": 2,
+     "m": 1
+    }
+   }
+  },
+  "2026-05-14": {
+   "packages": {
+    "hex/plug": {
+     "h": 1
+    },
+    "npm/svelte": {
+     "m": 4
+    },
+    "runtimes/mongodb": {
+     "h": 2
+    },
+    "runtimes/tomcat": {
+     "c": 1,
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "h": 1
+    },
+    "npm": {
+     "m": 4
+    },
+    "runtimes": {
+     "c": 1,
+     "h": 3
+    }
+   }
+  },
+  "2026-05-15": {
+   "packages": {
+    "runtimes/nginx": {
+     "c": 1,
+     "h": 1,
+     "m": 4
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 1,
+     "h": 1,
+     "m": 4
+    }
+   }
+  },
+  "2026-05-18": {
+   "packages": {
+    "go/github.com/docker/docker": {
+     "h": 2,
+     "m": 1
+    },
+    "npm/ws": {
+     "m": 1
+    },
+    "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
+     "h": 1
+    },
+    "nuget/Microsoft.NETCore.App.Runtime.linux-x64": {
+     "h": 1
+    },
+    "rubygems/faraday": {
+     "l": 1
+    },
+    "runtimes/postgresql": {
+     "h": 8,
+     "m": 3
+    },
+    "runtimes/tomcat": {
+     "c": 1,
+     "h": 2,
+     "m": 1,
+     "k": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "h": 2,
+     "m": 1
+    },
+    "npm": {
+     "m": 1
+    },
+    "nuget": {
+     "h": 2
+    },
+    "rubygems": {
+     "l": 1
+    },
+    "runtimes": {
+     "c": 1,
+     "h": 10,
+     "m": 4,
+     "k": 1
+    }
+   }
+  },
+  "2026-05-19": {
+   "packages": {
+    "crates/openssl": {
+     "m": 1
+    },
+    "npm/nuxt": {
+     "m": 1,
+     "l": 1
+    },
+    "runtimes/mongodb": {
+     "h": 2,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "m": 1
+    },
+    "npm": {
+     "m": 1,
+     "l": 1
+    },
+    "runtimes": {
+     "h": 2,
+     "m": 2
+    }
+   }
+  },
+  "2026-05-20": {
+   "packages": {
+    "runtimes/python": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2026-05-21": {
+   "packages": {
+    "npm/@sveltejs/kit": {
+     "m": 1
+    },
+    "packagist/twig/twig": {
+     "c": 1,
+     "h": 2,
+     "m": 2,
+     "l": 2
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 1
+    },
+    "packagist": {
+     "c": 1,
+     "h": 2,
+     "m": 2,
+     "l": 2
+    }
+   }
+  },
+  "2026-05-22": {
+   "packages": {
+    "go/golang.org/x/crypto": {
+     "c": 7,
+     "h": 2,
+     "m": 4
+    },
+    "go/golang.org/x/net": {
+     "m": 1,
+     "u": 5
+    },
+    "go/stdlib": {
+     "u": 1
+    },
+    "packagist/drupal/core": {
+     "c": 1,
+     "k": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "c": 7,
+     "h": 2,
+     "m": 5,
+     "u": 5
+    },
+    "packagist": {
+     "c": 1,
+     "k": 1
+    }
+   }
+  },
+  "2026-05-24": {
+   "packages": {
+    "pypi/transformers": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1
+    }
+   }
+  },
+  "2026-05-25": {
+   "packages": {
+    "hex/hackney": {
+     "h": 5,
+     "m": 4,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "h": 5,
+     "m": 4,
+     "l": 1
+    }
+   }
+  },
+  "2026-05-27": {
+   "packages": {
+    "crates/deno": {
+     "h": 1
+    },
+    "packagist/symfony/http-kernel": {
+     "h": 4,
+     "m": 8,
+     "l": 5
+    },
+    "runtimes/ruby": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "h": 1
+    },
+    "packagist": {
+     "h": 4,
+     "m": 8,
+     "l": 5
+    },
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2026-05-28": {
+   "packages": {
+    "maven/ch.qos.logback:logback-core": {
+     "l": 1
+    },
+    "packagist/symfony/http-kernel": {
+     "m": 2,
+     "l": 3
+    },
+    "pypi/pyjwt": {
+     "h": 1,
+     "m": 3,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "l": 1
+    },
+    "packagist": {
+     "m": 2,
+     "l": 3
+    },
+    "pypi": {
+     "h": 1,
+     "m": 3,
+     "l": 1
+    }
+   }
+  },
+  "2026-05-29": {
+   "packages": {
+    "npm/axios": {
+     "h": 3,
+     "m": 1,
+     "l": 1
+    },
+    "npm/nuxt": {
+     "m": 1
+    },
+    "packagist/symfony/http-kernel": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 3,
+     "m": 2,
+     "l": 1
+    },
+    "packagist": {
+     "m": 1
+    }
+   }
+  }
+ }
+}

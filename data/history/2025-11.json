@@ -1,0 +1,128 @@
+{
+ "schema": 1,
+ "month": "2025-11",
+ "days": {
+  "2025-11-05": {
+   "packages": {
+    "pypi/django": {
+     "c": 1,
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "c": 1,
+     "h": 1
+    }
+   }
+  },
+  "2025-11-06": {
+   "packages": {
+    "runtimes/tomcat": {
+     "c": 1,
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 1,
+     "h": 1,
+     "m": 1
+    }
+   }
+  },
+  "2025-11-07": {
+   "packages": {
+    "runtimes/redis": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2025-11-12": {
+   "packages": {
+    "packagist/drupal/core": {
+     "m": 1,
+     "l": 3
+    },
+    "packagist/symfony/http-kernel": {
+     "h": 1
+    },
+    "pypi/torch": {
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "h": 1,
+     "m": 1,
+     "l": 3
+    },
+    "pypi": {
+     "l": 1
+    }
+   }
+  },
+  "2025-11-13": {
+   "packages": {
+    "go/golang.org/x/crypto": {
+     "u": 1
+    },
+    "npm/astro": {
+     "m": 1,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 1
+    },
+    "npm": {
+     "m": 1,
+     "l": 1
+    }
+   }
+  },
+  "2025-11-19": {
+   "packages": {
+    "go/golang.org/x/crypto": {
+     "m": 2
+    },
+    "npm/astro": {
+     "h": 1,
+     "m": 2,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "m": 2
+    },
+    "npm": {
+     "h": 1,
+     "m": 2,
+     "l": 1
+    }
+   }
+  },
+  "2025-11-21": {
+   "packages": {
+    "runtimes/postgresql": {
+     "m": 1,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "m": 1,
+     "l": 1
+    }
+   }
+  }
+ }
+}

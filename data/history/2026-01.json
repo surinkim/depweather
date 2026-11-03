@@ -1,0 +1,257 @@
+{
+ "schema": 1,
+ "month": "2026-01",
+ "days": {
+  "2026-01-05": {
+   "packages": {
+    "pypi/aiohttp": {
+     "h": 1,
+     "m": 3,
+     "l": 4
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1,
+     "m": 3,
+     "l": 4
+    }
+   }
+  },
+  "2026-01-07": {
+   "packages": {
+    "pypi/urllib3": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1
+    }
+   }
+  },
+  "2026-01-08": {
+   "packages": {
+    "runtimes/php": {
+     "h": 3
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 3
+    }
+   }
+  },
+  "2026-01-09": {
+   "packages": {
+    "npm/@angular/core": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1
+    }
+   }
+  },
+  "2026-01-13": {
+   "packages": {
+    "npm/hono": {
+     "h": 2
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 2
+    }
+   }
+  },
+  "2026-01-14": {
+   "packages": {
+    "npm/undici": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 1
+    }
+   }
+  },
+  "2026-01-15": {
+   "packages": {
+    "npm/@sveltejs/kit": {
+     "h": 2
+    },
+    "npm/svelte": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 2,
+     "m": 1
+    }
+   }
+  },
+  "2026-01-16": {
+   "packages": {
+    "crates/deno": {
+     "c": 1,
+     "h": 1
+    },
+    "npm/svelte": {
+     "h": 1
+    },
+    "npm/tar": {
+     "h": 1
+    },
+    "rubygems/rails": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "c": 1,
+     "h": 1
+    },
+    "npm": {
+     "h": 2
+    },
+    "rubygems": {
+     "m": 1
+    }
+   }
+  },
+  "2026-01-21": {
+   "packages": {
+    "npm/lodash": {
+     "m": 1
+    },
+    "npm/tar": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1,
+     "m": 1
+    }
+   }
+  },
+  "2026-01-22": {
+   "packages": {
+    "maven/ch.qos.logback:logback-core": {
+     "l": 1
+    },
+    "maven/org.springframework.security:spring-security-core": {
+     "m": 1
+    },
+    "npm/vite": {
+     "m": 1,
+     "k": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "m": 1,
+     "l": 1
+    },
+    "npm": {
+     "m": 1,
+     "k": 1
+    }
+   }
+  },
+  "2026-01-23": {
+   "packages": {
+    "pypi/protobuf": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1
+    }
+   }
+  },
+  "2026-01-26": {
+   "packages": {
+    "runtimes/node": {
+     "c": 2,
+     "h": 5,
+     "m": 1
+    },
+    "runtimes/python": {
+     "m": 7
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 2,
+     "h": 5,
+     "m": 8
+    }
+   }
+  },
+  "2026-01-27": {
+   "packages": {
+    "npm/hono": {
+     "m": 3
+    },
+    "npm/next": {
+     "m": 1
+    },
+    "packagist/phpunit/phpunit": {
+     "h": 1
+    },
+    "pypi/torch": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 4
+    },
+    "packagist": {
+     "h": 1
+    },
+    "pypi": {
+     "h": 1
+    }
+   }
+  },
+  "2026-01-28": {
+   "packages": {
+    "go/stdlib": {
+     "u": 3
+    },
+    "npm/hono": {
+     "m": 1
+    },
+    "npm/next": {
+     "h": 1,
+     "m": 1
+    },
+    "npm/tar": {
+     "h": 1
+    },
+    "packagist/symfony/http-kernel": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 3
+    },
+    "npm": {
+     "h": 2,
+     "m": 2
+    },
+    "packagist": {
+     "m": 1
+    }
+   }
+  }
+ }
+}

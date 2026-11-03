@@ -25,6 +25,8 @@ depweather는 매일 아침 한 가지 질문에 답합니다. **내가 쓰고 �
 - **패키지별 30일 타임라인.** 취약점마다 수정된 버전을 함께 보여줍니다.
 - **패키지별 페이지.** `/pkg/npm/next/` 형식입니다(Maven `:`는 `~`). 심각도, 수정
   버전, KEV, EPSS를 보여줍니다. 한국어는 `?lang=ko`입니다.
+- **장기 추이.** 패키지 페이지와 카운터 보기의 생태계 그래프입니다. 3개월, 6개월,
+  1년을 심각도별 누적 막대로 보여주고 CISA KEV는 따로 표시합니다.
 - **README 배지.** `/badge/npm/lodash.svg` (한국어는 `.ko.svg`). 회색은 맑은 한 주,
   마젠타는 KEV입니다. 패키지 페이지에서 Markdown과 HTML을 복사할 수 있습니다.
 - **내 스택.** `package.json`, `requirements.txt` 같은 의존성 파일을 붙여넣으면
@@ -97,6 +99,16 @@ python collect/badges.py       # badge/ 생성(선택, git에 없음)
 python -m http.server          # http://localhost:8000 열기
 node --test tests/stack.test.js   # 매니페스트 파싱 테스트, 설치 없음
 ```
+
+매일 수집은 `data/history/YYYY-MM.json`에 심각도와 KEV 건수를 이어 붙입니다.
+하루치 `latest.json` 전체를 복사하지는 않습니다. 일별 수집이 쌓이기 전에 대략
+지난 1년을 채우려면:
+
+```sh
+python collect/backfill_history.py   # 한 번만 실행. OSV zip을 받으며 CI에서는 돌지 않습니다
+```
+
+요청량과 저장 형식: [작동 방식](docs/how-it-works.ko.md#history).
 
 ## 출처와 라이선스
 

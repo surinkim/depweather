@@ -1,0 +1,300 @@
+{
+ "schema": 1,
+ "month": "2026-02",
+ "days": {
+  "2026-02-02": {
+   "packages": {
+    "npm/fastify": {
+     "h": 1,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1,
+     "l": 1
+    }
+   }
+  },
+  "2026-02-03": {
+   "packages": {
+    "pypi/django": {
+     "h": 4,
+     "m": 2
+    },
+    "runtimes/python": {
+     "c": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 4,
+     "m": 2
+    },
+    "runtimes": {
+     "c": 1,
+     "m": 1
+    }
+   }
+  },
+  "2026-02-04": {
+   "packages": {
+    "go/stdlib": {
+     "u": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 1
+    }
+   }
+  },
+  "2026-02-05": {
+   "packages": {
+    "go/golang.org/x/net": {
+     "u": 2
+    },
+    "go/stdlib": {
+     "u": 1
+    },
+    "npm/webpack": {
+     "l": 2
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 3
+    },
+    "npm": {
+     "l": 2
+    }
+   }
+  },
+  "2026-02-09": {
+   "packages": {
+    "go/github.com/gofiber/fiber/v2": {
+     "c": 1
+    },
+    "npm/axios": {
+     "h": 1
+    },
+    "rubygems/faraday": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "c": 1
+    },
+    "npm": {
+     "h": 1
+    },
+    "rubygems": {
+     "m": 1
+    }
+   }
+  },
+  "2026-02-10": {
+   "packages": {
+    "pypi/cryptography": {
+     "h": 1
+    },
+    "runtimes/nginx": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1
+    },
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2026-02-11": {
+   "packages": {
+    "pypi/pillow": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1
+    }
+   }
+  },
+  "2026-02-16": {
+   "packages": {
+    "runtimes/postgresql": {
+     "h": 4,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 4,
+     "m": 1
+    }
+   }
+  },
+  "2026-02-17": {
+   "packages": {
+    "maven/org.apache.tomcat.embed:tomcat-embed-core": {
+     "h": 1,
+     "m": 1
+    },
+    "rubygems/rack": {
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "h": 1,
+     "m": 1
+    },
+    "rubygems": {
+     "h": 1,
+     "m": 1
+    }
+   }
+  },
+  "2026-02-18": {
+   "packages": {
+    "npm/tar": {
+     "h": 1
+    },
+    "rubygems/nokogiri": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1
+    },
+    "rubygems": {
+     "m": 1
+    }
+   }
+  },
+  "2026-02-19": {
+   "packages": {
+    "crates/deno": {
+     "h": 1
+    },
+    "npm/@sveltejs/kit": {
+     "m": 2
+    },
+    "npm/hono": {
+     "l": 1
+    },
+    "npm/svelte": {
+     "m": 4
+    },
+    "pypi/flask": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "h": 1
+    },
+    "npm": {
+     "m": 6,
+     "l": 1
+    },
+    "pypi": {
+     "m": 1
+    }
+   }
+  },
+  "2026-02-20": {
+   "packages": {
+    "runtimes/tomcat": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2026-02-24": {
+   "packages": {
+    "go/github.com/gofiber/fiber/v2": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "m": 1
+    }
+   }
+  },
+  "2026-02-25": {
+   "packages": {
+    "npm/hono": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1
+    }
+   }
+  },
+  "2026-02-26": {
+   "packages": {
+    "go/golang.org/x/net": {
+     "u": 1
+    },
+    "npm/svelte": {
+     "m": 2
+    },
+    "runtimes/mongodb": {
+     "h": 6,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 1
+    },
+    "npm": {
+     "m": 2
+    },
+    "runtimes": {
+     "h": 6,
+     "m": 1
+    }
+   }
+  },
+  "2026-02-27": {
+   "packages": {
+    "npm/@angular/core": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1
+    }
+   }
+  },
+  "2026-02-28": {
+   "packages": {
+    "npm/@sveltejs/kit": {
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "l": 1
+    }
+   }
+  }
+ }
+}

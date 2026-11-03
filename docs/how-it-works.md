@@ -38,10 +38,11 @@ plus downloads and the survey share.
 **Package pages.** Each tracked package has a static page at
 `/pkg/<ecosystem>/<name>/` (a Maven `:` is written as `~`, same as the feed).
 It lists the last 7 days separately from the rest of the 30-day window, with
-severity, fixed versions, CISA KEV and EPSS. English is the page itself;
-Korean is `?lang=ko`. Light and dark follow the same control as the map.
+severity, fixed versions, CISA KEV and EPSS, and a longer trend (below).
+English is the page itself; Korean is `?lang=ko`. Light and dark follow the
+same control as the map.
 The publish step builds these pages, and the sitemap entries for them, from
-`data/latest.json`. They are not committed. A tile, the package name on the
+`data/latest.json` and `data/history/`. They are not committed. A tile, the package name on the
 weather strip, a timeline row and a stack chip link there. Search does too.
 
 <a id="readme-badge"></a>
@@ -89,10 +90,36 @@ opens that package's 30-day timeline on the map: dots on the day each advisory
 was published, fixed versions on the right, and a table below. Default view
 on screens narrower than 768px.
 
-**B. Counter (option).** Monthly NVD CVE counts for the last 14 months, a
-7-day table per ecosystem (new / critical / KEV), and this week's KEV
-additions. Overall CVE counts are what [cve.icu](https://cve.icu) already does
-well; this view is a side panel, not the point.
+**B. Counter (option).** A long-term chart for one ecosystem or all tracked
+packages (3M / 6M / 1Y, below), then monthly NVD CVE counts for the last 14
+months, a 7-day table per ecosystem (new / critical / KEV), and this week's
+KEV additions. Overall CVE counts are what [cve.icu](https://cve.icu) already
+does well; this view is a side panel, not the point.
+
+<a id="history"></a>
+
+**Longer trend.** The package page and the Counter both draw severity-stacked
+bars for a window longer than 30 days. **3M** and **6M** are the current
+calendar month plus the two or five before it, one bar per week (Monday to
+Sunday, clipped to the window). **1Y** is the calendar month of the day 365
+days earlier through the current month, one bar per month. The last bar is
+the current week or month so far.
+
+The stack, bottom to top, is unknown, low, medium, high, critical. A magenta
+diamond marks a bar that contains at least one CISA KEV advisory. KEV is not
+an extra slice: those advisories are already in a severity segment, and the
+number table under "Numbers for this chart" / "이 그래프의 숫자" gives the
+count. The chart is inline SVG (no chart library). Colors are the page's CSS
+variables, so light and dark follow the theme. Package names and every other
+string taken from the data are escaped. The SVG has a text alternative, and
+the table is the same numbers without the picture.
+
+An advisory counts on the UTC day it was published, or on the day it was
+added to CISA KEV if that is later (the same effective date as the 30-day
+view). Several OSV records for one issue count once. On a package page the
+bar is that package. On the Counter, an ecosystem bar counts an advisory once
+even when it lists several tracked packages. "My stack" sums the packages in
+the stack instead, so the same advisory can count once per package in the stack.
 
 The interface is in English or Korean (EN / KO at the top right; the first
 visit follows the browser language). Advisory text from the data stays in
@@ -253,8 +280,20 @@ of a number. Monthly NVD counts from an earlier run are reused when NVD is down.
   Markdown, for search engines, AI assistants and anyone without JavaScript.
 - `llms.txt` (published as `/llms.txt`): a short guide to the site and its data
   files for AI assistants ([llmstxt.org](https://llmstxt.org)).
-- `data/history/YYYY-MM-DD.json`: a copy of each day's file, for day-over-day
-  changes later.
+- `data/history/YYYY-MM.json`: compact daily counts for that month, committed
+  with the rest of `data/`. A day lists only packages and ecosystems that had
+  an advisory. Keys are `c` critical, `h` high, `m` medium, `l` low, `u`
+  unknown, and `k` for how many of those are in CISA KEV. Zero counts are
+  omitted. `data/history/manifest.json` lists the months so the Counter view
+  can fetch them. These files are not gitignored. Older runs wrote a full
+  copy of `latest.json` to `data/history/YYYY-MM-DD.json`; the collector
+  deletes those leftovers and does not write new ones. A month stays in the
+  tens of kilobytes, so it rides along in the existing twice-a-day `data/`
+  commit on `main` instead of a separate data branch (Pages deploys `main`,
+  and a second branch would not show up on the site unless something merged
+  it). The backfill below fills roughly the past year; after that the daily
+  job rewrites the days its 30-day window fully covers and leaves older days
+  in place.
 - `feed.xml` and `feed/<package>.xml`, published as `/feed.xml` and
   `/feed/...`: Atom feeds of advisories from the last 14 days. The publish
   step builds them from `data/latest.json`; they are not committed. An item id
@@ -278,8 +317,18 @@ python collect/collect.py                 # writes data/latest.json (~5 min, mos
 python collect/feeds.py                   # writes feed.xml and feed/ from data/latest.json
 python collect/pages.py                   # writes pkg/ from data/latest.json (gitignored)
 python collect/badges.py                  # writes badge/ from data/latest.json (gitignored)
+python collect/backfill_history.py        # one-off: fill data/history for about a year
 python -m http.server                     # then open http://localhost:8000/
 ```
+
+`backfill_history.py` is not part of the daily job or the Pages build. It
+downloads the CISA KEV catalog once and one OSV `all.zip` per ecosystem
+(about 315 MB; npm is most of that), sequentially, with a pause between
+requests, a `depweather-backfill` User-Agent, and `Retry-After` backoff on
+429 and 503. Zips are cached in `.cache/osv/` (gitignored), so a second run
+makes no HTTP requests. It does not call NVD and does not request individual
+advisories. Severity comes from the advisory label or a CVSS v3 vector in
+the OSV record.
 
 `index.html` has no build step and no dependencies; it fetches
 `data/latest.json` from the same directory.

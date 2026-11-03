@@ -34,18 +34,20 @@ jobs:
 
       # What the page loads, the plain-text views (llms.txt, today.md),
       # the Atom feeds, one HTML page per package, and one SVG badge per
-      # package. Mockups, history and sources stay in the repository. Feeds,
-      # package pages and badges are rebuilt from data/latest.json; they are
-      # not stored in git. pages.py also rewrites _site/sitemap.xml so each
-      # package is listed there.
+      # package. Mockups and sources stay in the repository. Compact history
+      # JSON is copied so the counter view can draw long-term charts; it is
+      # committed, unlike the feeds, package pages and badges, which are
+      # rebuilt from data/latest.json. pages.py also rewrites _site/sitemap.xml
+      # so each package is listed there.
       - name: Assemble site
         run: |
-          mkdir -p _site/data _site/js
+          mkdir -p _site/data/history _site/js
           cp index.html favicon.svg og.png robots.txt sitemap.xml llms.txt _site/
-          cp js/stack.js js/pkg-path.js _site/js/
+          cp js/stack.js js/pkg-path.js js/trends.js _site/js/
           cp data/today.md _site/today.md
           cp -r fonts _site/
           cp data/latest.json _site/data/
+          find data/history -maxdepth 1 -name '*.json' -exec cp {} _site/data/history/ \;
           python3 collect/feeds.py --out _site
           python3 collect/pages.py --out _site
           python3 collect/badges.py --out _site

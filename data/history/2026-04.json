@@ -1,0 +1,404 @@
+{
+ "schema": 1,
+ "month": "2026-04",
+ "days": {
+  "2026-04-01": {
+   "packages": {
+    "npm/lodash": {
+     "h": 1,
+     "m": 1
+    },
+    "pypi/aiohttp": {
+     "h": 2,
+     "m": 7,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1,
+     "m": 1
+    },
+    "pypi": {
+     "h": 2,
+     "m": 7,
+     "l": 1
+    }
+   }
+  },
+  "2026-04-02": {
+   "packages": {
+    "rubygems/rack": {
+     "h": 4,
+     "m": 9
+    }
+   },
+   "ecosystems": {
+    "rubygems": {
+     "h": 4,
+     "m": 9
+    }
+   }
+  },
+  "2026-04-06": {
+   "packages": {
+    "npm/@nestjs/core": {
+     "m": 1
+    },
+    "npm/vite": {
+     "h": 2,
+     "m": 1
+    },
+    "runtimes/mongodb": {
+     "h": 1,
+     "m": 1
+    },
+    "runtimes/node": {
+     "h": 1,
+     "m": 5,
+     "l": 2
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 2,
+     "m": 2
+    },
+    "runtimes": {
+     "h": 2,
+     "m": 6,
+     "l": 2
+    }
+   }
+  },
+  "2026-04-07": {
+   "packages": {
+    "go/stdlib": {
+     "u": 7
+    },
+    "maven/org.apache.kafka:kafka-clients": {
+     "h": 1
+    },
+    "pypi/django": {
+     "c": 1,
+     "h": 2,
+     "m": 1,
+     "l": 1
+    },
+    "pypi/transformers": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 7
+    },
+    "maven": {
+     "h": 1
+    },
+    "pypi": {
+     "c": 1,
+     "h": 3,
+     "m": 1,
+     "l": 1
+    }
+   }
+  },
+  "2026-04-08": {
+   "packages": {
+    "npm/axios": {
+     "m": 1
+    },
+    "npm/hono": {
+     "m": 5
+    },
+    "pypi/cryptography": {
+     "c": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 6
+    },
+    "pypi": {
+     "c": 1
+    }
+   }
+  },
+  "2026-04-09": {
+   "packages": {
+    "maven/org.apache.tomcat.embed:tomcat-embed-core": {
+     "h": 4,
+     "m": 2
+    },
+    "npm/axios": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "h": 4,
+     "m": 2
+    },
+    "npm": {
+     "m": 1
+    }
+   }
+  },
+  "2026-04-10": {
+   "packages": {
+    "maven/org.apache.logging.log4j:log4j-core": {
+     "m": 4
+    },
+    "npm/@sveltejs/kit": {
+     "h": 1,
+     "m": 1
+    },
+    "npm/axios": {
+     "m": 1
+    },
+    "npm/next": {
+     "h": 1
+    },
+    "packagist/phpseclib/phpseclib": {
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "m": 4
+    },
+    "npm": {
+     "h": 2,
+     "m": 2
+    },
+    "packagist": {
+     "l": 1
+    }
+   }
+  },
+  "2026-04-13": {
+   "packages": {
+    "pypi/pillow": {
+     "h": 1
+    },
+    "runtimes/tomcat": {
+     "c": 1,
+     "h": 2,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1
+    },
+    "runtimes": {
+     "c": 1,
+     "h": 2,
+     "m": 2
+    }
+   }
+  },
+  "2026-04-14": {
+   "packages": {
+    "crates/rustls": {
+     "l": 2
+    },
+    "nuget/Microsoft.NETCore.App.Runtime.linux-x64": {
+     "l": 1
+    },
+    "nuget/System.Security.Cryptography.Xml": {
+     "h": 2
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "l": 2
+    },
+    "nuget": {
+     "h": 2,
+     "l": 1
+    }
+   }
+  },
+  "2026-04-15": {
+   "packages": {
+    "packagist/drupal/core": {
+     "m": 3
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "m": 3
+    }
+   }
+  },
+  "2026-04-16": {
+   "packages": {
+    "npm/hono": {
+     "m": 1
+    },
+    "runtimes/python": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 1
+    },
+    "runtimes": {
+     "m": 1
+    }
+   }
+  },
+  "2026-04-17": {
+   "packages": {
+    "maven/org.bouncycastle:bcprov-jdk18on": {
+     "c": 1,
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "c": 1,
+     "h": 1,
+     "m": 1
+    }
+   }
+  },
+  "2026-04-18": {
+   "packages": {
+    "packagist/phpunit/phpunit": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "h": 1
+    }
+   }
+  },
+  "2026-04-20": {
+   "packages": {
+    "maven/org.apache.kafka:kafka-clients": {
+     "c": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "c": 1,
+     "m": 1
+    }
+   }
+  },
+  "2026-04-21": {
+   "packages": {
+    "maven/org.springframework.security:spring-security-core": {
+     "m": 1
+    },
+    "npm/astro": {
+     "m": 1
+    },
+    "pypi/lxml": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "m": 1
+    },
+    "npm": {
+     "m": 1
+    },
+    "pypi": {
+     "h": 1
+    }
+   }
+  },
+  "2026-04-22": {
+   "packages": {
+    "crates/openssl": {
+     "h": 4,
+     "l": 1
+    },
+    "crates/rustls": {
+     "h": 1
+    },
+    "maven/org.springframework.security:spring-security-core": {
+     "l": 1
+    },
+    "packagist/phpunit/phpunit": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "h": 5,
+     "l": 1
+    },
+    "maven": {
+     "l": 1
+    },
+    "packagist": {
+     "h": 1
+    }
+   }
+  },
+  "2026-04-23": {
+   "packages": {
+    "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
+     "c": 1
+    }
+   },
+   "ecosystems": {
+    "nuget": {
+     "c": 1
+    }
+   }
+  },
+  "2026-04-27": {
+   "packages": {
+    "maven/org.springframework.boot:spring-boot": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "m": 1
+    }
+   }
+  },
+  "2026-04-28": {
+   "packages": {
+    "maven/org.springframework.boot:spring-boot": {
+     "c": 1,
+     "h": 2,
+     "m": 4
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "c": 1,
+     "h": 2,
+     "m": 4
+    }
+   }
+  },
+  "2026-04-29": {
+   "packages": {
+    "maven/org.springframework:spring-webmvc": {
+     "m": 1,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "m": 1,
+     "l": 1
+    }
+   }
+  }
+ }
+}

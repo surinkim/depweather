@@ -1,0 +1,382 @@
+{
+ "schema": 1,
+ "month": "2026-09",
+ "days": {
+  "2026-09-01": {
+   "packages": {
+    "go/google.golang.org/grpc": {
+     "h": 1
+    },
+    "packagist/league/commonmark": {
+     "h": 4
+    },
+    "pypi/transformers": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "h": 1
+    },
+    "packagist": {
+     "h": 4
+    },
+    "pypi": {
+     "h": 1
+    }
+   }
+  },
+  "2026-09-02": {
+   "packages": {
+    "go/golang.org/x/crypto": {
+     "u": 2
+    },
+    "npm/fastify": {
+     "m": 2
+    },
+    "pypi/starlette": {
+     "m": 1,
+     "k": 1
+    },
+    "runtimes/mariadb": {
+     "h": 1,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 2
+    },
+    "npm": {
+     "m": 2
+    },
+    "pypi": {
+     "m": 1,
+     "k": 1
+    },
+    "runtimes": {
+     "h": 1,
+     "m": 2
+    }
+   }
+  },
+  "2026-09-07": {
+   "packages": {
+    "runtimes/node": {
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "l": 1
+    }
+   }
+  },
+  "2026-09-08": {
+   "packages": {
+    "go/google.golang.org/grpc": {
+     "h": 1,
+     "m": 1
+    },
+    "npm/astro": {
+     "c": 1,
+     "m": 1
+    },
+    "npm/hono": {
+     "m": 3
+    },
+    "npm/next": {
+     "c": 2
+    },
+    "packagist/phpseclib/phpseclib": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "h": 1,
+     "m": 1
+    },
+    "npm": {
+     "c": 3,
+     "m": 4
+    },
+    "packagist": {
+     "m": 1
+    }
+   }
+  },
+  "2026-09-09": {
+   "packages": {
+    "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "nuget": {
+     "m": 1
+    }
+   }
+  },
+  "2026-09-10": {
+   "packages": {
+    "npm/@angular/core": {
+     "m": 1
+    },
+    "runtimes/mongodb": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 1
+    },
+    "runtimes": {
+     "m": 1
+    }
+   }
+  },
+  "2026-09-11": {
+   "packages": {
+    "runtimes/python": {
+     "m": 2,
+     "l": 1
+    },
+    "runtimes/tomcat": {
+     "c": 8,
+     "h": 12,
+     "m": 6,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 8,
+     "h": 12,
+     "m": 8,
+     "l": 2
+    }
+   }
+  },
+  "2026-09-14": {
+   "packages": {
+    "crates/rustls": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "m": 1
+    }
+   }
+  },
+  "2026-09-15": {
+   "packages": {
+    "runtimes/mongodb": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2026-09-16": {
+   "packages": {
+    "packagist/drupal/core": {
+     "u": 1
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "u": 1
+    }
+   }
+  },
+  "2026-09-17": {
+   "packages": {
+    "runtimes/mongodb": {
+     "c": 2,
+     "h": 30,
+     "m": 13
+    },
+    "runtimes/python": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 2,
+     "h": 30,
+     "m": 14
+    }
+   }
+  },
+  "2026-09-21": {
+   "packages": {
+    "runtimes/python": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2026-09-22": {
+   "packages": {
+    "runtimes/python": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2026-09-25": {
+   "packages": {
+    "runtimes/mongodb": {
+     "h": 1
+    },
+    "runtimes/nginx": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1,
+     "m": 1
+    }
+   }
+  },
+  "2026-09-28": {
+   "packages": {
+    "maven/com.fasterxml.jackson.core:jackson-databind": {
+     "h": 1,
+     "m": 3
+    },
+    "npm/undici": {
+     "m": 1
+    },
+    "pypi/pyjwt": {
+     "h": 1
+    },
+    "runtimes/mongodb": {
+     "h": 2
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "h": 1,
+     "m": 3
+    },
+    "npm": {
+     "m": 1
+    },
+    "pypi": {
+     "h": 1
+    },
+    "runtimes": {
+     "h": 2
+    }
+   }
+  },
+  "2026-09-29": {
+   "packages": {
+    "npm/undici": {
+     "h": 3,
+     "m": 4,
+     "l": 3
+    },
+    "packagist/laravel/framework": {
+     "l": 1
+    },
+    "packagist/league/flysystem": {
+     "l": 1
+    },
+    "pypi/pyjwt": {
+     "c": 1,
+     "h": 5,
+     "m": 4
+    },
+    "runtimes/wordpress": {
+     "h": 1,
+     "k": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 3,
+     "m": 4,
+     "l": 3
+    },
+    "packagist": {
+     "l": 2
+    },
+    "pypi": {
+     "c": 1,
+     "h": 5,
+     "m": 4
+    },
+    "runtimes": {
+     "h": 1,
+     "k": 1
+    }
+   }
+  },
+  "2026-09-30": {
+   "packages": {
+    "maven/com.fasterxml.jackson.core:jackson-databind": {
+     "h": 2
+    },
+    "npm/axios": {
+     "h": 7,
+     "m": 5
+    },
+    "npm/fastify": {
+     "h": 4,
+     "m": 1
+    },
+    "npm/hono": {
+     "m": 1
+    },
+    "npm/next": {
+     "c": 1
+    },
+    "packagist/league/commonmark": {
+     "h": 1,
+     "m": 1
+    },
+    "pypi/pyjwt": {
+     "m": 3
+    },
+    "pypi/urllib3": {
+     "h": 2,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "h": 2
+    },
+    "npm": {
+     "c": 1,
+     "h": 11,
+     "m": 7
+    },
+    "packagist": {
+     "h": 1,
+     "m": 1
+    },
+    "pypi": {
+     "h": 2,
+     "m": 4
+    }
+   }
+  }
+ }
+}

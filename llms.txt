@@ -9,7 +9,8 @@ Data is collected twice a day from OSV (including the GitHub Advisory Database a
 - [Today's forecast in plain Markdown](https://depweather.com/today.md): affected packages per ecosystem with severity, fixed versions and an example advisory, plus this week's CISA KEV additions.
 - [Full data as JSON](https://depweather.com/data/latest.json): every tracked package with its advisories from the last 30 days, KEV and EPSS fields, and monthly NVD CVE counts.
 - [Atom feed](https://depweather.com/feed.xml): advisories from the last 14 days. KEV and critical items are marked in the title. One package: `https://depweather.com/feed/<ecosystem>/<name>.xml` (a Maven `:` is written as `~`).
-- Package pages: `https://depweather.com/pkg/<ecosystem>/<name>/` (same `~` for a Maven `:`). Korean: add `?lang=ko`. Each page lists that package's recent advisories, severity, fixed versions, KEV and EPSS, and a README badge snippet.
+- Package pages: `https://depweather.com/pkg/<ecosystem>/<name>/` (same `~` for a Maven `:`). Korean: add `?lang=ko`. Each page lists that package's recent advisories, severity, fixed versions, KEV and EPSS, a longer severity trend (3 months, 6 months, 1 year) and a README badge snippet.
+- Long-term counts: `data/history/YYYY-MM.json` in the repository (one compact file per month, advisories per package and ecosystem by severity, plus a KEV count). The Counter view draws the same series per ecosystem from `/data/history/manifest.json`.
 - README badge: `https://depweather.com/badge/<ecosystem>/<name>.svg` (Korean: `.ko.svg`, a Maven `:` is `~`). Last 7 days. KEV is marked first. GitHub caches the image via camo, so a README can lag the package page.
 
 ## Docs

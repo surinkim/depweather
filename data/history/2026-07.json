@@ -1,0 +1,361 @@
+{
+ "schema": 1,
+ "month": "2026-07",
+ "days": {
+  "2026-07-01": {
+   "packages": {
+    "packagist/twig/twig": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "h": 1
+    }
+   }
+  },
+  "2026-07-02": {
+   "packages": {
+    "go/github.com/gofiber/fiber/v2": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "m": 1
+    }
+   }
+  },
+  "2026-07-06": {
+   "packages": {
+    "pypi/pillow": {
+     "h": 4,
+     "m": 1
+    },
+    "runtimes/python": {
+     "c": 1,
+     "h": 2,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 4,
+     "m": 1
+    },
+    "runtimes": {
+     "c": 1,
+     "h": 2,
+     "m": 2
+    }
+   }
+  },
+  "2026-07-07": {
+   "packages": {
+    "go/golang.org/x/crypto": {
+     "u": 1
+    },
+    "go/stdlib": {
+     "u": 2
+    },
+    "hex/phoenix": {
+     "h": 1,
+     "m": 1
+    },
+    "pypi/django": {
+     "m": 3
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 3
+    },
+    "hex": {
+     "h": 1,
+     "m": 1
+    },
+    "pypi": {
+     "m": 3
+    }
+   }
+  },
+  "2026-07-08": {
+   "packages": {
+    "pypi/setuptools": {
+     "m": 1
+    },
+    "runtimes/php": {
+     "m": 1
+    },
+    "runtimes/python": {
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "m": 1
+    },
+    "runtimes": {
+     "m": 3
+    }
+   }
+  },
+  "2026-07-10": {
+   "packages": {
+    "hex/plug": {
+     "u": 2
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "u": 2
+    }
+   }
+  },
+  "2026-07-13": {
+   "packages": {
+    "hex/phoenix_live_view": {
+     "u": 1
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "u": 1
+    }
+   }
+  },
+  "2026-07-14": {
+   "packages": {
+    "go/golang.org/x/net": {
+     "u": 1
+    },
+    "go/stdlib": {
+     "u": 1
+    },
+    "pypi/pillow": {
+     "h": 4
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 1
+    },
+    "pypi": {
+     "h": 4
+    }
+   }
+  },
+  "2026-07-15": {
+   "packages": {
+    "packagist/drupal/core": {
+     "u": 3
+    },
+    "runtimes/tomcat": {
+     "c": 2
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "u": 3
+    },
+    "runtimes": {
+     "c": 2
+    }
+   }
+  },
+  "2026-07-20": {
+   "packages": {
+    "npm/astro": {
+     "h": 1,
+     "m": 3,
+     "l": 1
+    },
+    "npm/axios": {
+     "h": 1,
+     "m": 9
+    },
+    "npm/tar": {
+     "c": 1,
+     "h": 1,
+     "m": 2
+    },
+    "nuget/Microsoft.NETCore.App.Runtime.linux-x64": {
+     "h": 5,
+     "m": 1
+    },
+    "nuget/System.Security.Cryptography.Xml": {
+     "h": 4
+    },
+    "packagist/guzzlehttp/guzzle": {
+     "m": 5
+    },
+    "pypi/pillow": {
+     "h": 3,
+     "m": 1
+    },
+    "runtimes/nginx": {
+     "c": 1,
+     "h": 2
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "c": 1,
+     "h": 3,
+     "m": 14,
+     "l": 1
+    },
+    "nuget": {
+     "h": 8,
+     "m": 1
+    },
+    "packagist": {
+     "m": 5
+    },
+    "pypi": {
+     "h": 3,
+     "m": 1
+    },
+    "runtimes": {
+     "c": 1,
+     "h": 2
+    }
+   }
+  },
+  "2026-07-21": {
+   "packages": {
+    "go/google.golang.org/grpc": {
+     "h": 1
+    },
+    "maven/com.fasterxml.jackson.core:jackson-databind": {
+     "m": 3
+    },
+    "maven/org.postgresql:postgresql": {
+     "h": 1
+    },
+    "npm/hono": {
+     "m": 3
+    },
+    "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
+     "h": 3
+    },
+    "nuget/System.Security.Cryptography.Xml": {
+     "h": 1
+    },
+    "packagist/guzzlehttp/psr7": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "h": 1
+    },
+    "maven": {
+     "h": 1,
+     "m": 3
+    },
+    "npm": {
+     "m": 3
+    },
+    "nuget": {
+     "h": 4
+    },
+    "packagist": {
+     "m": 1
+    }
+   }
+  },
+  "2026-07-22": {
+   "packages": {
+    "maven/io.netty:netty-codec-http": {
+     "h": 3,
+     "m": 4
+    },
+    "npm/next": {
+     "h": 4,
+     "m": 5
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "h": 3,
+     "m": 4
+    },
+    "npm": {
+     "h": 4,
+     "m": 5
+    }
+   }
+  },
+  "2026-07-24": {
+   "packages": {
+    "npm/@sveltejs/kit": {
+     "m": 2
+    },
+    "npm/tar": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1,
+     "m": 2
+    }
+   }
+  },
+  "2026-07-27": {
+   "packages": {
+    "runtimes/wordpress": {
+     "c": 1,
+     "m": 1,
+     "k": 2
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 1,
+     "m": 1,
+     "k": 2
+    }
+   }
+  },
+  "2026-07-28": {
+   "packages": {
+    "hex/cowboy": {
+     "u": 2
+    },
+    "nuget/System.Security.Cryptography.Xml": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "u": 2
+    },
+    "nuget": {
+     "h": 1
+    }
+   }
+  },
+  "2026-07-30": {
+   "packages": {
+    "rubygems/rails": {
+     "c": 1
+    },
+    "runtimes/python": {
+     "h": 2,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "rubygems": {
+     "c": 1
+    },
+    "runtimes": {
+     "h": 2,
+     "m": 1
+    }
+   }
+  }
+ }
+}
