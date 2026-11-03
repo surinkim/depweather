@@ -1,0 +1,552 @@
+{
+ "schema": 1,
+ "month": "2026-06",
+ "days": {
+  "2026-06-01": {
+   "packages": {
+    "maven/ch.qos.logback:logback-core": {
+     "l": 1
+    },
+    "runtimes/nginx": {
+     "c": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "l": 1
+    },
+    "runtimes": {
+     "c": 1
+    }
+   }
+  },
+  "2026-06-02": {
+   "packages": {
+    "go/stdlib": {
+     "u": 3
+    },
+    "pypi/aiohttp": {
+     "h": 2
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 3
+    },
+    "pypi": {
+     "h": 2
+    }
+   }
+  },
+  "2026-06-03": {
+   "packages": {
+    "npm/vite": {
+     "h": 1
+    },
+    "pypi/django": {
+     "m": 3,
+     "l": 2
+    },
+    "pypi/transformers": {
+     "c": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1
+    },
+    "pypi": {
+     "c": 1,
+     "m": 3,
+     "l": 2
+    }
+   }
+  },
+  "2026-06-04": {
+   "packages": {
+    "npm/axios": {
+     "h": 4
+    },
+    "npm/hono": {
+     "m": 4
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 4,
+     "m": 4
+    }
+   }
+  },
+  "2026-06-05": {
+   "packages": {
+    "packagist/twig/twig": {
+     "h": 2,
+     "l": 1
+    },
+    "runtimes/mariadb": {
+     "m": 1
+    },
+    "runtimes/python": {
+     "h": 1,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "h": 2,
+     "l": 1
+    },
+    "runtimes": {
+     "h": 1,
+     "m": 3
+    }
+   }
+  },
+  "2026-06-08": {
+   "packages": {
+    "hex/cowboy": {
+     "m": 1
+    },
+    "rubygems/puma": {
+     "h": 1
+    },
+    "runtimes/python": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "m": 1
+    },
+    "rubygems": {
+     "h": 1
+    },
+    "runtimes": {
+     "m": 1
+    }
+   }
+  },
+  "2026-06-09": {
+   "packages": {
+    "maven/org.springframework:spring-web": {
+     "m": 1
+    },
+    "maven/org.springframework:spring-webmvc": {
+     "h": 2,
+     "m": 5
+    },
+    "packagist/symfony/http-kernel": {
+     "m": 1
+    },
+    "rubygems/net-imap": {
+     "m": 2,
+     "l": 1
+    },
+    "rubygems/puma": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "h": 2,
+     "m": 6
+    },
+    "packagist": {
+     "m": 1
+    },
+    "rubygems": {
+     "h": 1,
+     "m": 2,
+     "l": 1
+    }
+   }
+  },
+  "2026-06-10": {
+   "packages": {
+    "runtimes/apache": {
+     "c": 3,
+     "h": 7,
+     "m": 3
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 3,
+     "h": 7,
+     "m": 3
+    }
+   }
+  },
+  "2026-06-11": {
+   "packages": {
+    "maven/org.springframework.boot:spring-boot": {
+     "m": 2
+    },
+    "nuget/MessagePack": {
+     "h": 1
+    },
+    "packagist/guzzlehttp/psr7": {
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "m": 2
+    },
+    "nuget": {
+     "h": 1
+    },
+    "packagist": {
+     "m": 2
+    }
+   }
+  },
+  "2026-06-13": {
+   "packages": {
+    "runtimes/mariadb": {
+     "c": 1
+    },
+    "runtimes/mongodb": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 1,
+     "m": 1
+    }
+   }
+  },
+  "2026-06-15": {
+   "packages": {
+    "maven/io.netty:netty-codec-http": {
+     "m": 1
+    },
+    "npm/@angular/core": {
+     "h": 1,
+     "m": 2
+    },
+    "npm/form-data": {
+     "h": 1
+    },
+    "npm/nuxt": {
+     "l": 1
+    },
+    "npm/tar": {
+     "m": 1
+    },
+    "npm/vite": {
+     "m": 2
+    },
+    "npm/ws": {
+     "h": 1
+    },
+    "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
+     "h": 1
+    },
+    "packagist/symfony/http-kernel": {
+     "h": 1,
+     "m": 5
+    },
+    "pypi/aiohttp": {
+     "h": 8,
+     "m": 1
+    },
+    "pypi/cryptography": {
+     "h": 1
+    },
+    "pypi/starlette": {
+     "h": 2,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "m": 1
+    },
+    "npm": {
+     "h": 3,
+     "m": 5,
+     "l": 1
+    },
+    "nuget": {
+     "h": 1
+    },
+    "packagist": {
+     "h": 1,
+     "m": 5
+    },
+    "pypi": {
+     "h": 11,
+     "m": 3
+    }
+   }
+  },
+  "2026-06-16": {
+   "packages": {
+    "crates/deno": {
+     "h": 3,
+     "m": 5
+    },
+    "npm/astro": {
+     "h": 2,
+     "m": 1
+    },
+    "npm/hono": {
+     "h": 1,
+     "m": 4
+    },
+    "npm/nuxt": {
+     "h": 1,
+     "m": 3,
+     "l": 1
+    },
+    "nuget/Microsoft.NETCore.App.Runtime.linux-x64": {
+     "m": 1
+    },
+    "packagist/phpseclib/phpseclib": {
+     "m": 1
+    },
+    "runtimes/mariadb": {
+     "c": 4,
+     "h": 3,
+     "m": 1
+    },
+    "runtimes/mongodb": {
+     "h": 5,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "h": 3,
+     "m": 5
+    },
+    "npm": {
+     "h": 4,
+     "m": 8,
+     "l": 1
+    },
+    "nuget": {
+     "m": 1
+    },
+    "packagist": {
+     "m": 1
+    },
+    "runtimes": {
+     "c": 4,
+     "h": 8,
+     "m": 2
+    }
+   }
+  },
+  "2026-06-17": {
+   "packages": {
+    "crates/deno": {
+     "m": 1
+    },
+    "packagist/drupal/core": {
+     "u": 5
+    },
+    "packagist/laravel/framework": {
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "m": 1
+    },
+    "packagist": {
+     "h": 1,
+     "m": 1,
+     "u": 5
+    }
+   }
+  },
+  "2026-06-18": {
+   "packages": {
+    "npm/undici": {
+     "h": 2,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 2,
+     "m": 1
+    }
+   }
+  },
+  "2026-06-19": {
+   "packages": {
+    "npm/undici": {
+     "h": 2,
+     "m": 1,
+     "l": 2
+    },
+    "packagist/guzzlehttp/guzzle": {
+     "m": 2
+    },
+    "packagist/guzzlehttp/psr7": {
+     "m": 1
+    },
+    "packagist/symfony/http-kernel": {
+     "h": 1,
+     "m": 5,
+     "l": 3
+    },
+    "rubygems/faraday": {
+     "h": 1
+    },
+    "rubygems/nokogiri": {
+     "m": 1,
+     "l": 7
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 2,
+     "m": 1,
+     "l": 2
+    },
+    "packagist": {
+     "h": 1,
+     "m": 8,
+     "l": 3
+    },
+    "rubygems": {
+     "h": 1,
+     "m": 1,
+     "l": 7
+    }
+   }
+  },
+  "2026-06-22": {
+   "packages": {
+    "runtimes/mongodb": {
+     "h": 7
+    },
+    "runtimes/nginx": {
+     "c": 2,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 2,
+     "h": 7,
+     "m": 1
+    }
+   }
+  },
+  "2026-06-23": {
+   "packages": {
+    "hex/plug": {
+     "h": 1
+    },
+    "maven/com.fasterxml.jackson.core:jackson-databind": {
+     "h": 2,
+     "m": 6
+    },
+    "runtimes/mongodb": {
+     "h": 1
+    },
+    "runtimes/node": {
+     "h": 2
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "h": 1
+    },
+    "maven": {
+     "h": 2,
+     "m": 6
+    },
+    "runtimes": {
+     "h": 3
+    }
+   }
+  },
+  "2026-06-24": {
+   "packages": {
+    "npm/angular": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1
+    }
+   }
+  },
+  "2026-06-25": {
+   "packages": {
+    "nuget/MessagePack": {
+     "h": 2,
+     "m": 9
+    },
+    "runtimes/python": {
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "nuget": {
+     "h": 2,
+     "m": 9
+    },
+    "runtimes": {
+     "h": 1,
+     "m": 1
+    }
+   }
+  },
+  "2026-06-26": {
+   "packages": {
+    "runtimes/node": {
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "l": 1
+    }
+   }
+  },
+  "2026-06-29": {
+   "packages": {
+    "runtimes/node": {
+     "c": 1,
+     "h": 4,
+     "m": 2,
+     "l": 2
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 1,
+     "h": 4,
+     "m": 2,
+     "l": 2
+    }
+   }
+  },
+  "2026-06-30": {
+   "packages": {
+    "packagist/twig/twig": {
+     "m": 3,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "m": 3,
+     "l": 1
+    }
+   }
+  }
+ }
+}

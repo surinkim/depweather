@@ -26,6 +26,9 @@ weather report, so you can tell in a few seconds.
 - **A 30-day timeline** for any package, with the versions that fix each issue.
 - **A page per package** at `/pkg/npm/next/` (a Maven `:` is `~`), with severity,
   fixed versions, KEV and EPSS. Korean: `?lang=ko`.
+- **A longer trend** on that page, and for each ecosystem on the Counter
+  view: 3 months, 6 months or 1 year of severity-stacked bars, with CISA KEV
+  marked on its own.
 - **A README badge** at `/badge/npm/lodash.svg` (Korean: `.ko.svg`). Gray is a
   clear week, magenta is KEV. The package page has Markdown and HTML to copy.
 - **My stack.** Paste `package.json`, `requirements.txt`, or another manifest
@@ -101,6 +104,16 @@ python collect/badges.py       # writes badge/ (optional, gitignored)
 python -m http.server          # open http://localhost:8000
 node --test tests/stack.test.js   # manifest parsing tests, no install
 ```
+
+The daily job appends counts to `data/history/YYYY-MM.json` (severity and KEV,
+not a full snapshot). To fill roughly the past year before any daily run has
+happened:
+
+```sh
+python collect/backfill_history.py   # one-off; downloads OSV zips; not run in CI
+```
+
+Details and the request budget: [how it works](docs/how-it-works.md#history).
 
 ## Credits and license
 

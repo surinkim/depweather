@@ -86,6 +86,8 @@
   --sev-3-ink: #ffffff;
   --sev-kev: #a32ca0;
   --sev-kev-ink: #ffffff;
+  --sev-low: #8fb84a;
+  --sev-unk: #8aa4b8;
   --bar: #1d6fb8;
   --group-line: #8fb0c8;
   --group-head: #e6f0f7;
@@ -216,6 +218,26 @@ header.top .spacer { flex: 1; }
 .panel h2 { font-size: 15px; margin: 0 0 8px; }
 .panel + .panel { margin-top: 12px; }
 .hint { color: var(--muted); font-size: 12.5px; margin: 8px 0 0; }
+.trend-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.trend-head h2 { margin: 0; flex: 1 1 auto; }
+.trend-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.trend-controls select {
+  font: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid var(--border);
+  border-radius: 999px; background: var(--surface); color: var(--ink);
+}
+.trend-svg { width: 100%; height: auto; display: block; }
+.trend-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; list-style: none; padding: 0; margin: 8px 0 0; font-size: 12.5px; color: var(--ink-2); }
+.trend-legend li { display: inline-flex; align-items: center; }
+.trend-legend .swatch { width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; }
+.trend-legend .swatch.c { background: var(--sev-3); }
+.trend-legend .swatch.h { background: var(--sev-2); }
+.trend-legend .swatch.m { background: var(--sev-1); }
+.trend-legend .swatch.l { background: var(--sev-low); }
+.trend-legend .swatch.u { background: var(--sev-unk); }
+.trend-legend .kev { width: 8px; height: 8px; margin: 0 6px 0 2px; background: var(--sev-kev); transform: rotate(45deg); border-radius: 1px; }
+.trend-fallback { margin-top: 8px; }
+.trend-fallback summary { cursor: pointer; color: var(--ink-2); font-size: 13px; }
+.trend-table caption { caption-side: bottom; text-align: left; color: var(--muted); font-size: 12px; padding-top: 6px; }
 
 svg text { font-family: inherit; }
 #treemap-box { position: relative; }
@@ -460,11 +482,12 @@ a.chip:hover { text-decoration: underline; }
 
 <script src="js/pkg-path.js?v=2026-11-02.4"></script>
 <script src="js/stack.js?v=2026-11-02.1"></script>
+<script src="js/trends.js?v=2026-11-03.1"></script>
 <script>
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-11-02.4";
+const BUILD = "2026-11-03.1";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -475,7 +498,8 @@ const PREFS_KEY = "depweather:prefs";
 const DAY = 86400000;
 
 
-const state = { view: "a", range: 7, kevOnly: false, pkg: null, stack: null };
+const state = { view: "a", range: 7, kevOnly: false, pkg: null, stack: null, trend: "6m", trendEco: "all" };
+let HISTORY;
 const STACK_KEY = "depweather:stack";
 let DATA = null;
 let PKGS = new Map();   // key -> {eco, pkg}
@@ -546,6 +570,15 @@ const I18N = {
     b_th: { eco: "Ecosystem", n: "New advisories", crit: "Critical", pk: "Packages affected" },
     b_kev_head: "Added to CISA KEV in the last 7 days (all vendors)",
     b_kev_th: { added: "Added", vendor: "Vendor / product", name: "Name" },
+    trend_head: "Advisories over time",
+    trend_note: "Weekly bars for 3M and 6M, monthly bars for 1Y. Stacked bottom to top: unknown, low, medium, high, critical. A magenta diamond marks CISA KEV in that bar. KEV is already inside the stack, not an extra slice.",
+    trend_period: "Trend period", trend_eco: "Ecosystem",
+    trend_3m: "3 months", trend_6m: "6 months", trend_1y: "1 year",
+    trend_all: "All tracked packages", trend_all_stack: "Your stack",
+    trend_missing: "Long-term counts have not been collected yet.",
+    trend_empty_history: "No advisory days in the history files yet.",
+    trend_numbers: "Numbers for this chart",
+    trend_sev: { c: "Critical", h: "High", m: "Medium", l: "Low", u: "Unknown" },
     footer_data: `Data: <a href="https://osv.dev">OSV.dev</a> (including the <a href="https://github.com/github/advisory-database">GitHub Advisory Database</a>, CC-BY 4.0, and the <a href="https://github.com/bitnami/vulndb">Bitnami Vulnerability Database</a>, Apache-2.0),
       <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA Known Exploited Vulnerabilities</a>,
       <a href="https://www.first.org/epss/">FIRST EPSS</a>, <a href="https://nvd.nist.gov">NVD</a>;
@@ -653,6 +686,15 @@ const I18N = {
     b_th: { eco: "생태계", n: "신규 권고", crit: "치명", pk: "영향받은 패키지" },
     b_kev_head: "최근 7일 CISA KEV 추가 (전체 벤더)",
     b_kev_th: { added: "추가일", vendor: "벤더 / 제품", name: "이름" },
+    trend_head: "권고 추이",
+    trend_note: "3개월·6개월은 주 단위, 1년은 월 단위입니다. 아래부터 미평가, 낮음, 중간, 높음, 치명 순으로 쌓입니다. 마젠타 마름모는 그 막대의 CISA KEV입니다. KEV는 스택 안의 권고이지 추가 칸이 아닙니다.",
+    trend_period: "추이 기간", trend_eco: "생태계",
+    trend_3m: "3개월", trend_6m: "6개월", trend_1y: "1년",
+    trend_all: "추적 패키지 전체", trend_all_stack: "내 스택",
+    trend_missing: "아직 장기 추이 데이터가 없습니다.",
+    trend_empty_history: "추이 파일에 권고가 있는 날이 없습니다.",
+    trend_numbers: "이 그래프의 숫자",
+    trend_sev: { c: "치명", h: "높음", m: "중간", l: "낮음", u: "미평가" },
     footer_data: `데이터: <a href="https://osv.dev">OSV.dev</a> (<a href="https://github.com/github/advisory-database">GitHub Advisory Database</a> CC-BY 4.0, <a href="https://github.com/bitnami/vulndb">Bitnami Vulnerability Database</a> Apache-2.0 포함),
       <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA Known Exploited Vulnerabilities</a>,
       <a href="https://www.first.org/epss/">FIRST EPSS</a>, <a href="https://nvd.nist.gov">NVD</a>.
@@ -768,7 +810,10 @@ function readPrefs() {
 }
 function writePrefs() {
   try {
-    localStorage.setItem(PREFS_KEY, JSON.stringify({ view: state.view, range: state.range, lang: LANG, theme: document.documentElement.dataset.theme || null }));
+    localStorage.setItem(PREFS_KEY, JSON.stringify({
+      view: state.view, range: state.range, lang: LANG, theme: document.documentElement.dataset.theme || null,
+      trend: state.trend, trendEco: state.trendEco,
+    }));
   } catch { /* storage unavailable */ }
 }
 
@@ -1657,9 +1702,133 @@ function renderPackage(root, { eco, pkg }) {
 
 // ------------------------------------------------------------ B: counter
 
+function trendLegend() {
+  const ul = document.createElement("ul");
+  ul.className = "trend-legend";
+  for (const key of ["c", "h", "m", "l", "u"]) {
+    const li = document.createElement("li");
+    const sw = document.createElement("i");
+    sw.className = `swatch ${key}`;
+    const label = document.createElement("span");
+    label.textContent = t("trend_sev")[key];
+    li.append(sw, label);
+    ul.append(li);
+  }
+  const kev = document.createElement("li");
+  const mark = document.createElement("i");
+  mark.className = "kev";
+  const kevLabel = document.createElement("span");
+  kevLabel.textContent = "KEV";
+  kev.append(mark, kevLabel);
+  ul.append(kev);
+  return ul;
+}
+
+function renderTrendPanel() {
+  const panel = document.createElement("section");
+  panel.className = "panel";
+  panel.id = "trend";
+  const head = document.createElement("div");
+  head.className = "trend-head";
+  const title = document.createElement("h2");
+  title.id = "trend-heading";
+  title.textContent = t("trend_head");
+  const controls = document.createElement("div");
+  controls.className = "trend-controls";
+  const sel = document.createElement("select");
+  sel.id = "trend-eco";
+  sel.setAttribute("aria-label", t("trend_eco"));
+  const viewing = viewEcosystems();
+  const options = state.stack ? viewing : (DATA.ecosystems || []);
+  const all = document.createElement("option");
+  all.value = "all";
+  all.textContent = state.stack ? t("trend_all_stack") : t("trend_all");
+  sel.append(all);
+  for (const eco of options) {
+    const opt = document.createElement("option");
+    opt.value = eco.id;
+    opt.textContent = eco.label;
+    sel.append(opt);
+  }
+  let trendEco = state.trendEco || "all";
+  if (![...sel.options].some((opt) => opt.value === trendEco)) trendEco = "all";
+  sel.value = trendEco;
+  const seg = document.createElement("div");
+  seg.className = "seg";
+  seg.setAttribute("role", "group");
+  seg.setAttribute("aria-label", t("trend_period"));
+  for (const period of ["3m", "6m", "1y"]) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.trend = period;
+    button.textContent = period === "1y" ? "1Y" : period.toUpperCase();
+    button.setAttribute("aria-label", t("trend_" + period));
+    button.setAttribute("aria-pressed", (state.trend || "6m") === period ? "true" : "false");
+    button.addEventListener("click", () => {
+      state.trend = period;
+      writePrefs();
+      if (state.view === "b") renderCounter();
+    });
+    seg.append(button);
+  }
+  sel.addEventListener("change", () => {
+    state.trendEco = sel.value;
+    writePrefs();
+    if (state.view === "b") renderCounter();
+  });
+  controls.append(sel, seg);
+  head.append(title, controls);
+  panel.append(head);
+  const note = document.createElement("p");
+  note.className = "hint";
+  note.textContent = t("trend_note");
+  panel.append(note);
+
+  const asOf = String(DATA.generated_at || "").slice(0, 10);
+  const ready = HISTORY && HISTORY.days && Object.keys(HISTORY.days).length;
+  if (HISTORY === undefined || !ready || !/^\d{4}-\d{2}-\d{2}$/.test(asOf)) {
+    const empty = document.createElement("p");
+    empty.className = "empty";
+    empty.textContent = HISTORY === undefined ? t("loading") : t(ready ? "trend_missing" : (HISTORY ? "trend_empty_history" : "trend_missing"));
+    panel.append(empty);
+    return panel;
+  }
+
+  let packageKeys = null;
+  let ecosystemId = trendEco;
+  if (state.stack) {
+    packageKeys = [];
+    for (const eco of viewing) {
+      if (trendEco !== "all" && eco.id !== trendEco) continue;
+      for (const pkg of eco.packages) packageKeys.push(pkg.key);
+    }
+    ecosystemId = null;
+  }
+  const dayCounts = DepweatherTrends.selectionDays(HISTORY.days, { packageKeys, ecosystemId });
+  const ecoLabel = trendEco === "all" ? all.textContent : (options.find((eco) => eco.id === trendEco) || {}).label || trendEco;
+  const figure = DepweatherTrends.renderFigure({
+    asOf, period: state.trend || "6m", dayCounts, label: ecoLabel, lang: LANG, domId: "eco-" + trendEco,
+  });
+  const holder = document.createElement("div");
+  holder.innerHTML = figure.svg;
+  if (holder.firstElementChild) panel.append(holder.firstElementChild);
+  panel.append(trendLegend());
+  const details = document.createElement("details");
+  details.className = "trend-fallback";
+  const summary = document.createElement("summary");
+  summary.textContent = t("trend_numbers");
+  const tableHost = document.createElement("div");
+  tableHost.innerHTML = figure.table;
+  details.append(summary, tableHost);
+  panel.append(details);
+  panel.setAttribute("aria-labelledby", "trend-heading");
+  return panel;
+}
+
 function renderCounter() {
   const root = $("#view-b");
   root.replaceChildren();
+  root.append(renderTrendPanel());
   const bars = document.createElement("div");
   bars.className = "panel";
   bars.innerHTML = `<h2>${t("b_month_head")}</h2>`;
@@ -1862,6 +2031,31 @@ function initControls() {
   });
 }
 
+async function loadHistory() {
+  try {
+    const response = await fetch("data/history/manifest.json", { cache: "no-cache" });
+    if (!response.ok) return null;
+    const manifest = await response.json();
+    const months = Array.isArray(manifest.months) ? manifest.months : [];
+    const files = await Promise.all(months.map(async (month) => {
+      if (!/^\d{4}-\d{2}$/.test(month)) return null;
+      const res = await fetch(`data/history/${month}.json`, { cache: "no-cache" });
+      if (!res.ok) return null;
+      return res.json();
+    }));
+    const days = {};
+    for (const file of files) {
+      if (!file || !file.days || typeof file.days !== "object") continue;
+      for (const [day, doc] of Object.entries(file.days)) {
+        if (/^\d{4}-\d{2}-\d{2}$/.test(day) && doc && typeof doc === "object") days[day] = doc;
+      }
+    }
+    return { months, days };
+  } catch (e) {
+    return null;
+  }
+}
+
 async function main() {
   const prefs = readPrefs();
   if (prefs.theme === "dark" || prefs.theme === "light") document.documentElement.dataset.theme = prefs.theme;
@@ -1869,6 +2063,8 @@ async function main() {
   LANG = fromUrl.lang || (prefs.lang in I18N ? prefs.lang : null) || ((navigator.language || "").toLowerCase().startsWith("ko") ? "ko" : "en");
   state.view = fromUrl.view || prefs.view || (innerWidth < 768 ? "c" : "a");
   state.range = fromUrl.range || prefs.range || 7;
+  state.trend = (prefs.trend === "3m" || prefs.trend === "6m" || prefs.trend === "1y") ? prefs.trend : "6m";
+  state.trendEco = typeof prefs.trendEco === "string" && prefs.trendEco ? prefs.trendEco : "all";
   state.kevOnly = !!fromUrl.kevOnly;
   state.pkg = fromUrl.pkg || null;
   const storedStack = readStack();
@@ -1882,6 +2078,7 @@ async function main() {
   applyStaticText();
   initControls();
   render();
+  const historyPromise = loadHistory();
   try {
     const r = await fetch("data/latest.json", { cache: "no-cache" });
     if (!r.ok) throw new Error(r.status);
@@ -1890,6 +2087,7 @@ async function main() {
     $("#meta").textContent = t("load_error");
     return;
   }
+  HISTORY = await historyPromise;
   NOW = Date.parse(DATA.generated_at);
   for (const e of DATA.ecosystems) for (const p of e.packages) PKGS.set(p.key, { eco: e, pkg: p });
   if (state.stack) {

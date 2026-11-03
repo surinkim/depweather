@@ -1,0 +1,198 @@
+{
+ "schema": 1,
+ "month": "2025-12",
+ "days": {
+  "2025-12-02": {
+   "packages": {
+    "go/stdlib": {
+     "u": 2
+    },
+    "pypi/django": {
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 2
+    },
+    "pypi": {
+     "h": 1,
+     "m": 1
+    }
+   }
+  },
+  "2025-12-03": {
+   "packages": {
+    "npm/next": {
+     "c": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "c": 1
+    }
+   }
+  },
+  "2025-12-05": {
+   "packages": {
+    "pypi/urllib3": {
+     "h": 2
+    },
+    "runtimes/python": {
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 2
+    },
+    "runtimes": {
+     "m": 2
+    }
+   }
+  },
+  "2025-12-06": {
+   "packages": {
+    "runtimes/mongodb": {
+     "h": 1,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1,
+     "m": 2
+    }
+   }
+  },
+  "2025-12-08": {
+   "packages": {
+    "npm/astro": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 1
+    }
+   }
+  },
+  "2025-12-09": {
+   "packages": {
+    "runtimes/apache": {
+     "h": 3,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 3,
+     "m": 2
+    }
+   }
+  },
+  "2025-12-11": {
+   "packages": {
+    "npm/next": {
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1,
+     "m": 1
+    }
+   }
+  },
+  "2025-12-12": {
+   "packages": {
+    "npm/next": {
+     "h": 1
+    },
+    "runtimes/mongodb": {
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1
+    },
+    "runtimes": {
+     "h": 1,
+     "m": 1
+    }
+   }
+  },
+  "2025-12-13": {
+   "packages": {
+    "runtimes/mongodb": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "m": 1
+    }
+   }
+  },
+  "2025-12-15": {
+   "packages": {
+    "go/k8s.io/kubernetes": {
+     "m": 1
+    },
+    "maven/io.netty:netty-codec-http": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "m": 1
+    },
+    "maven": {
+     "m": 1
+    }
+   }
+  },
+  "2025-12-18": {
+   "packages": {
+    "maven/org.apache.logging.log4j:log4j-core": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "m": 1
+    }
+   }
+  },
+  "2025-12-23": {
+   "packages": {
+    "pypi/transformers": {
+     "h": 8
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 8
+    }
+   }
+  },
+  "2025-12-29": {
+   "packages": {
+    "runtimes/mongodb": {
+     "h": 1,
+     "k": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1,
+     "k": 1
+    }
+   }
+  }
+ }
+}

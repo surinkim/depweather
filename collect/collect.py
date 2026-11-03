@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Collect today's vulnerability data for the packages in stacks.yml.
 
-Writes data/latest.json, data/history/YYYY-MM-DD.json, data/today.md,
-and Atom feeds (feed.xml and feed/<package>.xml). The feeds are generated
-again when the site is published; they are not committed.
+Writes data/latest.json, a compact day in data/history/YYYY-MM.json,
+data/today.md, and Atom feeds (feed.xml and feed/<package>.xml). The feeds
+are generated again when the site is published; they are not committed.
+History files count advisories by severity and KEV. They are committed.
+Full daily copies of latest.json are not written.
 
 Sources:
   OSV.dev       per-ecosystem GCS export (modified_id.csv + one JSON per entry)
@@ -371,7 +373,10 @@ def merge_aliases(ecosystem: str, patterns: list[str], recs: list[dict]) -> list
         sev, score, sev_src = "UNKNOWN", None, None
         for r in recs_g:
             s, sc, src = record_severity(r)
-            if SEVERITY_RANK[s] > SEVERITY_RANK[sev]:
+            # LOW and UNKNOWN share a rank. An explicit label still beats the default,
+            # so a GitHub "LOW" advisory is not stored as unknown.
+            labeled = sev == "UNKNOWN" and s not in ("UNKNOWN", "NONE")
+            if SEVERITY_RANK[s] > SEVERITY_RANK[sev] or labeled:
                 sev, sev_src = s, src
             if sc is not None and (score is None or sc > score):
                 score = sc
@@ -774,10 +779,16 @@ def main() -> int:
     }
 
     DATA.mkdir(exist_ok=True)
-    (DATA / "history").mkdir(exist_ok=True)
+    import history as history_mod
+    history_dir = DATA / "history"
+    removed = history_mod.remove_legacy_snapshots(history_dir)
+    if removed:
+        log(f"removed {len(removed)} full-day snapshot(s)")
+    hist_start, hist_end = history_mod.apply_window(history_dir, ecosystems, now, WINDOW_DAYS)
+    log(f"history {hist_start.isoformat()} .. {hist_end.isoformat()}")
+
     text = json.dumps(out, ensure_ascii=False, indent=1)
     latest_path.write_text(text + "\n")
-    (DATA / "history" / f"{now.date().isoformat()}.json").write_text(text + "\n")
     (DATA / "today.md").write_text(today_markdown(out))
     log(f"wrote {latest_path} ({len(text) // 1024} KiB), affected packages (7d): {len(affected)}")
     # Feeds are a pure function of this snapshot. Pages regenerates them too,

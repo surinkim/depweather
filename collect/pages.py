@@ -38,6 +38,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "collect"))
 
 import feeds  # noqa: E402
+import history as history_mod  # noqa: E402
 
 SITE = feeds.SITE
 CURRENT_DAYS = 7
@@ -345,7 +346,8 @@ def iter_packages(data: dict):
             yield eco, pkg
 
 
-def render_page(eco: dict, pkg: dict, generated: datetime, generated_raw: str) -> str:
+def render_page(eco: dict, pkg: dict, generated: datetime, generated_raw: str,
+                history_days: dict | None = None) -> str:
     key = pkg["key"]
     label = str(pkg.get("label") or pkg.get("name") or key)
     name = str(pkg.get("name") or label)
@@ -376,6 +378,8 @@ def render_page(eco: dict, pkg: dict, generated: datetime, generated_raw: str) -
     ld = _json_ld(page_url, en_title, ko_title, en_desc, generated_raw, label, shown)
     import badges
     panel = badges.panel_html(pkg, generated)
+    trend_counts = history_mod.package_day_counts(history_days, key)
+    trend_html = history_mod.render_trend_section(label, trend_counts, generated.date(), key)
     return f"""<!doctype html>
 <html lang="en" data-title-en="{esc(en_title)}" data-title-ko="{esc(ko_title)}" data-desc-en="{esc(en_desc)}" data-desc-ko="{esc(ko_desc)}">
 <head>
@@ -437,7 +441,7 @@ def render_page(eco: dict, pkg: dict, generated: datetime, generated_raw: str) -
   --grid: #dce7ef; --border: rgba(18, 50, 77, 0.12); --accent: #1d6fb8;
   --sev-0: #e3ecf3; --sev-0-ink: #3f5b73; --sev-1: #f4c542; --sev-1-ink: #12324d;
   --sev-2: #f28c38; --sev-2-ink: #12324d; --sev-3: #d9433b; --sev-3-ink: #ffffff;
-  --sev-kev: #a32ca0; --group-head: #e6f0f7;
+  --sev-kev: #a32ca0; --sev-low: #8fb84a; --sev-unk: #8aa4b8; --group-head: #e6f0f7;
 }}
 @media (prefers-color-scheme: dark) {{
   :root:where(:not([data-theme="light"])) {{
@@ -517,6 +521,21 @@ table.data td.nowrap {{ white-space: nowrap; }}
 }}
 footer {{ color: var(--muted); font-size: 12.5px; padding: 8px 0 32px; }}
 footer p {{ margin: 4px 0; }}
+.trend-head {{ display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }}
+.trend-head h2 {{ margin: 0; flex: 1 1 auto; }}
+.trend-svg {{ width: 100%; height: auto; display: block; }}
+.trend-legend {{ display: flex; flex-wrap: wrap; gap: 6px 14px; list-style: none; padding: 0; margin: 8px 0; font-size: 12.5px; color: var(--ink-2); }}
+.trend-legend li {{ display: inline-flex; align-items: center; }}
+.trend-legend .swatch {{ width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; }}
+.trend-legend .swatch.c {{ background: var(--sev-3); }}
+.trend-legend .swatch.h {{ background: var(--sev-2); }}
+.trend-legend .swatch.m {{ background: var(--sev-1); }}
+.trend-legend .swatch.l {{ background: var(--sev-low); }}
+.trend-legend .swatch.u {{ background: var(--sev-unk); }}
+.trend-legend .kev {{ width: 8px; height: 8px; margin: 0 6px 0 2px; background: var(--sev-kev); transform: rotate(45deg); border-radius: 1px; }}
+.trend-fallback {{ margin-top: 8px; }}
+.trend-fallback summary {{ cursor: pointer; color: var(--ink-2); font-size: 13px; }}
+.trend-table caption {{ caption-side: bottom; text-align: left; color: var(--muted); font-size: 12px; padding-top: 6px; }}
 @media (max-width: 767px) {{
   table.data thead {{ display: none; }}
   table.data tr {{ display: block; border-top: 1px solid var(--grid); padding: 6px 0; }}
@@ -546,6 +565,7 @@ footer p {{ margin: 4px 0; }}
     <p class="lede" data-en="{esc(en_desc)}" data-ko="{esc(ko_desc)}">{esc(en_desc)}</p>
     {fixed_html}
     {panel}
+    {trend_html}
     <section class="panel" id="current">
       <h2 data-en="{esc(en_current)}" data-ko="{esc(ko_current)}">{esc(en_current)}</h2>
       <p class="note" data-i18n="current_note">Published in the last 7 days, or added to CISA KEV in that time.</p>
@@ -652,6 +672,10 @@ footer p {{ margin: 4px 0; }}
       var v = el.getAttribute(lang === "ko" ? "data-ko" : "data-en");
       if (v != null) el.textContent = v;
     }});
+    document.querySelectorAll("[data-aria-en]").forEach(function (el) {{
+      var v = el.getAttribute(lang === "ko" ? "data-aria-ko" : "data-aria-en");
+      if (v != null) el.setAttribute("aria-label", v);
+    }});
     document.querySelectorAll("[data-src-en]").forEach(function (el) {{
       var src = el.getAttribute(lang === "ko" ? "data-src-ko" : "data-src-en");
       var alt = el.getAttribute(lang === "ko" ? "data-alt-ko" : "data-alt-en");
@@ -717,6 +741,23 @@ footer p {{ margin: 4px 0; }}
       }} else fallback();
     }});
   }});
+  function showTrend(which) {{
+    document.querySelectorAll("[data-trend-panel]").forEach(function (el) {{
+      el.hidden = el.getAttribute("data-trend-panel") !== which;
+    }});
+    document.querySelectorAll("#trend [data-trend]").forEach(function (b) {{
+      b.setAttribute("aria-pressed", b.getAttribute("data-trend") === which ? "true" : "false");
+    }});
+  }}
+  document.querySelectorAll("#trend [data-trend]").forEach(function (b) {{
+    b.addEventListener("click", function () {{
+      var which = b.getAttribute("data-trend");
+      showTrend(which);
+      save({{ trend: which }});
+    }});
+  }});
+  var savedTrend = prefs().trend;
+  if (savedTrend === "3m" || savedTrend === "6m" || savedTrend === "1y") showTrend(savedTrend);
   apply(initialLang());
 }})();
 </script>
@@ -725,8 +766,13 @@ footer p {{ margin: 4px 0; }}
 """
 
 
-def write_pages(data: dict, out: Path) -> int:
-    """Write index.html for every tracked package. Returns the page count."""
+def write_pages(data: dict, out: Path, history_days: dict | None = None) -> int:
+    """Write index.html for every tracked package. Returns the page count.
+
+    ``history_days`` is the compact day map from ``data/history``. None means
+    those files are not available, and the chart says so instead of drawing
+    an empty year.
+    """
     generated_raw = str(data.get("generated_at") or "")
     generated = feeds.parse_time(generated_raw)
     n = 0
@@ -737,7 +783,7 @@ def write_pages(data: dict, out: Path) -> int:
         if not path.resolve().is_relative_to(out.resolve()):
             raise ValueError(f"package page escapes output dir: {pkg['key']!r}")
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(render_page(eco, pkg, generated, generated_raw), encoding="utf-8")
+        path.write_text(render_page(eco, pkg, generated, generated_raw, history_days), encoding="utf-8")
         n += 1
     return n
 
@@ -806,7 +852,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--sitemap-base", type=Path, default=ROOT / "sitemap.xml")
     args = p.parse_args(argv)
     data = json.loads(args.latest.read_text(encoding="utf-8"))
-    n = write_pages(data, args.out)
+    days = history_mod.load_for_pages(ROOT / "data" / "history")
+    n = write_pages(data, args.out, days)
     written = write_sitemap(data, args.out, args.sitemap_base)
     where = written if written else "sitemap.xml left unchanged"
     print(f"wrote {n} package pages under {args.out} ({where})", file=sys.stderr)

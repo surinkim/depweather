@@ -1,0 +1,574 @@
+{
+ "schema": 1,
+ "month": "2026-10",
+ "days": {
+  "2026-10-01": {
+   "packages": {
+    "runtimes/mongodb": {
+     "h": 2
+    },
+    "runtimes/php": {
+     "h": 2,
+     "m": 9
+    },
+    "runtimes/tomcat": {
+     "c": 3,
+     "h": 7,
+     "m": 1,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 3,
+     "h": 11,
+     "m": 10,
+     "l": 1
+    }
+   }
+  },
+  "2026-10-05": {
+   "packages": {
+    "runtimes/apache": {
+     "h": 4,
+     "m": 1,
+     "l": 1
+    },
+    "runtimes/python": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 4,
+     "m": 2,
+     "l": 1
+    }
+   }
+  },
+  "2026-10-06": {
+   "packages": {
+    "runtimes/apache": {
+     "c": 3,
+     "h": 8,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 3,
+     "h": 8,
+     "m": 2
+    }
+   }
+  },
+  "2026-10-07": {
+   "packages": {
+    "npm/next": {
+     "h": 1,
+     "m": 4,
+     "l": 1
+    },
+    "nuget/SixLabors.ImageSharp": {
+     "h": 5,
+     "m": 3
+    },
+    "runtimes/apache": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 1,
+     "m": 4,
+     "l": 1
+    },
+    "nuget": {
+     "h": 5,
+     "m": 3
+    },
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2026-10-08": {
+   "packages": {
+    "go/golang.org/x/net": {
+     "u": 5
+    },
+    "go/stdlib": {
+     "u": 13
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 13
+    }
+   }
+  },
+  "2026-10-09": {
+   "packages": {
+    "crates/zip": {
+     "h": 1,
+     "u": 1
+    },
+    "runtimes/python": {
+     "c": 1,
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "h": 1,
+     "u": 1
+    },
+    "runtimes": {
+     "c": 1,
+     "h": 1
+    }
+   }
+  },
+  "2026-10-10": {
+   "packages": {
+    "crates/zip": {
+     "c": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "c": 1
+    }
+   }
+  },
+  "2026-10-13": {
+   "packages": {
+    "crates/tokio": {
+     "u": 1
+    },
+    "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
+     "c": 2,
+     "h": 9,
+     "m": 2
+    },
+    "nuget/Microsoft.AspNetCore.Components": {
+     "h": 2
+    },
+    "nuget/Microsoft.NETCore.App.Runtime.linux-x64": {
+     "h": 6,
+     "m": 2
+    },
+    "nuget/System.Security.Cryptography.Xml": {
+     "h": 4
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "u": 1
+    },
+    "nuget": {
+     "c": 2,
+     "h": 19,
+     "m": 4
+    }
+   }
+  },
+  "2026-10-14": {
+   "packages": {
+    "crates/rustls": {
+     "m": 1,
+     "l": 3
+    },
+    "packagist/drupal/core": {
+     "u": 3
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "m": 1,
+     "l": 3
+    },
+    "packagist": {
+     "u": 3
+    }
+   }
+  },
+  "2026-10-15": {
+   "packages": {
+    "nuget/MessagePack": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "nuget": {
+     "m": 1
+    }
+   }
+  },
+  "2026-10-16": {
+   "packages": {
+    "runtimes/mariadb": {
+     "h": 8,
+     "m": 4
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 8,
+     "m": 4
+    }
+   }
+  },
+  "2026-10-19": {
+   "packages": {
+    "pypi/aiohttp": {
+     "h": 2,
+     "m": 1
+    },
+    "pypi/pillow": {
+     "c": 2,
+     "h": 8
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "c": 2,
+     "h": 10,
+     "m": 1
+    }
+   }
+  },
+  "2026-10-20": {
+   "packages": {
+    "crates/rustls": {
+     "u": 1
+    },
+    "npm/hono": {
+     "m": 1
+    },
+    "npm/vite": {
+     "h": 1,
+     "m": 2
+    },
+    "pypi/aiohttp": {
+     "h": 1,
+     "m": 3,
+     "l": 1
+    },
+    "pypi/certifi": {
+     "c": 1
+    },
+    "pypi/pillow": {
+     "h": 4,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "u": 1
+    },
+    "npm": {
+     "h": 1,
+     "m": 3
+    },
+    "pypi": {
+     "c": 1,
+     "h": 5,
+     "m": 5,
+     "l": 1
+    }
+   }
+  },
+  "2026-10-21": {
+   "packages": {
+    "crates/tokio": {
+     "m": 1
+    },
+    "go/stdlib": {
+     "u": 1
+    },
+    "npm/vite": {
+     "m": 2,
+     "l": 1
+    },
+    "pypi/pillow": {
+     "c": 3,
+     "h": 11,
+     "m": 7
+    },
+    "runtimes/mariadb": {
+     "c": 3,
+     "h": 2,
+     "m": 2
+    },
+    "runtimes/nginx": {
+     "c": 3,
+     "h": 1,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "m": 1
+    },
+    "go": {
+     "u": 1
+    },
+    "npm": {
+     "m": 2,
+     "l": 1
+    },
+    "pypi": {
+     "c": 3,
+     "h": 11,
+     "m": 7
+    },
+    "runtimes": {
+     "c": 6,
+     "h": 3,
+     "m": 3
+    }
+   }
+  },
+  "2026-10-22": {
+   "packages": {
+    "crates/zip": {
+     "h": 1
+    },
+    "npm/astro": {
+     "m": 1,
+     "l": 1
+    },
+    "npm/fastify": {
+     "l": 1
+    },
+    "npm/next": {
+     "c": 2,
+     "h": 1,
+     "m": 1
+    },
+    "npm/nuxt": {
+     "m": 3,
+     "l": 1
+    },
+    "pypi/pillow": {
+     "h": 3,
+     "m": 1
+    },
+    "pypi/pyjwt": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "h": 1
+    },
+    "npm": {
+     "c": 2,
+     "h": 1,
+     "m": 5,
+     "l": 3
+    },
+    "pypi": {
+     "h": 4,
+     "m": 1
+    }
+   }
+  },
+  "2026-10-23": {
+   "packages": {
+    "go/github.com/labstack/echo/v4": {
+     "c": 1,
+     "h": 3
+    },
+    "hex/plug": {
+     "u": 1
+    },
+    "npm/@sveltejs/kit": {
+     "l": 2
+    },
+    "npm/undici": {
+     "h": 1,
+     "m": 2
+    },
+    "packagist/laravel/framework": {
+     "c": 1,
+     "m": 1
+    },
+    "pypi/setuptools": {
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "c": 1,
+     "h": 3
+    },
+    "hex": {
+     "u": 1
+    },
+    "npm": {
+     "h": 1,
+     "m": 2,
+     "l": 2
+    },
+    "packagist": {
+     "c": 1,
+     "m": 1
+    },
+    "pypi": {
+     "l": 1
+    }
+   }
+  },
+  "2026-10-26": {
+   "packages": {
+    "hex/hackney": {
+     "u": 5
+    },
+    "runtimes/php": {
+     "c": 2,
+     "k": 2
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "u": 5
+    },
+    "runtimes": {
+     "c": 2,
+     "k": 2
+    }
+   }
+  },
+  "2026-10-27": {
+   "packages": {
+    "go/golang.org/x/net": {
+     "u": 2
+    },
+    "maven/com.google.guava:guava": {
+     "h": 1
+    },
+    "npm/undici": {
+     "h": 4,
+     "m": 2
+    },
+    "packagist/symfony/http-kernel": {
+     "h": 2
+    },
+    "runtimes/node": {
+     "c": 1,
+     "k": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 2
+    },
+    "maven": {
+     "h": 1
+    },
+    "npm": {
+     "h": 4,
+     "m": 2
+    },
+    "packagist": {
+     "h": 2
+    },
+    "runtimes": {
+     "c": 1,
+     "k": 1
+    }
+   }
+  },
+  "2026-10-28": {
+   "packages": {
+    "crates/zip": {
+     "c": 1
+    },
+    "go/github.com/labstack/echo/v4": {
+     "h": 1,
+     "m": 9
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "c": 1
+    },
+    "go": {
+     "h": 1,
+     "m": 9
+    }
+   }
+  },
+  "2026-10-29": {
+   "packages": {
+    "crates/zip": {
+     "h": 2,
+     "m": 1
+    },
+    "npm/vite": {
+     "m": 1
+    },
+    "runtimes/node": {
+     "h": 3,
+     "m": 3,
+     "l": 3
+    },
+    "runtimes/python": {
+     "m": 1
+    },
+    "runtimes/tomcat": {
+     "c": 3,
+     "h": 3,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "h": 2,
+     "m": 1
+    },
+    "npm": {
+     "m": 1
+    },
+    "runtimes": {
+     "c": 3,
+     "h": 6,
+     "m": 6,
+     "l": 3
+    }
+   }
+  },
+  "2026-10-30": {
+   "packages": {
+    "go/github.com/gofiber/fiber/v2": {
+     "m": 1
+    },
+    "npm/nuxt": {
+     "m": 1
+    },
+    "packagist/phpunit/phpunit": {
+     "m": 1
+    },
+    "runtimes/python": {
+     "c": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "m": 1
+    },
+    "npm": {
+     "m": 1
+    },
+    "packagist": {
+     "m": 1
+    },
+    "runtimes": {
+     "c": 1
+    }
+   }
+  }
+ }
+}

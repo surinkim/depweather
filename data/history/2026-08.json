@@ -1,0 +1,353 @@
+{
+ "schema": 1,
+ "month": "2026-08",
+ "days": {
+  "2026-08-02": {
+   "packages": {
+    "pypi/transformers": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1
+    }
+   }
+  },
+  "2026-08-03": {
+   "packages": {
+    "maven/org.bouncycastle:bcprov-jdk18on": {
+     "c": 1,
+     "h": 1
+    },
+    "npm/@angular/core": {
+     "h": 1
+    },
+    "npm/hono": {
+     "m": 1
+    },
+    "npm/undici": {
+     "h": 1,
+     "m": 4
+    },
+    "packagist/guzzlehttp/guzzle": {
+     "h": 1,
+     "m": 1
+    },
+    "pypi/aiohttp": {
+     "h": 1,
+     "m": 2
+    },
+    "pypi/cryptography": {
+     "h": 2,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "c": 1,
+     "h": 1
+    },
+    "npm": {
+     "h": 2,
+     "m": 5
+    },
+    "packagist": {
+     "h": 1,
+     "m": 1
+    },
+    "pypi": {
+     "h": 3,
+     "m": 3
+    }
+   }
+  },
+  "2026-08-04": {
+   "packages": {
+    "pypi/django": {
+     "h": 1,
+     "m": 1
+    },
+    "runtimes/tomcat": {
+     "h": 1,
+     "k": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1,
+     "m": 1
+    },
+    "runtimes": {
+     "h": 1,
+     "k": 1
+    }
+   }
+  },
+  "2026-08-05": {
+   "packages": {
+    "npm/nuxt": {
+     "h": 5,
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "h": 5,
+     "m": 1
+    }
+   }
+  },
+  "2026-08-06": {
+   "packages": {
+    "packagist/league/commonmark": {
+     "h": 4,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "h": 4,
+     "m": 2
+    }
+   }
+  },
+  "2026-08-07": {
+   "packages": {
+    "npm/@sveltejs/kit": {
+     "m": 1
+    },
+    "npm/hono": {
+     "m": 2,
+     "l": 1
+    },
+    "npm/nuxt": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 4,
+     "l": 1
+    }
+   }
+  },
+  "2026-08-10": {
+   "packages": {
+    "hex/phoenix_live_view": {
+     "u": 1
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "u": 1
+    }
+   }
+  },
+  "2026-08-11": {
+   "packages": {
+    "nuget/Microsoft.NETCore.App.Runtime.linux-x64": {
+     "h": 2,
+     "m": 2
+    }
+   },
+   "ecosystems": {
+    "nuget": {
+     "h": 2,
+     "m": 2
+    }
+   }
+  },
+  "2026-08-13": {
+   "packages": {
+    "go/stdlib": {
+     "u": 6
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 6
+    }
+   }
+  },
+  "2026-08-17": {
+   "packages": {
+    "crates/h2": {
+     "u": 1
+    },
+    "maven/io.netty:netty-codec-http": {
+     "m": 1
+    },
+    "runtimes/java": {
+     "h": 5,
+     "m": 7,
+     "l": 7
+    },
+    "runtimes/mongodb": {
+     "h": 11,
+     "m": 5
+    },
+    "runtimes/node": {
+     "h": 3,
+     "m": 6,
+     "l": 2
+    },
+    "runtimes/php": {
+     "c": 2,
+     "m": 1
+    },
+    "runtimes/python": {
+     "l": 2
+    },
+    "runtimes/tomcat": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "crates": {
+     "u": 1
+    },
+    "maven": {
+     "m": 1
+    },
+    "runtimes": {
+     "c": 2,
+     "h": 20,
+     "m": 19,
+     "l": 11
+    }
+   }
+  },
+  "2026-08-18": {
+   "packages": {
+    "hex/cowboy": {
+     "u": 1
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "u": 1
+    }
+   }
+  },
+  "2026-08-19": {
+   "packages": {
+    "runtimes/mongodb": {
+     "c": 1,
+     "h": 5,
+     "m": 2
+    },
+    "runtimes/postgresql": {
+     "h": 18,
+     "m": 7,
+     "l": 3
+    },
+    "runtimes/python": {
+     "h": 2
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 1,
+     "h": 25,
+     "m": 9,
+     "l": 3
+    }
+   }
+  },
+  "2026-08-21": {
+   "packages": {
+    "runtimes/wordpress": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "h": 1
+    }
+   }
+  },
+  "2026-08-24": {
+   "packages": {
+    "go/github.com/gorilla/websocket": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "m": 1
+    }
+   }
+  },
+  "2026-08-25": {
+   "packages": {
+    "go/github.com/labstack/echo/v4": {
+     "h": 1
+    },
+    "runtimes/python": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "h": 1
+    },
+    "runtimes": {
+     "m": 1
+    }
+   }
+  },
+  "2026-08-26": {
+   "packages": {
+    "maven/org.apache.tomcat.embed:tomcat-embed-core": {
+     "c": 4
+    },
+    "runtimes/java": {
+     "h": 1,
+     "m": 2,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "c": 4
+    },
+    "runtimes": {
+     "h": 1,
+     "m": 2,
+     "l": 1
+    }
+   }
+  },
+  "2026-08-27": {
+   "packages": {
+    "maven/org.springframework:spring-webmvc": {
+     "c": 2
+    }
+   },
+   "ecosystems": {
+    "maven": {
+     "c": 2
+    }
+   }
+  },
+  "2026-08-28": {
+   "packages": {
+    "go/golang.org/x/crypto": {
+     "u": 1
+    },
+    "runtimes/tomcat": {
+     "c": 1
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 1
+    },
+    "runtimes": {
+     "c": 1
+    }
+   }
+  }
+ }
+}
