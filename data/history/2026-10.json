@@ -29,6 +29,12 @@
   },
   "2026-10-05": {
    "packages": {
+    "crates/rustls": {
+     "m": 1
+    },
+    "pypi/pyjwt": {
+     "m": 1
+    },
     "runtimes/apache": {
      "h": 4,
      "m": 1,
@@ -39,6 +45,12 @@
     }
    },
    "ecosystems": {
+    "crates": {
+     "m": 1
+    },
+    "pypi": {
+     "m": 1
+    },
     "runtimes": {
      "h": 4,
      "m": 2,
@@ -95,15 +107,20 @@
   "2026-10-08": {
    "packages": {
     "go/golang.org/x/net": {
-     "u": 5
+     "c": 1,
+     "h": 4
     },
     "go/stdlib": {
-     "u": 13
+     "c": 2,
+     "h": 9,
+     "m": 2
     }
    },
    "ecosystems": {
     "go": {
-     "u": 13
+     "c": 2,
+     "h": 9,
+     "m": 2
     }
    }
   },
@@ -241,7 +258,7 @@
   "2026-10-20": {
    "packages": {
     "crates/rustls": {
-     "u": 1
+     "m": 1
     },
     "npm/hono": {
      "m": 1
@@ -265,7 +282,7 @@
    },
    "ecosystems": {
     "crates": {
-     "u": 1
+     "m": 1
     },
     "npm": {
      "h": 1,
@@ -285,7 +302,7 @@
      "m": 1
     },
     "go/stdlib": {
-     "u": 1
+     "m": 1
     },
     "npm/vite": {
      "m": 2,
@@ -312,7 +329,7 @@
      "m": 1
     },
     "go": {
-     "u": 1
+     "m": 1
     },
     "npm": {
      "m": 2,
@@ -382,7 +399,7 @@
      "h": 3
     },
     "hex/plug": {
-     "u": 1
+     "m": 1
     },
     "npm/@sveltejs/kit": {
      "l": 2
@@ -405,7 +422,7 @@
      "h": 3
     },
     "hex": {
-     "u": 1
+     "m": 1
     },
     "npm": {
      "h": 1,
@@ -424,7 +441,10 @@
   "2026-10-26": {
    "packages": {
     "hex/hackney": {
-     "u": 5
+     "c": 1,
+     "h": 1,
+     "m": 2,
+     "l": 1
     },
     "runtimes/php": {
      "c": 2,
@@ -433,7 +453,10 @@
    },
    "ecosystems": {
     "hex": {
-     "u": 5
+     "c": 1,
+     "h": 1,
+     "m": 2,
+     "l": 1
     },
     "runtimes": {
      "c": 2,
