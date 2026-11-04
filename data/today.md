@@ -1,19 +1,15 @@
 # depweather forecast, 2026-11-04
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-04T14:29:00Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-04T23:40:11Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 11 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 7
-- New CVEs in NVD today (UTC): 208
-- CVEs published in 2026-11 so far: 1,514 (same month last year: 3,021)
+- Popular packages with a new advisory this week: 10 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 8
+- New CVEs in NVD today (UTC): 415
+- CVEs published in 2026-11 so far: 1,712 (same month last year: 3,021)
 
 ## By ecosystem
-
-### crates.io
-
-- **zip**: 4 advisories, worst critical; fixed in 9.0.0, 9.0.5. Example: [GHSA-m665-v7pm-7grj](https://osv.dev/vulnerability/GHSA-m665-v7pm-7grj) zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE
 
 ### Runtimes & servers
 
@@ -25,10 +21,9 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 - **.NET runtime (Microsoft.NETCore.App.Runtime.linux-x64)**: 1 advisory, worst high; fixed in 8.0.33, 9.0.22, 10.0.14, 11.0.0-rc.3.26522.148. Example: [GHSA-p3jp-9v83-76w9](https://osv.dev/vulnerability/GHSA-p3jp-9v83-76w9) Microsoft Security Advisory CVE-2026-111497 - .NET Brotli Decoder Out-of-bounds Write Vulnerability
 
-### Go
+### crates.io
 
-- **Echo (github.com/labstack/echo/v4)**: 10 advisories, worst high; fixed in 4.16.0, 4.15.3, 4.15.2. Example: [GHSA-375p-5qhx-8wq4](https://osv.dev/vulnerability/GHSA-375p-5qhx-8wq4) Echo's middleware.Static: `%2F`-encoded path bypasses route/group middleware guarding a statically-served path
-- **Fiber (github.com/gofiber/fiber/v2)**: 1 advisory, worst medium; fixed in 2.52.3. Example: [GHSA-g5jq-qmqr-qrwf](https://osv.dev/vulnerability/GHSA-g5jq-qmqr-qrwf) Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
+- **zip**: 3 advisories, worst high; fixed in 9.0.0. Example: [GHSA-9hj8-73fh-9963](https://osv.dev/vulnerability/GHSA-9hj8-73fh-9963) zip: legacy Shrink/Reduce/Implode decoder: denial of service from attacker-controlled ZIP64 uncompressed size
 
 ### Hex
 
@@ -42,6 +37,10 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 ### Packagist
 
 - **PHPUnit (phpunit/phpunit)**: 1 advisory, worst medium; fixed in 13.4.4. Example: [GHSA-9vw2-f4vp-x7gf](https://osv.dev/vulnerability/GHSA-9vw2-f4vp-x7gf) PHPUnit vulnerable to code execution by other local users via shared temporary directory in PHPT code coverage handling
+
+### Go
+
+- **Fiber (github.com/gofiber/fiber/v2)**: 1 advisory, worst medium; fixed in 2.52.3. Example: [GHSA-g5jq-qmqr-qrwf](https://osv.dev/vulnerability/GHSA-g5jq-qmqr-qrwf) Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
 
 ### PyPI
 
@@ -57,6 +56,7 @@ No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-11-04: CVE-2024-27834, Apple Multiple Products: Apple Multiple Products Improper Authentication Vulnerability
 - 2026-11-03: CVE-2026-119977, WordPress WordPress Core: WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability
 - 2026-10-30: CVE-2026-118527, Ivanti Connect Secure: Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability
 - 2026-10-30: CVE-2026-111357, Ivanti Connect Secure: Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability
