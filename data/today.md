@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-03
+# depweather forecast, 2026-11-04
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-03T23:24:05Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-04T14:29:00Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 10 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 9
-- New CVEs in NVD today (UTC): 732
-- CVEs published in 2026-11 so far: 1,306 (same month last year: 3,021)
+- Popular packages with a new advisory this week: 11 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 7
+- New CVEs in NVD today (UTC): 208
+- CVEs published in 2026-11 so far: 1,514 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -30,6 +30,10 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **Echo (github.com/labstack/echo/v4)**: 10 advisories, worst high; fixed in 4.16.0, 4.15.3, 4.15.2. Example: [GHSA-375p-5qhx-8wq4](https://osv.dev/vulnerability/GHSA-375p-5qhx-8wq4) Echo's middleware.Static: `%2F`-encoded path bypasses route/group middleware guarding a statically-served path
 - **Fiber (github.com/gofiber/fiber/v2)**: 1 advisory, worst medium; fixed in 2.52.3. Example: [GHSA-g5jq-qmqr-qrwf](https://osv.dev/vulnerability/GHSA-g5jq-qmqr-qrwf) Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
 
+### Hex
+
+- **ecto**: 1 advisory, worst high; fixed in 3.14.3. Example: [EEF-CVE-2026-118391](https://osv.dev/vulnerability/EEF-CVE-2026-118391) Unbounded query cache growth from interpolated JSON paths and splice lists in Ecto
+
 ### npm
 
 - **Nuxt**: 1 advisory, worst medium; fixed in 4.6.3. Example: [GHSA-9v7c-q64q-vv33](https://osv.dev/vulnerability/GHSA-9v7c-q64q-vv33) Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
@@ -51,10 +55,6 @@ No new advisories for the tracked packages.
 
 No new advisories for the tracked packages.
 
-### Hex
-
-No new advisories for the tracked packages.
-
 ## Added to CISA KEV this week (all vendors)
 
 - 2026-11-03: CVE-2026-119977, WordPress WordPress Core: WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability
@@ -64,7 +64,5 @@ No new advisories for the tracked packages.
 - 2026-10-29: CVE-2026-76418, Cisco Secure Firewall ASA Software and Cisco Secure FTD Software: Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability
 - 2026-10-28: CVE-2026-41709, Broadcom VMware ESX: Broadcom VMWare ESX Insufficient Logging Vulnerability
 - 2026-10-28: CVE-2026-46300, Linux Kernel: Linux Kernel Missing Initialization of a Variable Vulnerability
-- 2026-10-27: CVE-2026-48356, Adobe Commerce and Magento: Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability
-- 2026-10-27: CVE-2026-111497, Google Brotli: Google Brotli Unchecked Return Value Vulnerability
 
 Full data: https://depweather.com/data/latest.json
