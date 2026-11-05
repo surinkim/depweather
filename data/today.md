@@ -1,21 +1,19 @@
-# depweather forecast, 2026-11-04
+# depweather forecast, 2026-11-05
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-04T23:40:11Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-05T14:37:18Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 10 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 8
-- New CVEs in NVD today (UTC): 415
-- CVEs published in 2026-11 so far: 1,712 (same month last year: 3,021)
+- Popular packages with a new advisory this week: 8 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 6
+- New CVEs in NVD today (UTC): 182
+- CVEs published in 2026-11 so far: 1,894 (same month last year: 3,021)
 
 ## By ecosystem
 
 ### Runtimes & servers
 
-- **Tomcat**: 8 advisories, worst critical; fixed in 9.0.123, 10.1.61, 11.0.27. Example: [BIT-tomcat-2026-103119](https://osv.dev/vulnerability/BIT-tomcat-2026-103119) Apache Tomcat: AJP response mix-up
-- **Python**: 2 advisories, worst critical; fixed in 3.11.18, 3.12.16, 3.13.18, 3.14.10 and more. Example: [BIT-libpython-2026-115557](https://osv.dev/vulnerability/BIT-libpython-2026-115557) Distrust compromised intermediate certificates in ssl module
-- **Node.js (node)**: 9 advisories, worst high; fixed in 22.23.4, 24.22.1, 26.12.1. Example: [BIT-node-2026-106069](https://osv.dev/vulnerability/BIT-node-2026-106069) A flaw in Node.js TLS hostname verification can cause a server certificate to be validated against a different IP address than the one the client connected to, when the host is a non-canonical IPv4 literal with a leading zero, such as `0127.0.0.1`.
+- **Python**: 1 advisory, worst critical; fixed in 3.11.18, 3.12.16, 3.13.18, 3.14.10 and more. Example: [BIT-libpython-2026-115557](https://osv.dev/vulnerability/BIT-libpython-2026-115557) Distrust compromised intermediate certificates in ssl module
 
 ### NuGet
 
@@ -62,7 +60,5 @@ No new advisories for the tracked packages.
 - 2026-10-30: CVE-2026-111357, Ivanti Connect Secure: Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability
 - 2026-10-29: CVE-2026-97229, GitLab Community Edition and Enterprise Edition: GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability
 - 2026-10-29: CVE-2026-76418, Cisco Secure Firewall ASA Software and Cisco Secure FTD Software: Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability
-- 2026-10-28: CVE-2026-41709, Broadcom VMware ESX: Broadcom VMWare ESX Insufficient Logging Vulnerability
-- 2026-10-28: CVE-2026-46300, Linux Kernel: Linux Kernel Missing Initialization of a Variable Vulnerability
 
 Full data: https://depweather.com/data/latest.json
