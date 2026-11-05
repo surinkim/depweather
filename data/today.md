@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-05
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-05T14:37:18Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-05T23:38:37Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 8 of 149
+- Popular packages with a new advisory this week: 6 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 6
-- New CVEs in NVD today (UTC): 182
-- CVEs published in 2026-11 so far: 1,894 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 451
+- CVEs published in 2026-11 so far: 2,163 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -19,10 +19,6 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 - **.NET runtime (Microsoft.NETCore.App.Runtime.linux-x64)**: 1 advisory, worst high; fixed in 8.0.33, 9.0.22, 10.0.14, 11.0.0-rc.3.26522.148. Example: [GHSA-p3jp-9v83-76w9](https://osv.dev/vulnerability/GHSA-p3jp-9v83-76w9) Microsoft Security Advisory CVE-2026-111497 - .NET Brotli Decoder Out-of-bounds Write Vulnerability
 
-### crates.io
-
-- **zip**: 3 advisories, worst high; fixed in 9.0.0. Example: [GHSA-9hj8-73fh-9963](https://osv.dev/vulnerability/GHSA-9hj8-73fh-9963) zip: legacy Shrink/Reduce/Implode decoder: denial of service from attacker-controlled ZIP64 uncompressed size
-
 ### Hex
 
 - **ecto**: 1 advisory, worst high; fixed in 3.14.3. Example: [EEF-CVE-2026-118391](https://osv.dev/vulnerability/EEF-CVE-2026-118391) Unbounded query cache growth from interpolated JSON paths and splice lists in Ecto
@@ -30,7 +26,6 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 ### npm
 
 - **Nuxt**: 1 advisory, worst medium; fixed in 4.6.3. Example: [GHSA-9v7c-q64q-vv33](https://osv.dev/vulnerability/GHSA-9v7c-q64q-vv33) Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
-- **vite**: 1 advisory, worst medium; fixed in 6.4.5. Example: [GHSA-8g5g-mxqh-grgj](https://osv.dev/vulnerability/GHSA-8g5g-mxqh-grgj) Vite: `server.fs.deny` bypassed with queries
 
 ### Packagist
 
@@ -45,6 +40,10 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 No new advisories for the tracked packages.
 
 ### Maven
+
+No new advisories for the tracked packages.
+
+### crates.io
 
 No new advisories for the tracked packages.
 

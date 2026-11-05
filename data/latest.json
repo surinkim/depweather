@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-05T14:37:18Z",
+ "generated_at": "2026-11-05T23:38:37Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -47,12 +47,12 @@
   }
  },
  "summary": {
-  "today_cves": 182,
+  "today_cves": 451,
   "month": "2026-11",
-  "month_cves": 1894,
+  "month_cves": 2163,
   "month_cves_last_year": 3021,
   "kev_new_7d": 6,
-  "affected_packages_7d": 8,
+  "affected_packages_7d": 6,
   "tracked_packages": 149
  },
  "monthly": [
@@ -110,7 +110,7 @@
   },
   {
    "month": "2026-11",
-   "count": 1894
+   "count": 2163
   }
  ],
  "monthly_is_stale": false,
@@ -870,7 +870,7 @@
      "popularity": 254562201.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
-     "worst_7d": "MEDIUM",
+     "worst_7d": "NONE",
      "worst_30d": "HIGH",
      "vulns": [
       {
@@ -4307,7 +4307,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 153099998.0,
+     "popularity": 153877802.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4318,7 +4318,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2865.0,
+     "popularity": 2870.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4329,7 +4329,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 291821036.0,
+     "popularity": 293115514.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4387,7 +4387,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 268136861.0,
+     "popularity": 269375665.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4398,7 +4398,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 249596827.0,
+     "popularity": 250811086.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4409,7 +4409,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 215997447.0,
+     "popularity": 216975109.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4420,7 +4420,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 267888386.0,
+     "popularity": 269096854.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4553,7 +4553,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 83474970.0,
+     "popularity": 83849125.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4564,7 +4564,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 212560008.0,
+     "popularity": 213607460.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4575,7 +4575,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 408427783.0,
+     "popularity": 410264076.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4586,7 +4586,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 312247599.0,
+     "popularity": 313621830.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4597,7 +4597,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 246356072.0,
+     "popularity": 247525599.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4608,7 +4608,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 54539578.0,
+     "popularity": 54819507.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4619,10 +4619,10 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 98979261.0,
+     "popularity": 99435519.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
-     "worst_7d": "HIGH",
+     "worst_7d": "NONE",
      "worst_30d": "CRITICAL",
      "vulns": [
       {
@@ -4828,7 +4828,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 21894328.0,
+     "popularity": 22200627.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "NONE",
@@ -4890,7 +4890,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 27828155.0,
+     "popularity": 28953892.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4956,7 +4956,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1702046.0,
+     "popularity": 1751838.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -5049,7 +5049,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 30866342.0,
+     "popularity": 32015236.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5060,7 +5060,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 31954631.0,
+     "popularity": 33233405.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5082,7 +5082,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 12574617.0,
+     "popularity": 13015160.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5140,7 +5140,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 22341693.0,
+     "popularity": 23267430.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5173,7 +5173,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 19617114.0,
+     "popularity": 20364594.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5822,7 +5822,8 @@
       {
        "id": "GHSA-2ffq-g2xg-c22p",
        "aliases": [
-        "CVE-2026-118657"
+        "CVE-2026-118657",
+        "GO-2026-6879"
        ],
        "cves": [
         "CVE-2026-118657"
@@ -5846,7 +5847,8 @@
       {
        "id": "GHSA-3pmx-cf9f-34xr",
        "aliases": [
-        "CVE-2026-118654"
+        "CVE-2026-118654",
+        "GO-2026-6881"
        ],
        "cves": [
         "CVE-2026-118654"
@@ -5870,7 +5872,8 @@
       {
        "id": "GHSA-xwq5-6cqp-vx96",
        "aliases": [
-        "CVE-2026-118655"
+        "CVE-2026-118655",
+        "GO-2026-6885"
        ],
        "cves": [
         "CVE-2026-118655"
@@ -5894,7 +5897,8 @@
       {
        "id": "GHSA-v753-g4cw-jm48",
        "aliases": [
-        "CVE-2026-118656"
+        "CVE-2026-118656",
+        "GO-2026-6883"
        ],
        "cves": [
         "CVE-2026-118656"
@@ -5918,7 +5922,8 @@
       {
        "id": "GHSA-23wf-92cp-8pcj",
        "aliases": [
-        "CVE-2026-118658"
+        "CVE-2026-118658",
+        "GO-2026-6878"
        ],
        "cves": [
         "CVE-2026-118658"
@@ -5942,7 +5947,8 @@
       {
        "id": "GHSA-375p-5qhx-8wq4",
        "aliases": [
-        "CVE-2026-118650"
+        "CVE-2026-118650",
+        "GO-2026-6873"
        ],
        "cves": [
         "CVE-2026-118650"
@@ -5966,7 +5972,8 @@
       {
        "id": "GHSA-h9g5-28mm-hx3g",
        "aliases": [
-        "CVE-2026-118652"
+        "CVE-2026-118652",
+        "GO-2026-6876"
        ],
        "cves": [
         "CVE-2026-118652"
@@ -5990,7 +5997,8 @@
       {
        "id": "GHSA-246p-cpwv-v3jq",
        "aliases": [
-        "CVE-2026-118653"
+        "CVE-2026-118653",
+        "GO-2026-6872"
        ],
        "cves": [
         "CVE-2026-118653"
@@ -6012,7 +6020,8 @@
       {
        "id": "GHSA-r7w9-592q-9vg4",
        "aliases": [
-        "CVE-2026-118266"
+        "CVE-2026-118266",
+        "GO-2026-6877"
        ],
        "cves": [
         "CVE-2026-118266"
@@ -6036,7 +6045,8 @@
       {
        "id": "GHSA-99jh-6h7p-pp36",
        "aliases": [
-        "CVE-2026-118651"
+        "CVE-2026-118651",
+        "GO-2026-6875"
        ],
        "cves": [
         "CVE-2026-118651"
@@ -6058,7 +6068,8 @@
       {
        "id": "GHSA-9969-6676-49h5",
        "aliases": [
-        "CVE-2026-118262"
+        "CVE-2026-118262",
+        "GO-2026-6838"
        ],
        "cves": [
         "CVE-2026-118262"
@@ -6082,7 +6093,8 @@
       {
        "id": "GHSA-h7wr-284f-5qvc",
        "aliases": [
-        "CVE-2026-118261"
+        "CVE-2026-118261",
+        "GO-2026-6842"
        ],
        "cves": [
         "CVE-2026-118261"
@@ -6106,7 +6118,8 @@
       {
        "id": "GHSA-cxf3-9h37-7rr8",
        "aliases": [
-        "CVE-2026-118264"
+        "CVE-2026-118264",
+        "GO-2026-6839"
        ],
        "cves": [
         "CVE-2026-118264"
@@ -6130,7 +6143,8 @@
       {
        "id": "GHSA-f48p-c9v4-h7xv",
        "aliases": [
-        "CVE-2026-118260"
+        "CVE-2026-118260",
+        "GO-2026-6840"
        ],
        "cves": [
         "CVE-2026-118260"
@@ -6166,7 +6180,8 @@
       {
        "id": "GHSA-g5jq-qmqr-qrwf",
        "aliases": [
-        "CVE-2026-119285"
+        "CVE-2026-119285",
+        "GO-2026-6896"
        ],
        "cves": [
         "CVE-2026-119285"
@@ -6269,7 +6284,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 812239037.0,
+     "popularity": 812498823.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "NONE",
@@ -6280,7 +6295,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1383326379.0,
+     "popularity": 1383713727.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6291,7 +6306,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1293709098.0,
+     "popularity": 1294105217.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6302,7 +6317,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 625384447.0,
+     "popularity": 625625733.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6313,7 +6328,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 303631611.0,
+     "popularity": 303729425.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6324,7 +6339,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 345990403.0,
+     "popularity": 346121228.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6335,7 +6350,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1294317608.0,
+     "popularity": 1294756977.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6346,7 +6361,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 401046659.0,
+     "popularity": 401305796.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6940,6 +6955,8 @@
         "BIT-powershell-2026-111497",
         "CVE-2026-111497",
         "GHSA-9v8h-qqgm-4m35",
+        "GHSA-c9gr-gmg4-2vqv",
+        "GO-2026-6888",
         "PYSEC-2026-4322",
         "PYSEC-2026-4323"
        ],
