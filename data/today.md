@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-05
+# depweather forecast, 2026-11-06
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-05T23:38:37Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-06T14:13:44Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 6 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 6
-- New CVEs in NVD today (UTC): 451
-- CVEs published in 2026-11 so far: 2,163 (same month last year: 3,021)
+- Popular packages with a new advisory this week: 7 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 4
+- New CVEs in NVD today (UTC): 200
+- CVEs published in 2026-11 so far: 2,363 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -21,6 +21,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### Hex
 
+- **cowboy**: 2 advisories, worst high. Example: [EEF-CVE-2026-115701](https://osv.dev/vulnerability/EEF-CVE-2026-115701) Cowboy HTTP/1.1 Unbounded Buffering of Pipelined Data During Request Handling Enables Memory Exhaustion
 - **ecto**: 1 advisory, worst high; fixed in 3.14.3. Example: [EEF-CVE-2026-118391](https://osv.dev/vulnerability/EEF-CVE-2026-118391) Unbounded query cache growth from interpolated JSON paths and splice lists in Ecto
 
 ### npm
@@ -57,7 +58,5 @@ No new advisories for the tracked packages.
 - 2026-11-03: CVE-2026-119977, WordPress WordPress Core: WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability
 - 2026-10-30: CVE-2026-118527, Ivanti Connect Secure: Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability
 - 2026-10-30: CVE-2026-111357, Ivanti Connect Secure: Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability
-- 2026-10-29: CVE-2026-97229, GitLab Community Edition and Enterprise Edition: GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability
-- 2026-10-29: CVE-2026-76418, Cisco Secure Firewall ASA Software and Cisco Secure FTD Software: Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability
 
 Full data: https://depweather.com/data/latest.json
