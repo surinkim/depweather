@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T14:13:44Z",
+ "generated_at": "2026-11-06T23:09:38Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -47,12 +47,12 @@
   }
  },
  "summary": {
-  "today_cves": 200,
+  "today_cves": 436,
   "month": "2026-11",
-  "month_cves": 2363,
+  "month_cves": 2601,
   "month_cves_last_year": 3021,
-  "kev_new_7d": 4,
-  "affected_packages_7d": 7,
+  "kev_new_7d": 5,
+  "affected_packages_7d": 3,
   "tracked_packages": 149
  },
  "monthly": [
@@ -106,15 +106,22 @@
   },
   {
    "month": "2026-10",
-   "count": 17057
+   "count": 17052
   },
   {
    "month": "2026-11",
-   "count": 2363
+   "count": 2601
   }
  ],
  "monthly_is_stale": false,
  "kev_recent": [
+  {
+   "cve": "CVE-2026-19868",
+   "vendor": "SonicWall",
+   "product": "SonicOS SSLVPN",
+   "name": "SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
+   "date_added": "2026-11-06"
+  },
   {
    "cve": "CVE-2024-27834",
    "vendor": "Apple",
@@ -263,152 +270,6 @@
        "kev_date_added": null,
        "epss": 0.00386,
        "epss_percentile": 0.32906
-      },
-      {
-       "id": "GHSA-3w37-wq28-93x7",
-       "aliases": [
-        "CVE-2026-94544"
-       ],
-       "cves": [
-        "CVE-2026-94544"
-       ],
-       "published": "2026-10-07T20:32:13Z",
-       "summary": "Next.js: Pending `use cache` fill can leak Draft Mode content into regular responses and persisted pages",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 4.2,
-       "cvss_source": "advisory",
-       "fixed": [
-        "16.3.8"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-3w37-wq28-93x7",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00179,
-       "epss_percentile": 0.07535
-      },
-      {
-       "id": "GHSA-4jqv-mc3x-m676",
-       "aliases": [
-        "CVE-2026-94543"
-       ],
-       "cves": [
-        "CVE-2026-94543"
-       ],
-       "published": "2026-10-07T20:32:06Z",
-       "summary": "Next.js has cache poisoning of SSG and ISR pages in self-hosted applications",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "15.5.27",
-        "16.3.8"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-4jqv-mc3x-m676",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00506,
-       "epss_percentile": 0.43394
-      },
-      {
-       "id": "GHSA-39w2-rjm5-chcv",
-       "aliases": [
-        "CVE-2026-94486"
-       ],
-       "cves": [
-        "CVE-2026-94486"
-       ],
-       "published": "2026-10-07T20:31:51Z",
-       "summary": "Next.js has information disclosure in development server's Model Context Protocol endpoint",
-       "severity": "LOW",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.4,
-       "cvss_source": "advisory",
-       "fixed": [
-        "16.3.8"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-39w2-rjm5-chcv",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00114,
-       "epss_percentile": 0.01461
-      },
-      {
-       "id": "GHSA-f87g-xv8r-7p7x",
-       "aliases": [
-        "CVE-2026-94485"
-       ],
-       "cves": [
-        "CVE-2026-94485"
-       ],
-       "published": "2026-10-07T20:31:33Z",
-       "summary": "Next.js has information disclosure in App Router metadata image routes via dynamicParams bypass",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "16.3.8"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-f87g-xv8r-7p7x",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00173,
-       "epss_percentile": 0.06767
-      },
-      {
-       "id": "GHSA-mcj8-r9mp-w47p",
-       "aliases": [
-        "CVE-2026-94484"
-       ],
-       "cves": [
-        "CVE-2026-94484"
-       ],
-       "published": "2026-10-07T20:31:13Z",
-       "summary": "Next.js has cache poisoning in SSG/ISR rendering that leads to cross-user content substitution and persistent denial of service",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 4.8,
-       "cvss_source": "advisory",
-       "fixed": [
-        "16.3.8",
-        "15.5.27"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-mcj8-r9mp-w47p",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00244,
-       "epss_percentile": 0.15733
-      },
-      {
-       "id": "GHSA-cjq9-62q9-8jv4",
-       "aliases": [
-        "CVE-2026-94483"
-       ],
-       "cves": [
-        "CVE-2026-94483"
-       ],
-       "published": "2026-10-07T20:30:55Z",
-       "summary": "Next.js has Server-Side Request Forgery in Image Optimization",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "16.3.8"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-cjq9-62q9-8jv4",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0033,
-       "epss_percentile": 0.26252
       }
      ]
     },
@@ -627,7 +488,7 @@
      "popularity": 3230766.0,
      "popularity_source": "npm downloads, last week",
      "survey": 4.4,
-     "worst_7d": "MEDIUM",
+     "worst_7d": "NONE",
      "worst_30d": "MEDIUM",
      "vulns": [
       {
@@ -4066,207 +3927,8 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
-     "vulns": [
-      {
-       "id": "GHSA-jjfr-hcj7-qf5w",
-       "aliases": [
-        "CVE-2026-106115"
-       ],
-       "cves": [
-        "CVE-2026-106115"
-       ],
-       "published": "2026-10-07T20:24:46Z",
-       "summary": "ImageSharp: TIFF CCITT T6 encoder writes beyond an undersized output buffer",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.2.0",
-        "4.1.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-jjfr-hcj7-qf5w",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00385,
-       "epss_percentile": 0.32799
-      },
-      {
-       "id": "GHSA-4q3p-rj5x-xv7p",
-       "aliases": [
-        "CVE-2026-106111"
-       ],
-       "cves": [
-        "CVE-2026-106111"
-       ],
-       "published": "2026-10-07T20:24:42Z",
-       "summary": "ImageSharp: EXR ZIP decoder can expose stale allocator data after a short inflate",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.1.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-4q3p-rj5x-xv7p",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0028,
-       "epss_percentile": 0.20627
-      },
-      {
-       "id": "GHSA-ffp7-56pq-64mr",
-       "aliases": [
-        "CVE-2026-106112"
-       ],
-       "cves": [
-        "CVE-2026-106112"
-       ],
-       "published": "2026-10-07T20:24:37Z",
-       "summary": "ImageSharp: ICC LUT16 output channel count can write beyond Vector4",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.1.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-ffp7-56pq-64mr",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00385,
-       "epss_percentile": 0.32799
-      },
-      {
-       "id": "GHSA-wmxv-xphr-5c9g",
-       "aliases": [
-        "CVE-2026-106116"
-       ],
-       "cves": [
-        "CVE-2026-106116"
-       ],
-       "published": "2026-10-07T20:24:32Z",
-       "summary": "ImageSharp: BigTIFF IFD count can keep a decoder thread in a non-progressing loop",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.2.0",
-        "4.1.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-wmxv-xphr-5c9g",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00328,
-       "epss_percentile": 0.26096
-      },
-      {
-       "id": "GHSA-j9gm-c75j-xc9q",
-       "aliases": [
-        "CVE-2026-106110"
-       ],
-       "cves": [
-        "CVE-2026-106110"
-       ],
-       "published": "2026-10-07T20:24:28Z",
-       "summary": "ImageSharp: TIFF CCITT T4 encoder can write past its compressed output buffer",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.2.0",
-        "4.1.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-j9gm-c75j-xc9q",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00385,
-       "epss_percentile": 0.32798
-      },
-      {
-       "id": "GHSA-j3p4-wp97-rph4",
-       "aliases": [
-        "CVE-2026-106113"
-       ],
-       "cves": [
-        "CVE-2026-106113"
-       ],
-       "published": "2026-10-07T20:24:23Z",
-       "summary": "ImageSharp: HistogramEqualization uses an unvalidated luminance as an unchecked histogram index",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.2.0",
-        "4.1.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-j3p4-wp97-rph4",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0039,
-       "epss_percentile": 0.33355
-      },
-      {
-       "id": "GHSA-gwg2-r3hj-4w44",
-       "aliases": [
-        "CVE-2026-106114"
-       ],
-       "cves": [
-        "CVE-2026-106114"
-       ],
-       "published": "2026-10-07T20:24:19Z",
-       "summary": "ImageSharp: ICC CLUT parsing allocates from unvalidated channel and grid dimensions",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.1.2",
-        "3.2.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-gwg2-r3hj-4w44",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00328,
-       "epss_percentile": 0.26096
-      },
-      {
-       "id": "GHSA-v76p-62qx-wwq2",
-       "aliases": [
-        "CVE-2026-106118"
-       ],
-       "cves": [
-        "CVE-2026-106118"
-       ],
-       "published": "2026-10-07T16:18:57Z",
-       "summary": "ImageSharp: Tiled fax TIFF: tile buffer sized by TileWidth but fax decompressor writes scanlines of ImageWidth — heap OOB write",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.2.0",
-        "4.1.1"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-v76p-62qx-wwq2",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00595,
-       "epss_percentile": 0.48639
-      }
-     ]
+     "worst_30d": "NONE",
+     "vulns": []
     },
     {
      "key": "nuget/Swashbuckle.AspNetCore",
@@ -4293,7 +3955,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 155209629.0,
+     "popularity": 155939763.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4304,7 +3966,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2862.0,
+     "popularity": 2864.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4315,7 +3977,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 295000808.0,
+     "popularity": 296208189.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4373,7 +4035,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 271313719.0,
+     "popularity": 272464572.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4384,7 +4046,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 252711356.0,
+     "popularity": 253830509.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4395,7 +4057,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 218476259.0,
+     "popularity": 219376616.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4406,7 +4068,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 270957039.0,
+     "popularity": 272091312.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4539,7 +4201,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 84386082.0,
+     "popularity": 84733588.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4550,7 +4212,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 215179602.0,
+     "popularity": 216150878.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4561,7 +4223,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 412765597.0,
+     "popularity": 414497548.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4572,7 +4234,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 315421480.0,
+     "popularity": 316711336.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4583,7 +4245,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 249232588.0,
+     "popularity": 250320985.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4594,7 +4256,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 55269242.0,
+     "popularity": 55531972.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4605,7 +4267,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 100113173.0,
+     "popularity": 100537899.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4814,7 +4476,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 22094666.0,
+     "popularity": 22533909.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "NONE",
@@ -4876,7 +4538,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 28247396.0,
+     "popularity": 29214427.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4942,7 +4604,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1705064.0,
+     "popularity": 1746159.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -5035,7 +4697,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 31332790.0,
+     "popularity": 32185086.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5046,7 +4708,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 32544878.0,
+     "popularity": 33577163.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5057,7 +4719,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 30448364.0,
+     "popularity": 29816267.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5068,7 +4730,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 12712901.0,
+     "popularity": 12928822.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5079,10 +4741,10 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 26719605.0,
+     "popularity": 27321966.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
-     "worst_7d": "MEDIUM",
+     "worst_7d": "NONE",
      "worst_30d": "MEDIUM",
      "vulns": [
       {
@@ -5115,7 +4777,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 24808448.0,
+     "popularity": 25581649.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5126,7 +4788,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 22554123.0,
+     "popularity": 23585769.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5137,7 +4799,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 24697113.0,
+     "popularity": 25093188.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5148,7 +4810,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4236724.0,
+     "popularity": 4343505.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5159,7 +4821,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 20034336.0,
+     "popularity": 20133642.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5170,7 +4832,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 17657974.0,
+     "popularity": 18008104.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6160,7 +5822,7 @@
      "popularity": 1.0,
      "popularity_source": "fixed weight",
      "survey": null,
-     "worst_7d": "MEDIUM",
+     "worst_7d": "NONE",
      "worst_30d": "MEDIUM",
      "vulns": [
       {
@@ -6270,7 +5932,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 812808623.0,
+     "popularity": 813025537.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "NONE",
@@ -6281,7 +5943,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1384196710.0,
+     "popularity": 1384554316.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6292,7 +5954,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1294547024.0,
+     "popularity": 1294888115.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6303,7 +5965,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 625892666.0,
+     "popularity": 626114851.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6314,7 +5976,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 303833632.0,
+     "popularity": 303922749.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6325,7 +5987,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 346250102.0,
+     "popularity": 346363946.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6336,7 +5998,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1295229897.0,
+     "popularity": 1295620598.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6347,7 +6009,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 401589324.0,
+     "popularity": 401831552.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7021,7 +6683,7 @@
      "popularity": 1.0,
      "popularity_source": "fixed weight",
      "survey": null,
-     "worst_7d": "CRITICAL",
+     "worst_7d": "NONE",
      "worst_30d": "CRITICAL",
      "vulns": [
       {

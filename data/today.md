@@ -1,19 +1,15 @@
 # depweather forecast, 2026-11-06
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-06T14:13:44Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-06T23:09:38Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 7 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 4
-- New CVEs in NVD today (UTC): 200
-- CVEs published in 2026-11 so far: 2,363 (same month last year: 3,021)
+- Popular packages with a new advisory this week: 3 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 5
+- New CVEs in NVD today (UTC): 436
+- CVEs published in 2026-11 so far: 2,601 (same month last year: 3,021)
 
 ## By ecosystem
-
-### Runtimes & servers
-
-- **Python**: 1 advisory, worst critical; fixed in 3.11.18, 3.12.16, 3.13.18, 3.14.10 and more. Example: [BIT-libpython-2026-115557](https://osv.dev/vulnerability/BIT-libpython-2026-115557) Distrust compromised intermediate certificates in ssl module
 
 ### NuGet
 
@@ -26,15 +22,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### npm
 
-- **Nuxt**: 1 advisory, worst medium; fixed in 4.6.3. Example: [GHSA-9v7c-q64q-vv33](https://osv.dev/vulnerability/GHSA-9v7c-q64q-vv33) Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
-
-### Packagist
-
-- **PHPUnit (phpunit/phpunit)**: 1 advisory, worst medium; fixed in 13.4.4. Example: [GHSA-9vw2-f4vp-x7gf](https://osv.dev/vulnerability/GHSA-9vw2-f4vp-x7gf) PHPUnit vulnerable to code execution by other local users via shared temporary directory in PHPT code coverage handling
-
-### Go
-
-- **Fiber (github.com/gofiber/fiber/v2)**: 1 advisory, worst medium; fixed in 2.52.3. Example: [GHSA-g5jq-qmqr-qrwf](https://osv.dev/vulnerability/GHSA-g5jq-qmqr-qrwf) Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
+No new advisories for the tracked packages.
 
 ### PyPI
 
@@ -48,12 +36,25 @@ No new advisories for the tracked packages.
 
 No new advisories for the tracked packages.
 
+### Packagist
+
+No new advisories for the tracked packages.
+
+### Go
+
+No new advisories for the tracked packages.
+
 ### RubyGems
+
+No new advisories for the tracked packages.
+
+### Runtimes & servers
 
 No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-11-06: CVE-2026-19868, SonicWall SonicOS SSLVPN: SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability
 - 2026-11-04: CVE-2024-27834, Apple Multiple Products: Apple Multiple Products Improper Authentication Vulnerability
 - 2026-11-03: CVE-2026-119977, WordPress WordPress Core: WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability
 - 2026-10-30: CVE-2026-118527, Ivanti Connect Secure: Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability
