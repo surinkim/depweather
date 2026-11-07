@@ -197,7 +197,8 @@
      "l": 3
     },
     "packagist/drupal/core": {
-     "u": 3
+     "h": 1,
+     "m": 2
     }
    },
    "ecosystems": {
@@ -206,7 +207,8 @@
      "l": 3
     },
     "packagist": {
-     "u": 3
+     "h": 1,
+     "m": 2
     }
    }
   },
