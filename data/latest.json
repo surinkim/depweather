@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T21:51:44Z",
+ "generated_at": "2026-11-08T13:20:48Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -47,9 +47,9 @@
   }
  },
  "summary": {
-  "today_cves": 473,
+  "today_cves": 152,
   "month": "2026-11",
-  "month_cves": 3083,
+  "month_cves": 3236,
   "month_cves_last_year": 3021,
   "kev_new_7d": 3,
   "affected_packages_7d": 3,
@@ -110,7 +110,7 @@
   },
   {
    "month": "2026-11",
-   "count": 3083
+   "count": 3236
   }
  ],
  "monthly_is_stale": false,
@@ -150,7 +150,7 @@
      "key": "npm/react",
      "name": "react",
      "label": "React",
-     "popularity": 252355743.0,
+     "popularity": 253346854.0,
      "popularity_source": "npm downloads, last week",
      "survey": 41.5,
      "worst_7d": "NONE",
@@ -161,7 +161,7 @@
      "key": "npm/next",
      "name": "next",
      "label": "Next.js",
-     "popularity": 92267062.0,
+     "popularity": 92556850.0,
      "popularity_source": "npm downloads, last week",
      "survey": 20.6,
      "worst_7d": "NONE",
@@ -263,7 +263,7 @@
      "key": "npm/jquery",
      "name": "jquery",
      "label": "jQuery",
-     "popularity": 17996719.0,
+     "popularity": 17799053.0,
      "popularity_source": "npm downloads, last week",
      "survey": 19.7,
      "worst_7d": "NONE",
@@ -274,7 +274,7 @@
      "key": "npm/vue",
      "name": "vue",
      "label": "Vue.js",
-     "popularity": 25117305.0,
+     "popularity": 25014233.0,
      "popularity_source": "npm downloads, last week",
      "survey": 17.2,
      "worst_7d": "NONE",
@@ -285,7 +285,7 @@
      "key": "npm/@angular/core",
      "name": "@angular/core",
      "label": "Angular",
-     "popularity": 8409275.0,
+     "popularity": 8423538.0,
      "popularity_source": "npm downloads, last week",
      "survey": 16.0,
      "worst_7d": "NONE",
@@ -296,7 +296,7 @@
      "key": "npm/express",
      "name": "express",
      "label": "Express",
-     "popularity": 197188250.0,
+     "popularity": 197299983.0,
      "popularity_source": "npm downloads, last week",
      "survey": 15.6,
      "worst_7d": "NONE",
@@ -307,7 +307,7 @@
      "key": "npm/svelte",
      "name": "svelte",
      "label": "Svelte",
-     "popularity": 9413758.0,
+     "popularity": 9473542.0,
      "popularity_source": "npm downloads, last week",
      "survey": 7.8,
      "worst_7d": "NONE",
@@ -318,7 +318,7 @@
      "key": "npm/astro",
      "name": "astro",
      "label": "Astro",
-     "popularity": 11526912.0,
+     "popularity": 11575560.0,
      "popularity_source": "npm downloads, last week",
      "survey": 6.2,
      "worst_7d": "NONE",
@@ -378,7 +378,7 @@
      "key": "npm/angular",
      "name": "angular",
      "label": "AngularJS",
-     "popularity": 651270.0,
+     "popularity": 651729.0,
      "popularity_source": "npm downloads, last week",
      "survey": 6.0,
      "worst_7d": "NONE",
@@ -389,7 +389,7 @@
      "key": "npm/@nestjs/core",
      "name": "@nestjs/core",
      "label": "NestJS",
-     "popularity": 23911292.0,
+     "popularity": 24003914.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.8,
      "worst_7d": "NONE",
@@ -400,7 +400,7 @@
      "key": "npm/@sveltejs/kit",
      "name": "@sveltejs/kit",
      "label": "SvelteKit",
-     "popularity": 4971739.0,
+     "popularity": 5008071.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.6,
      "worst_7d": "NONE",
@@ -460,7 +460,7 @@
      "key": "npm/htmx.org",
      "name": "htmx.org",
      "label": "htmx",
-     "popularity": 432445.0,
+     "popularity": 433581.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.4,
      "worst_7d": "NONE",
@@ -471,7 +471,7 @@
      "key": "npm/nuxt",
      "name": "nuxt",
      "label": "Nuxt",
-     "popularity": 3244540.0,
+     "popularity": 3251314.0,
      "popularity_source": "npm downloads, last week",
      "survey": 4.4,
      "worst_7d": "NONE",
@@ -604,7 +604,7 @@
      "key": "npm/fastify",
      "name": "fastify",
      "label": "Fastify",
-     "popularity": 22437445.0,
+     "popularity": 22540329.0,
      "popularity_source": "npm downloads, last week",
      "survey": 3.5,
      "worst_7d": "NONE",
@@ -640,7 +640,7 @@
      "key": "npm/hono",
      "name": "hono",
      "label": "Hono",
-     "popularity": 104025193.0,
+     "popularity": 104489115.0,
      "popularity_source": "npm downloads, last week",
      "survey": 2.8,
      "worst_7d": "NONE",
@@ -678,7 +678,7 @@
      "key": "npm/axios",
      "name": "axios",
      "label": "axios",
-     "popularity": 144973624.0,
+     "popularity": 144974910.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -689,7 +689,7 @@
      "key": "npm/lodash",
      "name": "lodash",
      "label": "lodash",
-     "popularity": 204892584.0,
+     "popularity": 204729283.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -700,7 +700,7 @@
      "key": "npm/vite",
      "name": "vite",
      "label": "vite",
-     "popularity": 260744685.0,
+     "popularity": 262699686.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -901,7 +901,7 @@
      "key": "npm/webpack",
      "name": "webpack",
      "label": "webpack",
-     "popularity": 74723040.0,
+     "popularity": 74648389.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -912,7 +912,7 @@
      "key": "npm/undici",
      "name": "undici",
      "label": "undici",
-     "popularity": 324386687.0,
+     "popularity": 326484951.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1153,7 +1153,7 @@
      "key": "npm/ws",
      "name": "ws",
      "label": "ws",
-     "popularity": 399091152.0,
+     "popularity": 400586733.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1164,7 +1164,7 @@
      "key": "npm/jsonwebtoken",
      "name": "jsonwebtoken",
      "label": "jsonwebtoken",
-     "popularity": 81975898.0,
+     "popularity": 82185566.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1175,7 +1175,7 @@
      "key": "npm/form-data",
      "name": "form-data",
      "label": "form-data",
-     "popularity": 227010085.0,
+     "popularity": 226903529.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1186,7 +1186,7 @@
      "key": "npm/tar",
      "name": "tar",
      "label": "tar",
-     "popularity": 117602204.0,
+     "popularity": 117749020.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1207,7 +1207,7 @@
      "key": "pypi/fastapi",
      "name": "fastapi",
      "label": "FastAPI",
-     "popularity": 126563805.0,
+     "popularity": 126943981.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 18.5,
      "worst_7d": "NONE",
@@ -1218,7 +1218,7 @@
      "key": "pypi/flask",
      "name": "flask",
      "label": "Flask",
-     "popularity": 59714054.0,
+     "popularity": 57851278.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 12.5,
      "worst_7d": "NONE",
@@ -1229,7 +1229,7 @@
      "key": "pypi/django",
      "name": "django",
      "label": "Django",
-     "popularity": 12336460.0,
+     "popularity": 12401116.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 11.3,
      "worst_7d": "NONE",
@@ -1240,7 +1240,7 @@
      "key": "pypi/requests",
      "name": "requests",
      "label": "requests",
-     "popularity": 363121387.0,
+     "popularity": 360913926.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1251,7 +1251,7 @@
      "key": "pypi/urllib3",
      "name": "urllib3",
      "label": "urllib3",
-     "popularity": 389849981.0,
+     "popularity": 387334886.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1262,7 +1262,7 @@
      "key": "pypi/certifi",
      "name": "certifi",
      "label": "certifi",
-     "popularity": 417794214.0,
+     "popularity": 415405882.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1296,7 +1296,7 @@
      "key": "pypi/cryptography",
      "name": "cryptography",
      "label": "cryptography",
-     "popularity": 338942242.0,
+     "popularity": 338284990.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1307,7 +1307,7 @@
      "key": "pypi/setuptools",
      "name": "setuptools",
      "label": "setuptools",
-     "popularity": 260518562.0,
+     "popularity": 259858568.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1339,7 +1339,7 @@
      "key": "pypi/pyyaml",
      "name": "pyyaml",
      "label": "pyyaml",
-     "popularity": 298199860.0,
+     "popularity": 299613730.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1350,7 +1350,7 @@
      "key": "pypi/pydantic",
      "name": "pydantic",
      "label": "pydantic",
-     "popularity": 279261922.0,
+     "popularity": 280289254.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1361,7 +1361,7 @@
      "key": "pypi/numpy",
      "name": "numpy",
      "label": "numpy",
-     "popularity": 272106922.0,
+     "popularity": 271967566.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1372,7 +1372,7 @@
      "key": "pypi/pandas",
      "name": "pandas",
      "label": "pandas",
-     "popularity": 179060116.0,
+     "popularity": 178873877.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1383,7 +1383,7 @@
      "key": "pypi/jinja2",
      "name": "jinja2",
      "label": "jinja2",
-     "popularity": 179070985.0,
+     "popularity": 177487672.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1394,7 +1394,7 @@
      "key": "pypi/starlette",
      "name": "starlette",
      "label": "starlette",
-     "popularity": 167914597.0,
+     "popularity": 168456988.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1405,7 +1405,7 @@
      "key": "pypi/uvicorn",
      "name": "uvicorn",
      "label": "uvicorn",
-     "popularity": 161236471.0,
+     "popularity": 162100258.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1416,7 +1416,7 @@
      "key": "pypi/httpx",
      "name": "httpx",
      "label": "httpx",
-     "popularity": 194152482.0,
+     "popularity": 195161982.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1427,7 +1427,7 @@
      "key": "pypi/aiohttp",
      "name": "aiohttp",
      "label": "aiohttp",
-     "popularity": 132637359.0,
+     "popularity": 132438277.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1627,7 +1627,7 @@
      "key": "pypi/pillow",
      "name": "pillow",
      "label": "pillow",
-     "popularity": 176882176.0,
+     "popularity": 176954172.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2675,7 +2675,7 @@
      "key": "pypi/pyjwt",
      "name": "pyjwt",
      "label": "pyjwt",
-     "popularity": 192293198.0,
+     "popularity": 191494982.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2707,7 +2707,7 @@
      "key": "pypi/sqlalchemy",
      "name": "sqlalchemy",
      "label": "sqlalchemy",
-     "popularity": 96837049.0,
+     "popularity": 96926163.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2718,7 +2718,7 @@
      "key": "pypi/lxml",
      "name": "lxml",
      "label": "lxml",
-     "popularity": 117455079.0,
+     "popularity": 116676924.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2729,7 +2729,7 @@
      "key": "pypi/protobuf",
      "name": "protobuf",
      "label": "protobuf",
-     "popularity": 185965390.0,
+     "popularity": 185958486.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2740,7 +2740,7 @@
      "key": "pypi/transformers",
      "name": "transformers",
      "label": "transformers",
-     "popularity": 30709254.0,
+     "popularity": 30025710.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -2751,7 +2751,7 @@
      "key": "pypi/torch",
      "name": "torch",
      "label": "torch",
-     "popularity": 14231666.0,
+     "popularity": 14165835.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3941,7 +3941,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 157237224.0,
+     "popularity": 156917639.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -3952,7 +3952,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2863.0,
+     "popularity": 2829.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -3963,7 +3963,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 298266748.0,
+     "popularity": 297547292.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4021,7 +4021,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 274456086.0,
+     "popularity": 273843249.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4032,7 +4032,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 255700182.0,
+     "popularity": 255074315.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4043,7 +4043,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 220840377.0,
+     "popularity": 220147008.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4054,7 +4054,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 274032151.0,
+     "popularity": 273422213.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4092,9 +4092,12 @@
       {
        "id": "GHSA-h2v8-394m-p7vv",
        "aliases": [
+        "CVE-2026-123610",
         "RUSTSEC-2026-0348"
        ],
-       "cves": [],
+       "cves": [
+        "CVE-2026-123610"
+       ],
        "published": "2026-10-14T12:00:00Z",
        "summary": "Rustls: Brotli certificate decompression can allocate an attacker-controlled amount of memory up to 1 GiB before authentication.",
        "severity": "LOW",
@@ -4113,34 +4116,14 @@
        "epss_percentile": null
       },
       {
-       "id": "GHSA-c8m5-c952-6cm4",
-       "aliases": [
-        "RUSTSEC-2026-0346"
-       ],
-       "cves": [],
-       "published": "2026-10-14T12:00:00Z",
-       "summary": "Rustls: Session Debug formatting exposes TLS master secrets and resumption PSKs",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 4.0,
-       "cvss_source": "advisory",
-       "fixed": [
-        "0.23.46",
-        "0.24.0-dev.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-c8m5-c952-6cm4",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
-      },
-      {
        "id": "GHSA-w44r-93j7-qv28",
        "aliases": [
+        "CVE-2026-123611",
         "RUSTSEC-2026-0349"
        ],
-       "cves": [],
+       "cves": [
+        "CVE-2026-123611"
+       ],
        "published": "2026-10-14T12:00:00Z",
        "summary": "rustls: An unauthenticated ServerHello poisons the per-name key-exchange record, so later ClientHellos carry only a classical X25519 share",
        "severity": "LOW",
@@ -4161,9 +4144,12 @@
       {
        "id": "GHSA-vp88-798v-h67f",
        "aliases": [
+        "CVE-2026-123612",
         "RUSTSEC-2026-0347"
        ],
-       "cves": [],
+       "cves": [
+        "CVE-2026-123612"
+       ],
        "published": "2026-10-14T12:00:00Z",
        "summary": "rustls: ECH rejection can expose buffered application data to authenticated outer server before `ech_required` alert",
        "severity": "LOW",
@@ -4180,6 +4166,32 @@
        "kev_date_added": null,
        "epss": null,
        "epss_percentile": null
+      },
+      {
+       "id": "GHSA-c8m5-c952-6cm4",
+       "aliases": [
+        "CVE-2026-123609",
+        "RUSTSEC-2026-0346"
+       ],
+       "cves": [
+        "CVE-2026-123609"
+       ],
+       "published": "2026-10-14T12:00:00Z",
+       "summary": "Rustls: Session Debug formatting exposes TLS master secrets and resumption PSKs",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 4.0,
+       "cvss_source": "advisory",
+       "fixed": [
+        "0.23.46",
+        "0.24.0-dev.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-c8m5-c952-6cm4",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
       }
      ]
     },
@@ -4187,7 +4199,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 85216776.0,
+     "popularity": 84900739.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4198,7 +4210,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 217858645.0,
+     "popularity": 217576970.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4209,7 +4221,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 417476127.0,
+     "popularity": 416788721.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4220,7 +4232,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 318684663.0,
+     "popularity": 317937564.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4231,7 +4243,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 252157643.0,
+     "popularity": 251754205.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4242,7 +4254,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 55961741.0,
+     "popularity": 55846728.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4253,7 +4265,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 101213844.0,
+     "popularity": 101047990.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4401,50 +4413,6 @@
        "kev_date_added": null,
        "epss": null,
        "epss_percentile": null
-      },
-      {
-       "id": "RUSTSEC-2026-0367",
-       "aliases": [
-        "GHSA-vv5m-jxxh-4627"
-       ],
-       "cves": [],
-       "published": "2026-10-09T12:00:00Z",
-       "summary": "Insecure Preservation of SUID/SGID Bits during ZIP Extraction Leading to Potential Privilege Escalation",
-       "severity": "HIGH",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 7.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "9.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0367",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
-      },
-      {
-       "id": "RUSTSEC-2026-0368",
-       "aliases": [
-        "GHSA-4v9h-p7m9-rh26"
-       ],
-       "cves": [],
-       "published": "2026-10-09T12:00:00Z",
-       "summary": "zip: `ZipArchive::extract` creates symbolic links whose attacker-controlled targets are outside the destination directory",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
-       "fixed": [
-        "9.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/RUSTSEC-2026-0368",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
       }
      ]
     }
@@ -4462,7 +4430,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 22535340.0,
+     "popularity": 22145015.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "NONE",
@@ -4524,7 +4492,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 28975965.0,
+     "popularity": 28269536.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4590,7 +4558,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1697662.0,
+     "popularity": 1653281.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -4683,7 +4651,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 32013398.0,
+     "popularity": 31249703.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4694,7 +4662,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 33139272.0,
+     "popularity": 32412334.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4705,7 +4673,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 30223051.0,
+     "popularity": 29539181.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4716,7 +4684,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 12893907.0,
+     "popularity": 12535885.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4727,7 +4695,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 27141375.0,
+     "popularity": 26589037.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4763,7 +4731,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 25212805.0,
+     "popularity": 24813383.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4774,7 +4742,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 23110274.0,
+     "popularity": 22769173.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4785,7 +4753,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 25214878.0,
+     "popularity": 24744617.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4796,7 +4764,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4269432.0,
+     "popularity": 4220398.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4807,7 +4775,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 20150358.0,
+     "popularity": 19860860.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4818,7 +4786,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 18008779.0,
+     "popularity": 17621646.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4843,7 +4811,7 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "CRITICAL",
+     "worst_30d": "MEDIUM",
      "vulns": [
       {
        "id": "GO-2026-6809",
@@ -4873,344 +4841,6 @@
        "kev_date_added": null,
        "epss": 0.00396,
        "epss_percentile": 0.34015
-      },
-      {
-       "id": "GO-2026-6599",
-       "aliases": [
-        "BIT-golang-2026-94448",
-        "CVE-2026-94448"
-       ],
-       "cves": [
-        "CVE-2026-94448"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Reset context tracking on consecutive template expressions in html/template",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6599",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00289,
-       "epss_percentile": 0.21554
-      },
-      {
-       "id": "GO-2026-6610",
-       "aliases": [
-        "BIT-golang-2026-78660",
-        "CVE-2026-78660"
-       ],
-       "cves": [
-        "CVE-2026-78660"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "HTTP/2 transport accepts malformed framing-related headers in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6610",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00542,
-       "epss_percentile": 0.45813
-      },
-      {
-       "id": "GO-2026-6605",
-       "aliases": [
-        "BIT-golang-2026-56866",
-        "CVE-2026-56866"
-       ],
-       "cves": [
-        "CVE-2026-56866"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "HTTP/1 client connection desynchronization after CONNECT rejection in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6605",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00604,
-       "epss_percentile": 0.49136
-      },
-      {
-       "id": "GO-2026-6617",
-       "aliases": [
-        "BIT-golang-2026-97032",
-        "CVE-2026-97032"
-       ],
-       "cves": [
-        "CVE-2026-97032"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "HTTP/2 server crash due to HPACK encoder race in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6617",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00676,
-       "epss_percentile": 0.52481
-      },
-      {
-       "id": "GO-2026-6608",
-       "aliases": [
-        "BIT-golang-2026-94440",
-        "CVE-2026-94440"
-       ],
-       "cves": [
-        "CVE-2026-94440"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Memory limit bypass when parsing MIME headers in net/textproto, mime/multipart",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6608",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00706,
-       "epss_percentile": 0.53601
-      },
-      {
-       "id": "GO-2026-6612",
-       "aliases": [
-        "BIT-golang-2026-78663",
-        "CVE-2026-78663"
-       ],
-       "cves": [
-        "CVE-2026-78663"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Double flow control refund on HTTP/2 server streams in net/http",
-       "severity": "CRITICAL",
-       "severity_source": "NVD",
-       "cvss": 9.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6612",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00858,
-       "epss_percentile": 0.58678
-      },
-      {
-       "id": "GO-2026-6609",
-       "aliases": [
-        "BIT-golang-2026-78667",
-        "CVE-2026-78667"
-       ],
-       "cves": [
-        "CVE-2026-78667"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Lack of limit on size of parsed Range headers in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6609",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00663,
-       "epss_percentile": 0.51957
-      },
-      {
-       "id": "GO-2026-6603",
-       "aliases": [
-        "BIT-golang-2026-78659",
-        "CVE-2026-78659"
-       ],
-       "cves": [
-        "CVE-2026-78659"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "HTTP/2 server memory exhaustion due to Trailer headers in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6603",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00866,
-       "epss_percentile": 0.58917
-      },
-      {
-       "id": "GO-2026-6613",
-       "aliases": [
-        "BIT-golang-2026-94439",
-        "CVE-2026-94439"
-       ],
-       "cves": [
-        "CVE-2026-94439"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "HTTP/1 server connection desynchronization after 2xx CONNECT response in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6613",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00528,
-       "epss_percentile": 0.44963
-      },
-      {
-       "id": "GO-2026-6604",
-       "aliases": [
-        "BIT-golang-2026-56857",
-        "CVE-2026-56857"
-       ],
-       "cves": [
-        "CVE-2026-56857"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Root.Mkdir(All) can follow junctions out of the root on Windows in os",
-       "severity": "CRITICAL",
-       "severity_source": "NVD",
-       "cvss": 9.8,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6604",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00553,
-       "epss_percentile": 0.46447
-      },
-      {
-       "id": "GO-2026-6611",
-       "aliases": [
-        "BIT-golang-2026-78669",
-        "CVE-2026-78669"
-       ],
-       "cves": [
-        "CVE-2026-78669"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Excessive CPU consumption from repeated initial window changes in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6611",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00847,
-       "epss_percentile": 0.58324
-      },
-      {
-       "id": "GO-2026-6607",
-       "aliases": [
-        "BIT-golang-2026-97031",
-        "CVE-2026-97031"
-       ],
-       "cves": [
-        "CVE-2026-97031"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Reject malformed ECH outer extension references in crypto/tls",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6607",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00716,
-       "epss_percentile": 0.53998
-      },
-      {
-       "id": "GO-2026-6600",
-       "aliases": [
-        "BIT-golang-2026-97030",
-        "CVE-2026-97030"
-       ],
-       "cves": [
-        "CVE-2026-97030"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Recognize yield as regexp preceder keyword in html/template",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.9",
-        "1.27.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6600",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00289,
-       "epss_percentile": 0.21554
       }
      ]
     },
@@ -5222,7 +4852,7 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "CRITICAL",
+     "worst_30d": "HIGH",
      "vulns": [
       {
        "id": "GO-2026-6866",
@@ -5271,131 +4901,6 @@
        "kev_date_added": null,
        "epss": 0.00409,
        "epss_percentile": 0.35396
-      },
-      {
-       "id": "GO-2026-6610",
-       "aliases": [
-        "BIT-golang-2026-78660",
-        "CVE-2026-78660"
-       ],
-       "cves": [
-        "CVE-2026-78660"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "HTTP/2 transport accepts malformed framing-related headers in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "0.60.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6610",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00542,
-       "epss_percentile": 0.45813
-      },
-      {
-       "id": "GO-2026-6617",
-       "aliases": [
-        "BIT-golang-2026-97032",
-        "CVE-2026-97032"
-       ],
-       "cves": [
-        "CVE-2026-97032"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "HTTP/2 server crash due to HPACK encoder race in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "0.60.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6617",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00676,
-       "epss_percentile": 0.52481
-      },
-      {
-       "id": "GO-2026-6612",
-       "aliases": [
-        "BIT-golang-2026-78663",
-        "CVE-2026-78663"
-       ],
-       "cves": [
-        "CVE-2026-78663"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Double flow control refund on HTTP/2 server streams in net/http",
-       "severity": "CRITICAL",
-       "severity_source": "NVD",
-       "cvss": 9.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "0.60.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6612",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00858,
-       "epss_percentile": 0.58678
-      },
-      {
-       "id": "GO-2026-6603",
-       "aliases": [
-        "BIT-golang-2026-78659",
-        "CVE-2026-78659"
-       ],
-       "cves": [
-        "CVE-2026-78659"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "HTTP/2 server memory exhaustion due to Trailer headers in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "0.60.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6603",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00866,
-       "epss_percentile": 0.58917
-      },
-      {
-       "id": "GO-2026-6611",
-       "aliases": [
-        "BIT-golang-2026-78669",
-        "CVE-2026-78669"
-       ],
-       "cves": [
-        "CVE-2026-78669"
-       ],
-       "published": "2026-10-08T22:31:09Z",
-       "summary": "Excessive CPU consumption from repeated initial window changes in net/http",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "0.60.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6611",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00847,
-       "epss_percentile": 0.58324
       }
      ]
     },
@@ -5918,7 +5423,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 813244603.0,
+     "popularity": 813381054.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "NONE",
@@ -5929,7 +5434,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1384918811.0,
+     "popularity": 1385136831.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5940,7 +5445,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1295287579.0,
+     "popularity": 1295482507.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5951,7 +5456,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 626329539.0,
+     "popularity": 626473337.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5962,7 +5467,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 303986854.0,
+     "popularity": 304026163.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5973,7 +5478,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 346433521.0,
+     "popularity": 346473244.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5984,7 +5489,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1295901571.0,
+     "popularity": 1296052038.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5995,7 +5500,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 402050944.0,
+     "popularity": 402190243.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6016,7 +5521,7 @@
      "key": "hex/phoenix",
      "name": "phoenix",
      "label": "Phoenix",
-     "popularity": 678053.0,
+     "popularity": 655122.0,
      "popularity_source": "Hex downloads, last week",
      "survey": 2.5,
      "worst_7d": "NONE",
@@ -6027,7 +5532,7 @@
      "key": "hex/phoenix_live_view",
      "name": "phoenix_live_view",
      "label": "LiveView",
-     "popularity": 558802.0,
+     "popularity": 534935.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -6038,7 +5543,7 @@
      "key": "hex/plug",
      "name": "plug",
      "label": "plug",
-     "popularity": 768550.0,
+     "popularity": 745974.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -6075,7 +5580,7 @@
      "key": "hex/ecto",
      "name": "ecto",
      "label": "ecto",
-     "popularity": 637272.0,
+     "popularity": 629968.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "HIGH",
@@ -6112,7 +5617,7 @@
      "key": "hex/cowboy",
      "name": "cowboy",
      "label": "cowboy",
-     "popularity": 463256.0,
+     "popularity": 447530.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "HIGH",
@@ -6168,7 +5673,7 @@
      "key": "hex/hackney",
      "name": "hackney",
      "label": "hackney",
-     "popularity": 326962.0,
+     "popularity": 327573.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -6733,68 +6238,6 @@
        "kev_date_added": null,
        "epss": 0.00261,
        "epss_percentile": 0.18009
-      },
-      {
-       "id": "BIT-libpython-2026-19553",
-       "aliases": [
-        "BIT-python-2026-19553",
-        "BIT-python-min-2026-19553",
-        "CVE-2026-19553",
-        "PSF-2026-44"
-       ],
-       "cves": [
-        "CVE-2026-19553"
-       ],
-       "published": "2026-10-09T10:48:13Z",
-       "summary": "SSLContext.wrap_bio() missing validation of server_hostname parameter",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.6,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.10.22",
-        "3.11.17",
-        "3.12.15",
-        "3.13.16",
-        "3.14.8"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libpython-2026-19553",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00547,
-       "epss_percentile": 0.46045
-      },
-      {
-       "id": "BIT-libpython-2026-19445",
-       "aliases": [
-        "BIT-python-2026-19445",
-        "BIT-python-min-2026-19445",
-        "CVE-2026-19445",
-        "PSF-2026-43"
-       ],
-       "cves": [
-        "CVE-2026-19445"
-       ],
-       "published": "2026-10-09T10:48:12Z",
-       "summary": "Use-after-free of a server-side SSLContext when sni_callback switches contexts",
-       "severity": "CRITICAL",
-       "severity_source": "Bitnami",
-       "cvss": 9.2,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.10.22",
-        "3.11.17",
-        "3.12.15",
-        "3.13.16",
-        "3.14.8"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-libpython-2026-19445",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00524,
-       "epss_percentile": 0.44727
       }
      ]
     },
