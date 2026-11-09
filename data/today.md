@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-08
+# depweather forecast, 2026-11-09
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-08T22:05:48Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-09T16:13:20Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 3 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 3
-- New CVEs in NVD today (UTC): 319
-- CVEs published in 2026-11 so far: 3,403 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 199
+- CVEs published in 2026-11 so far: 3,602 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -17,7 +17,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### Hex
 
-- **cowboy**: 2 advisories, worst high. Example: [EEF-CVE-2026-115701](https://osv.dev/vulnerability/EEF-CVE-2026-115701) Cowboy HTTP/1.1 Unbounded Buffering of Pipelined Data During Request Handling Enables Memory Exhaustion
+- **cowboy**: 2 advisories, worst high; fixed in 2.21.0, 2.22.0. Example: [EEF-CVE-2026-115701](https://osv.dev/vulnerability/EEF-CVE-2026-115701) Cowboy HTTP/1.1 Unbounded Buffering of Pipelined Data During Request Handling Enables Memory Exhaustion
 - **ecto**: 1 advisory, worst high; fixed in 3.14.3. Example: [EEF-CVE-2026-118391](https://osv.dev/vulnerability/EEF-CVE-2026-118391) Unbounded query cache growth from interpolated JSON paths and splice lists in Ecto
 
 ### npm
