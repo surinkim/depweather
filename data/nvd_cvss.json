@@ -434,6 +434,11 @@
   "severity": "MEDIUM",
   "checked": "2026-10-31"
  },
+ "CVE-2026-123817": {
+  "cvss": 8.7,
+  "severity": "HIGH",
+  "checked": "2026-11-10"
+ },
  "CVE-2026-15176": {
   "cvss": 8.1,
   "severity": "HIGH",
