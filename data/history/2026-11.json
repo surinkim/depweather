@@ -37,6 +37,30 @@
      "h": 2
     }
    }
+  },
+  "2026-11-10": {
+   "packages": {
+    "rubygems/nokogiri": {
+     "l": 3
+    },
+    "rubygems/rack": {
+     "h": 1,
+     "m": 2,
+     "l": 1
+    },
+    "rubygems/rails": {
+     "h": 3,
+     "m": 6,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "rubygems": {
+     "h": 4,
+     "m": 8,
+     "l": 5
+    }
+   }
   }
  }
 }
