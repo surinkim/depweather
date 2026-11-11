@@ -40,6 +40,16 @@
   },
   "2026-11-10": {
    "packages": {
+    "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
+     "h": 1,
+     "m": 4
+    },
+    "nuget/Microsoft.NETCore.App.Runtime.linux-x64": {
+     "m": 2
+    },
+    "nuget/System.Text.Json": {
+     "m": 1
+    },
     "rubygems/nokogiri": {
      "l": 3
     },
@@ -55,10 +65,37 @@
     }
    },
    "ecosystems": {
+    "nuget": {
+     "h": 1,
+     "m": 6
+    },
     "rubygems": {
      "h": 4,
      "m": 8,
      "l": 5
+    }
+   }
+  },
+  "2026-11-11": {
+   "packages": {
+    "go/stdlib": {
+     "u": 1
+    },
+    "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
+     "h": 2,
+     "m": 6
+    },
+    "nuget/Microsoft.NETCore.App.Runtime.linux-x64": {
+     "h": 5
+    }
+   },
+   "ecosystems": {
+    "go": {
+     "u": 1
+    },
+    "nuget": {
+     "h": 7,
+     "m": 6
     }
    }
   }
