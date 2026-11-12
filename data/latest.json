@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T15:10:32Z",
+ "generated_at": "2026-11-12T23:39:46Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -47,12 +47,12 @@
   }
  },
  "summary": {
-  "today_cves": 156,
+  "today_cves": 358,
   "month": "2026-11",
-  "month_cves": 6807,
+  "month_cves": 7008,
   "month_cves_last_year": 3021,
   "kev_new_7d": 11,
-  "affected_packages_7d": 8,
+  "affected_packages_7d": 9,
   "tracked_packages": 149
  },
  "monthly": [
@@ -110,7 +110,7 @@
   },
   {
    "month": "2026-11",
-   "count": 6807
+   "count": 7008
   }
  ],
  "monthly_is_stale": false,
@@ -699,9 +699,81 @@
      "popularity": 104570397.0,
      "popularity_source": "npm downloads, last week",
      "survey": 2.8,
-     "worst_7d": "NONE",
+     "worst_7d": "MEDIUM",
      "worst_30d": "MEDIUM",
      "vulns": [
+      {
+       "id": "GHSA-4m76-xfj5-7975",
+       "aliases": [
+        "CVE-2026-126357"
+       ],
+       "cves": [
+        "CVE-2026-126357"
+       ],
+       "published": "2026-11-12T23:24:11Z",
+       "summary": "Hono: `mount()` and `app.mount()` can forward a path that bypasses middleware scoped inside the mount prefix",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [
+        "4.13.16"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4m76-xfj5-7975",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-h7mg-cq63-vhpq",
+       "aliases": [
+        "CVE-2026-126358"
+       ],
+       "cves": [
+        "CVE-2026-126358"
+       ],
+       "published": "2026-11-12T23:23:30Z",
+       "summary": "Hono: RegExpRouter skips wildcard middleware for some route sets and for paths with an encoded line terminator",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [
+        "4.13.16"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-h7mg-cq63-vhpq",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "GHSA-3gg2-335m-rxc6",
+       "aliases": [
+        "CVE-2026-126359"
+       ],
+       "cves": [
+        "CVE-2026-126359"
+       ],
+       "published": "2026-11-12T23:22:36Z",
+       "summary": "Hono: `css` helper does not escape a closing tag split between the template and an interpolated value, allowing HTML injection",
+       "severity": "LOW",
+       "severity_source": "GitHub Advisory",
+       "cvss": 3.4,
+       "cvss_source": "advisory",
+       "fixed": [
+        "4.13.16"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-3gg2-335m-rxc6",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
       {
        "id": "GHSA-5r4p-p66f-jhc7",
        "aliases": [
@@ -3070,7 +3142,7 @@
      "popularity_source": "fixed weight",
      "survey": 19.9,
      "worst_7d": "HIGH",
-     "worst_30d": "CRITICAL",
+     "worst_30d": "HIGH",
      "vulns": [
       {
        "id": "GHSA-3893-7fxc-qvff",
@@ -3403,347 +3475,6 @@
        "kev_date_added": null,
        "epss": 0.00637,
        "epss_percentile": 0.51037
-      },
-      {
-       "id": "GHSA-mf4x-w4gh-4656",
-       "aliases": [
-        "CVE-2026-70186"
-       ],
-       "cves": [
-        "CVE-2026-70186"
-       ],
-       "published": "2026-10-13T20:53:19Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70186 - ASP.NET Core Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "8.0.32",
-        "10.0.13",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-mf4x-w4gh-4656",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00959,
-       "epss_percentile": 0.61972
-      },
-      {
-       "id": "GHSA-qjpx-jqm5-h2c4",
-       "aliases": [
-        "CVE-2026-96230"
-       ],
-       "cves": [
-        "CVE-2026-96230"
-       ],
-       "published": "2026-10-13T20:51:12Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96230 - ASP.NET Core Remote Code Execution Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.8,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.13",
-        "11.0.0-rc.2",
-        "8.0.32",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-qjpx-jqm5-h2c4",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00946,
-       "epss_percentile": 0.61575
-      },
-      {
-       "id": "GHSA-vrrp-6v32-2p8g",
-       "aliases": [
-        "CVE-2026-70179"
-       ],
-       "cves": [
-        "CVE-2026-70179"
-       ],
-       "published": "2026-10-13T20:50:45Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70179 - ASP.NET Core Elevation of Privilege Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.13",
-        "8.0.32",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-vrrp-6v32-2p8g",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00629,
-       "epss_percentile": 0.50668
-      },
-      {
-       "id": "GHSA-rv87-ccxw-8ggf",
-       "aliases": [
-        "BIT-aspnet-core-2026-88092",
-        "CVE-2026-88092"
-       ],
-       "cves": [
-        "CVE-2026-88092"
-       ],
-       "published": "2026-10-13T20:40:50Z",
-       "summary": "Microsoft Security Advisory CVE-2026-88092 - ASP.NET Core Security Feature Bypass Vulnerability",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": 9.4,
-       "cvss_source": "advisory",
-       "fixed": [
-        "8.0.32",
-        "10.0.13",
-        "11.0.0-rc.2",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-rv87-ccxw-8ggf",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00934,
-       "epss_percentile": 0.61232
-      },
-      {
-       "id": "GHSA-fpq8-4vhr-rcxx",
-       "aliases": [
-        "CVE-2026-70188"
-       ],
-       "cves": [
-        "CVE-2026-70188"
-       ],
-       "published": "2026-10-13T20:37:27Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70188 - ASP.NET Core Security Feature Bypass Vulnerability",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": 9.1,
-       "cvss_source": "advisory",
-       "fixed": [
-        "11.0.0-rc.2",
-        "8.0.32",
-        "10.0.13",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-fpq8-4vhr-rcxx",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00938,
-       "epss_percentile": 0.61356
-      },
-      {
-       "id": "GHSA-f4g7-52wc-p8x7",
-       "aliases": [
-        "CVE-2026-96236"
-       ],
-       "cves": [
-        "CVE-2026-96236"
-       ],
-       "published": "2026-10-13T20:36:22Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96236 - ASP.NET Core Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "8.0.32",
-        "11.0.0-rc.2",
-        "10.0.13",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-f4g7-52wc-p8x7",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.01086,
-       "epss_percentile": 0.65742
-      },
-      {
-       "id": "GHSA-g27p-qf6j-c96c",
-       "aliases": [
-        "CVE-2026-102870"
-       ],
-       "cves": [
-        "CVE-2026-102870"
-       ],
-       "published": "2026-10-13T20:27:36Z",
-       "summary": "Microsoft Security Advisory CVE-2026-102870 - ASP.NET Core Remote Code Execution Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.8,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.14",
-        "11.0.0-rc.3.26522.148"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-g27p-qf6j-c96c",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00906,
-       "epss_percentile": 0.6033
-      },
-      {
-       "id": "GHSA-86xp-94pg-8r6r",
-       "aliases": [],
-       "cves": [],
-       "published": "2026-10-13T20:11:58Z",
-       "summary": "Microsoft Security Advisory CVE-2026-92707 - ASP.NET Core Denial of Service Vulnerability",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.13",
-        "11.0.0-rc.2",
-        "8.0.32",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-86xp-94pg-8r6r",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
-      },
-      {
-       "id": "GHSA-494h-xx7x-5frh",
-       "aliases": [
-        "CVE-2026-70183"
-       ],
-       "cves": [
-        "CVE-2026-70183"
-       ],
-       "published": "2026-10-13T19:59:23Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70183 - ASP.NET Core Security Feature Bypass Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "8.0.32",
-        "10.0.13",
-        "9.0.21",
-        "11.0.0-rc.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-494h-xx7x-5frh",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00531,
-       "epss_percentile": 0.45375
-      },
-      {
-       "id": "GHSA-57xr-hfxx-jw5x",
-       "aliases": [
-        "CVE-2026-70196"
-       ],
-       "cves": [
-        "CVE-2026-70196"
-       ],
-       "published": "2026-10-13T19:58:12Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70196 - ASP.NET Core Denial of Service Vulnerability",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [
-        "8.0.32",
-        "10.0.13",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-57xr-hfxx-jw5x",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0091,
-       "epss_percentile": 0.60449
-      },
-      {
-       "id": "GHSA-w5qq-qrpp-rf4c",
-       "aliases": [
-        "CVE-2026-70181"
-       ],
-       "cves": [
-        "CVE-2026-70181"
-       ],
-       "published": "2026-10-13T19:47:44Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70181 - ASP.NET Core Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "9.0.21",
-        "10.0.13",
-        "8.0.32"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-w5qq-qrpp-rf4c",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0123,
-       "epss_percentile": 0.69335
-      },
-      {
-       "id": "GHSA-x3vp-85cm-q97r",
-       "aliases": [
-        "CVE-2026-70175"
-       ],
-       "cves": [
-        "CVE-2026-70175"
-       ],
-       "published": "2026-10-13T19:44:54Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70175 - ASP.NET Core Elevation of Privilege Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.1,
-       "cvss_source": "advisory",
-       "fixed": [
-        "9.0.21",
-        "10.0.13",
-        "8.0.32"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-x3vp-85cm-q97r",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00729,
-       "epss_percentile": 0.54728
-      },
-      {
-       "id": "GHSA-334f-vvp4-7g6p",
-       "aliases": [
-        "CVE-2026-70159"
-       ],
-       "cves": [
-        "CVE-2026-70159"
-       ],
-       "published": "2026-10-13T19:41:19Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70159 - ASP.NET Core Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.13",
-        "11.0.0-rc.2",
-        "8.0.32",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-334f-vvp4-7g6p",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0123,
-       "epss_percentile": 0.69335
       }
      ]
     },
@@ -3965,219 +3696,6 @@
        "kev_date_added": null,
        "epss": null,
        "epss_percentile": null
-      },
-      {
-       "id": "GHSA-w6wh-p4g7-mpj2",
-       "aliases": [
-        "CVE-2026-96225"
-       ],
-       "cves": [
-        "CVE-2026-96225"
-       ],
-       "published": "2026-10-13T20:51:51Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96225 - .NET and Visual Studio Elevation of Privilege Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.8,
-       "cvss_source": "advisory",
-       "fixed": [
-        "8.0.32",
-        "10.0.13",
-        "11.0.0-rc.2",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-w6wh-p4g7-mpj2",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00411,
-       "epss_percentile": 0.35821
-      },
-      {
-       "id": "GHSA-2j93-m82w-73j2",
-       "aliases": [
-        "CVE-2026-96231"
-       ],
-       "cves": [
-        "CVE-2026-96231"
-       ],
-       "published": "2026-10-13T20:44:11Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96231 - .NET and Visual Studio Elevation of Privilege Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.8,
-       "cvss_source": "advisory",
-       "fixed": [
-        "8.0.32",
-        "10.0.13",
-        "9.0.21",
-        "11.0.0-rc.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-2j93-m82w-73j2",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00411,
-       "epss_percentile": 0.35821
-      },
-      {
-       "id": "GHSA-wxxw-5cvc-53j7",
-       "aliases": [
-        "CVE-2026-66822"
-       ],
-       "cves": [
-        "CVE-2026-66822"
-       ],
-       "published": "2026-10-13T20:41:40Z",
-       "summary": "Microsoft Security Advisory CVE-2026-66822 - .NET and Visual Studio Information Disclosure Vulnerability",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [
-        "9.0.21",
-        "11.0.0-rc.2",
-        "10.0.13",
-        "8.0.32"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-wxxw-5cvc-53j7",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00785,
-       "epss_percentile": 0.5656
-      },
-      {
-       "id": "GHSA-4mpw-cpwj-hxxj",
-       "aliases": [
-        "CVE-2026-70197"
-       ],
-       "cves": [
-        "CVE-2026-70197"
-       ],
-       "published": "2026-10-13T20:34:32Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70197 - .NET and Visual Studio Remote Code Execution Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.1,
-       "cvss_source": "advisory",
-       "fixed": [
-        "8.0.33",
-        "11.0.0-rc.3.26522.148",
-        "9.0.22",
-        "10.0.14"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-4mpw-cpwj-hxxj",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00788,
-       "epss_percentile": 0.56697
-      },
-      {
-       "id": "GHSA-3rxq-g8rj-r2cf",
-       "aliases": [
-        "CVE-2026-69651"
-       ],
-       "cves": [
-        "CVE-2026-69651"
-       ],
-       "published": "2026-10-13T20:32:47Z",
-       "summary": "Microsoft Security Advisory CVE-2026-69651 - .NET and Visual Studio Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "9.0.21",
-        "11.0.0-rc.2",
-        "10.0.13",
-        "8.0.32"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-3rxq-g8rj-r2cf",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0125,
-       "epss_percentile": 0.69811
-      },
-      {
-       "id": "GHSA-87vj-4hqv-22p9",
-       "aliases": [
-        "CVE-2026-96233"
-       ],
-       "cves": [
-        "CVE-2026-96233"
-       ],
-       "published": "2026-10-13T20:25:37Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96233 - .NET and Visual Studio Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.13",
-        "11.0.0-rc.2",
-        "9.0.21",
-        "8.0.32"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-87vj-4hqv-22p9",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00991,
-       "epss_percentile": 0.6301
-      },
-      {
-       "id": "GHSA-mc4q-93x5-f6hj",
-       "aliases": [
-        "CVE-2026-58280"
-       ],
-       "cves": [
-        "CVE-2026-58280"
-       ],
-       "published": "2026-10-13T20:01:59Z",
-       "summary": "Microsoft Security Advisory CVE-2026-58280 - .NET and Visual Studio Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "9.0.21",
-        "8.0.32",
-        "10.0.13",
-        "11.0.0-rc.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-mc4q-93x5-f6hj",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0125,
-       "epss_percentile": 0.69811
-      },
-      {
-       "id": "GHSA-fqpq-cx42-9jmm",
-       "aliases": [
-        "CVE-2026-70194"
-       ],
-       "cves": [
-        "CVE-2026-70194"
-       ],
-       "published": "2026-10-13T20:00:42Z",
-       "summary": "Microsoft Security Advisory CVE-2026-70194 - .NET and Visual Studio Security Feature Bypass Vulnerability",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "11.0.0-rc.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-fqpq-cx42-9jmm",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00486,
-       "epss_percentile": 0.42377
       }
      ]
     },
@@ -4189,61 +3707,8 @@
      "popularity_source": "fixed weight",
      "survey": 6.7,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
-     "vulns": [
-      {
-       "id": "GHSA-qjpx-jqm5-h2c4",
-       "aliases": [
-        "CVE-2026-96230"
-       ],
-       "cves": [
-        "CVE-2026-96230"
-       ],
-       "published": "2026-10-13T20:51:12Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96230 - ASP.NET Core Remote Code Execution Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.8,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.13",
-        "11.0.0-rc.2",
-        "8.0.32",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-qjpx-jqm5-h2c4",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00946,
-       "epss_percentile": 0.61575
-      },
-      {
-       "id": "GHSA-g27p-qf6j-c96c",
-       "aliases": [
-        "CVE-2026-102870"
-       ],
-       "cves": [
-        "CVE-2026-102870"
-       ],
-       "published": "2026-10-13T20:27:36Z",
-       "summary": "Microsoft Security Advisory CVE-2026-102870 - ASP.NET Core Remote Code Execution Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.8,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.14",
-        "11.0.0-rc.3.26522.148"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-g27p-qf6j-c96c",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00906,
-       "epss_percentile": 0.6033
-      }
-     ]
+     "worst_30d": "NONE",
+     "vulns": []
     },
     {
      "key": "nuget/Newtonsoft.Json",
@@ -4300,122 +3765,8 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
-     "vulns": [
-      {
-       "id": "GHSA-c399-9853-6jmj",
-       "aliases": [
-        "BIT-dotnet-2026-96959",
-        "BIT-dotnet-sdk-2026-96959",
-        "CVE-2026-96959"
-       ],
-       "cves": [
-        "CVE-2026-96959"
-       ],
-       "published": "2026-10-13T20:49:06Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96959 - .NET and Visual Studio Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.13",
-        "11.0.0-rc.2",
-        "8.0.5",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-c399-9853-6jmj",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00969,
-       "epss_percentile": 0.62345
-      },
-      {
-       "id": "GHSA-vrv5-2jg9-4mmr",
-       "aliases": [
-        "BIT-dotnet-2026-96222",
-        "BIT-dotnet-sdk-2026-96222",
-        "CVE-2026-96222"
-       ],
-       "cves": [
-        "CVE-2026-96222"
-       ],
-       "published": "2026-10-13T20:45:13Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96222 - .NET Spoofing Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.4,
-       "cvss_source": "advisory",
-       "fixed": [
-        "8.0.5"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-vrv5-2jg9-4mmr",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00586,
-       "epss_percentile": 0.48532
-      },
-      {
-       "id": "GHSA-7hqp-7c5m-4vq6",
-       "aliases": [
-        "BIT-dotnet-2026-96960",
-        "BIT-dotnet-sdk-2026-96960",
-        "CVE-2026-96960"
-       ],
-       "cves": [
-        "CVE-2026-96960"
-       ],
-       "published": "2026-10-13T20:26:27Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96960 - .NET and Visual Studio Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.13",
-        "11.0.0-rc.2",
-        "8.0.5",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-7hqp-7c5m-4vq6",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.01203,
-       "epss_percentile": 0.6868
-      },
-      {
-       "id": "GHSA-r955-8q5j-3h83",
-       "aliases": [
-        "BIT-dotnet-2026-96958",
-        "BIT-dotnet-sdk-2026-96958",
-        "CVE-2026-96958"
-       ],
-       "cves": [
-        "CVE-2026-96958"
-       ],
-       "published": "2026-10-13T20:05:52Z",
-       "summary": "Microsoft Security Advisory CVE-2026-96958 - .NET and Visual Studio Denial of Service Vulnerability",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "10.0.13",
-        "11.0.0-rc.2",
-        "8.0.5",
-        "9.0.21"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-r955-8q5j-3h83",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.01203,
-       "epss_percentile": 0.6868
-      }
-     ]
+     "worst_30d": "NONE",
+     "vulns": []
     },
     {
      "key": "nuget/Microsoft.Data.SqlClient",
@@ -4545,7 +3896,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 161176797.0,
+     "popularity": 161999304.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4556,7 +3907,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2475.0,
+     "popularity": 2477.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4567,7 +3918,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 303164254.0,
+     "popularity": 304541376.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4604,7 +3955,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 280114060.0,
+     "popularity": 281456940.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4615,7 +3966,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 260930227.0,
+     "popularity": 262197222.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4626,7 +3977,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 224458480.0,
+     "popularity": 225532280.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4637,7 +3988,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 279285886.0,
+     "popularity": 280596500.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4782,7 +4133,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 86443991.0,
+     "popularity": 86852495.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4793,7 +4144,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 223373237.0,
+     "popularity": 224498566.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4804,7 +4155,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 426056166.0,
+     "popularity": 428032828.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4815,7 +4166,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 324367333.0,
+     "popularity": 325852463.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4826,7 +4177,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 257983127.0,
+     "popularity": 259237548.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4837,7 +4188,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 57170462.0,
+     "popularity": 57436896.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4848,7 +4199,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 103223125.0,
+     "popularity": 103685737.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4991,7 +4342,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 24012370.0,
+     "popularity": 24931203.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "NONE",
@@ -5121,7 +4472,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1710971.0,
+     "popularity": 1753264.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -5236,7 +4587,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 31814074.0,
+     "popularity": 32950946.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5294,7 +4645,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 26882290.0,
+     "popularity": 27834069.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5305,7 +4656,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 24708113.0,
+     "popularity": 25711511.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5316,7 +4667,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 26755873.0,
+     "popularity": 27674739.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5338,7 +4689,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 21415122.0,
+     "popularity": 22300128.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -6011,12 +5362,62 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 815625794.0,
+     "popularity": 815897785.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "HIGH",
      "worst_30d": "HIGH",
      "vulns": [
+      {
+       "id": "GHSA-68p9-83h6-5wpj",
+       "aliases": [
+        "CVE-2026-126069"
+       ],
+       "cves": [
+        "CVE-2026-126069"
+       ],
+       "published": "2026-11-12T22:08:21Z",
+       "summary": "Action View: Possible XSS vulnerability in tag helpers",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 4.7,
+       "cvss_source": "advisory",
+       "fixed": [
+        "8.1.4.1",
+        "8.0.5.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-68p9-83h6-5wpj",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00235,
+       "epss_percentile": 0.14597
+      },
+      {
+       "id": "GHSA-3f4q-8x5m-76v8",
+       "aliases": [
+        "CVE-2026-126188"
+       ],
+       "cves": [
+        "CVE-2026-126188"
+       ],
+       "published": "2026-11-12T21:54:18Z",
+       "summary": "Active Storage: Possible local file disclosure in video previews and analysis",
+       "severity": "LOW",
+       "severity_source": "GitHub Advisory",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [
+        "8.1.4.1",
+        "8.0.5.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-3f4q-8x5m-76v8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00279,
+       "epss_percentile": 0.20624
+      },
       {
        "id": "GHSA-v924-7rp8-4mxh",
        "aliases": [
@@ -6271,7 +5672,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1388648815.0,
+     "popularity": 1388994039.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "HIGH",
@@ -6386,7 +5787,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1298778322.0,
+     "popularity": 1299118165.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "LOW",
@@ -6470,7 +5871,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 628561868.0,
+     "popularity": 628773981.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6481,7 +5882,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 304789385.0,
+     "popularity": 304877247.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6492,7 +5893,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 347461816.0,
+     "popularity": 347588021.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6503,7 +5904,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1299298172.0,
+     "popularity": 1299649801.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6514,7 +5915,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 404417838.0,
+     "popularity": 404665842.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",

@@ -98,6 +98,28 @@
      "m": 6
     }
    }
+  },
+  "2026-11-12": {
+   "packages": {
+    "npm/hono": {
+     "m": 2,
+     "l": 1
+    },
+    "rubygems/rails": {
+     "m": 1,
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 2,
+     "l": 1
+    },
+    "rubygems": {
+     "m": 1,
+     "l": 1
+    }
+   }
   }
  }
 }

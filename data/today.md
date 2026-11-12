@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-12
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-12T15:10:32Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-12T23:39:46Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 8 of 149
+- Popular packages with a new advisory this week: 9 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 11
-- New CVEs in NVD today (UTC): 156
-- CVEs published in 2026-11 so far: 6,807 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 358
+- CVEs published in 2026-11 so far: 7,008 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -19,7 +19,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### RubyGems
 
-- **Ruby on Rails (rails)**: 10 advisories, worst high; fixed in 8.1.4.1, 8.0.5.2. Example: [GHSA-v924-7rp8-4mxh](https://osv.dev/vulnerability/GHSA-v924-7rp8-4mxh) Active Storage: Possible arbitrary file read and remote code execution in video previews, analysis and image processing
+- **Ruby on Rails (rails)**: 12 advisories, worst high; fixed in 8.1.4.1, 8.0.5.2. Example: [GHSA-v924-7rp8-4mxh](https://osv.dev/vulnerability/GHSA-v924-7rp8-4mxh) Active Storage: Possible arbitrary file read and remote code execution in video previews, analysis and image processing
 - **rack**: 4 advisories, worst high; fixed in 2.2.25, 3.1.23, 3.2.8. Example: [GHSA-5v64-555j-wjxm](https://osv.dev/vulnerability/GHSA-5v64-555j-wjxm) Rack: Multipart parsing allows DoS via unbounded scan buffer growth
 - **nokogiri**: 3 advisories, worst low or unrated; fixed in 1.19.5. Example: [GHSA-v995-44v6-5fqm](https://osv.dev/vulnerability/GHSA-v995-44v6-5fqm) JRuby: NONET is bypassed for external DTDs and entities when the systemId uses a short-form IPv4 host
 
@@ -27,13 +27,13 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 - **cowboy**: 2 advisories, worst high; fixed in 2.21.0, 2.22.0. Example: [EEF-CVE-2026-115701](https://osv.dev/vulnerability/EEF-CVE-2026-115701) Cowboy HTTP/1.1 Unbounded Buffering of Pipelined Data During Request Handling Enables Memory Exhaustion
 
+### npm
+
+- **Hono**: 3 advisories, worst medium; fixed in 4.13.16. Example: [GHSA-4m76-xfj5-7975](https://osv.dev/vulnerability/GHSA-4m76-xfj5-7975) Hono: `mount()` and `app.mount()` can forward a path that bypasses middleware scoped inside the mount prefix
+
 ### Go
 
 - **Go stdlib (stdlib)**: 1 advisory, worst low or unrated; fixed in 1.26.11, 1.27.4. Example: [GO-2026-6859](https://osv.dev/vulnerability/GO-2026-6859) HTTP/1 server crash due to MaxBytesReader header race in net/http
-
-### npm
-
-No new advisories for the tracked packages.
 
 ### PyPI
 
