@@ -542,7 +542,7 @@
  "CVE-2026-97054": {
   "cvss": null,
   "severity": null,
-  "checked": "2026-11-11"
+  "checked": "2026-11-12"
  },
  "CVE-2026-97200": {
   "cvss": 8.2,

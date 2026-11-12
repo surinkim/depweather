@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-11
+# depweather forecast, 2026-11-12
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-11T14:18:27Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-12T00:44:22Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 8 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 12
-- New CVEs in NVD today (UTC): 278
-- CVEs published in 2026-11 so far: 6,267 (same month last year: 3,021)
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 11
+- New CVEs in NVD today (UTC): 1
+- CVEs published in 2026-11 so far: 6,653 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -68,6 +68,5 @@ No new advisories for the tracked packages.
 - 2026-11-09: CVE-2026-116779, SignalWire FreeSwitch: SignalWire FreeSwitch Code Injection Vulnerability
 - 2026-11-09: CVE-2026-123218, IBM Aspera Faspex: IBM Aspera Faspex Incorrect Authorization Vulnerability
 - 2026-11-06: CVE-2026-19868, SonicWall SonicOS SSLVPN: SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability
-- 2026-11-04: CVE-2024-27834, Apple Multiple Products: Apple Multiple Products Improper Authentication Vulnerability
 
 Full data: https://depweather.com/data/latest.json
