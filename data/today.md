@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-12
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-12T00:44:22Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-12T15:10:32Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 8 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 11
-- New CVEs in NVD today (UTC): 1
-- CVEs published in 2026-11 so far: 6,653 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 156
+- CVEs published in 2026-11 so far: 6,807 (same month last year: 3,021)
 
 ## By ecosystem
 
