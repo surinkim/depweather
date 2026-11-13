@@ -468,6 +468,10 @@
   },
   "2026-10-27": {
    "packages": {
+    "crates/rustls": {
+     "m": 1,
+     "l": 3
+    },
     "go/golang.org/x/net": {
      "h": 1,
      "m": 1
@@ -488,6 +492,10 @@
     }
    },
    "ecosystems": {
+    "crates": {
+     "m": 1,
+     "l": 3
+    },
     "go": {
      "h": 1,
      "m": 1
