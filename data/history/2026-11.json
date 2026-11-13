@@ -132,6 +132,29 @@
      "l": 1
     }
    }
+  },
+  "2026-11-13": {
+   "packages": {
+    "npm/@sveltejs/kit": {
+     "m": 1
+    },
+    "npm/astro": {
+     "m": 1,
+     "l": 1
+    },
+    "packagist/laravel/framework": {
+     "l": 1
+    }
+   },
+   "ecosystems": {
+    "npm": {
+     "m": 2,
+     "l": 1
+    },
+    "packagist": {
+     "l": 1
+    }
+   }
   }
  }
 }

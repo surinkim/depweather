@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-13
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-13T14:31:54Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-13T23:34:48Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 9 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 11
-- New CVEs in NVD today (UTC): 499
-- CVEs published in 2026-11 so far: 7,507 (same month last year: 3,021)
+- Popular packages with a new advisory this week: 12 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 13
+- New CVEs in NVD today (UTC): 792
+- CVEs published in 2026-11 so far: 7,800 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -30,6 +30,12 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 ### npm
 
 - **Hono**: 5 advisories, worst medium; fixed in 4.13.16. Example: [GHSA-46wx-v44x-9hh2](https://osv.dev/vulnerability/GHSA-46wx-v44x-9hh2) Hono: `csrf()` does not check requests sent by hyperlink auditing (`text/ping`)
+- **Astro**: 2 advisories, worst medium; fixed in 7.4.5, 7.4.7. Example: [GHSA-r3h5-4585-7x3w](https://osv.dev/vulnerability/GHSA-r3h5-4585-7x3w) Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems
+- **SvelteKit (@sveltejs/kit)**: 1 advisory, worst medium; fixed in 3.1.1, 2.70.4. Example: [GHSA-mw6w-2fmv-pvw3](https://osv.dev/vulnerability/GHSA-mw6w-2fmv-pvw3) SvelteKit: adapter-node crashes with an unhandled URIError when `reroute` rewrites malformed pathnames
+
+### Packagist
+
+- **Laravel (laravel/framework)**: 1 advisory, worst low or unrated; fixed in 12.71.0, 13.40.0. Example: [GHSA-63hm-g96r-2m2q](https://osv.dev/vulnerability/GHSA-63hm-g96r-2m2q) Laravel: Task Output Injection - Concurrency Process
 
 ### Go
 
@@ -43,10 +49,6 @@ No new advisories for the tracked packages.
 
 No new advisories for the tracked packages.
 
-### Packagist
-
-No new advisories for the tracked packages.
-
 ### Hex
 
 No new advisories for the tracked packages.
@@ -57,6 +59,8 @@ No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-11-13: CVE-2026-114713, UnrealIRCd UnrealIRCd: UnrealIRCd Improper Neutralization of Delimiters Vulnerability
+- 2026-11-13: CVE-2026-123039, Check Point Multiple Products: Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability
 - 2026-11-10: CVE-2026-124194, Microsoft Office: Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability
 - 2026-11-10: CVE-2026-111793, Openwave Messaging Limited Webtop Media Transcoder: Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability
 - 2026-11-10: CVE-2026-20320, Cisco BroadWorks: Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability

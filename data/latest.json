@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T14:31:54Z",
+ "generated_at": "2026-11-13T23:34:48Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -39,7 +39,6 @@
     "NuGet: fixed weight",
     "Packagist: Packagist downloads, last 30 days",
     "PyPI: PyPI downloads, last week (pypistats)",
-    "PyPI: fixed weight",
     "RubyGems: RubyGems downloads, all time",
     "Runtimes & servers: fixed weight",
     "crates.io: crates.io downloads, last 90 days",
@@ -48,12 +47,12 @@
   }
  },
  "summary": {
-  "today_cves": 499,
+  "today_cves": 792,
   "month": "2026-11",
-  "month_cves": 7507,
+  "month_cves": 7800,
   "month_cves_last_year": 3021,
-  "kev_new_7d": 11,
-  "affected_packages_7d": 9,
+  "kev_new_7d": 13,
+  "affected_packages_7d": 12,
   "tracked_packages": 149
  },
  "monthly": [
@@ -111,11 +110,25 @@
   },
   {
    "month": "2026-11",
-   "count": 7507
+   "count": 7800
   }
  ],
  "monthly_is_stale": false,
  "kev_recent": [
+  {
+   "cve": "CVE-2026-114713",
+   "vendor": "UnrealIRCd",
+   "product": "UnrealIRCd",
+   "name": "UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+   "date_added": "2026-11-13"
+  },
+  {
+   "cve": "CVE-2026-123039",
+   "vendor": "Check Point",
+   "product": "Multiple Products",
+   "name": "Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+   "date_added": "2026-11-13"
+  },
   {
    "cve": "CVE-2026-124194",
    "vendor": "Microsoft",
@@ -378,9 +391,57 @@
      "popularity": 11682543.0,
      "popularity_source": "npm downloads, last week",
      "survey": 6.2,
-     "worst_7d": "NONE",
+     "worst_7d": "MEDIUM",
      "worst_30d": "MEDIUM",
      "vulns": [
+      {
+       "id": "GHSA-mh32-jxcr-mh9f",
+       "aliases": [
+        "CVE-2026-126361"
+       ],
+       "cves": [
+        "CVE-2026-126361"
+       ],
+       "published": "2026-11-13T18:39:54Z",
+       "summary": "Astro: XSS via attribute injection in dynamic tag names",
+       "severity": "LOW",
+       "severity_source": "GitHub Advisory",
+       "cvss": 2.3,
+       "cvss_source": "NVD",
+       "fixed": [
+        "7.4.5"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-mh32-jxcr-mh9f",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00315,
+       "epss_percentile": 0.24769
+      },
+      {
+       "id": "GHSA-r3h5-4585-7x3w",
+       "aliases": [
+        "CVE-2026-126364"
+       ],
+       "cves": [
+        "CVE-2026-126364"
+       ],
+       "published": "2026-11-13T18:35:59Z",
+       "summary": "Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.3,
+       "cvss_source": "NVD",
+       "fixed": [
+        "7.4.7"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-r3h5-4585-7x3w",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00375,
+       "epss_percentile": 0.31933
+      },
       {
        "id": "GHSA-98hj-9722-w3j8",
        "aliases": [
@@ -460,9 +521,34 @@
      "popularity": 5034452.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.6,
-     "worst_7d": "NONE",
-     "worst_30d": "LOW",
+     "worst_7d": "MEDIUM",
+     "worst_30d": "MEDIUM",
      "vulns": [
+      {
+       "id": "GHSA-mw6w-2fmv-pvw3",
+       "aliases": [
+        "CVE-2026-128117"
+       ],
+       "cves": [
+        "CVE-2026-128117"
+       ],
+       "published": "2026-11-13T20:51:44Z",
+       "summary": "SvelteKit: adapter-node crashes with an unhandled URIError when `reroute` rewrites malformed pathnames",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [
+        "3.1.1",
+        "2.70.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-mw6w-2fmv-pvw3",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
       {
        "id": "GHSA-pfhg-q3qv-9q6r",
        "aliases": [
@@ -1384,8 +1470,8 @@
      "key": "pypi/fastapi",
      "name": "fastapi",
      "label": "FastAPI",
-     "popularity": 1.0,
-     "popularity_source": "fixed weight",
+     "popularity": 128344058.0,
+     "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 18.5,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -3993,7 +4079,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 163523458.0,
+     "popularity": 164324333.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4004,7 +4090,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2108.0,
+     "popularity": 2113.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4015,7 +4101,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 306755648.0,
+     "popularity": 308140884.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4052,7 +4138,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 283770511.0,
+     "popularity": 285103531.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4063,7 +4149,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 264356361.0,
+     "popularity": 265614211.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4074,7 +4160,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 227323845.0,
+     "popularity": 228366417.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4085,7 +4171,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 282856650.0,
+     "popularity": 284156606.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4230,7 +4316,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 87436493.0,
+     "popularity": 87817878.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4241,7 +4327,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 226425176.0,
+     "popularity": 227542709.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4252,7 +4338,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 431059488.0,
+     "popularity": 433025725.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4263,7 +4349,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 328083961.0,
+     "popularity": 329562342.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4274,7 +4360,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 261280164.0,
+     "popularity": 262520171.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4285,7 +4371,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 57840384.0,
+     "popularity": 58096842.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4296,7 +4382,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 104418461.0,
+     "popularity": 104872304.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4439,12 +4525,37 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 24931203.0,
+     "popularity": 24857752.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
-     "worst_7d": "NONE",
+     "worst_7d": "LOW",
      "worst_30d": "CRITICAL",
      "vulns": [
+      {
+       "id": "GHSA-63hm-g96r-2m2q",
+       "aliases": [
+        "CVE-2026-128083"
+       ],
+       "cves": [
+        "CVE-2026-128083"
+       ],
+       "published": "2026-11-13T18:54:31Z",
+       "summary": "Laravel: Task Output Injection - Concurrency Process",
+       "severity": "LOW",
+       "severity_source": "GitHub Advisory",
+       "cvss": 2.3,
+       "cvss_source": "NVD",
+       "fixed": [
+        "12.71.0",
+        "13.40.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-63hm-g96r-2m2q",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
       {
        "id": "GHSA-f9x3-7vq9-cph6",
        "aliases": [
@@ -4503,7 +4614,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 30924626.0,
+     "popularity": 31663744.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4569,100 +4680,18 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1776546.0,
+     "popularity": 1728621.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
-     "vulns": [
-      {
-       "id": "DRUPAL-CORE-2026-016",
-       "aliases": [
-        "CVE-2026-108514"
-       ],
-       "cves": [
-        "CVE-2026-108514"
-       ],
-       "published": "2026-10-14T17:25:38Z",
-       "summary": "The Navigation module doesn't sufficiently sanitize certain attributes, which can lead to a cross-site scripting (XSS) vulnerability.",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.19",
-        "11.3.19",
-        "11.4.10",
-        "12.0.0-beta2"
-       ],
-       "url": "https://osv.dev/vulnerability/DRUPAL-CORE-2026-016",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00212,
-       "epss_percentile": 0.11571
-      },
-      {
-       "id": "DRUPAL-CORE-2026-015",
-       "aliases": [
-        "CVE-2026-108515"
-       ],
-       "cves": [
-        "CVE-2026-108515"
-       ],
-       "published": "2026-10-14T17:25:19Z",
-       "summary": "The Drupal core Link module provides a field type that can be used for internal and external URLs.",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.19",
-        "11.3.19",
-        "11.4.10",
-        "12.0.0-beta2"
-       ],
-       "url": "https://osv.dev/vulnerability/DRUPAL-CORE-2026-015",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00212,
-       "epss_percentile": 0.11571
-      },
-      {
-       "id": "DRUPAL-CORE-2026-014",
-       "aliases": [
-        "CVE-2026-108097"
-       ],
-       "cves": [
-        "CVE-2026-108097"
-       ],
-       "published": "2026-10-14T16:10:00Z",
-       "summary": "A remote code execution vulnerability exists within the Field UI module in Drupal core.",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 8.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.19",
-        "11.3.19",
-        "11.4.10",
-        "12.0.0-beta2"
-       ],
-       "url": "https://osv.dev/vulnerability/DRUPAL-CORE-2026-014",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00572,
-       "epss_percentile": 0.47868
-      }
-     ]
+     "worst_30d": "NONE",
+     "vulns": []
     },
     {
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 35202518.0,
+     "popularity": 34785898.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4673,7 +4702,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 35790759.0,
+     "popularity": 36601812.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4684,7 +4713,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 32250529.0,
+     "popularity": 32684535.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4695,7 +4724,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 13593644.0,
+     "popularity": 13624143.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4706,7 +4735,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 29716416.0,
+     "popularity": 30305169.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4742,7 +4771,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 27437777.0,
+     "popularity": 27971128.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4753,7 +4782,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 25253830.0,
+     "popularity": 26098052.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4764,7 +4793,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 27233666.0,
+     "popularity": 27993871.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4775,7 +4804,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4392535.0,
+     "popularity": 4549003.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4786,7 +4815,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 22063751.0,
+     "popularity": 22508863.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4797,7 +4826,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 19077306.0,
+     "popularity": 19713380.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5459,7 +5488,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 816186488.0,
+     "popularity": 816460223.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "CRITICAL",
@@ -5971,7 +6000,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1389483752.0,
+     "popularity": 1389875616.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "HIGH",
@@ -6086,7 +6115,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1299596634.0,
+     "popularity": 1299940172.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "LOW",
@@ -6170,7 +6199,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 629100296.0,
+     "popularity": 629330480.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6181,7 +6210,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 304991255.0,
+     "popularity": 305078521.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6192,7 +6221,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 347724605.0,
+     "popularity": 347841526.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6203,7 +6232,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1300124480.0,
+     "popularity": 1300495165.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6214,7 +6243,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 404972549.0,
+     "popularity": 405211701.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
