@@ -391,7 +391,9 @@ a.chip:hover { text-decoration: underline; }
     </a>
     </div>
   </header>
-  <p class="meta" id="meta" data-i18n="loading">Loading data…</p>
+  <!-- collect/home.py fills #meta, #stats and #build from data/latest.json at build time, so the
+       first paint already has the numbers; the script redraws them after it loads the data. -->
+  <p class="meta" id="meta">Loading data…</p>
   <div id="warn" class="warn" hidden></div>
 
   <div class="stackbar" id="stackbar">
@@ -416,7 +418,7 @@ a.chip:hover { text-decoration: underline; }
     <p class="fc-say" id="fc-say"></p>
     <ul class="fc-strip" id="fc-strip"></ul>
   </section>
-  <section class="stats" id="stats" aria-label="Today in numbers"></section>
+  <section class="stats" id="stats" aria-label="Today in numbers" data-aria-ko="오늘의 숫자"></section>
 
   <div class="toolbar">
     <div class="seg" role="group" aria-label="Period">
@@ -508,7 +510,7 @@ a.chip:hover { text-decoration: underline; }
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-11-03.1";
+const BUILD = "2026-11-15.1";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -810,7 +812,8 @@ function applyStaticText() {
   document.querySelectorAll("a[data-lang]").forEach((a) => {
     if (a.dataset.lang === LANG) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
   });
-  $("#build").textContent = t("build", BUILD, DATA ? DATA.generated_at.slice(0, 16).replace("T", " ") : null);
+  // Before the data loads, keep the line the build wrote (it already has the data time).
+  if (DATA || !$("#build").textContent) $("#build").textContent = t("build", BUILD, DATA ? DATA.generated_at.slice(0, 16).replace("T", " ") : null);
   document.querySelectorAll(".legend .wx").forEach((el) => el.replaceChildren(wxIcon(Number(el.dataset.lvl), 18, !!el.dataset.kev)));
   if (DATA) renderMeta();
   updateFullscreenLabel();

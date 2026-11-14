@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 import tempfile
@@ -55,12 +56,22 @@ class LocalizeTests(unittest.TestCase):
         self.assertNotIn("data-ko-content", en)
 
 
+DATA = {
+    "generated_at": "2026-11-14T22:24:37Z",
+    "summary": {
+        "today_cves": 62, "month": "2026-11", "month_cves": 7862, "month_cves_last_year": 3021,
+        "kev_new_7d": 12, "affected_packages_7d": 12, "tracked_packages": 149,
+    },
+    "ecosystems": [{"id": str(i), "label": str(i), "packages": []} for i in range(10)],
+}
+
+
 class HomeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
         out = Path(cls.tmp.name)
-        home.write_home(ROOT / "index.html", out)
+        home.write_home(ROOT / "index.html", out, DATA)
         cls.en = (out / "index.html").read_text(encoding="utf-8")
         cls.ko = (out / "ko" / "index.html").read_text(encoding="utf-8")
 
@@ -112,6 +123,31 @@ class HomeTests(unittest.TestCase):
             # Runs before anything else in <head>.
             self.assertLess(h.index('want = q.get("lang")'), h.index("googletagmanager"))
             self.assertIn("location.replace(url)", h)
+
+    def test_numbers_are_in_the_html(self):
+        self.assertIn('<p class="meta" id="meta">Forecast for 149 popular packages in 10 groups, '
+                      'made 2026-11-14 22:24 UTC.</p>', self.en)
+        self.assertIn('<p class="meta" id="meta">2026-11-14 22:24 UTC 예보. 10개 그룹, 인기 패키지 149개.</p>', self.ko)
+        self.assertIn('<span class="value">12</span><span class="label">of 149 packages affected this week</span>', self.en)
+        self.assertIn('<span class="value">12</span><span class="label">이번 주 영향받은 패키지 (149개 중)</span>', self.ko)
+        self.assertIn('<span class="value">12</span><span class="label">이번 주 CISA KEV 추가</span>', self.ko)
+        self.assertIn('<span class="value">7,862</span>', self.ko)
+        self.assertIn('<span class="sub">2025-11 대비 +160% (3,021건, 이번 달은 진행 중)</span>', self.ko)
+        self.assertIn("데이터 갱신 2026-11-14 22:24 UTC.", self.ko)
+        self.assertIn('aria-label="오늘의 숫자"', self.ko)
+        self.assertNotIn("Loading data", self.en[:self.en.index("<script>\n\"use strict\"")])
+        self.assertNotIn("불러오는 중", self.ko[:self.ko.index("<script>\n\"use strict\"")])
+
+    def test_missing_numbers_are_left_out(self):
+        data = json.loads(json.dumps(DATA))
+        data["summary"]["today_cves"] = None
+        data["summary"]["month_cves_last_year"] = 0
+        with tempfile.TemporaryDirectory() as tmp:
+            home.write_home(ROOT / "index.html", Path(tmp), data)
+            page = (Path(tmp) / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("new CVEs today", page[:page.index("<script>\n\"use strict\"")])
+        self.assertNotIn('class="sub"', page[:page.index("<script>\n\"use strict\"")])
+        self.assertIn('<span class="value">7,862</span>', page)
 
     def test_assets_are_absolute(self):
         # /ko/index.html must load the same files as /.
