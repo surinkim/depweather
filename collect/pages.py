@@ -42,6 +42,9 @@ import history as history_mod  # noqa: E402
 
 SITE = feeds.SITE
 CURRENT_DAYS = 7
+# Bump when fonts/ changes, so browsers and caches fetch the new files.
+FONTS_VERSION = "2026-11-15.1"
+FONTS_CSS = f"/fonts/fonts.css?v={FONTS_VERSION}"
 # Keep in step with ALLOWED_LINK_HOSTS in alert/check.js.
 ALLOWED_LINK_HOSTS = frozenset({
     "depweather.com",
@@ -409,7 +412,7 @@ def render_page(eco: dict, pkg: dict, generated: datetime, generated_raw: str,
 <meta property="og:locale" content="en">
 <meta property="og:locale:alternate" content="ko">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="{FONTS_CSS}">
 <link rel="alternate" type="application/atom+xml" href="{esc(SITE + feed_path)}" title="{esc(label)} advisories">
 <script type="application/ld+json">
 {ld}
@@ -547,7 +550,7 @@ footer p {{ margin: 4px 0; }}
 <body>
 <div class="wrap">
   <header class="top">
-    <h1><a href="/" id="brand"><img src="/favicon.svg" alt="" width="32" height="32">depweather</a></h1>
+    <h1><a href="/" id="brand"><img src="/favicon.svg" alt="depweather" width="32" height="32"><span aria-hidden="true">depweather</span></a></h1>
     <span class="tag" data-i18n="tagline">Vulnerability weather for popular packages</span>
     <span class="spacer"></span>
     <div class="controls">
