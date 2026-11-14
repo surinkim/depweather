@@ -189,6 +189,18 @@ class FeedTests(unittest.TestCase):
             self.assertEqual(entry_ids(again), ["tag:depweather.com,2026:advisory:npm/next/GHSA-crit"])
             self.assertIn("updated wording", titles(again)[0])
 
+    def test_title_does_not_repeat_package_name(self):
+        def title(label, summary, name=None):
+            return feeds.entry_title(label, {"id": "GHSA-x", "summary": summary}, name)
+        self.assertEqual(title("SvelteKit", "SvelteKit: open redirect"), "SvelteKit: open redirect")
+        self.assertEqual(title("SvelteKit", "SvelteKit : XSS in header"), "SvelteKit: XSS in header")
+        self.assertEqual(title("vite", "Vite: fs.deny bypass"), "vite: fs.deny bypass")
+        self.assertEqual(title("Next.js", "next: cache poisoning", "next"), "Next.js: cache poisoning")
+        # Not a prefix of the label, or nothing after it: left alone.
+        self.assertEqual(title("Vue", "Vuex: leak"), "Vue: Vuex: leak")
+        self.assertEqual(title("Vue", "Vue:"), "Vue: Vue:")
+        self.assertEqual(title("Vue", "  "), "Vue: GHSA-x")
+
     def test_site_feed_cap(self):
         generated = "2026-11-02T00:00:00Z"
         vulns = []

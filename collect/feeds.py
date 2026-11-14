@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -141,7 +142,24 @@ def _esc(s: object) -> str:
     return html.escape(str(s if s is not None else ""), quote=True)
 
 
-def entry_title(label: str, vuln: dict) -> str:
+def strip_label_prefix(text: str, *names: object) -> str:
+    """Drop a leading "<package>:" from an advisory summary.
+
+    Many GHSA summaries already start with the package name ("SvelteKit: ...",
+    "Vite : ..."), and the feed title adds the label in front, which gave
+    "SvelteKit: SvelteKit: ...". Case and spaces before the colon are ignored.
+    The text is kept as is when nothing would be left after the prefix.
+    """
+    for name in names:
+        if not isinstance(name, str) or not name.strip():
+            continue
+        m = re.match(r"\s*" + re.escape(name.strip()) + r"\s*:\s*", text, re.I)
+        if m and text[m.end():].strip():
+            return text[m.end():]
+    return text
+
+
+def entry_title(label: str, vuln: dict, name: str | None = None) -> str:
     bits: list[str] = []
     if vuln.get("kev"):
         bits.append("KEV")
@@ -150,7 +168,9 @@ def entry_title(label: str, vuln: dict) -> str:
     elif str(vuln.get("severity") or "").upper() == "CRITICAL":
         bits.append("Critical")
     prefix = (" · ".join(bits) + " · ") if bits else ""
-    text = (vuln.get("summary") or "").strip() or vuln.get("id") or "advisory"
+    text = (vuln.get("summary") or "").strip()
+    text = strip_label_prefix(text, label, name) if text else ""
+    text = text or vuln.get("id") or "advisory"
     title = f"{prefix}{label}: {text}"
     if len(title) > 180:
         title = title[:179].rstrip() + "…"
@@ -236,7 +256,7 @@ def _one_entry(eco: dict, pkg: dict, vuln: dict, when: datetime) -> dict:
     summary = (vuln.get("summary") or "").strip() or vuln["id"]
     return {
         "id": entry_id(pkg["key"], vuln["id"]),
-        "title": entry_title(pkg.get("label") or pkg.get("name") or pkg["key"], vuln),
+        "title": entry_title(pkg.get("label") or pkg.get("name") or pkg["key"], vuln, pkg.get("name")),
         "href": vuln.get("url") or package_page_url(pkg["key"]),
         "published": iso_z(parse_time(vuln["published"])),
         "updated": iso_z(when),
