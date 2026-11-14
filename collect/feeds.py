@@ -115,8 +115,12 @@ def package_page_rel(key: str) -> str:
     return "pkg/" + rel[len("feed/"):-len(".xml")] + "/"
 
 
-def package_page_url(key: str) -> str:
-    return f"{SITE}/{package_page_rel(key)}"
+def package_page_url(key: str, lang: str = "en") -> str:
+    """English page, or with lang "ko" the Korean page under /ko/."""
+    if lang not in ("en", "ko"):
+        raise ValueError(f"bad page language: {lang!r}")
+    prefix = "ko/" if lang == "ko" else ""
+    return f"{SITE}/{prefix}{package_page_rel(key)}"
 
 
 def badge_relpath(key: str, lang: str = "en") -> str:

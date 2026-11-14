@@ -263,7 +263,7 @@ def snippets(pkg: dict, generated: datetime) -> dict:
     label = str(pkg.get("label") or pkg.get("name") or key)
     st = status_of(pkg.get("vulns") or [], generated)
     page = feeds.package_page_url(key)
-    page_ko = page + "?lang=ko"
+    page_ko = feeds.package_page_url(key, "ko")
     badge = feeds.badge_url(key, "en")
     badge_ko = feeds.badge_url(key, "ko")
     alt_en = _alt(label, st["en"])

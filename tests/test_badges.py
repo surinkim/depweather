@@ -265,7 +265,7 @@ class BadgeTests(unittest.TestCase):
                 self.assertFalse(el.tag.endswith("script"), el.tag)
             ko = parse_svg((out / "badge" / "npm" / "next.ko.svg").read_text(encoding="utf-8"))
             self.assertIn("KEV · 치명 1건, 높음 1건", " ".join(texts(ko)))
-            self.assertEqual(links(ko), ["https://depweather.com/pkg/npm/next/?lang=ko"])
+            self.assertEqual(links(ko), ["https://depweather.com/ko/pkg/npm/next/"])
             self.assertEqual(fills(ko), fills(root))
 
             clear = parse_svg((out / "badge" / "npm" / "@angular" / "core.svg").read_text(encoding="utf-8"))
@@ -325,7 +325,7 @@ class BadgeTests(unittest.TestCase):
             self.assertIn('data-src-ko="/badge/npm/next.ko.svg"', page)
             self.assertIn("https://depweather.com/badge/npm/next.svg", page)
             self.assertIn("https://depweather.com/badge/npm/next.ko.svg", page)
-            self.assertIn("https://depweather.com/pkg/npm/next/?lang=ko", page)
+            self.assertIn("https://depweather.com/ko/pkg/npm/next/", page)
             self.assertIn("KEV · 1 critical, 1 high", page)
             self.assertIn("치명 1건", page)
             self.assertIn(".snippet pre", page)
@@ -361,9 +361,7 @@ class BadgeTests(unittest.TestCase):
                         self.assertIn(st["fill"], fills(root))
                         self.assertIn(st[message_key], " ".join(texts(root)))
                         self.assertIn("depweather", " ".join(texts(root)))
-                        page = feeds.package_page_url(key)
-                        if lang == "ko":
-                            page += "?lang=ko"
+                        page = feeds.package_page_url(key, lang)
                         self.assertEqual(links(root), [page])
                         raw = path.read_text(encoding="utf-8")
                         self.assertNotIn("<script", raw.lower())
