@@ -39,7 +39,7 @@ plus downloads and the survey share.
 `/pkg/<ecosystem>/<name>/` (a Maven `:` is written as `~`, same as the feed).
 It lists the last 7 days separately from the rest of the 30-day window, with
 severity, fixed versions, CISA KEV and EPSS, and a longer trend (below).
-English is the page itself; Korean is `?lang=ko`. Light and dark follow the
+English is `/pkg/...` and Korean is a separate static page at `/ko/pkg/...`. Light and dark follow the
 same control as the map.
 The publish step builds these pages, and the sitemap entries for them, from
 `data/latest.json` and `data/history/`. They are not committed. A tile, the package name on the
@@ -126,7 +126,8 @@ visit follows the browser language). Advisory text from the data stays in
 English.
 
 The view is kept in the URL (`?view=a|b|c`, `?pkg=npm/next`, `&range=30`,
-`&kev=1`, `&lang=ko`, `&stack=`) so links can be shared. The last view, period, language
+`&kev=1`, `&stack=`) so links can be shared. The language is the path: English
+at `/`, Korean at `/ko/`; an old `?lang=ko` link is sent to `/ko/`. The last view, period, language
 and theme are remembered in `localStorage`. The footer shows the page version,
 which helps spot a stale copy in the browser cache (reload with Cmd/Ctrl +
 Shift + R).

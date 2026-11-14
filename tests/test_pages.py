@@ -255,7 +255,8 @@ class PageTests(unittest.TestCase):
             root = ET.fromstring(sm)
             locs = [el.text for el in root.findall("sm:url/sm:loc", NS)]
             self.assertIn("https://depweather.com/", locs)
-            self.assertIn("https://depweather.com/?lang=ko", locs)
+            self.assertIn("https://depweather.com/ko/", locs)
+            self.assertFalse([loc for loc in locs if "lang=" in loc])
             self.assertIn("https://depweather.com/feed.xml", locs)
             self.assertIn("https://depweather.com/pkg/npm/next/", locs)
             self.assertIn("https://depweather.com/ko/pkg/npm/next/", locs)
@@ -306,11 +307,12 @@ class PageTests(unittest.TestCase):
 
     def test_map_links_to_package_pages(self):
         html = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn('src="js/pkg-path.js', html)
-        self.assertGreaterEqual(html.count("DepweatherPath.pkgPagePath("), 4)
+        self.assertIn('src="/js/pkg-path.js', html)
+        self.assertIn("DepweatherPath.pkgPagePath(", html)
+        self.assertGreaterEqual(html.count("pkgHref("), 5)
         for needle in ("function renderForecast", "function drawTile", "function renderTimeline"):
             start = html.index(needle)
-            self.assertIn("pkgPagePath", html[start:start + 6000], needle)
+            self.assertIn("pkgHref(", html[start:start + 6000], needle)
 
 
 if __name__ == "__main__":

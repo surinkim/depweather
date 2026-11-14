@@ -25,7 +25,7 @@ weather report, so you can tell in a few seconds.
   Node.js and nginx. Bigger tile, more downloads. Zoom in for details.
 - **A 30-day timeline** for any package, with the versions that fix each issue.
 - **A page per package** at `/pkg/npm/next/` (a Maven `:` is `~`), with severity,
-  fixed versions, KEV and EPSS. Korean: `?lang=ko`.
+  fixed versions, KEV and EPSS. Korean: `/ko/pkg/npm/next/` (the Korean map is `/ko/`).
 - **A longer trend** on that page, and for each ecosystem on the Counter
   view: 3 months, 6 months or 1 year of severity-stacked bars, with CISA KEV
   marked on its own.

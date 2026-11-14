@@ -9,6 +9,9 @@ The pages mark translatable text the same way the browser code reads it:
     data-i18n-title / -placeholder   title / placeholder attribute from a dictionary
     data-aria-en / data-aria-ko      aria-label
     data-src-en / data-src-ko        img src (with data-alt-en / data-alt-ko)
+    data-ko-<attr> / data-en-<attr>  any other attribute, e.g. data-ko-content on
+                                     a <meta>; these markers are removed from
+                                     the output of both languages
 
 localize() walks the HTML once and writes the chosen language in place, so
 the served file already holds the text a reader (or a crawler) sees. Element
@@ -81,6 +84,14 @@ class _Localizer(HTMLParser):
             for k, v in self.root_attrs.items():
                 set_attr(k, v)
         lang = self.lang
+        own = f"data-{lang}-"
+        for k, v in list(a.items()):
+            if k.startswith(own) and len(k) > len(own) and v is not None:
+                set_attr(k[len(own):], v)
+        marked = [k for k, _v in attrs if k.startswith(("data-en-", "data-ko-"))]
+        if marked:
+            attrs[:] = [(k, v) for k, v in attrs if k not in marked]
+            changed = True
         if f"data-{lang}" in a and a[f"data-{lang}"] is not None:
             content = a[f"data-{lang}"]
         key = a.get("data-i18n")
