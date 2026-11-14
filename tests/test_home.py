@@ -71,6 +71,7 @@ class HomeTests(unittest.TestCase):
     def test_english(self):
         h = head_of(self.en)
         self.assertIn('<html lang="en">', self.en)
+        self.assertRegex(h, r"<title[^>]*>depweather — vulnerability weather for popular packages</title>")
         self.assertIn('<link rel="canonical" href="https://depweather.com/">', h)
         self.assertIn('<meta property="og:url" content="https://depweather.com/">', h)
         self.assertIn('<meta property="og:locale" content="en_US">', h)
@@ -79,6 +80,7 @@ class HomeTests(unittest.TestCase):
     def test_korean_is_rendered_in_html(self):
         h = head_of(self.ko)
         self.assertIn('<html lang="ko">', self.ko)
+        self.assertRegex(h, r"<title[^>]*>depweather — 인기 패키지의 취약점 날씨</title>")
         self.assertIn('<link rel="canonical" href="https://depweather.com/ko/">', h)
         self.assertIn('<meta property="og:url" content="https://depweather.com/ko/">', h)
         self.assertIn('<meta property="og:locale" content="ko_KR">', h)
