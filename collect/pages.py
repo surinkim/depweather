@@ -13,9 +13,14 @@ the last 7 days before generated_at. Everything else in the snapshot is
 "recent". Advisory text is escaped. Links are emitted only for https URLs
 on the same host allowlist as alert/check.js.
 
-Both languages are in the HTML (English visible, Korean in attributes and
-meta). A short script applies ?lang=ko and the light/dark choice stored in
-the same localStorage key as the map. Each page includes a README badge
+Each package gets two static pages: English at /pkg/... and Korean at
+/ko/pkg/.... The Korean page is the English markup with its data-ko and
+data-i18n text written in at build time (collect/localize.py), so both
+languages are served as real HTML with their own <html lang>, title,
+description, og:* tags, a self-referencing canonical and hreflang links to
+each other. An old ?lang=ko or ?lang=en link is sent to the matching page by
+a short script in <head>. The light/dark choice is stored in the same
+localStorage key as the map. Each page includes a README badge
 snippet (Markdown and HTML, English and Korean) that points at the SVG
 written by collect/badges.py. Pass --out pointing somewhere other than the
 repository root to also write sitemap.xml with a URL per package. The
@@ -39,9 +44,13 @@ sys.path.insert(0, str(ROOT / "collect"))
 
 import feeds  # noqa: E402
 import history as history_mod  # noqa: E402
+from localize import localize  # noqa: E402
 
 SITE = feeds.SITE
 CURRENT_DAYS = 7
+# Bump when fonts/ changes, so browsers and caches fetch the new files.
+FONTS_VERSION = "2026-11-15.1"
+FONTS_CSS = f"/fonts/fonts.css?v={FONTS_VERSION}"
 # Keep in step with ALLOWED_LINK_HOSTS in alert/check.js.
 ALLOWED_LINK_HOSTS = frozenset({
     "depweather.com",
@@ -56,6 +65,78 @@ ALLOWED_LINK_HOSTS = frozenset({
 CVE_RE = re.compile(r"^CVE-\d{4}-\d{4,}$")
 SEV_LEVEL = {"NONE": 0, "UNKNOWN": 1, "LOW": 1, "MEDIUM": 1, "MODERATE": 1, "HIGH": 2, "CRITICAL": 3}
 _URL_BLOCK = re.compile(r"\n[ \t]*<url>\s*.*?</url>", re.S)
+LANGS = ("en", "ko")
+OG_LOCALE = {"en": "en_US", "ko": "ko_KR"}
+
+# Text for elements marked data-i18n. English is what the template already
+# says; the Korean page is rendered from this table.
+PAGE_I18N = {
+    "ko": {
+        "tagline": "인기 패키지의 취약점 날씨",
+        "back": "지도로 돌아가기",
+        "feed": "패키지 피드",
+        "theme": "테마",
+        "theme_title": "라이트 / 다크 전환",
+        "current_note": "최근 7일 동안 공개됐거나 그 사이에 CISA KEV에 추가된 권고입니다.",
+        "recent_note": "30일 창 안에서 그보다 이전인 권고입니다.",
+        "empty_current": "최근 7일 동안 공개되거나 KEV에 추가된 권고가 없습니다.",
+        "empty_recent": "최근 30일 중 그 이전 권고가 없습니다.",
+        "advisory_lang": "권고 본문은 출처의 영어 그대로입니다.",
+        "th_published": "공개일",
+        "th_advisory": "권고",
+        "th_severity": "심각도",
+        "th_fixed": "수정 버전",
+        "th_summary": "요약",
+        "malicious": "악성",
+        "footer_nvd": "이 제품은 NVD API를 사용하지만 NVD가 보증하거나 인증하지 않습니다.",
+        "footer_analytics": "방문 통계를 위해 Google Analytics를 사용합니다.",
+        "footer_disclaimer": "심각도는 원 권고의 값이며 틀릴 수 있습니다. 조치 전에 링크된 권고를 확인하세요.",
+    },
+}
+
+# Runs first in <head>, on package pages and on the home page (index.html
+# has the same code). An old ?lang= link goes to the page in that language
+# (/ko/... for Korean) with the parameter removed; ?lang matching the page
+# is just dropped from the address bar. Keep the two copies in step.
+LANG_REDIRECT_JS = """(function () {
+  try {
+    var q = new URLSearchParams(location.search), want = q.get("lang");
+    if (want !== "en" && want !== "ko") return;
+    q.delete("lang");
+    var path = location.pathname.replace(/^\\/ko(\\/|$)/, "/");
+    if (want === "ko") path = "/ko" + path;
+    var rest = q.toString(), url = path + (rest ? "?" + rest : "") + location.hash;
+    if (want !== document.documentElement.lang) location.replace(url);
+    else history.replaceState(null, "", url);
+  } catch (e) {}
+})();"""
+
+
+def home_url(lang: str) -> str:
+    return f"{SITE}/ko/" if lang == "ko" else f"{SITE}/"
+
+
+def home_path(lang: str) -> str:
+    return "/ko/" if lang == "ko" else "/"
+
+
+def hreflang_links(en_url: str, ko_url: str) -> str:
+    return (
+        f'<link rel="alternate" hreflang="en" href="{esc(en_url)}">\n'
+        f'<link rel="alternate" hreflang="ko" href="{esc(ko_url)}">\n'
+        f'<link rel="alternate" hreflang="x-default" href="{esc(en_url)}">'
+    )
+
+
+def lang_switch(lang: str, en_href: str, ko_href: str, label: str = "Language") -> str:
+    """EN / KO links to the two versions of a page (real links, so crawlers follow them)."""
+    def one(code: str, text: str, href: str) -> str:
+        cur = ' aria-current="page"' if code == lang else ""
+        return f'<a href="{esc(href)}" hreflang="{code}" lang="{code}" data-lang="{code}"{cur}>{text}</a>'
+    return (
+        f'<div class="seg lang" role="group" aria-label="{esc(label)}">'
+        + one("en", "EN", en_href) + one("ko", "KO", ko_href) + "</div>"
+    )
 
 
 def esc(value: object) -> str:
@@ -287,8 +368,8 @@ def _worst(vulns: list[dict]) -> str | None:
     return best
 
 
-def _json_ld(url: str, en_title: str, ko_title: str, en_desc: str, generated: str,
-             label: str, vulns: list[dict]) -> str:
+def _json_ld(url: str, title: str, desc: str, generated: str,
+             label: str, vulns: list[dict], lang: str = "en") -> str:
     items = []
     for i, v in enumerate(vulns, start=1):
         item: dict = {"@type": "ListItem", "position": i, "name": str(v.get("id") or "")}
@@ -304,25 +385,24 @@ def _json_ld(url: str, en_title: str, ko_title: str, en_desc: str, generated: st
             "@type": "WebPage",
             "@id": url,
             "url": url,
-            "name": en_title,
-            "alternateName": ko_title,
-            "description": en_desc,
-            "inLanguage": ["en", "ko"],
+            "name": title,
+            "description": desc,
+            "inLanguage": lang,
             "dateModified": generated,
-            "isPartOf": {"@type": "WebSite", "name": "depweather", "url": f"{SITE}/"},
+            "isPartOf": {"@type": "WebSite", "name": "depweather", "url": home_url(lang)},
             "breadcrumb": {"@id": url + "#breadcrumb"},
         },
         {
             "@type": "BreadcrumbList",
             "@id": url + "#breadcrumb",
             "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "depweather", "item": f"{SITE}/"},
+                {"@type": "ListItem", "position": 1, "name": "depweather", "item": home_url(lang)},
                 {"@type": "ListItem", "position": 2, "name": label, "item": url},
             ],
         },
         {
             "@type": "ItemList",
-            "name": f"Advisories for {label}",
+            "name": f"{label} 보안 권고" if lang == "ko" else f"Advisories for {label}",
             "numberOfItems": len(items),
             "itemListElement": items,
         },
@@ -347,12 +427,19 @@ def iter_packages(data: dict):
 
 
 def render_page(eco: dict, pkg: dict, generated: datetime, generated_raw: str,
-                history_days: dict | None = None) -> str:
+                history_days: dict | None = None, lang: str = "en") -> str:
+    """One package page in ``lang`` ("en" or "ko")."""
+    if lang not in LANGS:
+        raise ValueError(f"bad page language: {lang!r}")
     key = pkg["key"]
     label = str(pkg.get("label") or pkg.get("name") or key)
     name = str(pkg.get("name") or label)
     eco_label = str(eco.get("label") or eco.get("id") or "")
-    page_url = feeds.package_page_url(key)
+    en_url = feeds.package_page_url(key, "en")
+    ko_url = feeds.package_page_url(key, "ko")
+    page_url = ko_url if lang == "ko" else en_url
+    en_path = "/" + feeds.package_page_rel(key)
+    ko_path = "/ko" + en_path
     feed_path = "/" + feeds.feed_relpath(key)
     current, earlier = classify(pkg.get("vulns") or [], generated)
     shown = current + earlier
@@ -375,16 +462,22 @@ def render_page(eco: dict, pkg: dict, generated: datetime, generated_raw: str,
     fixed_html = ""
     if shown:
         fixed_html = f'<p class="fixed" data-en="{esc(en_fixed)}" data-ko="{esc(ko_fixed)}">{esc(en_fixed)}</p>'
-    ld = _json_ld(page_url, en_title, ko_title, en_desc, generated_raw, label, shown)
+    title = ko_title if lang == "ko" else en_title
+    desc = ko_desc if lang == "ko" else en_desc
+    ld = _json_ld(page_url, title, desc, generated_raw, label, shown, lang)
     import badges
     panel = badges.panel_html(pkg, generated)
     trend_counts = history_mod.package_day_counts(history_days, key)
     trend_html = history_mod.render_trend_section(label, trend_counts, generated.date(), key)
-    return f"""<!doctype html>
-<html lang="en" data-title-en="{esc(en_title)}" data-title-ko="{esc(ko_title)}" data-desc-en="{esc(en_desc)}" data-desc-ko="{esc(ko_desc)}">
+    other = "en" if lang == "ko" else "ko"
+    page = f"""<!doctype html>
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+{LANG_REDIRECT_JS}
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HF5GM88Y3V"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -392,47 +485,30 @@ def render_page(eco: dict, pkg: dict, generated: datetime, generated_raw: str,
   gtag('js', new Date());
   gtag('config', 'G-HF5GM88Y3V');
 </script>
-<title>{esc(en_title)}</title>
-<meta id="desc" name="description" lang="en" content="{esc(en_desc)}">
-<meta name="description" lang="ko" content="{esc(ko_desc)}">
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{esc(page_url)}">
-<link rel="alternate" hreflang="en" href="{esc(page_url)}">
-<link rel="alternate" hreflang="ko" href="{esc(page_url)}?lang=ko">
-<link rel="alternate" hreflang="x-default" href="{esc(page_url)}">
+{hreflang_links(en_url, ko_url)}
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="depweather">
-<meta property="og:title" content="{esc(en_title)}">
-<meta property="og:description" content="{esc(en_desc)}">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{esc(page_url)}">
 <meta property="og:image" content="{SITE}/og.png">
-<meta property="og:locale" content="en">
-<meta property="og:locale:alternate" content="ko">
+<meta property="og:locale" content="{OG_LOCALE[lang]}">
+<meta property="og:locale:alternate" content="{OG_LOCALE[other]}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="{FONTS_CSS}">
 <link rel="alternate" type="application/atom+xml" href="{esc(SITE + feed_path)}" title="{esc(label)} advisories">
 <script type="application/ld+json">
 {ld}
 </script>
 <script>
-(function () {{
-  try {{
-    var q = new URLSearchParams(location.search).get("lang");
-    var p = JSON.parse(localStorage.getItem("depweather:prefs") || "{{}}");
-    var lang = (q === "ko" || q === "en") ? q : (p.lang === "ko" || p.lang === "en" ? p.lang : ((navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en"));
-    document.documentElement.lang = lang;
-    if (p.theme === "dark" || p.theme === "light") document.documentElement.dataset.theme = p.theme;
-    var title = document.documentElement.getAttribute(lang === "ko" ? "data-title-ko" : "data-title-en");
-    var desc = document.documentElement.getAttribute(lang === "ko" ? "data-desc-ko" : "data-desc-en");
-    if (title) document.title = title;
-    var md = document.getElementById("desc");
-    if (md && desc) {{ md.setAttribute("content", desc); md.setAttribute("lang", lang); }}
-    var ogt = document.querySelector('meta[property="og:title"]');
-    var ogd = document.querySelector('meta[property="og:description"]');
-    if (ogt && title) ogt.setAttribute("content", title);
-    if (ogd && desc) ogd.setAttribute("content", desc);
-  }} catch (e) {{}}
-}})();
+try {{
+  var p = JSON.parse(localStorage.getItem("depweather:prefs") || "{{}}");
+  if (p.theme === "dark" || p.theme === "light") document.documentElement.dataset.theme = p.theme;
+}} catch (e) {{}}
 </script>
 <style>
 :root {{
@@ -482,9 +558,10 @@ header.top h1 img {{ width: 32px; height: 32px; }}
   background: var(--surface); color: var(--ink-2); cursor: pointer; text-decoration: none;
 }}
 .seg {{ display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; background: var(--surface); }}
-.seg button {{ border: 0; border-radius: 0; }}
-.seg button + button {{ border-left: 1px solid var(--border); }}
-.seg button[aria-pressed="true"] {{ background: var(--ink); color: var(--page); }}
+.seg button, .seg a {{ border: 0; border-radius: 0; }}
+.seg a {{ font-size: 13px; padding: 6px 12px; color: var(--ink-2); text-decoration: none; }}
+.seg > * + * {{ border-left: 1px solid var(--border); }}
+.seg button[aria-pressed="true"], .seg a[aria-current="page"] {{ background: var(--ink); color: var(--page); }}
 h1.pkg {{ font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin: 12px 0 4px; letter-spacing: -0.02em; }}
 h1.pkg .meta {{ font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 15px; font-weight: 400; color: var(--muted); margin-left: 8px; }}
 .lede {{ font-size: 17px; max-width: 68ch; margin: 8px 0; }}
@@ -547,17 +624,14 @@ footer p {{ margin: 4px 0; }}
 <body>
 <div class="wrap">
   <header class="top">
-    <h1><a href="/" id="brand"><img src="/favicon.svg" alt="" width="32" height="32">depweather</a></h1>
+    <h1><a href="{home_path(lang)}" id="brand"><img src="/favicon.svg" alt="depweather" width="32" height="32"><span aria-hidden="true">depweather</span></a></h1>
     <span class="tag" data-i18n="tagline">Vulnerability weather for popular packages</span>
     <span class="spacer"></span>
     <div class="controls">
-      <a class="iconbtn" id="back" href="/" data-i18n="back">Back to the map</a>
+      <a class="iconbtn" id="back" href="{home_path(lang)}" data-i18n="back">Back to the map</a>
       <a class="iconbtn" id="feedlink" href="{esc(feed_path)}" data-i18n="feed">Package feed</a>
       <button type="button" class="iconbtn" id="theme" data-i18n="theme" data-i18n-title="theme_title" title="Toggle light / dark">Theme</button>
-      <div class="seg lang" role="group" aria-label="Language">
-        <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="ko" lang="ko" aria-pressed="false">KO</button>
-      </div>
+      {lang_switch(lang, en_path, ko_path, "언어" if lang == "ko" else "Language")}
     </div>
   </header>
   <main>
@@ -580,7 +654,7 @@ footer p {{ margin: 4px 0; }}
   </main>
   <footer>
     <p data-en="{esc(en_updated)}" data-ko="{esc(ko_updated)}">{esc(en_updated)}</p>
-    <p>Data: <a href="https://osv.dev">OSV</a>, <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV</a>, FIRST EPSS, <a href="https://nvd.nist.gov">NVD</a>.</p>
+    <p><span data-en="Data" data-ko="데이터">Data</span>: <a href="https://osv.dev">OSV</a>, <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV</a>, FIRST EPSS, <a href="https://nvd.nist.gov">NVD</a>.</p>
     <p data-i18n="footer_nvd">This product uses the NVD API but is not endorsed or certified by the NVD.</p>
     <p data-i18n="footer_analytics">This site uses Google Analytics to count visits.</p>
     <p data-i18n="footer_disclaimer">Severity comes from the upstream advisory and can be wrong. Check the linked advisory before acting.</p>
@@ -589,50 +663,6 @@ footer p {{ margin: 4px 0; }}
 <script>
 (function () {{
   var KEY = "depweather:prefs";
-  var I18N = {{
-    en: {{
-      tagline: "Vulnerability weather for popular packages",
-      back: "Back to the map",
-      feed: "Package feed",
-      theme: "Theme",
-      theme_title: "Toggle light / dark",
-      current_note: "Published in the last 7 days, or added to CISA KEV in that time.",
-      recent_note: "Earlier advisories still inside the 30-day window.",
-      empty_current: "No advisories in the last 7 days.",
-      empty_recent: "No earlier advisories in this 30-day window.",
-      advisory_lang: "Advisory text is quoted from the source and stays in English.",
-      th_published: "Published",
-      th_advisory: "Advisory",
-      th_severity: "Severity",
-      th_fixed: "Fixed in",
-      th_summary: "Summary",
-      malicious: "Malicious",
-      footer_nvd: "This product uses the NVD API but is not endorsed or certified by the NVD.",
-      footer_analytics: "This site uses Google Analytics to count visits.",
-      footer_disclaimer: "Severity comes from the upstream advisory and can be wrong. Check the linked advisory before acting."
-    }},
-    ko: {{
-      tagline: "인기 패키지의 취약점 날씨",
-      back: "지도로 돌아가기",
-      feed: "패키지 피드",
-      theme: "테마",
-      theme_title: "라이트 / 다크 전환",
-      current_note: "최근 7일 동안 공개됐거나 그 사이에 CISA KEV에 추가된 권고입니다.",
-      recent_note: "30일 창 안에서 그보다 이전인 권고입니다.",
-      empty_current: "최근 7일 동안 공개되거나 KEV에 추가된 권고가 없습니다.",
-      empty_recent: "최근 30일 중 그 이전 권고가 없습니다.",
-      advisory_lang: "권고 본문은 출처의 영어 그대로입니다.",
-      th_published: "공개일",
-      th_advisory: "권고",
-      th_severity: "심각도",
-      th_fixed: "수정 버전",
-      th_summary: "요약",
-      malicious: "악성",
-      footer_nvd: "이 제품은 NVD API를 사용하지만 NVD가 보증하거나 인증하지 않습니다.",
-      footer_analytics: "방문 통계를 위해 Google Analytics를 사용합니다.",
-      footer_disclaimer: "심각도는 원 권고의 값이며 틀릴 수 있습니다. 조치 전에 링크된 권고를 확인하세요."
-    }}
-  }};
   function prefs() {{
     try {{ return JSON.parse(localStorage.getItem(KEY)) || {{}}; }} catch (e) {{ return {{}}; }}
   }}
@@ -641,71 +671,15 @@ footer p {{ margin: 4px 0; }}
     Object.keys(patch).forEach(function (k) {{ cur[k] = patch[k]; }});
     try {{ localStorage.setItem(KEY, JSON.stringify(cur)); }} catch (e) {{}}
   }}
-  function initialLang() {{
-    var q = new URLSearchParams(location.search).get("lang");
-    if (q === "ko" || q === "en") return q;
-    var p = prefs();
-    if (p.lang === "ko" || p.lang === "en") return p.lang;
-    return (navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
-  }}
-  function apply(lang) {{
-    var dict = I18N[lang] || I18N.en;
-    document.documentElement.lang = lang;
-    var title = document.documentElement.getAttribute(lang === "ko" ? "data-title-ko" : "data-title-en");
-    var desc = document.documentElement.getAttribute(lang === "ko" ? "data-desc-ko" : "data-desc-en");
-    if (title) document.title = title;
-    var md = document.getElementById("desc");
-    if (md && desc) {{ md.setAttribute("content", desc); md.setAttribute("lang", lang); }}
-    var ogt = document.querySelector('meta[property="og:title"]');
-    var ogd = document.querySelector('meta[property="og:description"]');
-    if (ogt && title) ogt.setAttribute("content", title);
-    if (ogd && desc) ogd.setAttribute("content", desc);
-    document.querySelectorAll("[data-i18n]").forEach(function (el) {{
-      var key = el.getAttribute("data-i18n");
-      if (dict[key] != null) el.textContent = dict[key];
-    }});
-    document.querySelectorAll("[data-i18n-title]").forEach(function (el) {{
-      var key = el.getAttribute("data-i18n-title");
-      if (dict[key] != null) el.title = dict[key];
-    }});
-    document.querySelectorAll("[data-en]").forEach(function (el) {{
-      var v = el.getAttribute(lang === "ko" ? "data-ko" : "data-en");
-      if (v != null) el.textContent = v;
-    }});
-    document.querySelectorAll("[data-aria-en]").forEach(function (el) {{
-      var v = el.getAttribute(lang === "ko" ? "data-aria-ko" : "data-aria-en");
-      if (v != null) el.setAttribute("aria-label", v);
-    }});
-    document.querySelectorAll("[data-src-en]").forEach(function (el) {{
-      var src = el.getAttribute(lang === "ko" ? "data-src-ko" : "data-src-en");
-      var alt = el.getAttribute(lang === "ko" ? "data-alt-ko" : "data-alt-en");
-      if (src) el.setAttribute("src", src);
-      if (alt != null) el.alt = alt;
-    }});
-    document.querySelectorAll("[data-lang]").forEach(function (b) {{
-      b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
-    }});
-    var map = lang === "ko" ? "/?lang=ko" : "/";
-    ["back", "brand"].forEach(function (id) {{
-      var el = document.getElementById(id);
-      if (el) el.setAttribute("href", map);
-    }});
-  }}
   document.getElementById("theme").addEventListener("click", function () {{
     var root = document.documentElement;
     var dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
     root.dataset.theme = dark ? "light" : "dark";
     save({{ theme: root.dataset.theme }});
   }});
-  document.querySelectorAll("[data-lang]").forEach(function (b) {{
-    b.addEventListener("click", function () {{
-      var next = b.getAttribute("data-lang");
-      save({{ lang: next }});
-      apply(next);
-      var u = new URL(location.href);
-      u.searchParams.set("lang", next);
-      history.replaceState(null, "", u.pathname + u.search + u.hash);
-    }});
+  // Language is the page itself (/pkg/... or /ko/pkg/...); remember the choice for the map.
+  document.querySelectorAll("a[data-lang]").forEach(function (a) {{
+    a.addEventListener("click", function () {{ save({{ lang: a.getAttribute("data-lang") }}); }});
   }});
   document.querySelectorAll("[data-copy]").forEach(function (btn) {{
     btn.addEventListener("click", function () {{
@@ -758,16 +732,20 @@ footer p {{ margin: 4px 0; }}
   }});
   var savedTrend = prefs().trend;
   if (savedTrend === "3m" || savedTrend === "6m" || savedTrend === "1y") showTrend(savedTrend);
-  apply(initialLang());
 }})();
 </script>
 </body>
 </html>
 """
+    if lang == "ko":
+        page = localize(page, "ko", strings=PAGE_I18N["ko"])
+    return page
 
 
 def write_pages(data: dict, out: Path, history_days: dict | None = None) -> int:
-    """Write index.html for every tracked package. Returns the page count.
+    """Write the English and Korean index.html for every tracked package.
+
+    Returns the number of packages (each has two pages).
 
     ``history_days`` is the compact day map from ``data/history``. None means
     those files are not available, and the chart says so instead of drawing
@@ -778,12 +756,13 @@ def write_pages(data: dict, out: Path, history_days: dict | None = None) -> int:
     n = 0
     for eco, pkg in iter_packages(data):
         rel = feeds.package_page_rel(pkg["key"]) + "index.html"
-        path = out / rel
-        # feed_relpath rejects absolute and '..' segments; keep the file under out.
-        if not path.resolve().is_relative_to(out.resolve()):
-            raise ValueError(f"package page escapes output dir: {pkg['key']!r}")
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(render_page(eco, pkg, generated, generated_raw, history_days), encoding="utf-8")
+        for lang in LANGS:
+            path = out / ("ko/" + rel if lang == "ko" else rel)
+            # feed_relpath rejects absolute and '..' segments; keep the file under out.
+            if not path.resolve().is_relative_to(out.resolve()):
+                raise ValueError(f"package page escapes output dir: {pkg['key']!r}")
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(render_page(eco, pkg, generated, generated_raw, history_days, lang), encoding="utf-8")
         n += 1
     return n
 
@@ -805,7 +784,7 @@ def _sitemap_entry(loc: str, en: str, ko: str, lastmod: str) -> str:
 def strip_pkg_urls(text: str) -> str:
     def keep(match: re.Match[str]) -> str:
         block = match.group(0)
-        if f"{SITE}/pkg/" in block:
+        if f"{SITE}/pkg/" in block or f"{SITE}/ko/pkg/" in block:
             return ""
         return block
     return _URL_BLOCK.sub(keep, text)
@@ -819,8 +798,8 @@ def render_sitemap(data: dict, base_text: str) -> str:
     lastmod = generated.date().isoformat()
     blocks = []
     for _eco, pkg in iter_packages(data):
-        url = feeds.package_page_url(pkg["key"])
-        ko = url + "?lang=ko"
+        url = feeds.package_page_url(pkg["key"], "en")
+        ko = feeds.package_page_url(pkg["key"], "ko")
         blocks.append(_sitemap_entry(url, url, ko, lastmod))
         blocks.append(_sitemap_entry(ko, url, ko, lastmod))
     body = strip_pkg_urls(base_text)

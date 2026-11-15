@@ -1,6 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Old ?lang=ko / ?lang=en links go to / or /ko/ (same code as LANG_REDIRECT_JS in collect/pages.py). -->
+<script>
+(function () {
+  try {
+    var q = new URLSearchParams(location.search), want = q.get("lang");
+    if (want !== "en" && want !== "ko") return;
+    q.delete("lang");
+    var path = location.pathname.replace(/^\/ko(\/|$)/, "/");
+    if (want === "ko") path = "/ko" + path;
+    var rest = q.toString(), url = path + (rest ? "?" + rest : "") + location.hash;
+    if (want !== document.documentElement.lang) location.replace(url);
+    else history.replaceState(null, "", url);
+  } catch (e) {}
+})();
+</script>
 <!-- Google tag (gtag.js): visit counts, see the footer note -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HF5GM88Y3V"></script>
 <script>
@@ -12,24 +27,29 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>depweather</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="fonts/fonts.css">
-<meta name="description" content="Vulnerability weather for popular packages: which npm, PyPI, Maven, Go and other popular packages have new critical or exploited vulnerabilities, updated daily.">
+<!-- collect/home.py writes / and /ko/ from this file. data-ko-<attr> is the Korean value of <attr>. -->
+<title data-ko="depweather — 인기 패키지의 취약점 날씨">depweather — vulnerability weather for popular packages</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/fonts/fonts.css?v=2026-11-15.1">
+<meta name="description" content="Vulnerability weather for popular packages: which npm, PyPI, Maven, Go and other popular packages have new critical or exploited vulnerabilities, updated daily." data-ko-content="인기 패키지의 취약점 날씨: npm, PyPI, Maven, Go 등 인기 오픈소스 패키지 중 어디에 새 치명 취약점이나 실제 악용(CISA KEV) 취약점이 생겼는지 매일 갱신해 보여줍니다.">
+<link rel="canonical" href="https://depweather.com/" data-ko-href="https://depweather.com/ko/">
+<link rel="alternate" hreflang="en" href="https://depweather.com/">
+<link rel="alternate" hreflang="ko" href="https://depweather.com/ko/">
+<link rel="alternate" hreflang="x-default" href="https://depweather.com/">
 <!-- Social preview. og.png is rendered from og/og-template.html. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="depweather">
-<meta property="og:title" content="depweather: vulnerability weather for popular packages">
-<meta property="og:description" content="Which popular packages have new critical or exploited vulnerabilities today, on one map. Updated daily from OSV, CISA KEV, EPSS and NVD.">
-<meta property="og:url" content="https://depweather.com/">
+<meta property="og:title" content="depweather: vulnerability weather for popular packages" data-ko-content="depweather: 인기 패키지의 취약점 날씨">
+<meta property="og:description" content="Which popular packages have new critical or exploited vulnerabilities today, on one map. Updated daily from OSV, CISA KEV, EPSS and NVD." data-ko-content="오늘 어느 인기 패키지에 새 치명 취약점이나 실제 악용 취약점이 생겼는지 한 장의 지도로 봅니다. OSV, CISA KEV, EPSS, NVD 기준으로 매일 갱신합니다.">
+<meta property="og:url" content="https://depweather.com/" data-ko-content="https://depweather.com/ko/">
 <meta property="og:image" content="https://depweather.com/og.png">
-<link rel="alternate" hreflang="en" href="https://depweather.com/">
-<link rel="alternate" hreflang="ko" href="https://depweather.com/?lang=ko">
+<meta property="og:locale" content="en_US" data-ko-content="ko_KR">
+<meta property="og:locale:alternate" content="ko_KR" data-ko-content="en_US">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="depweather logo beside a treemap of package ecosystems colored by vulnerability severity">
+<meta property="og:image:alt" content="depweather logo beside a treemap of package ecosystems colored by vulnerability severity" data-ko-content="depweather 로고와, 취약점 심각도로 색칠한 패키지 생태계 트리맵">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" type="text/markdown" href="https://depweather.com/today.md" title="Today's forecast (Markdown)">
+<link rel="alternate" type="text/markdown" href="https://depweather.com/today.md" title="Today's forecast (Markdown)" data-ko-title="오늘의 예보 (Markdown, 영어)">
 <link rel="alternate" type="application/atom+xml" href="https://depweather.com/feed.xml" title="depweather new advisories">
 <script type="application/ld+json">
 {
@@ -155,15 +175,16 @@ header.top h1 img { display: block; width: 32px; height: 32px; }
 header.top .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 header.top .tag { color: var(--ink-2); font-size: 14px; }
 header.top .spacer { flex: 1; }
-.lang button { padding: 6px 9px; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; }
+.lang a { padding: 6px 9px; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; }
 .meta { color: var(--muted); font-size: 13px; }
 
 .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; background: var(--surface); }
 .seg button {
   font: inherit; font-size: 13px; padding: 6px 12px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer;
 }
-.seg button + button { border-left: 1px solid var(--border); }
-.seg button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.seg a { font-size: 13px; padding: 6px 12px; color: var(--ink-2); text-decoration: none; }
+.seg > * + * { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"], .seg a[aria-current="page"] { background: var(--ink); color: var(--page); }
 .iconbtn { font: inherit; font-size: 13px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--ink-2); cursor: pointer; }
 .iconbtn.gh { display: inline-flex; align-items: center; justify-content: center; padding: 6px 8px; color: var(--ink); text-decoration: none; }
 .iconbtn.gh:hover { background: var(--group-head); }
@@ -175,7 +196,7 @@ header.top .spacer { flex: 1; }
 @media (max-width: 420px) {
   /* English labels are wider; let the last buttons drop to a second row instead of overflowing. */
   header.top .controls { flex-wrap: wrap; }
-  .seg button, .iconbtn { padding: 6px 9px; font-size: 12.5px; }
+  .seg button, .seg a, .iconbtn { padding: 6px 9px; font-size: 12.5px; }
 }
 
 /* The numbers read as one line under the forecast; missing ones are left out. */
@@ -351,7 +372,7 @@ a.chip:hover { text-decoration: underline; }
 <body>
 <div class="wrap">
   <header class="top">
-    <h1><img src="favicon.svg" alt="" width="32" height="32">depweather</h1>
+    <h1><img src="/favicon.svg" alt="depweather" width="32" height="32"><span aria-hidden="true">depweather</span></h1>
     <span class="tag" data-i18n="tagline">Today's vulnerability forecast for popular packages</span>
     <span class="spacer"></span>
     <div class="controls">
@@ -361,16 +382,18 @@ a.chip:hover { text-decoration: underline; }
       <button data-view="b" data-i18n="view_b">Counter</button>
     </div>
     <button class="iconbtn" id="theme" data-i18n="theme" data-i18n-title="theme_title" title="Toggle light / dark">Theme</button>
-    <div class="seg lang" role="group" aria-label="Language">
-      <button data-lang="en" lang="en">EN</button>
-      <button data-lang="ko" lang="ko">KO</button>
+    <div class="seg lang" role="group" aria-label="Language" data-aria-ko="언어">
+      <a href="/" hreflang="en" lang="en" data-lang="en">EN</a>
+      <a href="/ko/" hreflang="ko" lang="ko" data-lang="ko">KO</a>
     </div>
     <a class="iconbtn gh" href="https://github.com/surinkim/depweather" data-i18n-title="gh_title" title="Source code on GitHub" aria-label="Source code on GitHub">
       <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
     </a>
     </div>
   </header>
-  <p class="meta" id="meta" data-i18n="loading">Loading data…</p>
+  <!-- collect/home.py fills #meta, #stats and #build from data/latest.json at build time, so the
+       first paint already has the numbers; the script redraws them after it loads the data. -->
+  <p class="meta" id="meta">Loading data…</p>
   <div id="warn" class="warn" hidden></div>
 
   <div class="stackbar" id="stackbar">
@@ -383,7 +406,7 @@ a.chip:hover { text-decoration: underline; }
     <p class="hint" data-i18n="stack_help">Paste a dependency manifest. It is read in this browser and never uploaded, and it is saved only in this browser. A shared link lists tracked package names, not the rest of the file. Supports npm package.json, PyPI requirements.txt (plus Pipfile and pyproject.toml), go.mod, Cargo.toml, pom.xml, Gemfile, composer.json, mix.exs, and NuGet PackageReference.</p>
     <textarea id="stack-input" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off" data-i18n-placeholder="stack_ph" placeholder="Paste package.json, requirements.txt, go.mod, Cargo.toml, pom.xml, Gemfile, composer.json…"></textarea>
     <div class="stack-actions">
-      <button type="button" class="primary" id="stack-apply">Show only these</button>
+      <button type="button" class="primary" id="stack-apply" data-i18n="stack_apply">Show only these</button>
       <button type="button" class="iconbtn" id="stack-add" hidden data-i18n="stack_add">Add to stack</button>
       <label class="iconbtn filebtn"><span data-i18n="stack_file">Choose file</span><input type="file" id="stack-file" aria-label="Choose a manifest file"></label>
     </div>
@@ -395,7 +418,7 @@ a.chip:hover { text-decoration: underline; }
     <p class="fc-say" id="fc-say"></p>
     <ul class="fc-strip" id="fc-strip"></ul>
   </section>
-  <section class="stats" id="stats" aria-label="Today in numbers"></section>
+  <section class="stats" id="stats" aria-label="Today in numbers" data-aria-ko="오늘의 숫자"></section>
 
   <div class="toolbar">
     <div class="seg" role="group" aria-label="Period">
@@ -452,7 +475,7 @@ a.chip:hover { text-decoration: underline; }
     <h3>Does it scan my code?</h3>
     <p>No. Paste a dependency manifest to filter this map to packages you use; the file stays in your browser and is never uploaded. To scan your own code, use Dependabot, npm audit, pip-audit, govulncheck or osv-scanner.</p>
     <h3>Can I read the data without this page?</h3>
-    <p>Yes: <a href="today.md">today's forecast in Markdown</a> and <a href="data/latest.json">the full data as JSON</a>.
+    <p>Yes: <a href="/today.md">today's forecast in Markdown</a> and <a href="/data/latest.json">the full data as JSON</a>.
       How it works: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.md">docs</a>.</p>
     <h3>Can I put this on a README?</h3>
     <p>Yes. Each package has a badge, for example <a href="https://depweather.com/badge/npm/lodash.svg">lodash</a>
@@ -480,14 +503,14 @@ a.chip:hover { text-decoration: underline; }
 </div>
 <div id="tooltip" role="tooltip"></div>
 
-<script src="js/pkg-path.js?v=2026-11-02.4"></script>
-<script src="js/stack.js?v=2026-11-02.1"></script>
-<script src="js/trends.js?v=2026-11-03.1"></script>
+<script src="/js/pkg-path.js?v=2026-11-02.4"></script>
+<script src="/js/stack.js?v=2026-11-02.1"></script>
+<script src="/js/trends.js?v=2026-11-03.1"></script>
 <script>
 "use strict";
 
 // Shown in the footer, so a stale cached copy of the page is easy to spot.
-const BUILD = "2026-11-03.1";
+const BUILD = "2026-11-15.1";
 
 // Raise a vulnerability one color level when its EPSS score is at least this
 // value (e.g. 0.1). null keeps the color on severity and KEV only.
@@ -719,7 +742,7 @@ const I18N = {
     <h3>내 코드를 스캔하나요?</h3>
     <p>아니요. 의존성 파일을 붙여넣으면 그 패키지만 이 지도에서 볼 수 있고, 파일은 브라우저 안에만 남으며 서버로 보내지 않습니다. 내 코드를 검사하려면 Dependabot, npm audit, pip-audit, govulncheck, osv-scanner를 쓰세요.</p>
     <h3>이 페이지 없이 데이터를 볼 수 있나요?</h3>
-    <p>네. <a href="today.md">오늘의 예보(Markdown, 영어)</a>와 <a href="data/latest.json">전체 데이터(JSON)</a>가 있습니다.
+    <p>네. <a href="/today.md">오늘의 예보(Markdown, 영어)</a>와 <a href="/data/latest.json">전체 데이터(JSON)</a>가 있습니다.
       작동 방식: <a href="https://github.com/surinkim/depweather/blob/main/docs/how-it-works.ko.md">문서</a>.</p>
     <h3>README에 붙일 수 있나요?</h3>
     <p>네. 패키지마다 배지가 있습니다. 예: <a href="https://depweather.com/badge/npm/lodash.ko.svg">lodash</a>
@@ -786,8 +809,11 @@ function applyStaticText() {
   });
   document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); });
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
-  document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === LANG));
-  $("#build").textContent = t("build", BUILD, DATA ? DATA.generated_at.slice(0, 16).replace("T", " ") : null);
+  document.querySelectorAll("a[data-lang]").forEach((a) => {
+    if (a.dataset.lang === LANG) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+  });
+  // Before the data loads, keep the line the build wrote (it already has the data time).
+  if (DATA || !$("#build").textContent) $("#build").textContent = t("build", BUILD, DATA ? DATA.generated_at.slice(0, 16).replace("T", " ") : null);
   document.querySelectorAll(".legend .wx").forEach((el) => el.replaceChildren(wxIcon(Number(el.dataset.lvl), 18, !!el.dataset.kev)));
   if (DATA) renderMeta();
   updateFullscreenLabel();
@@ -881,7 +907,7 @@ function renderStack() {
     const vias = (sources[key] || []).filter((v) => !entry || String(v).toLowerCase() !== entry.pkg.name.toLowerCase());
     const via = vias.length ? `<small>· ${esc(vias.join(", "))}</small>` : "";
     const body = `${esc(label)}<small>· ${esc(eco)}</small>${via}`;
-    const href = DepweatherPath.pkgPagePath(key);
+    const href = pkgHref(key);
     return href ? `<a class="chip" href="${esc(href)}">${body}</a>` : `<span class="chip">${body}</span>`;
   }).join("");
   const untrackedHtml = (state.stack.untracked || []).map((u) => {
@@ -1150,7 +1176,7 @@ function renderForecast() {
     if (r.lvl && r.hit.length) {
       span.append(document.createTextNode(word + ", "));
       const top = r.hit[0].p;
-      const href = DepweatherPath.pkgPagePath(top.key);
+      const href = pkgHref(top.key);
       if (href) {
         const a = document.createElement("a");
         a.className = "pkglink";
@@ -1382,7 +1408,7 @@ function drawTile(grp, g, tile, x, y, w, h, visible) {
   const p = tile.p;
   const vulns = pkgVulns(p), lvl = pkgLevel(vulns);
   const kevs = vulns.filter((v) => v.kev).length;
-  const href = DepweatherPath.pkgPagePath(p.key);
+  const href = pkgHref(p.key);
   const node = href
     ? svgEl("a", { class: "tile", href, "aria-label": `${p.label}: ${t("vulns", vulns.length)}, ${t("level")[lvl]}` })
     : svgEl("g", { class: "tile", tabindex: 0, role: "button", "aria-label": `${p.label}: ${t("vulns", vulns.length)}, ${t("level")[lvl]}` });
@@ -1650,7 +1676,7 @@ function renderTimeline() {
     row.className = "tl-row";
     const name = document.createElement("a");
     name.className = "name";
-    const href = DepweatherPath.pkgPagePath(r.p.key);
+    const href = pkgHref(r.p.key);
     if (href) name.href = href;
     name.innerHTML = `${esc(r.p.label)}<small>${esc(r.e.label)} · ${t("issues", r.vulns.length)}</small>`;
     const plot = document.createElement("div");
@@ -1672,7 +1698,7 @@ function renderPackage(root, { eco, pkg }) {
   const panel = document.createElement("div");
   panel.className = "panel";
   const lvl = pkgLevel(vulns);
-  const pageHref = DepweatherPath.pkgPagePath(pkg.key);
+  const pageHref = pkgHref(pkg.key);
   const feedHref = DepweatherPath.pkgFeedPath(pkg.key);
   panel.innerHTML = `<p style="margin:0 0 6px"><a href="#" id="allpkgs">${t("all_pkgs")}</a>${pageHref ? ` · <a href="${esc(pageHref)}">${t("pkg_page")}</a>` : ""}${feedHref ? ` · <a href="${esc(feedHref)}">${t("pkg_feed")}</a>` : ""}</p>
     <h2>${esc(pkg.label)} <span class="meta">${esc(eco.label)} · ${esc(pkg.name)}</span></h2>
@@ -1901,7 +1927,6 @@ function readUrl() {
   if (q.get("pkg")) { out.pkg = q.get("pkg"); out.view = out.view || "c"; }
   if (["7", "30"].includes(q.get("range"))) out.range = Number(q.get("range"));
   if (q.get("kev") === "1") out.kevOnly = true;
-  if (q.get("lang") in I18N) out.lang = q.get("lang");
   if (q.has("stack")) {
     const raw = q.get("stack") || "";
     out.stack = {
@@ -1920,7 +1945,6 @@ function writeUrl(push) {
   if (state.range !== 7) q.set("range", state.range);
   if (state.kevOnly) q.set("kev", "1");
   if (state.stack) q.set("stack", state.stack.tracked.length ? state.stack.tracked.join(",") : "-");
-  if (new URLSearchParams(location.search).has("lang")) q.set("lang", LANG);
   const url = `${location.pathname}?${q}`;
   if (url !== location.pathname + location.search) history[push ? "pushState" : "replaceState"](null, "", url);
 }
@@ -1932,12 +1956,21 @@ function setState(patch, push = true) {
   render();
 }
 
+// English is /, Korean is /ko/ (separate static pages). Switching keeps the view in the query string.
+function langHref(lang) {
+  return (lang === "ko" ? "/ko/" : "/") + location.search + location.hash;
+}
 function setLang(lang) {
+  if (lang === LANG) return;
   LANG = lang;
   writePrefs();
-  writeUrl(false);
-  applyStaticText();
-  render();
+  location.assign(langHref(lang));
+}
+
+// Package page in the page's language: /pkg/... or /ko/pkg/...
+function pkgHref(key) {
+  const path = DepweatherPath.pkgPagePath(key);
+  return path && LANG === "ko" ? "/ko" + path : path;
 }
 
 function render() {
@@ -1964,7 +1997,13 @@ function initControls() {
   initTreemapZoom();
   document.querySelectorAll("[data-view]").forEach((b) => b.onclick = () => setState({ view: b.dataset.view, pkg: b.dataset.view === "c" ? state.pkg : null }));
   document.querySelectorAll("[data-range]").forEach((b) => b.onclick = () => setState({ range: Number(b.dataset.range) }, false));
-  document.querySelectorAll("[data-lang]").forEach((b) => b.onclick = () => setLang(b.dataset.lang));
+  document.querySelectorAll("a[data-lang]").forEach((a) => {
+    a.onclick = (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
+      e.preventDefault();
+      setLang(a.dataset.lang);
+    };
+  });
   $("#kevonly").onchange = (e) => setState({ kevOnly: e.target.checked }, false);
   $("#search").addEventListener("change", (e) => {
     const q = e.target.value.trim().toLowerCase();
@@ -1972,7 +2011,7 @@ function initControls() {
     const hit = [...PKGS.keys()].find((k) => k.toLowerCase() === q)
       || [...PKGS.entries()].find(([, v]) => v.pkg.label.toLowerCase() === q || v.pkg.name.toLowerCase() === q)?.[0]
       || [...PKGS.keys()].find((k) => k.toLowerCase().includes(q));
-    const href = hit && DepweatherPath.pkgPagePath(hit);
+    const href = hit && pkgHref(hit);
     if (href) { location.assign(href); return; }
     setState({ view: "c", pkg: hit || q });
     e.target.value = "";
@@ -2033,13 +2072,13 @@ function initControls() {
 
 async function loadHistory() {
   try {
-    const response = await fetch("data/history/manifest.json", { cache: "no-cache" });
+    const response = await fetch("/data/history/manifest.json", { cache: "no-cache" });
     if (!response.ok) return null;
     const manifest = await response.json();
     const months = Array.isArray(manifest.months) ? manifest.months : [];
     const files = await Promise.all(months.map(async (month) => {
       if (!/^\d{4}-\d{2}$/.test(month)) return null;
-      const res = await fetch(`data/history/${month}.json`, { cache: "no-cache" });
+      const res = await fetch(`/data/history/${month}.json`, { cache: "no-cache" });
       if (!res.ok) return null;
       return res.json();
     }));
@@ -2060,7 +2099,7 @@ async function main() {
   const prefs = readPrefs();
   if (prefs.theme === "dark" || prefs.theme === "light") document.documentElement.dataset.theme = prefs.theme;
   const fromUrl = readUrl();
-  LANG = fromUrl.lang || (prefs.lang in I18N ? prefs.lang : null) || ((navigator.language || "").toLowerCase().startsWith("ko") ? "ko" : "en");
+  LANG = document.documentElement.lang === "ko" ? "ko" : "en";
   state.view = fromUrl.view || prefs.view || (innerWidth < 768 ? "c" : "a");
   state.range = fromUrl.range || prefs.range || 7;
   state.trend = (prefs.trend === "3m" || prefs.trend === "6m" || prefs.trend === "1y") ? prefs.trend : "6m";
@@ -2080,7 +2119,7 @@ async function main() {
   render();
   const historyPromise = loadHistory();
   try {
-    const r = await fetch("data/latest.json", { cache: "no-cache" });
+    const r = await fetch("/data/latest.json", { cache: "no-cache" });
     if (!r.ok) throw new Error(r.status);
     DATA = await r.json();
   } catch (e) {

@@ -4,13 +4,15 @@
     <loc>https://depweather.com/</loc>
     <changefreq>daily</changefreq>
     <xhtml:link rel="alternate" hreflang="en" href="https://depweather.com/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://depweather.com/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://depweather.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://depweather.com/"/>
   </url>
   <url>
-    <loc>https://depweather.com/?lang=ko</loc>
+    <loc>https://depweather.com/ko/</loc>
     <changefreq>daily</changefreq>
     <xhtml:link rel="alternate" hreflang="en" href="https://depweather.com/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://depweather.com/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://depweather.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://depweather.com/"/>
   </url>
   <url>
     <loc>https://depweather.com/feed.xml</loc>

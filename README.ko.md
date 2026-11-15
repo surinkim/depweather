@@ -4,12 +4,12 @@
 
 <p align="center">
   인기 패키지의 취약점 날씨.<br>
-  <a href="https://depweather.com/?lang=ko"><b>depweather.com</b></a> · 하루 두 번 갱신<br><br>
+  <a href="https://depweather.com/ko/"><b>depweather.com</b></a> · 하루 두 번 갱신<br><br>
   <a href="README.md">English</a> | <b>한국어</b>
 </p>
 
 <p align="center">
-  <a href="https://depweather.com/?lang=ko"><img src="docs/images/screenshot-ko.png" alt="depweather 화면: 예보 문장, 생태계별 날씨 띠, 이번 주 가장 심각한 취약점으로 색칠한 패키지 트리맵" width="900"></a>
+  <a href="https://depweather.com/ko/"><img src="docs/images/screenshot-ko.png" alt="depweather 화면: 예보 문장, 생태계별 날씨 띠, 이번 주 가장 심각한 취약점으로 색칠한 패키지 트리맵" width="900"></a>
 </p>
 
 depweather는 매일 아침 한 가지 질문에 답합니다. **내가 쓰고 있을 법한 인기 패키지에
@@ -24,7 +24,7 @@ depweather는 매일 아침 한 가지 질문에 답합니다. **내가 쓰고 �
   많을수록 타일이 크고, 확대하면 자세한 정보가 나옵니다.
 - **패키지별 30일 타임라인.** 취약점마다 수정된 버전을 함께 보여줍니다.
 - **패키지별 페이지.** `/pkg/npm/next/` 형식입니다(Maven `:`는 `~`). 심각도, 수정
-  버전, KEV, EPSS를 보여줍니다. 한국어는 `?lang=ko`입니다.
+  버전, KEV, EPSS를 보여줍니다. 한국어 페이지는 `/ko/pkg/npm/next/`이고, 한국어 지도는 `/ko/`입니다.
 - **장기 추이.** 패키지 페이지와 카운터 보기의 생태계 그래프입니다. 3개월, 6개월,
   1년을 심각도별 누적 막대로 보여주고 CISA KEV는 따로 표시합니다.
 - **README 배지.** `/badge/npm/lodash.svg` (한국어는 `.ko.svg`). 회색은 맑은 한 주,
@@ -74,7 +74,7 @@ KEV나 치명 권고가 새로 나오면 이슈를 열거나 Slack·Discord로 �
 `:`는 `~`), 한국어 문구는 같은 파일에 `.ko.svg`를 붙입니다.
 
 ```md
-[![depweather: lodash: 맑음](https://depweather.com/badge/npm/lodash.ko.svg)](https://depweather.com/pkg/npm/lodash/?lang=ko)
+[![depweather: lodash: 맑음](https://depweather.com/badge/npm/lodash.ko.svg)](https://depweather.com/ko/pkg/npm/lodash/)
 ```
 
 오른쪽은 `맑음`(새 권고 없음), `흐림`(낮음·중간만), 높음·치명 건수, 또는 그 7일

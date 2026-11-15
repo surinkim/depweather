@@ -32,17 +32,25 @@ jobs:
         with:
           ref: main
 
-      # What the page loads, the plain-text views (llms.txt, today.md),
-      # the Atom feeds, one HTML page per package, and one SVG badge per
-      # package. Mockups and sources stay in the repository. Compact history
-      # JSON is copied so the counter view can draw long-term charts; it is
+      # home.py runs the page's I18N table through Node to write the home page.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # The home page (/ and /ko/, written by home.py from index.html),
+      # what the page loads, the plain-text views (llms.txt, today.md),
+      # the Atom feeds, two HTML pages per package (/pkg/... and /ko/pkg/...),
+      # and one SVG badge per package. Mockups and sources stay in the
+      # repository. Compact history JSON is copied so the counter view can
+      # draw long-term charts; it is
       # committed, unlike the feeds, package pages and badges, which are
       # rebuilt from data/latest.json. pages.py also rewrites _site/sitemap.xml
       # so each package is listed there.
       - name: Assemble site
         run: |
           mkdir -p _site/data/history _site/js
-          cp index.html favicon.svg og.png robots.txt sitemap.xml llms.txt _site/
+          cp favicon.svg og.png robots.txt sitemap.xml llms.txt _site/
+          python3 collect/home.py --out _site
           cp js/stack.js js/pkg-path.js js/trends.js _site/js/
           cp data/today.md _site/today.md
           cp -r fonts _site/

@@ -175,8 +175,8 @@ class PageTests(unittest.TestCase):
             self.assertEqual(n, 3)
             page = (out / "pkg" / "npm" / "next" / "index.html").read_text(encoding="utf-8")
             self.assertIn("<title>Next.js (npm) vulnerabilities — depweather</title>", page)
-            self.assertIn('data-title-ko="Next.js (npm) 취약점 — depweather"', page)
-            self.assertIn('lang="ko" content="Next.js (npm) 취약점:', page)
+            self.assertIn('<html lang="en">', page)
+            self.assertIn('<meta property="og:locale" content="en_US">', page)
             self.assertIn("in CISA KEV", page)
             self.assertIn("99.9%", page)
             self.assertIn("16.0.1", page)
@@ -186,12 +186,40 @@ class PageTests(unittest.TestCase):
             self.assertIn('href="/feed/npm/next.xml"', page)
             self.assertIn('id="back" href="/"', page)
             self.assertIn('rel="canonical" href="https://depweather.com/pkg/npm/next/"', page)
-            self.assertIn('hreflang="ko" href="https://depweather.com/pkg/npm/next/?lang=ko"', page)
+            self.assertIn('hreflang="en" href="https://depweather.com/pkg/npm/next/"', page)
+            self.assertIn('hreflang="ko" href="https://depweather.com/ko/pkg/npm/next/"', page)
+            self.assertIn('hreflang="x-default" href="https://depweather.com/pkg/npm/next/"', page)
             self.assertIn("depweather:prefs", page)
             self.assertIn('id="theme"', page)
-            self.assertIn('data-lang="ko"', page)
+            self.assertIn('href="/ko/pkg/npm/next/" hreflang="ko"', page)
             self.assertIn('data-theme="dark"', page)
-            self.assertIn("지도로 돌아가기", page)
+            self.assertNotIn("지도로 돌아가기</a>", page)
+            self.assertNotIn("?lang=ko", page)
+
+            # The Korean page is its own static HTML, already in Korean.
+            ko = (out / "ko" / "pkg" / "npm" / "next" / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<html lang="ko">', ko)
+            self.assertIn("<title>Next.js (npm) 취약점 — depweather</title>", ko)
+            self.assertIn('<meta name="description" content="Next.js (npm) 취약점: 30일 4건', ko)
+            self.assertIn('<meta property="og:title" content="Next.js (npm) 취약점 — depweather">', ko)
+            self.assertIn('<meta property="og:locale" content="ko_KR">', ko)
+            self.assertIn('<meta property="og:url" content="https://depweather.com/ko/pkg/npm/next/">', ko)
+            self.assertIn('rel="canonical" href="https://depweather.com/ko/pkg/npm/next/"', ko)
+            self.assertIn('hreflang="en" href="https://depweather.com/pkg/npm/next/"', ko)
+            self.assertIn('hreflang="ko" href="https://depweather.com/ko/pkg/npm/next/"', ko)
+            self.assertIn('hreflang="x-default" href="https://depweather.com/pkg/npm/next/"', ko)
+            self.assertIn('id="back" href="/ko/" data-i18n="back">지도로 돌아가기</a>', ko)
+            self.assertIn('>현재, 최근 7일 (2건)</h2>', ko)
+            self.assertIn('>공개일</th>', ko)
+            self.assertIn('>README 배지</h2>', ko)
+            self.assertIn('src="/badge/npm/next.ko.svg"', ko)
+            self.assertIn("RCE &lt;img src=x onerror=alert(1)&gt;", ko)
+            self.assertNotIn("<img src=x", ko)
+            self.assertNotIn("Back to the map", ko)
+            self.assertNotIn("Current, last 7 days (2)<", ko)
+            ko_ld = json.loads(re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', ko, re.S).group(1))
+            self.assertEqual(ko_ld["@graph"][0]["inLanguage"], "ko")
+            self.assertEqual(ko_ld["@graph"][0]["url"], "https://depweather.com/ko/pkg/npm/next/")
             self.assertIn("RCE &lt;img src=x onerror=alert(1)&gt;", page)
             self.assertNotIn("<img src=x", page)
             self.assertNotIn("href=\"javascript:", page)
@@ -227,10 +255,12 @@ class PageTests(unittest.TestCase):
             root = ET.fromstring(sm)
             locs = [el.text for el in root.findall("sm:url/sm:loc", NS)]
             self.assertIn("https://depweather.com/", locs)
-            self.assertIn("https://depweather.com/?lang=ko", locs)
+            self.assertIn("https://depweather.com/ko/", locs)
+            self.assertFalse([loc for loc in locs if "lang=" in loc])
             self.assertIn("https://depweather.com/feed.xml", locs)
             self.assertIn("https://depweather.com/pkg/npm/next/", locs)
-            self.assertIn("https://depweather.com/pkg/npm/next/?lang=ko", locs)
+            self.assertIn("https://depweather.com/ko/pkg/npm/next/", locs)
+            self.assertFalse([loc for loc in locs if "/pkg/" in loc and "lang=" in loc])
             self.assertIn("https://depweather.com/pkg/npm/@angular/core/", locs)
             self.assertIn(
                 "https://depweather.com/pkg/maven/org.springframework.boot~spring-boot/",
@@ -252,9 +282,10 @@ class PageTests(unittest.TestCase):
             n = pages.write_pages(data, out)
             self.assertEqual(n, len(set(keys)))
             for key in keys:
-                path = out / (feeds.package_page_rel(key) + "index.html")
-                self.assertTrue(path.is_file(), key)
-                self.assertTrue(path.resolve().is_relative_to(out.resolve()))
+                for prefix in ("", "ko/"):
+                    path = out / (prefix + feeds.package_page_rel(key) + "index.html")
+                    self.assertTrue(path.is_file(), key)
+                    self.assertTrue(path.resolve().is_relative_to(out.resolve()))
             php = (out / "pkg" / "runtimes" / "php" / "index.html").read_text(encoding="utf-8")
             self.assertIn("PHP (Runtimes &amp; servers) vulnerabilities", php)
             self.assertIn("CISA KEV", php)
@@ -268,17 +299,20 @@ class PageTests(unittest.TestCase):
             sm = pages.render_sitemap(data, (ROOT / "sitemap.xml").read_text(encoding="utf-8"))
             root = ET.fromstring(sm)
             locs = [el.text or "" for el in root.findall("sm:url/sm:loc", NS)]
-            pkg_locs = [loc for loc in locs if "/pkg/" in loc and "lang=ko" not in loc]
+            pkg_locs = [loc for loc in locs if loc.startswith("https://depweather.com/pkg/")]
+            ko_locs = [loc for loc in locs if loc.startswith("https://depweather.com/ko/pkg/")]
             self.assertEqual(len(pkg_locs), len(set(keys)))
+            self.assertEqual(len(ko_locs), len(set(keys)))
             self.assertIn("https://depweather.com/", locs)
 
     def test_map_links_to_package_pages(self):
         html = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn('src="js/pkg-path.js', html)
-        self.assertGreaterEqual(html.count("DepweatherPath.pkgPagePath("), 4)
+        self.assertIn('src="/js/pkg-path.js', html)
+        self.assertIn("DepweatherPath.pkgPagePath(", html)
+        self.assertGreaterEqual(html.count("pkgHref("), 5)
         for needle in ("function renderForecast", "function drawTile", "function renderTimeline"):
             start = html.index(needle)
-            self.assertIn("pkgPagePath", html[start:start + 6000], needle)
+            self.assertIn("pkgHref(", html[start:start + 6000], needle)
 
 
 if __name__ == "__main__":
