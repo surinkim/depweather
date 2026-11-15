@@ -17,24 +17,24 @@
   "2026-11-04": {
    "packages": {
     "hex/ecto": {
-     "h": 1
+     "u": 1
     }
    },
    "ecosystems": {
     "hex": {
-     "h": 1
+     "u": 1
     }
    }
   },
   "2026-11-06": {
    "packages": {
     "hex/cowboy": {
-     "h": 2
+     "u": 2
     }
    },
    "ecosystems": {
     "hex": {
-     "h": 2
+     "u": 2
     }
    }
   },

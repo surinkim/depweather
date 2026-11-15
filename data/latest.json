@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T22:24:37Z",
+ "generated_at": "2026-11-15T13:54:36Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -24,10 +24,10 @@
   "epss": {
    "ok": true,
    "url": "https://epss.empiricalsecurity.com/epss_scores-current.csv.gz",
-   "score_date": "2026-11-14"
+   "score_date": "2026-11-15"
   },
   "nvd": {
-   "ok": true,
+   "ok": false,
    "url": "https://services.nvd.nist.gov/rest/json/cves/2.0"
   },
   "popularity": {
@@ -47,10 +47,10 @@
   }
  },
  "summary": {
-  "today_cves": 62,
+  "today_cves": null,
   "month": "2026-11",
-  "month_cves": 7862,
-  "month_cves_last_year": 3021,
+  "month_cves": null,
+  "month_cves_last_year": null,
   "kev_new_7d": 12,
   "affected_packages_7d": 12,
   "tracked_packages": 149
@@ -113,7 +113,7 @@
    "count": 7862
   }
  ],
- "monthly_is_stale": false,
+ "monthly_is_stale": true,
  "kev_recent": [
   {
    "cve": "CVE-2026-114713",
@@ -213,7 +213,7 @@
      "key": "npm/react",
      "name": "react",
      "label": "React",
-     "popularity": 256249908.0,
+     "popularity": 258500204.0,
      "popularity_source": "npm downloads, last week",
      "survey": 41.5,
      "worst_7d": "NONE",
@@ -224,7 +224,7 @@
      "key": "npm/next",
      "name": "next",
      "label": "Next.js",
-     "popularity": 92890722.0,
+     "popularity": 93677602.0,
      "popularity_source": "npm downloads, last week",
      "survey": 20.6,
      "worst_7d": "NONE",
@@ -262,8 +262,8 @@
        "summary": "next.js cache leak across root param values in nested 'use cache' functions",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "16.3.8"
        ],
@@ -272,7 +272,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0025,
-       "epss_percentile": 0.16496
+       "epss_percentile": 0.1647
       },
       {
        "id": "GHSA-2464-fhr4-w9xw",
@@ -307,8 +307,8 @@
        "summary": "Next.js: Denial of Service in App Router using Server Actions",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "15.5.28",
         "16.4.1"
@@ -318,7 +318,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00386,
-       "epss_percentile": 0.33259
+       "epss_percentile": 0.33242
       }
      ]
     },
@@ -326,7 +326,7 @@
      "key": "npm/jquery",
      "name": "jquery",
      "label": "jQuery",
-     "popularity": 17435297.0,
+     "popularity": 17528710.0,
      "popularity_source": "npm downloads, last week",
      "survey": 19.7,
      "worst_7d": "NONE",
@@ -337,7 +337,7 @@
      "key": "npm/vue",
      "name": "vue",
      "label": "Vue.js",
-     "popularity": 24808637.0,
+     "popularity": 25045648.0,
      "popularity_source": "npm downloads, last week",
      "survey": 17.2,
      "worst_7d": "NONE",
@@ -348,7 +348,7 @@
      "key": "npm/@angular/core",
      "name": "@angular/core",
      "label": "Angular",
-     "popularity": 8188114.0,
+     "popularity": 8195583.0,
      "popularity_source": "npm downloads, last week",
      "survey": 16.0,
      "worst_7d": "NONE",
@@ -359,7 +359,7 @@
      "key": "npm/express",
      "name": "express",
      "label": "Express",
-     "popularity": 195709453.0,
+     "popularity": 197054038.0,
      "popularity_source": "npm downloads, last week",
      "survey": 15.6,
      "worst_7d": "NONE",
@@ -370,7 +370,7 @@
      "key": "npm/svelte",
      "name": "svelte",
      "label": "Svelte",
-     "popularity": 9567430.0,
+     "popularity": 9685203.0,
      "popularity_source": "npm downloads, last week",
      "survey": 7.8,
      "worst_7d": "NONE",
@@ -381,7 +381,7 @@
      "key": "npm/astro",
      "name": "astro",
      "label": "Astro",
-     "popularity": 11738475.0,
+     "popularity": 11910147.0,
      "popularity_source": "npm downloads, last week",
      "survey": 6.2,
      "worst_7d": "MEDIUM",
@@ -399,8 +399,8 @@
        "summary": "Astro: XSS via attribute injection in dynamic tag names",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": 2.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "7.4.5"
        ],
@@ -409,7 +409,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00315,
-       "epss_percentile": 0.24795
+       "epss_percentile": 0.24773
       },
       {
        "id": "GHSA-r3h5-4585-7x3w",
@@ -423,8 +423,8 @@
        "summary": "Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "7.4.7"
        ],
@@ -433,7 +433,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00375,
-       "epss_percentile": 0.31963
+       "epss_percentile": 0.31946
       },
       {
        "id": "GHSA-98hj-9722-w3j8",
@@ -457,7 +457,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00321,
-       "epss_percentile": 0.25477
+       "epss_percentile": 0.25451
       },
       {
        "id": "GHSA-mpr7-6m5w-76rw",
@@ -471,8 +471,8 @@
        "summary": "Astro: Arbitrary CSS injection in Astro View Transitions",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": 2.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "7.3.3"
        ],
@@ -481,7 +481,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00498,
-       "epss_percentile": 0.43318
+       "epss_percentile": 0.43295
       }
      ]
     },
@@ -489,7 +489,7 @@
      "key": "npm/angular",
      "name": "angular",
      "label": "AngularJS",
-     "popularity": 616600.0,
+     "popularity": 614423.0,
      "popularity_source": "npm downloads, last week",
      "survey": 6.0,
      "worst_7d": "NONE",
@@ -500,7 +500,7 @@
      "key": "npm/@nestjs/core",
      "name": "@nestjs/core",
      "label": "NestJS",
-     "popularity": 24092287.0,
+     "popularity": 24288875.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.8,
      "worst_7d": "NONE",
@@ -511,7 +511,7 @@
      "key": "npm/@sveltejs/kit",
      "name": "@sveltejs/kit",
      "label": "SvelteKit",
-     "popularity": 5160072.0,
+     "popularity": 5264899.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.6,
      "worst_7d": "MEDIUM",
@@ -540,7 +540,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00477,
-       "epss_percentile": 0.41802
+       "epss_percentile": 0.41782
       },
       {
        "id": "GHSA-pfhg-q3qv-9q6r",
@@ -564,7 +564,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00202,
-       "epss_percentile": 0.10174
+       "epss_percentile": 0.10152
       },
       {
        "id": "GHSA-27mw-82g8-phjj",
@@ -588,7 +588,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00213,
-       "epss_percentile": 0.11664
+       "epss_percentile": 0.11644
       }
      ]
     },
@@ -596,7 +596,7 @@
      "key": "npm/htmx.org",
      "name": "htmx.org",
      "label": "htmx",
-     "popularity": 446909.0,
+     "popularity": 451430.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.4,
      "worst_7d": "NONE",
@@ -607,7 +607,7 @@
      "key": "npm/nuxt",
      "name": "nuxt",
      "label": "Nuxt",
-     "popularity": 3355800.0,
+     "popularity": 3404733.0,
      "popularity_source": "npm downloads, last week",
      "survey": 4.4,
      "worst_7d": "NONE",
@@ -635,7 +635,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00339,
-       "epss_percentile": 0.27733
+       "epss_percentile": 0.2771
       },
       {
        "id": "GHSA-vjh5-4x84-xrqp",
@@ -649,8 +649,8 @@
        "summary": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.6.2"
        ],
@@ -659,7 +659,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00424,
-       "epss_percentile": 0.37258
+       "epss_percentile": 0.3724
       },
       {
        "id": "GHSA-xfq5-w38q-pc2x",
@@ -683,7 +683,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0022,
-       "epss_percentile": 0.12703
+       "epss_percentile": 0.12683
       },
       {
        "id": "GHSA-jjm6-p2m9-9w4x",
@@ -697,8 +697,8 @@
        "summary": "Nuxt: Incomplete fix for GHSA-934w-87qh-qr26: a `javascript:` URL prefixed with an ASCII control character executes from `<NuxtLink>` when `pages` is disabled",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": 2.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.6.0"
        ],
@@ -707,7 +707,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00406,
-       "epss_percentile": 0.3546
+       "epss_percentile": 0.35441
       },
       {
        "id": "GHSA-6gq8-jgmh-3ffp",
@@ -732,7 +732,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00363,
-       "epss_percentile": 0.30608
+       "epss_percentile": 0.30581
       }
      ]
     },
@@ -740,7 +740,7 @@
      "key": "npm/fastify",
      "name": "fastify",
      "label": "Fastify",
-     "popularity": 22569216.0,
+     "popularity": 22737261.0,
      "popularity_source": "npm downloads, last week",
      "survey": 3.5,
      "worst_7d": "NONE",
@@ -768,7 +768,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00257,
-       "epss_percentile": 0.17521
+       "epss_percentile": 0.175
       }
      ]
     },
@@ -776,7 +776,7 @@
      "key": "npm/hono",
      "name": "hono",
      "label": "Hono",
-     "popularity": 106963664.0,
+     "popularity": 107901065.0,
      "popularity_source": "npm downloads, last week",
      "survey": 2.8,
      "worst_7d": "MEDIUM",
@@ -804,7 +804,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00176,
-       "epss_percentile": 0.0724
+       "epss_percentile": 0.07224
       },
       {
        "id": "GHSA-4h7h-rv7c-7m2v",
@@ -828,7 +828,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00392,
-       "epss_percentile": 0.33894
+       "epss_percentile": 0.33878
       },
       {
        "id": "GHSA-4m76-xfj5-7975",
@@ -852,7 +852,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.004,
-       "epss_percentile": 0.34756
+       "epss_percentile": 0.34738
       },
       {
        "id": "GHSA-h7mg-cq63-vhpq",
@@ -876,7 +876,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00347,
-       "epss_percentile": 0.2879
+       "epss_percentile": 0.28766
       },
       {
        "id": "GHSA-3gg2-335m-rxc6",
@@ -900,7 +900,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00262,
-       "epss_percentile": 0.18112
+       "epss_percentile": 0.18092
       },
       {
        "id": "GHSA-5r4p-p66f-jhc7",
@@ -926,7 +926,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00315,
-       "epss_percentile": 0.24779
+       "epss_percentile": 0.24757
       }
      ]
     },
@@ -934,7 +934,7 @@
      "key": "npm/axios",
      "name": "axios",
      "label": "axios",
-     "popularity": 142159537.0,
+     "popularity": 142918770.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -945,7 +945,7 @@
      "key": "npm/lodash",
      "name": "lodash",
      "label": "lodash",
-     "popularity": 200438316.0,
+     "popularity": 201638951.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -956,7 +956,7 @@
      "key": "npm/vite",
      "name": "vite",
      "label": "vite",
-     "popularity": 271758738.0,
+     "popularity": 274471057.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -974,8 +974,8 @@
        "summary": "Vite: `server.fs.deny` bypassed with queries",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.9,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "6.4.5"
        ],
@@ -984,7 +984,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00295,
-       "epss_percentile": 0.22389
+       "epss_percentile": 0.22367
       },
       {
        "id": "GHSA-9jrq-w75r-8gcw",
@@ -998,8 +998,8 @@
        "summary": "Vite: Cross origin script execution through Vite custom middleware",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": 2.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1012,7 +1012,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00672,
-       "epss_percentile": 0.52653
+       "epss_percentile": 0.52645
       },
       {
        "id": "GHSA-rq7h-c2jc-7f22",
@@ -1026,8 +1026,8 @@
        "summary": "Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1040,7 +1040,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00852,
-       "epss_percentile": 0.58825
+       "epss_percentile": 0.58822
       },
       {
        "id": "GHSA-vfpm-58rq-9qcg",
@@ -1054,8 +1054,8 @@
        "summary": "Vite: First 4 bytes of files outside of `server.fs` setting is exposed by `?vite-wasm-instance`",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4"
@@ -1065,7 +1065,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00502,
-       "epss_percentile": 0.4356
+       "epss_percentile": 0.43541
       },
       {
        "id": "GHSA-r825-w8mm-5pxw",
@@ -1079,8 +1079,8 @@
        "summary": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1093,7 +1093,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00705,
-       "epss_percentile": 0.53935
+       "epss_percentile": 0.53919
       },
       {
        "id": "GHSA-587h-7wmj-h5pm",
@@ -1107,8 +1107,8 @@
        "summary": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1121,7 +1121,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01694,
-       "epss_percentile": 0.77518
+       "epss_percentile": 0.77519
       },
       {
        "id": "GHSA-698v-4r3x-3vcv",
@@ -1135,8 +1135,8 @@
        "summary": "launch-editor: escapeCmdArgs() omits % escaping on Windows",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1149,7 +1149,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00414,
-       "epss_percentile": 0.36285
+       "epss_percentile": 0.36263
       }
      ]
     },
@@ -1157,7 +1157,7 @@
      "key": "npm/webpack",
      "name": "webpack",
      "label": "webpack",
-     "popularity": 72948249.0,
+     "popularity": 73286825.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1168,7 +1168,7 @@
      "key": "npm/undici",
      "name": "undici",
      "label": "undici",
-     "popularity": 334494667.0,
+     "popularity": 337178771.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1197,7 +1197,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00149,
-       "epss_percentile": 0.04149
+       "epss_percentile": 0.04143
       },
       {
        "id": "GHSA-2m5v-pch6-74hx",
@@ -1223,7 +1223,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00184,
-       "epss_percentile": 0.08094
+       "epss_percentile": 0.08075
       },
       {
        "id": "GHSA-qrxm-fqhp-jwvm",
@@ -1249,7 +1249,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00187,
-       "epss_percentile": 0.08412
+       "epss_percentile": 0.08392
       },
       {
        "id": "GHSA-9fm3-97px-rjf6",
@@ -1275,7 +1275,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00321,
-       "epss_percentile": 0.25477
+       "epss_percentile": 0.25451
       },
       {
        "id": "GHSA-55wc-3pg8-jfw6",
@@ -1300,7 +1300,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0026,
-       "epss_percentile": 0.17916
+       "epss_percentile": 0.17895
       },
       {
        "id": "GHSA-qq8j-7v2v-3rwp",
@@ -1324,7 +1324,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00279,
-       "epss_percentile": 0.20592
+       "epss_percentile": 0.20577
       },
       {
        "id": "GHSA-xjj6-f33q-929c",
@@ -1350,7 +1350,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00344,
-       "epss_percentile": 0.28355
+       "epss_percentile": 0.28329
       },
       {
        "id": "GHSA-4qv8-2p9j-2685",
@@ -1376,7 +1376,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00321,
-       "epss_percentile": 0.25477
+       "epss_percentile": 0.25451
       },
       {
        "id": "GHSA-f72v-6w45-q472",
@@ -1401,7 +1401,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00252,
-       "epss_percentile": 0.16777
+       "epss_percentile": 0.16751
       }
      ]
     },
@@ -1409,7 +1409,7 @@
      "key": "npm/ws",
      "name": "ws",
      "label": "ws",
-     "popularity": 403129916.0,
+     "popularity": 406181678.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1420,7 +1420,7 @@
      "key": "npm/jsonwebtoken",
      "name": "jsonwebtoken",
      "label": "jsonwebtoken",
-     "popularity": 80663155.0,
+     "popularity": 81119262.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1431,7 +1431,7 @@
      "key": "npm/form-data",
      "name": "form-data",
      "label": "form-data",
-     "popularity": 221223687.0,
+     "popularity": 222520333.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1442,7 +1442,7 @@
      "key": "npm/tar",
      "name": "tar",
      "label": "tar",
-     "popularity": 115656385.0,
+     "popularity": 116430553.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1463,7 +1463,7 @@
      "key": "pypi/fastapi",
      "name": "fastapi",
      "label": "FastAPI",
-     "popularity": 129652692.0,
+     "popularity": 131179115.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 18.5,
      "worst_7d": "NONE",
@@ -1474,7 +1474,7 @@
      "key": "pypi/flask",
      "name": "flask",
      "label": "Flask",
-     "popularity": 41571325.0,
+     "popularity": 41119153.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 12.5,
      "worst_7d": "NONE",
@@ -1485,7 +1485,7 @@
      "key": "pypi/django",
      "name": "django",
      "label": "Django",
-     "popularity": 11891726.0,
+     "popularity": 11997292.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 11.3,
      "worst_7d": "NONE",
@@ -1496,7 +1496,7 @@
      "key": "pypi/requests",
      "name": "requests",
      "label": "requests",
-     "popularity": 339718075.0,
+     "popularity": 341217473.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1507,7 +1507,7 @@
      "key": "pypi/urllib3",
      "name": "urllib3",
      "label": "urllib3",
-     "popularity": 364237326.0,
+     "popularity": 365751814.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1518,7 +1518,7 @@
      "key": "pypi/certifi",
      "name": "certifi",
      "label": "certifi",
-     "popularity": 387350915.0,
+     "popularity": 389088427.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1552,7 +1552,7 @@
      "key": "pypi/cryptography",
      "name": "cryptography",
      "label": "cryptography",
-     "popularity": 312635855.0,
+     "popularity": 313332772.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1563,7 +1563,7 @@
      "key": "pypi/setuptools",
      "name": "setuptools",
      "label": "setuptools",
-     "popularity": 252448620.0,
+     "popularity": 255187712.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1595,7 +1595,7 @@
      "key": "pypi/pyyaml",
      "name": "pyyaml",
      "label": "pyyaml",
-     "popularity": 297540627.0,
+     "popularity": 299229744.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1606,7 +1606,7 @@
      "key": "pypi/pydantic",
      "name": "pydantic",
      "label": "pydantic",
-     "popularity": 275366049.0,
+     "popularity": 276889340.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1617,7 +1617,7 @@
      "key": "pypi/numpy",
      "name": "numpy",
      "label": "numpy",
-     "popularity": 265391660.0,
+     "popularity": 264270069.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1628,7 +1628,7 @@
      "key": "pypi/pandas",
      "name": "pandas",
      "label": "pandas",
-     "popularity": 161098532.0,
+     "popularity": 160349300.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1639,7 +1639,7 @@
      "key": "pypi/jinja2",
      "name": "jinja2",
      "label": "jinja2",
-     "popularity": 162315298.0,
+     "popularity": 162407965.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1650,7 +1650,7 @@
      "key": "pypi/starlette",
      "name": "starlette",
      "label": "starlette",
-     "popularity": 164571840.0,
+     "popularity": 166259002.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1661,7 +1661,7 @@
      "key": "pypi/uvicorn",
      "name": "uvicorn",
      "label": "uvicorn",
-     "popularity": 159064321.0,
+     "popularity": 160701108.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1672,7 +1672,7 @@
      "key": "pypi/httpx",
      "name": "httpx",
      "label": "httpx",
-     "popularity": 190309006.0,
+     "popularity": 191574744.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1683,7 +1683,7 @@
      "key": "pypi/aiohttp",
      "name": "aiohttp",
      "label": "aiohttp",
-     "popularity": 131875048.0,
+     "popularity": 132774832.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1701,8 +1701,8 @@
        "summary": "AIOHTTP: Absolute-form request targets can spoof Request.scheme",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -1711,7 +1711,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00386,
-       "epss_percentile": 0.3326
+       "epss_percentile": 0.33242
       },
       {
        "id": "GHSA-gx76-c99x-2c96",
@@ -1725,8 +1725,8 @@
        "summary": "AIOHTTP: Cookie from subdomain can remove Host-Only Scope from existing cookies",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": 2.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -1735,7 +1735,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00384,
-       "epss_percentile": 0.32978
+       "epss_percentile": 0.32961
       },
       {
        "id": "GHSA-6cjc-53gc-5rqm",
@@ -1749,8 +1749,8 @@
        "summary": "AIOHTTP: Connector pool exhaustion via Max-Age overflow",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.9,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -1759,7 +1759,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00395,
-       "epss_percentile": 0.34301
+       "epss_percentile": 0.34284
       },
       {
        "id": "GHSA-pqxq-w44r-73xw",
@@ -1773,8 +1773,8 @@
        "summary": "AIOHTTP: Pure-Python parser request smuggling",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -1783,7 +1783,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00382,
-       "epss_percentile": 0.32709
+       "epss_percentile": 0.32696
       },
       {
        "id": "GHSA-9xw5-w5jj-pvcg",
@@ -1797,8 +1797,8 @@
        "summary": "AIOHTTP: File descriptor exhaustion in multipart requests",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -1807,7 +1807,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00412,
-       "epss_percentile": 0.35983
+       "epss_percentile": 0.35964
       },
       {
        "id": "GHSA-5wr8-gcqf-gqf3",
@@ -1821,8 +1821,8 @@
        "summary": "aiohttp server lacks an initial request/header timeout",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -1831,7 +1831,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00399,
-       "epss_percentile": 0.34711
+       "epss_percentile": 0.34692
       },
       {
        "id": "GHSA-494j-54xm-rwp3",
@@ -1845,8 +1845,8 @@
        "summary": "AIOHTTP: Secure attribute not enforced for shared cookie",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -1855,7 +1855,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00233,
-       "epss_percentile": 0.14278
+       "epss_percentile": 0.14259
       },
       {
        "id": "GHSA-2g87-pp6c-29x5",
@@ -1869,8 +1869,8 @@
        "summary": "aiohttp: Multiple instances of excessive or unbounded memory/CPU use",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.7,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.4"
        ],
@@ -1879,7 +1879,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00328,
-       "epss_percentile": 0.2626
+       "epss_percentile": 0.26221
       }
      ]
     },
@@ -1887,7 +1887,7 @@
      "key": "pypi/pillow",
      "name": "pillow",
      "label": "pillow",
-     "popularity": 169399205.0,
+     "popularity": 169402113.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "HIGH",
@@ -1905,8 +1905,8 @@
        "summary": "Pillow: Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.7,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -1915,7 +1915,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00377,
-       "epss_percentile": 0.32216
+       "epss_percentile": 0.32201
       },
       {
        "id": "GHSA-xcvg-w56q-r89m",
@@ -1929,8 +1929,8 @@
        "summary": "Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.4,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -1939,7 +1939,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00451,
-       "epss_percentile": 0.39735
+       "epss_percentile": 0.39711
       },
       {
        "id": "GHSA-78g4-xqwv-q3g8",
@@ -1974,8 +1974,8 @@
        "summary": "Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.8,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -1984,7 +1984,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00454,
-       "epss_percentile": 0.3998
+       "epss_percentile": 0.39959
       },
       {
        "id": "GHSA-mrfp-p49p-3hf2",
@@ -1999,8 +1999,8 @@
        "summary": "Pillow PDF append accepts malformed shared page-tree DAG causing resource exhaustion",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2009,7 +2009,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00604,
-       "epss_percentile": 0.49512
+       "epss_percentile": 0.49502
       },
       {
        "id": "GHSA-24rc-8hj2-v98c",
@@ -2034,7 +2034,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00364,
-       "epss_percentile": 0.30759
+       "epss_percentile": 0.30731
       },
       {
        "id": "GHSA-654x-cwwv-5j9c",
@@ -2060,7 +2060,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0037,
-       "epss_percentile": 0.31361
+       "epss_percentile": 0.3134
       },
       {
        "id": "GHSA-xvh5-g6gv-559v",
@@ -2085,7 +2085,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00613,
-       "epss_percentile": 0.4995
+       "epss_percentile": 0.49938
       },
       {
        "id": "GHSA-332p-7hrc-92wf",
@@ -2100,8 +2100,8 @@
        "summary": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": 9.8,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2110,7 +2110,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01019,
-       "epss_percentile": 0.63911
+       "epss_percentile": 0.63929
       },
       {
        "id": "GHSA-f2g6-542v-9j58",
@@ -2125,8 +2125,8 @@
        "summary": "Pillow: Infinite loop in PdfParser.rewrite_pages on page tree Parent cycle",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2135,7 +2135,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00573,
-       "epss_percentile": 0.47913
+       "epss_percentile": 0.47902
       },
       {
        "id": "GHSA-4rm8-3hmm-39fg",
@@ -2161,7 +2161,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00364,
-       "epss_percentile": 0.30759
+       "epss_percentile": 0.30732
       },
       {
        "id": "GHSA-3j72-p6qg-6xp7",
@@ -2187,7 +2187,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00345,
-       "epss_percentile": 0.28438
+       "epss_percentile": 0.28411
       },
       {
        "id": "GHSA-g4qv-2jxx-769h",
@@ -2213,7 +2213,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00373,
-       "epss_percentile": 0.31758
+       "epss_percentile": 0.3174
       },
       {
        "id": "GHSA-v9pv-5gc8-w2m6",
@@ -2239,7 +2239,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00659,
-       "epss_percentile": 0.52119
+       "epss_percentile": 0.5211
       },
       {
        "id": "GHSA-9v9v-9qvf-h2hj",
@@ -2265,7 +2265,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00384,
-       "epss_percentile": 0.3302
+       "epss_percentile": 0.33003
       },
       {
        "id": "GHSA-g842-9rc4-69pw",
@@ -2291,7 +2291,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00373,
-       "epss_percentile": 0.31758
+       "epss_percentile": 0.31739
       },
       {
        "id": "GHSA-p8hx-v2p6-rp84",
@@ -2317,7 +2317,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00364,
-       "epss_percentile": 0.30759
+       "epss_percentile": 0.30732
       },
       {
        "id": "GHSA-5xm2-6676-qcp9",
@@ -2332,8 +2332,8 @@
        "summary": "Pillow: APNG background disposal allocates full canvas before decompression bomb check",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2342,7 +2342,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00529,
-       "epss_percentile": 0.4535
+       "epss_percentile": 0.45334
       },
       {
        "id": "GHSA-gg2r-wvfm-q9rx",
@@ -2357,8 +2357,8 @@
        "summary": "Pillow: MSP RLE decoder expands a tiny file into unbounded memory",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2367,7 +2367,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00503,
-       "epss_percentile": 0.43625
+       "epss_percentile": 0.43605
       },
       {
        "id": "GHSA-jg86-v3jv-hrpm",
@@ -2382,8 +2382,8 @@
        "summary": "Pillow: Quadratic-time DoS in PDF save_all (PdfParser.next_object_id)",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2392,7 +2392,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49003
+       "epss_percentile": 0.4899
       },
       {
        "id": "GHSA-254f-3936-288h",
@@ -2407,8 +2407,8 @@
        "summary": "Pillow: PdfParser can recurse without limit in get_value() and linearize_page_tree()",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2417,7 +2417,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00581,
-       "epss_percentile": 0.48322
+       "epss_percentile": 0.48311
       },
       {
        "id": "GHSA-rfgq-q3w2-pmv2",
@@ -2432,8 +2432,8 @@
        "summary": "Pillow: Image.quantize() with empty palette leaks uninitialized stack memory",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2442,7 +2442,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00339,
-       "epss_percentile": 0.27787
+       "epss_percentile": 0.27762
       },
       {
        "id": "GHSA-74r2-7ff9-mjj2",
@@ -2457,8 +2457,8 @@
        "summary": "Pillow: Quadratic GIF comment concatenation allows DoS in Image.open()",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2467,7 +2467,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00649,
-       "epss_percentile": 0.51715
+       "epss_percentile": 0.51707
       },
       {
        "id": "GHSA-22hg-r758-rrw9",
@@ -2482,8 +2482,8 @@
        "summary": "Pillow: Infinite loop in MIC n_frames when the embedded TIFF",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2492,7 +2492,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00593,
-       "epss_percentile": 0.48928
+       "epss_percentile": 0.48913
       },
       {
        "id": "GHSA-fc9g-5qg7-mf45",
@@ -2507,8 +2507,8 @@
        "summary": "Pillow: Quadratic GIF comment copying during save",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2517,7 +2517,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00549,
-       "epss_percentile": 0.4656
+       "epss_percentile": 0.46545
       },
       {
        "id": "GHSA-j4m9-6w36-pw47",
@@ -2532,8 +2532,8 @@
        "summary": "Pillow: Invalid free in FreeType glyph rendering when a stroker is active",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2542,7 +2542,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00549,
-       "epss_percentile": 0.4655
+       "epss_percentile": 0.46535
       },
       {
        "id": "GHSA-w889-685w-c8fh",
@@ -2557,8 +2557,8 @@
        "summary": "Pillow: Argument Injection in Ghostscript call, potentially leading into RCE",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": 9.8,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2567,7 +2567,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01303,
-       "epss_percentile": 0.70978
+       "epss_percentile": 0.7098
       },
       {
        "id": "GHSA-65qm-jvmh-6pqg",
@@ -2582,8 +2582,8 @@
        "summary": "Pillow: GIF seek keeps rejected size after DecompressionBombError, allowing DoS",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2592,7 +2592,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49003
+       "epss_percentile": 0.4899
       },
       {
        "id": "GHSA-vx6w-vv9f-6gvg",
@@ -2606,8 +2606,8 @@
        "summary": "Pillow: EPS load(scale) lets Ghostscript render past the decompression bomb limit",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2616,7 +2616,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00547,
-       "epss_percentile": 0.46417
+       "epss_percentile": 0.46402
       },
       {
        "id": "GHSA-q45j-58j2-45rg",
@@ -2631,8 +2631,8 @@
        "summary": "Pillow: TiffDecode returns uninitialized memory as pixels for short JPEG strips",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 6.2,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2641,7 +2641,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00479,
-       "epss_percentile": 0.41946
+       "epss_percentile": 0.41923
       },
       {
        "id": "GHSA-p4wg-p73j-c528",
@@ -2656,8 +2656,8 @@
        "summary": "Pillow: Unbounded recursion parsing a PDF page tree or trailer chain (incomplete fix for CVE-2026-42310)",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2666,7 +2666,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49004
+       "epss_percentile": 0.48989
       },
       {
        "id": "GHSA-462x-pgg6-55fp",
@@ -2691,7 +2691,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00514,
-       "epss_percentile": 0.44419
+       "epss_percentile": 0.44403
       },
       {
        "id": "GHSA-c6hw-5grf-ff96",
@@ -2706,8 +2706,8 @@
        "summary": "Pillow: OOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.0.0"
        ],
@@ -2716,7 +2716,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00603,
-       "epss_percentile": 0.49424
+       "epss_percentile": 0.49413
       },
       {
        "id": "GHSA-xgh8-jp6q-p5x8",
@@ -2742,7 +2742,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00532,
-       "epss_percentile": 0.45514
+       "epss_percentile": 0.45498
       },
       {
        "id": "GHSA-pchr-8j38-3x4p",
@@ -2768,7 +2768,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00475,
-       "epss_percentile": 0.41604
+       "epss_percentile": 0.41585
       },
       {
        "id": "GHSA-cp9v-662q-vvx9",
@@ -2794,7 +2794,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49003
+       "epss_percentile": 0.48989
       },
       {
        "id": "GHSA-8g5g-8vmr-9782",
@@ -2820,7 +2820,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00945,
-       "epss_percentile": 0.61622
+       "epss_percentile": 0.61618
       },
       {
        "id": "GHSA-5x8w-8jj5-q52h",
@@ -2846,7 +2846,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00696,
-       "epss_percentile": 0.53583
+       "epss_percentile": 0.53567
       },
       {
        "id": "GHSA-7mwm-ghpf-9vrm",
@@ -2872,7 +2872,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49003
+       "epss_percentile": 0.48989
       },
       {
        "id": "GHSA-58r4-6rv3-gfh8",
@@ -2898,7 +2898,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00573,
-       "epss_percentile": 0.47913
+       "epss_percentile": 0.47902
       },
       {
        "id": "GHSA-4rr5-89j8-mwwm",
@@ -2924,7 +2924,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00694,
-       "epss_percentile": 0.5352
+       "epss_percentile": 0.53505
       },
       {
        "id": "GHSA-27h8-gf7j-v5hc",
@@ -2950,7 +2950,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00593,
-       "epss_percentile": 0.48928
+       "epss_percentile": 0.48913
       },
       {
        "id": "GHSA-4558-3h8r-v8xp",
@@ -2976,7 +2976,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00555,
-       "epss_percentile": 0.46867
+       "epss_percentile": 0.46856
       }
      ]
     },
@@ -2984,7 +2984,7 @@
      "key": "pypi/pyjwt",
      "name": "pyjwt",
      "label": "pyjwt",
-     "popularity": 172699824.0,
+     "popularity": 172777403.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3016,7 +3016,7 @@
      "key": "pypi/sqlalchemy",
      "name": "sqlalchemy",
      "label": "sqlalchemy",
-     "popularity": 96448128.0,
+     "popularity": 97345581.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3027,7 +3027,7 @@
      "key": "pypi/lxml",
      "name": "lxml",
      "label": "lxml",
-     "popularity": 97845762.0,
+     "popularity": 97137685.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3038,7 +3038,7 @@
      "key": "pypi/protobuf",
      "name": "protobuf",
      "label": "protobuf",
-     "popularity": 181532024.0,
+     "popularity": 182229051.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3049,7 +3049,7 @@
      "key": "pypi/transformers",
      "name": "transformers",
      "label": "transformers",
-     "popularity": 27189988.0,
+     "popularity": 27484302.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3060,7 +3060,7 @@
      "key": "pypi/torch",
      "name": "torch",
      "label": "torch",
-     "popularity": 13094983.0,
+     "popularity": 13079278.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3219,7 +3219,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00352,
-       "epss_percentile": 0.29324
+       "epss_percentile": 0.293
       }
      ]
     },
@@ -3345,7 +3345,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.013,
-       "epss_percentile": 0.7091
+       "epss_percentile": 0.70912
       },
       {
        "id": "GHSA-7phj-vgxq-r67h",
@@ -3372,7 +3372,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00247,
-       "epss_percentile": 0.1612
+       "epss_percentile": 0.16097
       },
       {
        "id": "GHSA-8w29-6cjc-h6w4",
@@ -3396,7 +3396,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00619,
-       "epss_percentile": 0.5027
+       "epss_percentile": 0.50256
       },
       {
        "id": "GHSA-wr8v-9x5q-ggcm",
@@ -3423,7 +3423,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.013,
-       "epss_percentile": 0.7091
+       "epss_percentile": 0.70912
       },
       {
        "id": "GHSA-r3qf-p3jm-8h4p",
@@ -3448,7 +3448,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01245,
-       "epss_percentile": 0.69756
+       "epss_percentile": 0.69758
       },
       {
        "id": "GHSA-67wp-ghc2-fw2g",
@@ -3476,7 +3476,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00758,
-       "epss_percentile": 0.55795
+       "epss_percentile": 0.55786
       },
       {
        "id": "GHSA-6vjv-7wm8-p67r",
@@ -3500,7 +3500,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00829,
-       "epss_percentile": 0.58093
+       "epss_percentile": 0.5809
       },
       {
        "id": "GHSA-5h82-77p6-2wp3",
@@ -3524,7 +3524,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01076,
-       "epss_percentile": 0.65517
+       "epss_percentile": 0.65521
       },
       {
        "id": "GHSA-xw2x-23jm-j582",
@@ -3548,7 +3548,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00345,
-       "epss_percentile": 0.28431
+       "epss_percentile": 0.28404
       },
       {
        "id": "GHSA-6527-9fp8-r4x6",
@@ -3572,7 +3572,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01076,
-       "epss_percentile": 0.65518
+       "epss_percentile": 0.65521
       },
       {
        "id": "GHSA-m28h-pj36-4364",
@@ -3596,7 +3596,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01076,
-       "epss_percentile": 0.65517
+       "epss_percentile": 0.65521
       },
       {
        "id": "GHSA-x33c-w48q-qrgc",
@@ -3623,7 +3623,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01298,
-       "epss_percentile": 0.70876
+       "epss_percentile": 0.70878
       },
       {
        "id": "GHSA-xhj5-c3g8-pfj8",
@@ -3650,7 +3650,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00637,
-       "epss_percentile": 0.51124
+       "epss_percentile": 0.5111
       }
      ]
     },
@@ -3743,7 +3743,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01492,
-       "epss_percentile": 0.74559
+       "epss_percentile": 0.74558
       },
       {
        "id": "GHSA-r8h3-p8p6-ggp7",
@@ -3770,7 +3770,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0087,
-       "epss_percentile": 0.59354
+       "epss_percentile": 0.59351
       },
       {
        "id": "GHSA-3cgx-w6gm-fqrx",
@@ -3797,7 +3797,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0087,
-       "epss_percentile": 0.59353
+       "epss_percentile": 0.59352
       },
       {
        "id": "GHSA-3g4v-f5gv-c7xf",
@@ -3824,7 +3824,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01279,
-       "epss_percentile": 0.70463
+       "epss_percentile": 0.70465
       },
       {
        "id": "GHSA-cpw3-h88j-9f6x",
@@ -3848,7 +3848,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01168,
-       "epss_percentile": 0.6788
+       "epss_percentile": 0.67879
       },
       {
        "id": "GHSA-p3jp-9v83-76w9",
@@ -3929,7 +3929,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01168,
-       "epss_percentile": 0.6788
+       "epss_percentile": 0.67879
       }
      ]
     },
@@ -4046,7 +4046,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 165954674.0,
+     "popularity": 165872831.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4057,7 +4057,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2463.0,
+     "popularity": 2456.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4068,7 +4068,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 310696875.0,
+     "popularity": 310409564.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4087,8 +4087,8 @@
        "summary": "Tokio: Race condition in `tokio::time::Interval`",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 5.8,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.54.1"
        ],
@@ -4097,7 +4097,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00111,
-       "epss_percentile": 0.01348
+       "epss_percentile": 0.01347
       }
      ]
     },
@@ -4105,7 +4105,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 287616141.0,
+     "popularity": 287386462.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4116,7 +4116,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 267816213.0,
+     "popularity": 267497377.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4127,7 +4127,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 230264585.0,
+     "popularity": 229873243.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4138,7 +4138,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 286604132.0,
+     "popularity": 286392389.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4168,7 +4168,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0011,
-       "epss_percentile": 0.01293
+       "epss_percentile": 0.01292
       },
       {
        "id": "GHSA-w44r-93j7-qv28",
@@ -4194,7 +4194,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00188,
-       "epss_percentile": 0.08547
+       "epss_percentile": 0.08529
       },
       {
        "id": "GHSA-c8m5-c952-6cm4",
@@ -4246,7 +4246,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00165,
-       "epss_percentile": 0.0585
+       "epss_percentile": 0.05817
       },
       {
        "id": "RUSTSEC-2026-0382",
@@ -4262,10 +4262,10 @@
        ],
        "published": "2026-10-20T12:00:00Z",
        "summary": "Certificate verification may accept distrusted intermediates",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.8,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "0.103.16",
         "0.104.0-alpha.8"
@@ -4275,7 +4275,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00396,
-       "epss_percentile": 0.3432
+       "epss_percentile": 0.34304
       }
      ]
     },
@@ -4283,7 +4283,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 88432163.0,
+     "popularity": 88159593.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4294,7 +4294,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 229649991.0,
+     "popularity": 229765484.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4305,7 +4305,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 436623522.0,
+     "popularity": 436444883.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4316,7 +4316,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 332108996.0,
+     "popularity": 331808963.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4327,7 +4327,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 264739916.0,
+     "popularity": 264715322.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4338,7 +4338,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 58527161.0,
+     "popularity": 58494478.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4349,7 +4349,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 105660341.0,
+     "popularity": 105605634.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4377,7 +4377,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0035,
-       "epss_percentile": 0.29141
+       "epss_percentile": 0.29116
       },
       {
        "id": "GHSA-hjqx-j4rw-g7xv",
@@ -4401,7 +4401,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00432,
-       "epss_percentile": 0.3809
+       "epss_percentile": 0.38069
       },
       {
        "id": "GHSA-8hxf-qr8p-62x4",
@@ -4425,7 +4425,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00151,
-       "epss_percentile": 0.04273
+       "epss_percentile": 0.04266
       },
       {
        "id": "GHSA-m665-v7pm-7grj",
@@ -4439,8 +4439,8 @@
        "summary": "zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": 10.0,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.5"
        ],
@@ -4449,7 +4449,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0032,
-       "epss_percentile": 0.25376
+       "epss_percentile": 0.2535
       },
       {
        "id": "GHSA-q7v9-x93c-xqv3",
@@ -4474,7 +4474,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00461,
-       "epss_percentile": 0.40508
+       "epss_percentile": 0.40487
       }
      ]
     }
@@ -4492,7 +4492,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 25007993.0,
+     "popularity": 24504606.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "LOW",
@@ -4510,8 +4510,8 @@
        "summary": "Laravel: Task Output Injection - Concurrency Process",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": 2.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "12.71.0",
         "13.40.0"
@@ -4521,7 +4521,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00704,
-       "epss_percentile": 0.53869
+       "epss_percentile": 0.53853
       },
       {
        "id": "GHSA-f9x3-7vq9-cph6",
@@ -4535,8 +4535,8 @@
        "summary": "Laravel TokenGuard authentication bypass through non-string API credentials",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": 9.2,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.27.0",
         "12.68.0",
@@ -4548,7 +4548,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0184,
-       "epss_percentile": 0.79331
+       "epss_percentile": 0.7933
       },
       {
        "id": "GHSA-5wcm-3v2w-8362",
@@ -4573,7 +4573,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00406,
-       "epss_percentile": 0.35457
+       "epss_percentile": 0.35438
       }
      ]
     },
@@ -4581,7 +4581,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 31497290.0,
+     "popularity": 30966838.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4599,8 +4599,8 @@
        "summary": "Symfony: Unbounded Recursion in the YAML Inline Lexer Lets a Single Document Crash the Process",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.7,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "5.4.54",
         "6.4.45",
@@ -4612,7 +4612,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00395,
-       "epss_percentile": 0.34301
+       "epss_percentile": 0.34284
       },
       {
        "id": "GHSA-r925-mgvr-h9cc",
@@ -4626,8 +4626,8 @@
        "summary": "Symfony: ReDoS in HeaderUtils::split() Reachable Through the Cache-Control Request Header",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.7,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "6.4.46",
         "7.4.19",
@@ -4639,7 +4639,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0048,
-       "epss_percentile": 0.42025
+       "epss_percentile": 0.42002
       }
      ]
     },
@@ -4647,7 +4647,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1657326.0,
+     "popularity": 1609645.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -4658,7 +4658,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 34982043.0,
+     "popularity": 34251253.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4669,7 +4669,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 35981824.0,
+     "popularity": 35308353.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4680,7 +4680,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 32604033.0,
+     "popularity": 32278485.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4691,7 +4691,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 13492602.0,
+     "popularity": 13191609.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4702,7 +4702,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 30036031.0,
+     "popularity": 29311740.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4720,8 +4720,8 @@
        "summary": "PHPUnit vulnerable to code execution by other local users via shared temporary directory in PHPT code coverage handling",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": 5.4,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "13.4.4"
        ],
@@ -4730,7 +4730,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00113,
-       "epss_percentile": 0.01479
+       "epss_percentile": 0.01477
       }
      ]
     },
@@ -4738,7 +4738,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 27535058.0,
+     "popularity": 27416398.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4749,7 +4749,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 25689966.0,
+     "popularity": 25343797.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4760,7 +4760,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 27813983.0,
+     "popularity": 27384733.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4771,7 +4771,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4525942.0,
+     "popularity": 4438076.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4782,7 +4782,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 22162420.0,
+     "popularity": 21585890.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4793,7 +4793,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 19429997.0,
+     "popularity": 19099188.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4818,7 +4818,7 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "UNKNOWN",
-     "worst_30d": "MEDIUM",
+     "worst_30d": "UNKNOWN",
      "vulns": [
       {
        "id": "GO-2026-6859",
@@ -4843,7 +4843,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00171,
-       "epss_percentile": 0.06568
+       "epss_percentile": 0.0655
       },
       {
        "id": "GO-2026-6809",
@@ -4859,10 +4859,10 @@
        ],
        "published": "2026-10-21T00:27:29Z",
        "summary": "Distrust compromised intermediate certificates in crypto/x509",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.8,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.26.10",
         "1.27.3"
@@ -4872,7 +4872,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00396,
-       "epss_percentile": 0.3432
+       "epss_percentile": 0.34304
       }
      ]
     },
@@ -4884,7 +4884,7 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
+     "worst_30d": "UNKNOWN",
      "vulns": [
       {
        "id": "GO-2026-6866",
@@ -4896,10 +4896,10 @@
        ],
        "published": "2026-10-27T21:16:18Z",
        "summary": "Check all ancestor namespace transitions when rendering raw text in html in golang.org/x/net",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.1,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "0.62.0"
        ],
@@ -4908,7 +4908,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00267,
-       "epss_percentile": 0.19045
+       "epss_percentile": 0.19018
       },
       {
        "id": "GO-2026-6860",
@@ -4920,10 +4920,10 @@
        ],
        "published": "2026-10-27T21:16:18Z",
        "summary": "Avoid quadratic complexity when coalescing text nodes in html in golang.org/x/net",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "0.62.0"
        ],
@@ -4932,7 +4932,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00409,
-       "epss_percentile": 0.35709
+       "epss_percentile": 0.35693
       }
      ]
     },
@@ -5013,7 +5013,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00133,
-       "epss_percentile": 0.0292
+       "epss_percentile": 0.02917
       },
       {
        "id": "GHSA-3pmx-cf9f-34xr",
@@ -5038,7 +5038,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00347,
-       "epss_percentile": 0.28689
+       "epss_percentile": 0.28663
       },
       {
        "id": "GHSA-xwq5-6cqp-vx96",
@@ -5063,7 +5063,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00303,
-       "epss_percentile": 0.23415
+       "epss_percentile": 0.23395
       },
       {
        "id": "GHSA-v753-g4cw-jm48",
@@ -5088,7 +5088,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00197,
-       "epss_percentile": 0.0948
+       "epss_percentile": 0.09464
       },
       {
        "id": "GHSA-23wf-92cp-8pcj",
@@ -5113,7 +5113,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00186,
-       "epss_percentile": 0.0826
+       "epss_percentile": 0.08242
       },
       {
        "id": "GHSA-375p-5qhx-8wq4",
@@ -5138,7 +5138,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00396,
-       "epss_percentile": 0.34398
+       "epss_percentile": 0.34383
       },
       {
        "id": "GHSA-h9g5-28mm-hx3g",
@@ -5163,7 +5163,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00239,
-       "epss_percentile": 0.1514
+       "epss_percentile": 0.15121
       },
       {
        "id": "GHSA-246p-cpwv-v3jq",
@@ -5186,7 +5186,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00415,
-       "epss_percentile": 0.36382
+       "epss_percentile": 0.3636
       },
       {
        "id": "GHSA-r7w9-592q-9vg4",
@@ -5211,7 +5211,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00163,
-       "epss_percentile": 0.05587
+       "epss_percentile": 0.05556
       },
       {
        "id": "GHSA-99jh-6h7p-pp36",
@@ -5234,7 +5234,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00207,
-       "epss_percentile": 0.10888
+       "epss_percentile": 0.10864
       },
       {
        "id": "GHSA-9969-6676-49h5",
@@ -5249,8 +5249,8 @@
        "summary": "Echo: WebSocket proxy can retain connections and handlers after client disconnect",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.16.1"
        ],
@@ -5259,7 +5259,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00302,
-       "epss_percentile": 0.23222
+       "epss_percentile": 0.23204
       },
       {
        "id": "GHSA-h7wr-284f-5qvc",
@@ -5274,8 +5274,8 @@
        "summary": "Echo: Decompress permits unbounded gzip expansion in v4",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.16.1"
        ],
@@ -5284,7 +5284,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00372,
-       "epss_percentile": 0.31591
+       "epss_percentile": 0.3157
       },
       {
        "id": "GHSA-cxf3-9h37-7rr8",
@@ -5299,8 +5299,8 @@
        "summary": "Echo: Rejected WebSocket upgrades can bypass Echo route-level access controls",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": 9.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.16.1"
        ],
@@ -5309,7 +5309,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0043,
-       "epss_percentile": 0.37728
+       "epss_percentile": 0.37707
       },
       {
        "id": "GHSA-f48p-c9v4-h7xv",
@@ -5324,8 +5324,8 @@
        "summary": "Echo: BodyDump captures request and response bodies without size limits in v4",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.16.1"
        ],
@@ -5334,7 +5334,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00372,
-       "epss_percentile": 0.31591
+       "epss_percentile": 0.3157
       }
      ]
     },
@@ -5371,7 +5371,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00129,
-       "epss_percentile": 0.02577
+       "epss_percentile": 0.02573
       }
      ]
     },
@@ -5455,7 +5455,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 816686858.0,
+     "popularity": 816819666.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "CRITICAL",
@@ -5486,7 +5486,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00741,
-       "epss_percentile": 0.55228
+       "epss_percentile": 0.55217
       },
       {
        "id": "GHSA-rwvh-fw6r-pwvp",
@@ -5511,7 +5511,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00411,
-       "epss_percentile": 0.3597
+       "epss_percentile": 0.35953
       },
       {
        "id": "GHSA-x6mj-8jx9-qhqv",
@@ -5536,7 +5536,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00415,
-       "epss_percentile": 0.36321
+       "epss_percentile": 0.36299
       },
       {
        "id": "GHSA-v6rj-xm57-3p59",
@@ -5561,7 +5561,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00338,
-       "epss_percentile": 0.27614
+       "epss_percentile": 0.2759
       },
       {
        "id": "GHSA-rq8q-p985-fjq7",
@@ -5586,7 +5586,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00269,
-       "epss_percentile": 0.19252
+       "epss_percentile": 0.19229
       },
       {
        "id": "GHSA-2p2f-4rq4-gjwc",
@@ -5611,7 +5611,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00338,
-       "epss_percentile": 0.27615
+       "epss_percentile": 0.27593
       },
       {
        "id": "GHSA-3w93-6hmw-whh4",
@@ -5636,7 +5636,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0014,
-       "epss_percentile": 0.03384
+       "epss_percentile": 0.03381
       },
       {
        "id": "GHSA-wm3x-v3qw-4jh3",
@@ -5661,7 +5661,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00625,
-       "epss_percentile": 0.50574
+       "epss_percentile": 0.5056
       },
       {
        "id": "GHSA-68p9-83h6-5wpj",
@@ -5686,7 +5686,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00235,
-       "epss_percentile": 0.14593
+       "epss_percentile": 0.14571
       },
       {
        "id": "GHSA-3f4q-8x5m-76v8",
@@ -5711,7 +5711,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00279,
-       "epss_percentile": 0.2063
+       "epss_percentile": 0.20613
       },
       {
        "id": "GHSA-v924-7rp8-4mxh",
@@ -5736,7 +5736,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00513,
-       "epss_percentile": 0.44314
+       "epss_percentile": 0.44293
       },
       {
        "id": "GHSA-hfr4-8rjc-97m2",
@@ -5761,7 +5761,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0048,
-       "epss_percentile": 0.42021
+       "epss_percentile": 0.41998
       },
       {
        "id": "GHSA-8474-xrp6-wh69",
@@ -5786,7 +5786,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00829,
-       "epss_percentile": 0.58088
+       "epss_percentile": 0.58086
       },
       {
        "id": "GHSA-p2pm-g2h6-7j5j",
@@ -5811,7 +5811,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00499,
-       "epss_percentile": 0.43367
+       "epss_percentile": 0.43345
       },
       {
        "id": "GHSA-2w9f-fxwj-w2qf",
@@ -5835,7 +5835,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00336,
-       "epss_percentile": 0.27419
+       "epss_percentile": 0.27394
       },
       {
        "id": "GHSA-r9jg-fmfx-2gv6",
@@ -5860,7 +5860,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00422,
-       "epss_percentile": 0.37039
+       "epss_percentile": 0.37018
       },
       {
        "id": "GHSA-gmj8-hvj3-49mw",
@@ -5885,7 +5885,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00164,
-       "epss_percentile": 0.05717
+       "epss_percentile": 0.05684
       },
       {
        "id": "GHSA-4v2w-w6g6-f8f8",
@@ -5910,7 +5910,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00444,
-       "epss_percentile": 0.39187
+       "epss_percentile": 0.39167
       },
       {
        "id": "GHSA-2gff-2mmg-m73p",
@@ -5934,7 +5934,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00357,
-       "epss_percentile": 0.29943
+       "epss_percentile": 0.29918
       },
       {
        "id": "GHSA-2586-8ghr-69fj",
@@ -5959,7 +5959,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0031,
-       "epss_percentile": 0.24168
+       "epss_percentile": 0.24145
       }
      ]
     },
@@ -5967,7 +5967,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1390338226.0,
+     "popularity": 1390598595.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "HIGH",
@@ -5997,7 +5997,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00366,
-       "epss_percentile": 0.30927
+       "epss_percentile": 0.30901
       },
       {
        "id": "GHSA-p8x9-v4hv-2w4g",
@@ -6023,7 +6023,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0024,
-       "epss_percentile": 0.1521
+       "epss_percentile": 0.15192
       },
       {
        "id": "GHSA-2j8w-xcrc-x985",
@@ -6048,7 +6048,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00222,
-       "epss_percentile": 0.12952
+       "epss_percentile": 0.12935
       },
       {
        "id": "GHSA-wvg4-6p58-3gh3",
@@ -6074,7 +6074,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00251,
-       "epss_percentile": 0.16582
+       "epss_percentile": 0.16556
       }
      ]
     },
@@ -6082,7 +6082,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1300281784.0,
+     "popularity": 1300473468.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "LOW",
@@ -6110,7 +6110,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0038,
-       "epss_percentile": 0.32547
+       "epss_percentile": 0.32532
       },
       {
        "id": "GHSA-3w22-6jfg-527w",
@@ -6124,8 +6124,8 @@
        "summary": "Nokogiri: Use-After-Free in Nokogiri when replacing an attribute value",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": 2.0,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.19.5"
        ],
@@ -6134,7 +6134,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00155,
-       "epss_percentile": 0.04684
+       "epss_percentile": 0.04677
       },
       {
        "id": "GHSA-4p39-36wj-23h4",
@@ -6148,8 +6148,8 @@
        "summary": "Nokogiri: Mutation XSS through `noscript` content in Nokogiri's HTML5 serializer",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": 2.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.19.5"
        ],
@@ -6158,7 +6158,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00561,
-       "epss_percentile": 0.47262
+       "epss_percentile": 0.47251
       }
      ]
     },
@@ -6166,7 +6166,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 629578430.0,
+     "popularity": 629756725.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6177,7 +6177,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 305148010.0,
+     "popularity": 305195403.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6188,7 +6188,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 347926671.0,
+     "popularity": 347980301.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6199,7 +6199,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1300772802.0,
+     "popularity": 1300938618.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6210,7 +6210,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 405431213.0,
+     "popularity": 405577029.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6231,7 +6231,7 @@
      "key": "hex/phoenix",
      "name": "phoenix",
      "label": "Phoenix",
-     "popularity": 643427.0,
+     "popularity": 641492.0,
      "popularity_source": "Hex downloads, last week",
      "survey": 2.5,
      "worst_7d": "NONE",
@@ -6242,7 +6242,7 @@
      "key": "hex/phoenix_live_view",
      "name": "phoenix_live_view",
      "label": "LiveView",
-     "popularity": 522066.0,
+     "popularity": 517822.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -6253,11 +6253,11 @@
      "key": "hex/plug",
      "name": "plug",
      "label": "plug",
-     "popularity": 757538.0,
+     "popularity": 752510.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "MEDIUM",
+     "worst_30d": "UNKNOWN",
      "vulns": [
       {
        "id": "EEF-CVE-2026-105963",
@@ -6270,10 +6270,10 @@
        ],
        "published": "2026-10-23T09:56:58Z",
        "summary": "Secret key base exposed in stack trace arguments on wrong-typed Plug.Crypto arguments",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 5.1,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.7.0"
        ],
@@ -6282,7 +6282,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00509,
-       "epss_percentile": 0.44036
+       "epss_percentile": 0.44014
       }
      ]
     },
@@ -6290,11 +6290,11 @@
      "key": "hex/ecto",
      "name": "ecto",
      "label": "ecto",
-     "popularity": 620848.0,
+     "popularity": 616197.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
+     "worst_30d": "UNKNOWN",
      "vulns": [
       {
        "id": "EEF-CVE-2026-118391",
@@ -6307,10 +6307,10 @@
        ],
        "published": "2026-11-04T13:57:29Z",
        "summary": "Unbounded query cache growth from interpolated JSON paths and splice lists in Ecto",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 8.9,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.14.3"
        ],
@@ -6319,7 +6319,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00494,
-       "epss_percentile": 0.43008
+       "epss_percentile": 0.42982
       }
      ]
     },
@@ -6327,11 +6327,11 @@
      "key": "hex/cowboy",
      "name": "cowboy",
      "label": "cowboy",
-     "popularity": 434463.0,
+     "popularity": 436198.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
+     "worst_30d": "UNKNOWN",
      "vulns": [
       {
        "id": "EEF-CVE-2026-115701",
@@ -6343,10 +6343,10 @@
        ],
        "published": "2026-11-06T10:29:00Z",
        "summary": "Cowboy HTTP/1.1 Unbounded Buffering of Pipelined Data During Request Handling Enables Memory Exhaustion",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.21.0"
        ],
@@ -6355,7 +6355,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00539,
-       "epss_percentile": 0.4594
+       "epss_percentile": 0.45923
       },
       {
        "id": "EEF-CVE-2026-113431",
@@ -6367,10 +6367,10 @@
        ],
        "published": "2026-11-06T10:28:15Z",
        "summary": "Unbounded decoded HTTP/2 header-list size in cowlib cow_http2_machine enables HPACK amplification memory exhaustion",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 8.7,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "2.22.0"
        ],
@@ -6379,7 +6379,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00419,
-       "epss_percentile": 0.36786
+       "epss_percentile": 0.36765
       }
      ]
     },
@@ -6387,11 +6387,11 @@
      "key": "hex/hackney",
      "name": "hackney",
      "label": "hackney",
-     "popularity": 314730.0,
+     "popularity": 311730.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "CRITICAL",
+     "worst_30d": "UNKNOWN",
      "vulns": [
       {
        "id": "EEF-CVE-2026-97200",
@@ -6403,10 +6403,10 @@
        ],
        "published": "2026-10-26T13:49:40Z",
        "summary": "Unbounded response body buffering and decompression in hackney",
-       "severity": "HIGH",
-       "severity_source": "NVD",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.9.0"
        ],
@@ -6415,7 +6415,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00564,
-       "epss_percentile": 0.47442
+       "epss_percentile": 0.47431
       },
       {
        "id": "EEF-CVE-2026-115693",
@@ -6427,10 +6427,10 @@
        ],
        "published": "2026-10-26T13:49:29Z",
        "summary": "Custom cacerts or cacertfile do not restrict trust to the pinned CA in hackney",
-       "severity": "CRITICAL",
-       "severity_source": "NVD",
-       "cvss": 9.1,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.9.0"
        ],
@@ -6439,7 +6439,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00267,
-       "epss_percentile": 0.19048
+       "epss_percentile": 0.19022
       },
       {
        "id": "EEF-CVE-2026-113440",
@@ -6451,10 +6451,10 @@
        ],
        "published": "2026-10-26T13:49:17Z",
        "summary": "HTTP/1.1 and HTTP/2 redirects resend basic_auth and cookie to a different scheme or port in hackney",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.0,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.9.0"
        ],
@@ -6463,7 +6463,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00313,
-       "epss_percentile": 0.24597
+       "epss_percentile": 0.24575
       },
       {
        "id": "EEF-CVE-2026-115700",
@@ -6475,10 +6475,10 @@
        ],
        "published": "2026-10-26T13:49:02Z",
        "summary": "SSRF allowlist bypass via percent-encoded bracketed IPv6 or trailing-dot IP literal in hackney",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.9,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.9.0"
        ],
@@ -6487,7 +6487,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00138,
-       "epss_percentile": 0.03243
+       "epss_percentile": 0.03241
       },
       {
        "id": "EEF-CVE-2026-112880",
@@ -6499,10 +6499,10 @@
        ],
        "published": "2026-10-26T13:48:46Z",
        "summary": "CRLF injection in Proxy-Authorization header built from proxy_auth_fun in hackney",
-       "severity": "LOW",
-       "severity_source": "NVD",
-       "cvss": 2.1,
-       "cvss_source": "NVD",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "4.9.0"
        ],
@@ -6511,7 +6511,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00188,
-       "epss_percentile": 0.08519
+       "epss_percentile": 0.085
       }
      ]
     }
@@ -6550,8 +6550,8 @@
        "summary": "RCE via stale global state",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 8.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.35",
         "8.3.36",
@@ -6580,8 +6580,8 @@
        "summary": "RCE via OOM corruption",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 9.8,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "8.2.35",
         "8.3.36",
@@ -6620,8 +6620,8 @@
        "summary": "A flaw in Node.js `crypto` causes the internal entropy caches used by `crypto.randomUUID()`, `crypto.randomUUIDv7()`, and `crypto.randomInt()` to be saved into user-land startup snapshots (`--build-snapshot`) and single executable applications built with `useSnapshot`.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": 4.8,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6632,7 +6632,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00334,
-       "epss_percentile": 0.27164
+       "epss_percentile": 0.27135
       },
       {
        "id": "BIT-node-2026-106073",
@@ -6647,8 +6647,8 @@
        "summary": "A flaw in Node.js Permission Model filesystem enforcement leaves `fs.realpathSync()` without the required read permission checks. This is an incomplete fix of CVE-2026-21715, which only covered `fs.realpathSync.native()`.",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": 3.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6659,7 +6659,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00254,
-       "epss_percentile": 0.17021
+       "epss_percentile": 0.16999
       },
       {
        "id": "BIT-node-2026-106072",
@@ -6674,8 +6674,8 @@
        "summary": "A flaw in Node.js TLS hostname verification allows a certificate with only a DNS SAN to authenticate an IP endpoint when the client connects using a non-canonical IPv4 spelling, such as `0177.0.0.1`, `0x7f.0.0.1`, `2130706433` or `127.1`.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": 6.7,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6686,7 +6686,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00617,
-       "epss_percentile": 0.50152
+       "epss_percentile": 0.50138
       },
       {
        "id": "BIT-node-2026-106071",
@@ -6701,8 +6701,8 @@
        "summary": "A flaw in Node.js Permission Model filesystem enforcement can grant access to paths that do not match a wildcard `--allow-fs-read` or `--allow-fs-write` rule.",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": 3.6,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "26.12.1"
        ],
@@ -6711,7 +6711,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00199,
-       "epss_percentile": 0.09873
+       "epss_percentile": 0.09852
       },
       {
        "id": "BIT-node-2026-106070",
@@ -6726,8 +6726,8 @@
        "summary": "A flaw in the Node.js `zlib.ZipFile` API can cause it to return bytes that do not belong to the requested entry after the local and central header validation fails.",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": 3.7,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "26.12.1"
        ],
@@ -6736,7 +6736,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00367,
-       "epss_percentile": 0.31005
+       "epss_percentile": 0.30982
       },
       {
        "id": "BIT-node-2026-106069",
@@ -6751,8 +6751,8 @@
        "summary": "A flaw in Node.js TLS hostname verification can cause a server certificate to be validated against a different IP address than the one the client connected to, when the host is a non-canonical IPv4 literal with a leading zero, such as `0127.0.0.1`.",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": 7.4,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6763,7 +6763,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00304,
-       "epss_percentile": 0.23541
+       "epss_percentile": 0.23521
       },
       {
        "id": "BIT-node-2026-105483",
@@ -6778,8 +6778,8 @@
        "summary": "A flaw in Node.js TLS hostname verification allows a certificate without a matching IP address SAN to authenticate a connection to an IPv4 address when the host is written with non-ASCII characters, such as fullwidth digits (`１２７.0.0.1`).",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": 7.4,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "24.22.1",
         "26.12.1"
@@ -6789,7 +6789,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00304,
-       "epss_percentile": 0.2354
+       "epss_percentile": 0.23521
       },
       {
        "id": "BIT-node-2026-105482",
@@ -6804,8 +6804,8 @@
        "summary": "A flaw in Node.js DNS resolution allows hostnames containing a NUL byte to be silently truncated by the dns.resolve*() functions and dns.reverse(). This is an incomplete fix of CVE-2026-48930, which only covered dns.lookup() and the net/tls host options.\r",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": 7.4,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6816,7 +6816,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00468,
-       "epss_percentile": 0.41093
+       "epss_percentile": 0.41072
       },
       {
        "id": "BIT-node-2026-105481",
@@ -6831,8 +6831,8 @@
        "summary": "A flaw in Node.js HTTP Agent connection reuse can cause a client to accept as valid a response that was sent before the client has sent the request. This is an incomplete fix of CVE-2026-48931.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6843,7 +6843,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00318,
-       "epss_percentile": 0.25174
+       "epss_percentile": 0.25154
       },
       {
        "id": "BIT-node-2026-111497",
@@ -6867,8 +6867,8 @@
        "summary": "A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 9.8,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6908,8 +6908,8 @@
        "summary": "Distrust compromised intermediate certificates in ssl module",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 9.4,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.11.18",
         "3.12.16",
@@ -6922,7 +6922,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00534,
-       "epss_percentile": 0.45679
+       "epss_percentile": 0.45663
       },
       {
        "id": "BIT-libpython-2026-114583",
@@ -6939,8 +6939,8 @@
        "summary": "tar filter allows writing outside destination via empty-named symlink",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": 6.9,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "3.11.18",
         "3.12.16",
@@ -6953,7 +6953,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00261,
-       "epss_percentile": 0.18088
+       "epss_percentile": 0.18068
       }
      ]
     },
@@ -7013,8 +7013,8 @@
        "summary": "NGINX ngx_http_ssl_module vulnerability",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -7024,7 +7024,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00246,
-       "epss_percentile": 0.1597
+       "epss_percentile": 0.15945
       },
       {
        "id": "BIT-nginx-2026-97205",
@@ -7039,8 +7039,8 @@
        "summary": "NGINX ngx_http_core_module vulnerability",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 8.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -7050,7 +7050,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00834,
-       "epss_percentile": 0.58235
+       "epss_percentile": 0.58233
       },
       {
        "id": "BIT-nginx-2026-95101",
@@ -7065,8 +7065,8 @@
        "summary": "NGINX ngx_http_v3_module vulnerability",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": 5.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.29.0",
         "1.30.6",
@@ -7077,7 +7077,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00346,
-       "epss_percentile": 0.28654
+       "epss_percentile": 0.28629
       },
       {
        "id": "BIT-nginx-2026-93479",
@@ -7092,8 +7092,8 @@
        "summary": "NGINX map directive and regex matching vulnerability",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 8.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -7103,7 +7103,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01198,
-       "epss_percentile": 0.68628
+       "epss_percentile": 0.68626
       },
       {
        "id": "BIT-nginx-2026-15176",
@@ -7118,8 +7118,8 @@
        "summary": "NGINX ngx_http_core_module vulnerability",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 8.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -7129,7 +7129,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00998,
-       "epss_percentile": 0.6328
+       "epss_percentile": 0.63277
       }
      ]
     },
@@ -7166,8 +7166,8 @@
        "summary": "Apache Tomcat: Possible TLS 1.3 connection failures",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7178,7 +7178,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00592,
-       "epss_percentile": 0.48893
+       "epss_percentile": 0.48878
       },
       {
        "id": "BIT-tomcat-2026-88041",
@@ -7192,8 +7192,8 @@
        "summary": "Apache Tomcat: HTTP/2 trailer header cross-contamination",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7204,7 +7204,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00514,
-       "epss_percentile": 0.44411
+       "epss_percentile": 0.44395
       },
       {
        "id": "BIT-tomcat-2026-80353",
@@ -7218,8 +7218,8 @@
        "summary": "Apache Tomcat: TOCTOU when setting specific permissions for Unix Domain Sockets - Fix for CVE-2026-65183 did not address APR connector",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": 8.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.123"
        ],
@@ -7228,7 +7228,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00392,
-       "epss_percentile": 0.33825
+       "epss_percentile": 0.33809
       },
       {
        "id": "BIT-tomcat-2026-74049",
@@ -7242,8 +7242,8 @@
        "summary": "Apache Tomcat: Jasper JSTL <c:redirect> plug-in implementation omits page abort (SKIP_PAGE)",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": 6.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7254,7 +7254,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0037,
-       "epss_percentile": 0.31442
+       "epss_percentile": 0.31421
       },
       {
        "id": "BIT-tomcat-2026-74048",
@@ -7268,8 +7268,8 @@
        "summary": "Apache Tomcat: OpenSSL-FFM FIPS failure does not prevent start-up",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7280,7 +7280,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0045,
-       "epss_percentile": 0.39643
+       "epss_percentile": 0.3962
       },
       {
        "id": "BIT-tomcat-2026-103119",
@@ -7294,8 +7294,8 @@
        "summary": "Apache Tomcat: AJP response mix-up",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 9.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "11.0.27"
        ],
@@ -7304,7 +7304,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00586,
-       "epss_percentile": 0.48594
+       "epss_percentile": 0.48581
       },
       {
        "id": "BIT-tomcat-2026-101356",
@@ -7318,8 +7318,8 @@
        "summary": "Apache Tomcat: HTTP/2 request/response mix-up after error during async processing",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 9.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7330,7 +7330,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00518,
-       "epss_percentile": 0.44618
+       "epss_percentile": 0.44601
       },
       {
        "id": "BIT-tomcat-2026-101296",
@@ -7344,8 +7344,8 @@
        "summary": "Apache Tomcat: JNDIRealm bind credential validation fails open for non-GSSAPI SASL mechanisms",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 9.1,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7356,7 +7356,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48818
+       "epss_percentile": 0.48804
       }
      ]
     },
@@ -7396,8 +7396,8 @@
        "summary": "MariaDB: GRANT PROXY with empty password incorrectly checks grantor's privileges",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": 8.8,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7411,7 +7411,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01303,
-       "epss_percentile": 0.70967
+       "epss_percentile": 0.70969
       },
       {
        "id": "BIT-mariadb-2026-92262",
@@ -7428,8 +7428,8 @@
        "summary": "MariaDB: Numerous issues caused by historical #mysql50# tablename encoding bypass.",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 9.9,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7460,8 +7460,8 @@
        "summary": "MariaDB: Insufficient quoting in mariadb-dump and SHOW commands",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": 7.7,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7475,7 +7475,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00856,
-       "epss_percentile": 0.58963
+       "epss_percentile": 0.58961
       },
       {
        "id": "BIT-mariadb-2026-85985",
@@ -7492,8 +7492,8 @@
        "summary": "MariaDB: Unauthorized file access via CONNECT engine UDFs",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": 5.4,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7507,7 +7507,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00452,
-       "epss_percentile": 0.39774
+       "epss_percentile": 0.39751
       },
       {
        "id": "BIT-mariadb-2026-85748",
@@ -7524,8 +7524,8 @@
        "summary": "MariaDB: Use-after-free with a large number of SYS_REFCURSOR's",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 9.9,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "12.3.3",
         "13.0.2"
@@ -7552,8 +7552,8 @@
        "summary": "MariaDB: Out-of-bound buffer write on in `ST_AsText` of nested GeometryCollections",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": 9.9,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7567,7 +7567,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0097,
-       "epss_percentile": 0.62441
+       "epss_percentile": 0.62438
       },
       {
        "id": "BIT-mariadb-2026-85745",
@@ -7584,8 +7584,8 @@
        "summary": "MariaDB: Out-of-bound buffer read on in `ST_Area` of a multipolygon.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": 4.3,
-       "cvss_source": "NVD",
+       "cvss": null,
+       "cvss_source": null,
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7599,380 +7599,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00534,
-       "epss_percentile": 0.45657
-      },
-      {
-       "id": "BIT-mariadb-2026-107823",
-       "aliases": [
-        "BIT-mariadb-min-2026-107823",
-        "BIT-mysql-client-2026-107823",
-        "CVE-2026-107823",
-        "GHSA-g2q2-3936-cp37"
-       ],
-       "cves": [
-        "CVE-2026-107823"
-       ],
-       "published": "2026-10-16T08:42:01Z",
-       "summary": "MariaDB: privilege escalation via incorrect view frm parsing",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.2,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.28",
-        "10.11.19",
-        "11.4.13",
-        "11.8.9",
-        "12.3.3",
-        "13.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107823",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00786,
-       "epss_percentile": 0.56707
-      },
-      {
-       "id": "BIT-mariadb-2026-107822",
-       "aliases": [
-        "BIT-mariadb-min-2026-107822",
-        "BIT-mysql-client-2026-107822",
-        "CVE-2026-107822",
-        "GHSA-2m85-2x26-36rf"
-       ],
-       "cves": [
-        "CVE-2026-107822"
-       ],
-       "published": "2026-10-16T08:42:00Z",
-       "summary": "MariaDB: database privilege escalation via user / role name collision in the acl cache",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 6.4,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.28",
-        "10.11.19",
-        "11.4.13",
-        "11.8.9",
-        "12.3.3",
-        "13.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107822",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00516,
-       "epss_percentile": 0.44513
-      },
-      {
-       "id": "BIT-mariadb-2026-107821",
-       "aliases": [
-        "BIT-mariadb-min-2026-107821",
-        "BIT-mysql-client-2026-107821",
-        "CVE-2026-107821",
-        "GHSA-c4gx-34mg-95q5"
-       ],
-       "cves": [
-        "CVE-2026-107821"
-       ],
-       "published": "2026-10-16T08:41:59Z",
-       "summary": "MariaDB: insufficient validation of binary frm data when opening a table",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 8.0,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.28",
-        "10.11.19",
-        "11.4.13",
-        "11.8.9",
-        "12.3.3",
-        "13.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107821",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.01202,
-       "epss_percentile": 0.6872
-      },
-      {
-       "id": "BIT-mariadb-2026-107818",
-       "aliases": [
-        "BIT-mariadb-min-2026-107818",
-        "BIT-mysql-client-2026-107818",
-        "CVE-2026-107818",
-        "GHSA-mhvc-vqcq-7vq5"
-       ],
-       "cves": [
-        "CVE-2026-107818"
-       ],
-       "published": "2026-10-16T08:41:58Z",
-       "summary": "MariaDB: environment injection via wsrep bootstrap in the mariadb.service file",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 8.4,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.28",
-        "10.11.19",
-        "11.4.13",
-        "11.8.9",
-        "12.3.3",
-        "13.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107818",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00401,
-       "epss_percentile": 0.34933
-      },
-      {
-       "id": "BIT-mariadb-2026-107817",
-       "aliases": [
-        "BIT-mariadb-min-2026-107817",
-        "BIT-mysql-client-2026-107817",
-        "CVE-2026-107817",
-        "GHSA-89ph-64cf-gqcc"
-       ],
-       "cves": [
-        "CVE-2026-107817"
-       ],
-       "published": "2026-10-16T08:41:56Z",
-       "summary": "MariaDB: mysql_json plugin OOB reads",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 4.4,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.28",
-        "10.11.19",
-        "11.4.13",
-        "11.8.9",
-        "12.3.3",
-        "13.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107817",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00151,
-       "epss_percentile": 0.04343
-      },
-      {
-       "id": "BIT-mariadb-2026-107816",
-       "aliases": [
-        "BIT-mariadb-min-2026-107816",
-        "BIT-mysql-client-2026-107816",
-        "CVE-2026-107816",
-        "GHSA-wfqg-88r5-55f6"
-       ],
-       "cves": [
-        "CVE-2026-107816"
-       ],
-       "published": "2026-10-16T08:41:55Z",
-       "summary": "MariaDB: `qc_info` plugin can do OOB reads if query contains \\0",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 6.4,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.28",
-        "10.11.19",
-        "11.4.13",
-        "11.8.9",
-        "12.3.3",
-        "13.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107816",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00345,
-       "epss_percentile": 0.28459
-      },
-      {
-       "id": "BIT-mariadb-2026-107815",
-       "aliases": [
-        "BIT-mariadb-min-2026-107815",
-        "BIT-mysql-client-2026-107815",
-        "CVE-2026-107815",
-        "GHSA-4wgx-ffg9-jrwq"
-       ],
-       "cves": [
-        "CVE-2026-107815"
-       ],
-       "published": "2026-10-16T08:41:54Z",
-       "summary": "MariaDB: one byte OOB write in DOS tables of the CONNECT engine",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 8.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.28",
-        "10.11.19",
-        "11.4.13",
-        "11.8.9",
-        "12.3.3",
-        "13.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107815",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.01381,
-       "epss_percentile": 0.72586
-      },
-      {
-       "id": "BIT-mariadb-2026-107814",
-       "aliases": [
-        "BIT-mariadb-min-2026-107814",
-        "BIT-mysql-client-2026-107814",
-        "CVE-2026-107814",
-        "GHSA-m5gf-432r-g5jw"
-       ],
-       "cves": [
-        "CVE-2026-107814"
-       ],
-       "published": "2026-10-16T08:41:53Z",
-       "summary": "MariaDB: Insecure $HOME in MariaDB rpm packages",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 8.4,
-       "cvss_source": "NVD",
-       "fixed": [
-        "10.6.28",
-        "10.11.19",
-        "11.4.13",
-        "11.8.9",
-        "12.3.3",
-        "13.0.2"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107814",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00489,
-       "epss_percentile": 0.42649
-      },
-      {
-       "id": "BIT-mariadb-2026-107385",
-       "aliases": [
-        "BIT-mariadb-min-2026-107385",
-        "BIT-mysql-client-2026-107385",
-        "CVE-2026-107385",
-        "GHSA-r3rv-jm3r-62q2"
-       ],
-       "cves": [
-        "CVE-2026-107385"
-       ],
-       "published": "2026-10-16T08:41:52Z",
-       "summary": "MariaDB Connector/Node.js: SQL injection in the text protocol when the session uses NO_BACKSLASH_ESCAPES",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.4,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.2.5",
-        "3.3.4",
-        "3.4.7",
-        "3.5.4"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107385",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00438,
-       "epss_percentile": 0.38637
-      },
-      {
-       "id": "BIT-mariadb-2026-107384",
-       "aliases": [
-        "BIT-mariadb-min-2026-107384",
-        "BIT-mysql-client-2026-107384",
-        "CVE-2026-107384",
-        "GHSA-v6pj-gxxw-phfw"
-       ],
-       "cves": [
-        "CVE-2026-107384"
-       ],
-       "published": "2026-10-16T08:41:51Z",
-       "summary": "MariaDB Connector/Node.js: SQL injection through object keys in SET expansion (permitSetMultiParamEntries)",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 8.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.2.5",
-        "3.3.4",
-        "3.4.7",
-        "3.5.4"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107384",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00447,
-       "epss_percentile": 0.39448
-      },
-      {
-       "id": "BIT-mariadb-2026-107383",
-       "aliases": [
-        "BIT-mariadb-min-2026-107383",
-        "BIT-mysql-client-2026-107383",
-        "CVE-2026-107383",
-        "GHSA-48qf-xh34-q73r"
-       ],
-       "cves": [
-        "CVE-2026-107383"
-       ],
-       "published": "2026-10-16T08:41:49Z",
-       "summary": "MariaDB Connector/Node.js exposes uninitialized process memory through malformed GeoJSON parameters",
-       "severity": "HIGH",
-       "severity_source": "Bitnami",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.2.5",
-        "3.3.4",
-        "3.4.7",
-        "3.5.4"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107383",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00388,
-       "epss_percentile": 0.33469
-      },
-      {
-       "id": "BIT-mariadb-2026-107382",
-       "aliases": [
-        "BIT-mariadb-min-2026-107382",
-        "BIT-mysql-client-2026-107382",
-        "CVE-2026-107382",
-        "GHSA-cx2f-j9fh-8g68"
-       ],
-       "cves": [
-        "CVE-2026-107382"
-       ],
-       "published": "2026-10-16T08:41:48Z",
-       "summary": "MariaDB Connector/Node.js: Uncaught exception crashes the client during ed25519 authentication with zero-configuration TLS",
-       "severity": "MEDIUM",
-       "severity_source": "Bitnami",
-       "cvss": 5.9,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.5.4"
-       ],
-       "url": "https://osv.dev/vulnerability/BIT-mariadb-2026-107382",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00235,
-       "epss_percentile": 0.14634
+       "epss_percentile": 0.45641
       }
      ]
     },
