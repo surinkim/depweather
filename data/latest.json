@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T13:54:36Z",
+ "generated_at": "2026-11-15T22:48:54Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -27,7 +27,7 @@
    "score_date": "2026-11-15"
   },
   "nvd": {
-   "ok": false,
+   "ok": true,
    "url": "https://services.nvd.nist.gov/rest/json/cves/2.0"
   },
   "popularity": {
@@ -47,10 +47,10 @@
   }
  },
  "summary": {
-  "today_cves": null,
+  "today_cves": 112,
   "month": "2026-11",
-  "month_cves": null,
-  "month_cves_last_year": null,
+  "month_cves": 7976,
+  "month_cves_last_year": 3021,
   "kev_new_7d": 12,
   "affected_packages_7d": 12,
   "tracked_packages": 149
@@ -110,10 +110,10 @@
   },
   {
    "month": "2026-11",
-   "count": 7862
+   "count": 7976
   }
  ],
- "monthly_is_stale": true,
+ "monthly_is_stale": false,
  "kev_recent": [
   {
    "cve": "CVE-2026-114713",
@@ -262,8 +262,8 @@
        "summary": "next.js cache leak across root param values in nested 'use cache' functions",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "16.3.8"
        ],
@@ -307,8 +307,8 @@
        "summary": "Next.js: Denial of Service in App Router using Server Actions",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "15.5.28",
         "16.4.1"
@@ -399,8 +399,8 @@
        "summary": "Astro: XSS via attribute injection in dynamic tag names",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 2.3,
+       "cvss_source": "NVD",
        "fixed": [
         "7.4.5"
        ],
@@ -423,8 +423,8 @@
        "summary": "Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "7.4.7"
        ],
@@ -471,8 +471,8 @@
        "summary": "Astro: Arbitrary CSS injection in Astro View Transitions",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 2.3,
+       "cvss_source": "NVD",
        "fixed": [
         "7.3.3"
        ],
@@ -649,8 +649,8 @@
        "summary": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "4.6.2"
        ],
@@ -697,8 +697,8 @@
        "summary": "Nuxt: Incomplete fix for GHSA-934w-87qh-qr26: a `javascript:` URL prefixed with an ASCII control character executes from `<NuxtLink>` when `pages` is disabled",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 2.3,
+       "cvss_source": "NVD",
        "fixed": [
         "4.6.0"
        ],
@@ -974,8 +974,8 @@
        "summary": "Vite: `server.fs.deny` bypassed with queries",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "6.4.5"
        ],
@@ -998,8 +998,8 @@
        "summary": "Vite: Cross origin script execution through Vite custom middleware",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 2.1,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1026,8 +1026,8 @@
        "summary": "Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1054,8 +1054,8 @@
        "summary": "Vite: First 4 bytes of files outside of `server.fs` setting is exposed by `?vite-wasm-instance`",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4"
@@ -1079,8 +1079,8 @@
        "summary": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1107,8 +1107,8 @@
        "summary": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1135,8 +1135,8 @@
        "summary": "launch-editor: escapeCmdArgs() omits % escaping on Windows",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "8.3.3",
         "8.2.4",
@@ -1701,8 +1701,8 @@
        "summary": "AIOHTTP: Absolute-form request targets can spoof Request.scheme",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -1725,8 +1725,8 @@
        "summary": "AIOHTTP: Cookie from subdomain can remove Host-Only Scope from existing cookies",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 2.3,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -1749,8 +1749,8 @@
        "summary": "AIOHTTP: Connector pool exhaustion via Max-Age overflow",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -1773,8 +1773,8 @@
        "summary": "AIOHTTP: Pure-Python parser request smuggling",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -1797,8 +1797,8 @@
        "summary": "AIOHTTP: File descriptor exhaustion in multipart requests",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -1821,8 +1821,8 @@
        "summary": "aiohttp server lacks an initial request/header timeout",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -1845,8 +1845,8 @@
        "summary": "AIOHTTP: Secure attribute not enforced for shared cookie",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -1869,8 +1869,8 @@
        "summary": "aiohttp: Multiple instances of excessive or unbounded memory/CPU use",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.7,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -1905,8 +1905,8 @@
        "summary": "Pillow: Memory DoS in TIFF and EXIF IFD parsing via overlapping tag data",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.7,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -1929,8 +1929,8 @@
        "summary": "Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.4,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -1974,8 +1974,8 @@
        "summary": "Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.8,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -1999,8 +1999,8 @@
        "summary": "Pillow PDF append accepts malformed shared page-tree DAG causing resource exhaustion",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2100,8 +2100,8 @@
        "summary": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2125,8 +2125,8 @@
        "summary": "Pillow: Infinite loop in PdfParser.rewrite_pages on page tree Parent cycle",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2332,8 +2332,8 @@
        "summary": "Pillow: APNG background disposal allocates full canvas before decompression bomb check",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2357,8 +2357,8 @@
        "summary": "Pillow: MSP RLE decoder expands a tiny file into unbounded memory",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2382,8 +2382,8 @@
        "summary": "Pillow: Quadratic-time DoS in PDF save_all (PdfParser.next_object_id)",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2407,8 +2407,8 @@
        "summary": "Pillow: PdfParser can recurse without limit in get_value() and linearize_page_tree()",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2432,8 +2432,8 @@
        "summary": "Pillow: Image.quantize() with empty palette leaks uninitialized stack memory",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2457,8 +2457,8 @@
        "summary": "Pillow: Quadratic GIF comment concatenation allows DoS in Image.open()",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2482,8 +2482,8 @@
        "summary": "Pillow: Infinite loop in MIC n_frames when the embedded TIFF",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2507,8 +2507,8 @@
        "summary": "Pillow: Quadratic GIF comment copying during save",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2532,8 +2532,8 @@
        "summary": "Pillow: Invalid free in FreeType glyph rendering when a stroker is active",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2557,8 +2557,8 @@
        "summary": "Pillow: Argument Injection in Ghostscript call, potentially leading into RCE",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2582,8 +2582,8 @@
        "summary": "Pillow: GIF seek keeps rejected size after DecompressionBombError, allowing DoS",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2606,8 +2606,8 @@
        "summary": "Pillow: EPS load(scale) lets Ghostscript render past the decompression bomb limit",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.3,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2631,8 +2631,8 @@
        "summary": "Pillow: TiffDecode returns uninitialized memory as pixels for short JPEG strips",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.2,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2656,8 +2656,8 @@
        "summary": "Pillow: Unbounded recursion parsing a PDF page tree or trailer chain (incomplete fix for CVE-2026-42310)",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -2706,8 +2706,8 @@
        "summary": "Pillow: OOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -4046,7 +4046,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 165872831.0,
+     "popularity": 166316490.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4057,7 +4057,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2456.0,
+     "popularity": 2457.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4068,7 +4068,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 310409564.0,
+     "popularity": 311291742.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4087,8 +4087,8 @@
        "summary": "Tokio: Race condition in `tokio::time::Interval`",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.8,
+       "cvss_source": "NVD",
        "fixed": [
         "1.54.1"
        ],
@@ -4105,7 +4105,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 287386462.0,
+     "popularity": 288167209.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4116,7 +4116,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 267497377.0,
+     "popularity": 268180513.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4127,7 +4127,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 229873243.0,
+     "popularity": 230443859.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4138,7 +4138,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 286392389.0,
+     "popularity": 287184689.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4262,10 +4262,10 @@
        ],
        "published": "2026-10-20T12:00:00Z",
        "summary": "Certificate verification may accept distrusted intermediates",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.8,
+       "cvss_source": "NVD",
        "fixed": [
         "0.103.16",
         "0.104.0-alpha.8"
@@ -4283,7 +4283,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 88159593.0,
+     "popularity": 88364636.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4294,7 +4294,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 229765484.0,
+     "popularity": 230465892.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4305,7 +4305,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 436444883.0,
+     "popularity": 437763463.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4316,7 +4316,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 331808963.0,
+     "popularity": 332766336.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4327,7 +4327,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 264715322.0,
+     "popularity": 265502898.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4338,7 +4338,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 58494478.0,
+     "popularity": 58645122.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4349,7 +4349,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 105605634.0,
+     "popularity": 105895133.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4439,8 +4439,8 @@
        "summary": "zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 10.0,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.5"
        ],
@@ -4492,7 +4492,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 24504606.0,
+     "popularity": 24730433.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "LOW",
@@ -4510,8 +4510,8 @@
        "summary": "Laravel: Task Output Injection - Concurrency Process",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 2.3,
+       "cvss_source": "NVD",
        "fixed": [
         "12.71.0",
         "13.40.0"
@@ -4535,8 +4535,8 @@
        "summary": "Laravel TokenGuard authentication bypass through non-string API credentials",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.2,
+       "cvss_source": "NVD",
        "fixed": [
         "13.27.0",
         "12.68.0",
@@ -4581,7 +4581,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 30966838.0,
+     "popularity": 31485818.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4599,8 +4599,8 @@
        "summary": "Symfony: Unbounded Recursion in the YAML Inline Lexer Lets a Single Document Crash the Process",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.7,
+       "cvss_source": "NVD",
        "fixed": [
         "5.4.54",
         "6.4.45",
@@ -4626,8 +4626,8 @@
        "summary": "Symfony: ReDoS in HeaderUtils::split() Reachable Through the Cache-Control Request Header",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.7,
+       "cvss_source": "NVD",
        "fixed": [
         "6.4.46",
         "7.4.19",
@@ -4647,7 +4647,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1609645.0,
+     "popularity": 1619125.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -4658,7 +4658,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 34251253.0,
+     "popularity": 34785004.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4669,7 +4669,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 35308353.0,
+     "popularity": 35487284.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4680,7 +4680,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 32278485.0,
+     "popularity": 32790288.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4702,7 +4702,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 29311740.0,
+     "popularity": 29695979.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4720,8 +4720,8 @@
        "summary": "PHPUnit vulnerable to code execution by other local users via shared temporary directory in PHPT code coverage handling",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.4,
+       "cvss_source": "NVD",
        "fixed": [
         "13.4.4"
        ],
@@ -4738,7 +4738,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 27416398.0,
+     "popularity": 27348293.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4749,7 +4749,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 25343797.0,
+     "popularity": 25436173.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4760,7 +4760,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 27384733.0,
+     "popularity": 27805202.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4771,7 +4771,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4438076.0,
+     "popularity": 4485053.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4782,7 +4782,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 21585890.0,
+     "popularity": 21826521.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4793,7 +4793,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 19099188.0,
+     "popularity": 19322412.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4818,7 +4818,7 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "UNKNOWN",
-     "worst_30d": "UNKNOWN",
+     "worst_30d": "MEDIUM",
      "vulns": [
       {
        "id": "GO-2026-6859",
@@ -4859,10 +4859,10 @@
        ],
        "published": "2026-10-21T00:27:29Z",
        "summary": "Distrust compromised intermediate certificates in crypto/x509",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.8,
+       "cvss_source": "NVD",
        "fixed": [
         "1.26.10",
         "1.27.3"
@@ -4884,7 +4884,7 @@
      "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "UNKNOWN",
+     "worst_30d": "HIGH",
      "vulns": [
       {
        "id": "GO-2026-6866",
@@ -4896,10 +4896,10 @@
        ],
        "published": "2026-10-27T21:16:18Z",
        "summary": "Check all ancestor namespace transitions when rendering raw text in html in golang.org/x/net",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.1,
+       "cvss_source": "NVD",
        "fixed": [
         "0.62.0"
        ],
@@ -4920,10 +4920,10 @@
        ],
        "published": "2026-10-27T21:16:18Z",
        "summary": "Avoid quadratic complexity when coalescing text nodes in html in golang.org/x/net",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "0.62.0"
        ],
@@ -5249,8 +5249,8 @@
        "summary": "Echo: WebSocket proxy can retain connections and handlers after client disconnect",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "4.16.1"
        ],
@@ -5274,8 +5274,8 @@
        "summary": "Echo: Decompress permits unbounded gzip expansion in v4",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "4.16.1"
        ],
@@ -5299,8 +5299,8 @@
        "summary": "Echo: Rejected WebSocket upgrades can bypass Echo route-level access controls",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "4.16.1"
        ],
@@ -5324,8 +5324,8 @@
        "summary": "Echo: BodyDump captures request and response bodies without size limits in v4",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "4.16.1"
        ],
@@ -5455,7 +5455,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 816819666.0,
+     "popularity": 816899628.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "CRITICAL",
@@ -5967,7 +5967,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1390598595.0,
+     "popularity": 1390777885.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "HIGH",
@@ -6082,7 +6082,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1300473468.0,
+     "popularity": 1300614795.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "LOW",
@@ -6124,8 +6124,8 @@
        "summary": "Nokogiri: Use-After-Free in Nokogiri when replacing an attribute value",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 2.0,
+       "cvss_source": "NVD",
        "fixed": [
         "1.19.5"
        ],
@@ -6148,8 +6148,8 @@
        "summary": "Nokogiri: Mutation XSS through `noscript` content in Nokogiri's HTML5 serializer",
        "severity": "LOW",
        "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 2.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.19.5"
        ],
@@ -6166,7 +6166,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 629756725.0,
+     "popularity": 629853486.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6177,7 +6177,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 305195403.0,
+     "popularity": 305227972.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6188,7 +6188,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 347980301.0,
+     "popularity": 348016615.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6199,7 +6199,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1300938618.0,
+     "popularity": 1301050706.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6210,7 +6210,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 405577029.0,
+     "popularity": 405654291.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6257,7 +6257,7 @@
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "UNKNOWN",
+     "worst_30d": "MEDIUM",
      "vulns": [
       {
        "id": "EEF-CVE-2026-105963",
@@ -6270,10 +6270,10 @@
        ],
        "published": "2026-10-23T09:56:58Z",
        "summary": "Secret key base exposed in stack trace arguments on wrong-typed Plug.Crypto arguments",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 5.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.7.0"
        ],
@@ -6294,7 +6294,7 @@
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "UNKNOWN",
+     "worst_30d": "HIGH",
      "vulns": [
       {
        "id": "EEF-CVE-2026-118391",
@@ -6307,10 +6307,10 @@
        ],
        "published": "2026-11-04T13:57:29Z",
        "summary": "Unbounded query cache growth from interpolated JSON paths and splice lists in Ecto",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 8.9,
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.3"
        ],
@@ -6331,7 +6331,7 @@
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "UNKNOWN",
+     "worst_30d": "HIGH",
      "vulns": [
       {
        "id": "EEF-CVE-2026-115701",
@@ -6343,10 +6343,10 @@
        ],
        "published": "2026-11-06T10:29:00Z",
        "summary": "Cowboy HTTP/1.1 Unbounded Buffering of Pipelined Data During Request Handling Enables Memory Exhaustion",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "2.21.0"
        ],
@@ -6367,10 +6367,10 @@
        ],
        "published": "2026-11-06T10:28:15Z",
        "summary": "Unbounded decoded HTTP/2 header-list size in cowlib cow_http2_machine enables HPACK amplification memory exhaustion",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 8.7,
+       "cvss_source": "NVD",
        "fixed": [
         "2.22.0"
        ],
@@ -6391,7 +6391,7 @@
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "UNKNOWN",
+     "worst_30d": "CRITICAL",
      "vulns": [
       {
        "id": "EEF-CVE-2026-97200",
@@ -6403,10 +6403,10 @@
        ],
        "published": "2026-10-26T13:49:40Z",
        "summary": "Unbounded response body buffering and decompression in hackney",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 8.2,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -6427,10 +6427,10 @@
        ],
        "published": "2026-10-26T13:49:29Z",
        "summary": "Custom cacerts or cacertfile do not restrict trust to the pinned CA in hackney",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "CRITICAL",
+       "severity_source": "NVD",
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -6451,10 +6451,10 @@
        ],
        "published": "2026-10-26T13:49:17Z",
        "summary": "HTTP/1.1 and HTTP/2 redirects resend basic_auth and cookie to a different scheme or port in hackney",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.0,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -6475,10 +6475,10 @@
        ],
        "published": "2026-10-26T13:49:02Z",
        "summary": "SSRF allowlist bypass via percent-encoded bracketed IPv6 or trailing-dot IP literal in hackney",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -6499,10 +6499,10 @@
        ],
        "published": "2026-10-26T13:48:46Z",
        "summary": "CRLF injection in Proxy-Authorization header built from proxy_auth_fun in hackney",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "LOW",
+       "severity_source": "NVD",
+       "cvss": 2.1,
+       "cvss_source": "NVD",
        "fixed": [
         "4.9.0"
        ],
@@ -6550,8 +6550,8 @@
        "summary": "RCE via stale global state",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "8.2.35",
         "8.3.36",
@@ -6580,8 +6580,8 @@
        "summary": "RCE via OOM corruption",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "8.2.35",
         "8.3.36",
@@ -6620,8 +6620,8 @@
        "summary": "A flaw in Node.js `crypto` causes the internal entropy caches used by `crypto.randomUUID()`, `crypto.randomUUIDv7()`, and `crypto.randomInt()` to be saved into user-land startup snapshots (`--build-snapshot`) and single executable applications built with `useSnapshot`.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.8,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6647,8 +6647,8 @@
        "summary": "A flaw in Node.js Permission Model filesystem enforcement leaves `fs.realpathSync()` without the required read permission checks. This is an incomplete fix of CVE-2026-21715, which only covered `fs.realpathSync.native()`.",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.3,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6674,8 +6674,8 @@
        "summary": "A flaw in Node.js TLS hostname verification allows a certificate with only a DNS SAN to authenticate an IP endpoint when the client connects using a non-canonical IPv4 spelling, such as `0177.0.0.1`, `0x7f.0.0.1`, `2130706433` or `127.1`.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.7,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6701,8 +6701,8 @@
        "summary": "A flaw in Node.js Permission Model filesystem enforcement can grant access to paths that do not match a wildcard `--allow-fs-read` or `--allow-fs-write` rule.",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.6,
+       "cvss_source": "NVD",
        "fixed": [
         "26.12.1"
        ],
@@ -6726,8 +6726,8 @@
        "summary": "A flaw in the Node.js `zlib.ZipFile` API can cause it to return bytes that do not belong to the requested entry after the local and central header validation fails.",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.7,
+       "cvss_source": "NVD",
        "fixed": [
         "26.12.1"
        ],
@@ -6751,8 +6751,8 @@
        "summary": "A flaw in Node.js TLS hostname verification can cause a server certificate to be validated against a different IP address than the one the client connected to, when the host is a non-canonical IPv4 literal with a leading zero, such as `0127.0.0.1`.",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.4,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6778,8 +6778,8 @@
        "summary": "A flaw in Node.js TLS hostname verification allows a certificate without a matching IP address SAN to authenticate a connection to an IPv4 address when the host is written with non-ASCII characters, such as fullwidth digits (`１２７.0.0.1`).",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.4,
+       "cvss_source": "NVD",
        "fixed": [
         "24.22.1",
         "26.12.1"
@@ -6804,8 +6804,8 @@
        "summary": "A flaw in Node.js DNS resolution allows hostnames containing a NUL byte to be silently truncated by the dns.resolve*() functions and dns.reverse(). This is an incomplete fix of CVE-2026-48930, which only covered dns.lookup() and the net/tls host options.\r",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.4,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6831,8 +6831,8 @@
        "summary": "A flaw in Node.js HTTP Agent connection reuse can cause a client to accept as valid a response that was sent before the client has sent the request. This is an incomplete fix of CVE-2026-48931.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6867,8 +6867,8 @@
        "summary": "A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution. This vulnerability affects Node.js 22.x, 24.x, and 26.x.",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "22.23.4",
         "24.22.1",
@@ -6908,8 +6908,8 @@
        "summary": "Distrust compromised intermediate certificates in ssl module",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.4,
+       "cvss_source": "NVD",
        "fixed": [
         "3.11.18",
         "3.12.16",
@@ -6939,8 +6939,8 @@
        "summary": "tar filter allows writing outside destination via empty-named symlink",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.9,
+       "cvss_source": "NVD",
        "fixed": [
         "3.11.18",
         "3.12.16",
@@ -7013,8 +7013,8 @@
        "summary": "NGINX ngx_http_ssl_module vulnerability",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -7039,8 +7039,8 @@
        "summary": "NGINX ngx_http_core_module vulnerability",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -7065,8 +7065,8 @@
        "summary": "NGINX ngx_http_v3_module vulnerability",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.29.0",
         "1.30.6",
@@ -7092,8 +7092,8 @@
        "summary": "NGINX map directive and regex matching vulnerability",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -7118,8 +7118,8 @@
        "summary": "NGINX ngx_http_core_module vulnerability",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.30.6",
         "1.31.7"
@@ -7166,8 +7166,8 @@
        "summary": "Apache Tomcat: Possible TLS 1.3 connection failures",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7192,8 +7192,8 @@
        "summary": "Apache Tomcat: HTTP/2 trailer header cross-contamination",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7218,8 +7218,8 @@
        "summary": "Apache Tomcat: TOCTOU when setting specific permissions for Unix Domain Sockets - Fix for CVE-2026-65183 did not address APR connector",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123"
        ],
@@ -7242,8 +7242,8 @@
        "summary": "Apache Tomcat: Jasper JSTL <c:redirect> plug-in implementation omits page abort (SKIP_PAGE)",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7268,8 +7268,8 @@
        "summary": "Apache Tomcat: OpenSSL-FFM FIPS failure does not prevent start-up",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7294,8 +7294,8 @@
        "summary": "Apache Tomcat: AJP response mix-up",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "11.0.27"
        ],
@@ -7318,8 +7318,8 @@
        "summary": "Apache Tomcat: HTTP/2 request/response mix-up after error during async processing",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7344,8 +7344,8 @@
        "summary": "Apache Tomcat: JNDIRealm bind credential validation fails open for non-GSSAPI SASL mechanisms",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.123",
         "10.1.61",
@@ -7396,8 +7396,8 @@
        "summary": "MariaDB: GRANT PROXY with empty password incorrectly checks grantor's privileges",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 8.8,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7428,8 +7428,8 @@
        "summary": "MariaDB: Numerous issues caused by historical #mysql50# tablename encoding bypass.",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.9,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7460,8 +7460,8 @@
        "summary": "MariaDB: Insufficient quoting in mariadb-dump and SHOW commands",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.7,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7492,8 +7492,8 @@
        "summary": "MariaDB: Unauthorized file access via CONNECT engine UDFs",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.4,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7524,8 +7524,8 @@
        "summary": "MariaDB: Use-after-free with a large number of SYS_REFCURSOR's",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.9,
+       "cvss_source": "NVD",
        "fixed": [
         "12.3.3",
         "13.0.2"
@@ -7552,8 +7552,8 @@
        "summary": "MariaDB: Out-of-bound buffer write on in `ST_AsText` of nested GeometryCollections",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.9,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
@@ -7584,8 +7584,8 @@
        "summary": "MariaDB: Out-of-bound buffer read on in `ST_Area` of a multipolygon.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.3,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.28",
         "10.11.19",
