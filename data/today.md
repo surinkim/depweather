@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-15
+# depweather forecast, 2026-11-16
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-15T22:48:54Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-16T15:41:02Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 12 of 149
+- Popular packages with a new advisory this week: 14 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 12
-- New CVEs in NVD today (UTC): 112
-- CVEs published in 2026-11 so far: 7,976 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 198
+- CVEs published in 2026-11 so far: 8,174 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -17,8 +17,16 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **rack**: 4 advisories, worst high; fixed in 2.2.25, 3.1.23, 3.2.8. Example: [GHSA-5v64-555j-wjxm](https://osv.dev/vulnerability/GHSA-5v64-555j-wjxm) Rack: Multipart parsing allows DoS via unbounded scan buffer growth
 - **nokogiri**: 3 advisories, worst low or unrated; fixed in 1.19.5. Example: [GHSA-v995-44v6-5fqm](https://osv.dev/vulnerability/GHSA-v995-44v6-5fqm) JRuby: NONET is bypassed for external DTDs and entities when the systemId uses a short-form IPv4 host
 
+### npm
+
+- **SvelteKit (@sveltejs/kit)**: 5 advisories, worst high; fixed in 3.1.1, 2.70.4. Example: [GHSA-m9j8-jcmv-hp69](https://osv.dev/vulnerability/GHSA-m9j8-jcmv-hp69) SvelteKit: Build-time server-only module import guard could fail, resulting in server secrets being statically replaced in client bundle
+- **Hono**: 5 advisories, worst medium; fixed in 4.13.16. Example: [GHSA-46wx-v44x-9hh2](https://osv.dev/vulnerability/GHSA-46wx-v44x-9hh2) Hono: `csrf()` does not check requests sent by hyperlink auditing (`text/ping`)
+- **Nuxt**: 4 advisories, worst medium; fixed in 4.6.4. Example: [GHSA-96x6-fvhx-49hg](https://osv.dev/vulnerability/GHSA-96x6-fvhx-49hg) Nuxt exposes the message and data of unhandled errors thrown during server rendering
+- **Astro**: 2 advisories, worst medium; fixed in 7.4.5, 7.4.7. Example: [GHSA-r3h5-4585-7x3w](https://osv.dev/vulnerability/GHSA-r3h5-4585-7x3w) Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems
+
 ### PyPI
 
+- **aiohttp**: 9 advisories, worst high; fixed in 3.14.4. Example: [GHSA-jm3w-gw2p-xjfj](https://osv.dev/vulnerability/GHSA-jm3w-gw2p-xjfj) AIOHTTP: Event loop stall in add_domain() wildcard matching
 - **pillow**: 2 advisories, worst high; fixed in 13.0.0. Example: [GHSA-xcvg-w56q-r89m](https://osv.dev/vulnerability/GHSA-xcvg-w56q-r89m) Pillow: Heap buffer overflow saving TIFF with libtiff when tags override image size
 
 ### NuGet
@@ -26,12 +34,6 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **ASP.NET Core (Microsoft.AspNetCore.App.Runtime.linux-x64)**: 13 advisories, worst high; fixed in 2.3.14, 8.0.34, 9.0.23, 10.0.15 and more. Example: [GHSA-wr8v-9x5q-ggcm](https://osv.dev/vulnerability/GHSA-wr8v-9x5q-ggcm) Microsoft Security Advisory CVE-2026-114147 - ASP.NET Core Denial of Service Vulnerability
 - **.NET runtime (Microsoft.NETCore.App.Runtime.linux-x64)**: 7 advisories, worst high; fixed in 8.0.34, 9.0.23, 10.0.15, 11.0.0. Example: [GHSA-x8x8-p968-x646](https://osv.dev/vulnerability/GHSA-x8x8-p968-x646) Microsoft Security Advisory CVE-2026-118745 - Visual Studio Remote Code Execution Vulnerability
 - **System.Text.Json**: 1 advisory, worst medium; fixed in 11.0.0. Example: [GHSA-cpw3-h88j-9f6x](https://osv.dev/vulnerability/GHSA-cpw3-h88j-9f6x) Microsoft Security Advisory CVE-2026-120796 - .NET Denial of Service Vulnerability
-
-### npm
-
-- **Hono**: 5 advisories, worst medium; fixed in 4.13.16. Example: [GHSA-46wx-v44x-9hh2](https://osv.dev/vulnerability/GHSA-46wx-v44x-9hh2) Hono: `csrf()` does not check requests sent by hyperlink auditing (`text/ping`)
-- **Astro**: 2 advisories, worst medium; fixed in 7.4.5, 7.4.7. Example: [GHSA-r3h5-4585-7x3w](https://osv.dev/vulnerability/GHSA-r3h5-4585-7x3w) Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems
-- **SvelteKit (@sveltejs/kit)**: 1 advisory, worst medium; fixed in 3.1.1, 2.70.4. Example: [GHSA-mw6w-2fmv-pvw3](https://osv.dev/vulnerability/GHSA-mw6w-2fmv-pvw3) SvelteKit: adapter-node crashes with an unhandled URIError when `reroute` rewrites malformed pathnames
 
 ### Packagist
 
