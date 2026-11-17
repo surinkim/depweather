@@ -185,6 +185,41 @@
      "m": 1
     }
    }
+  },
+  "2026-11-17": {
+   "packages": {
+    "runtimes/apache": {
+     "h": 1
+    },
+    "runtimes/mariadb": {
+     "h": 1
+    },
+    "runtimes/mongodb": {
+     "c": 1
+    },
+    "runtimes/python": {
+     "h": 1,
+     "m": 1,
+     "l": 1
+    },
+    "runtimes/ruby": {
+     "c": 1,
+     "k": 1
+    },
+    "runtimes/wordpress": {
+     "h": 1,
+     "k": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 2,
+     "h": 4,
+     "m": 1,
+     "l": 1,
+     "k": 2
+    }
+   }
   }
  }
 }

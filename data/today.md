@@ -1,15 +1,24 @@
 # depweather forecast, 2026-11-17
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-17T01:52:54Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-17T15:57:25Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 15 of 149
+- Popular packages with a new advisory this week: 21 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 8
-- New CVEs in NVD today (UTC): 1
-- CVEs published in 2026-11 so far: 8,332 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 187
+- CVEs published in 2026-11 so far: 8,518 (same month last year: 3,021)
 
 ## By ecosystem
+
+### Runtimes & servers
+
+- **Ruby**: 1 advisory, worst actively exploited (CISA KEV); fixed in 3.3.13, 3.4.12, 4.0.8. Example: [BIT-ruby-2026-97229](https://osv.dev/vulnerability/BIT-ruby-2026-97229) Integer Overflow or Wraparound in GitLab
+- **WordPress**: 1 advisory, worst actively exploited (CISA KEV); fixed in 4.7.39, 4.8.34, 4.9.35, 5.0.31 and more. Example: [BIT-wordpress-2026-119977](https://osv.dev/vulnerability/BIT-wordpress-2026-119977) WordPress Core 4.7.0 - 7.1.3 - Unauthenticated Upgrade-Window Staged-Installer Remote Code Execution
+- **MongoDB**: 1 advisory, worst critical; fixed in 4.4.32, 5.0.35, 6.0.30, 7.0.48 and more. Example: [BIT-mongodb-2026-118383](https://osv.dev/vulnerability/BIT-mongodb-2026-118383) Pre-authentication use-after-free in MongoDB Server replica set primary catch-up
+- **Python**: 3 advisories, worst high; fixed in 3.14.11, 3.16.0. Example: [BIT-libpython-2026-119170](https://osv.dev/vulnerability/BIT-libpython-2026-119170) Regression in FIPS enforcement of hash algorithms affecting only Python 3.14.10
+- **Apache httpd (apache)**: 1 advisory, worst high; fixed in 2.4.71. Example: [BIT-apache-2026-119618](https://osv.dev/vulnerability/BIT-apache-2026-119618) Apache HTTP Server: mod_http2: heap corruption and RCE in assign_headers
+- **MariaDB**: 1 advisory, worst high; fixed in 10.11.19, 11.4.13, 11.8.9, 12.3.3 and more. Example: [BIT-mariadb-2026-102523](https://osv.dev/vulnerability/BIT-mariadb-2026-102523) MariaDB server: Authorization bypass via ALTER TABLE ... CONVERT ... PARTITION
 
 ### RubyGems
 
@@ -53,10 +62,6 @@ No new advisories for the tracked packages.
 No new advisories for the tracked packages.
 
 ### Hex
-
-No new advisories for the tracked packages.
-
-### Runtimes & servers
 
 No new advisories for the tracked packages.
 
