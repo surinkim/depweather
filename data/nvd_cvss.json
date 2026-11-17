@@ -354,6 +354,11 @@
   "severity": "MEDIUM",
   "checked": "2026-10-31"
  },
+ "CVE-2026-119790": {
+  "cvss": 6.3,
+  "severity": "MEDIUM",
+  "checked": "2026-11-17"
+ },
  "CVE-2026-123817": {
   "cvss": 8.7,
   "severity": "HIGH",
@@ -520,9 +525,9 @@
   "checked": "2026-11-05"
  },
  "CVE-2026-97054": {
-  "cvss": null,
-  "severity": null,
-  "checked": "2026-11-16"
+  "cvss": 5.9,
+  "severity": "MEDIUM",
+  "checked": "2026-11-17"
  },
  "CVE-2026-97200": {
   "cvss": 8.2,

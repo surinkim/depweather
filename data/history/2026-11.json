@@ -79,7 +79,7 @@
   "2026-11-11": {
    "packages": {
     "go/stdlib": {
-     "u": 1
+     "m": 1
     },
     "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
      "h": 2,
@@ -91,7 +91,7 @@
    },
    "ecosystems": {
     "go": {
-     "u": 1
+     "m": 1
     },
     "nuget": {
      "h": 7,
@@ -162,6 +162,9 @@
      "h": 2,
      "m": 2
     },
+    "npm/next": {
+     "m": 1
+    },
     "npm/nuxt": {
      "m": 3,
      "l": 1
@@ -174,7 +177,7 @@
    "ecosystems": {
     "npm": {
      "h": 2,
-     "m": 5,
+     "m": 6,
      "l": 1
     },
     "pypi": {
