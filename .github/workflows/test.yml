@@ -26,6 +26,9 @@ jobs:
       - name: JavaScript tests
         run: node --test tests/stack.test.js tests/alert.test.js tests/alert-security.test.js tests/trends.test.js
 
+      - name: Collector tests
+        run: python tests/test_collect.py -v
+
       - name: Feed tests
         run: python tests/test_feeds.py -v
 

@@ -276,13 +276,16 @@ ecosystems:
       - {name: php, label: PHP, match: [php-min, libphp]}
       - {name: node, label: Node.js, survey: 46.4, match: [node-min]}
       - {name: python, label: Python, match: [python-min, libpython]}
-      - {name: java, label: Java (OpenJDK), match: [java-min, jre]}
+      # Bitnami added no Java advisories after 2026-08-26; Debian's tracker
+      # lists new OpenJDK CVEs within hours (see collect_also in collect.py).
+      - {name: java, label: Java (OpenJDK), match: [java-min, jre], also: {Debian: ["openjdk-*"]}}
       - {name: ruby, label: Ruby, match: [ruby-min]}
       - {name: wordpress, label: WordPress, survey: 13.3}
       - {name: nginx}
       - {name: apache, label: Apache httpd}
       - {name: tomcat, label: Tomcat}
-      - {name: postgresql, label: PostgreSQL}
+      # Same for PostgreSQL (none since 2026-08) and Redis (none since 2026-05).
+      - {name: postgresql, label: PostgreSQL, also: {Debian: ["postgresql-[0-9]*"]}}
       - {name: mariadb, label: MariaDB}
-      - {name: redis, label: Redis}
+      - {name: redis, label: Redis, also: {Debian: [redis]}}
       - {name: mongodb, label: MongoDB}

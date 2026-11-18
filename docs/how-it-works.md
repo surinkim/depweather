@@ -221,6 +221,16 @@ not in the language registries: PHP2Shell (CVE-2026-109618 and
 CVE-2026-109619, October 2026) is a flaw in PHP itself, so it shows on the
 PHP tile, not in the Packagist group.
 
+Bitnami added no Java advisories after 2026-08-26 (PostgreSQL: none since
+August, Redis: none since May), so those tiles also read OSV's **Debian** data
+(`also: {Debian: ["openjdk-*"]}` and so on in `collect/stacks.yml`): Debian's
+security tracker lists new CVEs within hours. Only its
+one-CVE records (`DEBIAN-CVE-…`) are used, and a CVE that Bitnami also lists
+is shown once. Debian's fixed versions are distribution package versions, so
+they are not listed; those records have no summary yet, and the page says
+where the CVE is listed instead. If the Debian download fails, the rest of the
+data is still published and the page names the missing source.
+
 Some products are filed in OSV under many package names. A tile can match
 several names or name prefixes (`match:` in `stacks.yml`): ASP.NET Core covers
 `Microsoft.AspNetCore.*` (including the per-platform runtime packs), .NET
@@ -252,6 +262,7 @@ Not covered yet:
 |---|---|---|---|
 | [OSV.dev](https://osv.dev) | Advisories, affected and fixed versions, aliases | Per-ecosystem export on `osv-vulnerabilities.storage.googleapis.com` (`modified_id.csv`, then one JSON per entry changed in the window) | Records keep the license of their upstream database. **To confirm**: the OSV data license page, not reachable from the environment this was written in |
 | [Bitnami Vulnerability Database](https://github.com/bitnami/vulndb) | Runtimes & servers group, via OSV | — | Apache License 2.0 (README of `bitnami/vulndb`, checked 2026-10-25) |
+| [Debian Security Tracker](https://security-tracker.debian.org/) | Java, PostgreSQL and Redis CVEs, via OSV | `Debian/all.zip` in the same OSV bucket, filtered to `openjdk-*`, `postgresql-<version>` and `redis` | **To confirm**: the tracker's data license, not reachable from the environment this was written in |
 | [GitHub Advisory Database](https://github.com/github/advisory-database) | Most npm / PyPI / Maven / Go advisories, via OSV | — | CC-BY 4.0 (`LICENSE.md` in the repository, checked 2026-10-25). Attribution in the page footer |
 | [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | Known exploited flag, 7-day additions | `known_exploited_vulnerabilities.json`, falling back to CISA's GitHub mirror `cisagov/kev-data` | CC0 1.0. From the `cisagov/kev-data` LICENSE (checked 2026-10-25): "The KEV database is distributed under the Creative Commons 0 1.0 License. You may use this data in any legal manner but note that information provided at any 3rd party links included in the KEV database are bound by the policies and licenses of those 3rd party websites. Use of the information does not authorize you to use the CISA Logo or DHS Seal, nor should such use be interpreted as an endorsement by CISA or DHS." |
 | [FIRST EPSS](https://www.first.org/epss/) | Exploit probability per CVE | `epss_scores-current.csv.gz` | **To confirm.** Secondary copies of FIRST's EPSS usage agreement say the scores are granted freely to the public and ask for attribution to EPSS where practical; the original page at first.org could not be read from the build environment |
