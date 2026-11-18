@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T00:57:38Z",
+ "generated_at": "2026-11-18T04:20:52Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -16,6 +16,16 @@
    "url": "https://api.osv.dev/v1/query",
    "added": 0,
    "errors": []
+  },
+  "osv_also": {
+   "ok": true,
+   "url": "https://osv-vulnerabilities.storage.googleapis.com",
+   "ecosystems": {
+    "Debian": {
+     "ok": true,
+     "added": 109
+    }
+   }
   },
   "osv": {
    "ok": true,
@@ -47,12 +57,12 @@
   }
  },
  "summary": {
-  "today_cves": 43,
+  "today_cves": 81,
   "month": "2026-11",
-  "month_cves": 9602,
+  "month_cves": 9640,
   "month_cves_last_year": 3021,
   "kev_new_7d": 3,
-  "affected_packages_7d": 17,
+  "affected_packages_7d": 18,
   "tracked_packages": 149
  },
  "monthly": [
@@ -110,7 +120,7 @@
   },
   {
    "month": "2026-11",
-   "count": 9602
+   "count": 9640
   }
  ],
  "monthly_is_stale": false,
@@ -1641,7 +1651,7 @@
      "key": "pypi/fastapi",
      "name": "fastapi",
      "label": "FastAPI",
-     "popularity": 133416212.0,
+     "popularity": 133966582.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 18.5,
      "worst_7d": "NONE",
@@ -1652,7 +1662,7 @@
      "key": "pypi/flask",
      "name": "flask",
      "label": "Flask",
-     "popularity": 40270112.0,
+     "popularity": 40296997.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 12.5,
      "worst_7d": "NONE",
@@ -1663,7 +1673,7 @@
      "key": "pypi/django",
      "name": "django",
      "label": "Django",
-     "popularity": 12019994.0,
+     "popularity": 12102286.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": 11.3,
      "worst_7d": "NONE",
@@ -1674,7 +1684,7 @@
      "key": "pypi/requests",
      "name": "requests",
      "label": "requests",
-     "popularity": 344966470.0,
+     "popularity": 346324961.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1685,7 +1695,7 @@
      "key": "pypi/urllib3",
      "name": "urllib3",
      "label": "urllib3",
-     "popularity": 369962986.0,
+     "popularity": 371186317.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1696,7 +1706,7 @@
      "key": "pypi/certifi",
      "name": "certifi",
      "label": "certifi",
-     "popularity": 393049686.0,
+     "popularity": 394355636.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1730,7 +1740,7 @@
      "key": "pypi/cryptography",
      "name": "cryptography",
      "label": "cryptography",
-     "popularity": 314559921.0,
+     "popularity": 314927513.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1741,7 +1751,7 @@
      "key": "pypi/setuptools",
      "name": "setuptools",
      "label": "setuptools",
-     "popularity": 256903800.0,
+     "popularity": 257834545.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1773,7 +1783,7 @@
      "key": "pypi/pyyaml",
      "name": "pyyaml",
      "label": "pyyaml",
-     "popularity": 303302987.0,
+     "popularity": 304861618.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1784,7 +1794,7 @@
      "key": "pypi/pydantic",
      "name": "pydantic",
      "label": "pydantic",
-     "popularity": 280587326.0,
+     "popularity": 281318633.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1795,7 +1805,7 @@
      "key": "pypi/numpy",
      "name": "numpy",
      "label": "numpy",
-     "popularity": 261072615.0,
+     "popularity": 262319591.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1806,7 +1816,7 @@
      "key": "pypi/pandas",
      "name": "pandas",
      "label": "pandas",
-     "popularity": 159175931.0,
+     "popularity": 159158681.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1817,7 +1827,7 @@
      "key": "pypi/jinja2",
      "name": "jinja2",
      "label": "jinja2",
-     "popularity": 162610993.0,
+     "popularity": 163030647.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1828,7 +1838,7 @@
      "key": "pypi/starlette",
      "name": "starlette",
      "label": "starlette",
-     "popularity": 168917036.0,
+     "popularity": 169792795.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1839,7 +1849,7 @@
      "key": "pypi/uvicorn",
      "name": "uvicorn",
      "label": "uvicorn",
-     "popularity": 163646641.0,
+     "popularity": 164527816.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1850,7 +1860,7 @@
      "key": "pypi/httpx",
      "name": "httpx",
      "label": "httpx",
-     "popularity": 194241059.0,
+     "popularity": 195493665.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -1861,7 +1871,7 @@
      "key": "pypi/aiohttp",
      "name": "aiohttp",
      "label": "aiohttp",
-     "popularity": 132701962.0,
+     "popularity": 132724123.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "HIGH",
@@ -2288,7 +2298,7 @@
      "key": "pypi/pillow",
      "name": "pillow",
      "label": "pillow",
-     "popularity": 165095490.0,
+     "popularity": 165036051.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "HIGH",
@@ -3387,7 +3397,7 @@
      "key": "pypi/pyjwt",
      "name": "pyjwt",
      "label": "pyjwt",
-     "popularity": 173550408.0,
+     "popularity": 174212775.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3419,7 +3429,7 @@
      "key": "pypi/sqlalchemy",
      "name": "sqlalchemy",
      "label": "sqlalchemy",
-     "popularity": 98932583.0,
+     "popularity": 100148606.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3430,7 +3440,7 @@
      "key": "pypi/lxml",
      "name": "lxml",
      "label": "lxml",
-     "popularity": 98022998.0,
+     "popularity": 98614320.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3441,7 +3451,7 @@
      "key": "pypi/protobuf",
      "name": "protobuf",
      "label": "protobuf",
-     "popularity": 183870406.0,
+     "popularity": 184226700.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3452,7 +3462,7 @@
      "key": "pypi/transformers",
      "name": "transformers",
      "label": "transformers",
-     "popularity": 28000809.0,
+     "popularity": 27846781.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -3463,7 +3473,7 @@
      "key": "pypi/torch",
      "name": "torch",
      "label": "torch",
-     "popularity": 12492391.0,
+     "popularity": 12390822.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
@@ -4988,7 +4998,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 32980264.0,
+     "popularity": 32733929.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -5054,7 +5064,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1695170.0,
+     "popularity": 1667106.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -5065,7 +5075,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 37085665.0,
+     "popularity": 36102418.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5076,7 +5086,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 37819176.0,
+     "popularity": 37284422.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5087,7 +5097,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 34218113.0,
+     "popularity": 34067757.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5098,7 +5108,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 13941752.0,
+     "popularity": 13684077.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5145,7 +5155,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 29754317.0,
+     "popularity": 28827758.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5156,7 +5166,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 26875184.0,
+     "popularity": 26803098.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5167,7 +5177,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 29700095.0,
+     "popularity": 28898231.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5178,7 +5188,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4703572.0,
+     "popularity": 4709753.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5189,7 +5199,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 23495658.0,
+     "popularity": 22894765.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5200,7 +5210,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 20311615.0,
+     "popularity": 20655562.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5224,7 +5234,7 @@
      "popularity": 1.0,
      "popularity_source": "fixed weight",
      "survey": null,
-     "worst_7d": "MEDIUM",
+     "worst_7d": "NONE",
      "worst_30d": "MEDIUM",
      "vulns": [
       {
@@ -5862,7 +5872,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 818222260.0,
+     "popularity": 818281042.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "CRITICAL",
@@ -6372,7 +6382,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1393012122.0,
+     "popularity": 1393193525.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6487,7 +6497,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1302582414.0,
+     "popularity": 1302709171.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6571,7 +6581,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 631245076.0,
+     "popularity": 631313451.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6582,7 +6592,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 305709048.0,
+     "popularity": 305733006.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6593,7 +6603,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 348623545.0,
+     "popularity": 348651636.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6604,7 +6614,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1302916859.0,
+     "popularity": 1303009495.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6615,7 +6625,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 406903371.0,
+     "popularity": 406967801.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6636,7 +6646,7 @@
      "key": "hex/phoenix",
      "name": "phoenix",
      "label": "Phoenix",
-     "popularity": 646903.0,
+     "popularity": 645110.0,
      "popularity_source": "Hex downloads, last week",
      "survey": 2.5,
      "worst_7d": "NONE",
@@ -6647,7 +6657,7 @@
      "key": "hex/phoenix_live_view",
      "name": "phoenix_live_view",
      "label": "LiveView",
-     "popularity": 518634.0,
+     "popularity": 509550.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -6658,7 +6668,7 @@
      "key": "hex/plug",
      "name": "plug",
      "label": "plug",
-     "popularity": 744432.0,
+     "popularity": 754962.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "MEDIUM",
@@ -6720,7 +6730,7 @@
      "key": "hex/ecto",
      "name": "ecto",
      "label": "ecto",
-     "popularity": 624925.0,
+     "popularity": 624846.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -6757,7 +6767,7 @@
      "key": "hex/cowboy",
      "name": "cowboy",
      "label": "cowboy",
-     "popularity": 446193.0,
+     "popularity": 442269.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -6817,7 +6827,7 @@
      "key": "hex/hackney",
      "name": "hackney",
      "label": "hackney",
-     "popularity": 305138.0,
+     "popularity": 305128.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -7474,9 +7484,1264 @@
      "popularity": 1.0,
      "popularity_source": "fixed weight",
      "survey": null,
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
+     "worst_7d": "HIGH",
+     "worst_30d": "CRITICAL",
+     "vulns": [
+      {
+       "id": "DEBIAN-CVE-2026-114940",
+       "aliases": [
+        "CVE-2026-114940"
+       ],
+       "cves": [
+        "CVE-2026-114940"
+       ],
+       "published": "2026-11-17T22:18:24Z",
+       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.4,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114940",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114941",
+       "aliases": [
+        "CVE-2026-114941"
+       ],
+       "cves": [
+        "CVE-2026-114941"
+       ],
+       "published": "2026-11-17T22:18:24Z",
+       "summary": "Listed by Debian for openjdk-21, openjdk-25; no summary yet",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.0,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114941",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114942",
+       "aliases": [
+        "CVE-2026-114942"
+       ],
+       "cves": [
+        "CVE-2026-114942"
+       ],
+       "published": "2026-11-17T22:18:24Z",
+       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.0,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114942",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114943",
+       "aliases": [
+        "CVE-2026-114943"
+       ],
+       "cves": [
+        "CVE-2026-114943"
+       ],
+       "published": "2026-11-17T22:18:24Z",
+       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 6.5,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114943",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114944",
+       "aliases": [
+        "CVE-2026-114944"
+       ],
+       "cves": [
+        "CVE-2026-114944"
+       ],
+       "published": "2026-11-17T22:18:24Z",
+       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114944",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114945",
+       "aliases": [
+        "CVE-2026-114945"
+       ],
+       "cves": [
+        "CVE-2026-114945"
+       ],
+       "published": "2026-11-17T22:18:24Z",
+       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114945",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114946",
+       "aliases": [
+        "CVE-2026-114946"
+       ],
+       "cves": [
+        "CVE-2026-114946"
+       ],
+       "published": "2026-11-17T22:18:24Z",
+       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114946",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114947",
+       "aliases": [
+        "CVE-2026-114947"
+       ],
+       "cves": [
+        "CVE-2026-114947"
+       ],
+       "published": "2026-11-17T22:18:24Z",
+       "summary": "Listed by Debian for openjdk-25; no summary yet",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114947",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114938",
+       "aliases": [
+        "CVE-2026-114938"
+       ],
+       "cves": [
+        "CVE-2026-114938"
+       ],
+       "published": "2026-11-17T22:18:23Z",
+       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.1,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114938",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114939",
+       "aliases": [
+        "CVE-2026-114939"
+       ],
+       "cves": [
+        "CVE-2026-114939"
+       ],
+       "published": "2026-11-17T22:18:23Z",
+       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.4,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114939",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DEBIAN-CVE-2026-114820",
+       "aliases": [
+        "CVE-2026-114820"
+       ],
+       "cves": [
+        "CVE-2026-114820"
+       ],
+       "published": "2026-10-24T19:17:04Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u511-b32, 8u511-perf-b32, 11.0.33.0.2, 17.0.21.0.2, 21.0.13.0.2, 25.0.5.0.2, 27.0.1.0.2; Oracle Graal",
+       "severity": "CRITICAL",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 9.1,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-114820",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00253,
+       "epss_percentile": 0.16944
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91395",
+       "aliases": [
+        "CVE-2026-91395"
+       ],
+       "cves": [
+        "CVE-2026-91395"
+       ],
+       "published": "2026-10-22T00:47:36Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Utility).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle GraalVM",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.5,
+       "cvss_source": "NVD",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91395",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00253,
+       "epss_percentile": 0.16944
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91396",
+       "aliases": [
+        "CVE-2026-91396"
+       ],
+       "cves": [
+        "CVE-2026-91396"
+       ],
+       "published": "2026-10-22T00:47:31Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Utility).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle GraalVM",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.5,
+       "cvss_source": "NVD",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91396",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00333,
+       "epss_percentile": 0.26888
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91403",
+       "aliases": [
+        "CVE-2026-91403"
+       ],
+       "cves": [
+        "CVE-2026-91403"
+       ],
+       "published": "2026-10-21T22:16:50Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u511, 8u511-perf, 11.0.33, 17.0.21, 21.0.13, 25.0.5, 27.0.1; Oracle GraalVM for JDK: 17.0.21 and  21.",
+       "severity": "CRITICAL",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 9.1,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91403",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00375,
+       "epss_percentile": 0.31964
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91487",
+       "aliases": [
+        "CVE-2026-91487"
+       ],
+       "cves": [
+        "CVE-2026-91487"
+       ],
+       "published": "2026-10-20T22:20:53Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerabi",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91487",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00168,
+       "epss_percentile": 0.06197
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91464",
+       "aliases": [
+        "CVE-2026-91464"
+       ],
+       "cves": [
+        "CVE-2026-91464"
+       ],
+       "published": "2026-10-20T22:20:50Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91464",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00289,
+       "epss_percentile": 0.21795
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91453",
+       "aliases": [
+        "CVE-2026-91453"
+       ],
+       "cves": [
+        "CVE-2026-91453"
+       ],
+       "published": "2026-10-20T22:20:49Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Lightweight HTTP Server).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM fo",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91453",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0029,
+       "epss_percentile": 0.21801
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91461",
+       "aliases": [
+        "CVE-2026-91461"
+       ],
+       "cves": [
+        "CVE-2026-91461"
+       ],
+       "published": "2026-10-20T22:20:49Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91461",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00187,
+       "epss_percentile": 0.08423
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91462",
+       "aliases": [
+        "CVE-2026-91462"
+       ],
+       "cves": [
+        "CVE-2026-91462"
+       ],
+       "published": "2026-10-20T22:20:49Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91462",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00274,
+       "epss_percentile": 0.19986
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91463",
+       "aliases": [
+        "CVE-2026-91463"
+       ],
+       "cves": [
+        "CVE-2026-91463"
+       ],
+       "published": "2026-10-20T22:20:49Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91463",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00227,
+       "epss_percentile": 0.13596
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91451",
+       "aliases": [
+        "CVE-2026-91451"
+       ],
+       "cves": [
+        "CVE-2026-91451"
+       ],
+       "published": "2026-10-20T22:20:48Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulner",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91451",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0029,
+       "epss_percentile": 0.21802
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91452",
+       "aliases": [
+        "CVE-2026-91452"
+       ],
+       "cves": [
+        "CVE-2026-91452"
+       ],
+       "published": "2026-10-20T22:20:48Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.2",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91452",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0029,
+       "epss_percentile": 0.21801
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91418",
+       "aliases": [
+        "CVE-2026-91418"
+       ],
+       "cves": [
+        "CVE-2026-91418"
+       ],
+       "published": "2026-10-20T22:20:45Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle JavaFX, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: ImageIO).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle JavaFX: 21.",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91418",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00403,
+       "epss_percentile": 0.3508
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91409",
+       "aliases": [
+        "CVE-2026-91409"
+       ],
+       "cves": [
+        "CVE-2026-91409"
+       ],
+       "published": "2026-10-20T22:20:44Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Networking).   The supported version that is affected is Oracle Java SE: 27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerabili",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91409",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00379,
+       "epss_percentile": 0.32442
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91410",
+       "aliases": [
+        "CVE-2026-91410"
+       ],
+       "cves": [
+        "CVE-2026-91410"
+       ],
+       "published": "2026-10-20T22:20:44Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnera",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91410",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00306,
+       "epss_percentile": 0.23764
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91411",
+       "aliases": [
+        "CVE-2026-91411"
+       ],
+       "cves": [
+        "CVE-2026-91411"
+       ],
+       "published": "2026-10-20T22:20:44Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle GraalVM En",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 6.5,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91411",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00267,
+       "epss_percentile": 0.18948
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91415",
+       "aliases": [
+        "CVE-2026-91415"
+       ],
+       "cves": [
+        "CVE-2026-91415"
+       ],
+       "published": "2026-10-20T22:20:44Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and ",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.0,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91415",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00239,
+       "epss_percentile": 0.15134
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91397",
+       "aliases": [
+        "CVE-2026-91397"
+       ],
+       "cves": [
+        "CVE-2026-91397"
+       ],
+       "published": "2026-10-20T22:20:43Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Serviceability).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.6,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91397",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00095,
+       "epss_percentile": 0.00607
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91398",
+       "aliases": [
+        "CVE-2026-91398"
+       ],
+       "cves": [
+        "CVE-2026-91398"
+       ],
+       "published": "2026-10-20T22:20:43Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 6.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91398",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00231,
+       "epss_percentile": 0.14023
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91400",
+       "aliases": [
+        "CVE-2026-91400"
+       ],
+       "cves": [
+        "CVE-2026-91400"
+       ],
+       "published": "2026-10-20T22:20:43Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Sound).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 a",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.1,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91400",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00257,
+       "epss_percentile": 0.17491
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91394",
+       "aliases": [
+        "CVE-2026-91394"
+       ],
+       "cves": [
+        "CVE-2026-91394"
+       ],
+       "published": "2026-10-20T22:20:42Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1. Difficult to exploit vulnerability",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91394",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00419,
+       "epss_percentile": 0.36783
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91379",
+       "aliases": [
+        "CVE-2026-91379"
+       ],
+       "cves": [
+        "CVE-2026-91379"
+       ],
+       "published": "2026-10-20T22:20:41Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JDK tools).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and ",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91379",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00122,
+       "epss_percentile": 0.02035
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91380",
+       "aliases": [
+        "CVE-2026-91380"
+       ],
+       "cves": [
+        "CVE-2026-91380"
+       ],
+       "published": "2026-10-20T22:20:41Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Utility).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.0,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91380",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00097,
+       "epss_percentile": 0.00735
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91382",
+       "aliases": [
+        "CVE-2026-91382"
+       ],
+       "cves": [
+        "CVE-2026-91382"
+       ],
+       "published": "2026-10-20T22:20:41Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle G",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 6.5,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91382",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00377,
+       "epss_percentile": 0.32199
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91373",
+       "aliases": [
+        "CVE-2026-91373"
+       ],
+       "cves": [
+        "CVE-2026-91373"
+       ],
+       "published": "2026-10-20T22:20:40Z",
+       "summary": "Vulnerability in Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerabilit",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91373",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00441,
+       "epss_percentile": 0.38869
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91374",
+       "aliases": [
+        "CVE-2026-91374"
+       ],
+       "cves": [
+        "CVE-2026-91374"
+       ],
+       "published": "2026-10-20T22:20:40Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Serviceability).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91374",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00168,
+       "epss_percentile": 0.06197
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91375",
+       "aliases": [
+        "CVE-2026-91375"
+       ],
+       "cves": [
+        "CVE-2026-91375"
+       ],
+       "published": "2026-10-20T22:20:40Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerab",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91375",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00092,
+       "epss_percentile": 0.00524
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91332",
+       "aliases": [
+        "CVE-2026-91332"
+       ],
+       "cves": [
+        "CVE-2026-91332"
+       ],
+       "published": "2026-10-20T22:20:35Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerabi",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91332",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0029,
+       "epss_percentile": 0.21802
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91333",
+       "aliases": [
+        "CVE-2026-91333"
+       ],
+       "cves": [
+        "CVE-2026-91333"
+       ],
+       "published": "2026-10-20T22:20:35Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attack",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91333",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00265,
+       "epss_percentile": 0.18526
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91334",
+       "aliases": [
+        "CVE-2026-91334"
+       ],
+       "cves": [
+        "CVE-2026-91334"
+       ],
+       "published": "2026-10-20T22:20:35Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: ImageIO).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91334",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00208,
+       "epss_percentile": 0.11015
+      },
+      {
+       "id": "DEBIAN-CVE-2026-91335",
+       "aliases": [
+        "CVE-2026-91335"
+       ],
+       "cves": [
+        "CVE-2026-91335"
+       ],
+       "published": "2026-10-20T22:20:35Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: AWT).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 2.6,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91335",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0021,
+       "epss_percentile": 0.11199
+      },
+      {
+       "id": "DEBIAN-CVE-2026-87367",
+       "aliases": [
+        "CVE-2026-87367"
+       ],
+       "cves": [
+        "CVE-2026-87367"
+       ],
+       "published": "2026-10-20T22:20:14Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JAXP).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87367",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00252,
+       "epss_percentile": 0.16777
+      },
+      {
+       "id": "DEBIAN-CVE-2026-87291",
+       "aliases": [
+        "CVE-2026-87291"
+       ],
+       "cves": [
+        "CVE-2026-87291"
+       ],
+       "published": "2026-10-20T22:20:06Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attack",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87291",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00308,
+       "epss_percentile": 0.23962
+      },
+      {
+       "id": "DEBIAN-CVE-2026-87292",
+       "aliases": [
+        "CVE-2026-87292"
+       ],
+       "cves": [
+        "CVE-2026-87292"
+       ],
+       "published": "2026-10-20T22:20:06Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.2",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87292",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00239,
+       "epss_percentile": 0.15049
+      },
+      {
+       "id": "DEBIAN-CVE-2026-87294",
+       "aliases": [
+        "CVE-2026-87294"
+       ],
+       "cves": [
+        "CVE-2026-87294"
+       ],
+       "published": "2026-10-20T22:20:06Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 6.5,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87294",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00262,
+       "epss_percentile": 0.18171
+      },
+      {
+       "id": "DEBIAN-CVE-2026-87255",
+       "aliases": [
+        "CVE-2026-87255"
+       ],
+       "cves": [
+        "CVE-2026-87255"
+       ],
+       "published": "2026-10-20T22:20:05Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 25.0.4.1 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this v",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87255",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00308,
+       "epss_percentile": 0.24004
+      },
+      {
+       "id": "DEBIAN-CVE-2026-87290",
+       "aliases": [
+        "CVE-2026-87290"
+       ],
+       "cves": [
+        "CVE-2026-87290"
+       ],
+       "published": "2026-10-20T22:20:05Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JAXP).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87290",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00327,
+       "epss_percentile": 0.26187
+      },
+      {
+       "id": "DEBIAN-CVE-2026-83400",
+       "aliases": [
+        "CVE-2026-83400"
+       ],
+       "cves": [
+        "CVE-2026-83400"
+       ],
+       "published": "2026-10-20T22:19:56Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JAXP).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83400",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00396,
+       "epss_percentile": 0.34372
+      },
+      {
+       "id": "DEBIAN-CVE-2026-83387",
+       "aliases": [
+        "CVE-2026-83387"
+       ],
+       "cves": [
+        "CVE-2026-83387"
+       ],
+       "published": "2026-10-20T22:19:55Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JDBC).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83387",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00327,
+       "epss_percentile": 0.26188
+      },
+      {
+       "id": "DEBIAN-CVE-2026-83395",
+       "aliases": [
+        "CVE-2026-83395"
+       ],
+       "cves": [
+        "CVE-2026-83395"
+       ],
+       "published": "2026-10-20T22:19:55Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.2",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 6.5,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83395",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00327,
+       "epss_percentile": 0.26199
+      },
+      {
+       "id": "DEBIAN-CVE-2026-83378",
+       "aliases": [
+        "CVE-2026-83378"
+       ],
+       "cves": [
+        "CVE-2026-83378"
+       ],
+       "published": "2026-10-20T22:19:54Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attack",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83378",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00214,
+       "epss_percentile": 0.11823
+      },
+      {
+       "id": "DEBIAN-CVE-2026-83380",
+       "aliases": [
+        "CVE-2026-83380"
+       ],
+       "cves": [
+        "CVE-2026-83380"
+       ],
+       "published": "2026-10-20T22:19:54Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JAAS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83380",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00325,
+       "epss_percentile": 0.25945
+      },
+      {
+       "id": "DEBIAN-CVE-2026-83381",
+       "aliases": [
+        "CVE-2026-83381"
+       ],
+       "cves": [
+        "CVE-2026-83381"
+       ],
+       "published": "2026-10-20T22:19:54Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vu",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83381",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00226,
+       "epss_percentile": 0.13383
+      },
+      {
+       "id": "DEBIAN-CVE-2026-83374",
+       "aliases": [
+        "CVE-2026-83374"
+       ],
+       "cves": [
+        "CVE-2026-83374"
+       ],
+       "published": "2026-10-20T22:19:53Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83374",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00289,
+       "epss_percentile": 0.21709
+      },
+      {
+       "id": "DEBIAN-CVE-2026-83376",
+       "aliases": [
+        "CVE-2026-83376"
+       ],
+       "cves": [
+        "CVE-2026-83376"
+       ],
+       "published": "2026-10-20T22:19:53Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83376",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00252,
+       "epss_percentile": 0.16777
+      },
+      {
+       "id": "DEBIAN-CVE-2026-101737",
+       "aliases": [
+        "CVE-2026-101737"
+       ],
+       "cves": [
+        "CVE-2026-101737"
+       ],
+       "published": "2026-10-20T22:18:28Z",
+       "summary": "Vulnerability in Oracle Java SE (component: Compiler).   The supported version that is affected is Oracle Java SE: 26.0.2. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerabi",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-101737",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00456,
+       "epss_percentile": 0.40114
+      },
+      {
+       "id": "DEBIAN-CVE-2026-101516",
+       "aliases": [
+        "CVE-2026-101516"
+       ],
+       "cves": [
+        "CVE-2026-101516"
+       ],
+       "published": "2026-10-20T22:18:00Z",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 6.5,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-101516",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00267,
+       "epss_percentile": 0.18939
+      }
+     ]
     },
     {
      "key": "runtimes/ruby",
@@ -7981,9 +9246,1154 @@
      "popularity": 1.0,
      "popularity_source": "fixed weight",
      "survey": null,
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
+     "worst_7d": "HIGH",
+     "worst_30d": "HIGH",
+     "vulns": [
+      {
+       "id": "DEBIAN-CVE-2026-18447",
+       "aliases": [
+        "CVE-2026-18447"
+       ],
+       "cves": [
+        "CVE-2026-18447"
+       ],
+       "published": "2026-11-12T15:17:51Z",
+       "summary": "Type confusion in PostgreSQL SQL-language functions allows an object creator to execute arbitrary code as the operating system user running the database, via an output parameter of type \"any\".  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-18447",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48836
+      },
+      {
+       "id": "DEBIAN-CVE-2026-6460",
+       "aliases": [
+        "CVE-2026-6460"
+       ],
+       "cves": [
+        "CVE-2026-6460"
+       ],
+       "published": "2026-11-12T15:17:51Z",
+       "summary": "Type confusion in PostgreSQL allows an object creator to execute arbitrary code as the operating system user running the database, via ALTER ... SET DATA TYPE primarily.  Other DDL attack routes exist, such as \"ALTER TABLE ... ADD COLUMN; ROLLBACK; ALTER TABLE ... ADD COLUMN\".  The system had inadeq",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-6460",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48838
+      },
+      {
+       "id": "DEBIAN-CVE-2026-6467",
+       "aliases": [
+        "CVE-2026-6467"
+       ],
+       "cves": [
+        "CVE-2026-6467"
+       ],
+       "published": "2026-11-12T15:17:51Z",
+       "summary": "Uncontrolled search path element in PostgreSQL CREATE EXTENSION allows an attacker with database-level CREATE privilege to execute arbitrary code as the bootstrap superuser, via ALTER SCHEMA ... RENAME or CREATE EXTENSION ... SCHEMA \"$user\".  ALTER EXTENSION was also affected.  A trusted-extension s",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.2,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-6467",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00615,
+       "epss_percentile": 0.50101
+      },
+      {
+       "id": "DEBIAN-CVE-2026-16237",
+       "aliases": [
+        "CVE-2026-16237"
+       ],
+       "cves": [
+        "CVE-2026-16237"
+       ],
+       "published": "2026-11-12T15:17:50Z",
+       "summary": "Improper protection in PostgreSQL INSERT ... ON CONFLICT on auto-updatable views allows an attacker having INSERT and UPDATE privileges on the view to read and modify every row in the view's base table, via iterated INSERT ... ON CONFLICT DO UPDATE.  This bypasses the view's WHERE condition, whether",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.4,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16237",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00272,
+       "epss_percentile": 0.19839
+      },
+      {
+       "id": "DEBIAN-CVE-2026-16240",
+       "aliases": [
+        "CVE-2026-16240"
+       ],
+       "cves": [
+        "CVE-2026-16240"
+       ],
+       "published": "2026-11-12T15:17:50Z",
+       "summary": "Use of externally-controlled format string in PostgreSQL pg_basebackup allows an attacker having already compromised a server to achieve disclosure from pg_basebackup memory, via backup manifest bytes.  The vulnerability does not return the improperly-read bytes back to the attacker's server, so a s",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.7,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16240",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00269,
+       "epss_percentile": 0.19287
+      },
+      {
+       "id": "DEBIAN-CVE-2026-14661",
+       "aliases": [
+        "CVE-2026-14661"
+       ],
+       "cves": [
+        "CVE-2026-14661"
+       ],
+       "published": "2026-11-12T15:17:49Z",
+       "summary": "External control of file name in PostgreSQL dblink and CREATE/ALTER SUBSCRIPTION allows a user to achieve persistent denial of service, via appending invalid data to a chosen file.  Specifically, the \"sslkeylogfile\" connection parameter appends data, in NSS keylog format, to a file of the user's cho",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.1,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-14661",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00434,
+       "epss_percentile": 0.38223
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120153",
+       "aliases": [
+        "CVE-2026-120153"
+       ],
+       "cves": [
+        "CVE-2026-120153"
+       ],
+       "published": "2026-11-12T15:17:44Z",
+       "summary": "SQL injection in PostgreSQL extension-script substitutions allows an attacker with database-level CREATE privilege to execute arbitrary code as the bootstrap superuser, via a schema or owner name containing newlines or other special substrings.  This is similar to CVE-2023-39417, but it requires a n",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.2,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120153",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00552,
+       "epss_percentile": 0.46727
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120154",
+       "aliases": [
+        "CVE-2026-120154"
+       ],
+       "cves": [
+        "CVE-2026-120154"
+       ],
+       "published": "2026-11-12T15:17:44Z",
+       "summary": "Improper protection in PostgreSQL INSERT ... ON CONFLICT allows an attacker having INSERT, UPDATE, and applicable SELECT privileges on the table to read every row despite row security policies, via iterated INSERT ... ON CONFLICT DO UPDATE.  Unlike CVE-2026-16237, this does not facilitate improper w",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120154",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00295,
+       "epss_percentile": 0.22368
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120145",
+       "aliases": [
+        "CVE-2026-120145"
+       ],
+       "cves": [
+        "CVE-2026-120145"
+       ],
+       "published": "2026-11-12T15:17:43Z",
+       "summary": "Missing authorization in PostgreSQL logical replication allows a compromised publisher to execute arbitrary code as the operating system user running the superuser-owned subscription, via naming a system catalog as a replication target.  Only subscriptions owned by a superuser are vulnerable.  Versi",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120145",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00541,
+       "epss_percentile": 0.46064
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120146",
+       "aliases": [
+        "CVE-2026-120146"
+       ],
+       "cves": [
+        "CVE-2026-120146"
+       ],
+       "published": "2026-11-12T15:17:43Z",
+       "summary": "Missing authorization in PostgreSQL REASSIGN OWNED allows a role granted INHERIT but not SET to transfer objects to the granted role.  It also allows reassignment of database ownership without the CREATEDB privilege.  The equivalent ALTER ... OWNER commands block this.  Versions before PostgreSQL 18",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120146",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00254,
+       "epss_percentile": 0.17103
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120147",
+       "aliases": [
+        "CVE-2026-120147"
+       ],
+       "cves": [
+        "CVE-2026-120147"
+       ],
+       "published": "2026-11-12T15:17:43Z",
+       "summary": "Use after free in the PostgreSQL dblink extension allows an object creator to execute arbitrary code as the operating system user running the database, via type conversion code that re-enters dblink and closes a connection whose results an outer dblink call is reading.  Versions before PostgreSQL 18",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120147",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48838
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120148",
+       "aliases": [
+        "CVE-2026-120148"
+       ],
+       "cves": [
+        "CVE-2026-120148"
+       ],
+       "published": "2026-11-12T15:17:43Z",
+       "summary": "Type confusion in PostgreSQL extended statistics allows an object creator to execute arbitrary code as the operating system user running the database, via a statistics expression of an anonymous RECORD type whose backend-local type identifier denotes a different row type in another session.  Version",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.1,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120148",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00483,
+       "epss_percentile": 0.42208
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120149",
+       "aliases": [
+        "CVE-2026-120149"
+       ],
+       "cves": [
+        "CVE-2026-120149"
+       ],
+       "published": "2026-11-12T15:17:43Z",
+       "summary": "Heap-based buffer overflow in PostgreSQL foreign batch inserts allows a foreign server to execute arbitrary code, via reporting that it inserted more rows than the server supplied.  postgres_fdw can legitimately encounter this when a rule on the remote table expands an INSERT into additional rows.  ",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120149",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00596,
+       "epss_percentile": 0.49085
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120150",
+       "aliases": [
+        "CVE-2026-120150"
+       ],
+       "cves": [
+        "CVE-2026-120150"
+       ],
+       "published": "2026-11-12T15:17:43Z",
+       "summary": "Use after free in PostgreSQL expanded-record domain checks allows an object creator to execute arbitrary code as the operating system user running the database, via repeated checks of a domain over a composite type that cause reuse of a dangling memory-context pointer.  Versions before PostgreSQL 18",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120150",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00577,
+       "epss_percentile": 0.48139
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120151",
+       "aliases": [
+        "CVE-2026-120151"
+       ],
+       "cves": [
+        "CVE-2026-120151"
+       ],
+       "published": "2026-11-12T15:17:43Z",
+       "summary": "Type confusion in PostgreSQL plpgsql record-field assignment allows an object creator to execute arbitrary code as the operating system user running the database, via a reentrant domain CHECK that changes a RECORD variable's row type while a value is being cast.  Versions before PostgreSQL 18.7, 17.",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120151",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48834
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120152",
+       "aliases": [
+        "CVE-2026-120152"
+       ],
+       "cves": [
+        "CVE-2026-120152"
+       ],
+       "published": "2026-11-12T15:17:43Z",
+       "summary": "Use after free in PostgreSQL pg_show_all_settings() allows a database user to retrieve memory contents, via loading a module while the function is scanning custom-variable placeholders that the module replaces and frees.  Within major versions 16-18, minor versions before PostgreSQL 18.7, 17.12, and",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120152",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00295,
+       "epss_percentile": 0.22368
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116335",
+       "aliases": [
+        "CVE-2026-116335"
+       ],
+       "cves": [
+        "CVE-2026-116335"
+       ],
+       "published": "2026-11-12T15:17:42Z",
+       "summary": "Type confusion in PostgreSQL operator commutator and negator links allows an object creator to execute arbitrary code as the operating system user running the database, via linking operators having different result types or creating inconsistent reciprocal links.  Versions before PostgreSQL 18.7, 17",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116335",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48838
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116336",
+       "aliases": [
+        "CVE-2026-116336"
+       ],
+       "cves": [
+        "CVE-2026-116336"
+       ],
+       "published": "2026-11-12T15:17:42Z",
+       "summary": "Operation on a dropped index in PostgreSQL REINDEX CONCURRENTLY allows an object creator to execute arbitrary code as the operating system user running the database, via an index expression that issues DROP INDEX.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116336",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00638,
+       "epss_percentile": 0.51189
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120139",
+       "aliases": [
+        "CVE-2026-120139"
+       ],
+       "cves": [
+        "CVE-2026-120139"
+       ],
+       "published": "2026-11-12T15:17:42Z",
+       "summary": "Integer wraparound in PostgreSQL in-memory tuple-size calculations allows a database user to execute arbitrary code as the operating system user running the database, via oversized tuple data.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120139",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48834
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120141",
+       "aliases": [
+        "CVE-2026-120141"
+       ],
+       "cves": [
+        "CVE-2026-120141"
+       ],
+       "published": "2026-11-12T15:17:42Z",
+       "summary": "Type confusion in PostgreSQL materialized set-returning functions allows a database user to execute arbitrary code as the operating system user running the database, via returning rows having different dynamic RECORD return types.  json_populate_recordset() is one affected function.  Versions before",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120141",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48837
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120142",
+       "aliases": [
+        "CVE-2026-120142"
+       ],
+       "cves": [
+        "CVE-2026-120142"
+       ],
+       "published": "2026-11-12T15:17:42Z",
+       "summary": "Type confusion in PostgreSQL anonymous RECORD types allows an object creator to execute arbitrary code as the operating system user running the database, via row types having dropped attributes in the same positions but with different widths or alignments.  Within major versions 17-18, minor version",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120142",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48835
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120143",
+       "aliases": [
+        "CVE-2026-120143"
+       ],
+       "cves": [
+        "CVE-2026-120143"
+       ],
+       "published": "2026-11-12T15:17:42Z",
+       "summary": "Use after free in PostgreSQL trigger functions allows an object creator to execute arbitrary code as the operating system user running the database, via a cursor over a transition table.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120143",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48835
+      },
+      {
+       "id": "DEBIAN-CVE-2026-120144",
+       "aliases": [
+        "CVE-2026-120144"
+       ],
+       "cves": [
+        "CVE-2026-120144"
+       ],
+       "published": "2026-11-12T15:17:42Z",
+       "summary": "Type confusion from incomplete PostgreSQL type-cache invalidation allows an object creator to execute arbitrary code as the operating system user running the database, via a composite type change while its cache entry is being populated.  Within major version 18, minor versions before PostgreSQL 18.",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-120144",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48835
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116326",
+       "aliases": [
+        "CVE-2026-116326"
+       ],
+       "cves": [
+        "CVE-2026-116326"
+       ],
+       "published": "2026-11-12T15:17:41Z",
+       "summary": "Uncaught exceptions in PostgreSQL plperl allow an object creator to cause use of a stale sigjmp_buf, via a tied Perl object, or a Perl object whose overloaded conversion throws while plperl is handling another error.  We have not ruled out arbitrary code execution on some platform.  Versions before ",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116326",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00638,
+       "epss_percentile": 0.51188
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116327",
+       "aliases": [
+        "CVE-2026-116327"
+       ],
+       "cves": [
+        "CVE-2026-116327"
+       ],
+       "published": "2026-11-12T15:17:41Z",
+       "summary": "Exposure of sensitive information in PostgreSQL security_barrier processing allows a database user to infer values hidden by a security_barrier view, via applying a leaky function to a CASE test value or internal parameter that indirectly represents a protected column.  Versions before PostgreSQL 18",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116327",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00224,
+       "epss_percentile": 0.13131
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116328",
+       "aliases": [
+        "CVE-2026-116328"
+       ],
+       "cves": [
+        "CVE-2026-116328"
+       ],
+       "published": "2026-11-12T15:17:41Z",
+       "summary": "Integer wraparound in PostgreSQL generation memory contexts allows a database user to execute arbitrary code as the operating system user running the database, via freeing an allocation larger than 1 GB and causing its block to be reused for smaller chunks whose back-pointer offset cannot represent ",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116328",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48833
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116329",
+       "aliases": [
+        "CVE-2026-116329"
+       ],
+       "cves": [
+        "CVE-2026-116329"
+       ],
+       "published": "2026-11-12T15:17:41Z",
+       "summary": "Type confusion in PostgreSQL statistics import allows a table maintainer to execute arbitrary code as the operating system user running the database, via nested SET DATA TYPE during conversion of values to import.  Within major version 18, minor versions before PostgreSQL 18.7 are affected.  Version",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116329",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48833
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116330",
+       "aliases": [
+        "CVE-2026-116330"
+       ],
+       "cves": [
+        "CVE-2026-116330"
+       ],
+       "published": "2026-11-12T15:17:41Z",
+       "summary": "Untrusted data inclusion in PostgreSQL pg_dump tar-format restore.sql allows a compromised origin server to execute arbitrary code as the client operating system account running psql, via the predictable restriction key in restore.sql.  This is a gap in the fix for CVE-2025-8714.  restore.sql is und",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116330",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00373,
+       "epss_percentile": 0.31776
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116331",
+       "aliases": [
+        "CVE-2026-116331"
+       ],
+       "cves": [
+        "CVE-2026-116331"
+       ],
+       "published": "2026-11-12T15:17:41Z",
+       "summary": "Type confusion in PostgreSQL min/max aggregate optimization allows an object creator to execute arbitrary code as the operating system user running the database, via a user-defined aggregate whose SORTOP option causes the planner to treat the aggregate's input and result as the same type when they d",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116331",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48834
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116332",
+       "aliases": [
+        "CVE-2026-116332"
+       ],
+       "cves": [
+        "CVE-2026-116332"
+       ],
+       "published": "2026-11-12T15:17:41Z",
+       "summary": "Use after free in PostgreSQL portal setup allows an object creator to execute arbitrary code as the operating system user running the database, via running user-defined code during planning or executor startup that closes the portal currently being prepared.  Versions before PostgreSQL 18.7, 17.12, ",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116332",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48833
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116333",
+       "aliases": [
+        "CVE-2026-116333"
+       ],
+       "cves": [
+        "CVE-2026-116333"
+       ],
+       "published": "2026-11-12T15:17:41Z",
+       "summary": "Buffer over-read in PostgreSQL parallel B-tree scans allows an object creator to read attacker-chosen server-memory addresses, via a function incorrectly marked PARALLEL SAFE or STABLE to make participating workers build different scan-key arrays.  Within major versions 17-18, minor versions before ",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 6.5,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116333",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00371,
+       "epss_percentile": 0.31533
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116318",
+       "aliases": [
+        "CVE-2026-116318"
+       ],
+       "cves": [
+        "CVE-2026-116318"
+       ],
+       "published": "2026-11-12T15:17:40Z",
+       "summary": "SQL injection in PostgreSQL pg_dump allows an object creator to execute arbitrary SQL as the user restoring the dump, via an inherited column having a child-local not-null constraint whose name requires quoting.  Within major version 18, minor versions before PostgreSQL 18.7 are affected.  Versions ",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116318",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0043,
+       "epss_percentile": 0.37753
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116319",
+       "aliases": [
+        "CVE-2026-116319"
+       ],
+       "cves": [
+        "CVE-2026-116319"
+       ],
+       "published": "2026-11-12T15:17:40Z",
+       "summary": "Use after free in PostgreSQL plperl allows an object creator to execute arbitrary code as the operating system user running the database, via reentrant return_next() calls.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116319",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48836
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116320",
+       "aliases": [
+        "CVE-2026-116320"
+       ],
+       "cves": [
+        "CVE-2026-116320"
+       ],
+       "published": "2026-11-12T15:17:40Z",
+       "summary": "Use after free in PostgreSQL plperl allows an object creator to execute arbitrary code as the operating system user running the database, via dropping the final reference to a Perl array or hash while PostgreSQL is converting that object.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116320",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48834
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116321",
+       "aliases": [
+        "CVE-2026-116321"
+       ],
+       "cves": [
+        "CVE-2026-116321"
+       ],
+       "published": "2026-11-12T15:17:40Z",
+       "summary": "Improper null termination in PostgreSQL array element assignment allows a database user to disclose server memory, via changing the final byte of a fixed-length name value to a nonzero byte and passing it to code that treats the value as a C string.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116321",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00295,
+       "epss_percentile": 0.22372
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116322",
+       "aliases": [
+        "CVE-2026-116322"
+       ],
+       "cves": [
+        "CVE-2026-116322"
+       ],
+       "published": "2026-11-12T15:17:40Z",
+       "summary": "Improper locking in PostgreSQL startup processing allows an unauthenticated network client to trigger a server restart, via arranging for authentication_timeout to arrive while it holds a spinlock during cancel handling.  Within major version 18, minor versions before PostgreSQL 18.7 are affected.  ",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116322",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00366,
+       "epss_percentile": 0.30928
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116323",
+       "aliases": [
+        "CVE-2026-116323"
+       ],
+       "cves": [
+        "CVE-2026-116323"
+       ],
+       "published": "2026-11-12T15:17:40Z",
+       "summary": "Use after free in PostgreSQL pltcl allows an object creator to execute arbitrary code as the operating system user running the database, via a domain CHECK that re-enters the Tcl interpreter and frees or changes a string still used by the outer result conversion.  Versions before PostgreSQL 18.7, 17",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116323",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48835
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116325",
+       "aliases": [
+        "CVE-2026-116325"
+       ],
+       "cves": [
+        "CVE-2026-116325"
+       ],
+       "published": "2026-11-12T15:17:40Z",
+       "summary": "SQL injection in PostgreSQL reindexdb allows an object creator to execute arbitrary SQL as the database user running reindexdb, via a crafted index name embedded in the parallel catalog query for --jobs with --index.  Within major versions 17-18, minor versions before PostgreSQL 18.7 and 17.12 are a",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.0,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116325",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00375,
+       "epss_percentile": 0.31955
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116311",
+       "aliases": [
+        "CVE-2026-116311"
+       ],
+       "cves": [
+        "CVE-2026-116311"
+       ],
+       "published": "2026-11-12T15:17:39Z",
+       "summary": "Missing authorization in PostgreSQL DROP OWNED allows a role to remove itself from restrictive row level security policies, thereby reading or modifying rows that the policy was intended to deny, via queries after the DROP OWNED.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are a",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.4,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116311",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0023,
+       "epss_percentile": 0.13971
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116312",
+       "aliases": [
+        "CVE-2026-116312"
+       ],
+       "cves": [
+        "CVE-2026-116312"
+       ],
+       "published": "2026-11-12T15:17:39Z",
+       "summary": "Inconsistent transition-capture state in PostgreSQL MERGE allows a table data modifier to make an AFTER trigger process the wrong new row, via a partitioned table MERGE that performs an INSERT before an UPDATE.  Within major versions 15-18, minor versions before PostgreSQL 18.7, 17.12, 16.16, and 15",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 5.4,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116312",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00251,
+       "epss_percentile": 0.16609
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116313",
+       "aliases": [
+        "CVE-2026-116313"
+       ],
+       "cves": [
+        "CVE-2026-116313"
+       ],
+       "published": "2026-11-12T15:17:39Z",
+       "summary": "Untrusted search path in PostgreSQL vacuumdb allows a database owner to execute arbitrary SQL as the database user running vacuumdb, via shadowing operators used in the --missing-stats-only catalog query.  The pg_upgrade documentation recommends an affected vacuumdb invocation.  Within major version",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 7.2,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116313",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00499,
+       "epss_percentile": 0.43395
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116314",
+       "aliases": [
+        "CVE-2026-116314"
+       ],
+       "cves": [
+        "CVE-2026-116314"
+       ],
+       "published": "2026-11-12T15:17:39Z",
+       "summary": "Improper input validation in PostgreSQL pg_restore allows a non-plain archive provider to execute arbitrary code as the operating system user running pg_restore, via a crafted archive.  Note a contrast: crafted archive data may legitimately cause arbitrary SQL to execute at the restore destination, ",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116314",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00527,
+       "epss_percentile": 0.45194
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116315",
+       "aliases": [
+        "CVE-2026-116315"
+       ],
+       "cves": [
+        "CVE-2026-116315"
+       ],
+       "published": "2026-11-12T15:17:39Z",
+       "summary": "Heap-based buffer overflow in PostgreSQL tsvector_delete() allows a database user to execute arbitrary code as the operating system user running the database, via a tsvector whose lexeme data uses a nonstandard but valid ordering that requires additional alignment padding in the result.  Versions be",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116315",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00596,
+       "epss_percentile": 0.49084
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116316",
+       "aliases": [
+        "CVE-2026-116316"
+       ],
+       "cves": [
+        "CVE-2026-116316"
+       ],
+       "published": "2026-11-12T15:17:39Z",
+       "summary": "Improper protection of alternate path in PostgreSQL security-restricted operations allows an object creator to execute arbitrary SQL as the operation's caller, via a domain, enum, or range type created in pg_temp.  The victim session must later run a query containing an unqualified type name, e.g. \"",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116316",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00479,
+       "epss_percentile": 0.41953
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116317",
+       "aliases": [
+        "CVE-2026-116317"
+       ],
+       "cves": [
+        "CVE-2026-116317"
+       ],
+       "published": "2026-11-12T15:17:39Z",
+       "summary": "Heap-based buffer overflow in PostgreSQL ts_rank_cd() may allow a database user to execute arbitrary code as the operating system user running the database, via an invalid tsvector containing duplicate positions.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116317",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00596,
+       "epss_percentile": 0.49084
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116304",
+       "aliases": [
+        "CVE-2026-116304"
+       ],
+       "cves": [
+        "CVE-2026-116304"
+       ],
+       "published": "2026-11-12T15:17:38Z",
+       "summary": "Use after free in PostgreSQL coordination of anonymous RECORD type identifiers among parallel workers allows a database user to execute arbitrary code as the operating system user running the database, via causing one process to free a shared tuple descriptor while another process retains and later ",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116304",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48833
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116306",
+       "aliases": [
+        "CVE-2026-116306"
+       ],
+       "cves": [
+        "CVE-2026-116306"
+       ],
+       "published": "2026-11-12T15:17:38Z",
+       "summary": "Type confusion in PostgreSQL composite-value field assignment allows an object creator to execute arbitrary code as the operating system user running the database, via changing a composite type between deforming and reforming a value.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 ",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116306",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48837
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116307",
+       "aliases": [
+        "CVE-2026-116307"
+       ],
+       "cves": [
+        "CVE-2026-116307"
+       ],
+       "published": "2026-11-12T15:17:38Z",
+       "summary": "Use after free in PostgreSQL plperl allows an object creator to execute arbitrary code as the operating system user running the database, via re-entering plperl and freeing a prepared query while an outer invocation is executing it.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 ar",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116307",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48837
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116308",
+       "aliases": [
+        "CVE-2026-116308"
+       ],
+       "cves": [
+        "CVE-2026-116308"
+       ],
+       "published": "2026-11-12T15:17:38Z",
+       "summary": "Buffer over-read in PostgreSQL dict_int allows a database user to disclose portions of server memory, via a zero-length token.  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116308",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00295,
+       "epss_percentile": 0.22372
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116309",
+       "aliases": [
+        "CVE-2026-116309"
+       ],
+       "cves": [
+        "CVE-2026-116309"
+       ],
+       "published": "2026-11-12T15:17:38Z",
+       "summary": "Type confusion in PostgreSQL plperl may allow an object creator to execute arbitrary code, via blessing a non-hash reference into PostgreSQL::InServer::ARRAY.  We have not confirmed or ruled out a way to control the pointer sufficiently to achieve security impact, but we are proceeding as though tha",
+       "severity": "HIGH",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 8.8,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116309",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0059,
+       "epss_percentile": 0.48837
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116310",
+       "aliases": [
+        "CVE-2026-116310"
+       ],
+       "cves": [
+        "CVE-2026-116310"
+       ],
+       "published": "2026-11-12T15:17:38Z",
+       "summary": "Use after free in PostgreSQL COPY FROM error reporting allows a database user to disclose portions of server memory, via a longer input row following an ignored or nullified conversion error.  file_fdw reaches the same code path in affected version 18.  Within major versions 17-18, minor versions be",
+       "severity": "MEDIUM",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 4.3,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116310",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00295,
+       "epss_percentile": 0.22372
+      },
+      {
+       "id": "DEBIAN-CVE-2026-116303",
+       "aliases": [
+        "CVE-2026-116303"
+       ],
+       "cves": [
+        "CVE-2026-116303"
+       ],
+       "published": "2026-11-12T15:17:37Z",
+       "summary": "Missing authorization in PostgreSQL type conversion allows a database user to invoke a cast function despite lacking EXECUTE privilege on that function, via foreign keys, to_json(), and others.  A successful attack requires the attacker to search each database for access-restricted cast functions an",
+       "severity": "LOW",
+       "severity_source": "CVSS v3 vector",
+       "cvss": 3.1,
+       "cvss_source": "advisory",
+       "fixed": [],
+       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-116303",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00221,
+       "epss_percentile": 0.12721
+      }
+     ]
     },
     {
      "key": "runtimes/mariadb",

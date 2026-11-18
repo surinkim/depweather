@@ -275,6 +275,11 @@
     "pypi/pillow": {
      "h": 4,
      "m": 2
+    },
+    "runtimes/java": {
+     "h": 1,
+     "m": 31,
+     "l": 11
     }
    },
    "ecosystems": {
@@ -289,6 +294,11 @@
      "c": 1,
      "h": 4,
      "m": 2
+    },
+    "runtimes": {
+     "h": 1,
+     "m": 31,
+     "l": 11
     }
    }
   },
@@ -308,6 +318,9 @@
      "c": 4,
      "h": 10,
      "m": 7
+    },
+    "runtimes/java": {
+     "c": 1
     },
     "runtimes/mariadb": {
      "c": 3,
@@ -337,7 +350,7 @@
      "m": 7
     },
     "runtimes": {
-     "c": 6,
+     "c": 7,
      "h": 3,
      "m": 3
     }
@@ -371,6 +384,9 @@
     },
     "pypi/pyjwt": {
      "h": 1
+    },
+    "runtimes/java": {
+     "m": 2
     }
    },
    "ecosystems": {
@@ -387,6 +403,9 @@
     "pypi": {
      "h": 4,
      "m": 1
+    },
+    "runtimes": {
+     "m": 2
     }
    }
   },
@@ -433,6 +452,18 @@
     },
     "pypi": {
      "l": 1
+    }
+   }
+  },
+  "2026-10-24": {
+   "packages": {
+    "runtimes/java": {
+     "c": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 1
     }
    }
   },
