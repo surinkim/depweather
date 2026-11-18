@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T04:20:52Z",
+ "generated_at": "2026-11-18T15:36:42Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -34,7 +34,7 @@
   "epss": {
    "ok": true,
    "url": "https://epss.empiricalsecurity.com/epss_scores-current.csv.gz",
-   "score_date": "2026-11-17"
+   "score_date": "2026-11-18"
   },
   "nvd": {
    "ok": true,
@@ -57,9 +57,9 @@
   }
  },
  "summary": {
-  "today_cves": 81,
+  "today_cves": 394,
   "month": "2026-11",
-  "month_cves": 9640,
+  "month_cves": 9953,
   "month_cves_last_year": 3021,
   "kev_new_7d": 3,
   "affected_packages_7d": 18,
@@ -120,7 +120,7 @@
   },
   {
    "month": "2026-11",
-   "count": 9640
+   "count": 9953
   }
  ],
  "monthly_is_stale": false,
@@ -160,7 +160,7 @@
      "key": "npm/react",
      "name": "react",
      "label": "React",
-     "popularity": 264981619.0,
+     "popularity": 268618905.0,
      "popularity_source": "npm downloads, last week",
      "survey": 41.5,
      "worst_7d": "NONE",
@@ -171,7 +171,7 @@
      "key": "npm/next",
      "name": "next",
      "label": "Next.js",
-     "popularity": 95809261.0,
+     "popularity": 97670224.0,
      "popularity_source": "npm downloads, last week",
      "survey": 20.6,
      "worst_7d": "MEDIUM",
@@ -199,7 +199,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0024,
-       "epss_percentile": 0.15279
+       "epss_percentile": 0.15293
       },
       {
        "id": "GHSA-mfr8-8qww-v76h",
@@ -223,7 +223,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00404,
-       "epss_percentile": 0.35251
+       "epss_percentile": 0.3534
       },
       {
        "id": "GHSA-673q-mjm6-r5xr",
@@ -267,7 +267,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0025,
-       "epss_percentile": 0.16489
+       "epss_percentile": 0.16503
       },
       {
        "id": "GHSA-2464-fhr4-w9xw",
@@ -313,7 +313,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00386,
-       "epss_percentile": 0.33269
+       "epss_percentile": 0.33352
       }
      ]
     },
@@ -321,7 +321,7 @@
      "key": "npm/jquery",
      "name": "jquery",
      "label": "jQuery",
-     "popularity": 17762980.0,
+     "popularity": 17871803.0,
      "popularity_source": "npm downloads, last week",
      "survey": 19.7,
      "worst_7d": "NONE",
@@ -332,7 +332,7 @@
      "key": "npm/vue",
      "name": "vue",
      "label": "Vue.js",
-     "popularity": 25551990.0,
+     "popularity": 25914349.0,
      "popularity_source": "npm downloads, last week",
      "survey": 17.2,
      "worst_7d": "NONE",
@@ -343,7 +343,7 @@
      "key": "npm/@angular/core",
      "name": "@angular/core",
      "label": "Angular",
-     "popularity": 8209917.0,
+     "popularity": 8262632.0,
      "popularity_source": "npm downloads, last week",
      "survey": 16.0,
      "worst_7d": "NONE",
@@ -354,7 +354,7 @@
      "key": "npm/express",
      "name": "express",
      "label": "Express",
-     "popularity": 200803554.0,
+     "popularity": 202742353.0,
      "popularity_source": "npm downloads, last week",
      "survey": 15.6,
      "worst_7d": "NONE",
@@ -365,7 +365,7 @@
      "key": "npm/svelte",
      "name": "svelte",
      "label": "Svelte",
-     "popularity": 9987823.0,
+     "popularity": 10153587.0,
      "popularity_source": "npm downloads, last week",
      "survey": 7.8,
      "worst_7d": "NONE",
@@ -376,7 +376,7 @@
      "key": "npm/astro",
      "name": "astro",
      "label": "Astro",
-     "popularity": 12153642.0,
+     "popularity": 12313441.0,
      "popularity_source": "npm downloads, last week",
      "survey": 6.2,
      "worst_7d": "MEDIUM",
@@ -404,7 +404,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00315,
-       "epss_percentile": 0.248
+       "epss_percentile": 0.24837
       },
       {
        "id": "GHSA-r3h5-4585-7x3w",
@@ -428,7 +428,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00375,
-       "epss_percentile": 0.3197
+       "epss_percentile": 0.32044
       },
       {
        "id": "GHSA-98hj-9722-w3j8",
@@ -452,7 +452,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00321,
-       "epss_percentile": 0.25482
+       "epss_percentile": 0.25524
       },
       {
        "id": "GHSA-mpr7-6m5w-76rw",
@@ -476,7 +476,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00498,
-       "epss_percentile": 0.43322
+       "epss_percentile": 0.43436
       }
      ]
     },
@@ -484,7 +484,7 @@
      "key": "npm/angular",
      "name": "angular",
      "label": "AngularJS",
-     "popularity": 616334.0,
+     "popularity": 619684.0,
      "popularity_source": "npm downloads, last week",
      "survey": 6.0,
      "worst_7d": "NONE",
@@ -495,7 +495,7 @@
      "key": "npm/@nestjs/core",
      "name": "@nestjs/core",
      "label": "NestJS",
-     "popularity": 24751421.0,
+     "popularity": 25020183.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.8,
      "worst_7d": "NONE",
@@ -506,7 +506,7 @@
      "key": "npm/@sveltejs/kit",
      "name": "@sveltejs/kit",
      "label": "SvelteKit",
-     "popularity": 5448565.0,
+     "popularity": 5494569.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.6,
      "worst_7d": "HIGH",
@@ -534,7 +534,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00282,
-       "epss_percentile": 0.21029
+       "epss_percentile": 0.2106
       },
       {
        "id": "GHSA-3r8g-jcqq-3p5j",
@@ -558,7 +558,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00346,
-       "epss_percentile": 0.28618
+       "epss_percentile": 0.2867
       },
       {
        "id": "GHSA-6cf5-gc4q-fm3x",
@@ -582,7 +582,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00285,
-       "epss_percentile": 0.21298
+       "epss_percentile": 0.21331
       },
       {
        "id": "GHSA-rqp5-r3wg-vg35",
@@ -607,7 +607,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00264,
-       "epss_percentile": 0.18467
+       "epss_percentile": 0.18491
       },
       {
        "id": "GHSA-mw6w-2fmv-pvw3",
@@ -632,7 +632,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00477,
-       "epss_percentile": 0.41806
+       "epss_percentile": 0.41911
       },
       {
        "id": "GHSA-pfhg-q3qv-9q6r",
@@ -656,7 +656,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00202,
-       "epss_percentile": 0.10144
+       "epss_percentile": 0.10149
       },
       {
        "id": "GHSA-27mw-82g8-phjj",
@@ -688,7 +688,7 @@
      "key": "npm/htmx.org",
      "name": "htmx.org",
      "label": "htmx",
-     "popularity": 463654.0,
+     "popularity": 467346.0,
      "popularity_source": "npm downloads, last week",
      "survey": 5.4,
      "worst_7d": "NONE",
@@ -699,7 +699,7 @@
      "key": "npm/nuxt",
      "name": "nuxt",
      "label": "Nuxt",
-     "popularity": 3488281.0,
+     "popularity": 3521505.0,
      "popularity_source": "npm downloads, last week",
      "survey": 4.4,
      "worst_7d": "MEDIUM",
@@ -727,7 +727,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00116,
-       "epss_percentile": 0.01675
+       "epss_percentile": 0.0167
       },
       {
        "id": "GHSA-96x6-fvhx-49hg",
@@ -751,7 +751,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00311,
-       "epss_percentile": 0.2433
+       "epss_percentile": 0.24361
       },
       {
        "id": "GHSA-r9jc-w898-3fv6",
@@ -775,7 +775,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00291,
-       "epss_percentile": 0.22012
+       "epss_percentile": 0.22041
       },
       {
        "id": "GHSA-f3x9-2chm-73c8",
@@ -799,7 +799,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00268,
-       "epss_percentile": 0.19125
+       "epss_percentile": 0.19149
       },
       {
        "id": "GHSA-9v7c-q64q-vv33",
@@ -823,7 +823,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00339,
-       "epss_percentile": 0.27734
+       "epss_percentile": 0.27782
       },
       {
        "id": "GHSA-vjh5-4x84-xrqp",
@@ -847,7 +847,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00424,
-       "epss_percentile": 0.37265
+       "epss_percentile": 0.37364
       },
       {
        "id": "GHSA-xfq5-w38q-pc2x",
@@ -871,7 +871,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0022,
-       "epss_percentile": 0.12681
+       "epss_percentile": 0.1268
       },
       {
        "id": "GHSA-jjm6-p2m9-9w4x",
@@ -895,7 +895,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00406,
-       "epss_percentile": 0.35471
+       "epss_percentile": 0.35556
       },
       {
        "id": "GHSA-6gq8-jgmh-3ffp",
@@ -920,7 +920,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00363,
-       "epss_percentile": 0.30615
+       "epss_percentile": 0.30674
       }
      ]
     },
@@ -928,7 +928,7 @@
      "key": "npm/fastify",
      "name": "fastify",
      "label": "Fastify",
-     "popularity": 23309154.0,
+     "popularity": 23597058.0,
      "popularity_source": "npm downloads, last week",
      "survey": 3.5,
      "worst_7d": "NONE",
@@ -956,7 +956,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00257,
-       "epss_percentile": 0.17505
+       "epss_percentile": 0.17531
       }
      ]
     },
@@ -964,7 +964,7 @@
      "key": "npm/hono",
      "name": "hono",
      "label": "Hono",
-     "popularity": 110731590.0,
+     "popularity": 112164124.0,
      "popularity_source": "npm downloads, last week",
      "survey": 2.8,
      "worst_7d": "MEDIUM",
@@ -992,7 +992,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00176,
-       "epss_percentile": 0.07231
+       "epss_percentile": 0.07244
       },
       {
        "id": "GHSA-4h7h-rv7c-7m2v",
@@ -1016,7 +1016,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00392,
-       "epss_percentile": 0.33907
+       "epss_percentile": 0.33991
       },
       {
        "id": "GHSA-4m76-xfj5-7975",
@@ -1040,7 +1040,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.004,
-       "epss_percentile": 0.34764
+       "epss_percentile": 0.34852
       },
       {
        "id": "GHSA-h7mg-cq63-vhpq",
@@ -1064,7 +1064,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00347,
-       "epss_percentile": 0.28798
+       "epss_percentile": 0.28849
       },
       {
        "id": "GHSA-3gg2-335m-rxc6",
@@ -1088,7 +1088,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00262,
-       "epss_percentile": 0.18091
+       "epss_percentile": 0.18113
       },
       {
        "id": "GHSA-5r4p-p66f-jhc7",
@@ -1114,7 +1114,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00315,
-       "epss_percentile": 0.24785
+       "epss_percentile": 0.24822
       }
      ]
     },
@@ -1122,7 +1122,7 @@
      "key": "npm/axios",
      "name": "axios",
      "label": "axios",
-     "popularity": 145816012.0,
+     "popularity": 147349771.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1133,7 +1133,7 @@
      "key": "npm/lodash",
      "name": "lodash",
      "label": "lodash",
-     "popularity": 205327931.0,
+     "popularity": 207341549.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1144,7 +1144,7 @@
      "key": "npm/vite",
      "name": "vite",
      "label": "vite",
-     "popularity": 281318367.0,
+     "popularity": 284251377.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1172,7 +1172,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00295,
-       "epss_percentile": 0.22387
+       "epss_percentile": 0.22418
       },
       {
        "id": "GHSA-9jrq-w75r-8gcw",
@@ -1200,7 +1200,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00672,
-       "epss_percentile": 0.52683
+       "epss_percentile": 0.52801
       },
       {
        "id": "GHSA-rq7h-c2jc-7f22",
@@ -1228,7 +1228,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00852,
-       "epss_percentile": 0.58857
+       "epss_percentile": 0.58962
       },
       {
        "id": "GHSA-vfpm-58rq-9qcg",
@@ -1253,7 +1253,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00502,
-       "epss_percentile": 0.43567
+       "epss_percentile": 0.43658
       },
       {
        "id": "GHSA-r825-w8mm-5pxw",
@@ -1281,7 +1281,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00705,
-       "epss_percentile": 0.53956
+       "epss_percentile": 0.54067
       },
       {
        "id": "GHSA-587h-7wmj-h5pm",
@@ -1309,7 +1309,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01694,
-       "epss_percentile": 0.77544
+       "epss_percentile": 0.77604
       },
       {
        "id": "GHSA-698v-4r3x-3vcv",
@@ -1337,7 +1337,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00414,
-       "epss_percentile": 0.36292
+       "epss_percentile": 0.36386
       }
      ]
     },
@@ -1345,7 +1345,7 @@
      "key": "npm/webpack",
      "name": "webpack",
      "label": "webpack",
-     "popularity": 74527664.0,
+     "popularity": 75277412.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1356,7 +1356,7 @@
      "key": "npm/undici",
      "name": "undici",
      "label": "undici",
-     "popularity": 344915720.0,
+     "popularity": 348994541.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1385,7 +1385,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00149,
-       "epss_percentile": 0.04138
+       "epss_percentile": 0.04134
       },
       {
        "id": "GHSA-2m5v-pch6-74hx",
@@ -1411,7 +1411,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00184,
-       "epss_percentile": 0.08084
+       "epss_percentile": 0.08095
       },
       {
        "id": "GHSA-qrxm-fqhp-jwvm",
@@ -1437,7 +1437,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00187,
-       "epss_percentile": 0.08402
+       "epss_percentile": 0.0841
       },
       {
        "id": "GHSA-9fm3-97px-rjf6",
@@ -1463,7 +1463,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00321,
-       "epss_percentile": 0.25481
+       "epss_percentile": 0.25524
       },
       {
        "id": "GHSA-55wc-3pg8-jfw6",
@@ -1488,7 +1488,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0026,
-       "epss_percentile": 0.17897
+       "epss_percentile": 0.17922
       },
       {
        "id": "GHSA-qq8j-7v2v-3rwp",
@@ -1512,7 +1512,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00279,
-       "epss_percentile": 0.20582
+       "epss_percentile": 0.20608
       },
       {
        "id": "GHSA-xjj6-f33q-929c",
@@ -1538,7 +1538,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00344,
-       "epss_percentile": 0.28358
+       "epss_percentile": 0.28407
       },
       {
        "id": "GHSA-4qv8-2p9j-2685",
@@ -1564,7 +1564,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00321,
-       "epss_percentile": 0.25481
+       "epss_percentile": 0.25524
       },
       {
        "id": "GHSA-f72v-6w45-q472",
@@ -1589,7 +1589,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00252,
-       "epss_percentile": 0.16768
+       "epss_percentile": 0.16786
       }
      ]
     },
@@ -1597,7 +1597,7 @@
      "key": "npm/ws",
      "name": "ws",
      "label": "ws",
-     "popularity": 414664222.0,
+     "popularity": 419233167.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1608,7 +1608,7 @@
      "key": "npm/jsonwebtoken",
      "name": "jsonwebtoken",
      "label": "jsonwebtoken",
-     "popularity": 82610640.0,
+     "popularity": 83388919.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1619,7 +1619,7 @@
      "key": "npm/form-data",
      "name": "form-data",
      "label": "form-data",
-     "popularity": 226491607.0,
+     "popularity": 228756540.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1630,7 +1630,7 @@
      "key": "npm/tar",
      "name": "tar",
      "label": "tar",
-     "popularity": 118859486.0,
+     "popularity": 120775819.0,
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -1899,7 +1899,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0052,
-       "epss_percentile": 0.44773
+       "epss_percentile": 0.44867
       },
       {
        "id": "GHSA-5pv8-vvhc-h7jv",
@@ -1923,7 +1923,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00516,
-       "epss_percentile": 0.44525
+       "epss_percentile": 0.44618
       },
       {
        "id": "GHSA-xgw8-8ccx-rmqh",
@@ -1947,7 +1947,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0052,
-       "epss_percentile": 0.44773
+       "epss_percentile": 0.44867
       },
       {
        "id": "GHSA-24c4-3p7v-29cm",
@@ -1971,7 +1971,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00546,
-       "epss_percentile": 0.46373
+       "epss_percentile": 0.46486
       },
       {
        "id": "GHSA-3rp8-rxj8-mvjw",
@@ -1995,7 +1995,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00485,
-       "epss_percentile": 0.42343
+       "epss_percentile": 0.42457
       },
       {
        "id": "GHSA-pw86-h8fm-j323",
@@ -2019,7 +2019,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00635,
-       "epss_percentile": 0.51065
+       "epss_percentile": 0.51182
       },
       {
        "id": "GHSA-28qf-cpwq-vmc2",
@@ -2043,7 +2043,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00423,
-       "epss_percentile": 0.37121
+       "epss_percentile": 0.37221
       },
       {
        "id": "GHSA-h4cc-hm5h-fmm9",
@@ -2067,7 +2067,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0052,
-       "epss_percentile": 0.44774
+       "epss_percentile": 0.44867
       },
       {
        "id": "GHSA-5rmc-48h2-hvcm",
@@ -2091,7 +2091,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00442,
-       "epss_percentile": 0.39003
+       "epss_percentile": 0.391
       },
       {
        "id": "GHSA-gx76-c99x-2c96",
@@ -2116,7 +2116,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00245,
-       "epss_percentile": 0.15813
+       "epss_percentile": 0.15825
       },
       {
        "id": "GHSA-pqxq-w44r-73xw",
@@ -2141,7 +2141,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00359,
-       "epss_percentile": 0.30104
+       "epss_percentile": 0.30161
       },
       {
        "id": "GHSA-f9xw-jh8m-3mwq",
@@ -2166,7 +2166,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00278,
-       "epss_percentile": 0.20532
+       "epss_percentile": 0.2056
       },
       {
        "id": "GHSA-6cjc-53gc-5rqm",
@@ -2191,7 +2191,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00416,
-       "epss_percentile": 0.36437
+       "epss_percentile": 0.36536
       },
       {
        "id": "GHSA-9xw5-w5jj-pvcg",
@@ -2216,7 +2216,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00496,
-       "epss_percentile": 0.43147
+       "epss_percentile": 0.43261
       },
       {
        "id": "GHSA-5wr8-gcqf-gqf3",
@@ -2241,7 +2241,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00475,
-       "epss_percentile": 0.41654
+       "epss_percentile": 0.41758
       },
       {
        "id": "GHSA-494j-54xm-rwp3",
@@ -2266,7 +2266,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00189,
-       "epss_percentile": 0.08567
+       "epss_percentile": 0.08575
       },
       {
        "id": "GHSA-2g87-pp6c-29x5",
@@ -2290,7 +2290,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00328,
-       "epss_percentile": 0.26252
+       "epss_percentile": 0.26293
       }
      ]
     },
@@ -2326,7 +2326,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00377,
-       "epss_percentile": 0.32227
+       "epss_percentile": 0.32306
       },
       {
        "id": "GHSA-xcvg-w56q-r89m",
@@ -2350,7 +2350,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00451,
-       "epss_percentile": 0.39736
+       "epss_percentile": 0.39837
       },
       {
        "id": "GHSA-78g4-xqwv-q3g8",
@@ -2395,7 +2395,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00454,
-       "epss_percentile": 0.39984
+       "epss_percentile": 0.40087
       },
       {
        "id": "GHSA-mrfp-p49p-3hf2",
@@ -2420,7 +2420,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00604,
-       "epss_percentile": 0.49546
+       "epss_percentile": 0.4967
       },
       {
        "id": "GHSA-24rc-8hj2-v98c",
@@ -2445,7 +2445,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00364,
-       "epss_percentile": 0.30765
+       "epss_percentile": 0.30824
       },
       {
        "id": "GHSA-654x-cwwv-5j9c",
@@ -2471,7 +2471,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0037,
-       "epss_percentile": 0.31367
+       "epss_percentile": 0.31432
       },
       {
        "id": "GHSA-xvh5-g6gv-559v",
@@ -2497,7 +2497,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00613,
-       "epss_percentile": 0.49979
+       "epss_percentile": 0.50099
       },
       {
        "id": "GHSA-332p-7hrc-92wf",
@@ -2522,7 +2522,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01019,
-       "epss_percentile": 0.63958
+       "epss_percentile": 0.64051
       },
       {
        "id": "GHSA-f2g6-542v-9j58",
@@ -2547,7 +2547,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00573,
-       "epss_percentile": 0.4794
+       "epss_percentile": 0.48051
       },
       {
        "id": "GHSA-4rm8-3hmm-39fg",
@@ -2573,7 +2573,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00364,
-       "epss_percentile": 0.30765
+       "epss_percentile": 0.30825
       },
       {
        "id": "GHSA-3j72-p6qg-6xp7",
@@ -2599,7 +2599,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00345,
-       "epss_percentile": 0.28442
+       "epss_percentile": 0.28495
       },
       {
        "id": "GHSA-g4qv-2jxx-769h",
@@ -2625,7 +2625,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00373,
-       "epss_percentile": 0.31764
+       "epss_percentile": 0.31837
       },
       {
        "id": "GHSA-v9pv-5gc8-w2m6",
@@ -2651,7 +2651,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00659,
-       "epss_percentile": 0.52149
+       "epss_percentile": 0.52263
       },
       {
        "id": "GHSA-9v9v-9qvf-h2hj",
@@ -2677,7 +2677,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00384,
-       "epss_percentile": 0.33031
+       "epss_percentile": 0.33113
       },
       {
        "id": "GHSA-g842-9rc4-69pw",
@@ -2703,7 +2703,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00373,
-       "epss_percentile": 0.31764
+       "epss_percentile": 0.31837
       },
       {
        "id": "GHSA-p8hx-v2p6-rp84",
@@ -2729,7 +2729,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00364,
-       "epss_percentile": 0.30765
+       "epss_percentile": 0.30825
       },
       {
        "id": "GHSA-5xm2-6676-qcp9",
@@ -2754,7 +2754,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00529,
-       "epss_percentile": 0.4537
+       "epss_percentile": 0.45476
       },
       {
        "id": "GHSA-gg2r-wvfm-q9rx",
@@ -2779,7 +2779,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00503,
-       "epss_percentile": 0.43632
+       "epss_percentile": 0.43722
       },
       {
        "id": "GHSA-jg86-v3jv-hrpm",
@@ -2804,7 +2804,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49026
+       "epss_percentile": 0.4915
       },
       {
        "id": "GHSA-254f-3936-288h",
@@ -2829,7 +2829,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00581,
-       "epss_percentile": 0.48353
+       "epss_percentile": 0.48473
       },
       {
        "id": "GHSA-rfgq-q3w2-pmv2",
@@ -2854,7 +2854,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00339,
-       "epss_percentile": 0.27787
+       "epss_percentile": 0.27836
       },
       {
        "id": "GHSA-74r2-7ff9-mjj2",
@@ -2879,7 +2879,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00649,
-       "epss_percentile": 0.51747
+       "epss_percentile": 0.5186
       },
       {
        "id": "GHSA-22hg-r758-rrw9",
@@ -2904,7 +2904,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00593,
-       "epss_percentile": 0.48947
+       "epss_percentile": 0.4907
       },
       {
        "id": "GHSA-fc9g-5qg7-mf45",
@@ -2929,7 +2929,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00549,
-       "epss_percentile": 0.46576
+       "epss_percentile": 0.46689
       },
       {
        "id": "GHSA-j4m9-6w36-pw47",
@@ -2954,7 +2954,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00549,
-       "epss_percentile": 0.46566
+       "epss_percentile": 0.46679
       },
       {
        "id": "GHSA-w889-685w-c8fh",
@@ -2979,7 +2979,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01303,
-       "epss_percentile": 0.71009
+       "epss_percentile": 0.71089
       },
       {
        "id": "GHSA-65qm-jvmh-6pqg",
@@ -3004,7 +3004,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49026
+       "epss_percentile": 0.4915
       },
       {
        "id": "GHSA-vx6w-vv9f-6gvg",
@@ -3029,7 +3029,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00547,
-       "epss_percentile": 0.46434
+       "epss_percentile": 0.46546
       },
       {
        "id": "GHSA-q45j-58j2-45rg",
@@ -3054,7 +3054,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00479,
-       "epss_percentile": 0.41946
+       "epss_percentile": 0.42051
       },
       {
        "id": "GHSA-p4wg-p73j-c528",
@@ -3079,7 +3079,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49026
+       "epss_percentile": 0.4915
       },
       {
        "id": "GHSA-462x-pgg6-55fp",
@@ -3104,7 +3104,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00514,
-       "epss_percentile": 0.44431
+       "epss_percentile": 0.44524
       },
       {
        "id": "GHSA-c6hw-5grf-ff96",
@@ -3129,7 +3129,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00603,
-       "epss_percentile": 0.49455
+       "epss_percentile": 0.49578
       },
       {
        "id": "GHSA-xgh8-jp6q-p5x8",
@@ -3155,7 +3155,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00532,
-       "epss_percentile": 0.45532
+       "epss_percentile": 0.45638
       },
       {
        "id": "GHSA-pchr-8j38-3x4p",
@@ -3181,7 +3181,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00475,
-       "epss_percentile": 0.4161
+       "epss_percentile": 0.41715
       },
       {
        "id": "GHSA-cp9v-662q-vvx9",
@@ -3207,7 +3207,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49025
+       "epss_percentile": 0.49151
       },
       {
        "id": "GHSA-8g5g-8vmr-9782",
@@ -3233,7 +3233,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00945,
-       "epss_percentile": 0.61663
+       "epss_percentile": 0.61761
       },
       {
        "id": "GHSA-5x8w-8jj5-q52h",
@@ -3259,7 +3259,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00696,
-       "epss_percentile": 0.53606
+       "epss_percentile": 0.53725
       },
       {
        "id": "GHSA-7mwm-ghpf-9vrm",
@@ -3285,7 +3285,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00594,
-       "epss_percentile": 0.49026
+       "epss_percentile": 0.4915
       },
       {
        "id": "GHSA-58r4-6rv3-gfh8",
@@ -3311,7 +3311,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00573,
-       "epss_percentile": 0.4794
+       "epss_percentile": 0.48051
       },
       {
        "id": "GHSA-4rr5-89j8-mwwm",
@@ -3337,7 +3337,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00694,
-       "epss_percentile": 0.53544
+       "epss_percentile": 0.53662
       },
       {
        "id": "GHSA-27h8-gf7j-v5hc",
@@ -3363,7 +3363,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00593,
-       "epss_percentile": 0.48947
+       "epss_percentile": 0.4907
       },
       {
        "id": "GHSA-4558-3h8r-v8xp",
@@ -3389,7 +3389,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00555,
-       "epss_percentile": 0.46889
+       "epss_percentile": 0.47002
       }
      ]
     },
@@ -3632,7 +3632,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00352,
-       "epss_percentile": 0.2933
+       "epss_percentile": 0.29385
       }
      ]
     },
@@ -3758,7 +3758,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.013,
-       "epss_percentile": 0.70941
+       "epss_percentile": 0.71022
       },
       {
        "id": "GHSA-7phj-vgxq-r67h",
@@ -3785,7 +3785,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00247,
-       "epss_percentile": 0.16114
+       "epss_percentile": 0.16126
       },
       {
        "id": "GHSA-8w29-6cjc-h6w4",
@@ -3809,7 +3809,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00619,
-       "epss_percentile": 0.503
+       "epss_percentile": 0.50416
       },
       {
        "id": "GHSA-wr8v-9x5q-ggcm",
@@ -3836,7 +3836,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.013,
-       "epss_percentile": 0.70941
+       "epss_percentile": 0.71022
       },
       {
        "id": "GHSA-r3qf-p3jm-8h4p",
@@ -3861,7 +3861,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01245,
-       "epss_percentile": 0.69784
+       "epss_percentile": 0.69865
       },
       {
        "id": "GHSA-67wp-ghc2-fw2g",
@@ -3889,7 +3889,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00758,
-       "epss_percentile": 0.55826
+       "epss_percentile": 0.55935
       },
       {
        "id": "GHSA-6vjv-7wm8-p67r",
@@ -3913,7 +3913,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00829,
-       "epss_percentile": 0.58129
+       "epss_percentile": 0.58236
       },
       {
        "id": "GHSA-5h82-77p6-2wp3",
@@ -3937,7 +3937,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01076,
-       "epss_percentile": 0.65557
+       "epss_percentile": 0.65648
       },
       {
        "id": "GHSA-xw2x-23jm-j582",
@@ -3961,7 +3961,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00345,
-       "epss_percentile": 0.28435
+       "epss_percentile": 0.28488
       },
       {
        "id": "GHSA-6527-9fp8-r4x6",
@@ -3985,7 +3985,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01076,
-       "epss_percentile": 0.65557
+       "epss_percentile": 0.65648
       },
       {
        "id": "GHSA-m28h-pj36-4364",
@@ -4009,7 +4009,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01076,
-       "epss_percentile": 0.65557
+       "epss_percentile": 0.65648
       },
       {
        "id": "GHSA-x33c-w48q-qrgc",
@@ -4036,7 +4036,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01298,
-       "epss_percentile": 0.70909
+       "epss_percentile": 0.7099
       },
       {
        "id": "GHSA-xhj5-c3g8-pfj8",
@@ -4063,7 +4063,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00637,
-       "epss_percentile": 0.51155
+       "epss_percentile": 0.51271
       }
      ]
     },
@@ -4102,7 +4102,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00949,
-       "epss_percentile": 0.61809
+       "epss_percentile": 0.61904
       },
       {
        "id": "GHSA-xf35-v9jh-g65w",
@@ -4129,7 +4129,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00949,
-       "epss_percentile": 0.61807
+       "epss_percentile": 0.61903
       },
       {
        "id": "GHSA-fpxj-5c99-g7vj",
@@ -4156,7 +4156,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01492,
-       "epss_percentile": 0.74584
+       "epss_percentile": 0.74652
       },
       {
        "id": "GHSA-r8h3-p8p6-ggp7",
@@ -4183,7 +4183,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0087,
-       "epss_percentile": 0.59394
+       "epss_percentile": 0.59498
       },
       {
        "id": "GHSA-3cgx-w6gm-fqrx",
@@ -4210,7 +4210,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0087,
-       "epss_percentile": 0.59394
+       "epss_percentile": 0.59498
       },
       {
        "id": "GHSA-3g4v-f5gv-c7xf",
@@ -4237,7 +4237,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01279,
-       "epss_percentile": 0.70492
+       "epss_percentile": 0.70573
       },
       {
        "id": "GHSA-cpw3-h88j-9f6x",
@@ -4261,7 +4261,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01168,
-       "epss_percentile": 0.67912
+       "epss_percentile": 0.67998
       },
       {
        "id": "GHSA-p3jp-9v83-76w9",
@@ -4342,7 +4342,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01168,
-       "epss_percentile": 0.67912
+       "epss_percentile": 0.67998
       }
      ]
     },
@@ -4459,7 +4459,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 167980041.0,
+     "popularity": 169371080.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4470,7 +4470,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2405.0,
+     "popularity": 2407.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4481,7 +4481,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 313277503.0,
+     "popularity": 315756986.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4510,7 +4510,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00111,
-       "epss_percentile": 0.01346
+       "epss_percentile": 0.01341
       }
      ]
     },
@@ -4518,7 +4518,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 290698059.0,
+     "popularity": 293027553.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4529,7 +4529,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 270547320.0,
+     "popularity": 272665231.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4540,7 +4540,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 231805175.0,
+     "popularity": 233613331.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4551,7 +4551,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 289567285.0,
+     "popularity": 291854167.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4581,7 +4581,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0011,
-       "epss_percentile": 0.01292
+       "epss_percentile": 0.01288
       },
       {
        "id": "GHSA-w44r-93j7-qv28",
@@ -4607,7 +4607,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00188,
-       "epss_percentile": 0.08535
+       "epss_percentile": 0.08542
       },
       {
        "id": "GHSA-c8m5-c952-6cm4",
@@ -4633,7 +4633,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00101,
-       "epss_percentile": 0.00914
+       "epss_percentile": 0.00911
       },
       {
        "id": "GHSA-h2v8-394m-p7vv",
@@ -4659,7 +4659,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00165,
-       "epss_percentile": 0.05812
+       "epss_percentile": 0.05821
       },
       {
        "id": "RUSTSEC-2026-0382",
@@ -4688,7 +4688,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00396,
-       "epss_percentile": 0.34333
+       "epss_percentile": 0.34419
       }
      ]
     },
@@ -4696,7 +4696,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 88698007.0,
+     "popularity": 89373221.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4707,7 +4707,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 233201361.0,
+     "popularity": 235137972.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4718,7 +4718,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 441339050.0,
+     "popularity": 444871656.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4729,7 +4729,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 335280900.0,
+     "popularity": 337946066.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4740,7 +4740,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 268198909.0,
+     "popularity": 270366176.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4751,7 +4751,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 59201109.0,
+     "popularity": 59655298.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4762,7 +4762,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 106856366.0,
+     "popularity": 107713534.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4791,7 +4791,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0032,
-       "epss_percentile": 0.2538
+       "epss_percentile": 0.25423
       },
       {
        "id": "GHSA-9hj8-73fh-9963",
@@ -4816,7 +4816,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0035,
-       "epss_percentile": 0.29151
+       "epss_percentile": 0.29203
       },
       {
        "id": "GHSA-8hxf-qr8p-62x4",
@@ -4841,7 +4841,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00151,
-       "epss_percentile": 0.04256
+       "epss_percentile": 0.04253
       },
       {
        "id": "GHSA-hjqx-j4rw-g7xv",
@@ -4866,7 +4866,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00432,
-       "epss_percentile": 0.38092
+       "epss_percentile": 0.38188
       },
       {
        "id": "GHSA-q7v9-x93c-xqv3",
@@ -4891,7 +4891,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00461,
-       "epss_percentile": 0.40518
+       "epss_percentile": 0.40624
       }
      ]
     }
@@ -4909,7 +4909,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 26113637.0,
+     "popularity": 26154297.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "LOW",
@@ -4938,7 +4938,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00704,
-       "epss_percentile": 0.53892
+       "epss_percentile": 0.54005
       },
       {
        "id": "GHSA-f9x3-7vq9-cph6",
@@ -4965,7 +4965,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0184,
-       "epss_percentile": 0.79353
+       "epss_percentile": 0.79409
       },
       {
        "id": "GHSA-5wcm-3v2w-8362",
@@ -4990,7 +4990,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00406,
-       "epss_percentile": 0.35468
+       "epss_percentile": 0.35553
       }
      ]
     },
@@ -4998,7 +4998,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 32733929.0,
+     "popularity": 33042244.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -5029,7 +5029,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00395,
-       "epss_percentile": 0.34314
+       "epss_percentile": 0.344
       },
       {
        "id": "GHSA-r925-mgvr-h9cc",
@@ -5056,7 +5056,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0048,
-       "epss_percentile": 0.42027
+       "epss_percentile": 0.42139
       }
      ]
     },
@@ -5064,7 +5064,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1667106.0,
+     "popularity": 1691856.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "NONE",
@@ -5086,7 +5086,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 37284422.0,
+     "popularity": 37831214.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5097,7 +5097,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 34067757.0,
+     "popularity": 34844482.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5108,7 +5108,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 13684077.0,
+     "popularity": 14045015.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5119,7 +5119,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 32119298.0,
+     "popularity": 31664714.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5147,7 +5147,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00113,
-       "epss_percentile": 0.01478
+       "epss_percentile": 0.01473
       }
      ]
     },
@@ -5155,7 +5155,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 28827758.0,
+     "popularity": 29098916.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5166,7 +5166,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 26803098.0,
+     "popularity": 27325034.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5177,7 +5177,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 28898231.0,
+     "popularity": 29442645.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5188,7 +5188,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4709753.0,
+     "popularity": 4681237.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5199,7 +5199,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 22894765.0,
+     "popularity": 23550671.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5210,7 +5210,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 20655562.0,
+     "popularity": 20552270.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5260,7 +5260,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0038,
-       "epss_percentile": 0.32514
+       "epss_percentile": 0.32595
       },
       {
        "id": "GO-2026-6809",
@@ -5289,7 +5289,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00396,
-       "epss_percentile": 0.34333
+       "epss_percentile": 0.34419
       }
      ]
     },
@@ -5325,7 +5325,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00267,
-       "epss_percentile": 0.19022
+       "epss_percentile": 0.19046
       },
       {
        "id": "GO-2026-6860",
@@ -5349,7 +5349,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00409,
-       "epss_percentile": 0.35723
+       "epss_percentile": 0.35815
       }
      ]
     },
@@ -5430,7 +5430,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00133,
-       "epss_percentile": 0.02916
+       "epss_percentile": 0.02917
       },
       {
        "id": "GHSA-3pmx-cf9f-34xr",
@@ -5455,7 +5455,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00347,
-       "epss_percentile": 0.28695
+       "epss_percentile": 0.28746
       },
       {
        "id": "GHSA-xwq5-6cqp-vx96",
@@ -5480,7 +5480,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00303,
-       "epss_percentile": 0.23416
+       "epss_percentile": 0.23452
       },
       {
        "id": "GHSA-v753-g4cw-jm48",
@@ -5505,7 +5505,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00197,
-       "epss_percentile": 0.0946
+       "epss_percentile": 0.09461
       },
       {
        "id": "GHSA-23wf-92cp-8pcj",
@@ -5530,7 +5530,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00186,
-       "epss_percentile": 0.08251
+       "epss_percentile": 0.08258
       },
       {
        "id": "GHSA-375p-5qhx-8wq4",
@@ -5555,7 +5555,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00396,
-       "epss_percentile": 0.34411
+       "epss_percentile": 0.34498
       },
       {
        "id": "GHSA-h9g5-28mm-hx3g",
@@ -5580,7 +5580,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00239,
-       "epss_percentile": 0.15134
+       "epss_percentile": 0.15146
       },
       {
        "id": "GHSA-246p-cpwv-v3jq",
@@ -5603,7 +5603,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00415,
-       "epss_percentile": 0.36387
+       "epss_percentile": 0.36482
       },
       {
        "id": "GHSA-r7w9-592q-9vg4",
@@ -5628,7 +5628,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00163,
-       "epss_percentile": 0.05548
+       "epss_percentile": 0.05556
       },
       {
        "id": "GHSA-99jh-6h7p-pp36",
@@ -5651,7 +5651,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00207,
-       "epss_percentile": 0.10851
+       "epss_percentile": 0.10853
       },
       {
        "id": "GHSA-9969-6676-49h5",
@@ -5676,7 +5676,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00302,
-       "epss_percentile": 0.23224
+       "epss_percentile": 0.23259
       },
       {
        "id": "GHSA-h7wr-284f-5qvc",
@@ -5701,7 +5701,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00372,
-       "epss_percentile": 0.31595
+       "epss_percentile": 0.31669
       },
       {
        "id": "GHSA-cxf3-9h37-7rr8",
@@ -5726,7 +5726,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0043,
-       "epss_percentile": 0.3773
+       "epss_percentile": 0.3783
       },
       {
        "id": "GHSA-f48p-c9v4-h7xv",
@@ -5751,7 +5751,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00372,
-       "epss_percentile": 0.31595
+       "epss_percentile": 0.31668
       }
      ]
     },
@@ -5788,7 +5788,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00129,
-       "epss_percentile": 0.02574
+       "epss_percentile": 0.02575
       }
      ]
     },
@@ -5872,7 +5872,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 818281042.0,
+     "popularity": 818566239.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "CRITICAL",
@@ -5901,7 +5901,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00741,
-       "epss_percentile": 0.55259
+       "epss_percentile": 0.5537
       },
       {
        "id": "GHSA-rwvh-fw6r-pwvp",
@@ -5926,7 +5926,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00411,
-       "epss_percentile": 0.35983
+       "epss_percentile": 0.36076
       },
       {
        "id": "GHSA-x6mj-8jx9-qhqv",
@@ -5951,7 +5951,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00415,
-       "epss_percentile": 0.36327
+       "epss_percentile": 0.36422
       },
       {
        "id": "GHSA-v6rj-xm57-3p59",
@@ -5976,7 +5976,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00338,
-       "epss_percentile": 0.27616
+       "epss_percentile": 0.27664
       },
       {
        "id": "GHSA-rq8q-p985-fjq7",
@@ -6001,7 +6001,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00269,
-       "epss_percentile": 0.19237
+       "epss_percentile": 0.1926
       },
       {
        "id": "GHSA-2p2f-4rq4-gjwc",
@@ -6026,7 +6026,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00338,
-       "epss_percentile": 0.27615
+       "epss_percentile": 0.27664
       },
       {
        "id": "GHSA-3w93-6hmw-whh4",
@@ -6051,7 +6051,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0014,
-       "epss_percentile": 0.03377
+       "epss_percentile": 0.0338
       },
       {
        "id": "GHSA-wm3x-v3qw-4jh3",
@@ -6076,7 +6076,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00625,
-       "epss_percentile": 0.50605
+       "epss_percentile": 0.50719
       },
       {
        "id": "GHSA-68p9-83h6-5wpj",
@@ -6101,7 +6101,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00235,
-       "epss_percentile": 0.14586
+       "epss_percentile": 0.14599
       },
       {
        "id": "GHSA-3f4q-8x5m-76v8",
@@ -6126,7 +6126,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00279,
-       "epss_percentile": 0.2062
+       "epss_percentile": 0.20646
       },
       {
        "id": "GHSA-v924-7rp8-4mxh",
@@ -6151,7 +6151,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00513,
-       "epss_percentile": 0.44321
+       "epss_percentile": 0.44416
       },
       {
        "id": "GHSA-hfr4-8rjc-97m2",
@@ -6176,7 +6176,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0048,
-       "epss_percentile": 0.42023
+       "epss_percentile": 0.42136
       },
       {
        "id": "GHSA-8474-xrp6-wh69",
@@ -6201,7 +6201,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00829,
-       "epss_percentile": 0.58124
+       "epss_percentile": 0.58232
       },
       {
        "id": "GHSA-p2pm-g2h6-7j5j",
@@ -6226,7 +6226,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00499,
-       "epss_percentile": 0.43373
+       "epss_percentile": 0.43469
       },
       {
        "id": "GHSA-2w9f-fxwj-w2qf",
@@ -6250,7 +6250,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00336,
-       "epss_percentile": 0.27418
+       "epss_percentile": 0.27466
       },
       {
        "id": "GHSA-r9jg-fmfx-2gv6",
@@ -6275,7 +6275,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00422,
-       "epss_percentile": 0.37046
+       "epss_percentile": 0.37144
       },
       {
        "id": "GHSA-gmj8-hvj3-49mw",
@@ -6300,7 +6300,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00164,
-       "epss_percentile": 0.05676
+       "epss_percentile": 0.05683
       },
       {
        "id": "GHSA-4v2w-w6g6-f8f8",
@@ -6325,7 +6325,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00444,
-       "epss_percentile": 0.39194
+       "epss_percentile": 0.39291
       },
       {
        "id": "GHSA-2gff-2mmg-m73p",
@@ -6349,7 +6349,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00357,
-       "epss_percentile": 0.29951
+       "epss_percentile": 0.30007
       },
       {
        "id": "GHSA-2586-8ghr-69fj",
@@ -6374,7 +6374,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0031,
-       "epss_percentile": 0.24174
+       "epss_percentile": 0.24203
       }
      ]
     },
@@ -6382,7 +6382,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1393193525.0,
+     "popularity": 1393727965.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6412,7 +6412,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00366,
-       "epss_percentile": 0.30933
+       "epss_percentile": 0.30998
       },
       {
        "id": "GHSA-p8x9-v4hv-2w4g",
@@ -6438,7 +6438,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0024,
-       "epss_percentile": 0.15208
+       "epss_percentile": 0.1522
       },
       {
        "id": "GHSA-2j8w-xcrc-x985",
@@ -6489,7 +6489,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00251,
-       "epss_percentile": 0.16575
+       "epss_percentile": 0.16589
       }
      ]
     },
@@ -6497,7 +6497,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1302709171.0,
+     "popularity": 1303195300.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6525,7 +6525,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0038,
-       "epss_percentile": 0.3256
+       "epss_percentile": 0.32641
       },
       {
        "id": "GHSA-3w22-6jfg-527w",
@@ -6549,7 +6549,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00155,
-       "epss_percentile": 0.04664
+       "epss_percentile": 0.04671
       },
       {
        "id": "GHSA-4p39-36wj-23h4",
@@ -6573,7 +6573,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00561,
-       "epss_percentile": 0.47285
+       "epss_percentile": 0.47396
       }
      ]
     },
@@ -6581,7 +6581,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 631313451.0,
+     "popularity": 631638605.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6592,7 +6592,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 305733006.0,
+     "popularity": 305839009.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6603,7 +6603,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 348651636.0,
+     "popularity": 348780746.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6614,7 +6614,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1303009495.0,
+     "popularity": 1303420461.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6625,7 +6625,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 406967801.0,
+     "popularity": 407245731.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6696,8 +6696,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0073,
+       "epss_percentile": 0.54977
       },
       {
        "id": "EEF-CVE-2026-105963",
@@ -6722,7 +6722,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00509,
-       "epss_percentile": 0.44041
+       "epss_percentile": 0.44134
       }
      ]
     },
@@ -6759,7 +6759,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00494,
-       "epss_percentile": 0.43
+       "epss_percentile": 0.43115
       }
      ]
     },
@@ -6795,7 +6795,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00539,
-       "epss_percentile": 0.45959
+       "epss_percentile": 0.46075
       },
       {
        "id": "EEF-CVE-2026-113431",
@@ -6819,7 +6819,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00419,
-       "epss_percentile": 0.36794
+       "epss_percentile": 0.36894
       }
      ]
     },
@@ -6855,7 +6855,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00564,
-       "epss_percentile": 0.47465
+       "epss_percentile": 0.47575
       },
       {
        "id": "EEF-CVE-2026-115693",
@@ -6879,7 +6879,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00267,
-       "epss_percentile": 0.19025
+       "epss_percentile": 0.19049
       },
       {
        "id": "EEF-CVE-2026-113440",
@@ -6903,7 +6903,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00313,
-       "epss_percentile": 0.246
+       "epss_percentile": 0.24634
       },
       {
        "id": "EEF-CVE-2026-115700",
@@ -6927,7 +6927,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00138,
-       "epss_percentile": 0.0324
+       "epss_percentile": 0.03241
       },
       {
        "id": "EEF-CVE-2026-112880",
@@ -6951,7 +6951,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00188,
-       "epss_percentile": 0.08507
+       "epss_percentile": 0.08515
       }
      ]
     }
@@ -7072,7 +7072,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00334,
-       "epss_percentile": 0.27163
+       "epss_percentile": 0.27209
       },
       {
        "id": "BIT-node-2026-106073",
@@ -7099,7 +7099,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00254,
-       "epss_percentile": 0.17015
+       "epss_percentile": 0.1704
       },
       {
        "id": "BIT-node-2026-106072",
@@ -7126,7 +7126,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00617,
-       "epss_percentile": 0.50182
+       "epss_percentile": 0.50299
       },
       {
        "id": "BIT-node-2026-106071",
@@ -7151,7 +7151,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00199,
-       "epss_percentile": 0.09848
+       "epss_percentile": 0.09851
       },
       {
        "id": "BIT-node-2026-106070",
@@ -7176,7 +7176,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00367,
-       "epss_percentile": 0.31011
+       "epss_percentile": 0.31076
       },
       {
        "id": "BIT-node-2026-106069",
@@ -7203,7 +7203,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00304,
-       "epss_percentile": 0.23543
+       "epss_percentile": 0.23574
       },
       {
        "id": "BIT-node-2026-105483",
@@ -7229,7 +7229,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00304,
-       "epss_percentile": 0.23543
+       "epss_percentile": 0.23575
       },
       {
        "id": "BIT-node-2026-105482",
@@ -7256,7 +7256,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00468,
-       "epss_percentile": 0.41098
+       "epss_percentile": 0.41204
       },
       {
        "id": "BIT-node-2026-105481",
@@ -7283,7 +7283,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00318,
-       "epss_percentile": 0.25181
+       "epss_percentile": 0.25222
       },
       {
        "id": "BIT-node-2026-111497",
@@ -7319,7 +7319,7 @@
        "kev": true,
        "kev_date_added": "2026-10-27",
        "epss": 0.82641,
-       "epss_percentile": 0.99673
+       "epss_percentile": 0.99674
       }
      ]
     },
@@ -7357,7 +7357,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00488,
-       "epss_percentile": 0.4257
+       "epss_percentile": 0.42684
       },
       {
        "id": "BIT-libpython-2026-116566",
@@ -7384,7 +7384,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00259,
-       "epss_percentile": 0.1778
+       "epss_percentile": 0.17805
       },
       {
        "id": "BIT-libpython-2026-103995",
@@ -7411,7 +7411,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0036,
-       "epss_percentile": 0.30235
+       "epss_percentile": 0.30293
       },
       {
        "id": "BIT-libpython-2026-115557",
@@ -7442,7 +7442,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00534,
-       "epss_percentile": 0.457
+       "epss_percentile": 0.45807
       },
       {
        "id": "BIT-libpython-2026-114583",
@@ -7473,7 +7473,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00261,
-       "epss_percentile": 0.18068
+       "epss_percentile": 0.18091
       }
      ]
     },
@@ -7496,7 +7496,7 @@
         "CVE-2026-114940"
        ],
        "published": "2026-11-17T22:18:24Z",
-       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u511b33, 8u511b33-perf, 11.0.33.0.3, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle GraalVM",
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 7.4,
@@ -7506,8 +7506,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00341,
+       "epss_percentile": 0.28093
       },
       {
        "id": "DEBIAN-CVE-2026-114941",
@@ -7518,7 +7518,7 @@
         "CVE-2026-114941"
        ],
        "published": "2026-11-17T22:18:24Z",
-       "summary": "Listed by Debian for openjdk-21, openjdk-25; no summary yet",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK product of Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 21.0.13.0.3, 25.0.5.0.3 and  27.0.1.0.3; Oracle GraalVM for JDK: 21.0.13.0.3. Difficult to exploit vulnerability allows unauthenticat",
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 7.0,
@@ -7528,8 +7528,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00287,
+       "epss_percentile": 0.21513
       },
       {
        "id": "DEBIAN-CVE-2026-114942",
@@ -7540,7 +7540,7 @@
         "CVE-2026-114942"
        ],
        "published": "2026-11-17T22:18:24Z",
-       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK product of Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 21.0.13.0.3, 25.0.5.0.3 and  27.0.1.0.3; Oracle GraalVM for JDK: 21.0.13.0.3. Difficult to exploit vulnerability allows unauthentica",
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 7.0,
@@ -7550,8 +7550,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00287,
+       "epss_percentile": 0.21512
       },
       {
        "id": "DEBIAN-CVE-2026-114943",
@@ -7562,7 +7562,7 @@
         "CVE-2026-114943"
        ],
        "published": "2026-11-17T22:18:24Z",
-       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Hotspot).  Supported versions that are affected are Oracle Java SE: 8u511b33-perf, 11.0.33.0.3, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle GraalVM for JD",
        "severity": "MEDIUM",
        "severity_source": "CVSS v3 vector",
        "cvss": 6.5,
@@ -7572,8 +7572,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0032,
+       "epss_percentile": 0.25378
       },
       {
        "id": "DEBIAN-CVE-2026-114944",
@@ -7584,7 +7584,7 @@
         "CVE-2026-114944"
        ],
        "published": "2026-11-17T22:18:24Z",
-       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Core Java Libraries).  Supported versions that are affected are Oracle Java SE: 8u511b33, 8u511b33-perf, 11.0.33.0.3, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3;",
        "severity": "MEDIUM",
        "severity_source": "CVSS v3 vector",
        "cvss": 5.9,
@@ -7594,8 +7594,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00301,
+       "epss_percentile": 0.23202
       },
       {
        "id": "DEBIAN-CVE-2026-114945",
@@ -7606,7 +7606,7 @@
         "CVE-2026-114945"
        ],
        "published": "2026-11-17T22:18:24Z",
-       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK product of Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 21.0.13.0.3, 25.0.5.0.3 and  27.0.1.0.3; Oracle GraalVM for JDK: 21.0.13.0.3. Easily exploitable vulnerability allows unauthenticate",
        "severity": "MEDIUM",
        "severity_source": "CVSS v3 vector",
        "cvss": 5.3,
@@ -7616,8 +7616,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.0031,
+       "epss_percentile": 0.24277
       },
       {
        "id": "DEBIAN-CVE-2026-114946",
@@ -7628,7 +7628,7 @@
         "CVE-2026-114946"
        ],
        "published": "2026-11-17T22:18:24Z",
-       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 8u511b33, 8u511b33-perf, 11.0.33.0.3, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle Gra",
        "severity": "MEDIUM",
        "severity_source": "CVSS v3 vector",
        "cvss": 4.8,
@@ -7638,8 +7638,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00229,
+       "epss_percentile": 0.13849
       },
       {
        "id": "DEBIAN-CVE-2026-114947",
@@ -7650,7 +7650,7 @@
         "CVE-2026-114947"
        ],
        "published": "2026-11-17T22:18:24Z",
-       "summary": "Listed by Debian for openjdk-25; no summary yet",
+       "summary": "Vulnerability in Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 25.0.5.0.3 and  27.0.1.0.3. Difficult to exploit vulnerability allows unauthenticated attacker with network access via TLS to compromise Oracle Java SE.  Successful attacks of this vulnerabil",
        "severity": "LOW",
        "severity_source": "CVSS v3 vector",
        "cvss": 3.7,
@@ -7660,8 +7660,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00256,
+       "epss_percentile": 0.17322
       },
       {
        "id": "DEBIAN-CVE-2026-114938",
@@ -7672,7 +7672,7 @@
         "CVE-2026-114938"
        ],
        "published": "2026-11-17T22:18:23Z",
-       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 8u511b33-perf, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle GraalVM for JDK: 17.0.21.0",
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 8.1,
@@ -7682,8 +7682,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00734,
+       "epss_percentile": 0.55119
       },
       {
        "id": "DEBIAN-CVE-2026-114939",
@@ -7694,7 +7694,7 @@
         "CVE-2026-114939"
        ],
        "published": "2026-11-17T22:18:23Z",
-       "summary": "Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet",
+       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u511b33, 8u511b33-perf, 11.0.33.0.3, 17.0.21.0.3,  21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle GraalV",
        "severity": "HIGH",
        "severity_source": "CVSS v3 vector",
        "cvss": 7.4,
@@ -7704,8 +7704,8 @@
        "malicious": false,
        "kev": false,
        "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
+       "epss": 0.00341,
+       "epss_percentile": 0.28095
       },
       {
        "id": "DEBIAN-CVE-2026-114820",
@@ -7727,7 +7727,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00253,
-       "epss_percentile": 0.16944
+       "epss_percentile": 0.16969
       },
       {
        "id": "DEBIAN-CVE-2026-91395",
@@ -7749,7 +7749,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00253,
-       "epss_percentile": 0.16944
+       "epss_percentile": 0.16969
       },
       {
        "id": "DEBIAN-CVE-2026-91396",
@@ -7771,7 +7771,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00333,
-       "epss_percentile": 0.26888
+       "epss_percentile": 0.26937
       },
       {
        "id": "DEBIAN-CVE-2026-91403",
@@ -7793,7 +7793,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00375,
-       "epss_percentile": 0.31964
+       "epss_percentile": 0.32037
       },
       {
        "id": "DEBIAN-CVE-2026-91487",
@@ -7815,7 +7815,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00168,
-       "epss_percentile": 0.06197
+       "epss_percentile": 0.06207
       },
       {
        "id": "DEBIAN-CVE-2026-91464",
@@ -7837,7 +7837,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00289,
-       "epss_percentile": 0.21795
+       "epss_percentile": 0.21827
       },
       {
        "id": "DEBIAN-CVE-2026-91453",
@@ -7859,7 +7859,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0029,
-       "epss_percentile": 0.21801
+       "epss_percentile": 0.21834
       },
       {
        "id": "DEBIAN-CVE-2026-91461",
@@ -7881,7 +7881,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00187,
-       "epss_percentile": 0.08423
+       "epss_percentile": 0.08431
       },
       {
        "id": "DEBIAN-CVE-2026-91462",
@@ -7903,7 +7903,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00274,
-       "epss_percentile": 0.19986
+       "epss_percentile": 0.20015
       },
       {
        "id": "DEBIAN-CVE-2026-91463",
@@ -7925,7 +7925,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00227,
-       "epss_percentile": 0.13596
+       "epss_percentile": 0.13598
       },
       {
        "id": "DEBIAN-CVE-2026-91451",
@@ -7947,7 +7947,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0029,
-       "epss_percentile": 0.21802
+       "epss_percentile": 0.21833
       },
       {
        "id": "DEBIAN-CVE-2026-91452",
@@ -7969,7 +7969,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0029,
-       "epss_percentile": 0.21801
+       "epss_percentile": 0.21834
       },
       {
        "id": "DEBIAN-CVE-2026-91418",
@@ -7991,7 +7991,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00403,
-       "epss_percentile": 0.3508
+       "epss_percentile": 0.35167
       },
       {
        "id": "DEBIAN-CVE-2026-91409",
@@ -8013,7 +8013,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00379,
-       "epss_percentile": 0.32442
+       "epss_percentile": 0.32523
       },
       {
        "id": "DEBIAN-CVE-2026-91410",
@@ -8035,7 +8035,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00306,
-       "epss_percentile": 0.23764
+       "epss_percentile": 0.23796
       },
       {
        "id": "DEBIAN-CVE-2026-91411",
@@ -8057,7 +8057,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00267,
-       "epss_percentile": 0.18948
+       "epss_percentile": 0.18973
       },
       {
        "id": "DEBIAN-CVE-2026-91415",
@@ -8079,7 +8079,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00239,
-       "epss_percentile": 0.15134
+       "epss_percentile": 0.15145
       },
       {
        "id": "DEBIAN-CVE-2026-91397",
@@ -8101,7 +8101,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00095,
-       "epss_percentile": 0.00607
+       "epss_percentile": 0.00606
       },
       {
        "id": "DEBIAN-CVE-2026-91398",
@@ -8123,7 +8123,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00231,
-       "epss_percentile": 0.14023
+       "epss_percentile": 0.14031
       },
       {
        "id": "DEBIAN-CVE-2026-91400",
@@ -8145,7 +8145,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00257,
-       "epss_percentile": 0.17491
+       "epss_percentile": 0.17517
       },
       {
        "id": "DEBIAN-CVE-2026-91394",
@@ -8167,7 +8167,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00419,
-       "epss_percentile": 0.36783
+       "epss_percentile": 0.36883
       },
       {
        "id": "DEBIAN-CVE-2026-91379",
@@ -8211,7 +8211,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00097,
-       "epss_percentile": 0.00735
+       "epss_percentile": 0.00733
       },
       {
        "id": "DEBIAN-CVE-2026-91382",
@@ -8233,7 +8233,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00377,
-       "epss_percentile": 0.32199
+       "epss_percentile": 0.32272
       },
       {
        "id": "DEBIAN-CVE-2026-91373",
@@ -8255,7 +8255,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00441,
-       "epss_percentile": 0.38869
+       "epss_percentile": 0.38965
       },
       {
        "id": "DEBIAN-CVE-2026-91374",
@@ -8277,7 +8277,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00168,
-       "epss_percentile": 0.06197
+       "epss_percentile": 0.06207
       },
       {
        "id": "DEBIAN-CVE-2026-91375",
@@ -8321,7 +8321,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0029,
-       "epss_percentile": 0.21802
+       "epss_percentile": 0.21834
       },
       {
        "id": "DEBIAN-CVE-2026-91333",
@@ -8343,7 +8343,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00265,
-       "epss_percentile": 0.18526
+       "epss_percentile": 0.1855
       },
       {
        "id": "DEBIAN-CVE-2026-91334",
@@ -8365,7 +8365,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00208,
-       "epss_percentile": 0.11015
+       "epss_percentile": 0.11016
       },
       {
        "id": "DEBIAN-CVE-2026-91335",
@@ -8409,7 +8409,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00252,
-       "epss_percentile": 0.16777
+       "epss_percentile": 0.16795
       },
       {
        "id": "DEBIAN-CVE-2026-87291",
@@ -8431,7 +8431,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00308,
-       "epss_percentile": 0.23962
+       "epss_percentile": 0.23992
       },
       {
        "id": "DEBIAN-CVE-2026-87292",
@@ -8453,7 +8453,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00239,
-       "epss_percentile": 0.15049
+       "epss_percentile": 0.1506
       },
       {
        "id": "DEBIAN-CVE-2026-87294",
@@ -8475,7 +8475,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00262,
-       "epss_percentile": 0.18171
+       "epss_percentile": 0.18194
       },
       {
        "id": "DEBIAN-CVE-2026-87255",
@@ -8497,7 +8497,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00308,
-       "epss_percentile": 0.24004
+       "epss_percentile": 0.24033
       },
       {
        "id": "DEBIAN-CVE-2026-87290",
@@ -8519,7 +8519,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00327,
-       "epss_percentile": 0.26187
+       "epss_percentile": 0.26229
       },
       {
        "id": "DEBIAN-CVE-2026-83400",
@@ -8541,7 +8541,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00396,
-       "epss_percentile": 0.34372
+       "epss_percentile": 0.34458
       },
       {
        "id": "DEBIAN-CVE-2026-83387",
@@ -8563,7 +8563,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00327,
-       "epss_percentile": 0.26188
+       "epss_percentile": 0.26229
       },
       {
        "id": "DEBIAN-CVE-2026-83395",
@@ -8585,7 +8585,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00327,
-       "epss_percentile": 0.26199
+       "epss_percentile": 0.2624
       },
       {
        "id": "DEBIAN-CVE-2026-83378",
@@ -8607,7 +8607,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00214,
-       "epss_percentile": 0.11823
+       "epss_percentile": 0.11821
       },
       {
        "id": "DEBIAN-CVE-2026-83380",
@@ -8629,7 +8629,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00325,
-       "epss_percentile": 0.25945
+       "epss_percentile": 0.25984
       },
       {
        "id": "DEBIAN-CVE-2026-83381",
@@ -8651,7 +8651,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00226,
-       "epss_percentile": 0.13383
+       "epss_percentile": 0.13382
       },
       {
        "id": "DEBIAN-CVE-2026-83374",
@@ -8673,7 +8673,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00289,
-       "epss_percentile": 0.21709
+       "epss_percentile": 0.21742
       },
       {
        "id": "DEBIAN-CVE-2026-83376",
@@ -8695,7 +8695,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00252,
-       "epss_percentile": 0.16777
+       "epss_percentile": 0.16795
       },
       {
        "id": "DEBIAN-CVE-2026-101737",
@@ -8717,7 +8717,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00456,
-       "epss_percentile": 0.40114
+       "epss_percentile": 0.40217
       },
       {
        "id": "DEBIAN-CVE-2026-101516",
@@ -8739,7 +8739,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00267,
-       "epss_percentile": 0.18939
+       "epss_percentile": 0.18964
       }
      ]
     },
@@ -8779,7 +8779,7 @@
        "kev": true,
        "kev_date_added": "2026-10-29",
        "epss": 0.69289,
-       "epss_percentile": 0.99369
+       "epss_percentile": 0.9937
       }
      ]
     },
@@ -8840,7 +8840,7 @@
        "kev": true,
        "kev_date_added": "2026-11-03",
        "epss": 0.01586,
-       "epss_percentile": 0.76024
+       "epss_percentile": 0.76089
       }
      ]
     },
@@ -8878,7 +8878,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00246,
-       "epss_percentile": 0.1596
+       "epss_percentile": 0.15972
       },
       {
        "id": "BIT-nginx-2026-97205",
@@ -8904,7 +8904,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00834,
-       "epss_percentile": 0.58273
+       "epss_percentile": 0.58381
       },
       {
        "id": "BIT-nginx-2026-95101",
@@ -8931,7 +8931,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00346,
-       "epss_percentile": 0.28661
+       "epss_percentile": 0.28712
       },
       {
        "id": "BIT-nginx-2026-93479",
@@ -8957,7 +8957,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01198,
-       "epss_percentile": 0.68654
+       "epss_percentile": 0.6874
       },
       {
        "id": "BIT-nginx-2026-15176",
@@ -8983,7 +8983,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00998,
-       "epss_percentile": 0.63308
+       "epss_percentile": 0.63403
       }
      ]
     },
@@ -9019,7 +9019,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01583,
-       "epss_percentile": 0.75985
+       "epss_percentile": 0.7605
       }
      ]
     },
@@ -9057,7 +9057,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00592,
-       "epss_percentile": 0.48913
+       "epss_percentile": 0.49033
       },
       {
        "id": "BIT-tomcat-2026-88041",
@@ -9083,7 +9083,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00514,
-       "epss_percentile": 0.44423
+       "epss_percentile": 0.44517
       },
       {
        "id": "BIT-tomcat-2026-80353",
@@ -9107,7 +9107,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00392,
-       "epss_percentile": 0.33835
+       "epss_percentile": 0.33916
       },
       {
        "id": "BIT-tomcat-2026-74049",
@@ -9133,7 +9133,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0037,
-       "epss_percentile": 0.31448
+       "epss_percentile": 0.31512
       },
       {
        "id": "BIT-tomcat-2026-74048",
@@ -9159,7 +9159,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0045,
-       "epss_percentile": 0.39646
+       "epss_percentile": 0.39747
       },
       {
        "id": "BIT-tomcat-2026-103119",
@@ -9183,7 +9183,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00586,
-       "epss_percentile": 0.48618
+       "epss_percentile": 0.48737
       },
       {
        "id": "BIT-tomcat-2026-101356",
@@ -9209,7 +9209,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00518,
-       "epss_percentile": 0.44627
+       "epss_percentile": 0.4472
       },
       {
        "id": "BIT-tomcat-2026-101296",
@@ -9235,7 +9235,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48839
+       "epss_percentile": 0.48958
       }
      ]
     },
@@ -9269,7 +9269,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48836
+       "epss_percentile": 0.48957
       },
       {
        "id": "DEBIAN-CVE-2026-6460",
@@ -9291,7 +9291,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48838
+       "epss_percentile": 0.48955
       },
       {
        "id": "DEBIAN-CVE-2026-6467",
@@ -9313,7 +9313,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00615,
-       "epss_percentile": 0.50101
+       "epss_percentile": 0.50221
       },
       {
        "id": "DEBIAN-CVE-2026-16237",
@@ -9335,7 +9335,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00272,
-       "epss_percentile": 0.19839
+       "epss_percentile": 0.19867
       },
       {
        "id": "DEBIAN-CVE-2026-16240",
@@ -9357,7 +9357,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00269,
-       "epss_percentile": 0.19287
+       "epss_percentile": 0.19312
       },
       {
        "id": "DEBIAN-CVE-2026-14661",
@@ -9379,7 +9379,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00434,
-       "epss_percentile": 0.38223
+       "epss_percentile": 0.38319
       },
       {
        "id": "DEBIAN-CVE-2026-120153",
@@ -9401,7 +9401,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00552,
-       "epss_percentile": 0.46727
+       "epss_percentile": 0.46841
       },
       {
        "id": "DEBIAN-CVE-2026-120154",
@@ -9423,7 +9423,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00295,
-       "epss_percentile": 0.22368
+       "epss_percentile": 0.22401
       },
       {
        "id": "DEBIAN-CVE-2026-120145",
@@ -9445,7 +9445,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00541,
-       "epss_percentile": 0.46064
+       "epss_percentile": 0.4618
       },
       {
        "id": "DEBIAN-CVE-2026-120146",
@@ -9467,7 +9467,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00254,
-       "epss_percentile": 0.17103
+       "epss_percentile": 0.17132
       },
       {
        "id": "DEBIAN-CVE-2026-120147",
@@ -9489,7 +9489,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48838
+       "epss_percentile": 0.48956
       },
       {
        "id": "DEBIAN-CVE-2026-120148",
@@ -9511,7 +9511,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00483,
-       "epss_percentile": 0.42208
+       "epss_percentile": 0.42322
       },
       {
        "id": "DEBIAN-CVE-2026-120149",
@@ -9533,7 +9533,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00596,
-       "epss_percentile": 0.49085
+       "epss_percentile": 0.49207
       },
       {
        "id": "DEBIAN-CVE-2026-120150",
@@ -9555,7 +9555,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00577,
-       "epss_percentile": 0.48139
+       "epss_percentile": 0.4826
       },
       {
        "id": "DEBIAN-CVE-2026-120151",
@@ -9577,7 +9577,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48834
+       "epss_percentile": 0.48955
       },
       {
        "id": "DEBIAN-CVE-2026-120152",
@@ -9599,7 +9599,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00295,
-       "epss_percentile": 0.22368
+       "epss_percentile": 0.22401
       },
       {
        "id": "DEBIAN-CVE-2026-116335",
@@ -9621,7 +9621,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48838
+       "epss_percentile": 0.48952
       },
       {
        "id": "DEBIAN-CVE-2026-116336",
@@ -9643,7 +9643,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00638,
-       "epss_percentile": 0.51189
+       "epss_percentile": 0.51305
       },
       {
        "id": "DEBIAN-CVE-2026-120139",
@@ -9665,7 +9665,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48834
+       "epss_percentile": 0.48954
       },
       {
        "id": "DEBIAN-CVE-2026-120141",
@@ -9687,7 +9687,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48837
+       "epss_percentile": 0.48956
       },
       {
        "id": "DEBIAN-CVE-2026-120142",
@@ -9709,7 +9709,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48835
+       "epss_percentile": 0.48954
       },
       {
        "id": "DEBIAN-CVE-2026-120143",
@@ -9731,7 +9731,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48835
+       "epss_percentile": 0.48955
       },
       {
        "id": "DEBIAN-CVE-2026-120144",
@@ -9753,7 +9753,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48835
+       "epss_percentile": 0.48955
       },
       {
        "id": "DEBIAN-CVE-2026-116326",
@@ -9775,7 +9775,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00638,
-       "epss_percentile": 0.51188
+       "epss_percentile": 0.51305
       },
       {
        "id": "DEBIAN-CVE-2026-116327",
@@ -9797,7 +9797,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00224,
-       "epss_percentile": 0.13131
+       "epss_percentile": 0.13129
       },
       {
        "id": "DEBIAN-CVE-2026-116328",
@@ -9819,7 +9819,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48833
+       "epss_percentile": 0.48952
       },
       {
        "id": "DEBIAN-CVE-2026-116329",
@@ -9841,7 +9841,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48833
+       "epss_percentile": 0.48953
       },
       {
        "id": "DEBIAN-CVE-2026-116330",
@@ -9863,7 +9863,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00373,
-       "epss_percentile": 0.31776
+       "epss_percentile": 0.31849
       },
       {
        "id": "DEBIAN-CVE-2026-116331",
@@ -9885,7 +9885,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48834
+       "epss_percentile": 0.48954
       },
       {
        "id": "DEBIAN-CVE-2026-116332",
@@ -9907,7 +9907,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48833
+       "epss_percentile": 0.48957
       },
       {
        "id": "DEBIAN-CVE-2026-116333",
@@ -9929,7 +9929,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00371,
-       "epss_percentile": 0.31533
+       "epss_percentile": 0.31595
       },
       {
        "id": "DEBIAN-CVE-2026-116318",
@@ -9951,7 +9951,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0043,
-       "epss_percentile": 0.37753
+       "epss_percentile": 0.37854
       },
       {
        "id": "DEBIAN-CVE-2026-116319",
@@ -9973,7 +9973,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48836
+       "epss_percentile": 0.48953
       },
       {
        "id": "DEBIAN-CVE-2026-116320",
@@ -9995,7 +9995,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48834
+       "epss_percentile": 0.48952
       },
       {
        "id": "DEBIAN-CVE-2026-116321",
@@ -10017,7 +10017,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00295,
-       "epss_percentile": 0.22372
+       "epss_percentile": 0.224
       },
       {
        "id": "DEBIAN-CVE-2026-116322",
@@ -10039,7 +10039,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00366,
-       "epss_percentile": 0.30928
+       "epss_percentile": 0.30993
       },
       {
        "id": "DEBIAN-CVE-2026-116323",
@@ -10061,7 +10061,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48835
+       "epss_percentile": 0.48953
       },
       {
        "id": "DEBIAN-CVE-2026-116325",
@@ -10083,7 +10083,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00375,
-       "epss_percentile": 0.31955
+       "epss_percentile": 0.32029
       },
       {
        "id": "DEBIAN-CVE-2026-116311",
@@ -10105,7 +10105,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0023,
-       "epss_percentile": 0.13971
+       "epss_percentile": 0.13969
       },
       {
        "id": "DEBIAN-CVE-2026-116312",
@@ -10127,7 +10127,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00251,
-       "epss_percentile": 0.16609
+       "epss_percentile": 0.16624
       },
       {
        "id": "DEBIAN-CVE-2026-116313",
@@ -10149,7 +10149,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00499,
-       "epss_percentile": 0.43395
+       "epss_percentile": 0.43492
       },
       {
        "id": "DEBIAN-CVE-2026-116314",
@@ -10171,7 +10171,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00527,
-       "epss_percentile": 0.45194
+       "epss_percentile": 0.45296
       },
       {
        "id": "DEBIAN-CVE-2026-116315",
@@ -10193,7 +10193,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00596,
-       "epss_percentile": 0.49084
+       "epss_percentile": 0.49208
       },
       {
        "id": "DEBIAN-CVE-2026-116316",
@@ -10215,7 +10215,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00479,
-       "epss_percentile": 0.41953
+       "epss_percentile": 0.42059
       },
       {
        "id": "DEBIAN-CVE-2026-116317",
@@ -10237,7 +10237,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00596,
-       "epss_percentile": 0.49084
+       "epss_percentile": 0.49208
       },
       {
        "id": "DEBIAN-CVE-2026-116304",
@@ -10259,7 +10259,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48833
+       "epss_percentile": 0.48957
       },
       {
        "id": "DEBIAN-CVE-2026-116306",
@@ -10281,7 +10281,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48837
+       "epss_percentile": 0.48956
       },
       {
        "id": "DEBIAN-CVE-2026-116307",
@@ -10303,7 +10303,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48837
+       "epss_percentile": 0.48956
       },
       {
        "id": "DEBIAN-CVE-2026-116308",
@@ -10325,7 +10325,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00295,
-       "epss_percentile": 0.22372
+       "epss_percentile": 0.22403
       },
       {
        "id": "DEBIAN-CVE-2026-116309",
@@ -10347,7 +10347,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0059,
-       "epss_percentile": 0.48837
+       "epss_percentile": 0.48954
       },
       {
        "id": "DEBIAN-CVE-2026-116310",
@@ -10369,7 +10369,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00295,
-       "epss_percentile": 0.22372
+       "epss_percentile": 0.22404
       },
       {
        "id": "DEBIAN-CVE-2026-116303",
@@ -10434,7 +10434,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0075,
-       "epss_percentile": 0.55563
+       "epss_percentile": 0.55671
       },
       {
        "id": "BIT-mariadb-2026-97380",
@@ -10466,7 +10466,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01303,
-       "epss_percentile": 0.70998
+       "epss_percentile": 0.71078
       },
       {
        "id": "BIT-mariadb-2026-92262",
@@ -10498,7 +10498,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01451,
-       "epss_percentile": 0.73832
+       "epss_percentile": 0.73903
       },
       {
        "id": "BIT-mariadb-2026-86047",
@@ -10530,7 +10530,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00856,
-       "epss_percentile": 0.58995
+       "epss_percentile": 0.59101
       },
       {
        "id": "BIT-mariadb-2026-85985",
@@ -10562,7 +10562,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00452,
-       "epss_percentile": 0.39775
+       "epss_percentile": 0.39877
       },
       {
        "id": "BIT-mariadb-2026-85748",
@@ -10590,7 +10590,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.01179,
-       "epss_percentile": 0.68217
+       "epss_percentile": 0.68305
       },
       {
        "id": "BIT-mariadb-2026-85746",
@@ -10622,7 +10622,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.0097,
-       "epss_percentile": 0.62475
+       "epss_percentile": 0.62572
       },
       {
        "id": "BIT-mariadb-2026-85745",
@@ -10654,7 +10654,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00534,
-       "epss_percentile": 0.45677
+       "epss_percentile": 0.45783
       }
      ]
     },
@@ -10707,7 +10707,7 @@
        "kev": false,
        "kev_date_added": null,
        "epss": 0.00737,
-       "epss_percentile": 0.5513
+       "epss_percentile": 0.5524
       }
      ]
     }

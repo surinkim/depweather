@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-18
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-18T04:20:52Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-18T15:36:42Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 18 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 3
-- New CVEs in NVD today (UTC): 81
-- CVEs published in 2026-11 so far: 9,640 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 394
+- CVEs published in 2026-11 so far: 9,953 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -17,7 +17,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **WordPress**: 1 advisory, worst actively exploited (CISA KEV); fixed in 4.7.39, 4.8.34, 4.9.35, 5.0.31 and more. Example: [BIT-wordpress-2026-119977](https://osv.dev/vulnerability/BIT-wordpress-2026-119977) WordPress Core 4.7.0 - 7.1.3 - Unauthenticated Upgrade-Window Staged-Installer Remote Code Execution
 - **MongoDB**: 1 advisory, worst critical; fixed in 4.4.32, 5.0.35, 6.0.30, 7.0.48 and more. Example: [BIT-mongodb-2026-118383](https://osv.dev/vulnerability/BIT-mongodb-2026-118383) Pre-authentication use-after-free in MongoDB Server replica set primary catch-up
 - **PostgreSQL**: 52 advisories, worst high. Example: [DEBIAN-CVE-2026-18447](https://osv.dev/vulnerability/DEBIAN-CVE-2026-18447) Type confusion in PostgreSQL SQL-language functions allows an object creator to execute arbitrary code as the operating system user running the database, via an output parameter of type "any".  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.
-- **Java (OpenJDK) (java)**: 10 advisories, worst high. Example: [DEBIAN-CVE-2026-114940](https://osv.dev/vulnerability/DEBIAN-CVE-2026-114940) Listed by Debian for openjdk-17, openjdk-21, openjdk-25; no summary yet
+- **Java (OpenJDK) (java)**: 10 advisories, worst high. Example: [DEBIAN-CVE-2026-114940](https://osv.dev/vulnerability/DEBIAN-CVE-2026-114940) Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u511b33, 8u511b33-perf, 11.0.33.0.3, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle GraalVM
 - **Python**: 3 advisories, worst high; fixed in 3.14.11, 3.16.0. Example: [BIT-libpython-2026-119170](https://osv.dev/vulnerability/BIT-libpython-2026-119170) Regression in FIPS enforcement of hash algorithms affecting only Python 3.14.10
 - **Apache httpd (apache)**: 1 advisory, worst high; fixed in 2.4.71. Example: [BIT-apache-2026-119618](https://osv.dev/vulnerability/BIT-apache-2026-119618) Apache HTTP Server: mod_http2: heap corruption and RCE in assign_headers
 - **MariaDB**: 1 advisory, worst high; fixed in 10.11.19, 11.4.13, 11.8.9, 12.3.3 and more. Example: [BIT-mariadb-2026-102523](https://osv.dev/vulnerability/BIT-mariadb-2026-102523) MariaDB server: Authorization bypass via ALTER TABLE ... CONVERT ... PARTITION
