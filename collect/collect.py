@@ -8,7 +8,9 @@ History files count advisories by severity and KEV. They are committed.
 Full daily copies of latest.json are not written.
 
 Sources:
-  OSV.dev       per-ecosystem GCS export (modified_id.csv + one JSON per entry)
+  OSV.dev       per-ecosystem GCS export (modified_id.csv + one JSON per entry);
+                for a tile's `also` sources (e.g. Debian for OpenJDK) the
+                ecosystem's all.zip, filtered to the listed package names
   CISA KEV      known_exploited_vulnerabilities.json
   FIRST EPSS    epss_scores-current.csv.gz
   NVD API 2.0   monthly / daily CVE publication counts
@@ -26,6 +28,7 @@ DEPWEATHER_STACKS (path to a package list other than collect/stacks.yml).
 from __future__ import annotations
 
 import csv
+import fnmatch
 import gzip
 import io
 import json
@@ -36,6 +39,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import zipfile
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -200,7 +204,8 @@ def osv_fetch(ecosystem: str, vid: str) -> dict | None:
 
 
 # Who wrote an OSV record, from its ID prefix; used to say where a severity label came from.
-LABEL_SOURCES = {"GHSA": "GitHub Advisory", "BIT": "Bitnami", "PYSEC": "PyPA", "RUSTSEC": "RustSec", "GO": "Go"}
+LABEL_SOURCES = {"GHSA": "GitHub Advisory", "BIT": "Bitnami", "PYSEC": "PyPA", "RUSTSEC": "RustSec", "GO": "Go",
+                 "DEBIAN": "Debian", "DSA": "Debian", "DLA": "Debian", "UBUNTU": "Ubuntu", "USN": "Ubuntu"}
 
 
 def record_severity(rec: dict) -> tuple[str, float | None, str | None]:
@@ -259,6 +264,80 @@ def name_matches(ecosystem: str, name: str, patterns: list[str]) -> bool:
         elif n == norm_name(ecosystem, p):
             return True
     return False
+
+
+# ------------------------------------------------ extra OSV sources per tile
+#
+# Some tiles are covered late or not at all by their group's ecosystem. Bitnami
+# stopped adding Java advisories after 2026-08-26, while Debian's security
+# tracker lists new OpenJDK CVEs within hours. A package in stacks.yml can name
+# more OSV ecosystems and the package names that count there:
+#
+#     - {name: java, label: Java (OpenJDK), match: [java-min, jre],
+#        also: {Debian: ["openjdk-*"]}}
+#
+# Those records are added to the tile and merged with the group's own records
+# of the same CVE (merge_aliases). Their fixed versions are distribution
+# package versions ("21.0.9+10-1~deb13u1"), so they are not listed.
+
+def also_sources(stacks: list[dict]) -> dict[str, list[tuple[tuple[str, str], list[str]]]]:
+    """{OSV ecosystem: [((group ecosystem, tile name), name patterns), ...]}."""
+    out: dict[str, list[tuple[tuple[str, str], list[str]]]] = {}
+    for e in stacks:
+        for p in e["packages"]:
+            for eco, names in (p.get("also") or {}).items():
+                if isinstance(names, str):
+                    names = [names]
+                out.setdefault(eco, []).append(((e["osv"], p["name"]), list(names)))
+    return out
+
+
+def eco_matches(source: str, record_eco: str) -> bool:
+    """"Debian" covers "Debian:12" and "Debian:13" in a record's affected list."""
+    return record_eco == source or record_eco.startswith(source + ":")
+
+
+def osv_zip_records(ecosystem: str):
+    """Every record in an ecosystem's all.zip (one download, read in memory)."""
+    raw = http_get(f"{OSV_BUCKET}/{urllib.parse.quote(ecosystem)}/all.zip", timeout=600)
+    with zipfile.ZipFile(io.BytesIO(raw)) as z:
+        for name in z.namelist():
+            if name.endswith(".json"):
+                yield json.loads(z.read(name))
+
+
+def collect_also(stacks: list[dict], now: datetime, read=osv_zip_records) -> tuple[dict, dict]:
+    """Records from the `also` sources published in the window.
+
+    Returns ({(group ecosystem, tile): [record, ...]}, {ecosystem: {"ok", "added", "error"}})."""
+    since = now - timedelta(days=WINDOW_DAYS)
+    found: dict[tuple[str, str], list[dict]] = {}
+    status: dict[str, dict] = {}
+    for eco, tiles in also_sources(stacks).items():
+        added = 0
+        try:
+            for rec in read(eco):
+                if rec.get("withdrawn") or not rec.get("published"):
+                    continue
+                if parse_time(rec["published"]) < since:
+                    continue
+                # Only one-CVE records (DEBIAN-CVE-...). A DSA/DLA bundles many CVEs,
+                # and merging by CVE would fold them all into one entry.
+                cves = {k for k in (*rec.get("aliases", []), *rec.get("upstream", [])) if k.startswith("CVE-")}
+                if len(cves) > 1:
+                    continue
+                names = {(a.get("package") or {}).get("name", "") for a in rec.get("affected") or []
+                         if eco_matches(eco, (a.get("package") or {}).get("ecosystem", ""))}
+                for key, pats in tiles:
+                    if any(fnmatch.fnmatchcase(n, pat) for n in names for pat in pats):
+                        found.setdefault(key, []).append(rec)
+                        added += 1
+            status[eco] = {"ok": True, "added": added}
+        except Exception as e:  # noqa: BLE001 - the group's own source still counts
+            log(f"osv {eco} (also): {e}")
+            status[eco] = {"ok": False, "added": 0, "error": str(e)[:200]}
+        log(f"osv {eco} (also): {added} records for {len(tiles)} tiles")
+    return found, status
 
 
 def collect_osv(stacks: list[dict], now: datetime,
@@ -355,11 +434,24 @@ def kev_backfill(stacks: list[dict], kev: dict[str, dict], now: datetime) -> tup
     return extra, added, errors
 
 
+def record_summary(rec: dict) -> str:
+    text = (rec.get("summary") or rec.get("details") or "").strip().split("\n")[0][:300]
+    if text:
+        return text
+    # Debian's per-CVE records carry no text: say where it is listed instead.
+    names = sorted({(a.get("package") or {}).get("name", "") for a in rec.get("affected") or []} - {""})
+    who = LABEL_SOURCES.get(rec["id"].split("-")[0])
+    if who and names:
+        return f"Listed by {who} for {', '.join(names[:4])}{' and more' if len(names) > 4 else ''}; no summary yet"
+    return ""
+
+
 def merge_aliases(ecosystem: str, patterns: list[str], recs: list[dict]) -> list[dict]:
     """One entry per vulnerability: GO-/PYSEC-/GHSA- records of the same issue are merged."""
     groups: list[dict] = []
     for rec in recs:
-        keys = {rec["id"], *rec.get("aliases", [])}
+        # Debian and Ubuntu records name their CVE in "upstream", not "aliases".
+        keys = {rec["id"], *rec.get("aliases", []), *rec.get("upstream", [])}
         merged = [g for g in groups if g["keys"] & keys]
         for g in merged:
             groups.remove(g)
@@ -368,7 +460,9 @@ def merge_aliases(ecosystem: str, patterns: list[str], recs: list[dict]) -> list
 
     out = []
     for g in groups:
-        recs_g = sorted(g["recs"], key=lambda r: (not r["id"].startswith("GHSA-"), r["id"]))
+        # GitHub first, then a record that has a summary (distribution records often have none).
+        recs_g = sorted(g["recs"], key=lambda r: (not r["id"].startswith("GHSA-"),
+                                                  not (r.get("summary") or r.get("details")), r["id"]))
         primary = recs_g[0]
         sev, score, sev_src = "UNKNOWN", None, None
         for r in recs_g:
@@ -391,7 +485,7 @@ def merge_aliases(ecosystem: str, patterns: list[str], recs: list[dict]) -> list
             "aliases": sorted(k for k in g["keys"] if k != primary["id"]),
             "cves": sorted(k for k in g["keys"] if k.startswith("CVE-")),
             "published": published.strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "summary": (primary.get("summary") or primary.get("details") or "").strip().split("\n")[0][:300],
+            "summary": record_summary(primary),
             "severity": sev,
             "severity_source": sev_src,
             "cvss": score,
@@ -688,6 +782,13 @@ def main() -> int:
     extra, backfilled, errors = kev_backfill(stacks, kev, now) if kev else ({}, 0, [])
     sources["kev_backfill"] = {"ok": not errors, "url": OSV_QUERY, "added": backfilled,
                                "errors": errors[:5]}
+
+    also, also_status = collect_also(stacks, now)
+    if also_status:
+        sources["osv_also"] = {"ok": all(v["ok"] for v in also_status.values()), "url": OSV_BUCKET,
+                               "ecosystems": also_status}
+    for key, recs in also.items():
+        extra.setdefault(key, []).extend(recs)
 
     try:
         osv = collect_osv(stacks, now, extra)
