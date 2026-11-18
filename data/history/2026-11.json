@@ -188,6 +188,12 @@
   },
   "2026-11-17": {
    "packages": {
+    "hex/plug": {
+     "m": 1
+    },
+    "npm/next": {
+     "m": 1
+    },
     "runtimes/apache": {
      "h": 1
     },
@@ -212,6 +218,12 @@
     }
    },
    "ecosystems": {
+    "hex": {
+     "m": 1
+    },
+    "npm": {
+     "m": 1
+    },
     "runtimes": {
      "c": 2,
      "h": 4,
