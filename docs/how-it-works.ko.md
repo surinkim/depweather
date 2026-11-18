@@ -194,9 +194,10 @@ Bitnami 생태계에서 가져옵니다. 이들의 권고는 언어 레지스트
 PHP2Shell(CVE-2026-109618, CVE-2026-109619, 2026년 10월)은 PHP 자체의 결함이라
 Packagist 그룹이 아니라 PHP 타일에 나타납니다.
 
-Bitnami는 2026-08-26 이후 Java 권고를 추가하지 않아서, Java 타일은 OSV의 **Debian**
-데이터도 함께 읽습니다(`collect/stacks.yml`의 `also: {Debian: ["openjdk-*"]}`).
-Debian 보안 추적기는 새 OpenJDK CVE를 몇 시간 안에 올립니다. CVE 하나짜리 레코드
+Bitnami는 2026-08-26 이후 Java 권고를 추가하지 않았습니다(PostgreSQL은 8월, Redis는
+5월 이후 없음). 그래서 이 타일들은 OSV의 **Debian** 데이터도 함께 읽습니다
+(`collect/stacks.yml`의 `also: {Debian: ["openjdk-*"]}` 등). Debian 보안 추적기는 새
+CVE를 몇 시간 안에 올립니다. CVE 하나짜리 레코드
 (`DEBIAN-CVE-…`)만 쓰고, Bitnami에도 있는 CVE는 한 번만 보여줍니다. Debian의 수정
 버전은 배포판 패키지 버전이라 표시하지 않습니다. 이 레코드에는 아직 요약이 없어서,
 대신 어디에 등록됐는지 적습니다. Debian 내려받기가 실패해도 나머지 데이터는 그대로
@@ -232,7 +233,7 @@ DEPWEATHER_STACKS=~/my-stacks.yml python collect/collect.py
 |---|---|---|---|
 | [OSV.dev](https://osv.dev) | 권고, 영향·수정 버전, 별칭 | `osv-vulnerabilities.storage.googleapis.com`의 생태계별 내보내기(`modified_id.csv`로 기간 안에 바뀐 항목을 찾고 항목마다 JSON 하나) | 각 항목은 원 데이터베이스의 라이선스를 따릅니다. **확인 필요**: OSV 데이터 라이선스 페이지를 작성 환경에서 열 수 없었습니다 |
 | [Bitnami Vulnerability Database](https://github.com/bitnami/vulndb) | 런타임·서버 그룹(OSV 경유) | — | Apache License 2.0(`bitnami/vulndb` README, 2026-10-25 확인) |
-| [Debian Security Tracker](https://security-tracker.debian.org/) | Java 타일의 OpenJDK CVE(OSV 경유) | 같은 OSV 버킷의 `Debian/all.zip`에서 `openjdk-*`만 | **확인 필요**: 추적기 데이터 라이선스를 작성 환경에서 열 수 없었습니다 |
+| [Debian Security Tracker](https://security-tracker.debian.org/) | Java·PostgreSQL·Redis CVE(OSV 경유) | 같은 OSV 버킷의 `Debian/all.zip`에서 `openjdk-*`, `postgresql-<버전>`, `redis`만 | **확인 필요**: 추적기 데이터 라이선스를 작성 환경에서 열 수 없었습니다 |
 | [GitHub Advisory Database](https://github.com/github/advisory-database) | npm / PyPI / Maven / Go 권고 대부분(OSV 경유) | — | CC-BY 4.0(저장소의 `LICENSE.md`, 2026-10-25 확인). 페이지 하단에 출처 표기 |
 | [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | 실제 악용 여부, 7일 신규 | `known_exploited_vulnerabilities.json`, 실패하면 CISA의 GitHub 미러 `cisagov/kev-data` | CC0 1.0. `cisagov/kev-data` LICENSE 원문(2026-10-25 확인): "The KEV database is distributed under the Creative Commons 0 1.0 License. You may use this data in any legal manner but note that information provided at any 3rd party links included in the KEV database are bound by the policies and licenses of those 3rd party websites. Use of the information does not authorize you to use the CISA Logo or DHS Seal, nor should such use be interpreted as an endorsement by CISA or DHS." |
 | [FIRST EPSS](https://www.first.org/epss/) | CVE별 악용 확률 | `epss_scores-current.csv.gz` | **확인 필요.** FIRST EPSS 이용 약관의 2차 사본에 따르면 점수는 누구나 무료로 쓸 수 있고, 가능하면 EPSS 출처 표기를 요청합니다. first.org 원문은 작성 환경에서 열 수 없었습니다 |

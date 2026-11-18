@@ -284,7 +284,8 @@ ecosystems:
       - {name: nginx}
       - {name: apache, label: Apache httpd}
       - {name: tomcat, label: Tomcat}
-      - {name: postgresql, label: PostgreSQL}
+      # Same for PostgreSQL (none since 2026-08) and Redis (none since 2026-05).
+      - {name: postgresql, label: PostgreSQL, also: {Debian: ["postgresql-[0-9]*"]}}
       - {name: mariadb, label: MariaDB}
-      - {name: redis, label: Redis}
+      - {name: redis, label: Redis, also: {Debian: [redis]}}
       - {name: mongodb, label: MongoDB}

@@ -1065,7 +1065,7 @@ function renderMeta() {
   } else {
     $("#meta").textContent = t("meta", gen, DATA.summary.tracked_packages, DATA.ecosystems.length);
   }
-  const missing = Object.entries(DATA.sources).filter(([, s]) => !s.ok).map(([k]) => ({ osv: "OSV", kev: "CISA KEV", epss: "FIRST EPSS", nvd: "NVD", kev_backfill: "OSV API (older KEV entries)", osv_also: "OSV distribution data (OpenJDK)" }[k] || k));
+  const missing = Object.entries(DATA.sources).filter(([, s]) => !s.ok).map(([k]) => ({ osv: "OSV", kev: "CISA KEV", epss: "FIRST EPSS", nvd: "NVD", kev_backfill: "OSV API (older KEV entries)", osv_also: "OSV Debian data (Java, PostgreSQL, Redis)" }[k] || k));
   const w = $("#warn");
   w.hidden = !missing.length;
   if (missing.length) w.textContent = t("warn", missing.join(", "));
