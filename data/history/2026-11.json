@@ -152,6 +152,9 @@
      "m": 1,
      "l": 1
     },
+    "packagist/drupal/core": {
+     "u": 1
+    },
     "packagist/laravel/framework": {
      "l": 1
     }
@@ -162,7 +165,8 @@
      "l": 1
     },
     "packagist": {
-     "l": 1
+     "l": 1,
+     "u": 1
     }
    }
   },
@@ -245,6 +249,18 @@
      "m": 5,
      "l": 2,
      "k": 2
+    }
+   }
+  },
+  "2026-11-18": {
+   "packages": {
+    "packagist/drupal/core": {
+     "u": 1
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "u": 1
     }
    }
   }

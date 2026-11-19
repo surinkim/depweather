@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T15:36:42Z",
+ "generated_at": "2026-11-19T00:23:36Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -57,12 +57,12 @@
   }
  },
  "summary": {
-  "today_cves": 394,
+  "today_cves": 42,
   "month": "2026-11",
-  "month_cves": 9953,
+  "month_cves": 10315,
   "month_cves_last_year": 3021,
-  "kev_new_7d": 3,
-  "affected_packages_7d": 18,
+  "kev_new_7d": 7,
+  "affected_packages_7d": 19,
   "tracked_packages": 149
  },
  "monthly": [
@@ -120,11 +120,39 @@
   },
   {
    "month": "2026-11",
-   "count": 9953
+   "count": 10315
   }
  ],
  "monthly_is_stale": false,
  "kev_recent": [
+  {
+   "cve": "CVE-2024-10441",
+   "vendor": "Synology",
+   "product": "DiskStation Manager (DSM)",
+   "name": "Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
+   "date_added": "2026-11-18"
+  },
+  {
+   "cve": "CVE-2026-40217",
+   "vendor": "BerriAI",
+   "product": "LiteLLM",
+   "name": "BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
+   "date_added": "2026-11-18"
+  },
+  {
+   "cve": "CVE-2026-90817",
+   "vendor": "Vanderbilt University",
+   "product": "Research Electronic Data Capture (REDCap)",
+   "name": "Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability",
+   "date_added": "2026-11-18"
+  },
+  {
+   "cve": "CVE-2026-90436",
+   "vendor": "Apache",
+   "product": "Axis",
+   "name": "Apache Axis Unsafe Reflection Vulnerability",
+   "date_added": "2026-11-18"
+  },
   {
    "cve": "CVE-2026-115731",
    "vendor": "Perforce",
@@ -2094,56 +2122,6 @@
        "epss_percentile": 0.391
       },
       {
-       "id": "GHSA-gx76-c99x-2c96",
-       "aliases": [
-        "CVE-2026-111749",
-        "PYSEC-2026-4370"
-       ],
-       "cves": [
-        "CVE-2026-111749"
-       ],
-       "published": "2026-10-19T17:17:04Z",
-       "summary": "AIOHTTP: Cookie from subdomain can remove Host-Only Scope from existing cookies",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.4,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-gx76-c99x-2c96",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00245,
-       "epss_percentile": 0.15825
-      },
-      {
-       "id": "GHSA-pqxq-w44r-73xw",
-       "aliases": [
-        "CVE-2026-111750",
-        "PYSEC-2026-4371"
-       ],
-       "cves": [
-        "CVE-2026-111750"
-       ],
-       "published": "2026-10-19T17:17:04Z",
-       "summary": "AIOHTTP: Pure-Python parser request smuggling",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-pqxq-w44r-73xw",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00359,
-       "epss_percentile": 0.30161
-      },
-      {
        "id": "GHSA-f9xw-jh8m-3mwq",
        "aliases": [
         "CVE-2026-111748",
@@ -2152,12 +2130,12 @@
        "cves": [
         "CVE-2026-111748"
        ],
-       "published": "2026-10-19T17:17:03Z",
+       "published": "2026-10-20T20:01:40Z",
        "summary": "AIOHTTP: Absolute-form request targets can spoof Request.scheme",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 6.5,
-       "cvss_source": "advisory",
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2169,6 +2147,31 @@
        "epss_percentile": 0.2056
       },
       {
+       "id": "GHSA-gx76-c99x-2c96",
+       "aliases": [
+        "CVE-2026-111749",
+        "PYSEC-2026-4370"
+       ],
+       "cves": [
+        "CVE-2026-111749"
+       ],
+       "published": "2026-10-20T19:58:14Z",
+       "summary": "AIOHTTP: Cookie from subdomain can remove Host-Only Scope from existing cookies",
+       "severity": "LOW",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.4,
+       "cvss_source": "NVD",
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-gx76-c99x-2c96",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00245,
+       "epss_percentile": 0.15825
+      },
+      {
        "id": "GHSA-6cjc-53gc-5rqm",
        "aliases": [
         "CVE-2026-111065",
@@ -2177,12 +2180,12 @@
        "cves": [
         "CVE-2026-111065"
        ],
-       "published": "2026-10-19T17:17:03Z",
+       "published": "2026-10-20T19:57:24Z",
        "summary": "AIOHTTP: Connector pool exhaustion via Max-Age overflow",
        "severity": "MEDIUM",
        "severity_source": "GitHub Advisory",
        "cvss": 5.3,
-       "cvss_source": "advisory",
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2194,6 +2197,31 @@
        "epss_percentile": 0.36536
       },
       {
+       "id": "GHSA-pqxq-w44r-73xw",
+       "aliases": [
+        "CVE-2026-111750",
+        "PYSEC-2026-4371"
+       ],
+       "cves": [
+        "CVE-2026-111750"
+       ],
+       "published": "2026-10-20T19:52:21Z",
+       "summary": "AIOHTTP: Pure-Python parser request smuggling",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.5,
+       "cvss_source": "NVD",
+       "fixed": [
+        "3.14.4"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-pqxq-w44r-73xw",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00359,
+       "epss_percentile": 0.30161
+      },
+      {
        "id": "GHSA-9xw5-w5jj-pvcg",
        "aliases": [
         "CVE-2026-111066",
@@ -2202,12 +2230,12 @@
        "cves": [
         "CVE-2026-111066"
        ],
-       "published": "2026-10-19T17:17:03Z",
+       "published": "2026-10-20T19:52:09Z",
        "summary": "AIOHTTP: File descriptor exhaustion in multipart requests",
        "severity": "HIGH",
        "severity_source": "GitHub Advisory",
        "cvss": 7.5,
-       "cvss_source": "advisory",
+       "cvss_source": "NVD",
        "fixed": [
         "3.14.4"
        ],
@@ -2217,80 +2245,6 @@
        "kev_date_added": null,
        "epss": 0.00496,
        "epss_percentile": 0.43261
-      },
-      {
-       "id": "GHSA-5wr8-gcqf-gqf3",
-       "aliases": [
-        "CVE-2026-111064",
-        "PYSEC-2026-4366"
-       ],
-       "cves": [
-        "CVE-2026-111064"
-       ],
-       "published": "2026-10-19T17:08:04Z",
-       "summary": "aiohttp server lacks an initial request/header timeout",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-5wr8-gcqf-gqf3",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00475,
-       "epss_percentile": 0.41758
-      },
-      {
-       "id": "GHSA-494j-54xm-rwp3",
-       "aliases": [
-        "CVE-2026-111063",
-        "PYSEC-2026-4365"
-       ],
-       "cves": [
-        "CVE-2026-111063"
-       ],
-       "published": "2026-10-19T17:07:47Z",
-       "summary": "AIOHTTP: Secure attribute not enforced for shared cookie",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-494j-54xm-rwp3",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00189,
-       "epss_percentile": 0.08575
-      },
-      {
-       "id": "GHSA-2g87-pp6c-29x5",
-       "aliases": [
-        "CVE-2026-123817"
-       ],
-       "cves": [
-        "CVE-2026-123817"
-       ],
-       "published": "2026-10-19T17:07:23Z",
-       "summary": "aiohttp: Multiple instances of excessive or unbounded memory/CPU use",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.7,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-2g87-pp6c-29x5",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00328,
-       "epss_percentile": 0.26293
       }
      ]
     },
@@ -2351,6 +2305,32 @@
        "kev_date_added": null,
        "epss": 0.00451,
        "epss_percentile": 0.39837
+      },
+      {
+       "id": "GHSA-5x8w-8jj5-q52h",
+       "aliases": [
+        "BIT-pillow-2026-112398",
+        "CVE-2026-112398",
+        "PYSEC-2026-4330"
+       ],
+       "cves": [
+        "CVE-2026-112398"
+       ],
+       "published": "2026-10-23T21:55:21Z",
+       "summary": "Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution",
+       "severity": "CRITICAL",
+       "severity_source": "GitHub Advisory",
+       "cvss": 9.8,
+       "cvss_source": "NVD",
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-5x8w-8jj5-q52h",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00696,
+       "epss_percentile": 0.53725
       },
       {
        "id": "GHSA-78g4-xqwv-q3g8",
@@ -2523,6 +2503,32 @@
        "kev_date_added": null,
        "epss": 0.01019,
        "epss_percentile": 0.64051
+      },
+      {
+       "id": "GHSA-4rr5-89j8-mwwm",
+       "aliases": [
+        "BIT-pillow-2026-112396",
+        "CVE-2026-112396",
+        "PYSEC-2026-4328"
+       ],
+       "cves": [
+        "CVE-2026-112396"
+       ],
+       "published": "2026-10-21T21:24:19Z",
+       "summary": "Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 5.9,
+       "cvss_source": "advisory",
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4rr5-89j8-mwwm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00694,
+       "epss_percentile": 0.53662
       },
       {
        "id": "GHSA-f2g6-542v-9j58",
@@ -2832,6 +2838,32 @@
        "epss_percentile": 0.48473
       },
       {
+       "id": "GHSA-xgh8-jp6q-p5x8",
+       "aliases": [
+        "BIT-pillow-2026-112901",
+        "CVE-2026-112901",
+        "PYSEC-2026-4335"
+       ],
+       "cves": [
+        "CVE-2026-112901"
+       ],
+       "published": "2026-10-21T20:45:06Z",
+       "summary": "Pillow: ReDoS in XbmImagePlugin: 512-byte file stalls Image.open() for minutes",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "cvss_source": "NVD",
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-xgh8-jp6q-p5x8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00532,
+       "epss_percentile": 0.45638
+      },
+      {
        "id": "GHSA-rfgq-q3w2-pmv2",
        "aliases": [
         "BIT-pillow-2026-112898",
@@ -2932,6 +2964,58 @@
        "epss_percentile": 0.46689
       },
       {
+       "id": "GHSA-27h8-gf7j-v5hc",
+       "aliases": [
+        "BIT-pillow-2026-112392",
+        "CVE-2026-112392",
+        "PYSEC-2026-4326"
+       ],
+       "cves": [
+        "CVE-2026-112392"
+       ],
+       "published": "2026-10-21T20:32:37Z",
+       "summary": "Pillow: NULL dereference in ImagingExpand via rank filters on zero-size images",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "cvss_source": "NVD",
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-27h8-gf7j-v5hc",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00593,
+       "epss_percentile": 0.4907
+      },
+      {
+       "id": "GHSA-cp9v-662q-vvx9",
+       "aliases": [
+        "BIT-pillow-2026-112405",
+        "CVE-2026-112405",
+        "PYSEC-2026-4333"
+       ],
+       "cves": [
+        "CVE-2026-112405"
+       ],
+       "published": "2026-10-21T20:30:25Z",
+       "summary": "Pillow: NULL pointer dereference in Image.merge via an unvalidated band 0",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "cvss_source": "NVD",
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-cp9v-662q-vvx9",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00594,
+       "epss_percentile": 0.49151
+      },
+      {
        "id": "GHSA-j4m9-6w36-pw47",
        "aliases": [
         "BIT-pillow-2026-112893",
@@ -2957,6 +3041,58 @@
        "epss_percentile": 0.46679
       },
       {
+       "id": "GHSA-7mwm-ghpf-9vrm",
+       "aliases": [
+        "BIT-pillow-2026-112402",
+        "CVE-2026-112402",
+        "PYSEC-2026-4331"
+       ],
+       "cves": [
+        "CVE-2026-112402"
+       ],
+       "published": "2026-10-21T20:03:56Z",
+       "summary": "Pillow: Double free in ImagingScaleAffine on calloc failure via Image.transform",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "cvss_source": "NVD",
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-7mwm-ghpf-9vrm",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00594,
+       "epss_percentile": 0.4915
+      },
+      {
+       "id": "GHSA-4558-3h8r-v8xp",
+       "aliases": [
+        "BIT-pillow-2026-112394",
+        "CVE-2026-112394",
+        "PYSEC-2026-4327"
+       ],
+       "cves": [
+        "CVE-2026-112394"
+       ],
+       "published": "2026-10-21T20:00:32Z",
+       "summary": "Pillow: P;2L and P;4L decoders may read 1 to 3 bytes past the passed buffer size",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 8.2,
+       "cvss_source": "NVD",
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-4558-3h8r-v8xp",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00555,
+       "epss_percentile": 0.47002
+      },
+      {
        "id": "GHSA-w889-685w-c8fh",
        "aliases": [
         "BIT-pillow-2026-112900",
@@ -2980,6 +3116,32 @@
        "kev_date_added": null,
        "epss": 0.01303,
        "epss_percentile": 0.71089
+      },
+      {
+       "id": "GHSA-58r4-6rv3-gfh8",
+       "aliases": [
+        "BIT-pillow-2026-112397",
+        "CVE-2026-112397",
+        "PYSEC-2026-4329"
+       ],
+       "cves": [
+        "CVE-2026-112397"
+       ],
+       "published": "2026-10-20T20:56:22Z",
+       "summary": "Pillow: Out-of-bounds access in _imagingmorph on a zero-width image",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.5,
+       "cvss_source": "NVD",
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-58r4-6rv3-gfh8",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00573,
+       "epss_percentile": 0.48051
       },
       {
        "id": "GHSA-65qm-jvmh-6pqg",
@@ -3057,6 +3219,32 @@
        "epss_percentile": 0.42051
       },
       {
+       "id": "GHSA-pchr-8j38-3x4p",
+       "aliases": [
+        "BIT-pillow-2026-112896",
+        "CVE-2026-112896",
+        "PYSEC-2026-4334"
+       ],
+       "cves": [
+        "CVE-2026-112896"
+       ],
+       "published": "2026-10-20T20:51:40Z",
+       "summary": "Pillow: TIFF encoder ColorMap plane-size mismatch causes a heap out-of-bounds read",
+       "severity": "HIGH",
+       "severity_source": "GitHub Advisory",
+       "cvss": 7.1,
+       "cvss_source": "NVD",
+       "fixed": [
+        "13.0.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-pchr-8j38-3x4p",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00475,
+       "epss_percentile": 0.41715
+      },
+      {
        "id": "GHSA-p4wg-p73j-c528",
        "aliases": [
         "BIT-pillow-2026-112895",
@@ -3132,84 +3320,6 @@
        "epss_percentile": 0.49578
       },
       {
-       "id": "GHSA-xgh8-jp6q-p5x8",
-       "aliases": [
-        "BIT-pillow-2026-112901",
-        "CVE-2026-112901",
-        "PYSEC-2026-4335"
-       ],
-       "cves": [
-        "CVE-2026-112901"
-       ],
-       "published": "2026-10-19T22:17:10Z",
-       "summary": "Pillow: ReDoS in XbmImagePlugin: 512-byte file stalls Image.open() for minutes",
-       "severity": "HIGH",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-xgh8-jp6q-p5x8",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00532,
-       "epss_percentile": 0.45638
-      },
-      {
-       "id": "GHSA-pchr-8j38-3x4p",
-       "aliases": [
-        "BIT-pillow-2026-112896",
-        "CVE-2026-112896",
-        "PYSEC-2026-4334"
-       ],
-       "cves": [
-        "CVE-2026-112896"
-       ],
-       "published": "2026-10-19T22:17:09Z",
-       "summary": "Pillow: TIFF encoder ColorMap plane-size mismatch causes a heap out-of-bounds read",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.1,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-pchr-8j38-3x4p",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00475,
-       "epss_percentile": 0.41715
-      },
-      {
-       "id": "GHSA-cp9v-662q-vvx9",
-       "aliases": [
-        "BIT-pillow-2026-112405",
-        "CVE-2026-112405",
-        "PYSEC-2026-4333"
-       ],
-       "cves": [
-        "CVE-2026-112405"
-       ],
-       "published": "2026-10-19T22:17:08Z",
-       "summary": "Pillow: NULL pointer dereference in Image.merge via an unvalidated band 0",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-cp9v-662q-vvx9",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00594,
-       "epss_percentile": 0.49151
-      },
-      {
        "id": "GHSA-8g5g-8vmr-9782",
        "aliases": [
         "BIT-pillow-2026-112403",
@@ -3219,12 +3329,12 @@
        "cves": [
         "CVE-2026-112403"
        ],
-       "published": "2026-10-19T22:17:07Z",
+       "published": "2026-10-20T20:40:07Z",
        "summary": "Pillow: Heap buffer overflow in ImagingJpegDecode",
        "severity": "CRITICAL",
        "severity_source": "GitHub Advisory",
        "cvss": 9.8,
-       "cvss_source": "advisory",
+       "cvss_source": "NVD",
        "fixed": [
         "13.0.0"
        ],
@@ -3234,162 +3344,6 @@
        "kev_date_added": null,
        "epss": 0.00945,
        "epss_percentile": 0.61761
-      },
-      {
-       "id": "GHSA-5x8w-8jj5-q52h",
-       "aliases": [
-        "BIT-pillow-2026-112398",
-        "CVE-2026-112398",
-        "PYSEC-2026-4330"
-       ],
-       "cves": [
-        "CVE-2026-112398"
-       ],
-       "published": "2026-10-19T22:17:07Z",
-       "summary": "Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": 9.8,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-5x8w-8jj5-q52h",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00696,
-       "epss_percentile": 0.53725
-      },
-      {
-       "id": "GHSA-7mwm-ghpf-9vrm",
-       "aliases": [
-        "BIT-pillow-2026-112402",
-        "CVE-2026-112402",
-        "PYSEC-2026-4331"
-       ],
-       "cves": [
-        "CVE-2026-112402"
-       ],
-       "published": "2026-10-19T22:17:07Z",
-       "summary": "Pillow: Double free in ImagingScaleAffine on calloc failure via Image.transform",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-7mwm-ghpf-9vrm",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00594,
-       "epss_percentile": 0.4915
-      },
-      {
-       "id": "GHSA-58r4-6rv3-gfh8",
-       "aliases": [
-        "BIT-pillow-2026-112397",
-        "CVE-2026-112397",
-        "PYSEC-2026-4329"
-       ],
-       "cves": [
-        "CVE-2026-112397"
-       ],
-       "published": "2026-10-19T22:17:06Z",
-       "summary": "Pillow: Out-of-bounds access in _imagingmorph on a zero-width image",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-58r4-6rv3-gfh8",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00573,
-       "epss_percentile": 0.48051
-      },
-      {
-       "id": "GHSA-4rr5-89j8-mwwm",
-       "aliases": [
-        "BIT-pillow-2026-112396",
-        "CVE-2026-112396",
-        "PYSEC-2026-4328"
-       ],
-       "cves": [
-        "CVE-2026-112396"
-       ],
-       "published": "2026-10-19T22:17:06Z",
-       "summary": "Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer",
-       "severity": "HIGH",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-4rr5-89j8-mwwm",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00694,
-       "epss_percentile": 0.53662
-      },
-      {
-       "id": "GHSA-27h8-gf7j-v5hc",
-       "aliases": [
-        "BIT-pillow-2026-112392",
-        "CVE-2026-112392",
-        "PYSEC-2026-4326"
-       ],
-       "cves": [
-        "CVE-2026-112392"
-       ],
-       "published": "2026-10-19T22:17:06Z",
-       "summary": "Pillow: NULL dereference in ImagingExpand via rank filters on zero-size images",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-27h8-gf7j-v5hc",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00593,
-       "epss_percentile": 0.4907
-      },
-      {
-       "id": "GHSA-4558-3h8r-v8xp",
-       "aliases": [
-        "BIT-pillow-2026-112394",
-        "CVE-2026-112394",
-        "PYSEC-2026-4327"
-       ],
-       "cves": [
-        "CVE-2026-112394"
-       ],
-       "published": "2026-10-19T21:17:07Z",
-       "summary": "Pillow: P;2L and P;4L decoders may read 1 to 3 bytes past the passed buffer size",
-       "severity": "HIGH",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 8.2,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-4558-3h8r-v8xp",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00555,
-       "epss_percentile": 0.47002
       }
      ]
     },
@@ -4459,7 +4413,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 169371080.0,
+     "popularity": 170195640.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4470,7 +4424,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2407.0,
+     "popularity": 2410.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4481,7 +4435,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 315756986.0,
+     "popularity": 317209158.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4518,7 +4472,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 293027553.0,
+     "popularity": 294383870.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4529,7 +4483,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 272665231.0,
+     "popularity": 273956453.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4540,7 +4494,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 233613331.0,
+     "popularity": 234669282.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4551,7 +4505,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 291854167.0,
+     "popularity": 293179557.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4696,7 +4650,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 89373221.0,
+     "popularity": 89753110.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4707,7 +4661,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 235137972.0,
+     "popularity": 236310416.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4718,7 +4672,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 444871656.0,
+     "popularity": 446947316.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4729,7 +4683,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 337946066.0,
+     "popularity": 339533546.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4740,7 +4694,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 270366176.0,
+     "popularity": 271666417.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4751,7 +4705,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 59655298.0,
+     "popularity": 59942971.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4762,7 +4716,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 107713534.0,
+     "popularity": 108220136.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4909,7 +4863,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 26154297.0,
+     "popularity": 26815801.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "LOW",
@@ -4998,7 +4952,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 33042244.0,
+     "popularity": 34228914.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -5067,15 +5021,68 @@
      "popularity": 1691856.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
-     "worst_7d": "NONE",
-     "worst_30d": "NONE",
-     "vulns": []
+     "worst_7d": "UNKNOWN",
+     "worst_30d": "UNKNOWN",
+     "vulns": [
+      {
+       "id": "DRUPAL-CORE-2026-017",
+       "aliases": [
+        "CVE-2026-132165"
+       ],
+       "cves": [
+        "CVE-2026-132165"
+       ],
+       "published": "2026-11-18T17:43:11Z",
+       "summary": "Drupal core ships with an `install.php` file for installing Drupal core.",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
+       "fixed": [
+        "10.6.22",
+        "11.3.22",
+        "11.4.13"
+       ],
+       "url": "https://osv.dev/vulnerability/DRUPAL-CORE-2026-017",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      },
+      {
+       "id": "DRUPAL-CORE-2026-018",
+       "aliases": [
+        "CVE-2026-132166"
+       ],
+       "cves": [
+        "CVE-2026-132166"
+       ],
+       "published": "2026-11-13T00:18:57Z",
+       "summary": "Drupal core contains a chain of methods that could be exploitable when an insecure deserialization vulnerability exists on the site. This so-called \"gadget chain\" presents no direct threat, but is a vector that can be used to achieve remote code execution if the application deserializes untrusted da",
+       "severity": "UNKNOWN",
+       "severity_source": null,
+       "cvss": null,
+       "cvss_source": null,
+       "fixed": [
+        "10.6.22",
+        "11.3.22",
+        "11.4.13"
+       ],
+       "url": "https://osv.dev/vulnerability/DRUPAL-CORE-2026-018",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": null,
+       "epss_percentile": null
+      }
+     ]
     },
     {
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 36102418.0,
+     "popularity": 36863042.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5155,7 +5162,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 29098916.0,
+     "popularity": 29928298.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5872,7 +5879,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 818566239.0,
+     "popularity": 818807744.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "CRITICAL",
@@ -6382,7 +6389,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1393727965.0,
+     "popularity": 1394144744.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6497,7 +6504,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1303195300.0,
+     "popularity": 1303557103.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6581,7 +6588,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 631638605.0,
+     "popularity": 631888491.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6592,7 +6599,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 305839009.0,
+     "popularity": 305929355.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6603,7 +6610,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 348780746.0,
+     "popularity": 348904180.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6614,7 +6621,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1303420461.0,
+     "popularity": 1303814875.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6625,7 +6632,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 407245731.0,
+     "popularity": 407491660.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",

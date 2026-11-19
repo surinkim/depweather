@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-18
+# depweather forecast, 2026-11-19
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-18T15:36:42Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-19T00:23:36Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 18 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 3
-- New CVEs in NVD today (UTC): 394
-- CVEs published in 2026-11 so far: 9,953 (same month last year: 3,021)
+- Popular packages with a new advisory this week: 19 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 7
+- New CVEs in NVD today (UTC): 42
+- CVEs published in 2026-11 so far: 10,315 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -45,6 +45,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### Packagist
 
+- **Drupal core (drupal/core)**: 2 advisories, worst low or unrated; fixed in 10.6.22, 11.3.22, 11.4.13. Example: [DRUPAL-CORE-2026-017](https://osv.dev/vulnerability/DRUPAL-CORE-2026-017) Drupal core ships with an `install.php` file for installing Drupal core.
 - **Laravel (laravel/framework)**: 1 advisory, worst low or unrated; fixed in 12.71.0, 13.40.0. Example: [GHSA-63hm-g96r-2m2q](https://osv.dev/vulnerability/GHSA-63hm-g96r-2m2q) Laravel: Task Output Injection - Concurrency Process
 
 ### Maven
@@ -65,6 +66,10 @@ No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-11-18: CVE-2024-10441, Synology DiskStation Manager (DSM): Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability
+- 2026-11-18: CVE-2026-40217, BerriAI LiteLLM: BerriAI LiteLLM Unprotected Alternate Channel Vulnerability
+- 2026-11-18: CVE-2026-90817, Vanderbilt University Research Electronic Data Capture (REDCap): Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability
+- 2026-11-18: CVE-2026-90436, Apache Axis: Apache Axis Unsafe Reflection Vulnerability
 - 2026-11-17: CVE-2026-115731, Perforce Puppet Enterprise: Perforce Puppet Enterprise Deserialization of Untrusted Data Vulnerability
 - 2026-11-13: CVE-2026-114713, UnrealIRCd UnrealIRCd: UnrealIRCd Improper Neutralization of Delimiters Vulnerability
 - 2026-11-13: CVE-2026-123039, Check Point Multiple Products: Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability
