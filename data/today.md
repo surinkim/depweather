@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-19
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-19T00:23:36Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-19T15:42:06Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 19 of 149
+- Popular packages with a new advisory this week: 18 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 7
-- New CVEs in NVD today (UTC): 42
-- CVEs published in 2026-11 so far: 10,315 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 625
+- CVEs published in 2026-11 so far: 10,898 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -16,7 +16,6 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **Ruby**: 1 advisory, worst actively exploited (CISA KEV); fixed in 3.3.13, 3.4.12, 4.0.8. Example: [BIT-ruby-2026-97229](https://osv.dev/vulnerability/BIT-ruby-2026-97229) Integer Overflow or Wraparound in GitLab
 - **WordPress**: 1 advisory, worst actively exploited (CISA KEV); fixed in 4.7.39, 4.8.34, 4.9.35, 5.0.31 and more. Example: [BIT-wordpress-2026-119977](https://osv.dev/vulnerability/BIT-wordpress-2026-119977) WordPress Core 4.7.0 - 7.1.3 - Unauthenticated Upgrade-Window Staged-Installer Remote Code Execution
 - **MongoDB**: 1 advisory, worst critical; fixed in 4.4.32, 5.0.35, 6.0.30, 7.0.48 and more. Example: [BIT-mongodb-2026-118383](https://osv.dev/vulnerability/BIT-mongodb-2026-118383) Pre-authentication use-after-free in MongoDB Server replica set primary catch-up
-- **PostgreSQL**: 52 advisories, worst high. Example: [DEBIAN-CVE-2026-18447](https://osv.dev/vulnerability/DEBIAN-CVE-2026-18447) Type confusion in PostgreSQL SQL-language functions allows an object creator to execute arbitrary code as the operating system user running the database, via an output parameter of type "any".  Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.
 - **Java (OpenJDK) (java)**: 10 advisories, worst high. Example: [DEBIAN-CVE-2026-114940](https://osv.dev/vulnerability/DEBIAN-CVE-2026-114940) Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u511b33, 8u511b33-perf, 11.0.33.0.3, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle GraalVM
 - **Python**: 3 advisories, worst high; fixed in 3.14.11, 3.16.0. Example: [BIT-libpython-2026-119170](https://osv.dev/vulnerability/BIT-libpython-2026-119170) Regression in FIPS enforcement of hash algorithms affecting only Python 3.14.10
 - **Apache httpd (apache)**: 1 advisory, worst high; fixed in 2.4.71. Example: [BIT-apache-2026-119618](https://osv.dev/vulnerability/BIT-apache-2026-119618) Apache HTTP Server: mod_http2: heap corruption and RCE in assign_headers

@@ -38,6 +38,18 @@
     }
    }
   },
+  "2026-11-09": {
+   "packages": {
+    "pypi/aiohttp": {
+     "h": 1
+    }
+   },
+   "ecosystems": {
+    "pypi": {
+     "h": 1
+    }
+   }
+  },
   "2026-11-10": {
    "packages": {
     "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64": {
