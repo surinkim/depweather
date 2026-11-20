@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T15:42:06Z",
+ "generated_at": "2026-11-20T00:36:59Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -23,7 +23,7 @@
    "ecosystems": {
     "Debian": {
      "ok": true,
-     "added": 109
+     "added": 66
     }
    }
   },
@@ -49,6 +49,7 @@
     "NuGet: fixed weight",
     "Packagist: Packagist downloads, last 30 days",
     "PyPI: PyPI downloads, last week (pypistats)",
+    "PyPI: fixed weight",
     "RubyGems: RubyGems downloads, all time",
     "Runtimes & servers: fixed weight",
     "crates.io: crates.io downloads, last 90 days",
@@ -57,12 +58,12 @@
   }
  },
  "summary": {
-  "today_cves": 625,
+  "today_cves": 1,
   "month": "2026-11",
-  "month_cves": 10898,
+  "month_cves": 11335,
   "month_cves_last_year": 3021,
   "kev_new_7d": 7,
-  "affected_packages_7d": 18,
+  "affected_packages_7d": 15,
   "tracked_packages": 149
  },
  "monthly": [
@@ -120,7 +121,7 @@
   },
   {
    "month": "2026-11",
-   "count": 10898
+   "count": 11335
   }
  ],
  "monthly_is_stale": false,
@@ -205,6 +206,129 @@
      "worst_7d": "MEDIUM",
      "worst_30d": "CRITICAL",
      "vulns": [
+      {
+       "id": "GHSA-f3mh-rxg3-f5g2",
+       "aliases": [
+        "CVE-2026-119346"
+       ],
+       "cves": [
+        "CVE-2026-119346"
+       ],
+       "published": "2026-11-19T22:23:21Z",
+       "summary": "Next.js: HttpOnly cookie exposure through internal response header on Next.js Edge runtime routes",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.0,
+       "cvss_source": "NVD",
+       "fixed": [
+        "15.5.29",
+        "16.4.5"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-f3mh-rxg3-f5g2",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00301,
+       "epss_percentile": 0.23313
+      },
+      {
+       "id": "GHSA-7qx7-33qx-rqx2",
+       "aliases": [
+        "CVE-2026-119347"
+       ],
+       "cves": [
+        "CVE-2026-119347"
+       ],
+       "published": "2026-11-19T22:23:06Z",
+       "summary": "Next.js: SVG rejection bypass in the image optimization",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.9,
+       "cvss_source": "NVD",
+       "fixed": [
+        "15.5.29",
+        "16.4.5"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-7qx7-33qx-rqx2",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00328,
+       "epss_percentile": 0.26398
+      },
+      {
+       "id": "GHSA-pc58-hwjq-p385",
+       "aliases": [
+        "CVE-2026-119348"
+       ],
+       "cves": [
+        "CVE-2026-119348"
+       ],
+       "published": "2026-11-19T22:20:34Z",
+       "summary": "Next.js: Cross-client response injection and disclosure in self-hosted Next.js applications forwarding fetched responses",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.3,
+       "cvss_source": "NVD",
+       "fixed": [
+        "16.4.5",
+        "15.5.29"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-pc58-hwjq-p385",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00299,
+       "epss_percentile": 0.23013
+      },
+      {
+       "id": "GHSA-rhh4-g77r-r9qj",
+       "aliases": [
+        "CVE-2026-119349"
+       ],
+       "cves": [
+        "CVE-2026-119349"
+       ],
+       "published": "2026-11-19T22:20:11Z",
+       "summary": "Next.js: Cross-user cache disclosure and poisoning in Next.js use cache with binary arguments",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.3,
+       "cvss_source": "NVD",
+       "fixed": [
+        "16.4.5"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-rhh4-g77r-r9qj",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00391,
+       "epss_percentile": 0.33977
+      },
+      {
+       "id": "GHSA-vvgp-ww4w-46vf",
+       "aliases": [
+        "CVE-2026-119350"
+       ],
+       "cves": [
+        "CVE-2026-119350"
+       ],
+       "published": "2026-11-19T22:18:08Z",
+       "summary": "Next.js: Cache poisoning of shared fallback shells in Cache Components via request-supplied placeholder route params",
+       "severity": "MEDIUM",
+       "severity_source": "GitHub Advisory",
+       "cvss": 6.3,
+       "cvss_source": "NVD",
+       "fixed": [
+        "16.4.5"
+       ],
+       "url": "https://osv.dev/vulnerability/GHSA-vvgp-ww4w-46vf",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00219,
+       "epss_percentile": 0.1258
+      },
       {
        "id": "GHSA-vc7v-qv4w-wrv8",
        "aliases": [
@@ -995,7 +1119,7 @@
      "popularity": 114491043.0,
      "popularity_source": "npm downloads, last week",
      "survey": 2.8,
-     "worst_7d": "MEDIUM",
+     "worst_7d": "NONE",
      "worst_30d": "MEDIUM",
      "vulns": [
       {
@@ -1150,7 +1274,7 @@
      "popularity_source": "npm downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "HIGH",
+     "worst_30d": "MEDIUM",
      "vulns": [
       {
        "id": "GHSA-8g5g-mxqh-grgj",
@@ -1256,90 +1380,6 @@
        "kev_date_added": null,
        "epss": 0.00502,
        "epss_percentile": 0.43727
-      },
-      {
-       "id": "GHSA-r825-w8mm-5pxw",
-       "aliases": [
-        "CVE-2026-112944"
-       ],
-       "cves": [
-        "CVE-2026-112944"
-       ],
-       "published": "2026-10-20T19:51:52Z",
-       "summary": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.3.3",
-        "8.2.4",
-        "8.1.6",
-        "7.3.7",
-        "6.4.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-r825-w8mm-5pxw",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00705,
-       "epss_percentile": 0.54125
-      },
-      {
-       "id": "GHSA-587h-7wmj-h5pm",
-       "aliases": [
-        "CVE-2026-112942"
-       ],
-       "cves": [
-        "CVE-2026-112942"
-       ],
-       "published": "2026-10-20T19:48:25Z",
-       "summary": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.3.3",
-        "8.2.4",
-        "8.1.6",
-        "7.3.7",
-        "6.4.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-587h-7wmj-h5pm",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.01694,
-       "epss_percentile": 0.77635
-      },
-      {
-       "id": "GHSA-698v-4r3x-3vcv",
-       "aliases": [
-        "CVE-2026-112943"
-       ],
-       "cves": [
-        "CVE-2026-112943"
-       ],
-       "published": "2026-10-20T18:30:24Z",
-       "summary": "launch-editor: escapeCmdArgs() omits % escaping on Windows",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
-       "fixed": [
-        "8.3.3",
-        "8.2.4",
-        "8.1.6",
-        "7.3.7",
-        "6.4.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-698v-4r3x-3vcv",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00414,
-       "epss_percentile": 0.36473
       }
      ]
     },
@@ -1712,31 +1752,8 @@
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "CRITICAL",
-     "vulns": [
-      {
-       "id": "GHSA-6q48-6c7w-9gw2",
-       "aliases": [
-        "PYSEC-2026-4320"
-       ],
-       "cves": [],
-       "published": "2026-10-20T19:35:05Z",
-       "summary": "certifi bundles emSign root CAs with compromised intermediate CA keys",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
-       "fixed": [
-        "2026.10.18"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-6q48-6c7w-9gw2",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
-      }
-     ]
+     "worst_30d": "NONE",
+     "vulns": []
     },
     {
      "key": "pypi/cryptography",
@@ -1796,8 +1813,8 @@
      "key": "pypi/pydantic",
      "name": "pydantic",
      "label": "pydantic",
-     "popularity": 282417094.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2119,131 +2136,6 @@
        "kev_date_added": null,
        "epss": 0.00376,
        "epss_percentile": 0.32293
-      },
-      {
-       "id": "GHSA-f9xw-jh8m-3mwq",
-       "aliases": [
-        "CVE-2026-111748",
-        "PYSEC-2026-4369"
-       ],
-       "cves": [
-        "CVE-2026-111748"
-       ],
-       "published": "2026-10-20T20:01:40Z",
-       "summary": "AIOHTTP: Absolute-form request targets can spoof Request.scheme",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-f9xw-jh8m-3mwq",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00278,
-       "epss_percentile": 0.20634
-      },
-      {
-       "id": "GHSA-gx76-c99x-2c96",
-       "aliases": [
-        "CVE-2026-111749",
-        "PYSEC-2026-4370"
-       ],
-       "cves": [
-        "CVE-2026-111749"
-       ],
-       "published": "2026-10-20T19:58:14Z",
-       "summary": "AIOHTTP: Cookie from subdomain can remove Host-Only Scope from existing cookies",
-       "severity": "LOW",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.4,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-gx76-c99x-2c96",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00245,
-       "epss_percentile": 0.15873
-      },
-      {
-       "id": "GHSA-6cjc-53gc-5rqm",
-       "aliases": [
-        "CVE-2026-111065",
-        "PYSEC-2026-4367"
-       ],
-       "cves": [
-        "CVE-2026-111065"
-       ],
-       "published": "2026-10-20T19:57:24Z",
-       "summary": "AIOHTTP: Connector pool exhaustion via Max-Age overflow",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-6cjc-53gc-5rqm",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00416,
-       "epss_percentile": 0.36621
-      },
-      {
-       "id": "GHSA-pqxq-w44r-73xw",
-       "aliases": [
-        "CVE-2026-111750",
-        "PYSEC-2026-4371"
-       ],
-       "cves": [
-        "CVE-2026-111750"
-       ],
-       "published": "2026-10-20T19:52:21Z",
-       "summary": "AIOHTTP: Pure-Python parser request smuggling",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-pqxq-w44r-73xw",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00359,
-       "epss_percentile": 0.30264
-      },
-      {
-       "id": "GHSA-9xw5-w5jj-pvcg",
-       "aliases": [
-        "CVE-2026-111066",
-        "PYSEC-2026-4368"
-       ],
-       "cves": [
-        "CVE-2026-111066"
-       ],
-       "published": "2026-10-20T19:52:09Z",
-       "summary": "AIOHTTP: File descriptor exhaustion in multipart requests",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "3.14.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-9xw5-w5jj-pvcg",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00496,
-       "epss_percentile": 0.43333
       }
      ]
     },
@@ -2254,7 +2146,7 @@
      "popularity": 163827412.0,
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
-     "worst_7d": "HIGH",
+     "worst_7d": "NONE",
      "worst_30d": "CRITICAL",
      "vulns": [
       {
@@ -3115,234 +3007,6 @@
        "kev_date_added": null,
        "epss": 0.01303,
        "epss_percentile": 0.71127
-      },
-      {
-       "id": "GHSA-58r4-6rv3-gfh8",
-       "aliases": [
-        "BIT-pillow-2026-112397",
-        "CVE-2026-112397",
-        "PYSEC-2026-4329"
-       ],
-       "cves": [
-        "CVE-2026-112397"
-       ],
-       "published": "2026-10-20T20:56:22Z",
-       "summary": "Pillow: Out-of-bounds access in _imagingmorph on a zero-width image",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-58r4-6rv3-gfh8",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00573,
-       "epss_percentile": 0.4812
-      },
-      {
-       "id": "GHSA-65qm-jvmh-6pqg",
-       "aliases": [
-        "BIT-pillow-2026-112400",
-        "CVE-2026-112400"
-       ],
-       "cves": [
-        "CVE-2026-112400"
-       ],
-       "published": "2026-10-20T20:53:36Z",
-       "summary": "Pillow: GIF seek keeps rejected size after DecompressionBombError, allowing DoS",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-65qm-jvmh-6pqg",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00594,
-       "epss_percentile": 0.49219
-      },
-      {
-       "id": "GHSA-vx6w-vv9f-6gvg",
-       "aliases": [
-        "BIT-pillow-2026-112899",
-        "CVE-2026-112899"
-       ],
-       "cves": [
-        "CVE-2026-112899"
-       ],
-       "published": "2026-10-20T20:53:21Z",
-       "summary": "Pillow: EPS load(scale) lets Ghostscript render past the decompression bomb limit",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.3,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-vx6w-vv9f-6gvg",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00547,
-       "epss_percentile": 0.46618
-      },
-      {
-       "id": "GHSA-q45j-58j2-45rg",
-       "aliases": [
-        "BIT-pillow-2026-112897",
-        "CVE-2026-112897"
-       ],
-       "cves": [
-        "CVE-2026-112897"
-       ],
-       "published": "2026-10-20T20:52:43Z",
-       "summary": "Pillow: TiffDecode returns uninitialized memory as pixels for short JPEG strips",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.2,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-q45j-58j2-45rg",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00479,
-       "epss_percentile": 0.42138
-      },
-      {
-       "id": "GHSA-pchr-8j38-3x4p",
-       "aliases": [
-        "BIT-pillow-2026-112896",
-        "CVE-2026-112896",
-        "PYSEC-2026-4334"
-       ],
-       "cves": [
-        "CVE-2026-112896"
-       ],
-       "published": "2026-10-20T20:51:40Z",
-       "summary": "Pillow: TIFF encoder ColorMap plane-size mismatch causes a heap out-of-bounds read",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-pchr-8j38-3x4p",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00475,
-       "epss_percentile": 0.41799
-      },
-      {
-       "id": "GHSA-p4wg-p73j-c528",
-       "aliases": [
-        "BIT-pillow-2026-112895",
-        "CVE-2026-112895"
-       ],
-       "cves": [
-        "CVE-2026-112895"
-       ],
-       "published": "2026-10-20T20:50:49Z",
-       "summary": "Pillow: Unbounded recursion parsing a PDF page tree or trailer chain (incomplete fix for CVE-2026-42310)",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-p4wg-p73j-c528",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00594,
-       "epss_percentile": 0.49219
-      },
-      {
-       "id": "GHSA-462x-pgg6-55fp",
-       "aliases": [
-        "BIT-pillow-2026-112395",
-        "CVE-2026-112395"
-       ],
-       "cves": [
-        "CVE-2026-112395"
-       ],
-       "published": "2026-10-20T20:49:26Z",
-       "summary": "Pillow tiled-TIFF decoder reads past tile buffer in copy4 (Unpack.c:1290)",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-462x-pgg6-55fp",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00514,
-       "epss_percentile": 0.44597
-      },
-      {
-       "id": "GHSA-c6hw-5grf-ff96",
-       "aliases": [
-        "BIT-pillow-2026-112404",
-        "CVE-2026-112404"
-       ],
-       "cves": [
-        "CVE-2026-112404"
-       ],
-       "published": "2026-10-20T20:42:00Z",
-       "summary": "Pillow: OOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-c6hw-5grf-ff96",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00603,
-       "epss_percentile": 0.49641
-      },
-      {
-       "id": "GHSA-8g5g-8vmr-9782",
-       "aliases": [
-        "BIT-pillow-2026-112403",
-        "CVE-2026-112403",
-        "PYSEC-2026-4332"
-       ],
-       "cves": [
-        "CVE-2026-112403"
-       ],
-       "published": "2026-10-20T20:40:07Z",
-       "summary": "Pillow: Heap buffer overflow in ImagingJpegDecode",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": 9.8,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-8g5g-8vmr-9782",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00945,
-       "epss_percentile": 0.61813
       }
      ]
     },
@@ -4412,7 +4076,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 171004907.0,
+     "popularity": 171810507.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -4423,7 +4087,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2412.0,
+     "popularity": 2417.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4434,7 +4098,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 318016771.0,
+     "popularity": 319428763.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4471,7 +4135,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 295353388.0,
+     "popularity": 296669060.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4482,7 +4146,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 274920442.0,
+     "popularity": 276154537.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4493,7 +4157,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 235276219.0,
+     "popularity": 236301059.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4504,7 +4168,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 294094104.0,
+     "popularity": 295390268.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4620,7 +4284,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 89880570.0,
+     "popularity": 90252097.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4631,7 +4295,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 237270260.0,
+     "popularity": 238421326.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4642,7 +4306,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 448176602.0,
+     "popularity": 450195821.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4653,7 +4317,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 340361254.0,
+     "popularity": 341904498.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4664,7 +4328,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 272592637.0,
+     "popularity": 273877090.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4675,7 +4339,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 60170013.0,
+     "popularity": 60454048.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4686,7 +4350,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 108653117.0,
+     "popularity": 109132750.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -4833,7 +4497,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 26781922.0,
+     "popularity": 27313695.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "LOW",
@@ -4922,7 +4586,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 33349484.0,
+     "popularity": 34194605.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -4988,7 +4652,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1735680.0,
+     "popularity": 1793004.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "UNKNOWN",
@@ -5052,7 +4716,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 37122854.0,
+     "popularity": 36892835.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5063,7 +4727,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 38043740.0,
+     "popularity": 38723689.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5074,7 +4738,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 34684787.0,
+     "popularity": 36160487.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5085,7 +4749,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 14290946.0,
+     "popularity": 14281193.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5096,7 +4760,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 31600854.0,
+     "popularity": 32664612.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5132,7 +4796,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 29430361.0,
+     "popularity": 30569631.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5143,7 +4807,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 27416645.0,
+     "popularity": 28358125.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5154,7 +4818,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 29528161.0,
+     "popularity": 30556195.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5165,7 +4829,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4773300.0,
+     "popularity": 4819029.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5176,7 +4840,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 23397695.0,
+     "popularity": 24250690.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5187,7 +4851,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 20536039.0,
+     "popularity": 20866472.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -5238,35 +4902,6 @@
        "kev_date_added": null,
        "epss": 0.0038,
        "epss_percentile": 0.32696
-      },
-      {
-       "id": "GO-2026-6809",
-       "aliases": [
-        "BIT-golang-2026-111943",
-        "CVE-2026-111943",
-        "RUSTSEC-2026-0381",
-        "RUSTSEC-2026-0382",
-        "RUSTSEC-2026-0383"
-       ],
-       "cves": [
-        "CVE-2026-111943"
-       ],
-       "published": "2026-10-21T00:27:29Z",
-       "summary": "Distrust compromised intermediate certificates in crypto/x509",
-       "severity": "MEDIUM",
-       "severity_source": "NVD",
-       "cvss": 6.8,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.26.10",
-        "1.27.3"
-       ],
-       "url": "https://osv.dev/vulnerability/GO-2026-6809",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00396,
-       "epss_percentile": 0.34519
       }
      ]
     },
@@ -5849,10 +5484,10 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 819248771.0,
+     "popularity": 819575434.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
-     "worst_7d": "CRITICAL",
+     "worst_7d": "NONE",
      "worst_30d": "CRITICAL",
      "vulns": [
       {
@@ -6359,7 +5994,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1394795639.0,
+     "popularity": 1395251229.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6474,7 +6109,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1304140108.0,
+     "popularity": 1304616453.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6558,7 +6193,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 632348905.0,
+     "popularity": 632706119.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6569,7 +6204,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 306098177.0,
+     "popularity": 306215866.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6580,7 +6215,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 349117773.0,
+     "popularity": 349274701.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6591,7 +6226,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1304380739.0,
+     "popularity": 1304860353.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -6602,7 +6237,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 407939781.0,
+     "popularity": 408319294.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -7771,952 +7406,6 @@
        "kev_date_added": null,
        "epss": 0.00375,
        "epss_percentile": 0.32138
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91487",
-       "aliases": [
-        "CVE-2026-91487"
-       ],
-       "cves": [
-        "CVE-2026-91487"
-       ],
-       "published": "2026-10-20T22:20:53Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerabi",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 4.8,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91487",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00168,
-       "epss_percentile": 0.06245
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91464",
-       "aliases": [
-        "CVE-2026-91464"
-       ],
-       "cves": [
-        "CVE-2026-91464"
-       ],
-       "published": "2026-10-20T22:20:50Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91464",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00289,
-       "epss_percentile": 0.21909
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91453",
-       "aliases": [
-        "CVE-2026-91453"
-       ],
-       "cves": [
-        "CVE-2026-91453"
-       ],
-       "published": "2026-10-20T22:20:49Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Lightweight HTTP Server).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM fo",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91453",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0029,
-       "epss_percentile": 0.21915
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91461",
-       "aliases": [
-        "CVE-2026-91461"
-       ],
-       "cves": [
-        "CVE-2026-91461"
-       ],
-       "published": "2026-10-20T22:20:49Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91461",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00187,
-       "epss_percentile": 0.08463
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91462",
-       "aliases": [
-        "CVE-2026-91462"
-       ],
-       "cves": [
-        "CVE-2026-91462"
-       ],
-       "published": "2026-10-20T22:20:49Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91462",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00274,
-       "epss_percentile": 0.20082
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91463",
-       "aliases": [
-        "CVE-2026-91463"
-       ],
-       "cves": [
-        "CVE-2026-91463"
-       ],
-       "published": "2026-10-20T22:20:49Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91463",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00227,
-       "epss_percentile": 0.13643
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91451",
-       "aliases": [
-        "CVE-2026-91451"
-       ],
-       "cves": [
-        "CVE-2026-91451"
-       ],
-       "published": "2026-10-20T22:20:48Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulner",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91451",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0029,
-       "epss_percentile": 0.21915
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91452",
-       "aliases": [
-        "CVE-2026-91452"
-       ],
-       "cves": [
-        "CVE-2026-91452"
-       ],
-       "published": "2026-10-20T22:20:48Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.2",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91452",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0029,
-       "epss_percentile": 0.21915
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91418",
-       "aliases": [
-        "CVE-2026-91418"
-       ],
-       "cves": [
-        "CVE-2026-91418"
-       ],
-       "published": "2026-10-20T22:20:45Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle JavaFX, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: ImageIO).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle JavaFX: 21.",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91418",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00403,
-       "epss_percentile": 0.35263
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91409",
-       "aliases": [
-        "CVE-2026-91409"
-       ],
-       "cves": [
-        "CVE-2026-91409"
-       ],
-       "published": "2026-10-20T22:20:44Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Networking).   The supported version that is affected is Oracle Java SE: 27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerabili",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91409",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00379,
-       "epss_percentile": 0.32622
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91410",
-       "aliases": [
-        "CVE-2026-91410"
-       ],
-       "cves": [
-        "CVE-2026-91410"
-       ],
-       "published": "2026-10-20T22:20:44Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnera",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91410",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00306,
-       "epss_percentile": 0.23889
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91411",
-       "aliases": [
-        "CVE-2026-91411"
-       ],
-       "cves": [
-        "CVE-2026-91411"
-       ],
-       "published": "2026-10-20T22:20:44Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle GraalVM En",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91411",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00267,
-       "epss_percentile": 0.19043
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91415",
-       "aliases": [
-        "CVE-2026-91415"
-       ],
-       "cves": [
-        "CVE-2026-91415"
-       ],
-       "published": "2026-10-20T22:20:44Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and ",
-       "severity": "HIGH",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 7.0,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91415",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00239,
-       "epss_percentile": 0.15193
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91397",
-       "aliases": [
-        "CVE-2026-91397"
-       ],
-       "cves": [
-        "CVE-2026-91397"
-       ],
-       "published": "2026-10-20T22:20:43Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Serviceability).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.6,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91397",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00095,
-       "epss_percentile": 0.00609
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91398",
-       "aliases": [
-        "CVE-2026-91398"
-       ],
-       "cves": [
-        "CVE-2026-91398"
-       ],
-       "published": "2026-10-20T22:20:43Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 6.8,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91398",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00231,
-       "epss_percentile": 0.14076
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91400",
-       "aliases": [
-        "CVE-2026-91400"
-       ],
-       "cves": [
-        "CVE-2026-91400"
-       ],
-       "published": "2026-10-20T22:20:43Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Sound).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 a",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.1,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91400",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00257,
-       "epss_percentile": 0.17575
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91394",
-       "aliases": [
-        "CVE-2026-91394"
-       ],
-       "cves": [
-        "CVE-2026-91394"
-       ],
-       "published": "2026-10-20T22:20:42Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1. Difficult to exploit vulnerability",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91394",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00419,
-       "epss_percentile": 0.36975
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91379",
-       "aliases": [
-        "CVE-2026-91379"
-       ],
-       "cves": [
-        "CVE-2026-91379"
-       ],
-       "published": "2026-10-20T22:20:41Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JDK tools).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and ",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 4.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91379",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00122,
-       "epss_percentile": 0.02056
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91380",
-       "aliases": [
-        "CVE-2026-91380"
-       ],
-       "cves": [
-        "CVE-2026-91380"
-       ],
-       "published": "2026-10-20T22:20:41Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Utility).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 4.0,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91380",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00097,
-       "epss_percentile": 0.00737
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91382",
-       "aliases": [
-        "CVE-2026-91382"
-       ],
-       "cves": [
-        "CVE-2026-91382"
-       ],
-       "published": "2026-10-20T22:20:41Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle G",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91382",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00377,
-       "epss_percentile": 0.32378
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91373",
-       "aliases": [
-        "CVE-2026-91373"
-       ],
-       "cves": [
-        "CVE-2026-91373"
-       ],
-       "published": "2026-10-20T22:20:40Z",
-       "summary": "Vulnerability in Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerabilit",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91373",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00441,
-       "epss_percentile": 0.39054
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91374",
-       "aliases": [
-        "CVE-2026-91374"
-       ],
-       "cves": [
-        "CVE-2026-91374"
-       ],
-       "published": "2026-10-20T22:20:40Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Serviceability).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 4.8,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91374",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00168,
-       "epss_percentile": 0.06246
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91375",
-       "aliases": [
-        "CVE-2026-91375"
-       ],
-       "cves": [
-        "CVE-2026-91375"
-       ],
-       "published": "2026-10-20T22:20:40Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerab",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 4.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91375",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00092,
-       "epss_percentile": 0.00525
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91332",
-       "aliases": [
-        "CVE-2026-91332"
-       ],
-       "cves": [
-        "CVE-2026-91332"
-       ],
-       "published": "2026-10-20T22:20:35Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerabi",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91332",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0029,
-       "epss_percentile": 0.21915
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91333",
-       "aliases": [
-        "CVE-2026-91333"
-       ],
-       "cves": [
-        "CVE-2026-91333"
-       ],
-       "published": "2026-10-20T22:20:35Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attack",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91333",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00265,
-       "epss_percentile": 0.1862
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91334",
-       "aliases": [
-        "CVE-2026-91334"
-       ],
-       "cves": [
-        "CVE-2026-91334"
-       ],
-       "published": "2026-10-20T22:20:35Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: ImageIO).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91334",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00208,
-       "epss_percentile": 0.11062
-      },
-      {
-       "id": "DEBIAN-CVE-2026-91335",
-       "aliases": [
-        "CVE-2026-91335"
-       ],
-       "cves": [
-        "CVE-2026-91335"
-       ],
-       "published": "2026-10-20T22:20:35Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: AWT).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 2.6,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-91335",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0021,
-       "epss_percentile": 0.11245
-      },
-      {
-       "id": "DEBIAN-CVE-2026-87367",
-       "aliases": [
-        "CVE-2026-87367"
-       ],
-       "cves": [
-        "CVE-2026-87367"
-       ],
-       "published": "2026-10-20T22:20:14Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JAXP).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87367",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00252,
-       "epss_percentile": 0.16849
-      },
-      {
-       "id": "DEBIAN-CVE-2026-87291",
-       "aliases": [
-        "CVE-2026-87291"
-       ],
-       "cves": [
-        "CVE-2026-87291"
-       ],
-       "published": "2026-10-20T22:20:06Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attack",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87291",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00308,
-       "epss_percentile": 0.2409
-      },
-      {
-       "id": "DEBIAN-CVE-2026-87292",
-       "aliases": [
-        "CVE-2026-87292"
-       ],
-       "cves": [
-        "CVE-2026-87292"
-       ],
-       "published": "2026-10-20T22:20:06Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.2",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87292",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00239,
-       "epss_percentile": 0.15109
-      },
-      {
-       "id": "DEBIAN-CVE-2026-87294",
-       "aliases": [
-        "CVE-2026-87294"
-       ],
-       "cves": [
-        "CVE-2026-87294"
-       ],
-       "published": "2026-10-20T22:20:06Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87294",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00262,
-       "epss_percentile": 0.18259
-      },
-      {
-       "id": "DEBIAN-CVE-2026-87255",
-       "aliases": [
-        "CVE-2026-87255"
-       ],
-       "cves": [
-        "CVE-2026-87255"
-       ],
-       "published": "2026-10-20T22:20:05Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 25.0.4.1 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this v",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87255",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00308,
-       "epss_percentile": 0.24131
-      },
-      {
-       "id": "DEBIAN-CVE-2026-87290",
-       "aliases": [
-        "CVE-2026-87290"
-       ],
-       "cves": [
-        "CVE-2026-87290"
-       ],
-       "published": "2026-10-20T22:20:05Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JAXP).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-87290",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00327,
-       "epss_percentile": 0.26335
-      },
-      {
-       "id": "DEBIAN-CVE-2026-83400",
-       "aliases": [
-        "CVE-2026-83400"
-       ],
-       "cves": [
-        "CVE-2026-83400"
-       ],
-       "published": "2026-10-20T22:19:56Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JAXP).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83400",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00396,
-       "epss_percentile": 0.34559
-      },
-      {
-       "id": "DEBIAN-CVE-2026-83387",
-       "aliases": [
-        "CVE-2026-83387"
-       ],
-       "cves": [
-        "CVE-2026-83387"
-       ],
-       "published": "2026-10-20T22:19:55Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JDBC).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83387",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00327,
-       "epss_percentile": 0.26335
-      },
-      {
-       "id": "DEBIAN-CVE-2026-83395",
-       "aliases": [
-        "CVE-2026-83395"
-       ],
-       "cves": [
-        "CVE-2026-83395"
-       ],
-       "published": "2026-10-20T22:19:55Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.2",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83395",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00327,
-       "epss_percentile": 0.26347
-      },
-      {
-       "id": "DEBIAN-CVE-2026-83378",
-       "aliases": [
-        "CVE-2026-83378"
-       ],
-       "cves": [
-        "CVE-2026-83378"
-       ],
-       "published": "2026-10-20T22:19:54Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attack",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 4.8,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83378",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00214,
-       "epss_percentile": 0.11868
-      },
-      {
-       "id": "DEBIAN-CVE-2026-83380",
-       "aliases": [
-        "CVE-2026-83380"
-       ],
-       "cves": [
-        "CVE-2026-83380"
-       ],
-       "published": "2026-10-20T22:19:54Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JAAS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83380",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00325,
-       "epss_percentile": 0.26088
-      },
-      {
-       "id": "DEBIAN-CVE-2026-83381",
-       "aliases": [
-        "CVE-2026-83381"
-       ],
-       "cves": [
-        "CVE-2026-83381"
-       ],
-       "published": "2026-10-20T22:19:54Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vu",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 4.8,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83381",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00226,
-       "epss_percentile": 0.13427
-      },
-      {
-       "id": "DEBIAN-CVE-2026-83374",
-       "aliases": [
-        "CVE-2026-83374"
-       ],
-       "cves": [
-        "CVE-2026-83374"
-       ],
-       "published": "2026-10-20T22:19:53Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83374",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00289,
-       "epss_percentile": 0.21824
-      },
-      {
-       "id": "DEBIAN-CVE-2026-83376",
-       "aliases": [
-        "CVE-2026-83376"
-       ],
-       "cves": [
-        "CVE-2026-83376"
-       ],
-       "published": "2026-10-20T22:19:53Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
-       "severity": "LOW",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 3.7,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-83376",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00252,
-       "epss_percentile": 0.16849
-      },
-      {
-       "id": "DEBIAN-CVE-2026-101737",
-       "aliases": [
-        "CVE-2026-101737"
-       ],
-       "cves": [
-        "CVE-2026-101737"
-       ],
-       "published": "2026-10-20T22:18:28Z",
-       "summary": "Vulnerability in Oracle Java SE (component: Compiler).   The supported version that is affected is Oracle Java SE: 26.0.2. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerabi",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-101737",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00456,
-       "epss_percentile": 0.4031
-      },
-      {
-       "id": "DEBIAN-CVE-2026-101516",
-       "aliases": [
-        "CVE-2026-101516"
-       ],
-       "cves": [
-        "CVE-2026-101516"
-       ],
-       "published": "2026-10-20T22:18:00Z",
-       "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20",
-       "severity": "MEDIUM",
-       "severity_source": "CVSS v3 vector",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [],
-       "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-101516",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00267,
-       "epss_percentile": 0.19034
       }
      ]
     },
