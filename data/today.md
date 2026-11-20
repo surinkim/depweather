@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-20
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-20T00:36:59Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-20T15:24:53Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 15 of 149
+- Popular packages with a new advisory this week: 16 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 7
-- New CVEs in NVD today (UTC): 1
-- CVEs published in 2026-11 so far: 11,335 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 579
+- CVEs published in 2026-11 so far: 11,913 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -30,10 +30,11 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### PyPI
 
-- **aiohttp**: 9 advisories, worst high; fixed in 3.14.4. Example: [GHSA-jm3w-gw2p-xjfj](https://osv.dev/vulnerability/GHSA-jm3w-gw2p-xjfj) AIOHTTP: Event loop stall in add_domain() wildcard matching
+- **aiohttp**: 9 advisories, worst high; fixed in 3.14.4. Example: [GHSA-pw86-h8fm-j323](https://osv.dev/vulnerability/GHSA-pw86-h8fm-j323) AIOHTTP: Unbounded buffering of data received during an upgrade request
 
 ### Hex
 
+- **LiveView (phoenix_live_view)**: 1 advisory, worst medium; fixed in 1.0.20, 1.1.34, 1.2.14. Example: [EEF-CVE-2026-126334](https://osv.dev/vulnerability/EEF-CVE-2026-126334) Joining a LiveView without `"url"` skips its `live_session` `on_mount` hooks
 - **plug**: 1 advisory, worst medium; fixed in 1.20.4. Example: [EEF-CVE-2026-120287](https://osv.dev/vulnerability/EEF-CVE-2026-120287) Multipart `:length` limit not charged for part and header framing in Plug.Parsers.MULTIPART
 
 ### Packagist

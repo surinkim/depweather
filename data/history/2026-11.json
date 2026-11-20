@@ -169,6 +169,10 @@
     },
     "packagist/laravel/framework": {
      "l": 1
+    },
+    "pypi/aiohttp": {
+     "h": 4,
+     "m": 1
     }
    },
    "ecosystems": {
@@ -179,6 +183,10 @@
     "packagist": {
      "l": 1,
      "u": 1
+    },
+    "pypi": {
+     "h": 4,
+     "m": 1
     }
    }
   },
@@ -196,8 +204,7 @@
      "l": 1
     },
     "pypi/aiohttp": {
-     "h": 8,
-     "m": 1
+     "h": 4
     }
    },
    "ecosystems": {
@@ -207,8 +214,7 @@
      "l": 1
     },
     "pypi": {
-     "h": 8,
-     "m": 1
+     "h": 4
     }
    }
   },
@@ -285,6 +291,18 @@
    "ecosystems": {
     "npm": {
      "m": 5
+    }
+   }
+  },
+  "2026-11-20": {
+   "packages": {
+    "hex/phoenix_live_view": {
+     "m": 1
+    }
+   },
+   "ecosystems": {
+    "hex": {
+     "m": 1
     }
    }
   }

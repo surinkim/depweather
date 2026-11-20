@@ -411,6 +411,9 @@
   },
   "2026-10-23": {
    "packages": {
+    "crates/tokio": {
+     "m": 1
+    },
     "go/github.com/labstack/echo/v4": {
      "c": 1,
      "h": 3
@@ -437,6 +440,9 @@
     }
    },
    "ecosystems": {
+    "crates": {
+     "m": 1
+    },
     "go": {
      "c": 1,
      "h": 3
