@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-20
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-20T15:24:53Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-20T23:59:00Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 16 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 7
-- New CVEs in NVD today (UTC): 579
-- CVEs published in 2026-11 so far: 11,913 (same month last year: 3,021)
+- Popular packages with a new advisory this week: 14 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 11
+- New CVEs in NVD today (UTC): 755
+- CVEs published in 2026-11 so far: 12,089 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -23,14 +23,13 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### npm
 
-- **SvelteKit (@sveltejs/kit)**: 5 advisories, worst high; fixed in 3.1.1, 2.70.4. Example: [GHSA-m9j8-jcmv-hp69](https://osv.dev/vulnerability/GHSA-m9j8-jcmv-hp69) SvelteKit: Build-time server-only module import guard could fail, resulting in server secrets being statically replaced in client bundle
+- **SvelteKit (@sveltejs/kit)**: 4 advisories, worst high; fixed in 3.1.1, 2.70.4. Example: [GHSA-m9j8-jcmv-hp69](https://osv.dev/vulnerability/GHSA-m9j8-jcmv-hp69) SvelteKit: Build-time server-only module import guard could fail, resulting in server secrets being statically replaced in client bundle
 - **Next.js (next)**: 7 advisories, worst medium; fixed in 15.5.29, 16.4.5. Example: [GHSA-f3mh-rxg3-f5g2](https://osv.dev/vulnerability/GHSA-f3mh-rxg3-f5g2) Next.js: HttpOnly cookie exposure through internal response header on Next.js Edge runtime routes
 - **Nuxt**: 4 advisories, worst medium; fixed in 4.6.4. Example: [GHSA-96x6-fvhx-49hg](https://osv.dev/vulnerability/GHSA-96x6-fvhx-49hg) Nuxt exposes the message and data of unhandled errors thrown during server rendering
-- **Astro**: 2 advisories, worst medium; fixed in 7.4.5, 7.4.7. Example: [GHSA-r3h5-4585-7x3w](https://osv.dev/vulnerability/GHSA-r3h5-4585-7x3w) Astro: Image endpoint in @astrojs/node can read files from a case-variant sibling of the output directory on case-sensitive filesystems
 
 ### PyPI
 
-- **aiohttp**: 9 advisories, worst high; fixed in 3.14.4. Example: [GHSA-pw86-h8fm-j323](https://osv.dev/vulnerability/GHSA-pw86-h8fm-j323) AIOHTTP: Unbounded buffering of data received during an upgrade request
+- **aiohttp**: 4 advisories, worst high; fixed in 3.14.4. Example: [GHSA-pw86-h8fm-j323](https://osv.dev/vulnerability/GHSA-pw86-h8fm-j323) AIOHTTP: Unbounded buffering of data received during an upgrade request
 
 ### Hex
 
@@ -39,7 +38,6 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### Packagist
 
-- **Laravel (laravel/framework)**: 1 advisory, worst low or unrated; fixed in 12.71.0, 13.40.0. Example: [GHSA-63hm-g96r-2m2q](https://osv.dev/vulnerability/GHSA-63hm-g96r-2m2q) Laravel: Task Output Injection - Concurrency Process
 - **Drupal core (drupal/core)**: 1 advisory, worst low or unrated; fixed in 10.6.22, 11.3.22, 11.4.13. Example: [DRUPAL-CORE-2026-017](https://osv.dev/vulnerability/DRUPAL-CORE-2026-017) Drupal core ships with an `install.php` file for installing Drupal core.
 
 ### Maven
@@ -64,6 +62,10 @@ No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-11-20: CVE-2026-129448, Apache Roller: Apache Roller Deserialization of Untrusted Data Vulnerability
+- 2026-11-20: CVE-2026-123890, Broadcom VMware vCenter: VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability
+- 2026-11-20: CVE-2025-42884, SAP NetWeaver: SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability
+- 2026-11-20: CVE-2026-76466, Cisco Expressway Series: Cisco Expressway Series Use of Hard-coded Credentials Vulnerability
 - 2026-11-18: CVE-2024-10441, Synology DiskStation Manager (DSM): Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability
 - 2026-11-18: CVE-2026-40217, BerriAI LiteLLM: BerriAI LiteLLM Unprotected Alternate Channel Vulnerability
 - 2026-11-18: CVE-2026-90817, Vanderbilt University Research Electronic Data Capture (REDCap): Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability
