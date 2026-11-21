@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-20
+# depweather forecast, 2026-11-21
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-20T23:59:00Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-21T14:36:43Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 14 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 11
-- New CVEs in NVD today (UTC): 755
-- CVEs published in 2026-11 so far: 12,089 (same month last year: 3,021)
+- Popular packages with a new advisory this week: 15 of 149
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 9
+- New CVEs in NVD today (UTC): 151
+- CVEs published in 2026-11 so far: 12,240 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -33,6 +33,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### Hex
 
+- **Phoenix**: 2 advisories, worst high; fixed in 1.5.16, 1.6.18, 1.7.25, 1.8.17. Example: [EEF-CVE-2026-128361](https://osv.dev/vulnerability/EEF-CVE-2026-128361) Unsanitized presence key crashes Presence tracker
 - **LiveView (phoenix_live_view)**: 1 advisory, worst medium; fixed in 1.0.20, 1.1.34, 1.2.14. Example: [EEF-CVE-2026-126334](https://osv.dev/vulnerability/EEF-CVE-2026-126334) Joining a LiveView without `"url"` skips its `live_session` `on_mount` hooks
 - **plug**: 1 advisory, worst medium; fixed in 1.20.4. Example: [EEF-CVE-2026-120287](https://osv.dev/vulnerability/EEF-CVE-2026-120287) Multipart `:length` limit not charged for part and header framing in Plug.Parsers.MULTIPART
 
@@ -71,7 +72,5 @@ No new advisories for the tracked packages.
 - 2026-11-18: CVE-2026-90817, Vanderbilt University Research Electronic Data Capture (REDCap): Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability
 - 2026-11-18: CVE-2026-90436, Apache Axis: Apache Axis Unsafe Reflection Vulnerability
 - 2026-11-17: CVE-2026-115731, Perforce Puppet Enterprise: Perforce Puppet Enterprise Deserialization of Untrusted Data Vulnerability
-- 2026-11-13: CVE-2026-114713, UnrealIRCd UnrealIRCd: UnrealIRCd Improper Neutralization of Delimiters Vulnerability
-- 2026-11-13: CVE-2026-123039, Check Point Multiple Products: Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability
 
 Full data: https://depweather.com/data/latest.json
