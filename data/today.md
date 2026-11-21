@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-21
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-21T14:36:43Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-21T23:16:35Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 15 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 9
-- New CVEs in NVD today (UTC): 151
-- CVEs published in 2026-11 so far: 12,240 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 351
+- CVEs published in 2026-11 so far: 12,440 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -39,7 +39,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### Packagist
 
-- **Drupal core (drupal/core)**: 1 advisory, worst low or unrated; fixed in 10.6.22, 11.3.22, 11.4.13. Example: [DRUPAL-CORE-2026-017](https://osv.dev/vulnerability/DRUPAL-CORE-2026-017) Drupal core ships with an `install.php` file for installing Drupal core.
+- **Drupal core (drupal/core)**: 2 advisories, worst low or unrated; fixed in 10.6.22, 11.3.22, 11.4.13. Example: [DRUPAL-CORE-2026-018](https://osv.dev/vulnerability/DRUPAL-CORE-2026-018) Drupal core contains a chain of methods that could be exploitable when an insecure deserialization vulnerability exists on the site. This so-called "gadget chain" presents no direct threat, but is a vector that can be used to achieve remote code execution if the application deserializes untrusted da
 
 ### Maven
 
