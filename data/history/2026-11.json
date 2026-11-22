@@ -304,11 +304,17 @@
   },
   "2026-11-20": {
    "packages": {
+    "crates/url": {
+     "u": 1
+    },
     "hex/phoenix_live_view": {
      "m": 1
     }
    },
    "ecosystems": {
+    "crates": {
+     "u": 1
+    },
     "hex": {
      "m": 1
     }
