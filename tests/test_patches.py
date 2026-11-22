@@ -278,6 +278,38 @@ class UnknownCoverage(unittest.TestCase):
         self.assertIsNone(out["languages"][0]["versions"][0]["distros"][0]["high_cves"])
 
 
+class WriteOnlyOnChange(unittest.TestCase):
+    def doc(self, generated, hours=4, **kw):
+        d = {"generated_at": generated, "sources": {"osv": {"ok": 1}}, "summary": {}, "changelog": [],
+             "languages": [{"id": "go", "label": "Go", "versions": [{"name": "1.26", "distros": [
+                 {"id": "official", "latest_patch": "1.26.11",
+                  "image_status": {"state": "pending", "hours": hours}, **kw}]}]}]}
+        return d
+
+    def test_only_the_clock_and_pending_hours_differ(self):
+        prev = self.doc("2026-11-22T00:23:00Z", hours=4)
+        new = self.doc("2026-11-22T01:23:00Z", hours=5)
+        self.assertTrue(patches.unchanged(prev, new, datetime(2026, 11, 22, 1, 23, tzinfo=timezone.utc)))
+
+    def test_a_new_patch_is_a_change(self):
+        prev = self.doc("2026-11-22T00:23:00Z")
+        new = self.doc("2026-11-22T01:23:00Z")
+        new["languages"][0]["versions"][0]["distros"][0]["latest_patch"] = "1.26.12"
+        self.assertFalse(patches.unchanged(prev, new, datetime(2026, 11, 22, 1, 23, tzinfo=timezone.utc)))
+
+    def test_an_image_catching_up_is_a_change(self):
+        prev = self.doc("2026-11-22T00:23:00Z")
+        new = self.doc("2026-11-22T01:23:00Z")
+        new["languages"][0]["versions"][0]["distros"][0]["image_status"] = {"state": "reflected", "hours": 5}
+        self.assertFalse(patches.unchanged(prev, new, datetime(2026, 11, 22, 1, 23, tzinfo=timezone.utc)))
+
+    def test_heartbeat_rewrites_an_old_file_and_first_run_writes(self):
+        prev = self.doc("2026-11-22T00:23:00Z")
+        new = self.doc("2026-11-22T07:00:00Z")
+        self.assertFalse(patches.unchanged(prev, new, datetime(2026, 11, 22, 7, 0, tzinfo=timezone.utc)))
+        self.assertFalse(patches.unchanged(None, new, NOW))
+
+
 class Summary(unittest.TestCase):
     def test_counts_each_cve_once(self):
         def dist(i, **kw):

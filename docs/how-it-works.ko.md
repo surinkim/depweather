@@ -136,8 +136,10 @@ PyPI `requirements.txt`, `pyproject.toml`, `Pipfile`, `go.mod`, `Cargo.toml`, Ma
 (Java 17 → Amazon Corretto, Eclipse Temurin, Azul Zulu, Oracle OpenJDK). 지금은 Java, Go, Node.js, Python만
 추적하며 Public ECR, Kubernetes, PostgreSQL, nginx, Dockerfile 워크어라운드는 아직 없습니다.
 
-`collect/patches.py`가 하루 두 번 도는 같은 잡에서 `collect.py` 다음에 실행되어 `data/patches.json`을 쓰고,
-`collect/patches_page.py`가 배포할 때 이 파일로 페이지를 만듭니다. 추적 대상은 `collect/patches.yml`에 있고 버전 번호는 없습니다.
+`collect/patches.py`가 **매시간** 별도 워크플로(`patches.yml`, 23분)에서 실행되어 `data/patches.json`을 씁니다.
+바뀐 것이 있을 때(또는 6시간이 지났을 때)만 파일을 다시 쓰므로 대부분의 실행은 커밋하지 않습니다.
+`collect/patches_page.py`가 배포할 때 페이지를 만들며, 사이트는 실행이 끝날 때마다 다시 배포되므로 대기 중인 이미지의
+「대기 N시간」이 그때 다시 계산됩니다. 추적 대상은 `collect/patches.yml`에 있고 버전 번호는 없습니다.
 
 - **어떤 버전.** 매 실행마다 [endoflife.date](https://endoflife.date)에서 고릅니다. 지원 중인 메이저
   (`isMaintained`이면서 `isEol`이 아님, Java는 LTS만)와 최근 종료된 메이저(*종료* 배지)입니다. EOL 날짜는 배포판마다 따로 씁니다.

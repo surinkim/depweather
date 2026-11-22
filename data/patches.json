@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T11:29:52Z",
+ "generated_at": "2026-11-22T11:44:00Z",
  "summary": {
   "new_patches_7d": 10,
   "images_pending": 2,
@@ -1170,7 +1170,7 @@
        "is_eol": false,
        "eol_from": null,
        "high_cves": [],
-       "cvss_unrated": 1,
+       "cvss_unrated": 0,
        "cve_sources": [
         "Go stdlib"
        ],
@@ -1226,7 +1226,7 @@
        "is_eol": false,
        "eol_from": null,
        "high_cves": [],
-       "cvss_unrated": 1,
+       "cvss_unrated": 0,
        "cve_sources": [
         "Go stdlib"
        ],

@@ -64,6 +64,7 @@ CHANGELOG_MAX = 40
 NVD_PER_RUN = 40
 EOL_SOON_DAYS = 180
 REBUILD_HOURS = 168
+HEARTBEAT_HOURS = 6   # rewrite the file at least this often, so "last updated" stays honest
 CVE_RE = re.compile(r"CVE-\d{4}-\d{4,}")
 
 CVE_DEFINITION = {
@@ -744,6 +745,34 @@ def collect(config: dict, prev: dict | None, f: Fetcher, now: datetime) -> dict:
     return out
 
 
+def comparable(data: dict | None) -> dict | None:
+    """The file without what changes every run: the timestamp, per-source
+    counters and the hours a pending image has waited (the page counts those
+    itself when it is built). Equal means nothing worth a commit happened."""
+    if data is None:
+        return None
+    out = json.loads(json.dumps(data))
+    out.pop("generated_at", None)
+    out.pop("sources", None)
+    for lang in out.get("languages") or []:
+        for ver in lang.get("versions") or []:
+            for d in ver.get("distros") or []:
+                st = d.get("image_status") or {}
+                if st.get("state") == "pending":
+                    st["hours"] = None
+    return out
+
+
+def unchanged(prev: dict | None, new: dict, now: datetime) -> bool:
+    if prev is None or comparable(prev) != comparable(new):
+        return False
+    try:
+        age = now - parse_time(prev["generated_at"])
+    except (KeyError, ValueError):
+        return False
+    return age < timedelta(hours=HEARTBEAT_HOURS)
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description="Collect runtime patch status into data/patches.json")
     p.add_argument("--config", type=Path, default=CONFIG)
@@ -756,11 +785,15 @@ def main(argv: list[str] | None = None) -> int:
         prev = None
     f = Fetcher()
     started = time.monotonic()
-    data = collect(config, prev, f, datetime.now(timezone.utc))
+    now = datetime.now(timezone.utc)
+    data = collect(config, prev, f, now)
     n_ver = sum(len(l["versions"]) for l in data["languages"])
     if n_ver == 0:
         log("patches: endoflife.date returned nothing; keeping the previous file")
         return 1
+    if unchanged(prev, data, now):
+        log(f"patches: nothing changed, file left as it is ({f.requests} requests)")
+        return 0
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     log(f"patches: {n_ver} versions, {f.requests} requests, {time.monotonic() - started:.0f}s, "

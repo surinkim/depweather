@@ -88,8 +88,11 @@ class Page(unittest.TestCase):
 
     def test_delay_states(self):
         self.assertIn("✅ +3h", self.en)
-        self.assertIn("⏳ waiting 4h", self.en)
-        self.assertIn("⏳ 대기 4h", self.ko)
+        # The wait is counted from released_at to the build time (data time by default).
+        self.assertIn("⏳ waiting 91h", self.en)
+        self.assertIn("⏳ 대기 91h", self.ko)
+        later = pp.render_page(DATA, "en", TODAY, now=pp.parse_dt("2026-11-22T04:28:00Z"))
+        self.assertIn("⏳ waiting 96h", later)
 
     def test_eol_badge_and_soon_and_ok(self):
         self.assertIn('class="pill bad" title="2022-03-22">2022-03 ended', self.en)

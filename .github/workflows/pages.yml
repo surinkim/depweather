@@ -2,12 +2,14 @@ name: pages
 
 # Publishes the site to GitHub Pages: on every push to main (code changes)
 # and after each successful data collection (data commits made with
-# GITHUB_TOKEN do not trigger push workflows, so collect is chained here).
+# GITHUB_TOKEN do not trigger push workflows, so collect and patches are chained
+# here). patches runs hourly, so the page is also rebuilt hourly: that is when the
+# "waiting N hours" of a pending image is counted again.
 on:
   push:
     branches: [main]
   workflow_run:
-    workflows: [collect]
+    workflows: [collect, patches]
     types: [completed]
   workflow_dispatch:
 

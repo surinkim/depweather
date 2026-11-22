@@ -156,9 +156,10 @@ image have it yet?* The unit is language, then major version, then distribution
 Node.js and Python are tracked; Public ECR, Kubernetes, PostgreSQL, nginx and
 Dockerfile workarounds are not yet.
 
-`collect/patches.py` runs after `collect.py` in the same twice-a-day job and writes
-`data/patches.json`; `collect/patches_page.py` renders the page from it when the site
-is published. What is tracked is in `collect/patches.yml`, with no version numbers.
+`collect/patches.py` runs **every hour** in its own workflow (`patches.yml`, minute 23) and writes
+`data/patches.json`. It rewrites the file only when something changed (or after 6 hours), so most
+runs commit nothing. `collect/patches_page.py` renders the page when the site is published, and the
+site is rebuilt after every run, which is when a pending image's "waiting N hours" is counted again. What is tracked is in `collect/patches.yml`, with no version numbers.
 
 - **Which versions.** Taken from [endoflife.date](https://endoflife.date) on every run:
   supported majors (`isMaintained` and not `isEol`; Java only LTS), plus majors that ended

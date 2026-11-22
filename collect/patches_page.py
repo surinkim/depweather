@@ -231,6 +231,15 @@ def eol_cell(eol_from: str | None, state: str, t: dict) -> str:
     return f'<span class="pill plain" title="{esc(eol_from)}">{esc(ym)}</span>'
 
 
+def live_status(d: dict, now: datetime) -> dict:
+    """image_status with the wait of a pending image counted up to ``now``:
+    the data file is not rewritten every hour, the page build is."""
+    st = dict(d.get("image_status") or {"state": "unknown"})
+    if st.get("state") == "pending" and d.get("released_at"):
+        st["hours"] = max(0, int((now - parse_dt(d["released_at"])).total_seconds() // 3600))
+    return st
+
+
 def status_cell(st: dict | None, t: dict, note: str | None = None) -> str:
     st = st or {"state": "unknown"}
     tilde = "≈" if st.get("approx") else ""
@@ -356,7 +365,7 @@ def detail_row(key: str, parent: str, lang: str, d: dict, t: dict) -> str:
             f'<section class="card"><h4>{esc(t["img_h"])}</h4>{img_body}</section></div>{work}</td></tr>')
 
 
-def dist_cells(d: dict, t: dict, lang: str, today: date) -> str:
+def dist_cells(d: dict, t: dict, lang: str, today: date, now: datetime) -> str:
     est = eol_state(d, today)
     date_only = d.get("released_precision") == "date"
     stamp = esc(kst_stamp(d.get("released_at"), date_only))
@@ -365,13 +374,13 @@ def dist_cells(d: dict, t: dict, lang: str, today: date) -> str:
     note = (d.get("image_note") or {}).get(lang)
     return (f'<td class="mono">{esc(d.get("latest_patch") or "–")}</td>'
             f'<td class="mono"{time_title}>{stamp or "–"}</td>'
-            f'<td>{status_cell(d.get("image_status"), t, note)}</td>'
+            f'<td>{status_cell(live_status(d, now), t, note)}</td>'
             f'<td><span class="pill dim" title="{esc(t["ecr_soon"])}">–</span></td>'
             f'<td>{eol_cell(d.get("eol_from"), est, t)}</td>'
             f'<td class="num">{cve_cell(cves, t)}</td>')
 
 
-def render_rows(data: dict, lang: str, today: date) -> str:
+def render_rows(data: dict, lang: str, today: date, now: datetime) -> str:
     t = S[lang]
     out = []
     for l in data.get("languages") or []:
@@ -405,7 +414,7 @@ def render_rows(data: dict, lang: str, today: date) -> str:
                 d = v["distros"][0]
                 out.append(row_attrs(vkey, lid, "ver", vname, False, ' data-leaf="1"'))
                 out.append(f'<th scope="row" class="name lvl1">{star(vkey, t)}{twisty(vkey, label, True)}</th>'
-                           f'{dist_cells(d, t, lang, today)}</tr>')
+                           f'{dist_cells(d, t, lang, today, now)}</tr>')
                 out.append(detail_row(vkey, vkey, lang, d, t))
                 continue
             v_cves = {c["id"] for d in v["distros"] for c in (valid_cves(d) or [])}
@@ -427,7 +436,7 @@ def render_rows(data: dict, lang: str, today: date) -> str:
                 out.append(row_attrs(dkey, vkey, "dist", text, True, ' data-leaf="1"'))
                 out.append(f'<th scope="row" class="name lvl2">{star(dkey, t)}'
                            f'{twisty(dkey, "<span class=vname>" + esc(d["label"]) + "</span>", True)}</th>'
-                           f'{dist_cells(d, t, lang, today)}</tr>')
+                           f'{dist_cells(d, t, lang, today, now)}</tr>')
                 out.append(detail_row(dkey, dkey, lang, d, t))
     return "\n".join(out)
 
@@ -450,13 +459,14 @@ def eol_list(data: dict, today: date) -> list[tuple[str, str, str]]:
     return [(n, e, s) for _, n, e, s in items[:8]]
 
 
-def render_page(data: dict, lang: str, today: date | None = None) -> str:
+def render_page(data: dict, lang: str, today: date | None = None, now: datetime | None = None) -> str:
     if lang not in LANGS:
         raise ValueError(f"bad page language: {lang!r}")
     t = S[lang]
     other = "en" if lang == "ko" else "ko"
     gen = parse_dt(data["generated_at"])
-    today = today or gen.date()
+    now = now or gen
+    today = today or now.date()
     en_url, ko_url = f"{SITE}/patches/", f"{SITE}/ko/patches/"
     page_url = ko_url if lang == "ko" else en_url
     summ = data.get("summary") or {}
@@ -474,7 +484,7 @@ def render_page(data: dict, lang: str, today: date | None = None) -> str:
             tag = f'<span class="pill warn small">{esc(t["left"].format(n=n))}</span>'
         eols.append(f'<li><span><b>{esc(name)}</b> <span class="muted mono">{esc(eol)}</span></span>{tag}</li>')
     eol_html = f'<ul class="eollist">{"".join(eols)}</ul>' if eols else f'<p class="muted">{esc(t["eol_empty"])}</p>'
-    rows = render_rows(data, lang, today) if data.get("languages") else ""
+    rows = render_rows(data, lang, today, now) if data.get("languages") else ""
     body_rows = rows or f'<tr><td colspan="7" class="muted">{esc(t["no_data"])}</td></tr>'
     src = " · ".join(f'<a href="{u}" rel="noopener">{esc(n)}</a>' for n, u in SOURCES_LINE)
     css = _CSS
@@ -721,7 +731,7 @@ def write_pages(data: dict, out: Path) -> list[Path]:
         if not dest.resolve().is_relative_to(out.resolve()):
             raise ValueError("patch page escapes output dir")
         dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(render_page(data, lang), encoding="utf-8")
+        dest.write_text(render_page(data, lang, now=datetime.now(timezone.utc)), encoding="utf-8")
         written.append(dest)
     return written
 
