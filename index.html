@@ -186,6 +186,7 @@ header.top .spacer { flex: 1; }
 .seg > * + * { border-left: 1px solid var(--border); }
 .seg button[aria-pressed="true"], .seg a[aria-current="page"] { background: var(--ink); color: var(--page); }
 .iconbtn { font: inherit; font-size: 13px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--ink-2); cursor: pointer; }
+.iconbtn[href] { text-decoration: none; }
 .iconbtn.gh { display: inline-flex; align-items: center; justify-content: center; padding: 6px 8px; color: var(--ink); text-decoration: none; }
 .iconbtn.gh:hover { background: var(--group-head); }
 @media (max-width: 767px) {
@@ -386,6 +387,7 @@ a.chip:hover { text-decoration: underline; }
       <a href="/" hreflang="en" lang="en" data-lang="en">EN</a>
       <a href="/ko/" hreflang="ko" lang="ko" data-lang="ko">KO</a>
     </div>
+    <a class="iconbtn" id="patcheslink" href="/patches/" data-ko-href="/ko/patches/" data-i18n="nav_patches">Patches</a>
     <a class="iconbtn gh" href="https://github.com/surinkim/depweather" data-i18n-title="gh_title" title="Source code on GitHub" aria-label="Source code on GitHub">
       <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
     </a>
@@ -611,6 +613,7 @@ const I18N = {
       Source code: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
     build: (b, d) => (d ? `Data updated ${d} UTC. ` : "") + `Page code version ${b}.`,
     gh_title: "Source code on GitHub",
+    nav_patches: "Patches",
     footer_analytics: "This site uses Google Analytics to count visits.",
     rd_kev: "added to CISA KEV this week", rd_aff: (n) => `of ${n} packages affected this week`,
     rd_today: "new CVEs today", rd_month: (m) => `CVEs published in ${m}`,
@@ -727,6 +730,7 @@ const I18N = {
       소스 코드: <a href="https://github.com/surinkim/depweather">github.com/surinkim/depweather</a> (MIT).`,
     build: (b, d) => (d ? `데이터 갱신 ${d} UTC. ` : "") + `페이지 코드 버전 ${b}.`,
     gh_title: "GitHub에서 소스 코드 보기",
+    nav_patches: "패치",
     footer_analytics: "방문 통계를 위해 Google Analytics를 사용합니다.",
     about_html: `<h2>depweather 소개</h2>
     <p>depweather는 인기 오픈소스 패키지 약 150개의 새 취약점을 매일 보여주는 무료 지도입니다. npm, PyPI, Maven,

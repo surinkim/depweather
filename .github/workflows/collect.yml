@@ -33,6 +33,14 @@ jobs:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}   # optional; empty is fine
         run: python collect/collect.py
 
+      # Runtime patches. A failure here must not stop the data commit below.
+      - name: Collect runtime patches
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}          # injected by Actions, never stored
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}   # optional; empty is fine
+        run: python collect/patches.py
+
       - name: Commit data
         run: |
           git config user.name "depweather-bot"

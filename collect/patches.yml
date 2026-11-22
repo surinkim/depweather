@@ -1,0 +1,127 @@
+# What collect/patches.py tracks. No versions live in the code: the major
+# versions come from endoflife.date on every run (see `select`).
+#
+# Per language:
+#   select.lts_only        keep only LTS majors (Java). Others keep every major.
+#   select.recent_eol_days also keep majors that reached end of life this many
+#                          days ago or less, shown with an "ended" badge.
+#   Majors are taken from endoflife.date as: isMaintained and not isEol. A major
+#   is isMaintained while paid extended support exists (Node 20 after its EOL),
+#   so isEol decides, and isMaintained narrows.
+#
+# Per distribution (a product with its own patch releases and EOL date):
+#   eol        endoflife.date product slug (GET /api/v1/products/<slug>)
+#   github     where the patch time comes from. Omit it to use the release link
+#              of endoflife.date when that is a github.com release URL.
+#                repo: owner/name   tag: "<template>"   kind: release | tag
+#   dockerhub  repo (namespace/name) and the tags to look up. One request per tag.
+#   osv        OSV sources for the high-severity CVEs fixed by the patch.
+#                match: exact (default)  the fixed version equals the patch
+#                match: update           the fixed version is the same OpenJDK
+#                                        update release (21.0.13 for 21.0.13.1+2)
+#
+# Template variables, filled per major version:
+#   {name}       release name from endoflife.date          17, 1.26, 24
+#   {latest}     latest patch version as endoflife.date has it   17.0.21.1+2
+#   {latest_us}  the same with "+" written "_" (Docker tags)       17.0.21.1_2
+#   {base}       update release without vendor revision      17.0.21, 8u514
+#
+# How a tag is judged ("reflected" = the image holds the latest patch):
+#   - A tag that names the full patch ({latest}, {latest_us}) is exact: if it
+#     exists, the patch is in it.
+#   - If a distribution lists such tags, the other tags count only when their
+#     digest equals the digest of an existing exact tag. When no exact tag
+#     exists yet, the image is "pending".
+#   - If it lists none (Corretto only tags {base}), a tag counts when it exists
+#     and was pushed after the patch was released. That is a guess and is
+#     recorded as such in the data ("match": "pushed-after").
+
+languages:
+  - id: java
+    label: Java
+    select: {lts_only: true, recent_eol_days: 0}
+    distros:
+      - id: amazon-corretto
+        label: Amazon Corretto
+        eol: amazon-corretto
+        dockerhub:
+          repo: library/amazoncorretto
+          tags: ["{name}", "{name}-al2023", "{base}-al2023"]
+        osv: &openjdk_osv
+          - {ecosystem: "Ubuntu:24.04:LTS", package: "openjdk-{name}", match: update}
+      - id: eclipse-temurin
+        label: Eclipse Temurin
+        eol: eclipse-temurin
+        dockerhub:
+          repo: library/eclipse-temurin
+          tags: ["{name}", "{name}-jdk", "{latest_us}-jdk"]
+        osv: *openjdk_osv
+      - id: azul-zulu
+        label: Azul Zulu
+        eol: azul-zulu
+        # endoflife.date lists Zulu's own build number (17.68.203); Docker tags
+        # carry the OpenJDK version (17.0.21.1), so the two cannot be compared.
+        dockerhub: null
+        image_note:
+          en: "Zulu build numbers on endoflife.date cannot be matched to Docker tags."
+          ko: "endoflife.date의 Zulu 빌드 번호는 Docker 태그의 OpenJDK 버전과 대조할 수 없습니다."
+        osv: null
+      - id: oracle-openjdk
+        label: Oracle OpenJDK
+        eol: openjdk-builds-from-oracle
+        # The official `openjdk` image is deprecated and Oracle's registry may
+        # ask for a login. No login, no scraping.
+        dockerhub: null
+        image_note:
+          en: "The official openjdk image is deprecated; Oracle's registry has no anonymous API."
+          ko: "공식 openjdk 이미지는 deprecated이고 Oracle 레지스트리는 공개 API가 없어 확인할 수 없습니다."
+        osv: *openjdk_osv
+
+  - id: go
+    label: Go
+    select: {lts_only: false, recent_eol_days: 120}
+    distros:
+      - id: official
+        label: Go
+        eol: go
+        github: {repo: golang/go, tag: "go{latest}", kind: tag}
+        dockerhub:
+          repo: library/golang
+          tags: ["{name}", "{latest}"]
+        osv:
+          - {ecosystem: Go, package: stdlib}
+
+  - id: nodejs
+    label: Node.js
+    select: {lts_only: false, recent_eol_days: 365}
+    distros:
+      - id: official
+        label: Node.js
+        eol: nodejs
+        github: {repo: nodejs/node, tag: "v{latest}", kind: release}
+        dockerhub:
+          repo: library/node
+          tags: ["{name}", "{latest}"]
+        # OSV has no Node.js runtime package whose fixed versions line up with
+        # these majors (Debian's nodejs is one old major). The CVE column says so.
+        osv: null
+
+  - id: python
+    label: Python
+    select: {lts_only: false, recent_eol_days: 365}
+    distros:
+      - id: official
+        label: Python
+        eol: python
+        github: {repo: python/cpython, tag: "v{latest}", kind: tag}
+        dockerhub:
+          repo: library/python
+          tags: ["{name}", "{latest}"]
+        osv:
+          - {ecosystem: "Debian:13", package: "python{name}"}
+          - {ecosystem: "Debian:12", package: "python{name}"}
+          - {ecosystem: "Ubuntu:24.04:LTS", package: "python{name}"}
+
+# Phase 2, not collected yet: Public ECR (public.ecr.aws, anonymous token +
+# manifest created time), Kubernetes (registry.k8s.io), PostgreSQL, nginx, and
+# Dockerfile workarounds for distributions with a verifiable package URL.

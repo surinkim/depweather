@@ -64,6 +64,13 @@ A single HTML page draws it. No server and no login; Google Analytics counts vis
 Details (colors, severity rules, how packages are picked, data licenses):
 **[docs/how-it-works.md](docs/how-it-works.md)**
 
+## Runtime patches
+
+[/patches/](https://depweather.com/patches/): the latest patch of Java, Go, Node.js and
+Python, whether the official Docker image has it yet (and how long it took), when support
+ends, and the high-severity CVEs that patch fixed. Real data only; see
+[how it works](docs/how-it-works.md#runtime-patches).
+
 ## Alerts
 
 No account. Subscribe to the [Atom feed](https://depweather.com/feed.xml)

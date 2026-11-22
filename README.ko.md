@@ -61,6 +61,12 @@ GitHub Actions 작업이 하루에 두 번 돕니다. [OSV](https://osv.dev)에�
 색, 심각도 규칙, 패키지 선정 기준, 데이터 라이선스 같은 자세한 내용:
 **[docs/how-it-works.ko.md](docs/how-it-works.ko.md)**
 
+## 런타임 패치
+
+[/ko/patches/](https://depweather.com/ko/patches/): Java, Go, Node.js, Python의 최신 패치, 공식 Docker 이미지 반영 여부(와 걸린 시간),
+지원 종료일, 그 패치가 고친 고위험 CVE. 실제 데이터만 씁니다. 자세히는
+[작동 방식](docs/how-it-works.ko.md#런타임-패치)을 보세요.
+
 ## 알림
 
 계정이 필요 없습니다. [Atom 피드](https://depweather.com/feed.xml)를 구독하거나
