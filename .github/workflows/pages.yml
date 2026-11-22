@@ -22,13 +22,13 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+# Two jobs: deploy-pages looks the artifact up through the API, and doing that in the
+# same job, a fraction of a second after the upload, sometimes found nothing
+# ("No artifacts named github-pages were found"). A separate job starts later.
 jobs:
-  deploy:
+  build:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -69,5 +69,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
       - id: deploy
         uses: actions/deploy-pages@v4
