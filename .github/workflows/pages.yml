@@ -2,12 +2,14 @@ name: pages
 
 # Publishes the site to GitHub Pages: on every push to main (code changes)
 # and after each successful data collection (data commits made with
-# GITHUB_TOKEN do not trigger push workflows, so collect is chained here).
+# GITHUB_TOKEN do not trigger push workflows, so collect and patches are chained
+# here). patches runs hourly, so the page is also rebuilt hourly: that is when the
+# "waiting N hours" of a pending image is counted again.
 on:
   push:
     branches: [main]
   workflow_run:
-    workflows: [collect]
+    workflows: [collect, patches]
     types: [completed]
   workflow_dispatch:
 
@@ -40,7 +42,8 @@ jobs:
       # The home page (/ and /ko/, written by home.py from index.html),
       # what the page loads, the plain-text views (llms.txt, today.md),
       # the Atom feeds, two HTML pages per package (/pkg/... and /ko/pkg/...),
-      # and one SVG badge per package. Mockups and sources stay in the
+      # one SVG badge per package, and the runtime patch page (/patches/, /ko/patches/,
+      # written by patches_page.py from data/patches.json). Mockups and sources stay in the
       # repository. Compact history JSON is copied so the counter view can
       # draw long-term charts; it is
       # committed, unlike the feeds, package pages and badges, which are
@@ -51,13 +54,15 @@ jobs:
           mkdir -p _site/data/history _site/js
           cp favicon.svg og.png robots.txt sitemap.xml llms.txt _site/
           python3 collect/home.py --out _site
-          cp js/stack.js js/pkg-path.js js/trends.js _site/js/
+          cp js/stack.js js/pkg-path.js js/trends.js js/patches.js _site/js/
           cp data/today.md _site/today.md
           cp -r fonts _site/
           cp data/latest.json _site/data/
           find data/history -maxdepth 1 -name '*.json' -exec cp {} _site/data/history/ \;
           python3 collect/feeds.py --out _site
           python3 collect/pages.py --out _site
+          cp data/patches.json _site/data/ 2>/dev/null || true
+          python3 collect/patches_page.py --out _site
           python3 collect/badges.py --out _site
 
       - uses: actions/configure-pages@v5

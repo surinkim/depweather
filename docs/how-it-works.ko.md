@@ -129,6 +129,37 @@ PyPI `requirements.txt`, `pyproject.toml`, `Pipfile`, `go.mod`, `Cargo.toml`, Ma
 `localStorage`(`depweather:stack`)에 저장됩니다. `stack` 쿼리는 추적 패키지 키를 쉼표로
 이은 값(`npm/react,pypi/django`)이고, 하나도 없으면 `-`입니다. 파일은 서버로 보내지 않습니다.
 
+## 런타임 패치
+
+[`/ko/patches/`](https://depweather.com/ko/patches/)(영어: `/patches/`)는 지도와 다른 질문에 답합니다.
+*내가 쓰는 런타임에 패치가 나왔는데, 공식 이미지는 따라왔나?* 단위는 언어 → 메이저 버전 → 배포판입니다
+(Java 17 → Amazon Corretto, Eclipse Temurin, Azul Zulu, Oracle OpenJDK). 지금은 Java, Go, Node.js, Python만
+추적하며 Public ECR, Kubernetes, PostgreSQL, nginx, Dockerfile 워크어라운드는 아직 없습니다.
+
+`collect/patches.py`가 **매시간** 별도 워크플로(`patches.yml`, 23분)에서 실행되어 `data/patches.json`을 씁니다.
+바뀐 것이 있을 때(또는 6시간이 지났을 때)만 파일을 다시 쓰므로 대부분의 실행은 커밋하지 않습니다.
+`collect/patches_page.py`가 배포할 때 페이지를 만들며, 사이트는 실행이 끝날 때마다 다시 배포되므로 대기 중인 이미지의
+「대기 N시간」이 그때 다시 계산됩니다. 추적 대상은 `collect/patches.yml`에 있고 버전 번호는 없습니다.
+
+- **어떤 버전.** 매 실행마다 [endoflife.date](https://endoflife.date)에서 고릅니다. 지원 중인 메이저
+  (`isMaintained`이면서 `isEol`이 아님, Java는 LTS만)와 최근 종료된 메이저(*종료* 배지)입니다. EOL 날짜는 배포판마다 따로 씁니다.
+- **패치가 나온 시각.** GitHub의 시각(릴리스 `published_at`, Go·Python은 태그 날짜). GitHub에 물을 수 없으면(한도)
+  endoflife.date의 날짜를 쓰고 페이지에 `≈`로 표시합니다. UTC로 저장하고 KST로 보여 줍니다.
+- **이미지 반영 여부.** Docker Hub에 태그마다 한 번씩 묻습니다. 이미지는 받지 않습니다. 패치 전체 버전이 이름에 든
+  태그(`3.13.18`)가 기준이고, 떠다니는 태그(`3.13`)는 digest가 같을 때만 인정합니다. 전체 버전 태그가 없는 배포판(Corretto)은
+  패치 이후에 푸시된 태그를 반영으로 봅니다. ✅ `+3h`는 빌드 시각에서 패치 시각을 뺀 값이고 ⏳는 패치 이후 경과입니다.
+  Docker Hub는 **마지막** 푸시만 알려 주고 공식 이미지는 다시 빌드되므로, 패치 후 일주일 안에 푸시된 경우에만 지연 시간을 표시합니다.
+- **고위험 CVE.** OSV에서 CVSS 7.0 이상이면서 수정 버전이 이 패치인 권고입니다(Go `stdlib`: 같은 버전, Java: Ubuntu `openjdk-N`의
+  같은 OpenJDK 업데이트 릴리스, Python: Debian·Ubuntu `python3.N`). OSV에 점수가 없으면 NVD에서 찾고(`NVD_API_KEY`는 선택,
+  `data/patches_cvss.json`에 캐시), 쓸 만한 OSV 출처가 없는 제품(Node.js, Azul Zulu, Oracle OpenJDK 이미지)은 `0`이 아니라 `–`입니다.
+  **0건은 그 출처에서 못 찾았다는 뜻이며 없다는 보증이 아닙니다.**
+- **확인 불가.** Oracle OpenJDK와 Azul Zulu 이미지는 견줄 만한 공개 태그 데이터가 없어, 추측하지 않고 이유를 적습니다.
+- **내 스택.** 행의 별표와 「내 스택만 보기」는 이 브라우저의 `localStorage`(`depweather:patches-stack`, 홈과 별개)에만 저장되며 어디로도 보내지 않습니다.
+
+출처마다 따로 가져오고, 실패하면 그 필드를 비워 두며 파일의 `sources`에 기록합니다. 워크플로 단계에 `continue-on-error`가 있어
+실패해도 데이터 커밋은 멈추지 않습니다. 로컬 실행: `python collect/patches.py` 다음 `python collect/patches_page.py --out /tmp/site`.
+환경에 `GITHUB_TOKEN`이 있으면 GitHub 한도가 시간당 60회에서 5,000회로 늘어나며, 토큰은 어디에도 저장하지 않습니다.
+
 ## 색과 날씨
 
 페이지는 일기예보처럼 읽힙니다. 맨 위 문장은 데이터로 만듭니다("Storms over npm, PyPI

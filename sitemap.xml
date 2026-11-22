@@ -15,6 +15,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://depweather.com/"/>
   </url>
   <url>
+    <loc>https://depweather.com/patches/</loc>
+    <changefreq>daily</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://depweather.com/patches/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://depweather.com/ko/patches/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://depweather.com/patches/"/>
+  </url>
+  <url>
+    <loc>https://depweather.com/ko/patches/</loc>
+    <changefreq>daily</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://depweather.com/patches/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://depweather.com/ko/patches/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://depweather.com/patches/"/>
+  </url>
+  <url>
     <loc>https://depweather.com/feed.xml</loc>
     <changefreq>daily</changefreq>
   </url>

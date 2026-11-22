@@ -1,0 +1,1967 @@
+{
+ "generated_at": "2026-11-22T11:44:00Z",
+ "summary": {
+  "new_patches_7d": 10,
+  "images_pending": 2,
+  "high_cves": 7
+ },
+ "languages": [
+  {
+   "id": "java",
+   "label": "Java",
+   "versions": [
+    {
+     "name": "25",
+     "is_lts": true,
+     "is_eol": false,
+     "eol_from": "2033-09-30",
+     "inline": false,
+     "distros": [
+      {
+       "id": "amazon-corretto",
+       "label": "Amazon Corretto",
+       "latest_patch": "25.0.5.1.2",
+       "released_at": "2026-11-17T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/corretto/corretto-25/releases/tag/25.0.5.1.2",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2032-10-31",
+       "high_cves": [
+        {
+         "id": "CVE-2026-91403",
+         "cvss": 9.1,
+         "cvss_source": "NVD",
+         "fixed_in": "25.0.5.1.2",
+         "url": "https://osv.dev/vulnerability/USN-9004-1"
+        },
+        {
+         "id": "CVE-2026-114938",
+         "cvss": 8.1,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114938"
+        },
+        {
+         "id": "CVE-2026-114939",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114939"
+        },
+        {
+         "id": "CVE-2026-114940",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114940"
+        },
+        {
+         "id": "CVE-2026-114941",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114941"
+        },
+        {
+         "id": "CVE-2026-114942",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114942"
+        },
+        {
+         "id": "CVE-2026-91415",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-91415"
+        }
+       ],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-25"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "25",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:52:25.661072Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "25-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:52:27.651902Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "25.0.5-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:53:19.4741Z",
+         "match": "pushed-after"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 47,
+        "approx": true,
+        "built_at": "2026-11-18T23:52:25.661072Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "eclipse-temurin",
+       "label": "Eclipse Temurin",
+       "latest_patch": "25.0.5.1+2",
+       "released_at": "2026-11-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/adoptium/temurin25-binaries/releases/tag/jdk-25.0.5.1+2",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2031-09-30",
+       "high_cves": [
+        {
+         "id": "CVE-2026-91403",
+         "cvss": 9.1,
+         "cvss_source": "NVD",
+         "fixed_in": "25.0.5.1+2",
+         "url": "https://osv.dev/vulnerability/USN-9004-1"
+        },
+        {
+         "id": "CVE-2026-114938",
+         "cvss": 8.1,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114938"
+        },
+        {
+         "id": "CVE-2026-114939",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114939"
+        },
+        {
+         "id": "CVE-2026-114940",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114940"
+        },
+        {
+         "id": "CVE-2026-114941",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114941"
+        },
+        {
+         "id": "CVE-2026-114942",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114942"
+        },
+        {
+         "id": "CVE-2026-91415",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "25.0.5.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-91415"
+        }
+       ],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-25"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "25",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-20T18:11:45.593332Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "25-jdk",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-20T18:12:23.249696Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "25.0.5.1_2-jdk",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-20T18:14:52.765738Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 66,
+        "approx": true,
+        "built_at": "2026-11-20T18:11:45.593332Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "azul-zulu",
+       "label": "Azul Zulu",
+       "latest_patch": "25.36.205",
+       "released_at": "2026-08-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://docs.azul.com/core/release/august-2026/release-notes",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2033-09-30",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [],
+       "image_status": {
+        "state": "unknown",
+        "hours": null,
+        "approx": false
+       },
+       "image_note": {
+        "en": "Zulu build numbers on endoflife.date cannot be matched to Docker tags.",
+        "ko": "endoflife.date의 Zulu 빌드 번호는 Docker 태그의 OpenJDK 버전과 대조할 수 없습니다."
+       },
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "oracle-openjdk",
+       "label": "Oracle OpenJDK",
+       "latest_patch": "25",
+       "released_at": "2025-09-16T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://openjdk.org/projects/jdk/25/",
+       "is_lts": false,
+       "is_eol": true,
+       "eol_from": "2026-03-17",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [],
+       "image_status": {
+        "state": "unknown",
+        "hours": null,
+        "approx": false
+       },
+       "image_note": {
+        "en": "The official openjdk image is deprecated; Oracle's registry has no anonymous API.",
+        "ko": "공식 openjdk 이미지는 deprecated이고 Oracle 레지스트리는 공개 API가 없어 확인할 수 없습니다."
+       },
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "21",
+     "is_lts": true,
+     "is_eol": false,
+     "eol_from": "2031-09-30",
+     "inline": false,
+     "distros": [
+      {
+       "id": "amazon-corretto",
+       "label": "Amazon Corretto",
+       "latest_patch": "21.0.13.1.2",
+       "released_at": "2026-11-17T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/corretto/corretto-21/releases/tag/21.0.13.1.2",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2030-10-31",
+       "high_cves": [
+        {
+         "id": "CVE-2026-91403",
+         "cvss": 9.1,
+         "cvss_source": "NVD",
+         "fixed_in": "21.0.13.1.2",
+         "url": "https://osv.dev/vulnerability/USN-9015-1"
+        },
+        {
+         "id": "CVE-2026-114938",
+         "cvss": 8.1,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114938"
+        },
+        {
+         "id": "CVE-2026-114939",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114939"
+        },
+        {
+         "id": "CVE-2026-114940",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114940"
+        },
+        {
+         "id": "CVE-2026-114941",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114941"
+        },
+        {
+         "id": "CVE-2026-114942",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114942"
+        },
+        {
+         "id": "CVE-2026-91415",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-91415"
+        }
+       ],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-21"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "21",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:50:55.803604Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "21-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:51:11.708679Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "21.0.13-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:52:07.409511Z",
+         "match": "pushed-after"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 47,
+        "approx": true,
+        "built_at": "2026-11-18T23:50:55.803604Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "eclipse-temurin",
+       "label": "Eclipse Temurin",
+       "latest_patch": "21.0.13.1+2",
+       "released_at": "2026-11-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.13.1+2",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2029-12-31",
+       "high_cves": [
+        {
+         "id": "CVE-2026-91403",
+         "cvss": 9.1,
+         "cvss_source": "NVD",
+         "fixed_in": "21.0.13.1+2",
+         "url": "https://osv.dev/vulnerability/USN-9015-1"
+        },
+        {
+         "id": "CVE-2026-114938",
+         "cvss": 8.1,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114938"
+        },
+        {
+         "id": "CVE-2026-114939",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114939"
+        },
+        {
+         "id": "CVE-2026-114940",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114940"
+        },
+        {
+         "id": "CVE-2026-114941",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114941"
+        },
+        {
+         "id": "CVE-2026-114942",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114942"
+        },
+        {
+         "id": "CVE-2026-91415",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "21.0.13.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-91415"
+        }
+       ],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-21"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "21",
+         "exact": false,
+         "exists": true,
+         "contains_latest": false,
+         "built_at": "2026-11-20T19:14:39.089Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "21-jdk",
+         "exact": false,
+         "exists": true,
+         "contains_latest": false,
+         "built_at": "2026-11-20T19:14:44.274735Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "21.0.13.1_2-jdk",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-20T19:15:54.103134Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 67,
+        "approx": true,
+        "built_at": "2026-11-20T19:15:54.103134Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "azul-zulu",
+       "label": "Azul Zulu",
+       "latest_patch": "21.52.203",
+       "released_at": "2026-08-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://docs.azul.com/core/release/august-2026/release-notes",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2031-09-30",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [],
+       "image_status": {
+        "state": "unknown",
+        "hours": null,
+        "approx": false
+       },
+       "image_note": {
+        "en": "Zulu build numbers on endoflife.date cannot be matched to Docker tags.",
+        "ko": "endoflife.date의 Zulu 빌드 번호는 Docker 태그의 OpenJDK 버전과 대조할 수 없습니다."
+       },
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "oracle-openjdk",
+       "label": "Oracle OpenJDK",
+       "latest_patch": "21.0.2",
+       "released_at": "2024-01-16T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://openjdk.org/projects/jdk/21/",
+       "is_lts": false,
+       "is_eol": true,
+       "eol_from": "2024-03-19",
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-21"
+       ],
+       "images": [],
+       "image_status": {
+        "state": "unknown",
+        "hours": null,
+        "approx": false
+       },
+       "image_note": {
+        "en": "The official openjdk image is deprecated; Oracle's registry has no anonymous API.",
+        "ko": "공식 openjdk 이미지는 deprecated이고 Oracle 레지스트리는 공개 API가 없어 확인할 수 없습니다."
+       },
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "17",
+     "is_lts": true,
+     "is_eol": false,
+     "eol_from": "2029-10-31",
+     "inline": false,
+     "distros": [
+      {
+       "id": "amazon-corretto",
+       "label": "Amazon Corretto",
+       "latest_patch": "17.0.21.1.2",
+       "released_at": "2026-11-17T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/corretto/corretto-17/releases/tag/17.0.21.1.2",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2029-10-31",
+       "high_cves": [
+        {
+         "id": "CVE-2026-91403",
+         "cvss": 9.1,
+         "cvss_source": "NVD",
+         "fixed_in": "17.0.21.1.2",
+         "url": "https://osv.dev/vulnerability/USN-9014-1"
+        },
+        {
+         "id": "CVE-2026-114938",
+         "cvss": 8.1,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114938"
+        },
+        {
+         "id": "CVE-2026-114939",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114939"
+        },
+        {
+         "id": "CVE-2026-114940",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114940"
+        },
+        {
+         "id": "CVE-2026-114942",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114942"
+        },
+        {
+         "id": "CVE-2026-91415",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1.2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-91415"
+        }
+       ],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-17"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "17",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:49:02.270814Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "17-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:49:36.980666Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "17.0.21-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:50:37.959903Z",
+         "match": "pushed-after"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 47,
+        "approx": true,
+        "built_at": "2026-11-18T23:49:02.270814Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "eclipse-temurin",
+       "label": "Eclipse Temurin",
+       "latest_patch": "17.0.21.1+2",
+       "released_at": "2026-11-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/adoptium/temurin17-binaries/releases/tag/jdk-17.0.21.1+2",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2027-10-31",
+       "high_cves": [
+        {
+         "id": "CVE-2026-91403",
+         "cvss": 9.1,
+         "cvss_source": "NVD",
+         "fixed_in": "17.0.21.1+2",
+         "url": "https://osv.dev/vulnerability/USN-9014-1"
+        },
+        {
+         "id": "CVE-2026-114938",
+         "cvss": 8.1,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114938"
+        },
+        {
+         "id": "CVE-2026-114939",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114939"
+        },
+        {
+         "id": "CVE-2026-114940",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114940"
+        },
+        {
+         "id": "CVE-2026-114942",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114942"
+        },
+        {
+         "id": "CVE-2026-91415",
+         "cvss": 7.0,
+         "cvss_source": "OSV",
+         "fixed_in": "17.0.21.1+2",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-91415"
+        }
+       ],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-17"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "17",
+         "exact": false,
+         "exists": true,
+         "contains_latest": false,
+         "built_at": "2026-11-20T19:12:42.17595Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "17-jdk",
+         "exact": false,
+         "exists": true,
+         "contains_latest": false,
+         "built_at": "2026-11-20T19:12:47.391532Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "17.0.21.1_2-jdk",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-20T19:13:58.185705Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 67,
+        "approx": true,
+        "built_at": "2026-11-20T19:13:58.185705Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "azul-zulu",
+       "label": "Azul Zulu",
+       "latest_patch": "17.68.203",
+       "released_at": "2026-08-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://docs.azul.com/core/release/august-2026/release-notes",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2029-09-30",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [],
+       "image_status": {
+        "state": "unknown",
+        "hours": null,
+        "approx": false
+       },
+       "image_note": {
+        "en": "Zulu build numbers on endoflife.date cannot be matched to Docker tags.",
+        "ko": "endoflife.date의 Zulu 빌드 번호는 Docker 태그의 OpenJDK 버전과 대조할 수 없습니다."
+       },
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "oracle-openjdk",
+       "label": "Oracle OpenJDK",
+       "latest_patch": "17.0.2",
+       "released_at": "2022-01-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://openjdk.org/projects/jdk/17/",
+       "is_lts": false,
+       "is_eol": true,
+       "eol_from": "2022-03-22",
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-17"
+       ],
+       "images": [],
+       "image_status": {
+        "state": "unknown",
+        "hours": null,
+        "approx": false
+       },
+       "image_note": {
+        "en": "The official openjdk image is deprecated; Oracle's registry has no anonymous API.",
+        "ko": "공식 openjdk 이미지는 deprecated이고 Oracle 레지스트리는 공개 API가 없어 확인할 수 없습니다."
+       },
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "11",
+     "is_lts": true,
+     "is_eol": false,
+     "eol_from": "2032-01-31",
+     "inline": false,
+     "distros": [
+      {
+       "id": "amazon-corretto",
+       "label": "Amazon Corretto",
+       "latest_patch": "11.0.33.1.1",
+       "released_at": "2026-11-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/corretto/corretto-11/releases/tag/11.0.33.1.1",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2032-01-31",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "11",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:47:13.212181Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "11-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:47:42.177089Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "11.0.33-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:48:43.530837Z",
+         "match": "pushed-after"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 23,
+        "approx": true,
+        "built_at": "2026-11-18T23:47:13.212181Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "eclipse-temurin",
+       "label": "Eclipse Temurin",
+       "latest_patch": "11.0.33.1+1",
+       "released_at": "2026-11-20T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/adoptium/temurin11-binaries/releases/tag/jdk-11.0.33.1+1",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2027-10-31",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "11",
+         "exact": false,
+         "exists": true,
+         "contains_latest": false,
+         "built_at": "2026-11-16T20:14:20.04Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "11-jdk",
+         "exact": false,
+         "exists": true,
+         "contains_latest": false,
+         "built_at": "2026-11-16T20:14:25.224966Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "11.0.33.1_1-jdk",
+         "exact": true,
+         "exists": false,
+         "contains_latest": false,
+         "built_at": null,
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "pending",
+        "hours": 59,
+        "approx": true,
+        "built_at": null
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "azul-zulu",
+       "label": "Azul Zulu",
+       "latest_patch": "11.90.205",
+       "released_at": "2026-08-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://docs.azul.com/core/release/august-2026/release-notes",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2032-01-31",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [],
+       "image_status": {
+        "state": "unknown",
+        "hours": null,
+        "approx": false
+       },
+       "image_note": {
+        "en": "Zulu build numbers on endoflife.date cannot be matched to Docker tags.",
+        "ko": "endoflife.date의 Zulu 빌드 번호는 Docker 태그의 OpenJDK 버전과 대조할 수 없습니다."
+       },
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "oracle-openjdk",
+       "label": "Oracle OpenJDK",
+       "latest_patch": "11.0.2",
+       "released_at": "2019-01-15T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://openjdk.org/projects/jdk/11/",
+       "is_lts": false,
+       "is_eol": true,
+       "eol_from": "2019-03-19",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [],
+       "image_status": {
+        "state": "unknown",
+        "hours": null,
+        "approx": false
+       },
+       "image_note": {
+        "en": "The official openjdk image is deprecated; Oracle's registry has no anonymous API.",
+        "ko": "공식 openjdk 이미지는 deprecated이고 Oracle 레지스트리는 공개 API가 없어 확인할 수 없습니다."
+       },
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "8",
+     "is_lts": true,
+     "is_eol": false,
+     "eol_from": "2030-12-31",
+     "inline": false,
+     "distros": [
+      {
+       "id": "amazon-corretto",
+       "label": "Amazon Corretto",
+       "latest_patch": "8.514.01.1",
+       "released_at": "2026-11-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/corretto/corretto-8/releases/tag/8.514.01.1",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2030-12-31",
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-8"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "8",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:54:48.404592Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "8-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:55:16.242807Z",
+         "match": "pushed-after"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/amazoncorretto",
+         "tag": "8u514-al2023",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-18T23:56:02.80121Z",
+         "match": "pushed-after"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 23,
+        "approx": true,
+        "built_at": "2026-11-18T23:54:48.404592Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "eclipse-temurin",
+       "label": "Eclipse Temurin",
+       "latest_patch": "8u514-b01",
+       "released_at": "2026-11-19T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/adoptium/temurin8-binaries/releases/tag/jdk8u514-b01",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2030-12-31",
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS openjdk-8"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "8",
+         "exact": false,
+         "exists": true,
+         "contains_latest": false,
+         "built_at": "2026-11-16T20:21:21.980134Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "8-jdk",
+         "exact": false,
+         "exists": true,
+         "contains_latest": false,
+         "built_at": "2026-11-16T20:21:38.739829Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/eclipse-temurin",
+         "tag": "8u514-b01-jdk",
+         "exact": true,
+         "exists": false,
+         "contains_latest": false,
+         "built_at": null,
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "pending",
+        "hours": 83,
+        "approx": true,
+        "built_at": null
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      },
+      {
+       "id": "azul-zulu",
+       "label": "Azul Zulu",
+       "latest_patch": "8.96.0.205",
+       "released_at": "2026-08-18T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://docs.azul.com/core/release/august-2026/release-notes",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2030-12-31",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [],
+       "image_status": {
+        "state": "unknown",
+        "hours": null,
+        "approx": false
+       },
+       "image_note": {
+        "en": "Zulu build numbers on endoflife.date cannot be matched to Docker tags.",
+        "ko": "endoflife.date의 Zulu 빌드 번호는 Docker 태그의 OpenJDK 버전과 대조할 수 없습니다."
+       },
+       "workaround_dockerfile": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "go",
+   "label": "Go",
+   "versions": [
+    {
+     "name": "1.27",
+     "is_lts": false,
+     "is_eol": false,
+     "eol_from": null,
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Go",
+       "latest_patch": "1.27.4",
+       "released_at": "2026-11-10T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://go.dev/doc/go1.27",
+       "is_lts": false,
+       "is_eol": false,
+       "eol_from": null,
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Go stdlib"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/golang",
+         "tag": "1.27",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-16T22:23:39.835681Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/golang",
+         "tag": "1.27.4",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-16T22:23:59.409077Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 166,
+        "approx": true,
+        "built_at": "2026-11-16T22:23:39.835681Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "1.26",
+     "is_lts": false,
+     "is_eol": false,
+     "eol_from": null,
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Go",
+       "latest_patch": "1.26.11",
+       "released_at": "2026-11-10T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://go.dev/doc/go1.26",
+       "is_lts": false,
+       "is_eol": false,
+       "eol_from": null,
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Go stdlib"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/golang",
+         "tag": "1.26",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-16T22:22:53.114328Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/golang",
+         "tag": "1.26.11",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-16T22:23:20.055972Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 166,
+        "approx": true,
+        "built_at": "2026-11-16T22:22:53.114328Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "1.25",
+     "is_lts": false,
+     "is_eol": true,
+     "eol_from": "2026-08-19",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Go",
+       "latest_patch": "1.25.14",
+       "released_at": "2026-08-19T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://go.dev/doc/devel/release#go1.25.minor",
+       "is_lts": false,
+       "is_eol": true,
+       "eol_from": "2026-08-19",
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Go stdlib"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/golang",
+         "tag": "1.25",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-08-19T18:45:16.822633Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/golang",
+         "tag": "1.25.14",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-08-19T18:46:45.350552Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 18,
+        "approx": true,
+        "built_at": "2026-08-19T18:45:16.822633Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nodejs",
+   "label": "Node.js",
+   "versions": [
+    {
+     "name": "26",
+     "is_lts": true,
+     "is_eol": false,
+     "eol_from": "2029-04-30",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Node.js",
+       "latest_patch": "26.13.1",
+       "released_at": "2026-11-11T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V26.md#26.13.1",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2029-04-30",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "26",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-11T19:25:39.682571Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "26.13.1",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-11T19:26:48.642153Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 19,
+        "approx": true,
+        "built_at": "2026-11-11T19:25:39.682571Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "25",
+     "is_lts": false,
+     "is_eol": true,
+     "eol_from": "2026-06-01",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Node.js",
+       "latest_patch": "25.9.0",
+       "released_at": "2026-04-01T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V25.md#25.9.0",
+       "is_lts": false,
+       "is_eol": true,
+       "eol_from": "2026-06-01",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "25",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-05-20T11:39:36.452047Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "25.9.0",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-05-20T11:39:59.934009Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": null,
+        "approx": true,
+        "rebuilt": true,
+        "built_at": "2026-05-20T11:39:36.452047Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "24",
+     "is_lts": true,
+     "is_eol": false,
+     "eol_from": "2028-04-30",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Node.js",
+       "latest_patch": "24.22.3",
+       "released_at": "2026-11-11T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V24.md#24.22.3",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2028-04-30",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "24",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-12T00:56:47.856218Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "24.22.3",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-12T00:57:17.259119Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 24,
+        "approx": true,
+        "built_at": "2026-11-12T00:56:47.856218Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "22",
+     "is_lts": true,
+     "is_eol": false,
+     "eol_from": "2027-04-30",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Node.js",
+       "latest_patch": "22.23.5",
+       "released_at": "2026-11-11T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V22.md#22.23.5",
+       "is_lts": true,
+       "is_eol": false,
+       "eol_from": "2027-04-30",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "22",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-11T20:38:19.020124Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "22.23.5",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-11T20:39:15.233353Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 20,
+        "approx": true,
+        "built_at": "2026-11-11T20:38:19.020124Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "20",
+     "is_lts": true,
+     "is_eol": true,
+     "eol_from": "2026-04-30",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Node.js",
+       "latest_patch": "20.20.2",
+       "released_at": "2026-03-24T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V20.md#20.20.2",
+       "is_lts": true,
+       "is_eol": true,
+       "eol_from": "2026-04-30",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "20",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-04-22T17:38:14.523635Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/node",
+         "tag": "20.20.2",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-04-22T17:38:48.534022Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": null,
+        "approx": true,
+        "rebuilt": true,
+        "built_at": "2026-04-22T17:38:14.523635Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "python",
+   "label": "Python",
+   "versions": [
+    {
+     "name": "3.15",
+     "is_lts": false,
+     "is_eol": false,
+     "eol_from": "2031-10-31",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Python",
+       "latest_patch": "3.15.2",
+       "released_at": "2026-10-25T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://www.python.org/downloads/release/python-3152/",
+       "is_lts": false,
+       "is_eol": false,
+       "eol_from": "2031-10-31",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.15",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T05:08:01.345941Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.15.2",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T05:08:17.248903Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": null,
+        "approx": true,
+        "rebuilt": true,
+        "built_at": "2026-11-17T05:08:01.345941Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "3.14",
+     "is_lts": false,
+     "is_eol": false,
+     "eol_from": "2030-10-31",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Python",
+       "latest_patch": "3.14.10",
+       "released_at": "2026-10-25T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://www.python.org/downloads/release/python-31410/",
+       "is_lts": false,
+       "is_eol": false,
+       "eol_from": "2030-10-31",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.14",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T08:07:49.307209Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.14.10",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T08:08:06.276893Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": null,
+        "approx": true,
+        "rebuilt": true,
+        "built_at": "2026-11-17T08:07:49.307209Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "3.13",
+     "is_lts": false,
+     "is_eol": false,
+     "eol_from": "2029-10-31",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Python",
+       "latest_patch": "3.13.18",
+       "released_at": "2026-10-25T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://www.python.org/downloads/release/python-31318/",
+       "is_lts": false,
+       "is_eol": false,
+       "eol_from": "2029-10-31",
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Debian:13 python3.13"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.13",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T08:07:16.759994Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.13.18",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T08:07:31.70007Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": null,
+        "approx": true,
+        "rebuilt": true,
+        "built_at": "2026-11-17T08:07:16.759994Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "3.12",
+     "is_lts": false,
+     "is_eol": false,
+     "eol_from": "2028-10-31",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Python",
+       "latest_patch": "3.12.16",
+       "released_at": "2026-10-25T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://www.python.org/downloads/release/python-31216/",
+       "is_lts": false,
+       "is_eol": false,
+       "eol_from": "2028-10-31",
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Ubuntu:24.04:LTS python3.12"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.12",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T11:06:50.041569Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.12.16",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T11:07:05.536228Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": null,
+        "approx": true,
+        "rebuilt": true,
+        "built_at": "2026-11-17T11:06:50.041569Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "3.11",
+     "is_lts": false,
+     "is_eol": false,
+     "eol_from": "2027-10-31",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Python",
+       "latest_patch": "3.11.18",
+       "released_at": "2026-10-25T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://www.python.org/downloads/release/python-31118/",
+       "is_lts": false,
+       "is_eol": false,
+       "eol_from": "2027-10-31",
+       "high_cves": [],
+       "cvss_unrated": 0,
+       "cve_sources": [
+        "Debian:12 python3.11"
+       ],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.11",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T14:06:28.279482Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.11.18",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-11-17T14:06:43.435874Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": null,
+        "approx": true,
+        "rebuilt": true,
+        "built_at": "2026-11-17T14:06:28.279482Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    },
+    {
+     "name": "3.10",
+     "is_lts": false,
+     "is_eol": true,
+     "eol_from": "2026-10-01",
+     "inline": true,
+     "distros": [
+      {
+       "id": "official",
+       "label": "Python",
+       "latest_patch": "3.10.22",
+       "released_at": "2026-10-01T00:00:00Z",
+       "released_precision": "date",
+       "released_source": "endoflife.date",
+       "release_url": "https://www.python.org/downloads/release/python-31022/",
+       "is_lts": false,
+       "is_eol": true,
+       "eol_from": "2026-10-01",
+       "high_cves": null,
+       "cvss_unrated": 0,
+       "cve_sources": [],
+       "images": [
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.10",
+         "exact": false,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-10-06T08:07:12.275401Z",
+         "match": "digest"
+        },
+        {
+         "registry": "dockerhub",
+         "repo": "library/python",
+         "tag": "3.10.22",
+         "exact": true,
+         "exists": true,
+         "contains_latest": true,
+         "built_at": "2026-10-06T08:07:47.918178Z",
+         "match": "digest"
+        }
+       ],
+       "image_status": {
+        "state": "reflected",
+        "hours": 128,
+        "approx": true,
+        "built_at": "2026-10-06T08:07:12.275401Z"
+       },
+       "image_note": null,
+       "workaround_dockerfile": null
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "changelog": [],
+ "cve_definition": {
+  "en": "High or critical (CVSS 7.0+) CVEs whose advisory names this patch's update release as the fixed version, found in the OSV sources listed. 0 means none found there, not that none exist.",
+  "ko": "OSV의 아래 출처에서, 수정 버전이 이 패치의 업데이트 릴리스와 일치하는 고위험(CVSS 7.0 이상) CVE입니다. 0건은 이 출처에서 찾지 못했다는 뜻이며, 없다는 보증이 아닙니다."
+ },
+ "sources": {
+  "endoflife": {
+   "ok": 7,
+   "failed": 0
+  },
+  "github": {
+   "ok": 0,
+   "failed": 1
+  },
+  "dockerhub": {
+   "ok": 24,
+   "failed": 0
+  },
+  "osv": {
+   "ok": 34,
+   "failed": 0
+  }
+ }
+}

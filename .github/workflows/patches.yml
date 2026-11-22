@@ -1,0 +1,53 @@
+name: patches
+
+# Runtime patch status (data/patches.json), every hour. Separate from collect
+# so the twice-a-day vulnerability job and its large latest.json commit stay as
+# they are. patches.py leaves the file alone when nothing but the clock changed,
+# so most runs commit nothing; pages.yml still rebuilds the site after each run.
+on:
+  schedule:
+    - cron: "23 * * * *"    # minute 23: GitHub delays runs at the top of the hour
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Not the "collect" group: a queued collect run must never be replaced by this one.
+# The two jobs write different files, so `git pull --rebase` below is enough.
+concurrency:
+  group: patches
+  cancel-in-progress: false
+
+jobs:
+  patches:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r collect/requirements.txt
+
+      - name: Collect runtime patches
+        env:
+          GITHUB_TOKEN: ${{ github.token }}          # injected by Actions, never stored
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}   # optional; empty is fine
+        run: python collect/patches.py
+
+      - name: Commit data
+        run: |
+          git config user.name "depweather-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/patches.json data/patches_cvss.json
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          git commit -m "patches: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      # Publishing is in pages.yml, which runs after this workflow succeeds.

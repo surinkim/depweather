@@ -24,7 +24,7 @@ jobs:
       - run: pip install -r collect/requirements.txt
 
       - name: JavaScript tests
-        run: node --test tests/stack.test.js tests/alert.test.js tests/alert-security.test.js tests/trends.test.js
+        run: node --test tests/stack.test.js tests/alert.test.js tests/alert-security.test.js tests/trends.test.js tests/patches.test.js
 
       - name: Collector tests
         run: python tests/test_collect.py -v
@@ -41,15 +41,21 @@ jobs:
       - name: Badge tests
         run: python tests/test_badges.py -v
 
+      - name: Patch collector and page tests
+        run: |
+          python tests/test_patches.py -v
+          python tests/test_patches_page.py -v
+
       - name: History tests
         run: python tests/test_history.py -v
 
       - name: Syntax
         run: |
-          python -m py_compile collect/collect.py collect/feeds.py collect/pages.py collect/home.py collect/localize.py collect/badges.py collect/history.py collect/backfill_history.py
+          python -m py_compile collect/collect.py collect/feeds.py collect/pages.py collect/home.py collect/localize.py collect/badges.py collect/history.py collect/backfill_history.py collect/patches.py collect/patches_page.py
           node --check alert/check.js
           node --check alert/run.js
           node --check js/stack.js
           node --check js/pkg-path.js
           node --check js/trends.js
+          node --check js/patches.js
           node --check collect/i18n_eval.js

@@ -147,6 +147,50 @@ depweather" and are not put in the link. The choice is stored in
 tracked package keys joined with commas (`npm/react,pypi/django`), or `-`
 when none of them are tracked. Nothing is uploaded.
 
+## Runtime patches
+
+[`/patches/`](https://depweather.com/patches/) (Korean: `/ko/patches/`) answers a
+different question than the map: *the runtime I use got a patch; does the official
+image have it yet?* The unit is language, then major version, then distribution
+(Java 17 → Amazon Corretto, Eclipse Temurin, Azul Zulu, Oracle OpenJDK). Java, Go,
+Node.js and Python are tracked; Public ECR, Kubernetes, PostgreSQL, nginx and
+Dockerfile workarounds are not yet.
+
+`collect/patches.py` runs **every hour** in its own workflow (`patches.yml`, minute 23) and writes
+`data/patches.json`. It rewrites the file only when something changed (or after 6 hours), so most
+runs commit nothing. `collect/patches_page.py` renders the page when the site is published, and the
+site is rebuilt after every run, which is when a pending image's "waiting N hours" is counted again. What is tracked is in `collect/patches.yml`, with no version numbers.
+
+- **Which versions.** Taken from [endoflife.date](https://endoflife.date) on every run:
+  supported majors (`isMaintained` and not `isEol`; Java only LTS), plus majors that ended
+  recently, shown with an *ended* badge. EOL dates are per distribution, never copied.
+- **When the patch came out.** The time of day from GitHub (release `published_at`, or the
+  tag's date for Go and Python). If GitHub cannot be asked (rate limit), the date from
+  endoflife.date is used and the page marks it `≈`. Times are stored in UTC, shown in KST.
+- **Does the image have it.** Docker Hub, one request per named tag, no image is pulled.
+  A tag that names the full patch (`3.13.18`) decides; floating tags (`3.13`) count only
+  with the same digest. Where no tag names the full patch (Corretto), a tag counts when it
+  was pushed after the patch. ✅ `+3h` is the build minus the patch time, ⏳ the time since
+  the patch. Docker Hub reports the **last** push, and official images are rebuilt, so a
+  delay is claimed only when the push came within a week of the patch.
+- **High-severity CVEs.** CVSS 7.0+ advisories from OSV whose fixed version is this patch
+  (Go `stdlib`: the same version; Java: the same OpenJDK update release, from Ubuntu's
+  `openjdk-N`; Python: Debian and Ubuntu `python3.N`). A score missing in OSV is looked up
+  in NVD (`NVD_API_KEY` optional, cached in `data/patches_cvss.json`). A product with no
+  usable OSV source (Node.js, Azul Zulu, Oracle OpenJDK images) shows `–`, not `0`.
+  **0 means none found in those sources, not that none exist.**
+- **Not available.** Oracle OpenJDK and Azul Zulu images have no comparable public
+  tag data, and the page says why instead of guessing.
+- **My stack.** The star on a row and "My stack only" are kept in this browser's
+  `localStorage` (`depweather:patches-stack`, separate from the home page's). Nothing is sent.
+
+Each source is fetched on its own. A failure leaves its fields empty and is recorded under
+`sources` in the file. The workflow step has `continue-on-error`, so a failure never stops
+the data commit. Run locally: `python collect/patches.py`, then
+`python collect/patches_page.py --out /tmp/site`. `GITHUB_TOKEN` (only when you have one in
+your environment) raises GitHub's limit from 60 to 5,000 requests an hour; no token is
+stored anywhere.
+
 ## Colors and weather
 
 The page reads like a weather report. A sentence at the top is written from
