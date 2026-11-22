@@ -28,11 +28,19 @@
   },
   "2026-11-05": {
    "packages": {
+    "go/github.com/labstack/echo/v4": {
+     "c": 1,
+     "h": 3
+    },
     "pypi/pillow": {
      "c": 1
     }
    },
    "ecosystems": {
+    "go": {
+     "c": 1,
+     "h": 3
+    },
     "pypi": {
      "c": 1
     }

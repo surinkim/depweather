@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T14:31:21Z",
+ "generated_at": "2026-11-22T23:36:41Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -57,9 +57,9 @@
   }
  },
  "summary": {
-  "today_cves": 98,
+  "today_cves": 197,
   "month": "2026-11",
-  "month_cves": 12541,
+  "month_cves": 12640,
   "month_cves_last_year": 3021,
   "kev_new_7d": 9,
   "affected_packages_7d": 16,
@@ -120,7 +120,7 @@
   },
   {
    "month": "2026-11",
-   "count": 12541
+   "count": 12640
   }
  ],
  "monthly_is_stale": false,
@@ -660,54 +660,6 @@
        "kev_date_added": null,
        "epss": 0.00477,
        "epss_percentile": 0.42072
-      },
-      {
-       "id": "GHSA-pfhg-q3qv-9q6r",
-       "aliases": [
-        "CVE-2026-114060"
-       ],
-       "cves": [
-        "CVE-2026-114060"
-       ],
-       "published": "2026-10-23T20:58:24Z",
-       "summary": "SvelteKit: URL redirection to untrusted site via enhanced form submission",
-       "severity": "LOW",
-       "severity_source": "GitHub Advisory",
-       "cvss": 4.7,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-pfhg-q3qv-9q6r",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00202,
-       "epss_percentile": 0.10062
-      },
-      {
-       "id": "GHSA-27mw-82g8-phjj",
-       "aliases": [
-        "CVE-2026-114061"
-       ],
-       "cves": [
-        "CVE-2026-114061"
-       ],
-       "published": "2026-10-23T20:43:30Z",
-       "summary": "SvelteKit : XSS via untrusted cache-control header in prerendered page",
-       "severity": "LOW",
-       "severity_source": "GitHub Advisory",
-       "cvss": 0.0,
-       "cvss_source": "advisory",
-       "fixed": [
-        "3.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-27mw-82g8-phjj",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00213,
-       "epss_percentile": 0.11567
       }
      ]
     },
@@ -1227,83 +1179,6 @@
        "kev_date_added": null,
        "epss": 0.00279,
        "epss_percentile": 0.20612
-      },
-      {
-       "id": "GHSA-xjj6-f33q-929c",
-       "aliases": [
-        "CVE-2026-109869"
-       ],
-       "cves": [
-        "CVE-2026-109869"
-       ],
-       "published": "2026-10-23T22:14:31Z",
-       "summary": "undici vulnerable to Denial of Service via unhandled error on excessive content-encodings",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "6.29.1",
-        "7.30.1",
-        "8.12.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-xjj6-f33q-929c",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0042,
-       "epss_percentile": 0.3708
-      },
-      {
-       "id": "GHSA-4qv8-2p9j-2685",
-       "aliases": [
-        "CVE-2026-109924"
-       ],
-       "cves": [
-        "CVE-2026-109924"
-       ],
-       "published": "2026-10-23T22:13:29Z",
-       "summary": "undici vulnerable to Denial of Service via unbounded memory in the EventSource parser",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [
-        "6.29.1",
-        "7.30.1",
-        "8.12.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-4qv8-2p9j-2685",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00321,
-       "epss_percentile": 0.25566
-      },
-      {
-       "id": "GHSA-f72v-6w45-q472",
-       "aliases": [
-        "CVE-2026-109841"
-       ],
-       "cves": [
-        "CVE-2026-109841"
-       ],
-       "published": "2026-10-23T22:12:57Z",
-       "summary": "undici vulnerable to Subresource Integrity bypass via non-lowercase algorithm tokens",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [
-        "7.30.1",
-        "8.12.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-f72v-6w45-q472",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00252,
-       "epss_percentile": 0.16755
       }
      ]
     },
@@ -1446,29 +1321,8 @@
      "popularity_source": "PyPI downloads, last week (pypistats)",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "LOW",
-     "vulns": [
-      {
-       "id": "GHSA-xmj3-9gf7-h52w",
-       "aliases": [],
-       "cves": [],
-       "published": "2026-10-23T21:44:11Z",
-       "summary": "setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description",
-       "severity": "LOW",
-       "severity_source": "GitHub Advisory",
-       "cvss": null,
-       "cvss_source": null,
-       "fixed": [
-        "84.1.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-xmj3-9gf7-h52w",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": null,
-       "epss_percentile": null
-      }
-     ]
+     "worst_30d": "NONE",
+     "vulns": []
     },
     {
      "key": "pypi/pyyaml",
@@ -1899,58 +1753,6 @@
        "kev_date_added": null,
        "epss": 0.00638,
        "epss_percentile": 0.51523
-      },
-      {
-       "id": "GHSA-5x8w-8jj5-q52h",
-       "aliases": [
-        "BIT-pillow-2026-112398",
-        "CVE-2026-112398",
-        "PYSEC-2026-4330"
-       ],
-       "cves": [
-        "CVE-2026-112398"
-       ],
-       "published": "2026-10-23T21:55:21Z",
-       "summary": "Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": 9.8,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-5x8w-8jj5-q52h",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00696,
-       "epss_percentile": 0.53942
-      },
-      {
-       "id": "GHSA-654x-cwwv-5j9c",
-       "aliases": [
-        "BIT-pillow-2026-114501",
-        "CVE-2026-114501",
-        "PYSEC-2026-4336"
-       ],
-       "cves": [
-        "CVE-2026-114501"
-       ],
-       "published": "2026-10-23T21:53:21Z",
-       "summary": "Pillow: Arrow export leaks stale heap memory when PILLOW_ALIGNMENT > 1",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.0.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-654x-cwwv-5j9c",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0037,
-       "epss_percentile": 0.31526
       }
      ]
     },
@@ -2999,7 +2801,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 174977362.0,
+     "popularity": 175409677.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -3010,7 +2812,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2402.0,
+     "popularity": 2406.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -3021,44 +2823,18 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 324446503.0,
+     "popularity": 325340416.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "MEDIUM",
-     "vulns": [
-      {
-       "id": "GHSA-5wjr-9356-4wc8",
-       "aliases": [
-        "CVE-2026-115567",
-        "RUSTSEC-2026-0384"
-       ],
-       "cves": [
-        "CVE-2026-115567"
-       ],
-       "published": "2026-10-23T20:54:00Z",
-       "summary": "Tokio: Race condition in `tokio::time::Interval`",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.8,
-       "cvss_source": "NVD",
-       "fixed": [
-        "1.54.1"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-5wjr-9356-4wc8",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00111,
-       "epss_percentile": 0.01318
-      }
-     ]
+     "worst_30d": "NONE",
+     "vulns": []
     },
     {
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 301326273.0,
+     "popularity": 302094155.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3069,7 +2845,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 280280893.0,
+     "popularity": 280965049.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3080,7 +2856,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 239396802.0,
+     "popularity": 239938435.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3091,7 +2867,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 299773546.0,
+     "popularity": 300546479.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3207,7 +2983,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 90963515.0,
+     "popularity": 91163660.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3218,7 +2994,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 242883828.0,
+     "popularity": 243593500.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3229,7 +3005,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 457572190.0,
+     "popularity": 458911679.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3240,7 +3016,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 346930265.0,
+     "popularity": 347909826.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3251,7 +3027,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 278558009.0,
+     "popularity": 279433348.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "UNKNOWN",
@@ -3285,7 +3061,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 61410856.0,
+     "popularity": 61566656.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3296,7 +3072,7 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 110828252.0,
+     "popularity": 111122124.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3443,11 +3219,11 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 26562753.0,
+     "popularity": 27083639.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "NONE",
-     "worst_30d": "CRITICAL",
+     "worst_30d": "LOW",
      "vulns": [
       {
        "id": "GHSA-63hm-g96r-2m2q",
@@ -3473,58 +3249,6 @@
        "kev_date_added": null,
        "epss": 0.00704,
        "epss_percentile": 0.54225
-      },
-      {
-       "id": "GHSA-f9x3-7vq9-cph6",
-       "aliases": [
-        "CVE-2026-114509"
-       ],
-       "cves": [
-        "CVE-2026-114509"
-       ],
-       "published": "2026-10-23T21:50:27Z",
-       "summary": "Laravel TokenGuard authentication bypass through non-string API credentials",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": 9.2,
-       "cvss_source": "NVD",
-       "fixed": [
-        "13.27.0",
-        "12.68.0",
-        "11.56.1",
-        "10.50.4"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-f9x3-7vq9-cph6",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.01876,
-       "epss_percentile": 0.79949
-      },
-      {
-       "id": "GHSA-5wcm-3v2w-8362",
-       "aliases": [
-        "CVE-2026-114508"
-       ],
-       "cves": [
-        "CVE-2026-114508"
-       ],
-       "published": "2026-10-23T21:47:48Z",
-       "summary": "Laravel relationship inclusion can trigger unauthorized data destruction",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "12.68.0",
-        "13.27.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-5wcm-3v2w-8362",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00406,
-       "epss_percentile": 0.35673
       }
      ]
     },
@@ -3532,7 +3256,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 33277546.0,
+     "popularity": 33775210.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -3598,7 +3322,7 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1684228.0,
+     "popularity": 1690392.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
      "worst_7d": "UNKNOWN",
@@ -3662,7 +3386,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 36779298.0,
+     "popularity": 37242599.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3673,7 +3397,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 37897434.0,
+     "popularity": 38522556.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3695,7 +3419,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 13700955.0,
+     "popularity": 13793814.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3706,7 +3430,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 31748530.0,
+     "popularity": 32196718.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3742,7 +3466,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 29464344.0,
+     "popularity": 29980888.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3753,7 +3477,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 27445549.0,
+     "popularity": 27934151.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3764,7 +3488,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 29519679.0,
+     "popularity": 29991900.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3775,7 +3499,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4639634.0,
+     "popularity": 4661237.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3786,7 +3510,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 23318361.0,
+     "popularity": 23658209.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3797,7 +3521,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 20488313.0,
+     "popularity": 20713298.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3965,6 +3689,106 @@
      "worst_7d": "NONE",
      "worst_30d": "CRITICAL",
      "vulns": [
+      {
+       "id": "GO-2026-6840",
+       "aliases": [
+        "CVE-2026-118260",
+        "GHSA-f48p-c9v4-h7xv"
+       ],
+       "cves": [
+        "CVE-2026-118260"
+       ],
+       "published": "2026-11-05T22:54:11Z",
+       "summary": "Echo: BodyDump captures request and response bodies without size limits in v4 in github.com/labstack/echo",
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 8.2,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6840",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00372,
+       "epss_percentile": 0.3176
+      },
+      {
+       "id": "GO-2026-6839",
+       "aliases": [
+        "CVE-2026-118264",
+        "GHSA-cxf3-9h37-7rr8"
+       ],
+       "cves": [
+        "CVE-2026-118264"
+       ],
+       "published": "2026-11-05T22:54:11Z",
+       "summary": "Echo: Rejected WebSocket upgrades can bypass Echo route-level access controls in github.com/labstack/echo",
+       "severity": "CRITICAL",
+       "severity_source": "NVD",
+       "cvss": 9.1,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6839",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0043,
+       "epss_percentile": 0.37957
+      },
+      {
+       "id": "GO-2026-6842",
+       "aliases": [
+        "CVE-2026-118261",
+        "GHSA-h7wr-284f-5qvc"
+       ],
+       "cves": [
+        "CVE-2026-118261"
+       ],
+       "published": "2026-11-05T22:54:11Z",
+       "summary": "Echo: Decompress permits unbounded gzip expansion in v4 in github.com/labstack/echo",
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 8.2,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6842",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00454,
+       "epss_percentile": 0.40185
+      },
+      {
+       "id": "GO-2026-6838",
+       "aliases": [
+        "CVE-2026-118262",
+        "GHSA-9969-6676-49h5"
+       ],
+       "cves": [
+        "CVE-2026-118262"
+       ],
+       "published": "2026-11-05T22:54:11Z",
+       "summary": "Echo: WebSocket proxy can retain connections and handlers after client disconnect in github.com/labstack/echo",
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 8.2,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.1"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6838",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00302,
+       "epss_percentile": 0.23272
+      },
       {
        "id": "GHSA-2ffq-g2xg-c22p",
        "aliases": [
@@ -4210,106 +4034,6 @@
        "kev_date_added": null,
        "epss": 0.00207,
        "epss_percentile": 0.10767
-      },
-      {
-       "id": "GHSA-9969-6676-49h5",
-       "aliases": [
-        "CVE-2026-118262",
-        "GO-2026-6838"
-       ],
-       "cves": [
-        "CVE-2026-118262"
-       ],
-       "published": "2026-10-23T20:50:17Z",
-       "summary": "Echo: WebSocket proxy can retain connections and handlers after client disconnect",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
-       "fixed": [
-        "4.16.1"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-9969-6676-49h5",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00302,
-       "epss_percentile": 0.23272
-      },
-      {
-       "id": "GHSA-h7wr-284f-5qvc",
-       "aliases": [
-        "CVE-2026-118261",
-        "GO-2026-6842"
-       ],
-       "cves": [
-        "CVE-2026-118261"
-       ],
-       "published": "2026-10-23T20:49:49Z",
-       "summary": "Echo: Decompress permits unbounded gzip expansion in v4",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
-       "fixed": [
-        "4.16.1"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-h7wr-284f-5qvc",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00454,
-       "epss_percentile": 0.40185
-      },
-      {
-       "id": "GHSA-cxf3-9h37-7rr8",
-       "aliases": [
-        "CVE-2026-118264",
-        "GO-2026-6839"
-       ],
-       "cves": [
-        "CVE-2026-118264"
-       ],
-       "published": "2026-10-23T20:49:37Z",
-       "summary": "Echo: Rejected WebSocket upgrades can bypass Echo route-level access controls",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": 9.1,
-       "cvss_source": "NVD",
-       "fixed": [
-        "4.16.1"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-cxf3-9h37-7rr8",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0043,
-       "epss_percentile": 0.37957
-      },
-      {
-       "id": "GHSA-f48p-c9v4-h7xv",
-       "aliases": [
-        "CVE-2026-118260",
-        "GO-2026-6840"
-       ],
-       "cves": [
-        "CVE-2026-118260"
-       ],
-       "published": "2026-10-23T20:48:44Z",
-       "summary": "Echo: BodyDump captures request and response bodies without size limits in v4",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 8.2,
-       "cvss_source": "NVD",
-       "fixed": [
-        "4.16.1"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-f48p-c9v4-h7xv",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00372,
-       "epss_percentile": 0.3176
       }
      ]
     },
@@ -4430,7 +4154,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 820533030.0,
+     "popularity": 820630835.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "NONE",
@@ -4940,7 +4664,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1396785181.0,
+     "popularity": 1396942267.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5055,7 +4779,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1305978305.0,
+     "popularity": 1306105574.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5139,7 +4863,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 633749673.0,
+     "popularity": 633868300.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5150,7 +4874,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 306560866.0,
+     "popularity": 306593617.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5161,7 +4885,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 349705243.0,
+     "popularity": 349741429.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5172,7 +4896,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1306169027.0,
+     "popularity": 1306290168.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -5183,7 +4907,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 409322091.0,
+     "popularity": 409413304.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
