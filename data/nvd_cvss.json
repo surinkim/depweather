@@ -307,12 +307,12 @@
  "CVE-2026-132165": {
   "cvss": null,
   "severity": null,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  "CVE-2026-132166": {
   "cvss": null,
   "severity": null,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  "CVE-2026-74048": {
   "cvss": 6.5,

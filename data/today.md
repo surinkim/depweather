@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-22
+# depweather forecast, 2026-11-23
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-22T23:36:41Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-23T18:02:03Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 16 of 149
+- Popular packages with a new advisory this week: 13 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 9
-- New CVEs in NVD today (UTC): 197
-- CVEs published in 2026-11 so far: 12,640 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 255
+- CVEs published in 2026-11 so far: 12,895 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -21,21 +21,15 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **Apache httpd (apache)**: 1 advisory, worst high; fixed in 2.4.71. Example: [BIT-apache-2026-119618](https://osv.dev/vulnerability/BIT-apache-2026-119618) Apache HTTP Server: mod_http2: heap corruption and RCE in assign_headers
 - **MariaDB**: 1 advisory, worst high; fixed in 10.11.19, 11.4.13, 11.8.9, 12.3.3 and more. Example: [BIT-mariadb-2026-102523](https://osv.dev/vulnerability/BIT-mariadb-2026-102523) MariaDB server: Authorization bypass via ALTER TABLE ... CONVERT ... PARTITION
 
-### npm
-
-- **SvelteKit (@sveltejs/kit)**: 4 advisories, worst high; fixed in 3.1.1, 2.70.4. Example: [GHSA-m9j8-jcmv-hp69](https://osv.dev/vulnerability/GHSA-m9j8-jcmv-hp69) SvelteKit: Build-time server-only module import guard could fail, resulting in server secrets being statically replaced in client bundle
-- **Next.js (next)**: 7 advisories, worst medium; fixed in 15.5.29, 16.4.5. Example: [GHSA-f3mh-rxg3-f5g2](https://osv.dev/vulnerability/GHSA-f3mh-rxg3-f5g2) Next.js: HttpOnly cookie exposure through internal response header on Next.js Edge runtime routes
-- **Nuxt**: 4 advisories, worst medium; fixed in 4.6.4. Example: [GHSA-96x6-fvhx-49hg](https://osv.dev/vulnerability/GHSA-96x6-fvhx-49hg) Nuxt exposes the message and data of unhandled errors thrown during server rendering
-
-### PyPI
-
-- **aiohttp**: 4 advisories, worst high; fixed in 3.14.4. Example: [GHSA-pw86-h8fm-j323](https://osv.dev/vulnerability/GHSA-pw86-h8fm-j323) AIOHTTP: Unbounded buffering of data received during an upgrade request
-
 ### Hex
 
 - **Phoenix**: 2 advisories, worst high; fixed in 1.5.16, 1.6.18, 1.7.25, 1.8.17. Example: [EEF-CVE-2026-128361](https://osv.dev/vulnerability/EEF-CVE-2026-128361) Unsanitized presence key crashes Presence tracker
 - **LiveView (phoenix_live_view)**: 1 advisory, worst medium; fixed in 1.0.20, 1.1.34, 1.2.14. Example: [EEF-CVE-2026-126334](https://osv.dev/vulnerability/EEF-CVE-2026-126334) Joining a LiveView without `"url"` skips its `live_session` `on_mount` hooks
 - **plug**: 1 advisory, worst medium; fixed in 1.20.4. Example: [EEF-CVE-2026-120287](https://osv.dev/vulnerability/EEF-CVE-2026-120287) Multipart `:length` limit not charged for part and header framing in Plug.Parsers.MULTIPART
+
+### npm
+
+- **Next.js (next)**: 7 advisories, worst medium; fixed in 15.5.29, 16.4.5. Example: [GHSA-f3mh-rxg3-f5g2](https://osv.dev/vulnerability/GHSA-f3mh-rxg3-f5g2) Next.js: HttpOnly cookie exposure through internal response header on Next.js Edge runtime routes
 
 ### crates.io
 
@@ -44,6 +38,10 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 ### Packagist
 
 - **Drupal core (drupal/core)**: 2 advisories, worst low or unrated; fixed in 10.6.22, 11.3.22, 11.4.13. Example: [DRUPAL-CORE-2026-018](https://osv.dev/vulnerability/DRUPAL-CORE-2026-018) Drupal core contains a chain of methods that could be exploitable when an insecure deserialization vulnerability exists on the site. This so-called "gadget chain" presents no direct threat, but is a vector that can be used to achieve remote code execution if the application deserializes untrusted da
+
+### PyPI
+
+No new advisories for the tracked packages.
 
 ### Maven
 
