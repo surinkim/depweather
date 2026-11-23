@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T09:14:41Z",
+ "generated_at": "2026-11-23T21:33:30Z",
  "summary": {
   "new_patches_7d": 10,
   "images_pending": 2,
@@ -935,7 +935,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 72,
+        "hours": 84,
         "approx": false,
         "built_at": null
        },
@@ -1110,7 +1110,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 84,
+        "hours": 96,
         "approx": false,
         "built_at": null
        },
