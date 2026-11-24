@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-23
+# depweather forecast, 2026-11-24
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-23T18:02:03Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-24T03:57:47Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 13 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 9
-- New CVEs in NVD today (UTC): 255
-- CVEs published in 2026-11 so far: 12,895 (same month last year: 3,021)
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 11
+- New CVEs in NVD today (UTC): 54
+- CVEs published in 2026-11 so far: 13,070 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -29,7 +29,7 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 
 ### npm
 
-- **Next.js (next)**: 7 advisories, worst medium; fixed in 15.5.29, 16.4.5. Example: [GHSA-f3mh-rxg3-f5g2](https://osv.dev/vulnerability/GHSA-f3mh-rxg3-f5g2) Next.js: HttpOnly cookie exposure through internal response header on Next.js Edge runtime routes
+- **Next.js (next)**: 6 advisories, worst medium; fixed in 15.5.29, 16.4.5. Example: [GHSA-f3mh-rxg3-f5g2](https://osv.dev/vulnerability/GHSA-f3mh-rxg3-f5g2) Next.js: HttpOnly cookie exposure through internal response header on Next.js Edge runtime routes
 
 ### crates.io
 
@@ -61,6 +61,8 @@ No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-11-23: CVE-2026-133968, Project MONAI MONAI Label: Project MONAI MONAI Label Path Traversal Vulnerability
+- 2026-11-23: CVE-2026-134624, N-able MailAssure: N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability
 - 2026-11-20: CVE-2026-129448, Apache Roller: Apache Roller Deserialization of Untrusted Data Vulnerability
 - 2026-11-20: CVE-2026-123890, Broadcom VMware vCenter: VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability
 - 2026-11-20: CVE-2025-42884, SAP NetWeaver: SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability
