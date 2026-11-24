@@ -284,16 +284,6 @@
   "severity": "LOW",
   "checked": "2026-11-13"
  },
- "CVE-2026-128129": {
-  "cvss": 8.2,
-  "severity": "HIGH",
-  "checked": "2026-11-16"
- },
- "CVE-2026-128132": {
-  "cvss": 8.7,
-  "severity": "HIGH",
-  "checked": "2026-11-16"
- },
  "CVE-2026-128361": {
   "cvss": 8.2,
   "severity": "HIGH",
