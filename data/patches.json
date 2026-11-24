@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T06:10:25Z",
+ "generated_at": "2026-11-24T17:58:05Z",
  "summary": {
   "new_patches_7d": 10,
   "images_pending": 2,
@@ -935,7 +935,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 93,
+        "hours": 104,
         "approx": false,
         "built_at": null
        },
@@ -1014,7 +1014,22 @@
        "is_lts": true,
        "is_eol": false,
        "eol_from": "2030-12-31",
-       "high_cves": [],
+       "high_cves": [
+        {
+         "id": "CVE-2026-114939",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "8.514.01.1",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114939"
+        },
+        {
+         "id": "CVE-2026-114940",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "8.514.01.1",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114940"
+        }
+       ],
        "cvss_unrated": 0,
        "cve_sources": [
         "Ubuntu:24.04:LTS openjdk-8"
@@ -1071,7 +1086,22 @@
        "is_lts": true,
        "is_eol": false,
        "eol_from": "2030-12-31",
-       "high_cves": [],
+       "high_cves": [
+        {
+         "id": "CVE-2026-114939",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "8u514-b01",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114939"
+        },
+        {
+         "id": "CVE-2026-114940",
+         "cvss": 7.4,
+         "cvss_source": "OSV",
+         "fixed_in": "8u514-b01",
+         "url": "https://osv.dev/vulnerability/UBUNTU-CVE-2026-114940"
+        }
+       ],
        "cvss_unrated": 0,
        "cve_sources": [
         "Ubuntu:24.04:LTS openjdk-8"
@@ -1110,7 +1140,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 105,
+        "hours": 117,
         "approx": false,
         "built_at": null
        },
@@ -1182,7 +1212,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-16T22:23:39.835681Z",
+         "built_at": "2026-11-24T13:23:01.651079Z",
          "match": "digest"
         },
         {
@@ -1192,15 +1222,16 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-16T22:23:59.409077Z",
+         "built_at": "2026-11-24T13:23:14.53163Z",
          "match": "digest"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 149,
+        "hours": null,
         "approx": false,
-        "built_at": "2026-11-16T22:23:39.835681Z"
+        "rebuilt": true,
+        "built_at": "2026-11-24T13:23:01.651079Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1238,7 +1269,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-16T22:22:53.114328Z",
+         "built_at": "2026-11-24T13:22:34.296407Z",
          "match": "digest"
         },
         {
@@ -1248,15 +1279,16 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-16T22:23:20.055972Z",
+         "built_at": "2026-11-24T13:22:48.568301Z",
          "match": "digest"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 149,
+        "hours": null,
         "approx": false,
-        "built_at": "2026-11-16T22:22:53.114328Z"
+        "rebuilt": true,
+        "built_at": "2026-11-24T13:22:34.296407Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1354,7 +1386,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-11T19:25:39.682571Z",
+         "built_at": "2026-11-24T11:40:17.990522Z",
          "match": "digest"
         },
         {
@@ -1364,15 +1396,16 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-11T19:26:48.642153Z",
+         "built_at": "2026-11-24T11:40:54.144854Z",
          "match": "digest"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 2,
+        "hours": null,
         "approx": false,
-        "built_at": "2026-11-11T19:25:39.682571Z"
+        "rebuilt": true,
+        "built_at": "2026-11-24T11:40:17.990522Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1463,7 +1496,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-12T00:56:47.856218Z",
+         "built_at": "2026-11-24T08:39:28.207613Z",
          "match": "digest"
         },
         {
@@ -1473,15 +1506,16 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-12T00:57:17.259119Z",
+         "built_at": "2026-11-24T08:40:09.85083Z",
          "match": "digest"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 8,
+        "hours": null,
         "approx": false,
-        "built_at": "2026-11-12T00:56:47.856218Z"
+        "rebuilt": true,
+        "built_at": "2026-11-24T08:39:28.207613Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1517,7 +1551,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-11T20:38:19.020124Z",
+         "built_at": "2026-11-24T11:38:13.389715Z",
          "match": "digest"
         },
         {
@@ -1527,15 +1561,16 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-11T20:39:15.233353Z",
+         "built_at": "2026-11-24T11:39:00.984003Z",
          "match": "digest"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 3,
+        "hours": null,
         "approx": false,
-        "built_at": "2026-11-11T20:38:19.020124Z"
+        "rebuilt": true,
+        "built_at": "2026-11-24T11:38:13.389715Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1632,7 +1667,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T05:08:01.345941Z",
+         "built_at": "2026-11-24T14:09:58.56079Z",
          "match": "digest"
         },
         {
@@ -1642,7 +1677,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T05:08:17.248903Z",
+         "built_at": "2026-11-24T14:10:17.53512Z",
          "match": "digest"
         }
        ],
@@ -1651,7 +1686,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-17T05:08:01.345941Z"
+        "built_at": "2026-11-24T14:09:58.56079Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1687,7 +1722,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T08:07:49.307209Z",
+         "built_at": "2026-11-24T14:09:16.038169Z",
          "match": "digest"
         },
         {
@@ -1697,7 +1732,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T08:08:06.276893Z",
+         "built_at": "2026-11-24T14:09:38.942393Z",
          "match": "digest"
         }
        ],
@@ -1706,7 +1741,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-17T08:07:49.307209Z"
+        "built_at": "2026-11-24T14:09:16.038169Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1744,7 +1779,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T08:07:16.759994Z",
+         "built_at": "2026-11-24T14:08:27.957006Z",
          "match": "digest"
         },
         {
@@ -1754,7 +1789,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T08:07:31.70007Z",
+         "built_at": "2026-11-24T14:08:53.805923Z",
          "match": "digest"
         }
        ],
@@ -1763,7 +1798,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-17T08:07:16.759994Z"
+        "built_at": "2026-11-24T14:08:27.957006Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1801,7 +1836,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T11:06:50.041569Z",
+         "built_at": "2026-11-24T14:07:40.020578Z",
          "match": "digest"
         },
         {
@@ -1811,7 +1846,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T11:07:05.536228Z",
+         "built_at": "2026-11-24T14:08:05.718088Z",
          "match": "digest"
         }
        ],
@@ -1820,7 +1855,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-17T11:06:50.041569Z"
+        "built_at": "2026-11-24T14:07:40.020578Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1858,7 +1893,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T14:06:28.279482Z",
+         "built_at": "2026-11-24T14:06:47.741466Z",
          "match": "digest"
         },
         {
@@ -1868,7 +1903,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-17T14:06:43.435874Z",
+         "built_at": "2026-11-24T14:07:18.056634Z",
          "match": "digest"
         }
        ],
@@ -1877,7 +1912,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-17T14:06:28.279482Z"
+        "built_at": "2026-11-24T14:06:47.741466Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
