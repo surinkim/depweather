@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T21:33:30Z",
+ "generated_at": "2026-11-24T06:10:25Z",
  "summary": {
   "new_patches_7d": 10,
   "images_pending": 2,
@@ -91,7 +91,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:52:25.661072Z",
+         "built_at": "2026-11-23T23:52:21.570944Z",
          "match": "pushed-after"
         },
         {
@@ -101,7 +101,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:52:27.651902Z",
+         "built_at": "2026-11-23T23:52:23.643647Z",
          "match": "pushed-after"
         },
         {
@@ -111,15 +111,15 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:53:19.4741Z",
+         "built_at": "2026-11-23T23:53:15.63088Z",
          "match": "pushed-after"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 28,
+        "hours": 148,
         "approx": false,
-        "built_at": "2026-11-18T23:52:25.661072Z"
+        "built_at": "2026-11-23T23:52:21.570944Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -366,7 +366,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:50:55.803604Z",
+         "built_at": "2026-11-23T23:50:52.133904Z",
          "match": "pushed-after"
         },
         {
@@ -376,7 +376,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:51:11.708679Z",
+         "built_at": "2026-11-23T23:51:08.125889Z",
          "match": "pushed-after"
         },
         {
@@ -386,15 +386,15 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:52:07.409511Z",
+         "built_at": "2026-11-23T23:52:03.12509Z",
          "match": "pushed-after"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 27,
+        "hours": 147,
         "approx": false,
-        "built_at": "2026-11-18T23:50:55.803604Z"
+        "built_at": "2026-11-23T23:50:52.133904Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -636,7 +636,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:49:02.270814Z",
+         "built_at": "2026-11-23T23:48:58.443279Z",
          "match": "pushed-after"
         },
         {
@@ -646,7 +646,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:49:36.980666Z",
+         "built_at": "2026-11-23T23:49:33.101211Z",
          "match": "pushed-after"
         },
         {
@@ -656,15 +656,15 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:50:37.959903Z",
+         "built_at": "2026-11-23T23:50:33.940356Z",
          "match": "pushed-after"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 27,
+        "hours": 147,
         "approx": false,
-        "built_at": "2026-11-18T23:49:02.270814Z"
+        "built_at": "2026-11-23T23:48:58.443279Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -854,7 +854,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:47:13.212181Z",
+         "built_at": "2026-11-23T23:47:12.105012Z",
          "match": "pushed-after"
         },
         {
@@ -864,7 +864,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:47:42.177089Z",
+         "built_at": "2026-11-23T23:47:40.606075Z",
          "match": "pushed-after"
         },
         {
@@ -874,15 +874,15 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:48:43.530837Z",
+         "built_at": "2026-11-23T23:48:40.387021Z",
          "match": "pushed-after"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 22,
+        "hours": 142,
         "approx": false,
-        "built_at": "2026-11-18T23:47:13.212181Z"
+        "built_at": "2026-11-23T23:47:12.105012Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -935,7 +935,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 84,
+        "hours": 93,
         "approx": false,
         "built_at": null
        },
@@ -1027,7 +1027,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:54:48.404592Z",
+         "built_at": "2026-11-23T23:54:52.935687Z",
          "match": "pushed-after"
         },
         {
@@ -1037,7 +1037,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:55:16.242807Z",
+         "built_at": "2026-11-23T23:55:24.987977Z",
          "match": "pushed-after"
         },
         {
@@ -1047,15 +1047,15 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-18T23:56:02.80121Z",
+         "built_at": "2026-11-23T23:56:12.310111Z",
          "match": "pushed-after"
         }
        ],
        "image_status": {
         "state": "reflected",
-        "hours": 22,
+        "hours": 142,
         "approx": false,
-        "built_at": "2026-11-18T23:54:48.404592Z"
+        "built_at": "2026-11-23T23:54:52.935687Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1110,7 +1110,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 96,
+        "hours": 105,
         "approx": false,
         "built_at": null
        },
