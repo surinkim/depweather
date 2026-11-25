@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-24T17:58:05Z",
+ "generated_at": "2026-11-25T02:38:00Z",
  "summary": {
-  "new_patches_7d": 10,
+  "new_patches_7d": 5,
   "images_pending": 2,
   "high_cves": 7
  },
@@ -935,7 +935,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 104,
+        "hours": 113,
         "approx": false,
         "built_at": null
        },
@@ -1140,7 +1140,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 117,
+        "hours": 125,
         "approx": false,
         "built_at": null
        },
@@ -1212,7 +1212,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T13:23:01.651079Z",
+         "built_at": "2026-11-24T19:23:12.69344Z",
          "match": "digest"
         },
         {
@@ -1222,7 +1222,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T13:23:14.53163Z",
+         "built_at": "2026-11-24T19:23:27.477085Z",
          "match": "digest"
         }
        ],
@@ -1231,7 +1231,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T13:23:01.651079Z"
+        "built_at": "2026-11-24T19:23:12.69344Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1269,7 +1269,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T13:22:34.296407Z",
+         "built_at": "2026-11-24T19:22:39.031505Z",
          "match": "digest"
         },
         {
@@ -1279,7 +1279,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T13:22:48.568301Z",
+         "built_at": "2026-11-24T19:22:57.484475Z",
          "match": "digest"
         }
        ],
@@ -1288,7 +1288,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T13:22:34.296407Z"
+        "built_at": "2026-11-24T19:22:39.031505Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1386,7 +1386,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T11:40:17.990522Z",
+         "built_at": "2026-11-24T20:39:45.804737Z",
          "match": "digest"
         },
         {
@@ -1396,7 +1396,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T11:40:54.144854Z",
+         "built_at": "2026-11-24T20:40:10.126688Z",
          "match": "digest"
         }
        ],
@@ -1405,7 +1405,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T11:40:17.990522Z"
+        "built_at": "2026-11-24T20:39:45.804737Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1496,7 +1496,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T08:39:28.207613Z",
+         "built_at": "2026-11-24T20:39:05.858041Z",
          "match": "digest"
         },
         {
@@ -1506,7 +1506,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T08:40:09.85083Z",
+         "built_at": "2026-11-24T20:39:31.364054Z",
          "match": "digest"
         }
        ],
@@ -1515,7 +1515,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T08:39:28.207613Z"
+        "built_at": "2026-11-24T20:39:05.858041Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1551,7 +1551,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T11:38:13.389715Z",
+         "built_at": "2026-11-24T20:38:14.931278Z",
          "match": "digest"
         },
         {
@@ -1561,7 +1561,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T11:39:00.984003Z",
+         "built_at": "2026-11-24T20:38:44.096865Z",
          "match": "digest"
         }
        ],
@@ -1570,7 +1570,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T11:38:13.389715Z"
+        "built_at": "2026-11-24T20:38:14.931278Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1667,7 +1667,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:09:58.56079Z",
+         "built_at": "2026-11-24T23:08:49.225064Z",
          "match": "digest"
         },
         {
@@ -1677,7 +1677,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:10:17.53512Z",
+         "built_at": "2026-11-24T23:09:06.528245Z",
          "match": "digest"
         }
        ],
@@ -1686,7 +1686,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T14:09:58.56079Z"
+        "built_at": "2026-11-24T23:08:49.225064Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1722,7 +1722,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:09:16.038169Z",
+         "built_at": "2026-11-24T23:08:11.009249Z",
          "match": "digest"
         },
         {
@@ -1732,7 +1732,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:09:38.942393Z",
+         "built_at": "2026-11-24T23:08:32.215493Z",
          "match": "digest"
         }
        ],
@@ -1741,7 +1741,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T14:09:16.038169Z"
+        "built_at": "2026-11-24T23:08:11.009249Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1779,7 +1779,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:08:27.957006Z",
+         "built_at": "2026-11-24T23:07:33.093506Z",
          "match": "digest"
         },
         {
@@ -1789,7 +1789,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:08:53.805923Z",
+         "built_at": "2026-11-24T23:07:52.054334Z",
          "match": "digest"
         }
        ],
@@ -1798,7 +1798,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T14:08:27.957006Z"
+        "built_at": "2026-11-24T23:07:33.093506Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1836,7 +1836,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:07:40.020578Z",
+         "built_at": "2026-11-25T02:07:08.265559Z",
          "match": "digest"
         },
         {
@@ -1846,7 +1846,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:08:05.718088Z",
+         "built_at": "2026-11-25T02:07:27.695599Z",
          "match": "digest"
         }
        ],
@@ -1855,7 +1855,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T14:07:40.020578Z"
+        "built_at": "2026-11-25T02:07:08.265559Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
@@ -1893,7 +1893,7 @@
          "exact": false,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:06:47.741466Z",
+         "built_at": "2026-11-25T02:06:32.119329Z",
          "match": "digest"
         },
         {
@@ -1903,7 +1903,7 @@
          "exact": true,
          "exists": true,
          "contains_latest": true,
-         "built_at": "2026-11-24T14:07:18.056634Z",
+         "built_at": "2026-11-25T02:06:51.653478Z",
          "match": "digest"
         }
        ],
@@ -1912,7 +1912,7 @@
         "hours": null,
         "approx": false,
         "rebuilt": true,
-        "built_at": "2026-11-24T14:06:47.741466Z"
+        "built_at": "2026-11-25T02:06:32.119329Z"
        },
        "image_note": null,
        "workaround_dockerfile": null
