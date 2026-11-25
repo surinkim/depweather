@@ -283,12 +283,12 @@
   "2026-11-18": {
    "packages": {
     "packagist/drupal/core": {
-     "u": 2
+     "u": 1
     }
    },
    "ecosystems": {
     "packagist": {
-     "u": 2
+     "u": 1
     }
    }
   },
@@ -331,6 +331,20 @@
    "ecosystems": {
     "hex": {
      "h": 2
+    }
+   }
+  },
+  "2026-11-24": {
+   "packages": {
+    "packagist/drupal/core": {
+     "u": 1,
+     "k": 1
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "u": 1,
+     "k": 1
     }
    }
   }
