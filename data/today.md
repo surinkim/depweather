@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-25
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-25T02:30:23Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-25T17:10:15Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 5 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 13
-- New CVEs in NVD today (UTC): 22
-- CVEs published in 2026-11 so far: 13,926 (same month last year: 3,021)
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 14
+- New CVEs in NVD today (UTC): 386
+- CVEs published in 2026-11 so far: 14,290 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -54,6 +54,7 @@ No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-11-25: CVE-2026-103406, Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router: Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability
 - 2026-11-24: CVE-2026-132224, Optimizely Web Experimentation: Optimizely Web Experimentation External Control of Critical State Data Vulnerability
 - 2026-11-24: CVE-2026-131914, Idunno AntiCsrf: Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability
 - 2026-11-24: CVE-2026-132165, Drupal Core: Drupal Core Remote Code Execution Vulnerability
