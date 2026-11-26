@@ -347,6 +347,18 @@
      "k": 1
     }
    }
+  },
+  "2026-11-25": {
+   "packages": {
+    "packagist/drupal/core": {
+     "u": 1
+    }
+   },
+   "ecosystems": {
+    "packagist": {
+     "u": 1
+    }
+   }
   }
  }
 }
