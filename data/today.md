@@ -1,13 +1,13 @@
-# depweather forecast, 2026-11-26
+# depweather forecast, 2026-11-27
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-26T16:50:59Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-27T01:44:27Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 5 of 149
+- Popular packages with a new advisory this week: 4 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 19
-- New CVEs in NVD today (UTC): 470
-- CVEs published in 2026-11 so far: 14,982 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 40
+- CVEs published in 2026-11 so far: 15,078 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -20,13 +20,13 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **Phoenix**: 2 advisories, worst high; fixed in 1.5.16, 1.6.18, 1.7.25, 1.8.17. Example: [EEF-CVE-2026-128361](https://osv.dev/vulnerability/EEF-CVE-2026-128361) Unsanitized presence key crashes Presence tracker
 - **LiveView (phoenix_live_view)**: 1 advisory, worst medium; fixed in 1.0.20, 1.1.34, 1.2.14. Example: [EEF-CVE-2026-126334](https://osv.dev/vulnerability/EEF-CVE-2026-126334) Joining a LiveView without `"url"` skips its `live_session` `on_mount` hooks
 
-### npm
-
-- **Next.js (next)**: 5 advisories, worst medium; fixed in 15.5.29, 16.4.5. Example: [GHSA-f3mh-rxg3-f5g2](https://osv.dev/vulnerability/GHSA-f3mh-rxg3-f5g2) Next.js: HttpOnly cookie exposure through internal response header on Next.js Edge runtime routes
-
 ### crates.io
 
 - **url**: 1 advisory, worst low or unrated; fixed in 2.5.9. Example: [RUSTSEC-2026-0592](https://osv.dev/vulnerability/RUSTSEC-2026-0592) Stack overflow in `Url::origin()` on nested `blob:` URLs
+
+### npm
+
+No new advisories for the tracked packages.
 
 ### PyPI
 
