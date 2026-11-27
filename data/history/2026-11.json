@@ -359,6 +359,55 @@
      "u": 1
     }
    }
+  },
+  "2026-11-27": {
+   "packages": {
+    "runtimes/apache": {
+     "h": 1,
+     "m": 1
+    },
+    "runtimes/java": {
+     "h": 2,
+     "m": 36,
+     "l": 13
+    },
+    "runtimes/nginx": {
+     "c": 5,
+     "m": 2
+    },
+    "runtimes/node": {
+     "h": 7,
+     "m": 6,
+     "l": 2
+    },
+    "runtimes/php": {
+     "c": 7,
+     "h": 4,
+     "m": 6
+    },
+    "runtimes/python": {
+     "m": 3,
+     "l": 1
+    },
+    "runtimes/ruby": {
+     "h": 1
+    },
+    "runtimes/tomcat": {
+     "c": 4,
+     "h": 9,
+     "m": 2,
+     "u": 1
+    }
+   },
+   "ecosystems": {
+    "runtimes": {
+     "c": 16,
+     "h": 24,
+     "m": 56,
+     "l": 16,
+     "u": 1
+    }
+   }
   }
  }
 }
