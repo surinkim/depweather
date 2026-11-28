@@ -1,13 +1,13 @@
 # depweather forecast, 2026-11-28
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-28T01:27:11Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-28T15:28:30Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
-- Popular packages with a new advisory this week: 10 of 149
+- Popular packages with a new advisory this week: 9 of 149
 - Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 18
-- New CVEs in NVD today (UTC): 1
-- CVEs published in 2026-11 so far: 15,384 (same month last year: 3,021)
+- New CVEs in NVD today (UTC): 41
+- CVEs published in 2026-11 so far: 15,424 (same month last year: 3,021)
 
 ## By ecosystem
 
@@ -25,10 +25,6 @@ Vulnerabilities published in the last 7 days for 149 popular open-source package
 - **Apache httpd (apache)**: 2 advisories, worst high; fixed in 2.4.71. Example: [BIT-apache-2026-106023](https://osv.dev/vulnerability/BIT-apache-2026-106023) Apache HTTP Server: mod_md NULL pointer dereference leads to child process crash
 - **Ruby**: 1 advisory, worst high; fixed in 3.3.14, 3.4.13, 4.0.10. Example: [BIT-ruby-2026-132825](https://osv.dev/vulnerability/BIT-ruby-2026-132825) Ruby before 3.3.14, 3.4.13, and 4.0.10 has a heap-based buffer overflow during case conversion. One byte can be written outside a buffer for, for example, ISO-8859-1 or Windows-1252.
 - **Python**: 5 advisories, worst medium; fixed in 3.16.0. Example: [BIT-libpython-2026-124249](https://osv.dev/vulnerability/BIT-libpython-2026-124249) `http.cookiejar` applies expired `Set-Cookie` to cookie store before policy validation
-
-### Hex
-
-- **Phoenix**: 2 advisories, worst high; fixed in 1.5.16, 1.6.18, 1.7.25, 1.8.17. Example: [EEF-CVE-2026-128361](https://osv.dev/vulnerability/EEF-CVE-2026-128361) Unsanitized presence key crashes Presence tracker
 
 ### npm
 
@@ -55,6 +51,10 @@ No new advisories for the tracked packages.
 No new advisories for the tracked packages.
 
 ### RubyGems
+
+No new advisories for the tracked packages.
+
+### Hex
 
 No new advisories for the tracked packages.
 
