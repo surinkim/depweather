@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T19:31:38Z",
+ "generated_at": "2026-11-28T02:49:24Z",
  "summary": {
   "new_patches_7d": 0,
   "images_pending": 2,
@@ -134,7 +134,7 @@
        "release_url": "https://github.com/adoptium/temurin25-binaries/releases/tag/jdk-25.0.5.1+2",
        "is_lts": true,
        "is_eol": false,
-       "eol_from": "2031-09-30",
+       "eol_from": "2033-09-30",
        "high_cves": [
         {
          "id": "CVE-2026-91403",
@@ -409,7 +409,7 @@
        "release_url": "https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.13.1+2",
        "is_lts": true,
        "is_eol": false,
-       "eol_from": "2029-12-31",
+       "eol_from": "2031-09-30",
        "high_cves": [
         {
          "id": "CVE-2026-91403",
@@ -679,7 +679,7 @@
        "release_url": "https://github.com/adoptium/temurin17-binaries/releases/tag/jdk-17.0.21.1+2",
        "is_lts": true,
        "is_eol": false,
-       "eol_from": "2027-10-31",
+       "eol_from": "2029-01-31",
        "high_cves": [
         {
          "id": "CVE-2026-91403",
@@ -897,7 +897,7 @@
        "release_url": "https://github.com/adoptium/temurin11-binaries/releases/tag/jdk-11.0.33.1+1",
        "is_lts": true,
        "is_eol": false,
-       "eol_from": "2027-10-31",
+       "eol_from": "2032-01-31",
        "high_cves": null,
        "cvss_unrated": 0,
        "cve_sources": [],
@@ -935,7 +935,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 178,
+        "hours": 185,
         "approx": false,
         "built_at": null
        },
@@ -1000,7 +1000,7 @@
      "name": "8",
      "is_lts": true,
      "is_eol": false,
-     "eol_from": "2030-12-31",
+     "eol_from": "2032-12-31",
      "inline": false,
      "distros": [
       {
@@ -1085,7 +1085,7 @@
        "release_url": "https://github.com/adoptium/temurin8-binaries/releases/tag/jdk8u514-b01",
        "is_lts": true,
        "is_eol": false,
-       "eol_from": "2030-12-31",
+       "eol_from": "2032-12-31",
        "high_cves": [
         {
          "id": "CVE-2026-114939",
@@ -1140,7 +1140,7 @@
        ],
        "image_status": {
         "state": "pending",
-        "hours": 190,
+        "hours": 198,
         "approx": false,
         "built_at": null
        },
