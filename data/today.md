@@ -1,19 +1,19 @@
-# depweather forecast, 2026-11-27
+# depweather forecast, 2026-11-28
 
-Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-27T16:37:28Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
+Vulnerabilities published in the last 7 days for 149 popular open-source packages, generated 2026-11-28T01:27:11Z by https://depweather.com from OSV, CISA KEV, FIRST EPSS and NVD data. Severity comes from the upstream advisory.
 
 ## Numbers
 
 - Popular packages with a new advisory this week: 10 of 149
-- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 19
-- New CVEs in NVD today (UTC): 302
-- CVEs published in 2026-11 so far: 15,340 (same month last year: 3,021)
+- Added to the CISA Known Exploited Vulnerabilities catalog this week (all vendors): 18
+- New CVEs in NVD today (UTC): 1
+- CVEs published in 2026-11 so far: 15,384 (same month last year: 3,021)
 
 ## By ecosystem
 
 ### Packagist
 
-- **Drupal core (drupal/core)**: 2 advisories, worst actively exploited (CISA KEV); fixed in 10.6.23, 11.3.23, 11.4.14, 10.6.22 and more. Example: [DRUPAL-CORE-2026-017](https://osv.dev/vulnerability/DRUPAL-CORE-2026-017) ***Update:** the Security Team has received a report this was exploited on live sites as early as 2026-11-19 19:00 UTC.*
+- **Drupal core (drupal/core)**: 2 advisories, worst actively exploited (CISA KEV); fixed in 10.6.23, 11.3.23, 11.4.14, 10.6.22 and more. Example: [DRUPAL-CORE-2026-019](https://osv.dev/vulnerability/DRUPAL-CORE-2026-019) Drupal core ships with an `install.php` file for installing Drupal core.
 
 ### Runtimes & servers
 
@@ -60,6 +60,9 @@ No new advisories for the tracked packages.
 
 ## Added to CISA KEV this week (all vendors)
 
+- 2026-11-27: CVE-2026-120705, OSGeo GeoServer: OSGeo GeoServer XML Injection Vulnerability
+- 2026-11-27: CVE-2026-129243, OSGeo GeoServer: OSGeo GeoServer Incorrect Authorization Vulnerability
+- 2026-11-27: CVE-2026-136716, Drupal Core: Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability
 - 2026-11-25: CVE-2026-103406, Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router: Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability
 - 2026-11-25: CVE-2026-133469, Vates Xen Orchestra: Vates Xen Orchestra Improper Validation of Specified Type of Input Vulnerability
 - 2026-11-25: CVE-2025-41450, Danfoss AK-SM 800A Series: Danfoss AK-SM 800A Series Improper Authentication Vulnerability
@@ -75,9 +78,5 @@ No new advisories for the tracked packages.
 - 2026-11-24: CVE-2026-132165, Drupal Core: Drupal Core Remote Code Execution Vulnerability
 - 2026-11-23: CVE-2026-133968, Project MONAI MONAI Label: Project MONAI MONAI Label Path Traversal Vulnerability
 - 2026-11-23: CVE-2026-134624, N-able MailAssure: N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability
-- 2026-11-20: CVE-2026-129448, Apache Roller: Apache Roller Deserialization of Untrusted Data Vulnerability
-- 2026-11-20: CVE-2026-123890, Broadcom VMware vCenter: VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability
-- 2026-11-20: CVE-2025-42884, SAP NetWeaver: SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability
-- 2026-11-20: CVE-2026-76466, Cisco Expressway Series: Cisco Expressway Series Use of Hard-coded Credentials Vulnerability
 
 Full data: https://depweather.com/data/latest.json

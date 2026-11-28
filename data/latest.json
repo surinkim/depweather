@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T16:37:28Z",
+ "generated_at": "2026-11-28T01:27:11Z",
  "window_days": 30,
  "survey": {
   "name": "Stack Overflow Developer Survey 2026",
@@ -49,6 +49,7 @@
     "NuGet: fixed weight",
     "Packagist: Packagist downloads, last 30 days",
     "PyPI: PyPI downloads, last week (pypistats)",
+    "PyPI: fixed weight",
     "RubyGems: RubyGems downloads, all time",
     "Runtimes & servers: fixed weight",
     "crates.io: crates.io downloads, last 90 days",
@@ -57,11 +58,11 @@
   }
  },
  "summary": {
-  "today_cves": 302,
+  "today_cves": 1,
   "month": "2026-11",
-  "month_cves": 15340,
+  "month_cves": 15384,
   "month_cves_last_year": 3021,
-  "kev_new_7d": 19,
+  "kev_new_7d": 18,
   "affected_packages_7d": 10,
   "tracked_packages": 149
  },
@@ -120,11 +121,32 @@
   },
   {
    "month": "2026-11",
-   "count": 15340
+   "count": 15384
   }
  ],
  "monthly_is_stale": false,
  "kev_recent": [
+  {
+   "cve": "CVE-2026-120705",
+   "vendor": "OSGeo",
+   "product": "GeoServer",
+   "name": "OSGeo GeoServer XML Injection Vulnerability",
+   "date_added": "2026-11-27"
+  },
+  {
+   "cve": "CVE-2026-129243",
+   "vendor": "OSGeo",
+   "product": "GeoServer",
+   "name": "OSGeo GeoServer Incorrect Authorization Vulnerability",
+   "date_added": "2026-11-27"
+  },
+  {
+   "cve": "CVE-2026-136716",
+   "vendor": "Drupal",
+   "product": "Core",
+   "name": "Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability",
+   "date_added": "2026-11-27"
+  },
   {
    "cve": "CVE-2026-103406",
    "vendor": "Hewlett Packard Enterprise (HPE)",
@@ -229,34 +251,6 @@
    "product": "MailAssure",
    "name": "N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
    "date_added": "2026-11-23"
-  },
-  {
-   "cve": "CVE-2026-129448",
-   "vendor": "Apache",
-   "product": "Roller",
-   "name": "Apache Roller Deserialization of Untrusted Data Vulnerability",
-   "date_added": "2026-11-20"
-  },
-  {
-   "cve": "CVE-2026-123890",
-   "vendor": "Broadcom",
-   "product": "VMware vCenter",
-   "name": "VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-   "date_added": "2026-11-20"
-  },
-  {
-   "cve": "CVE-2025-42884",
-   "vendor": "SAP",
-   "product": "NetWeaver",
-   "name": "SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
-   "date_added": "2026-11-20"
-  },
-  {
-   "cve": "CVE-2026-76466",
-   "vendor": "Cisco",
-   "product": "Expressway Series",
-   "name": "Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
-   "date_added": "2026-11-20"
   }
  ],
  "ecosystems": [
@@ -1157,8 +1151,8 @@
      "key": "pypi/fastapi",
      "name": "fastapi",
      "label": "FastAPI",
-     "popularity": 131354203.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": 18.5,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1168,8 +1162,8 @@
      "key": "pypi/flask",
      "name": "flask",
      "label": "Flask",
-     "popularity": 37346219.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": 12.5,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1212,8 +1206,8 @@
      "key": "pypi/certifi",
      "name": "certifi",
      "label": "certifi",
-     "popularity": 407551813.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1267,8 +1261,8 @@
      "key": "pypi/numpy",
      "name": "numpy",
      "label": "numpy",
-     "popularity": 265729218.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1322,8 +1316,8 @@
      "key": "pypi/httpx",
      "name": "httpx",
      "label": "httpx",
-     "popularity": 193770959.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1694,8 +1688,8 @@
      "key": "pypi/sqlalchemy",
      "name": "sqlalchemy",
      "label": "sqlalchemy",
-     "popularity": 103097312.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1705,8 +1699,8 @@
      "key": "pypi/lxml",
      "name": "lxml",
      "label": "lxml",
-     "popularity": 93258180.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1716,8 +1710,8 @@
      "key": "pypi/protobuf",
      "name": "protobuf",
      "label": "protobuf",
-     "popularity": 184549401.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1727,8 +1721,8 @@
      "key": "pypi/transformers",
      "name": "transformers",
      "label": "transformers",
-     "popularity": 27398913.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -1738,8 +1732,8 @@
      "key": "pypi/torch",
      "name": "torch",
      "label": "torch",
-     "popularity": 12335755.0,
-     "popularity_source": "PyPI downloads, last week (pypistats)",
+     "popularity": 1.0,
+     "popularity_source": "fixed weight",
      "survey": null,
      "worst_7d": "NONE",
      "worst_30d": "NONE",
@@ -2699,7 +2693,7 @@
      "key": "crates/axum",
      "name": "axum",
      "label": "axum",
-     "popularity": 180623148.0,
+     "popularity": 180925937.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 3.6,
      "worst_7d": "NONE",
@@ -2710,7 +2704,7 @@
      "key": "crates/deno",
      "name": "deno",
      "label": "Deno",
-     "popularity": 2391.0,
+     "popularity": 2403.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -2721,7 +2715,7 @@
      "key": "crates/tokio",
      "name": "tokio",
      "label": "tokio",
-     "popularity": 333628280.0,
+     "popularity": 334090952.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2732,7 +2726,7 @@
      "key": "crates/hyper",
      "name": "hyper",
      "label": "hyper",
-     "popularity": 310570168.0,
+     "popularity": 311026557.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2743,7 +2737,7 @@
      "key": "crates/reqwest",
      "name": "reqwest",
      "label": "reqwest",
-     "popularity": 288479003.0,
+     "popularity": 288875357.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2754,7 +2748,7 @@
      "key": "crates/h2",
      "name": "h2",
      "label": "h2",
-     "popularity": 245082725.0,
+     "popularity": 245309960.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2765,7 +2759,7 @@
      "key": "crates/rustls",
      "name": "rustls",
      "label": "rustls",
-     "popularity": 308031453.0,
+     "popularity": 308390852.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2776,7 +2770,7 @@
      "key": "crates/openssl",
      "name": "openssl",
      "label": "openssl",
-     "popularity": 92632418.0,
+     "popularity": 92628458.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2787,7 +2781,7 @@
      "key": "crates/ring",
      "name": "ring",
      "label": "ring",
-     "popularity": 251512566.0,
+     "popularity": 251969765.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2798,7 +2792,7 @@
      "key": "crates/serde_json",
      "name": "serde_json",
      "label": "serde_json",
-     "popularity": 471188355.0,
+     "popularity": 471686474.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2809,7 +2803,7 @@
      "key": "crates/regex",
      "name": "regex",
      "label": "regex",
-     "popularity": 356626412.0,
+     "popularity": 356809558.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2820,7 +2814,7 @@
      "key": "crates/url",
      "name": "url",
      "label": "url",
-     "popularity": 288843040.0,
+     "popularity": 289300599.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2854,7 +2848,7 @@
      "key": "crates/sqlx",
      "name": "sqlx",
      "label": "sqlx",
-     "popularity": 63170557.0,
+     "popularity": 63267503.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -2865,11 +2859,11 @@
      "key": "crates/zip",
      "name": "zip",
      "label": "zip",
-     "popularity": 113911180.0,
+     "popularity": 113997684.0,
      "popularity_source": "crates.io downloads, last 90 days",
      "survey": null,
      "worst_7d": "NONE",
-     "worst_30d": "CRITICAL",
+     "worst_30d": "HIGH",
      "vulns": [
       {
        "id": "GHSA-9hj8-73fh-9963",
@@ -2970,31 +2964,6 @@
        "kev_date_added": null,
        "epss": 0.0063,
        "epss_percentile": 0.44651
-      },
-      {
-       "id": "GHSA-m665-v7pm-7grj",
-       "aliases": [
-        "CVE-2026-115905",
-        "RUSTSEC-2026-0548"
-       ],
-       "cves": [
-        "CVE-2026-115905"
-       ],
-       "published": "2026-10-28T21:09:50Z",
-       "summary": "zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE",
-       "severity": "CRITICAL",
-       "severity_source": "GitHub Advisory",
-       "cvss": 10.0,
-       "cvss_source": "NVD",
-       "fixed": [
-        "9.0.5"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-m665-v7pm-7grj",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00507,
-       "epss_percentile": 0.36457
       }
      ]
     }
@@ -3012,7 +2981,7 @@
      "key": "packagist/laravel/framework",
      "name": "laravel/framework",
      "label": "Laravel",
-     "popularity": 28797145.0,
+     "popularity": 29011185.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 7.6,
      "worst_7d": "NONE",
@@ -3049,7 +3018,7 @@
      "key": "packagist/symfony/http-kernel",
      "name": "symfony/http-kernel",
      "label": "Symfony",
-     "popularity": 35810102.0,
+     "popularity": 36709388.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 4.0,
      "worst_7d": "NONE",
@@ -3060,11 +3029,11 @@
      "key": "packagist/drupal/core",
      "name": "drupal/core",
      "label": "Drupal core",
-     "popularity": 1813869.0,
+     "popularity": 1829093.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": 2.0,
-     "worst_7d": "UNKNOWN",
-     "worst_30d": "UNKNOWN",
+     "worst_7d": "CRITICAL",
+     "worst_30d": "CRITICAL",
      "vulns": [
       {
        "id": "DRUPAL-CORE-2026-019",
@@ -3076,10 +3045,10 @@
        ],
        "published": "2026-11-25T17:04:39Z",
        "summary": "Drupal core ships with an `install.php` file for installing Drupal core.",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "CRITICAL",
+       "severity_source": "NVD",
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.23",
         "11.3.23",
@@ -3087,8 +3056,8 @@
        ],
        "url": "https://osv.dev/vulnerability/DRUPAL-CORE-2026-019",
        "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
+       "kev": true,
+       "kev_date_added": "2026-11-27",
        "epss": 0.01212,
        "epss_percentile": 0.68449
       },
@@ -3128,10 +3097,10 @@
        ],
        "published": "2026-11-18T17:43:11Z",
        "summary": "***Update:** the Security Team has received a report this was exploited on live sites as early as 2026-11-19 19:00 UTC.*",
-       "severity": "UNKNOWN",
-       "severity_source": null,
-       "cvss": null,
-       "cvss_source": null,
+       "severity": "CRITICAL",
+       "severity_source": "NVD",
+       "cvss": 9.8,
+       "cvss_source": "NVD",
        "fixed": [
         "10.6.22",
         "11.3.22",
@@ -3150,7 +3119,7 @@
      "key": "packagist/guzzlehttp/guzzle",
      "name": "guzzlehttp/guzzle",
      "label": "Guzzle",
-     "popularity": 39326016.0,
+     "popularity": 39373974.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3161,7 +3130,7 @@
      "key": "packagist/guzzlehttp/psr7",
      "name": "guzzlehttp/psr7",
      "label": "guzzle/psr7",
-     "popularity": 41058821.0,
+     "popularity": 41728699.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3172,7 +3141,7 @@
      "key": "packagist/monolog/monolog",
      "name": "monolog/monolog",
      "label": "Monolog",
-     "popularity": 37209543.0,
+     "popularity": 37898378.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3183,7 +3152,7 @@
      "key": "packagist/twig/twig",
      "name": "twig/twig",
      "label": "Twig",
-     "popularity": 14637126.0,
+     "popularity": 15002682.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3194,7 +3163,7 @@
      "key": "packagist/phpunit/phpunit",
      "name": "phpunit/phpunit",
      "label": "PHPUnit",
-     "popularity": 34978861.0,
+     "popularity": 35197432.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3230,7 +3199,7 @@
      "key": "packagist/league/flysystem",
      "name": "league/flysystem",
      "label": "Flysystem",
-     "popularity": 32168254.0,
+     "popularity": 32603120.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3241,7 +3210,7 @@
      "key": "packagist/league/commonmark",
      "name": "league/commonmark",
      "label": "CommonMark",
-     "popularity": 29649530.0,
+     "popularity": 30311514.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3252,7 +3221,7 @@
      "key": "packagist/nesbot/carbon",
      "name": "nesbot/carbon",
      "label": "Carbon",
-     "popularity": 31938343.0,
+     "popularity": 31537729.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3263,7 +3232,7 @@
      "key": "packagist/phpmailer/phpmailer",
      "name": "phpmailer/phpmailer",
      "label": "PHPMailer",
-     "popularity": 4948177.0,
+     "popularity": 4991660.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3274,7 +3243,7 @@
      "key": "packagist/firebase/php-jwt",
      "name": "firebase/php-jwt",
      "label": "php-jwt",
-     "popularity": 25544925.0,
+     "popularity": 25682171.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3285,7 +3254,7 @@
      "key": "packagist/phpseclib/phpseclib",
      "name": "phpseclib/phpseclib",
      "label": "phpseclib",
-     "popularity": 22460327.0,
+     "popularity": 21923677.0,
      "popularity_source": "Packagist downloads, last 30 days",
      "survey": null,
      "worst_7d": "NONE",
@@ -3406,6 +3375,256 @@
      "worst_30d": "CRITICAL",
      "vulns": [
       {
+       "id": "GO-2026-6872",
+       "aliases": [
+        "CVE-2026-118653",
+        "GHSA-246p-cpwv-v3jq"
+       ],
+       "cves": [
+        "CVE-2026-118653"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "Rate Limiter Bypass via Spoofed X-Forwarded-For Header in Default Configuration in github.com/labstack/echo",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 5.3,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6872",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00568,
+       "epss_percentile": 0.40921
+      },
+      {
+       "id": "GO-2026-6875",
+       "aliases": [
+        "CVE-2026-118651",
+        "GHSA-99jh-6h7p-pp36"
+       ],
+       "cves": [
+        "CVE-2026-118651"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "Reverse Proxy Forwards Attacker-Supplied X-Real-IP to Upstream by Default in github.com/labstack/echo",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 5.3,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6875",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00306,
+       "epss_percentile": 0.15964
+      },
+      {
+       "id": "GO-2026-6873",
+       "aliases": [
+        "CVE-2026-118650",
+        "GHSA-375p-5qhx-8wq4"
+       ],
+       "cves": [
+        "CVE-2026-118650"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "URL-encoded path bypasses route/group middleware guarding a statically-served path in github.com/labstack/echo",
+       "severity": "HIGH",
+       "severity_source": "NVD",
+       "cvss": 7.5,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6873",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00524,
+       "epss_percentile": 0.37883
+      },
+      {
+       "id": "GO-2026-6879",
+       "aliases": [
+        "CVE-2026-118657",
+        "GHSA-2ffq-g2xg-c22p"
+       ],
+       "cves": [
+        "CVE-2026-118657"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "Echo: HTTPS Redirect and HSTS Bypass via Unconditional Trust of Forwarded Scheme Headers in github.com/labstack/echo",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 5.9,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6879",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.0019,
+       "epss_percentile": 0.04975
+      },
+      {
+       "id": "GO-2026-6885",
+       "aliases": [
+        "CVE-2026-118655",
+        "GHSA-xwq5-6cqp-vx96"
+       ],
+       "cves": [
+        "CVE-2026-118655"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "Echo has a Static Middleware Double-Unescape Path Traversal in github.com/labstack/echo",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 5.9,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.15.3"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6885",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00495,
+       "epss_percentile": 0.35386
+      },
+      {
+       "id": "GO-2026-6883",
+       "aliases": [
+        "CVE-2026-118656",
+        "GHSA-v753-g4cw-jm48"
+       ],
+       "cves": [
+        "CVE-2026-118656"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "Echo has Open Redirect via Control-Character Prefix Defeating sanitizeURI in github.com/labstack/echo",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.1,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6883",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00348,
+       "epss_percentile": 0.20881
+      },
+      {
+       "id": "GO-2026-6877",
+       "aliases": [
+        "CVE-2026-118266",
+        "GHSA-r7w9-592q-9vg4"
+       ],
+       "cves": [
+        "CVE-2026-118266"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "Echo has CSRF Protection Bypass via MethodOverride Rewriting POST to Safe Method in github.com/labstack/echo",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 5.3,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6877",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00196,
+       "epss_percentile": 0.05297
+      },
+      {
+       "id": "GO-2026-6876",
+       "aliases": [
+        "CVE-2026-118652",
+        "GHSA-h9g5-28mm-hx3g"
+       ],
+       "cves": [
+        "CVE-2026-118652"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "Cross-Site Scripting (XSS) via unsanitized JSONP callback in github.com/labstack/echo",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 6.1,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6876",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00338,
+       "epss_percentile": 0.19708
+      },
+      {
+       "id": "GO-2026-6878",
+       "aliases": [
+        "CVE-2026-118658",
+        "GHSA-23wf-92cp-8pcj"
+       ],
+       "cves": [
+        "CVE-2026-118658"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "Arbitrary Scheme Injection in WWWRedirect/NonWWWRedirect Middlewares via X-Forwarded-Proto in github.com/labstack/echo",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 4.7,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.15.2"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6878",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00305,
+       "epss_percentile": 0.1565
+      },
+      {
+       "id": "GO-2026-6881",
+       "aliases": [
+        "CVE-2026-118654",
+        "GHSA-3pmx-cf9f-34xr"
+       ],
+       "cves": [
+        "CVE-2026-118654"
+       ],
+       "published": "2026-11-05T22:54:32Z",
+       "summary": "Echo static file middleware route protection bypass via encoded dot-dot traversal in github.com/labstack/echo",
+       "severity": "MEDIUM",
+       "severity_source": "NVD",
+       "cvss": 5.9,
+       "cvss_source": "NVD",
+       "fixed": [
+        "4.16.0"
+       ],
+       "url": "https://osv.dev/vulnerability/GO-2026-6881",
+       "malicious": false,
+       "kev": false,
+       "kev_date_added": null,
+       "epss": 0.00481,
+       "epss_percentile": 0.33973
+      },
+      {
        "id": "GO-2026-6840",
        "aliases": [
         "CVE-2026-118260",
@@ -3504,256 +3723,6 @@
        "kev_date_added": null,
        "epss": 0.00524,
        "epss_percentile": 0.37854
-      },
-      {
-       "id": "GHSA-2ffq-g2xg-c22p",
-       "aliases": [
-        "CVE-2026-118657",
-        "GO-2026-6879"
-       ],
-       "cves": [
-        "CVE-2026-118657"
-       ],
-       "published": "2026-10-28T21:04:52Z",
-       "summary": "Echo: HTTPS Redirect and HSTS Bypass via Unconditional Trust of Forwarded Scheme Headers",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.16.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-2ffq-g2xg-c22p",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.0019,
-       "epss_percentile": 0.04975
-      },
-      {
-       "id": "GHSA-3pmx-cf9f-34xr",
-       "aliases": [
-        "CVE-2026-118654",
-        "GO-2026-6881"
-       ],
-       "cves": [
-        "CVE-2026-118654"
-       ],
-       "published": "2026-10-28T21:04:46Z",
-       "summary": "Echo static file middleware route protection bypass via encoded dot-dot traversal",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.16.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-3pmx-cf9f-34xr",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00481,
-       "epss_percentile": 0.33973
-      },
-      {
-       "id": "GHSA-xwq5-6cqp-vx96",
-       "aliases": [
-        "CVE-2026-118655",
-        "GO-2026-6885"
-       ],
-       "cves": [
-        "CVE-2026-118655"
-       ],
-       "published": "2026-10-28T21:04:39Z",
-       "summary": "Echo has a Static Middleware Double-Unescape Path Traversal",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.9,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.15.3"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-xwq5-6cqp-vx96",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00495,
-       "epss_percentile": 0.35386
-      },
-      {
-       "id": "GHSA-v753-g4cw-jm48",
-       "aliases": [
-        "CVE-2026-118656",
-        "GO-2026-6883"
-       ],
-       "cves": [
-        "CVE-2026-118656"
-       ],
-       "published": "2026-10-28T21:04:22Z",
-       "summary": "Echo has Open Redirect via Control-Character Prefix Defeating sanitizeURI",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.1,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.16.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-v753-g4cw-jm48",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00348,
-       "epss_percentile": 0.20881
-      },
-      {
-       "id": "GHSA-23wf-92cp-8pcj",
-       "aliases": [
-        "CVE-2026-118658",
-        "GO-2026-6878"
-       ],
-       "cves": [
-        "CVE-2026-118658"
-       ],
-       "published": "2026-10-28T21:04:10Z",
-       "summary": "Echo has Arbitrary Scheme Injection in WWWRedirect/NonWWWRedirect Middlewares via X-Forwarded-Proto",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 4.7,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.15.2"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-23wf-92cp-8pcj",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00305,
-       "epss_percentile": 0.1565
-      },
-      {
-       "id": "GHSA-375p-5qhx-8wq4",
-       "aliases": [
-        "CVE-2026-118650",
-        "GO-2026-6873"
-       ],
-       "cves": [
-        "CVE-2026-118650"
-       ],
-       "published": "2026-10-28T19:54:20Z",
-       "summary": "Echo's middleware.Static: `%2F`-encoded path bypasses route/group middleware guarding a statically-served path",
-       "severity": "HIGH",
-       "severity_source": "GitHub Advisory",
-       "cvss": 7.5,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.16.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-375p-5qhx-8wq4",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00524,
-       "epss_percentile": 0.37883
-      },
-      {
-       "id": "GHSA-h9g5-28mm-hx3g",
-       "aliases": [
-        "CVE-2026-118652",
-        "GO-2026-6876"
-       ],
-       "cves": [
-        "CVE-2026-118652"
-       ],
-       "published": "2026-10-28T19:54:05Z",
-       "summary": "Echo vulnerable to Reflected Cross-Site Scripting (XSS) via unsanitized JSONP callback in Context.JSONP / Context.JSONPBlob",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 6.1,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.16.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-h9g5-28mm-hx3g",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00338,
-       "epss_percentile": 0.19708
-      },
-      {
-       "id": "GHSA-246p-cpwv-v3jq",
-       "aliases": [
-        "CVE-2026-118653",
-        "GO-2026-6872"
-       ],
-       "cves": [
-        "CVE-2026-118653"
-       ],
-       "published": "2026-10-28T19:53:47Z",
-       "summary": "Echo has Rate Limiter Bypass via Spoofed X-Forwarded-For Header in Default Configuration",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.16.3"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-246p-cpwv-v3jq",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00568,
-       "epss_percentile": 0.40921
-      },
-      {
-       "id": "GHSA-r7w9-592q-9vg4",
-       "aliases": [
-        "CVE-2026-118266",
-        "GO-2026-6877"
-       ],
-       "cves": [
-        "CVE-2026-118266"
-       ],
-       "published": "2026-10-28T19:53:36Z",
-       "summary": "Echo has CSRF Protection Bypass via MethodOverride Rewriting POST to Safe Method",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.16.0"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-r7w9-592q-9vg4",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00196,
-       "epss_percentile": 0.05297
-      },
-      {
-       "id": "GHSA-99jh-6h7p-pp36",
-       "aliases": [
-        "CVE-2026-118651",
-        "GO-2026-6875"
-       ],
-       "cves": [
-        "CVE-2026-118651"
-       ],
-       "published": "2026-10-28T19:53:24Z",
-       "summary": "Echo: Reverse Proxy Forwards Attacker-Supplied X-Real-IP to Upstream by Default",
-       "severity": "MEDIUM",
-       "severity_source": "GitHub Advisory",
-       "cvss": 5.3,
-       "cvss_source": "advisory",
-       "fixed": [
-        "4.16.3"
-       ],
-       "url": "https://osv.dev/vulnerability/GHSA-99jh-6h7p-pp36",
-       "malicious": false,
-       "kev": false,
-       "kev_date_added": null,
-       "epss": 0.00306,
-       "epss_percentile": 0.15964
       }
      ]
     },
@@ -3874,7 +3843,7 @@
      "key": "rubygems/rails",
      "name": "rails",
      "label": "Ruby on Rails",
-     "popularity": 823225903.0,
+     "popularity": 823371621.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": 5.7,
      "worst_7d": "NONE",
@@ -4384,7 +4353,7 @@
      "key": "rubygems/rack",
      "name": "rack",
      "label": "rack",
-     "popularity": 1401124122.0,
+     "popularity": 1401390139.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -4499,7 +4468,7 @@
      "key": "rubygems/nokogiri",
      "name": "nokogiri",
      "label": "nokogiri",
-     "popularity": 1309835195.0,
+     "popularity": 1310116496.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -4583,7 +4552,7 @@
      "key": "rubygems/puma",
      "name": "puma",
      "label": "puma",
-     "popularity": 636640718.0,
+     "popularity": 636792464.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -4594,7 +4563,7 @@
      "key": "rubygems/devise",
      "name": "devise",
      "label": "devise",
-     "popularity": 307560985.0,
+     "popularity": 307616553.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -4605,7 +4574,7 @@
      "key": "rubygems/sidekiq",
      "name": "sidekiq",
      "label": "sidekiq",
-     "popularity": 350978428.0,
+     "popularity": 351043961.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -4616,7 +4585,7 @@
      "key": "rubygems/faraday",
      "name": "faraday",
      "label": "faraday",
-     "popularity": 1310088454.0,
+     "popularity": 1310262170.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -4627,7 +4596,7 @@
      "key": "rubygems/net-imap",
      "name": "net-imap",
      "label": "net-imap",
-     "popularity": 412001878.0,
+     "popularity": 412133547.0,
      "popularity_source": "RubyGems downloads, all time",
      "survey": null,
      "worst_7d": "NONE",
@@ -4648,7 +4617,7 @@
      "key": "hex/phoenix",
      "name": "phoenix",
      "label": "Phoenix",
-     "popularity": 633612.0,
+     "popularity": 619676.0,
      "popularity_source": "Hex downloads, last week",
      "survey": 2.5,
      "worst_7d": "HIGH",
@@ -4716,7 +4685,7 @@
      "key": "hex/phoenix_live_view",
      "name": "phoenix_live_view",
      "label": "LiveView",
-     "popularity": 505621.0,
+     "popularity": 488168.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -4755,7 +4724,7 @@
      "key": "hex/plug",
      "name": "plug",
      "label": "plug",
-     "popularity": 740761.0,
+     "popularity": 721631.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -4792,7 +4761,7 @@
      "key": "hex/ecto",
      "name": "ecto",
      "label": "ecto",
-     "popularity": 580514.0,
+     "popularity": 565164.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -4829,7 +4798,7 @@
      "key": "hex/cowboy",
      "name": "cowboy",
      "label": "cowboy",
-     "popularity": 363939.0,
+     "popularity": 353766.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -4889,7 +4858,7 @@
      "key": "hex/hackney",
      "name": "hackney",
      "label": "hackney",
-     "popularity": 295207.0,
+     "popularity": 285092.0,
      "popularity_source": "Hex downloads, last week",
      "survey": null,
      "worst_7d": "NONE",
@@ -6370,8 +6339,8 @@
        "summary": "Vulnerability in Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerabi",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.8,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6402,8 +6371,8 @@
        "summary": "Vulnerability in Oracle Java SE (component: Java plugin).  Supported versions that are affected are Oracle Java SE: 8u503 and  8u503-perf. Difficult to exploit vulnerability allows low privileged attacker with logon to the infrastructure where Oracle Java SE executes to compromise Oracle Java SE.  W",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511"
@@ -6429,8 +6398,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6461,8 +6430,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6493,8 +6462,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.0.20.1",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.9,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6525,8 +6494,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 an",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.7,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6557,8 +6526,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Lightweight HTTP Server).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM fo",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6589,8 +6558,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.2",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6621,8 +6590,8 @@
        "summary": "Vulnerability in Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulner",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6652,8 +6621,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle JavaFX, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: ImageIO).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle JavaFX: 21.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6684,8 +6653,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: CORBA).  Supported versions that are affected are Oracle Java SE: 8u503 and  8u503-perf; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerability allows unauthenticate",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511"
@@ -6711,8 +6680,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and ",
        "severity": "HIGH",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 7.0,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6743,8 +6712,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JGSS).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle GraalVM En",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6771,8 +6740,8 @@
        "summary": "Vulnerability in Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnera",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6802,8 +6771,8 @@
        "summary": "Vulnerability in Oracle Java SE (component: Networking).   The supported version that is affected is Oracle Java SE: 27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attacks of this vulnerabili",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.7,
+       "cvss_source": "NVD",
        "fixed": [
         "27.0.1"
        ],
@@ -6828,8 +6797,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle JavaFX, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JavaFX).  Supported versions that are affected are Oracle Java SE: 8u503; Oracle JavaFX: 21.0.12, 25.0.4 and  27; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to e",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511"
@@ -6855,8 +6824,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Sound).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 a",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.1,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6887,8 +6856,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27;    Oracle GraalVM for JDK: 17.",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.8,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6919,8 +6888,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Serviceability).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.6,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6951,8 +6920,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Utility).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle GraalVM",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -6979,8 +6948,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Utility).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle GraalVM",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -7007,8 +6976,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK product of Oracle Java SE (component: Networking).  Supported versions that are affected are Oracle Java SE: 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1. Difficult to exploit vulnerability",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.9,
+       "cvss_source": "NVD",
        "fixed": [
         "11.0.33",
         "17.0.21",
@@ -7037,8 +7006,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle JavaFX, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JavaFX).  Supported versions that are affected are Oracle Java SE: 8u503; Oracle JavaFX: 21.0.12, 25.0.4 and  27;  Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploi",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.4,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511"
@@ -7064,8 +7033,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1;    Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1;   Oracle G",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 6.5,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -7093,8 +7062,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: 2D).  Supported versions that are affected are Oracle Java SE: 8u503 and  8u503-perf; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerability allows unauthenticated",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.7,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511"
@@ -7120,8 +7089,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Utility).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.0,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -7152,8 +7121,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JDK tools).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and ",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.7,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -7184,8 +7153,8 @@
        "summary": "Vulnerability in Oracle Java SE (component: Libraries).  Supported versions that are affected are Oracle Java SE: 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Difficult to exploit vulnerab",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.7,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -7216,8 +7185,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Serviceability).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 4.8,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -7248,8 +7217,8 @@
        "summary": "Vulnerability in Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1; Oracle GraalVM for JDK: 17.0.20.1 and  21.0.12.1; Oracle GraalVM Enterprise Edition: 21.3.19.1.1. Easily exploitable vulnerabilit",
        "severity": "MEDIUM",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 5.3,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -7279,8 +7248,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: AWT).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1 and",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 2.6,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -7311,8 +7280,8 @@
        "summary": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: ImageIO).  Supported versions that are affected are Oracle Java SE: 8u503, 8u503-perf, 11.0.32.1, 17.0.20.1, 21.0.12.1, 25.0.4.1, 27; Oracle GraalVM for JDK: 17.0.20.1",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.7,
+       "cvss_source": "NVD",
        "fixed": [
         "1.8.0",
         "8.0.511",
@@ -7343,8 +7312,8 @@
        "summary": "Vulnerability in Oracle Java SE (component: Security).  Supported versions that are affected are Oracle Java SE: 21.0.12.1, 25.0.4.1 and  27. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE.  Successful attack",
        "severity": "LOW",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 3.7,
+       "cvss_source": "NVD",
        "fixed": [
         "21.0.13",
         "25.0.5",
@@ -8654,8 +8623,8 @@
        "summary": "Apache Tomcat: Multiple vulnerabilities in EncryptInterceptor",
        "severity": "CRITICAL",
        "severity_source": "Bitnami",
-       "cvss": null,
-       "cvss_source": null,
+       "cvss": 9.1,
+       "cvss_source": "NVD",
        "fixed": [
         "9.0.124",
         "10.1.62",

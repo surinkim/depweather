@@ -30,7 +30,8 @@
    "packages": {
     "go/github.com/labstack/echo/v4": {
      "c": 1,
-     "h": 3
+     "h": 4,
+     "m": 9
     },
     "pypi/pillow": {
      "c": 1
@@ -39,7 +40,8 @@
    "ecosystems": {
     "go": {
      "c": 1,
-     "h": 3
+     "h": 4,
+     "m": 9
     },
     "pypi": {
      "c": 1
@@ -337,31 +339,23 @@
   "2026-11-24": {
    "packages": {
     "packagist/drupal/core": {
-     "u": 1,
+     "c": 1,
      "k": 1
     }
    },
    "ecosystems": {
     "packagist": {
-     "u": 1,
+     "c": 1,
      "k": 1
-    }
-   }
-  },
-  "2026-11-25": {
-   "packages": {
-    "packagist/drupal/core": {
-     "u": 1
-    }
-   },
-   "ecosystems": {
-    "packagist": {
-     "u": 1
     }
    }
   },
   "2026-11-27": {
    "packages": {
+    "packagist/drupal/core": {
+     "c": 1,
+     "k": 1
+    },
     "runtimes/apache": {
      "h": 1,
      "m": 1
@@ -400,6 +394,10 @@
     }
    },
    "ecosystems": {
+    "packagist": {
+     "c": 1,
+     "k": 1
+    },
     "runtimes": {
      "c": 16,
      "h": 24,
